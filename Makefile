@@ -11,7 +11,7 @@
 #
 # Credits: Taichi Documentation Chinese Translation Team (https://github.com/stephenark30/taichi-docs-zh-cn)
 
-TAICHI_CLONE := ./tmp/taichi/
+TAICHI_CLONE := ./tmp/taichi
 SPHINX_CONF := $(TAICHI_CLONE)/docs/conf.py
 LANGUAGE := zh_cn
 LC_MESSAGES := $(TAICHI_CLONE)/docs/locales/$(LANGUAGE)/LC_MESSAGES
@@ -61,12 +61,20 @@ merge: upgrade_venv
 ifneq "$(shell cd $(TAICHI_CLONE) 2>/dev/null && git describe --contains --all HEAD)" "$(BRANCH)"
 	$(error "You're merging from a different branch")
 endif
-	(cd $(TAICHI_CLONE)/docs; git pull)
+	(cd $(TAICHI_CLONE); git pull)
 	mkdir -p $(LC_MESSAGES)
 	cp ./*.po $(LC_MESSAGES)
 	(. $(VENV)/bin/activate; cd $(TAICHI_CLONE)/docs; sphinx-build -M gettext . build; sphinx-intl update -p build/gettext -l zh_cn)
-	cp $(LC_MESSAGES)/*.po .
-	rm $(LC_MESSAGES)/*.po
+	mv $(LC_MESSAGES)/*.po .
+
+
+.PHONY: html
+html:
+	mkdir -p $(LC_MESSAGES)
+	mkdir -p build
+	cp ./*.po $(LC_MESSAGES)
+	(. $(VENV)/bin/activate; cd $(TAICHI_CLONE)/docs; sphinx-build -M html . build/$(LANGUAGE) -D language='$(LANGUAGE)')
+	cp -r $(TAICHI_CLONE)/docs/build/$(LANGUAGE)/* ./build/
 
 
 .PHONY: fuzzy

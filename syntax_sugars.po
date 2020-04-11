@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-11 18:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../syntax_sugars.rst:2
+msgid "Syntax sugars"
+msgstr ""
+
+#: ../../syntax_sugars.rst:5
+msgid "Aliases"
+msgstr ""
+
+#: ../../syntax_sugars.rst:7
+msgid ""
+"Creating aliases for global variables and functions with cumbersome names"
+" can sometimes improve readability. In Taichi, this can be done by "
+"assigning kernel and function local variables with ``ti.static()``, which"
+" forces Taichi to use standard python pointer assignement."
+msgstr ""
+
+#: ../../syntax_sugars.rst:9
+msgid "For example, consider the simple kernel:"
+msgstr ""
+
+#: ../../syntax_sugars.rst:18
+msgid "The tensors and function be aliased to new names with ``ti.static``:"
+msgstr ""
+
+#: ../../syntax_sugars.rst:30
+msgid ""
+"Aliases can also be created for class members and methods, which can help"
+" prevent cluttering objective data-oriented programming code with "
+"``self``."
+msgstr ""
+
+#: ../../syntax_sugars.rst:32
+msgid ""
+"For example, consider class kernel to compute the 2-D laplacian of some "
+"tensor:"
+msgstr ""
+
+#: ../../syntax_sugars.rst:42
+msgid "Using ``ti.static()``, it can be simplified to:"
+msgstr ""
+
+#: ../../syntax_sugars.rst:55
+msgid ""
+"``ti.static`` can also be used in combination with ``if`` (compile-time "
+"branching) and ``for`` (compile-time unrolling). See :ref:`meta` for more"
+" details."
+msgstr ""
+
+#: ../../syntax_sugars.rst:57
+msgid ""
+"Here, we are using it for *compile-time const values*, i.e. the "
+"**tensor/function handles** are constants at compile time."
+msgstr ""
+

@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-11 18:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../dev_install.rst:4
+msgid "Developer installation"
+msgstr ""
+
+#: ../../dev_install.rst:6
+msgid ""
+"Note this is for the compiler developers of the Taichi programming "
+"language. End users should use the pip packages instead of building from "
+"scratch. To build with NVIDIA GPU support, CUDA 10.0+ is needed. This "
+"installation guide works for Ubuntu 16.04+ and OS X 10.14+. For precise "
+"build instructions on Windows, please check out `appveyor.yml "
+"<https://github.com/taichi-dev/taichi/blob/master/appveyor.yml>`_, which "
+"does basically the same thing as the following instructions."
+msgstr ""
+
+#: ../../dev_install.rst:12
+msgid ""
+"Note that on Linux/OS X, ``clang`` is the only supported compiler for "
+"compiling the Taichi compiler. On Windows only MSVC supported."
+msgstr ""
+
+#: ../../dev_install.rst:14
+msgid "Make sure you are using Python 3.6/3.7/3.8"
+msgstr ""
+
+#: ../../dev_install.rst:15
+msgid "Execute"
+msgstr ""
+
+#: ../../dev_install.rst:22
+msgid ""
+"(If on Ubuntu) Execute ``sudo apt install libtinfo-dev clang-8``. "
+"``clang-7`` should work as well."
+msgstr ""
+
+#: ../../dev_install.rst:23
+msgid ""
+"Make sure you have LLVM 8.0.1 built from scratch (`Download "
+"<https://github.com/llvm/llvm-"
+"project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz>`_). To do "
+"so, download and unzip the llvm source, move to the llvm folder, and "
+"execute"
+msgstr ""
+
+#: ../../dev_install.rst:34
+msgid "Clone the taichi repo, and then"
+msgstr ""
+
+#: ../../dev_install.rst:45
+msgid ""
+"Add the following to your ``~/.bashrc`` (or ``~/.zshrc`` if you use "
+"``zsh``)"
+msgstr ""
+
+#: ../../dev_install.rst:53
+msgid "Execute ``source ~/.bashrc`` to reload shell config"
+msgstr ""
+
+#: ../../dev_install.rst:54
+msgid ""
+"Execute ``ti test`` to run all the tests. It may take up to 5 minutes to "
+"run all tests. (On Windows the ``ti`` command should be replaced by "
+"``python -m taichi``)"
+msgstr ""
+
+#: ../../dev_install.rst:55
+msgid "Check out ``examples`` for runnable examples. Run them with ``python3``."
+msgstr ""
+
+#: ../../dev_install.rst:59
+msgid "Setting up CUDA 10.1 on Ubuntu 18.04"
+msgstr ""
+
+#: ../../dev_install.rst:61
+msgid ""
+"First, make sure you have CUDA 10.1 installed. Check this by running "
+"``nvcc --version`` or ``cat /usr/local/cuda/version.txt``"
+msgstr ""
+
+#: ../../dev_install.rst:65
+msgid ""
+"If you don't have it - go ahead to `this website "
+"<https://developer.nvidia.com/cuda-downloads>`_ and download it."
+msgstr ""
+
+#: ../../dev_install.rst:67
+msgid ""
+"These instructions were copied from the webiste above for x86_64 "
+"architecture"
+msgstr ""
+
+#: ../../dev_install.rst:80
+msgid "Prebuilt LLVM for Windows CI"
+msgstr ""
+
+#: ../../dev_install.rst:86
+msgid ""
+"Then use Visual Studio to build. After building the ``INSTALL`` project "
+"(under folder \"CMakePredefinedTargets\"). After build completes, find "
+"your LLVM binaries/headers in `build/include`."
+msgstr ""
+
+#: ../../dev_install.rst:89
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../dev_install.rst:91
+msgid "Run with debug mode to see if there's any illegal memory access"
+msgstr ""
+
+#: ../../dev_install.rst:92
+msgid ""
+"Disable compiler optimizations to quickly confirm that the issue is not "
+"cause by optimization"
+msgstr ""
+
