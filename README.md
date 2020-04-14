@@ -26,9 +26,8 @@ Taichi是一门高效的、以python语法封装的计算机图形应用语言�
 - MacOS 需要安装 gettext :
 
   ```bash
-brew install gettext
-  
-brew link gettext --force
+  brew install gettext
+  brew link gettext --force
   ```
 
 ## 准备仓库
