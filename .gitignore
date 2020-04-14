@@ -3,3 +3,4 @@
 .venvs
 tmp
 build
+*.mo
