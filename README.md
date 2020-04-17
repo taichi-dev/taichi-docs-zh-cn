@@ -7,6 +7,10 @@
 
 # Taichi中文文档
 
+| Version | Document Status                                              |
+| ------- | ------------------------------------------------------------ |
+| latest  | [![Documentation Status](https://readthedocs.org/projects/taichi-docs-zh-cn/badge/?version=latest)](https://taichi-docs-zh-cn.readthedocs.io/zh_CN/latest/?badge=latest) |
+
 Taichi: https://github.com/taichi-dev/taichi
 
 Taichi是一门高效的、以python语法封装的计算机图形应用语言。这里是Taichi documentation的中文翻译版本。
@@ -84,9 +88,11 @@ Taichi是一门高效的、以python语法封装的计算机图形应用语言�
 
 ## 开始翻译
 
-现在，你可以看到文件夹中的.po文件，这些就是我们需要翻译的文件了。你可以用poedit打开进行编辑。
+现在，你可以看到./locales/zh_cn/LC_MESSAGES文件夹中的.po文件，这些就是我们需要翻译的文件了。你可以用poedit打开进行编辑。注意，我们只修改po文件，不修改其它的.rst。
 
 关于.po文件，可以查阅[gettext wiki](https://en.wikipedia.org/wiki/Gettext)和[gettext manual](http://www.gnu.org/software/gettext/manual/gettext.html)。
+
+**翻译前请查看本仓库[wiki](https://github.com/StephenArk30/taichi-docs-zh-cn/wiki)。**
 
 如果英文文档更新之后要翻译**更新的部分**，可以输入下面的命令：
 
