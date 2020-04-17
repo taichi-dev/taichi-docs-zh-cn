@@ -1,0 +1,1009 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-17 18:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:1
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:1
+msgid "Copyright 2007 Pallets"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:3
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:3
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:8
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:3
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:3
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:8
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are "
+"met:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:7
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:7
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:11
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:7
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:7
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:11
+msgid ""
+"Redistributions of source code must retain the above copyright notice, "
+"this list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:10
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:10
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:14
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:10
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:10
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:14
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice,"
+" this list of conditions and the following disclaimer in the "
+"documentation and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:14
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:14
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:14
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:14
+msgid ""
+"Neither the name of the copyright holder nor the names of its "
+"contributors may be used to endorse or promote products derived from this"
+" software without specific prior written permission."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:18
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:18
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/Jinja2-2.11.2.dist-info/LICENSE.rst:18
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:18
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED "
+"TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A "
+"PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER"
+" OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,"
+" EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR "
+"PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF "
+"LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING "
+"NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS "
+"SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:2
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:2
+msgid "What is Alabaster?"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:4
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:4
+msgid ""
+"Alabaster is a visually (c)lean, responsive, configurable theme for the "
+"`Sphinx <http://sphinx-doc.org>`_ documentation system. It is Python 2+3 "
+"compatible."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:7
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:7
+msgid ""
+"It began as a third-party theme, and is still maintained separately, but "
+"as of Sphinx 1.3, Alabaster is an install-time dependency of Sphinx and "
+"is selected as the default theme."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:11
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:11
+msgid ""
+"Live examples of this theme can be seen on `this project's own website "
+"<http://alabaster.readthedocs.io>`_, `paramiko.org "
+"<http://paramiko.org>`_, `fabfile.org <http://fabfile.org>`_ and "
+"`pyinvoke.org <http://pyinvoke.org>`_."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:15
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:15
+msgid "For more documentation, please see http://alabaster.readthedocs.io."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:18
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/alabaster-0.7.12.dist-info/DESCRIPTION.rst:18
+msgid ""
+"You can install the development version via ``pip install -e "
+"git+https://github.com/bitprophet/alabaster/#egg=alabaster``."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:2
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:2
+msgid "Chardet: The Universal Character Encoding Detector"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:29
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:29
+msgid "Detects"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:20
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:20
+msgid "ASCII, UTF-8, UTF-16 (2 variants), UTF-32 (4 variants)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:21
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:21
+msgid ""
+"Big5, GB2312, EUC-TW, HZ-GB-2312, ISO-2022-CN (Traditional and Simplified"
+" Chinese)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:22
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:22
+msgid "EUC-JP, SHIFT_JIS, CP932, ISO-2022-JP (Japanese)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:23
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:23
+msgid "EUC-KR, ISO-2022-KR (Korean)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:24
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:24
+msgid "KOI8-R, MacCyrillic, IBM855, IBM866, ISO-8859-5, windows-1251 (Cyrillic)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:25
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:25
+msgid "ISO-8859-5, windows-1251 (Bulgarian)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:26
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:26
+msgid "ISO-8859-1, windows-1252 (Western European languages)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:27
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:27
+msgid "ISO-8859-7, windows-1253 (Greek)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:28
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:28
+msgid "ISO-8859-8, windows-1255 (Visual and Logical Hebrew)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:29
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:29
+msgid "TIS-620 (Thai)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:32
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:32
+msgid ""
+"Our ISO-8859-2 and windows-1250 (Hungarian) probers have been temporarily"
+" disabled until we can retrain the models."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:35
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:35
+msgid "Requires Python 2.6, 2.7, or 3.3+."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:38
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:32
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:38
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:32
+msgid "Installation"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:40
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:40
+msgid "Install from `PyPI <https://pypi.python.org/pypi/chardet>`_::"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:45
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:45
+msgid "Documentation"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:47
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:47
+msgid "For users, docs are now available at https://chardet.readthedocs.io/."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:50
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:50
+msgid "Command-line Tool"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:52
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:52
+msgid ""
+"chardet comes with a command-line script which reports on the encodings "
+"of one or more files::"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:60
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:60
+msgid "About"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:62
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:62
+msgid ""
+"This is a continuation of Mark Pilgrim's excellent chardet. Previously, "
+"two versions needed to be maintained: one that supported python 2.x and "
+"one that supported python 3.x.  We've recently merged with `Ian Cordasco "
+"<https://github.com/sigmavirus24>`_'s `charade "
+"<https://github.com/sigmavirus24/charade>`_ fork, so now we have one "
+"coherent version that works for Python 2.6+."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst
+msgid "maintainer"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:68
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst:68
+msgid "Dan Blanchard"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:1
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/click-7.1.1.dist-info/LICENSE.rst:1
+msgid "Copyright 2014 Pallets"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:2
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:520
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:2
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:520
+msgid "License"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:4
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:4
+msgid "License: bsd-3-clause"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:6
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:6
+msgid "Copyright (c) 2013-2020, Kim Davies. All rights reserved."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:19
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:19
+msgid ""
+"Neither the name of the copyright holder nor the names of the "
+"contributors may be used to endorse or promote products derived from this"
+" software without specific prior written permission."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:23
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/idna-2.9.dist-info/LICENSE.rst:23
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS \"AS IS\" AND ANY EXPRESS "
+"OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
+"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE "
+"DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE "
+"LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR "
+"CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF "
+"SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS "
+"INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN "
+"CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) "
+"ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF "
+"THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:2
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:2
+msgid "The MIT License (MIT)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:4
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:4
+msgid "Copyright © 2016 Yoshiki Shibukawa"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:6
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:6
+msgid ""
+"Permission is hereby granted, free of charge, to any person obtaining a "
+"copy of this software and associated documentation files (the "
+"“Software”), to deal in the Software without restriction, including "
+"without limitation the rights to use, copy, modify, merge, publish, "
+"distribute, sublicense, and/or sell copies of the Software, and to permit"
+" persons to whom the Software is furnished to do so, subject to the "
+"following conditions:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:12
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:12
+msgid ""
+"The above copyright notice and this permission notice shall be included "
+"in all copies or substantial portions of the Software."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:15
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/imagesize-1.2.0.dist-info/LICENSE.rst:15
+msgid ""
+"THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS "
+"OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF "
+"MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN"
+" NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,"
+" DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR "
+"OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE"
+" USE OR OTHER DEALINGS IN THE SOFTWARE."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:2
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:2
+msgid "pip"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:4
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:4
+msgid ""
+"The `PyPA recommended <https://packaging.python.org/en/latest/current/>`_"
+" tool for installing Python packages."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:8
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:8
+msgid "`Installation <https://pip.pypa.io/en/stable/installing.html>`_"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:9
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:9
+msgid "`Documentation <https://pip.pypa.io/>`_"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:10
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:10
+msgid "`Changelog <https://pip.pypa.io/en/stable/news.html>`_"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:11
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:11
+msgid "`Github Page <https://github.com/pypa/pip>`_"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:12
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:12
+msgid "`Issue Tracking <https://github.com/pypa/pip/issues>`_"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:13
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:13
+msgid "`User mailing list <http://groups.google.com/group/python-virtualenv>`_"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:14
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:14
+msgid "`Dev mailing list <http://groups.google.com/group/pypa-dev>`_"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:15
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:15
+msgid "User IRC: #pypa on Freenode."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:16
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:16
+msgid "Dev IRC: #pypa-dev on Freenode."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:32
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:32
+msgid "Code of Conduct"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:34
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst:34
+msgid ""
+"Everyone interacting in the pip project's codebases, issue trackers, chat"
+" rooms, and mailing lists is expected to follow the `PyPA Code of "
+"Conduct`_."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pkg_resources-0.0.0.dist-info/DESCRIPTION.rst:1
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pkg_resources-0.0.0.dist-info/DESCRIPTION.rst:1
+msgid "UNKNOWN"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:2
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:2
+msgid "pytz - World Timezone Definitions for Python"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst
+msgid "Author"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:4
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:580
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:4
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:580
+msgid "Stuart Bishop <stuart@stuartbishop.net>"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:7
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:9
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:9
+msgid ""
+"pytz brings the Olson tz database into Python. This library allows "
+"accurate and cross platform timezone calculations using Python 2.4 or "
+"higher. It also solves the issue of ambiguous times at the end of "
+"daylight saving time, which you can read more about in the Python Library"
+" Reference (``datetime.tzinfo``)."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:15
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:15
+msgid "Almost all of the Olson timezones are supported."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:19
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:19
+msgid ""
+"This library differs from the documented Python API for tzinfo "
+"implementations; if you want to create local wallclock times you need to "
+"use the ``localize()`` method documented in this document. In addition, "
+"if you perform date arithmetic on local times that cross DST boundaries, "
+"the result may be in an incorrect timezone (ie. subtract 1 minute from "
+"2002-10-27 1:00 EST and you get 2002-10-27 0:59 EST instead of the "
+"correct 2002-10-27 1:59 EDT). A ``normalize()`` method is provided to "
+"correct this. Unfortunately these issues cannot be resolved without "
+"modifying the Python datetime implementation (see PEP-431)."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:34
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:34
+msgid ""
+"This package can either be installed using ``pip`` or from a tarball "
+"using the standard Python distutils."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:37
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:37
+msgid ""
+"If you are installing using ``pip``, you don't need to download anything "
+"as the latest version will be downloaded for you from PyPI::"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:42
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:42
+msgid ""
+"If you are installing from a tarball, run the following command as an "
+"administrative user::"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:49
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:49
+msgid "Example & Usage"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:52
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:52
+msgid "Localized times and date arithmetic"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:66
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:66
+msgid ""
+"This library only supports two ways of building a localized time. The "
+"first is to use the ``localize()`` method provided by the pytz library. "
+"This is used to localize a naive datetime (datetime with no timezone "
+"information):"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:75
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:75
+msgid ""
+"The second way of building a localized time is by converting an existing "
+"localized time using the standard ``astimezone()`` method:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:82
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:82
+msgid ""
+"Unfortunately using the tzinfo argument of the standard datetime "
+"constructors ''does not work'' with pytz for many timezones."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:88
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:88
+msgid ""
+"It is safe for timezones without daylight saving transitions though, such"
+" as UTC:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:94
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:94
+msgid ""
+"The preferred way of dealing with times is to always work in UTC, "
+"converting to localtime only when generating output to be read by humans."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:103
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:103
+msgid ""
+"This library also allows you to do date arithmetic using local times, "
+"although it is more complicated than working in UTC as you need to use "
+"the ``normalize()`` method to handle daylight saving time and other "
+"timezone transitions. In this example, ``loc_dt`` is set to the instant "
+"when daylight saving time ends in the US/Eastern timezone."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:119
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:119
+msgid ""
+"Creating local times is also tricky, and the reason why working with "
+"local times is not recommended. Unfortunately, you cannot just pass a "
+"``tzinfo`` argument when constructing a datetime (see the next section "
+"for more details)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:132
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:132
+msgid ""
+"Converting between timezones is more easily done, using the standard "
+"astimezone method."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:148
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:148
+msgid ""
+"You can take shortcuts when dealing with the UTC side of timezone "
+"conversions. ``normalize()`` and ``localize()`` are not really necessary "
+"when there are no daylight saving time transitions to deal with."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:166
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:166
+msgid "``tzinfo`` API"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:168
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:168
+msgid ""
+"The ``tzinfo`` instances returned by the ``timezone()`` function have "
+"been extended to cope with ambiguous times by adding an ``is_dst`` "
+"parameter to the ``utcoffset()``, ``dst()`` && ``tzname()`` methods."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:177
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:177
+msgid ""
+"The ``is_dst`` parameter is ignored for most timestamps. It is only used "
+"during DST transition ambiguous periods to resolve that ambiguity."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:208
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:208
+msgid ""
+"If ``is_dst`` is not specified, ambiguous timestamps will raise an "
+"``pytz.exceptions.AmbiguousTimeError`` exception."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:237
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:237
+msgid "Problems with Localtime"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:239
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:239
+msgid ""
+"The major problem we have to deal with is that certain datetimes may "
+"occur twice in a year. For example, in the US/Eastern timezone on the "
+"last Sunday morning in October, the following sequence happens:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:244
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:244
+msgid "01:00 EDT occurs"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:245
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:245
+msgid ""
+"1 hour later, instead of 2:00am the clock is turned back 1 hour and 01:00"
+" happens again (this time 01:00 EST)"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:248
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:248
+msgid ""
+"In fact, every instant between 01:00 and 02:00 occurs twice. This means "
+"that if you try and create a time in the 'US/Eastern' timezone the "
+"standard datetime syntax, there is no way to specify if you meant before "
+"of after the end-of-daylight-saving-time transition. Using the pytz "
+"custom syntax, the best you can do is make an educated guess:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:258
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:258
+#, python-format
+msgid ""
+"As you can see, the system has chosen one for you and there is a 50% "
+"chance of it being out by one hour. For some applications, this does not "
+"matter. However, if you are trying to schedule meetings with people in "
+"different timezones or analyze log files it is not acceptable."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:263
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:263
+msgid ""
+"The best and simplest solution is to stick with using UTC.  The pytz "
+"package encourages using UTC for internal timezone representation by "
+"including a special UTC implementation based on the standard Python "
+"reference implementation in the Python documentation."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:268
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:268
+msgid ""
+"The UTC timezone unpickles to be the same instance, and pickles to a "
+"smaller size than other pytz tzinfo instances.  The UTC implementation "
+"can be obtained as pytz.utc, pytz.UTC, or pytz.timezone('UTC')."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:289
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:289
+msgid ""
+"Note that some other timezones are commonly thought of as the same (GMT, "
+"Greenwich, Universal, etc.). The definition of UTC is distinct from these"
+" other timezones, and they are not equivalent. For this reason, they will"
+" not compare the same in Python."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:297
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:297
+msgid "See the section `What is UTC`_, below."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:299
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:299
+msgid ""
+"If you insist on working with local times, this library provides a "
+"facility for constructing them unambiguously:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:308
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:308
+msgid ""
+"If you pass None as the is_dst flag to localize(), pytz will refuse to "
+"guess and raise exceptions if you try to build ambiguous or non-existent "
+"times."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:312
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:312
+msgid ""
+"For example, 1:30am on 27th Oct 2002 happened twice in the US/Eastern "
+"timezone when the clocks where put back at the end of Daylight Saving "
+"Time:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:323
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:323
+msgid ""
+"Similarly, 2:30am on 7th April 2002 never happened at all in the "
+"US/Eastern timezone, as the clocks where put forward at 2:00am skipping "
+"the entire hour:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:334
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:334
+msgid ""
+"Both of these exceptions share a common base class to make error handling"
+" easier:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:343
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:343
+msgid ""
+"A special case is where countries change their timezone definitions with "
+"no daylight savings time switch. For example, in 1915 Warsaw switched "
+"from Warsaw time to Central European time with no daylight savings "
+"transition. So at the stroke of midnight on August 5th 1915 the clocks "
+"were wound back 24 minutes creating an ambiguous time period that cannot "
+"be specified without referring to the timezone abbreviation or the actual"
+" UTC offset. In this case midnight happened twice, neither time during a "
+"daylight saving time period. pytz handles this transition by treating the"
+" ambiguous period before the switch as daylight savings time, and the "
+"ambiguous period after as standard time."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:370
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:370
+msgid ""
+"The best way of creating a time during an ambiguous time period is by "
+"converting from another timezone such as UTC:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:377
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:377
+msgid ""
+"The standard Python way of handling all these ambiguities is not to "
+"handle them, such as demonstrated in this example using the US/Eastern "
+"timezone definition from the Python documentation (Note that this "
+"implementation only works for dates between 1987 and 2006 - it is "
+"included for tests only!):"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:394
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:394
+msgid ""
+"Notice the first two results? At first glance you might think they are "
+"correct, but taking the UTC offset into account you find that they are "
+"actually two hours appart instead of the 1 hour we asked for."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:406
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:406
+msgid "Country Information"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:408
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:408
+msgid ""
+"A mechanism is provided to access the timezones commonly in use for a "
+"particular country, looked up using the ISO 3166 country code. It returns"
+" a list of strings that can be used to retrieve the relevant tzinfo "
+"instance using ``pytz.timezone()``:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:416
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:416
+msgid ""
+"The Olson database comes with a ISO 3166 country code to English country "
+"name mapping that pytz exposes as a dictionary:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:424
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:424
+msgid "What is UTC"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:426
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:426
+msgid ""
+"'UTC' is `Coordinated Universal Time`_. It is a successor to, but "
+"distinct from, Greenwich Mean Time (GMT) and the various definitions of "
+"Universal Time. UTC is now the worldwide standard for regulating clocks "
+"and time measurement."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:431
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:431
+msgid ""
+"All other timezones are defined relative to UTC, and include offsets like"
+" UTC+0800 - hours to add or subtract from UTC to derive the local time. "
+"No daylight saving time occurs in UTC, making it a useful timezone to "
+"perform date arithmetic without worrying about the confusion and "
+"ambiguities caused by daylight saving time transitions, your country "
+"changing its timezone, or mobile computers that roam through multiple "
+"timezones."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:442
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:442
+msgid "Helpers"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:444
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:444
+msgid "There are two lists of timezones provided."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:446
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:446
+msgid ""
+"``all_timezones`` is the exhaustive list of the timezone names that can "
+"be used."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:455
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:455
+msgid ""
+"``common_timezones`` is a list of useful, current timezones. It doesn't "
+"contain deprecated zones or historical zones, except for a few I've "
+"deemed in common usage, such as US/Eastern (open a bug report if you "
+"think other timezones are deserving of being included here). It is also a"
+" sequence of strings."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:477
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:477
+msgid "Both ``common_timezones`` and ``all_timezones`` are alphabetically sorted:"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:489
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:489
+msgid "``all_timezones`` and ``common_timezones`` are also available as sets."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:499
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:499
+msgid ""
+"You can also retrieve lists of timezones used by particular countries "
+"using the ``country_timezones()`` function. It requires an ISO-3166 two "
+"letter country code."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:511
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:511
+msgid "Internationalization - i18n/l10n"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:513
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:513
+msgid ""
+"Pytz is an interface to the IANA database, which uses ASCII names. The "
+"`Unicode  Consortium's Unicode Locales (CLDR) <http://cldr.unicode.org>`_"
+" project provides translations. Thomas Khyn's `l18n "
+"<https://pypi.org/project/l18n/>`_ package can be used to access these "
+"translations from Python."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:522
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:522
+msgid "MIT license."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:524
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:524
+msgid ""
+"This code is also available as part of Zope 3 under the Zope Public "
+"License,  Version 2.1 (ZPL)."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:527
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:527
+msgid ""
+"I'm happy to relicense this code if necessary for inclusion in other open"
+" source projects."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:532
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:532
+msgid "Latest Versions"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:534
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:534
+msgid ""
+"This package will be updated after releases of the Olson timezone "
+"database.  The latest version can be downloaded from the `Python Package "
+"Index <https://pypi.org/project/pytz/>`_.  The code that is used to "
+"generate this distribution is hosted on launchpad.net and available using"
+" git::"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:542
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:542
+msgid "A mirror on github is also available at https://github.com/stub42/pytz"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:544
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:544
+msgid ""
+"Announcements of new releases are made on `Launchpad "
+"<https://launchpad.net/pytz>`_, and the `Atom feed "
+"<http://feeds.launchpad.net/pytz/announcements.atom>`_ hosted there."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:551
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:551
+msgid "Bugs, Feature Requests & Patches"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:553
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:553
+msgid ""
+"Bugs can be reported using `Launchpad "
+"<https://bugs.launchpad.net/pytz>`__."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:557
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:557
+msgid "Issues & Limitations"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:559
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:559
+msgid ""
+"Offsets from UTC are rounded to the nearest whole minute, so timezones "
+"such as Europe/Amsterdam pre 1937 will be up to 30 seconds out. This is a"
+" limitation of the Python datetime library."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:563
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:563
+msgid ""
+"If you think a timezone definition is incorrect, I probably can't fix it."
+" pytz is a direct translation of the Olson timezone database, and changes"
+" to the timezone definitions need to be made to this source. If you find "
+"errors they should be reported to the time zone mailing list, linked from"
+" http://www.iana.org/time-zones."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:571
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:571
+msgid "Further Reading"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:573
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:573
+msgid ""
+"More info than you want to know about timezones: "
+"http://www.twinsun.com/tz/tz-link.htm"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:578
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/pytz-2019.3.dist-info/DESCRIPTION.rst:578
+msgid "Contact"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx/ext/autosummary/templates/autosummary/base.rst:1
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx/ext/autosummary/templates/autosummary/class.rst:1
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx/ext/autosummary/templates/autosummary/module.rst:1
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx/ext/autosummary/templates/autosummary/base.rst:1
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx/ext/autosummary/templates/autosummary/class.rst:1
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx/ext/autosummary/templates/autosummary/module.rst:1
+msgid "{{ fullname | escape | underline}}"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:3
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:3
+msgid "AUTHORS"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:5
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:5
+msgid "Takayuki Shimizukawa <https://github.com/shimizukawa>"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:6
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:6
+msgid "Takeshi Komiya <https://github.com/tk0miya>"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:9
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:9
+msgid "Original"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:11
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:11
+msgid "This utility derived from these projects."
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:13
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:13
+msgid "https://bitbucket.org/tk0miya/sphinx-gettext-helper"
+msgstr ""
+
+#: ../../.venvs/taichi-docs-zh-cn/lib/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:14
+#: ../../.venvs/taichi-docs-zh-cn/lib64/python3.6/site-packages/sphinx_intl-2.0.0.dist-info/AUTHORS.rst:14
+msgid "https://bitbucket.org/shimizukawa/sphinx-transifex"
+msgstr ""
+

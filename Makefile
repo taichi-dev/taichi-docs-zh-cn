@@ -11,22 +11,21 @@
 #
 # Credits: Taichi Documentation Chinese Translation Team (https://github.com/stephenark30/taichi-docs-zh-cn)
 
-TAICHI_CLONE := ./tmp/taichi
-SPHINX_CONF := $(TAICHI_CLONE)/docs/conf.py
+TAICHI_CLONE := ./taichi
 LANGUAGE := zh_cn
-LC_MESSAGES := $(TAICHI_CLONE)/docs/locales/$(LANGUAGE)/LC_MESSAGES
-VENV := ./.venvs/taichi-docs-zh-cn/
+LC_MESSAGES := ./locales/$(LANGUAGE)/LC_MESSAGES
+VENV := ./.venvs/taichi-docs-zh-cn
 PYTHON := $(shell which python3)
 BRANCH = $(shell git describe --contains --all HEAD)
 
 
 .PHONY: all
-all: $(VENV)/bin/sphinx-build $(SPHINX_CONF)
-	. $(VENV)/bin/activate; cd $(TAICHI_CLONE)/docs; sphinx-build -M gettext . build
+all: $(VENV)/bin/sphinx-build merge
 
 
-$(SPHINX_CONF):
-	git clone --depth 1 --no-single-branch https://github.com/taichi-dev/taichi.git $(TAICHI_CLONE)
+$(TAICHI_CLONE)/docs:
+	git submodule init
+	git submodule update
 	cd $(TAICHI_CLONE) && git checkout $(BRANCH)
 
 
@@ -47,13 +46,13 @@ upgrade_venv: $(VENV)/bin/activate
 .PHONY: progress
 progress:
 	@python3 -c 'import sys; print("{:.1%}".format(int(sys.argv[1]) / int(sys.argv[2])))'  \
-	$(shell msgcat *.po */*.po | msgattrib --translated | grep -c '^msgid') \
-	$(shell msgcat *.po */*.po | grep -c '^msgid')
+	$(shell msgcat $(LC_MESSAGES)/*.po | msgattrib --translated | grep -c '^msgid') \
+	$(shell msgcat $(LC_MESSAGES)/*.po | grep -c '^msgid')
 
 
 .PHONY: todo
 todo:
-	for file in *.po */*.po; do echo $$(msgattrib --untranslated $$file | grep ^msgid | sed 1d | wc -l ) $$file; done | grep -v ^0 | sort -gr
+	for file in $(LC_MESSAGES)/*.po; do echo $$(msgattrib --untranslated $$file | grep ^msgid | sed 1d | wc -l ) $$file; done | grep -v ^0 | sort -gr
 
 
 .PHONY: merge
@@ -61,22 +60,24 @@ merge: upgrade_venv
 ifneq "$(shell cd $(TAICHI_CLONE) 2>/dev/null && git describe --contains --all HEAD)" "$(BRANCH)"
 	$(error "You're merging from a different branch")
 endif
-	(cd $(TAICHI_CLONE); git pull)
-	mkdir -p $(LC_MESSAGES)
-	cp ./*.po $(LC_MESSAGES)
-	(. $(VENV)/bin/activate; cd $(TAICHI_CLONE)/docs; sphinx-build -M gettext . build; sphinx-intl update -p build/gettext -l zh_cn)
-	mv $(LC_MESSAGES)/*.po .
+	# files might be renamed in the origin doc, so we have to delete old files
+	rm -rf ./*.rst ./*.jpg ./*.png ./_static ./version ./conf.py
+	cd $(TAICHI_CLONE); git pull;
+	
+	cp $(TAICHI_CLONE)/docs/*.rst ./
+	cp $(TAICHI_CLONE)/docs/*.jpg ./
+	cp $(TAICHI_CLONE)/docs/*.png ./
+	cp -r $(TAICHI_CLONE)/docs/_static ./
+	cp $(TAICHI_CLONE)/docs/version ./
+	cp $(TAICHI_CLONE)/docs/conf.py ./
+	. $(VENV)/bin/activate; sphinx-build -M gettext . build; sphinx-intl update -p build/gettext -l zh_cn
 
 
 .PHONY: html
 html:
-	mkdir -p $(LC_MESSAGES)
-	mkdir -p build
-	cp ./*.po $(LC_MESSAGES)
-	(. $(VENV)/bin/activate; cd $(TAICHI_CLONE)/docs; sphinx-build -M html . build/$(LANGUAGE) -D language='$(LANGUAGE)')
-	cp -r $(TAICHI_CLONE)/docs/build/$(LANGUAGE)/* ./build/
+	. $(VENV)/bin/activate; sphinx-build -M html . build -D language='$(LANGUAGE)'
 
 
 .PHONY: fuzzy
 fuzzy:
-	for file in *.po; do echo $$(msgattrib --only-fuzzy --no-obsolete "$$file" | grep -c '#, fuzzy') $$file; done | grep -v ^0 | sort -gr
+	for file in $(LC_MESSAGES)/*.po; do echo $$(msgattrib --only-fuzzy --no-obsolete "$$file" | grep -c '#, fuzzy') $$file; done | grep -v ^0 | sort -gr

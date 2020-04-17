@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-17 18:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../hello.rst:2
+msgid "Hello, world!"
+msgstr ""
+
+#: ../../hello.rst:4
+msgid ""
+"We introduce the Taichi programming language through a very basic "
+"`fractal` example."
+msgstr ""
+
+#: ../../hello.rst:6
+msgid "If you haven't done so, please install Taichi via ``pip``:"
+msgstr ""
+
+#: ../../hello.rst:13
+msgid ""
+"Now you are ready to run the Taichi code below (``python3 fractal.py``) "
+"to compute a `Julia set <https://en.wikipedia.org/wiki/Julia_set>`_:"
+msgstr ""
+
+#: ../../hello.rst:53
+msgid "Let's dive into components of this simple Taichi program."
+msgstr ""
+
+#: ../../hello.rst:56
+msgid "import taichi as ti"
+msgstr ""
+
+#: ../../hello.rst:57
+msgid ""
+"Taichi is an embedded domain-specific language (DSL) in Python. It "
+"pretends to be a plain Python package, although heavy engineering has "
+"been done to make this happen."
+msgstr ""
+
+#: ../../hello.rst:60
+msgid ""
+"This design decision virtually makes every Python programmer capable of "
+"writing Taichi programs, after minimal learning efforts. You can also "
+"reuse the package management system, Python IDEs, and existing Python "
+"packages."
+msgstr ""
+
+#: ../../hello.rst:64
+msgid "Portability"
+msgstr ""
+
+#: ../../hello.rst:66
+msgid ""
+"Taichi code can run on CPUs or GPUs. Initialize Taichi according to your "
+"hardware platform:"
+msgstr ""
+
+#: ../../hello.rst:80
+msgid "Supported backends on different platforms:"
+msgstr ""
+
+#: ../../hello.rst:83
+msgid "platform"
+msgstr ""
+
+#: ../../hello.rst:83
+msgid "CPU"
+msgstr ""
+
+#: ../../hello.rst:83
+msgid "CUDA"
+msgstr ""
+
+#: ../../hello.rst:83
+msgid "OpenGL"
+msgstr ""
+
+#: ../../hello.rst:83
+msgid "Metal"
+msgstr ""
+
+#: ../../hello.rst:85
+msgid "Windows"
+msgstr ""
+
+#: ../../hello.rst:85 ../../hello.rst:87 ../../hello.rst:89
+msgid "OK"
+msgstr ""
+
+#: ../../hello.rst:85
+msgid "WIP"
+msgstr ""
+
+#: ../../hello.rst:85 ../../hello.rst:87 ../../hello.rst:89
+msgid "N/A"
+msgstr ""
+
+#: ../../hello.rst:87
+msgid "Linux"
+msgstr ""
+
+#: ../../hello.rst:89
+msgid "Mac OS X"
+msgstr ""
+
+#: ../../hello.rst:92
+msgid "(OK: supported, WIP: work in progress, N/A: not available)"
+msgstr ""
+
+#: ../../hello.rst:94
+msgid ""
+"If the machine does not have CUDA support, Taichi will fall back to CPUs "
+"instead."
+msgstr ""
+
+#: ../../hello.rst:98
+msgid ""
+"When running the CUDA backend on Windows and ARM devices (e.g. NVIDIA "
+"Jetson), Taichi will by default allocate 1 GB memory for tensor storage. "
+"You can override this by initializing with ``ti.init(arch=ti.cuda, "
+"device_memory_GB=3.4)`` to allocate ``3.4`` GB GPU memory, or "
+"``ti.init(arch=ti.cuda, device_memory_fraction=0.3)`` to allocate ``30%``"
+" of total available GPU memory."
+msgstr ""
+
+#: ../../hello.rst:103
+msgid ""
+"On other platforms Taichi will make use of its on-demand memory allocator"
+" to adaptively allocate memory."
+msgstr ""
+
+#: ../../hello.rst:106
+msgid "(Sparse) Tensors"
+msgstr ""
+
+#: ../../hello.rst:108
+msgid ""
+"Taichi is a data-oriented programming language, where dense or spatially-"
+"sparse tensors are first-class citizens. See :ref:`sparse` for more "
+"details on sparse tensors."
+msgstr ""
+
+#: ../../hello.rst:111
+msgid ""
+"``pixels = ti.var(dt=ti.f32, shape=(n * 2, n))`` allocates a 2D dense "
+"tensor named ``pixel`` of size ``(640, 320)`` and type ``ti.f32`` (i.e. "
+"``float`` in C)."
+msgstr ""
+
+#: ../../hello.rst:115
+msgid "Functions and kernels"
+msgstr ""
+
+#: ../../hello.rst:117
+msgid ""
+"Computation happens within Taichi **kernels**. Kernel arguments must be "
+"type-hinted. The language used in Taichi kernels and functions looks "
+"exactly like Python, yet the Taichi frontend compiler converts it into a "
+"language that is **compiled, statically-typed, lexically-scoped, "
+"parallel, and differentiable**."
+msgstr ""
+
+#: ../../hello.rst:121
+msgid ""
+"You can also define Taichi **functions** with ``ti.func``, which can be "
+"called and reused by kernels and other functions."
+msgstr ""
+
+#: ../../hello.rst:125
+msgid ""
+"**Taichi-scope v.s. Python-scope**: everything decorated with "
+"``ti.kernel`` and ``ti.func`` is in Taichi-scope, which will be compiled "
+"by the Taichi compiler. Code outside the Taichi-scopes is simply native "
+"Python code."
+msgstr ""
+
+#: ../../hello.rst:130
+msgid ""
+"Taichi kernels must be called in the Python-scope. I.e., **nested kernels"
+" are not supported**. Nested functions are allowed. **Recursive functions"
+" are not supported for now**."
+msgstr ""
+
+#: ../../hello.rst:133
+msgid "Taichi functions can only be called in Taichi-scope."
+msgstr ""
+
+#: ../../hello.rst:135
+msgid ""
+"For those who came from the world of CUDA, ``ti.func`` corresponds to "
+"``__device__``, and ``ti.kernel`` corresponds to ``__global__``."
+msgstr ""
+
+#: ../../hello.rst:139
+msgid "Parallel for-loops"
+msgstr ""
+
+#: ../../hello.rst:140
+msgid ""
+"For loops at the outermost scope in a Taichi kernel is automatically "
+"parallelized. For loops can have two forms, i.e. `range-for loops` and "
+"`struct-for loops`."
+msgstr ""
+
+#: ../../hello.rst:143
+msgid ""
+"**Range-for loops** are no different from that in native Python, except "
+"that it will be parallelized when used as the outermost scope. Range-for "
+"loops can be nested."
+msgstr ""
+
+#: ../../hello.rst:165
+msgid ""
+"**Struct-for loops** have a cleaner syntax, and are particularly useful "
+"when iterating over tensor elements. In the fractal code above, ``for i, "
+"j in pixels`` loops over all the pixel coordinates, i.e. ``(0, 0), (0, "
+"1), (0, 2), ... , (0, 319), (1, 0), ..., (639, 319)``."
+msgstr ""
+
+#: ../../hello.rst:170
+msgid ""
+"Struct-for is the key to :ref:`sparse` in Taichi, as it will only loop "
+"over active elements in a sparse tensor. In dense tensors, all elements "
+"are active."
+msgstr ""
+
+#: ../../hello.rst:173
+msgid "Struct-for's must be at the outer-most scope of kernels."
+msgstr ""
+
+#: ../../hello.rst:176
+msgid ""
+"It is the loop **at the outermost scope** that gets parallelized, not the"
+" outermost loop."
+msgstr ""
+
+#: ../../hello.rst:195
+msgid "``break`` is not supported in **outermost (parallelized)** loops:"
+msgstr ""
+
+#: ../../hello.rst:214
+msgid "Interacting with Python"
+msgstr ""
+
+#: ../../hello.rst:216
+msgid ""
+"Everything outside Taichi-scope (``ti.func`` and ``ti.kernel``) is simply"
+" Python. You can use your favorite Python packages (e.g. ``numpy``, "
+"``pytorch``, ``matplotlib``) with Taichi."
+msgstr ""
+
+#: ../../hello.rst:218
+msgid ""
+"In Python-scope, you can access Taichi tensors using plain indexing "
+"syntax, and helper functions such as ``from_numpy`` and ``to_torch``:"
+msgstr ""
+

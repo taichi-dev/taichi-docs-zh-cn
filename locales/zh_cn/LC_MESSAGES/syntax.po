@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-17 18:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../syntax.rst:2
+msgid "Syntax"
+msgstr ""
+
+#: ../../syntax.rst:5
+msgid "Kernels"
+msgstr ""
+
+#: ../../syntax.rst:7
+msgid ""
+"Kernel arguments must be type-hinted. Kernels can have at most 8 "
+"parameters, e.g.,"
+msgstr ""
+
+#: ../../syntax.rst:20
+msgid ""
+"For differentiable programming kernels should better have either serial "
+"statements or a single parallel for-loop. If you don't use differentiable"
+" programming, feel free to ignore this tip."
+msgstr ""
+
+#: ../../syntax.rst:55
+msgid "Functions"
+msgstr ""
+
+#: ../../syntax.rst:57
+msgid ""
+"Use ``@ti.func`` to decorate your Taichi functions. These functions are "
+"callable only in `Taichi`-scope. Don't call them in `Python`-scope. All "
+"function calls are force-inlined, so no recursion supported."
+msgstr ""
+
+#: ../../syntax.rst:80
+msgid ""
+"Functions with multiple ``return``'s are not supported for now. Use a "
+"**local** variable to store the results, so that you end up with only one"
+" ``return``:"
+msgstr ""
+
+#: ../../syntax.rst:104
+msgid ""
+"Currently, all functions are force-inlined. Therefore, no recursion is "
+"allowed."
+msgstr ""
+
+#: ../../syntax.rst:108
+msgid "Function arguments are passed by value."
+msgstr ""
+
+#: ../../syntax.rst:112
+msgid "Data layout"
+msgstr ""
+
+#: ../../syntax.rst:113
+msgid ""
+"Non-power-of-two tensor dimensions are promoted into powers of two and "
+"thus these tensors will occupy more virtual address space. For example, a"
+" tensor of size ``(18, 65)`` will be materialized as ``(32, 128)``."
+msgstr ""
+
+#: ../../syntax.rst:118
+msgid "Scalar arithmetics"
+msgstr ""
+
+#: ../../syntax.rst:119
+msgid "Supported scalar functions:"
+msgstr ""
+
+#: ../../syntax.rst:121
+msgid "``ti.sin(x)``"
+msgstr ""
+
+#: ../../syntax.rst:122
+msgid "``ti.cos(x)``"
+msgstr ""
+
+#: ../../syntax.rst:123
+msgid "``ti.asin(x)``"
+msgstr ""
+
+#: ../../syntax.rst:124
+msgid "``ti.acos(x)``"
+msgstr ""
+
+#: ../../syntax.rst:125
+msgid "``ti.atan2(x, y)``"
+msgstr ""
+
+#: ../../syntax.rst:126
+msgid "``ti.cast(x, type)``"
+msgstr ""
+
+#: ../../syntax.rst:127
+msgid "``ti.sqr(x)``"
+msgstr ""
+
+#: ../../syntax.rst:128
+msgid "``ti.sqrt(x)``"
+msgstr ""
+
+#: ../../syntax.rst:129
+msgid "``ti.floor(x)``"
+msgstr ""
+
+#: ../../syntax.rst:130
+msgid "``ti.inv(x)``"
+msgstr ""
+
+#: ../../syntax.rst:131
+msgid "``ti.tan(x)``"
+msgstr ""
+
+#: ../../syntax.rst:132
+msgid "``ti.tanh(x)``"
+msgstr ""
+
+#: ../../syntax.rst:133
+msgid "``ti.exp(x)``"
+msgstr ""
+
+#: ../../syntax.rst:134
+msgid "``ti.log(x)``"
+msgstr ""
+
+#: ../../syntax.rst:135
+msgid "``ti.random(type)``"
+msgstr ""
+
+#: ../../syntax.rst:136
+msgid "``abs(x)``"
+msgstr ""
+
+#: ../../syntax.rst:137
+msgid "``max(a, b)``"
+msgstr ""
+
+#: ../../syntax.rst:138
+msgid "``min(a, b)``"
+msgstr ""
+
+#: ../../syntax.rst:139
+msgid "``ti.length(dynamic_snode)``"
+msgstr ""
+
+#: ../../syntax.rst:140
+msgid "``x ** y``"
+msgstr ""
+
+#: ../../syntax.rst:141
+msgid ""
+"Inplace adds are atomic on global data. I.e., ``a += b`` is equivalent to"
+" ``ti.atomic_add(a, b)``"
+msgstr ""
+
+#: ../../syntax.rst:145
+msgid ""
+"Python 3 distinguishes ``/`` (true division) and ``//`` (floor division)."
+" For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = 0``, ``4.2"
+" // 2 = 2``. Taichi follows this design:"
+msgstr ""
+
+#: ../../syntax.rst:148
+msgid ""
+"*true divisions* on integral types will first cast their operands to the "
+"default float point type."
+msgstr ""
+
+#: ../../syntax.rst:149
+msgid ""
+"*floor divisions* on float-point types will first cast their operands to "
+"the default integer type."
+msgstr ""
+
+#: ../../syntax.rst:151
+msgid ""
+"To avoid such implicit casting, you can manually cast your operands to "
+"desired types, using ``ti.cast``. Read :ref:`default_precisions` for more"
+" details on default numerical types."
+msgstr ""
+
+#: ../../syntax.rst:155
+msgid "Debugging"
+msgstr ""
+
+#: ../../syntax.rst:157
+msgid "Debug your program with ``print(x)``."
+msgstr ""
+
+#: ../../syntax.rst:161
+msgid "Why Python frontend"
+msgstr ""
+
+#: ../../syntax.rst:163
+msgid "Embedding the language in ``python`` has the following advantages:"
+msgstr ""
+
+#: ../../syntax.rst:165
+msgid "Easy to learn. Taichi has a very similar syntax to Python."
+msgstr ""
+
+#: ../../syntax.rst:166
+msgid "Easy to run. No ahead-of-time compilation is needed."
+msgstr ""
+
+#: ../../syntax.rst:167
+msgid "This design allows people to reuse existing python infrastructure:"
+msgstr ""
+
+#: ../../syntax.rst:169
+msgid ""
+"IDEs. A python IDE mostly works for Taichi with syntax highlighting, "
+"syntax checking, and autocomplete."
+msgstr ""
+
+#: ../../syntax.rst:170
+msgid ""
+"Package manager (pip). A developed Taichi application and be easily "
+"submitted to ``PyPI`` and others can easily set it up with ``pip``."
+msgstr ""
+
+#: ../../syntax.rst:171
+msgid ""
+"Existing packages. Interacting with other python components (e.g. "
+"``matplotlib`` and ``numpy``) is just trivial."
+msgstr ""
+
+#: ../../syntax.rst:173
+msgid ""
+"The built-in AST manipulation tools in ``python`` allow us to do magical "
+"things, as long as the kernel body can be parsed by the Python parser."
+msgstr ""
+
+#: ../../syntax.rst:175
+msgid "However, this design has drawbacks as well:"
+msgstr ""
+
+#: ../../syntax.rst:177
+msgid ""
+"Taichi kernels must parse-able by Python parsers. This means Taichi "
+"syntax cannot go beyond Python syntax."
+msgstr ""
+
+#: ../../syntax.rst:179
+msgid ""
+"For example, indexing is always needed when accessing elements in Taichi "
+"tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the value"
+" in ``x`` if ``x`` is 0D. This is because ``x = 123`` will set ``x`` "
+"itself (instead of its containing value) to be the constant ``123`` in "
+"python syntax, and, unfortunately, we cannot modify this behavior."
+msgstr ""
+
+#: ../../syntax.rst:181
+msgid ""
+"Python has relatively low performance. This can cause a performance issue"
+" when initializing large Taichi tensors with pure python scripts. A "
+"Taichi kernel should be used to initialize a huge tensor."
+msgstr ""
+

@@ -1,6 +1,6 @@
 .idea
 .vscode
 .venvs
-tmp
 build
-*.mo
+locales/zh_cn/LC_MESSAGES/*.mo
+taichi
