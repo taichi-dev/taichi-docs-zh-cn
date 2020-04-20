@@ -1,3 +1,4 @@
 [submodule "taichi"]
 	path = taichi
 	url = https://github.com/taichi-dev/taichi.git
+	ignore = dirty

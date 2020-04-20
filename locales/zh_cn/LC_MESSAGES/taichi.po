@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 18:04+0800\n"
+"POT-Creation-Date: 2020-04-20 23:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,7 +84,7 @@ msgstr ""
 msgid "The old value of ``x``."
 msgstr ""
 
-#: ../../taichi/docs/atomic.rst:40 ../../taichi/docs/vector.rst:111
+#: ../../taichi/docs/atomic.rst:40 ../../taichi/docs/vector.rst:110
 msgid "For example, ::"
 msgstr ""
 
@@ -1947,74 +1947,266 @@ msgstr ""
 msgid "Build with Double Precision (64 bit) Float Point"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:4
+#: ../../taichi/docs/matrix.rst:4
 msgid "Matrices"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:6
+#: ../../taichi/docs/matrix.rst:6
 msgid ""
 "``ti.Matrix`` is for small matrices (e.g. `3x3`) only. If you have "
 "`64x64` matrices, you should consider using a 2D tensor of scalars."
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:7
+#: ../../taichi/docs/matrix.rst:7
 msgid ""
 "``ti.Vector`` is the same as ``ti.Matrix``, except that it has only one "
 "column."
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:8
+#: ../../taichi/docs/matrix.rst:8
 msgid "Differentiate element-wise product ``*`` and matrix product ``@``."
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:9
+#: ../../taichi/docs/matrix.rst:9
 msgid ""
 "``ti.Vector(n, dt=ti.f32)`` or ``ti.Matrix(n, m, dt=ti.f32)`` to create "
 "tensors of vectors/matrices."
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:10
+#: ../../taichi/docs/matrix.rst:10
 msgid "``ti.transposed(A)`` or simply ``A.T()``"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:11
+#: ../../taichi/docs/matrix.rst:11
 msgid "``ti.inverse(A)``"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:12
+#: ../../taichi/docs/matrix.rst:12
 msgid "``ti.Matrix.abs(A)``"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:13
+#: ../../taichi/docs/matrix.rst:13
 msgid "``ti.tr(A)``"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:14
+#: ../../taichi/docs/matrix.rst:14
 msgid "``ti.determinant(A, type)``"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:15
+#: ../../taichi/docs/matrix.rst:15
 msgid ""
 "``ti.cross(a, b)``, where ``a`` and ``b`` are 3D vectors (i.e. ``3x1`` "
 "matrices)"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:16
+#: ../../taichi/docs/matrix.rst:16
 msgid "``A.cast(type)``"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:17
+#: ../../taichi/docs/matrix.rst:17
 msgid "``R, S = ti.polar_decompose(A, ti.f32)``"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:18
+#: ../../taichi/docs/matrix.rst:18
 msgid ""
 "``U, sigma, V = ti.svd(A, ti.f32)`` (Note that ``sigma`` is a ``3x3`` "
 "diagonal matrix)"
 msgstr ""
 
-#: ../../taichi/docs/linalg.rst:20
-msgid "TODO: doc here better like Vector."
+#: ../../taichi/docs/matrix.rst:20
+msgid "TODO: doc here better like Vector. WIP"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:22
+msgid "A matrix in Taichi can have two forms:"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:24
+msgid ""
+"as a temporary local variable. An ``n by m`` matrix consists of ``n * m``"
+" scalar values."
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:25
+msgid ""
+"as a an element of a global tensor. In this case, the tensor is an "
+"N-dimensional array of ``n by m`` matrices."
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:28 ../../taichi/docs/scalar_tensor.rst:8
+#: ../../taichi/docs/vector.rst:12
+msgid "Declaration"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:31
+msgid "As global tensors of matrices"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst ../../taichi/docs/scalar_tensor.rst
+#: ../../taichi/docs/vector.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:35
+msgid "(scalar) the number of rows in the matrix"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:36
+msgid "(scalar) the number of columns in the matrix"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:37 ../../taichi/docs/vector.rst:20
+msgid "(DataType) data type of the components"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:38 ../../taichi/docs/vector.rst:21
+msgid "(scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:40
+msgid "For example, this creates a 5x4 tensor of 3x3 matrices: ::"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:48
+msgid ""
+"In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while "
+"``ti.Matrix`` declares tensors of matrices."
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:52 ../../taichi/docs/matrix.rst:142
+#: ../../taichi/docs/vector.rst:35 ../../taichi/docs/vector.rst:82
+msgid "As a temporary local variable"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:56 ../../taichi/docs/vector.rst:39
+msgid "(scalar) the first component of the vector"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:57 ../../taichi/docs/vector.rst:40
+msgid "(scalar) the second component of the vector"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:59
+msgid "For example, this creates a 3x1 matrix with components (2, 3, 4): ::"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:67
+msgid "this is equivalent to ti.Vector([x, y, ...])"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:72
+msgid "(scalar) the first component of the first row"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:73
+msgid "(scalar) the second component of the first row"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:74
+msgid "(scalar) the first component of the second row"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:75
+msgid "(scalar) the second component of the second row"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:77
+msgid ""
+"For example, this creates a 2x2 matrix with components (2, 3) in the "
+"first row and (4, 5) in the second row: ::"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:86
+msgid "(vector) vector of elements forming first row (or column)"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:87
+msgid "(vector) vector of elements forming second row (or column)"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:88
+msgid "(vector) vector of elements forming third row (or column)"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:90
+msgid ""
+"For example, this creates a 3x3 matrix by concactinating vectors into "
+"rows (or columns): ::"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:109 ../../taichi/docs/vector.rst:50
+msgid "Accessing components"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:112 ../../taichi/docs/vector.rst:15
+#: ../../taichi/docs/vector.rst:53
+msgid "As global tensors of vectors"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:115
+msgid "(tensor of matrices) the tensor of matrices"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:116 ../../taichi/docs/vector.rst:57
+msgid "(scalar) index of the first tensor dimension"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:117 ../../taichi/docs/vector.rst:58
+msgid "(scalar) index of the second tensor dimension"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:118 ../../taichi/docs/matrix.rst:147
+msgid "(scalar) row index of the matrix"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:119 ../../taichi/docs/matrix.rst:148
+msgid "(scalar) column index of the matrix"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:121
+msgid "This extracts the first element in matrix ``a[6, 3]``: ::"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:132
+msgid ""
+"**Always** use two pair of square brackets to access scalar elements from"
+" tensors of matrices."
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:134
+msgid ""
+"The indices in the first pair of brackets locate the matrix inside the "
+"tensor of matrices;"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:135
+msgid ""
+"The indices in the second pair of brackets locate the scalar element "
+"inside the matrix."
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:137
+msgid ""
+"For 0-D tensors of matrices, indices in the first pair of brackets should"
+" be ``[None]``."
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:146
+msgid "(Matrix) the matrix"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:150
+msgid ""
+"For example, this extracts the element in row 0 column 1 of matrix ``a``:"
+" ::"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:155
+msgid "This sets the element in row 1 column 3 of ``a`` to 4: ::"
+msgstr ""
+
+#: ../../taichi/docs/matrix.rst:161 ../../taichi/docs/vector.rst:102
+msgid "Methods"
 msgstr ""
 
 #: ../../taichi/docs/meta.rst:4 ../../taichi/docs/overview.rst:11
@@ -2209,14 +2401,6 @@ msgstr ""
 
 #: ../../taichi/docs/scalar_tensor.rst:4 ../../taichi/docs/tensor_matrix.rst:12
 msgid "Tensors of scalars"
-msgstr ""
-
-#: ../../taichi/docs/scalar_tensor.rst:8 ../../taichi/docs/vector.rst:13
-msgid "Declaration"
-msgstr ""
-
-#: ../../taichi/docs/scalar_tensor.rst ../../taichi/docs/vector.rst
-msgid "Parameters"
 msgstr ""
 
 #: ../../taichi/docs/scalar_tensor.rst:12
@@ -2964,194 +3148,152 @@ msgstr ""
 
 #: ../../taichi/docs/vector.rst:8
 msgid ""
-"as a temporary local variable, an ``n``-D vector consists of ``n`` scalar"
-" values."
+"as a temporary local variable. An ``n`` component vector consists of "
+"``n`` scalar values."
 msgstr ""
 
 #: ../../taichi/docs/vector.rst:9
 msgid ""
-"as a global tensor, where each tensor element is a vector. In this case, "
-"an ``n``-D vector consists of ``n`` global tensors of scalars. The "
-"tensors of scalars, when treated together, can be considered to be **a "
-"global tensor of vectors**."
+"as an element of a global tensor. In this case, the tensor is an "
+"N-dimensional array of ``n`` component vectors"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:16 ../../taichi/docs/vector.rst:54
-msgid "As global tensors of vectors"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:20
+#: ../../taichi/docs/vector.rst:19
 msgid "(scalar) the number of components in the vector"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:21
-msgid "(DataType) data type of the components"
+#: ../../taichi/docs/vector.rst:23
+msgid "For example, this creates a 5x4 tensor of 3 component vectors: ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:22
-msgid "(scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:24
-msgid "For example, this creates a 5x4 tensor of 3D vectors: ::"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:32
+#: ../../taichi/docs/vector.rst:31
 msgid ""
 "In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while "
 "``ti.Vector`` declares tensors of vectors."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:36 ../../taichi/docs/vector.rst:83
-msgid "As a temporary local variable"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:40
-msgid "(scalar) the first component of the vector"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:41
-msgid "(scalar) the second component of the vector"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:43
+#: ../../taichi/docs/vector.rst:42
 msgid "For example, this creates a 3D vector with components (2, 3, 4): ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:51
-msgid "Accessing components"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:57 ../../taichi/docs/vector.rst:87
+#: ../../taichi/docs/vector.rst:56 ../../taichi/docs/vector.rst:86
 msgid "(Vector) the vector"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:58
-msgid "(scalar) index of the first tensor dimension"
-msgstr ""
-
 #: ../../taichi/docs/vector.rst:59
-msgid "(scalar) index of the second tensor dimension"
+msgid "(scalar) index of the vector component"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:60
-msgid "(scalar) index of the vector dimension"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:62
+#: ../../taichi/docs/vector.rst:61
 msgid "This extracts the first component of vector ``a[6, 3]``: ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:73
+#: ../../taichi/docs/vector.rst:72
 msgid ""
 "**Always** use two pair of square brackets to access scalar elements from"
 " tensors of vectors."
 msgstr ""
 
+#: ../../taichi/docs/vector.rst:74
+msgid ""
+"The indices in the first pair of brackets locate the vector inside the "
+"tensor of vectors;"
+msgstr ""
+
 #: ../../taichi/docs/vector.rst:75
 msgid ""
-"The indices in the first pair of brackets locate the vector index inside "
-"the tensor of vectors;"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:76
-msgid ""
 "The indices in the second pair of brackets locate the scalar element "
-"index inside the vector."
+"inside the vector."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:78
+#: ../../taichi/docs/vector.rst:77
 msgid ""
 "For 0-D tensors of vectors, indices in the first pair of brackets should "
 "be ``[None]``."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:88
+#: ../../taichi/docs/vector.rst:87
 msgid "(scalar) index of the component"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:90
+#: ../../taichi/docs/vector.rst:89
 msgid "For example, this extracts the first component of vector ``a``: ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:95
+#: ../../taichi/docs/vector.rst:94
 msgid "This sets the second component of ``a`` to 4: ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:100
+#: ../../taichi/docs/vector.rst:99
 msgid "TODO: add descriptions about ``a(i, j)``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:103
-msgid "Methods"
-msgstr ""
-
-#: ../../taichi/docs/vector.rst:107 ../../taichi/docs/vector.rst:125
-#: ../../taichi/docs/vector.rst:126 ../../taichi/docs/vector.rst:153
-#: ../../taichi/docs/vector.rst:154 ../../taichi/docs/vector.rst:171
+#: ../../taichi/docs/vector.rst:106 ../../taichi/docs/vector.rst:124
+#: ../../taichi/docs/vector.rst:125 ../../taichi/docs/vector.rst:152
+#: ../../taichi/docs/vector.rst:153 ../../taichi/docs/vector.rst:170
 msgid "(Vector)"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:108
+#: ../../taichi/docs/vector.rst:107
 msgid ""
 "(optional, scalar) a safe-guard value for ``sqrt``, usually 0. See the "
 "note below."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:109
+#: ../../taichi/docs/vector.rst:108
 msgid "(scalar) the magnitude / length / norm of vector"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:117
+#: ../../taichi/docs/vector.rst:116
 msgid "``a.norm(eps)`` is equivalent to ``ti.sqrt(a.dot(a) + eps)``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:120
+#: ../../taichi/docs/vector.rst:119
 msgid ""
 "Set ``eps = 1e-5`` for example, to safe guard the operator's gradient on "
 "zero vectors during differentiable programming."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:127
+#: ../../taichi/docs/vector.rst:126
 msgid "(scalar) the dot (inner) product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:129 ../../taichi/docs/vector.rst:157
-#: ../../taichi/docs/vector.rst:175
+#: ../../taichi/docs/vector.rst:128 ../../taichi/docs/vector.rst:156
+#: ../../taichi/docs/vector.rst:174
 msgid "E.g., ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:139 ../../taichi/docs/vector.rst:140
-msgid "(Vector, 3D)"
+#: ../../taichi/docs/vector.rst:138 ../../taichi/docs/vector.rst:139
+msgid "(Vector, 3 component)"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:141
+#: ../../taichi/docs/vector.rst:140
 msgid "(Vector, 3D) the cross product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:143
+#: ../../taichi/docs/vector.rst:142
 msgid "We use right-handed coordinate system, E.g., ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:155
+#: ../../taichi/docs/vector.rst:154
 msgid "(Matrix) the outer product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:166
+#: ../../taichi/docs/vector.rst:165
 msgid ""
-"This is not the same as `ti.cross`. ``a`` and ``b`` do not have to be 3D "
-"vectors."
+"This is not the same as `ti.cross`. ``a`` and ``b`` do not have to be 3 "
+"component vectors."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:172
+#: ../../taichi/docs/vector.rst:171
 msgid "(DataType)"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:173
+#: ../../taichi/docs/vector.rst:172
 msgid "(Vector) vector with all components of ``a`` casted into type ``dt``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:183
+#: ../../taichi/docs/vector.rst:182
 msgid ""
 "Vectors are special matrices with only 1 column. In fact, ``ti.Vector`` "
 "is just an alias of ``ti.Matrix``."
@@ -3201,4 +3343,50 @@ msgid ""
 "such object form without including the above copyright and permission "
 "notices."
 msgstr ""
+
+#~ msgid "TODO: doc here better like Vector."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "as a temporary local variable, an "
+#~ "``n``-D vector consists of ``n`` scalar"
+#~ " values."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "as a global tensor, where each "
+#~ "tensor element is a vector. In "
+#~ "this case, an ``n``-D vector consists"
+#~ " of ``n`` global tensors of scalars."
+#~ " The tensors of scalars, when treated"
+#~ " together, can be considered to be"
+#~ " **a global tensor of vectors**."
+#~ msgstr ""
+
+#~ msgid "For example, this creates a 5x4 tensor of 3D vectors: ::"
+#~ msgstr ""
+
+#~ msgid "(scalar) index of the vector dimension"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The indices in the first pair of"
+#~ " brackets locate the vector index "
+#~ "inside the tensor of vectors;"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The indices in the second pair of"
+#~ " brackets locate the scalar element "
+#~ "index inside the vector."
+#~ msgstr ""
+
+#~ msgid "(Vector, 3D)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This is not the same as "
+#~ "`ti.cross`. ``a`` and ``b`` do not "
+#~ "have to be 3D vectors."
+#~ msgstr ""
 
