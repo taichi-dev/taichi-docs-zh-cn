@@ -4,4 +4,3 @@
 .venvs.po
 build
 locales/zh_cn/LC_MESSAGES/*.mo
-taichi

@@ -7,6 +7,8 @@
 
 # Taichi中文文档
 
+preview: https://taichi-docs-zh-cn.readthedocs.io/zh_CN/latest/
+
 | Version | Document Status                                              |
 | ------- | ------------------------------------------------------------ |
 | latest  | [![Documentation Status](https://readthedocs.org/projects/taichi-docs-zh-cn/badge/?version=latest)](https://taichi-docs-zh-cn.readthedocs.io/zh_CN/latest/?badge=latest) |

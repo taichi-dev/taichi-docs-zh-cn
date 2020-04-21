@@ -12,15 +12,15 @@
 # Credits: Taichi Documentation Chinese Translation Team (https://github.com/stephenark30/taichi-docs-zh-cn)
 
 TAICHI_CLONE := ./taichi
-LANGUAGE := zh_cn
+LANGUAGE := zh_CN
 LC_MESSAGES := ./locales/$(LANGUAGE)/LC_MESSAGES
 VENV := ./.venvs/taichi-docs-zh-cn
 PYTHON := $(shell which python3)
-BRANCH = $(shell git branch)
+BRANCH = $(shell git symbolic-ref --short -q HEAD)
 
 
 .PHONY: all
-all: $(VENV)/bin/sphinx-build merge
+all: $(TAICHI_CLONE)/docs $(VENV)/bin/sphinx-build merge
 
 
 $(TAICHI_CLONE)/docs:
@@ -57,7 +57,7 @@ todo:
 
 .PHONY: merge
 merge: upgrade_venv
-ifneq "$(shell cd $(TAICHI_CLONE) 2>/dev/null && git branch)" "$(BRANCH)"
+ifneq "$(shell cd $(TAICHI_CLONE) 2>/dev/null && git symbolic-ref --short -q HEAD)" "$(BRANCH)"
 	$(error "You're merging from a different branch")
 endif
 	# files might be renamed in the origin doc, so we have to delete old files
@@ -70,7 +70,7 @@ endif
 	cp -r $(TAICHI_CLONE)/docs/_static ./
 	cp $(TAICHI_CLONE)/docs/version ./
 	cp $(TAICHI_CLONE)/docs/conf.py ./
-	. $(VENV)/bin/activate; $(VENV)/bin/sphinx-build -M gettext . build; $(VENV)/bin/sphinx-intl update -p build/gettext -l zh_cn
+	. $(VENV)/bin/activate; $(VENV)/bin/sphinx-build -M gettext . build; $(VENV)/bin/sphinx-intl update -p build/gettext -l $(LANGUAGE)
 
 
 .PHONY: html
