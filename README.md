@@ -67,7 +67,7 @@ Taichi是一门高效的、以python语法封装的计算机图形应用语言�
 7. 新建一个分支，分支名为你要翻译的文件，例如要翻译hello：
 
    ```bash
-   git git checkout -b hello upstream/master
+   git checkout -b hello upstream/master
    ```
 
 8. 在**第一次**clone仓库后，需要执行：
