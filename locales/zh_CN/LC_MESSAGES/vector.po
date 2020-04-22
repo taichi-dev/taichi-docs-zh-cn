@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../vector.rst:4
+msgid "Vectors"
+msgstr ""
+
+#: ../../vector.rst:6
+msgid "A vector in Taichi can have two forms:"
+msgstr ""
+
+#: ../../vector.rst:8
+msgid ""
+"as a temporary local variable. An ``n`` component vector consists of "
+"``n`` scalar values."
+msgstr ""
+
+#: ../../vector.rst:9
+msgid ""
+"as an element of a global tensor. In this case, the tensor is an "
+"N-dimensional array of ``n`` component vectors"
+msgstr ""
+
+#: ../../vector.rst:12
+msgid "Declaration"
+msgstr ""
+
+#: ../../vector.rst:15 ../../vector.rst:53
+msgid "As global tensors of vectors"
+msgstr ""
+
+#: ../../vector.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../vector.rst:19
+msgid "(scalar) the number of components in the vector"
+msgstr ""
+
+#: ../../vector.rst:20
+msgid "(DataType) data type of the components"
+msgstr ""
+
+#: ../../vector.rst:21
+msgid "(scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
+msgstr ""
+
+#: ../../vector.rst:23
+msgid "For example, this creates a 5x4 tensor of 3 component vectors: ::"
+msgstr ""
+
+#: ../../vector.rst:31
+msgid ""
+"In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while "
+"``ti.Vector`` declares tensors of vectors."
+msgstr ""
+
+#: ../../vector.rst:35 ../../vector.rst:82
+msgid "As a temporary local variable"
+msgstr ""
+
+#: ../../vector.rst:39
+msgid "(scalar) the first component of the vector"
+msgstr ""
+
+#: ../../vector.rst:40
+msgid "(scalar) the second component of the vector"
+msgstr ""
+
+#: ../../vector.rst:42
+msgid "For example, this creates a 3D vector with components (2, 3, 4): ::"
+msgstr ""
+
+#: ../../vector.rst:50
+msgid "Accessing components"
+msgstr ""
+
+#: ../../vector.rst:56 ../../vector.rst:86
+msgid "(Vector) the vector"
+msgstr ""
+
+#: ../../vector.rst:57
+msgid "(scalar) index of the first tensor dimension"
+msgstr ""
+
+#: ../../vector.rst:58
+msgid "(scalar) index of the second tensor dimension"
+msgstr ""
+
+#: ../../vector.rst:59
+msgid "(scalar) index of the vector component"
+msgstr ""
+
+#: ../../vector.rst:61
+msgid "This extracts the first component of vector ``a[6, 3]``: ::"
+msgstr ""
+
+#: ../../vector.rst:72
+msgid ""
+"**Always** use two pair of square brackets to access scalar elements from"
+" tensors of vectors."
+msgstr ""
+
+#: ../../vector.rst:74
+msgid ""
+"The indices in the first pair of brackets locate the vector inside the "
+"tensor of vectors;"
+msgstr ""
+
+#: ../../vector.rst:75
+msgid ""
+"The indices in the second pair of brackets locate the scalar element "
+"inside the vector."
+msgstr ""
+
+#: ../../vector.rst:77
+msgid ""
+"For 0-D tensors of vectors, indices in the first pair of brackets should "
+"be ``[None]``."
+msgstr ""
+
+#: ../../vector.rst:87
+msgid "(scalar) index of the component"
+msgstr ""
+
+#: ../../vector.rst:89
+msgid "For example, this extracts the first component of vector ``a``: ::"
+msgstr ""
+
+#: ../../vector.rst:94
+msgid "This sets the second component of ``a`` to 4: ::"
+msgstr ""
+
+#: ../../vector.rst:99
+msgid "TODO: add descriptions about ``a(i, j)``"
+msgstr ""
+
+#: ../../vector.rst:102
+msgid "Methods"
+msgstr ""
+
+#: ../../vector.rst:106 ../../vector.rst:124 ../../vector.rst:125
+#: ../../vector.rst:152 ../../vector.rst:153 ../../vector.rst:170
+msgid "(Vector)"
+msgstr ""
+
+#: ../../vector.rst:107
+msgid ""
+"(optional, scalar) a safe-guard value for ``sqrt``, usually 0. See the "
+"note below."
+msgstr ""
+
+#: ../../vector.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../vector.rst:108
+msgid "(scalar) the magnitude / length / norm of vector"
+msgstr ""
+
+#: ../../vector.rst:110
+msgid "For example, ::"
+msgstr ""
+
+#: ../../vector.rst:116
+msgid "``a.norm(eps)`` is equivalent to ``ti.sqrt(a.dot(a) + eps)``"
+msgstr ""
+
+#: ../../vector.rst:119
+msgid ""
+"Set ``eps = 1e-5`` for example, to safe guard the operator's gradient on "
+"zero vectors during differentiable programming."
+msgstr ""
+
+#: ../../vector.rst:126
+msgid "(scalar) the dot (inner) product of ``a`` and ``b``"
+msgstr ""
+
+#: ../../vector.rst:128 ../../vector.rst:156 ../../vector.rst:174
+msgid "E.g., ::"
+msgstr ""
+
+#: ../../vector.rst:138 ../../vector.rst:139
+msgid "(Vector, 3 component)"
+msgstr ""
+
+#: ../../vector.rst:140
+msgid "(Vector, 3D) the cross product of ``a`` and ``b``"
+msgstr ""
+
+#: ../../vector.rst:142
+msgid "We use right-handed coordinate system, E.g., ::"
+msgstr ""
+
+#: ../../vector.rst:154
+msgid "(Matrix) the outer product of ``a`` and ``b``"
+msgstr ""
+
+#: ../../vector.rst:165
+msgid ""
+"This is not the same as `ti.cross`. ``a`` and ``b`` do not have to be 3 "
+"component vectors."
+msgstr ""
+
+#: ../../vector.rst:171
+msgid "(DataType)"
+msgstr ""
+
+#: ../../vector.rst:172
+msgid "(Vector) vector with all components of ``a`` casted into type ``dt``"
+msgstr ""
+
+#: ../../vector.rst:182
+msgid ""
+"Vectors are special matrices with only 1 column. In fact, ``ti.Vector`` "
+"is just an alias of ``ti.Matrix``."
+msgstr ""
+

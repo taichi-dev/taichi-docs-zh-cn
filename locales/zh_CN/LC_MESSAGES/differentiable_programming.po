@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../differentiable_programming.rst:2
+msgid "Differentiable programming"
+msgstr ""
+
+#: ../../differentiable_programming.rst:4
+msgid ""
+"Please check out `the DiffTaichi paper "
+"<https://arxiv.org/pdf/1910.00935.pdf>`_ and `video "
+"<https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ to learn more about "
+"Taichi differentiable programming."
+msgstr ""
+
+#: ../../differentiable_programming.rst:6
+msgid ""
+"The `DiffTaichi repo <https://github.com/yuanming-hu/difftaichi>`_ "
+"contains 10 differentiable physical simulators built with Taichi "
+"differentiable programming."
+msgstr ""
+
+#: ../../differentiable_programming.rst:9
+msgid ""
+"Unlike tools such as TensorFlow where **immutable** output buffers are "
+"generated, the **imperative** programming paradigm adopted in Taichi "
+"allows programmers to freely modify global tensors. To make automatic "
+"differentiation well-defined under this setting, we make the following "
+"assumption on Taichi programs for differentiable programming:"
+msgstr ""
+
+#: ../../differentiable_programming.rst:14
+msgid "**Global Data Access Rules:**"
+msgstr ""
+
+#: ../../differentiable_programming.rst:16
+msgid ""
+"If a global tensor element is written more than once, then starting from "
+"the second write, the write **must** come in the form of an atomic add "
+"(“accumulation\", using ``ti.atomic_add`` or simply ``+=``)."
+msgstr ""
+
+#: ../../differentiable_programming.rst:18
+msgid ""
+"No read accesses happen to a global tensor element, until its "
+"accumulation is done."
+msgstr ""
+
+#: ../../differentiable_programming.rst:20
+msgid ""
+"**Kernel Simplicity Rule:** Kernel body consists of multiple `simply "
+"nested` for-loops. I.e., each for-loop can either contain exactly one "
+"(nested) for-loop (and no other statements), or a group of statements "
+"without loops."
+msgstr ""
+
+#: ../../differentiable_programming.rst:23
+msgid "Example:"
+msgstr ""
+
+#: ../../differentiable_programming.rst:44
+msgid "Taichi programs that violate this rule has an undefined gradient behavior."
+msgstr ""
+
+#: ../../differentiable_programming.rst:48
+msgid ""
+"**static for-loops** (e.g. ``for i in ti.static(range(4))``) will get "
+"unrolled by the Python frontend preprocessor and does not count as a "
+"level of loop."
+msgstr ""
+
+#: ../../differentiable_programming.rst:51
+msgid ""
+"A few examples with neural network controllers optimized using "
+"differentiable simulators and brute-force gradient descent:"
+msgstr ""
+
+#: ../../differentiable_programming.rst:59
+msgid "Documentation WIP."
+msgstr ""
+

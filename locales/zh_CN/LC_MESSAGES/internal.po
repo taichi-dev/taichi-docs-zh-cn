@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../internal.rst:2
+msgid "Internal designs (WIP)"
+msgstr ""
+
+#: ../../internal.rst:5
+msgid "Vector type system"
+msgstr ""
+
+#: ../../internal.rst:9
+msgid "Intermediate representation"
+msgstr ""
+
+#: ../../internal.rst:10
+msgid "Use ``ti.init(print_ir=True)`` to print IR on the console."
+msgstr ""
+
+#: ../../internal.rst:14
+msgid "Code generation"
+msgstr ""
+
+#: ../../internal.rst:18
+msgid "Statistics"
+msgstr ""
+
+#: ../../internal.rst:20
+msgid ""
+"In some cases, it is helpful to gather certain quantitative information "
+"about internal events during Taichi program execution. The ``Statistics``"
+" class is designed for this purpose."
+msgstr ""
+
+#: ../../internal.rst:23
+msgid "Usage:"
+msgstr ""
+
+#: ../../internal.rst:36
+msgid "Note the keys are ``std::string`` and values are ``double``."
+msgstr ""
+
+#: ../../internal.rst:38
+msgid "To print out all statistics in Python:"
+msgstr ""
+
