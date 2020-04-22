@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-21 16:57+0800\n"
-"PO-Revision-Date: 2020-04-22 17:18+0800\n"
+"PO-Revision-Date: 2020-04-22 17:26+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,11 +26,11 @@ msgstr "你好，世界！"
 msgid ""
 "We introduce the Taichi programming language through a very basic "
 "`fractal` example."
-msgstr "我们将通过一个分形的例子来介绍Taichi。"
+msgstr "我们将通过分形的例子来介绍Taichi。"
 
 #: ../../hello.rst:6
 msgid "If you haven't done so, please install Taichi via ``pip``:"
-msgstr "如果你还没有安装，请先通过``pip``安装Taichi："
+msgstr "如果你还没有安装，请先通过 ``pip`` 安装Taichi："
 
 #: ../../hello.rst:13
 msgid ""
@@ -38,8 +38,8 @@ msgid ""
 "to compute a `Julia set <https://en.wikipedia.org/wiki/Julia_set>`_:"
 msgstr ""
 "现在你可以通过 ``python3 fractal.py`` 运行下面这段Taichi代码了，我们将得"
-"到一个 `Julia 集 <https://baike.baidu.com/item/%E6%9C%B1%E5%88%A9%E4%BA"
-"%9A%E9%9B%86%E5%90%88/4140547>`_ 的图像："
+"到 `Julia 集 <https://baike.baidu.com/item/%E6%9C%B1%E5%88%A9%E4%BA%9A"
+"%E9%9B%86%E5%90%88/4140547>`_ 的图像："
 
 #: ../../hello.rst:53
 msgid "Let's dive into components of this simple Taichi program."
@@ -137,7 +137,7 @@ msgstr ""
 msgid ""
 "If the machine does not have CUDA support, Taichi will fall back to CPUs "
 "instead."
-msgstr "如果你的机器或操作系统不支持CUDA，Taichi会自动切换回CPU后台。"
+msgstr "如果你的机器硬件或操作系统不支持CUDA，Taichi会自动切换回CPU后台。"
 
 #: ../../hello.rst:98
 msgid ""
@@ -157,7 +157,7 @@ msgstr ""
 
 #: ../../hello.rst:106
 msgid "(Sparse) Tensors"
-msgstr "(稀疏) 张量"
+msgstr "张量"
 
 #: ../../hello.rst:108
 msgid ""
@@ -175,7 +175,7 @@ msgid ""
 "``float`` in C)."
 msgstr ""
 "``pixels = ti.var(dt=ti.f32, shape=(n * 2, n))`` 分配一个叫做 ``pixel`` "
-"的二维张量，大小是``(640, 320)``，数据类型是``ti.f32`` (也即C语言的 "
+"的二维张量，大小是 ``(640, 320)`` ，数据类型是 ``ti.f32`` (也即C语言的 "
 "``float``)."
 
 #: ../../hello.rst:115
@@ -190,17 +190,17 @@ msgid ""
 "language that is **compiled, statically-typed, lexically-scoped, "
 "parallel, and differentiable**."
 msgstr ""
-"Taichi的计算是在**内核**中进行的。内核的参数必须显式指定类型。Taichi内核"
-"与函数中所用的语法，看起来和Python的很像，Taichi的前端编译器会将其转换为"
-"**编译型，静态类型，有词法作用域，并行执行，可微分**的语言。"
+"Taichi的计算是在 **内核** 中进行的。内核的参数必须显式指定类型。Taichi内"
+"核与函数中所用的语法，看起来和Python的很像，Taichi的前端编译器会将其转换"
+"为 **编译型，静态类型，有词法作用域，并行执行，可微分** 的语言。"
 
 #: ../../hello.rst:121
 msgid ""
 "You can also define Taichi **functions** with ``ti.func``, which can be "
 "called and reused by kernels and other functions."
 msgstr ""
-"除了内核，还可以通过``ti.func``来定义**函数**，函数可以被内核或函数调用，"
-"重用。"
+"除了内核，还可以通过 ``@ti.func`` 来定义 **函数** ，函数可以被内核或函数"
+"调用，重用。"
 
 #: ../../hello.rst:125
 msgid ""
@@ -209,9 +209,9 @@ msgid ""
 "the Taichi compiler. Code outside the Taichi-scopes is simply native "
 "Python code."
 msgstr ""
-"**Taichi作用域，Python作用域**：任何带有``@ti.kernel``和``@ti.func``装饰"
-"器的都是Taichi作用域，这些代码会被Taichi编译。而在Taichi作用域之外的就是"
-"Python作用域了。"
+"**Taichi作用域，Python作用域**：任何带有 ``@ti.kernel`` 和 ``@ti.func`` "
+"装饰器的都是Taichi作用域，这些代码会被Taichi编译。而在Taichi作用域之外的"
+"就是Python作用域了。"
 
 #: ../../hello.rst:130
 msgid ""
@@ -220,7 +220,7 @@ msgid ""
 "functions are not supported for now**."
 msgstr ""
 "Taichi内核只有在Python作用域中才能调用，也就是说，**我们不支持嵌套内核"
-"**。嵌套函数是支持的，但**递归函数不支持**。"
+"**。嵌套函数支持，但 **递归函数不支持** 。"
 
 #: ../../hello.rst:133
 msgid "Taichi functions can only be called in Taichi-scope."
@@ -231,8 +231,8 @@ msgid ""
 "For those who came from the world of CUDA, ``ti.func`` corresponds to "
 "``__device__``, and ``ti.kernel`` corresponds to ``__global__``."
 msgstr ""
-"用CUDA世界的话说，就是``ti.func``对应于``__device__``，``ti.kernel`` 对应"
-"于 ``__global__``。"
+"用CUDA世界的话说，就是 ``ti.func`` 对应于 ``__device__``，``ti.kernel`` "
+"对应于 ``__global__``。"
 
 #: ../../hello.rst:139
 msgid "Parallel for-loops"
@@ -288,7 +288,7 @@ msgstr "是最外层 **作用域** 的循环并行执行，而不是最外层的
 
 #: ../../hello.rst:195
 msgid "``break`` is not supported in **outermost (parallelized)** loops:"
-msgstr "**最外层 (并行的)** 循环不支持 ``break``语句："
+msgstr "**最外层 (并行的)** 循环不支持  ``break`` 语句："
 
 #: ../../hello.rst:214
 msgid "Interacting with Python"
