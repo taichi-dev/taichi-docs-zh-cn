@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../data_layout.rst:2
+msgid "Advanced data layouts"
+msgstr ""
+
+#: ../../data_layout.rst:4
+msgid ""
+"Memory layout is key to performance, especially for memory-bound "
+"applications. A carefully designed data layout can significantly improve "
+"cache/TLB-hit rates and cacheline utilization."
+msgstr ""
+
+#: ../../data_layout.rst:7
+msgid ""
+"We suggested starting with the default layout specification (simply by "
+"specifying ``shape`` when creating tensors using "
+"``ti.var/Vector/Matrix``), and then migrate to more advanced layouts "
+"using the ``ti.root.X`` syntax."
+msgstr ""
+
+#: ../../data_layout.rst:10
+msgid ""
+"Taichi decouples algorithms from data layouts, and the Taichi compiler "
+"automatically optimizes data accesses on a specific data layout. These "
+"Taichi features allow programmers to quickly experiment with different "
+"data layouts and figure out the most efficient one on a specific task and"
+" computer architecture."
+msgstr ""
+
+#: ../../data_layout.rst:16
+msgid "The default data layout using ``shape``"
+msgstr ""
+
+#: ../../data_layout.rst:18
+msgid ""
+"By default, when allocating a ``ti.var`` , it follows the most naive data"
+" layout"
+msgstr ""
+
+#: ../../data_layout.rst:25
+msgid ""
+"Or equivalently, the same data layout can be specified using advanced "
+"`data layout description`:"
+msgstr ""
+
+#: ../../data_layout.rst:34
+msgid ""
+"However, oftentimes this data layout is suboptimal for computer graphics "
+"tasks. For example, ``val[i, j, k]`` and ``val[i + 1, j, k]`` are very "
+"far away (``32 KB``) from each other, and leads to poor access locality "
+"under certain computation tasks. Specifically, in tasks such as texture "
+"trilinear interpolation, the two elements are not even within the same "
+"``4KB`` pages, creating a huge cache/TLB pressure."
+msgstr ""
+
+#: ../../data_layout.rst:41
+msgid "Advanced data layout specification"
+msgstr ""
+
+#: ../../data_layout.rst:43
+msgid "A better layout might be"
+msgstr ""
+
+#: ../../data_layout.rst:50
+msgid ""
+"This organizes ``val`` in ``4x4x4`` blocks, so that with high probability"
+" ``val[i, j, k]`` and its neighbours are close to each other (i.e., in "
+"the same cacheline or memory page)."
+msgstr ""
+
+#: ../../data_layout.rst:53
+msgid "Examples"
+msgstr ""
+
+#: ../../data_layout.rst:55
+msgid "2D matrix, row-major"
+msgstr ""
+
+#: ../../data_layout.rst:62
+msgid "2D matrix, column-major"
+msgstr ""
+
+#: ../../data_layout.rst:69
+msgid "`8x8` blocked 2D array of size `1024x1024`"
+msgstr ""
+
+#: ../../data_layout.rst:77
+msgid "3D Particle positions and velocities, arrays-of-structures"
+msgstr ""
+
+#: ../../data_layout.rst:87
+msgid "3D Particle positions and velocities, structures-of-arrays"
+msgstr ""
+
+#: ../../data_layout.rst:100
+msgid "Struct-fors on advanced (dense) data layouts"
+msgstr ""
+
+#: ../../data_layout.rst:102
+msgid ""
+"Struct-fors on nested dense data structures will automatically follow "
+"their data order in memory. For example, if 2D scalar tensor ``A`` is "
+"stored in row-major order,"
+msgstr ""
+
+#: ../../data_layout.rst:109
+msgid ""
+"will iterate over elements of ``A`` following row-major order. If ``A`` "
+"is column-major, then the iteration follows the column-major order."
+msgstr ""
+
+#: ../../data_layout.rst:111
+msgid ""
+"If ``A`` is blocked, the iteration will happen within each block first. "
+"This maximizes memory bandwidth utilization in most cases."
+msgstr ""
+
+#: ../../data_layout.rst:113
+msgid ""
+"Struct-fors on sparse tensors follows the same philosophy, and will be "
+"discussed further in :ref:`sparse`."
+msgstr ""
+
