@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, Yuanming Hu
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.5.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-19 00:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../linalg.rst:4
+msgid "Matrices"
+msgstr ""
+
+#: ../../linalg.rst:6
+msgid ""
+"``ti.Matrix`` is for small matrices (e.g. `3x3`) only. If you have "
+"`64x64` matrices, you should consider using a 2D tensor of scalars."
+msgstr ""
+
+#: ../../linalg.rst:7
+msgid ""
+"``ti.Vector`` is the same as ``ti.Matrix``, except that it has only one "
+"column."
+msgstr ""
+
+#: ../../linalg.rst:8
+msgid "Differentiate element-wise product ``*`` and matrix product ``@``."
+msgstr ""
+
+#: ../../linalg.rst:9
+msgid ""
+"``ti.Vector(n, dt=ti.f32)`` or ``ti.Matrix(n, m, dt=ti.f32)`` to create "
+"tensors of vectors/matrices."
+msgstr ""
+
+#: ../../linalg.rst:10
+msgid "``ti.transposed(A)`` or simply ``A.T()``"
+msgstr ""
+
+#: ../../linalg.rst:11
+msgid "``ti.inverse(A)``"
+msgstr ""
+
+#: ../../linalg.rst:12
+msgid "``ti.Matrix.abs(A)``"
+msgstr ""
+
+#: ../../linalg.rst:13
+msgid "``ti.tr(A)``"
+msgstr ""
+
+#: ../../linalg.rst:14
+msgid "``ti.determinant(A, type)``"
+msgstr ""
+
+#: ../../linalg.rst:15
+msgid ""
+"``ti.cross(a, b)``, where ``a`` and ``b`` are 3D vectors (i.e. ``3x1`` "
+"matrices)"
+msgstr ""
+
+#: ../../linalg.rst:16
+msgid "``A.cast(type)``"
+msgstr ""
+
+#: ../../linalg.rst:17
+msgid "``R, S = ti.polar_decompose(A, ti.f32)``"
+msgstr ""
+
+#: ../../linalg.rst:18
+msgid ""
+"``U, sigma, V = ti.svd(A, ti.f32)`` (Note that ``sigma`` is a ``3x3`` "
+"diagonal matrix)"
+msgstr ""
+
+#: ../../linalg.rst:20
+msgid "TODO: doc here better like Vector."
+msgstr ""
+

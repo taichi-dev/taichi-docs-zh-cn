@@ -2,4 +2,4 @@
 .vscode
 .venvs
 build
-locales/zh_cn/LC_MESSAGES/*.mo
+locales/zh_CN/LC_MESSAGES/*.mo
