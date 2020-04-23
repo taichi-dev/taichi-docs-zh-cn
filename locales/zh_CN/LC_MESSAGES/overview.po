@@ -29,42 +29,34 @@ msgstr "为什么选择一门新的编程语言"
 msgid ""
 "Taichi is a high-performance programming language for computer graphics "
 "applications. The design goals are"
-msgstr ""
 msgstr "太极是一种用于计算机图形应用的高性能编程语言。其设计目标有："
 
 #: ../../overview.rst:6
 msgid "Productivity"
-msgstr ""
 msgstr "生产力"
 
 #: ../../overview.rst:7
 msgid "Performance"
-msgstr ""
 msgstr "性能"
 
 #: ../../overview.rst:8
 msgid "Portability"
-msgstr ""
 msgstr "可移植性"
 
 #: ../../overview.rst:9
 msgid "Spatially sparse computation"
-msgstr ""
 msgstr "空间稀疏计算"
 
 #: ../../overview.rst:10
 msgid "Differentiable programming"
-msgstr ""
 msgstr "可微编程"
 
 #: ../../overview.rst:11
 msgid "Metaprogramming"
-msgstr ""
 msgstr "元编程"
 
 #: ../../overview.rst:14
 msgid "Design decisions"
-msgstr ""
 msgstr "设计决策"
 
 #: ../../overview.rst:16
@@ -74,21 +66,16 @@ msgstr "解耦计算与数据结构"
 
 #: ../../overview.rst:17
 msgid "Domain-specific compiler optimizations"
-msgstr ""
 msgstr "领域特定编译器优化"
 
 #: ../../overview.rst:18
 msgid "Megakernels"
-msgstr ""
 msgstr "大核心"
 
 #: ../../overview.rst:19
 msgid "Two-scale automatic differentiation"
-msgstr ""
 msgstr "双尺度自动微分"
 
 #: ../../overview.rst:20
 msgid "Embedding in Python"
-msgstr ""
-
 msgstr "嵌入Python"
