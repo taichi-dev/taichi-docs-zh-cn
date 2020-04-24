@@ -58,7 +58,7 @@ todo:
 .PHONY: merge
 merge: upgrade_venv
 ifneq "$(shell cd $(TAICHI_CLONE) 2>/dev/null && git symbolic-ref --short -q HEAD)" "$(BRANCH)"
-	$(error "You're merging from a different branch")
+	$(error "You're merging from a different branch, please cd $(TAICHI_CLONE) && git checkout $(BRANCH)")
 endif
 	# files might be renamed in the origin doc, so we have to delete old files
 	rm -rf ./*.rst ./*.jpg ./*.png ./_static ./version ./conf.py
@@ -70,6 +70,7 @@ endif
 	cp -r $(TAICHI_CLONE)/docs/_static ./
 	cp $(TAICHI_CLONE)/docs/version ./
 	cp $(TAICHI_CLONE)/docs/conf.py ./
+	echo "gettext_additional_targets = ['literal-block']" >> conf.py
 	. $(VENV)/bin/activate; $(VENV)/bin/sphinx-build -M gettext . build; $(VENV)/bin/sphinx-intl update -p build/gettext -l $(LANGUAGE)
 
 

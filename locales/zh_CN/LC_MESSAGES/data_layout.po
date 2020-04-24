@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,10 +55,24 @@ msgid ""
 " layout"
 msgstr ""
 
+#: ../../data_layout.rst:20
+msgid ""
+"val = ti.var(ti.f32, shape=(32, 64, 128))\n"
+"# C++ equivalent: float val[32][64][128]"
+msgstr ""
+
 #: ../../data_layout.rst:25
 msgid ""
 "Or equivalently, the same data layout can be specified using advanced "
 "`data layout description`:"
+msgstr ""
+
+#: ../../data_layout.rst:27
+msgid ""
+"# Create the global tensor\n"
+"val = ti.var(ti.f32)\n"
+"# Specify the shape and layout\n"
+"ti.root.dense(ti.ijk, (32, 64, 128)).place(val)"
 msgstr ""
 
 #: ../../data_layout.rst:34
@@ -79,6 +93,12 @@ msgstr ""
 msgid "A better layout might be"
 msgstr ""
 
+#: ../../data_layout.rst:45
+msgid ""
+"val = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ijk, (8, 16, 32)).dense(ti.ijk, (4, 4, 4)).place(val)"
+msgstr ""
+
 #: ../../data_layout.rst:50
 msgid ""
 "This organizes ``val`` in ``4x4x4`` blocks, so that with high probability"
@@ -94,20 +114,58 @@ msgstr ""
 msgid "2D matrix, row-major"
 msgstr ""
 
+#: ../../data_layout.rst:57
+msgid ""
+"A = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (256, 256)).place(A)"
+msgstr ""
+
 #: ../../data_layout.rst:62
 msgid "2D matrix, column-major"
+msgstr ""
+
+#: ../../data_layout.rst:64
+msgid ""
+"A = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ji, (256, 256)).place(A) # Note ti.ji instead of ti.ij"
 msgstr ""
 
 #: ../../data_layout.rst:69
 msgid "`8x8` blocked 2D array of size `1024x1024`"
 msgstr ""
 
+#: ../../data_layout.rst:71
+msgid ""
+"density = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (128, 128)).dense(ti.ij, (8, 8)).place(density)"
+msgstr ""
+
 #: ../../data_layout.rst:77
 msgid "3D Particle positions and velocities, arrays-of-structures"
 msgstr ""
 
+#: ../../data_layout.rst:79
+msgid ""
+"pos = ti.Vector(3, dt=ti.f32)\n"
+"vel = ti.Vector(3, dt=ti.f32)\n"
+"ti.root.dense(ti.i, 1024).place(pos, vel)\n"
+"# equivalent to\n"
+"ti.root.dense(ti.i, 1024).place(pos(0), pos(1), pos(2), vel(0), vel(1), "
+"vel(2))"
+msgstr ""
+
 #: ../../data_layout.rst:87
 msgid "3D Particle positions and velocities, structures-of-arrays"
+msgstr ""
+
+#: ../../data_layout.rst:89
+msgid ""
+"pos = ti.Vector(3, dt=ti.f32)\n"
+"vel = ti.Vector(3, dt=ti.f32)\n"
+"for i in range(3):\n"
+"  ti.root.dense(ti.i, 1024).place(pos(i))\n"
+"for i in range(3):\n"
+"  ti.root.dense(ti.i, 1024).place(vel(i))"
 msgstr ""
 
 #: ../../data_layout.rst:100
@@ -119,6 +177,12 @@ msgid ""
 "Struct-fors on nested dense data structures will automatically follow "
 "their data order in memory. For example, if 2D scalar tensor ``A`` is "
 "stored in row-major order,"
+msgstr ""
+
+#: ../../data_layout.rst:104
+msgid ""
+"for i, j in A:\n"
+"  A[i, j] += 1"
 msgstr ""
 
 #: ../../data_layout.rst:109

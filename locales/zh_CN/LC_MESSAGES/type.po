@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,11 +181,37 @@ msgid ""
 "precisions can be specified when initializing Taichi:"
 msgstr ""
 
+#: ../../type.rst:67
+msgid ""
+"ti.init(..., default_fp=ti.f32)\n"
+"ti.init(..., default_fp=ti.f64)\n"
+"\n"
+"ti.init(..., default_ip=ti.i32)\n"
+"ti.init(..., default_ip=ti.i64)"
+msgstr ""
+
 #: ../../type.rst:77
 msgid "Type casts"
 msgstr ""
 
 #: ../../type.rst:79
 msgid "Use ``ti.cast`` to type-cast scalar values."
+msgstr ""
+
+#: ../../type.rst:81
+msgid ""
+"a = 1.4\n"
+"b = ti.cast(a, ti.i32)\n"
+"c = ti.cast(b, ti.f32)\n"
+"\n"
+"# Equivalently, use ``int()`` and ``float()``\n"
+"#   to converting to default float-point/integer types\n"
+"b = int(a)\n"
+"c = float(b)\n"
+"\n"
+"# Element-wise casts in matrices\n"
+"mat = ti.Matrix([[3.0, 0.0], [0.3, 0.1]])\n"
+"mat_int = mat.cast(int)\n"
+"mat_int2 = mat.cast(ti.i32)"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,14 @@ msgstr ""
 msgid "GUI system"
 msgstr ""
 
+#: ../../utilities.rst:9
+msgid ""
+"gui = ti.GUI('Title', (640, 480))\n"
+"while not gui.is_pressed(ti.GUI.ESCAPE):\n"
+"    gui.set_image(img)\n"
+"    gui.show()"
+msgstr ""
+
 #: ../../utilities.rst:17
 msgid "Also checkout ``examples/keyboard.py`` for more advanced event processing."
 msgstr ""
@@ -37,8 +45,29 @@ msgstr ""
 msgid "Image I/O"
 msgstr ""
 
+#: ../../utilities.rst:23
+msgid ""
+"img = ti.imread('hello.png')\n"
+"ti.imshow(img, 'Window Title')\n"
+"ti.imwrite(img, 'hello2.png')"
+msgstr ""
+
 #: ../../utilities.rst:31
 msgid "Logging"
+msgstr ""
+
+#: ../../utilities.rst:33
+msgid ""
+"'''\n"
+"level can be {}\n"
+"    ti.TRACE\n"
+"    ti.DEBUG\n"
+"    ti.INFO\n"
+"    ti.WARN\n"
+"    ti.ERR\n"
+"    ti.CRITICAL\n"
+"'''\n"
+"ti.set_logging_level(level)"
 msgstr ""
 
 #: ../../utilities.rst:46
@@ -52,12 +81,25 @@ msgstr ""
 msgid "Trigger GDB when the program crashes"
 msgstr ""
 
+#: ../../utilities.rst:53
+msgid ""
+"# Python\n"
+"ti.set_gdb_trigger(True)\n"
+"\n"
+"// C++\n"
+"CoreState::set_trigger_gdb_when_crash(true);"
+msgstr ""
+
 #: ../../utilities.rst:62
 msgid "Interface System"
 msgstr ""
 
 #: ../../utilities.rst:63
 msgid "Print all interfaces and units"
+msgstr ""
+
+#: ../../utilities.rst:65
+msgid "ti.core.print_all_units()"
 msgstr ""
 
 #: ../../utilities.rst:70
@@ -76,6 +118,39 @@ msgid ""
 "Taichi."
 msgstr ""
 
+#: ../../utilities.rst:76
+msgid ""
+"// TI_IO_DEF\n"
+"struct Particle {\n"
+"    Vector3f position, velocity;\n"
+"    real mass;\n"
+"    string name;\n"
+"\n"
+"    TI_IO_DEF(position, velocity, mass, name);\n"
+"}\n"
+"\n"
+"// TI_IO_DECL\n"
+"struct Particle {\n"
+"    Vector3f position, velocity;\n"
+"    real mass;\n"
+"    bool has_name\n"
+"    string name;\n"
+"\n"
+"    TI_IO_DECL() {\n"
+"        TI_IO(position);\n"
+"        TI_IO(velocity);\n"
+"        TI_IO(mass);\n"
+"        TI_IO(has_name);\n"
+"        // More flexibility:\n"
+"        if (has_name) {\n"
+"            TI_IO(name);\n"
+"        }\n"
+"    }\n"
+"}\n"
+"\n"
+"// TI_IO_DEF_VIRT();"
+msgstr ""
+
 #: ../../utilities.rst:110
 msgid "Progress Notification"
 msgstr ""
@@ -84,5 +159,11 @@ msgstr ""
 msgid ""
 "The taichi messager can send an email to ``$TI_MONITOR_EMAIL`` when the "
 "task finished or crashed. To enable:"
+msgstr ""
+
+#: ../../utilities.rst:115
+msgid ""
+"from taichi.tools import messager\n"
+"messager.enable(task_id='test')"
 msgstr ""
 

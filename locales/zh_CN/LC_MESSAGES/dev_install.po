@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,6 +50,14 @@ msgstr ""
 msgid "Execute"
 msgstr ""
 
+#: ../../dev_install.rst:20
+msgid ""
+"python3 -m pip install --user setuptools astpretty astor pytest opencv-"
+"python pybind11\n"
+"python3 -m pip install --user Pillow numpy scipy GitPython yapf colorama "
+"psutil autograd"
+msgstr ""
+
 #: ../../dev_install.rst:25
 msgid ""
 "(If on Ubuntu) Execute ``sudo apt install libtinfo-dev clang-8`` (or "
@@ -58,6 +66,14 @@ msgstr ""
 
 #: ../../dev_install.rst:27
 msgid "(If on Arch Linux) Execute"
+msgstr ""
+
+#: ../../dev_install.rst:29
+msgid ""
+"wget "
+"https://archive.archlinux.org/packages/c/clang/clang-8.0.1-1-x86_64.pkg.tar.xz"
+"\n"
+"sudo pacman -Qp clang-8.0.1-1-x86_64.pkg.tar.xz"
 msgstr ""
 
 #: ../../dev_install.rst:35
@@ -72,6 +88,23 @@ msgstr ""
 msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
 msgstr ""
 
+#: ../../dev_install.rst:41
+msgid ""
+"wget https://github.com/llvm/llvm-"
+"project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz\n"
+"tar xvJf llvm-8.0.1.src.tar.xz\n"
+"cd llvm-8.0.1.src\n"
+"mkdir build\n"
+"cd build\n"
+"cmake .. -DLLVM_ENABLE_RTTI:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=OFF "
+"-DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" "
+"-DLLVM_ENABLE_ASSERTIONS=ON\n"
+"# If you are building on NVIDIA Jetson TX2, use "
+"-DLLVM_TARGETS_TO_BUILD=\"ARM;NVPTX\"\n"
+"make -j 8\n"
+"sudo make install"
+msgstr ""
+
 #: ../../dev_install.rst:54
 msgid "Setting up Taichi for development"
 msgstr ""
@@ -80,8 +113,31 @@ msgstr ""
 msgid "Clone the taichi repo, and build:"
 msgstr ""
 
+#: ../../dev_install.rst:58
+msgid ""
+"git clone https://github.com/taichi-dev/taichi --depth=1 --branch=master\n"
+"git submodule update --init --recursive --depth=1\n"
+"cd taichi\n"
+"mkdir build\n"
+"cd build\n"
+"cmake ..\n"
+"# if you are building with CUDA 10.0, use the line below:\n"
+"# cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
+"make -j 8"
+msgstr ""
+
 #: ../../dev_install.rst:70
 msgid "Add the following script to your ``~/.bashrc``:"
+msgstr ""
+
+#: ../../dev_install.rst:72
+msgid ""
+"export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository"
+"\n"
+"export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH\n"
+"export PATH=$TAICHI_REPO_DIR/bin/:$PATH\n"
+"# export PATH=/opt/llvm/bin:$PATH # Uncomment if your llvm-8 or clang-8 "
+"is in /opt"
 msgstr ""
 
 #: ../../dev_install.rst:79
@@ -120,8 +176,34 @@ msgid ""
 "architecture"
 msgstr ""
 
+#: ../../dev_install.rst:95
+msgid ""
+"wget "
+"https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64"
+"/cuda-ubuntu1804.pin\n"
+"sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-"
+"pin-600\n"
+"wget "
+"http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers"
+"/cuda-repo-ubuntu1804-10-1-local-10.1.243-418.87.00_1.0-1_amd64.deb\n"
+"sudo dpkg -i cuda-repo-"
+"ubuntu1804-10-1-local-10.1.243-418.87.00_1.0-1_amd64.deb\n"
+"sudo apt-key add /var/cuda-"
+"repo-10-1-local-10.1.243-418.87.00/7fa2af80.pub\n"
+"sudo apt-get update\n"
+"sudo apt-get -y install cuda"
+msgstr ""
+
 #: ../../dev_install.rst:106
 msgid "Prebuilt LLVM for Windows CI"
+msgstr ""
+
+#: ../../dev_install.rst:108
+msgid ""
+"cmake .. -G\"Visual Studio 15 2017 Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON "
+"-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+"-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" -DLLVM_ENABLE_ASSERTIONS=ON "
+"-Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
 msgstr ""
 
 #: ../../dev_install.rst:112

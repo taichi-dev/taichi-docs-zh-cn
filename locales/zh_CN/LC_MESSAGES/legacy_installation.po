@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,6 +61,13 @@ msgstr ""
 msgid "Ubuntu, Arch Linux, and Mac OS X"
 msgstr ""
 
+#: ../../legacy_installation.rst:25
+msgid ""
+"wget https://raw.githubusercontent.com/yuanming-"
+"hu/taichi/legacy/install.py\n"
+"python3 install.py"
+msgstr ""
+
 #: ../../legacy_installation.rst:31
 msgid ""
 "Note, if python complains that a package is missing, simply rerun "
@@ -88,5 +95,11 @@ msgstr ""
 
 #: ../../legacy_installation.rst:43
 msgid "Build with Double Precision (64 bit) Float Point"
+msgstr ""
+
+#: ../../legacy_installation.rst:44
+msgid ""
+"export TC_USE_DOUBLE=1\n"
+"ti build"
 msgstr ""
 

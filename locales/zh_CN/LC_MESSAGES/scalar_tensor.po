@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,8 +43,16 @@ msgid ""
 "elements: ::"
 msgstr ""
 
+#: ../../scalar_tensor.rst:18
+msgid "x = ti.var(ti.i32, shape=4)"
+msgstr ""
+
 #: ../../scalar_tensor.rst:20
 msgid "This creates a 4x3 *dense* tensor with ``float32`` elements: ::"
+msgstr ""
+
+#: ../../scalar_tensor.rst:23
+msgid "x = ti.var(ti.f32, shape=(4, 3))"
 msgstr ""
 
 #: ../../scalar_tensor.rst:25
@@ -53,14 +61,29 @@ msgid ""
 "::"
 msgstr ""
 
+#: ../../scalar_tensor.rst:28
+msgid "x = ti.var(ti.f32, shape=())"
+msgstr ""
+
 #: ../../scalar_tensor.rst:30
 msgid "Then access it by passing ``None`` as index: ::"
+msgstr ""
+
+#: ../../scalar_tensor.rst:33
+msgid "x[None] = 2"
 msgstr ""
 
 #: ../../scalar_tensor.rst:35
 msgid ""
 "If shape is **not provided** or ``None``, the user must manually "
 "``place`` it afterwards: ::"
+msgstr ""
+
+#: ../../scalar_tensor.rst:38
+msgid ""
+"x = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (4, 3)).place(x)\n"
+"# equivalent to: x = ti.var(ti.f32, shape=(4, 3))"
 msgstr ""
 
 #: ../../scalar_tensor.rst:44
@@ -73,6 +96,33 @@ msgstr ""
 msgid ""
 "All variables should be created and placed before any kernel invocation "
 "or any of them accessed from python-scope. For example:"
+msgstr ""
+
+#: ../../scalar_tensor.rst:51
+msgid ""
+"x = ti.var(ti.f32)\n"
+"x[None] = 1 # ERROR: x not placed!"
+msgstr ""
+
+#: ../../scalar_tensor.rst:56
+msgid ""
+"x = ti.var(ti.f32, shape=())\n"
+"@ti.kernel\n"
+"def func():\n"
+"    x[None] = 1\n"
+"\n"
+"func()\n"
+"y = ti.var(ti.f32, shape=())\n"
+"# ERROR: cannot create tensor after kernel invocation!"
+msgstr ""
+
+#: ../../scalar_tensor.rst:67
+msgid ""
+"x = ti.var(ti.f32, shape=())\n"
+"x[None] = 1\n"
+"y = ti.var(ti.f32, shape=())\n"
+"# ERROR: cannot create tensor after any tensor accesses from the Python-"
+"scope!"
 msgstr ""
 
 #: ../../scalar_tensor.rst:76

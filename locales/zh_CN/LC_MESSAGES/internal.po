@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,11 +52,28 @@ msgstr ""
 msgid "Usage:"
 msgstr ""
 
+#: ../../internal.rst:25
+msgid ""
+"#include \"taichi/util/statistics.h\"\n"
+"\n"
+"// add 1.0 to counter \"codegen_offloaded_tasks\"\n"
+"taichi::stat.add(\"codegen_offloaded_tasks\");\n"
+"\n"
+"// add the number of statements in \"ir\" to counter "
+"\"codegen_statements\"\n"
+"taichi::stat.add(\"codegen_statements\", "
+"irpass::analysis::count_statements(this->ir));"
+msgstr ""
+
 #: ../../internal.rst:36
 msgid "Note the keys are ``std::string`` and values are ``double``."
 msgstr ""
 
 #: ../../internal.rst:38
 msgid "To print out all statistics in Python:"
+msgstr ""
+
+#: ../../internal.rst:40
+msgid "ti.core.print_stat()"
 msgstr ""
 

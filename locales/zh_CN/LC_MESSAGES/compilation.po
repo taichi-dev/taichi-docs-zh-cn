@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,8 +56,22 @@ msgstr ""
 msgid "Let's consider the following simple kernel:"
 msgstr ""
 
+#: ../../compilation.rst:21
+msgid ""
+"@ti.kernel\n"
+"def add(tensor: ti.template(), delta: ti.i32):\n"
+"  for i in tensor:\n"
+"    tensor[i] += delta"
+msgstr ""
+
 #: ../../compilation.rst:29
 msgid "We also allocate two 1D tensors to simplify discussion:"
+msgstr ""
+
+#: ../../compilation.rst:31
+msgid ""
+"x = ti.var(dt=ti.f32, shape=128)\n"
+"y = ti.var(dt=ti.f32, shape=16)"
 msgstr ""
 
 #: ../../compilation.rst:39
@@ -66,6 +80,10 @@ msgid ""
 "registered. Specifically, the Python Abstract Syntax Tree (AST) of the "
 "``add`` function will be memorized. No compilation will happen until the "
 "first invocation of ``add``."
+msgstr ""
+
+#: ../../compilation.rst:47
+msgid "add(x, 42)"
 msgstr ""
 
 #: ../../compilation.rst:51
@@ -80,6 +98,10 @@ msgid ""
 "later), e.g.,"
 msgstr ""
 
+#: ../../compilation.rst:55
+msgid "add(x, 1)"
+msgstr ""
+
 #: ../../compilation.rst:59
 msgid "Taichi will directly reuse the previously compiled binary."
 msgstr ""
@@ -88,6 +110,10 @@ msgstr ""
 msgid ""
 "Arguments hinted with ``ti.template()`` are template arguments, and will "
 "incur template instantiation. For example,"
+msgstr ""
+
+#: ../../compilation.rst:63
+msgid "add(y, 42)"
 msgstr ""
 
 #: ../../compilation.rst:67

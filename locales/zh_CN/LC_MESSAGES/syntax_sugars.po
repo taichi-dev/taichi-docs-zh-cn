@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,8 +37,25 @@ msgstr ""
 msgid "For example, consider the simple kernel:"
 msgstr ""
 
+#: ../../syntax_sugars.rst:11
+msgid ""
+"@ti.kernel\n"
+"def my_kernel():\n"
+"  for i, j in tensor_a:\n"
+"    tensor_b[i, j] = some_function(tensor_a[i, j])"
+msgstr ""
+
 #: ../../syntax_sugars.rst:18
 msgid "The tensors and function be aliased to new names with ``ti.static``:"
+msgstr ""
+
+#: ../../syntax_sugars.rst:20
+msgid ""
+"@ti.kernel\n"
+"def my_kernel():\n"
+"  a, b, fun = ti.static(tensor_a, tensor_b, some_function)\n"
+"  for i,j in a:\n"
+"    b[i,j] = fun(a[i,j])"
 msgstr ""
 
 #: ../../syntax_sugars.rst:30
@@ -54,8 +71,29 @@ msgid ""
 "tensor:"
 msgstr ""
 
+#: ../../syntax_sugars.rst:34
+msgid ""
+"@ti.kernel\n"
+"def compute_laplacian(self):\n"
+"  for i, j in a:\n"
+"    self.b[i, j] = (self.a[i + 1,j] - 2.0*self.a[i, j] + self.a[i-1, "
+"j])/(self.dx**2) \\\n"
+"                + (self.a[i,j + 1] - 2.0*self.a[i, j] + self.a[i, "
+"j-1])/(self.dy**2)"
+msgstr ""
+
 #: ../../syntax_sugars.rst:42
 msgid "Using ``ti.static()``, it can be simplified to:"
+msgstr ""
+
+#: ../../syntax_sugars.rst:44
+msgid ""
+"@ti.kernel\n"
+"def compute_laplacian(self):\n"
+"  a,b,dx,dy = ti.static(self.a,self.b,self.dx,self.dy)\n"
+"  for i,j in a:\n"
+"    b[i,j] = (a[i+1, j] - 2.0*a[i, j] + a[i-1, j])/(dx**2) \\\n"
+"           + (a[i, j+1] - 2.0*a[i, j] + a[i, j-1])/(dy**2)"
 msgstr ""
 
 #: ../../syntax_sugars.rst:55

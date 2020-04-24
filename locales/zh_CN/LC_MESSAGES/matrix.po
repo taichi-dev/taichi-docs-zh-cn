@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,13 +135,19 @@ msgstr ""
 msgid "For example, this creates a 5x4 tensor of 3x3 matrices: ::"
 msgstr ""
 
+#: ../../matrix.rst:43
+msgid ""
+"# Python-scope\n"
+"a = ti.Matrix(3, 3, dt=ti.f32, shape=(5, 4))"
+msgstr ""
+
 #: ../../matrix.rst:48
 msgid ""
 "In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while "
 "``ti.Matrix`` declares tensors of matrices."
 msgstr ""
 
-#: ../../matrix.rst:52 ../../matrix.rst:142
+#: ../../matrix.rst:52 ../../matrix.rst:143
 msgid "As a temporary local variable"
 msgstr ""
 
@@ -155,6 +161,12 @@ msgstr ""
 
 #: ../../matrix.rst:59
 msgid "For example, this creates a 3x1 matrix with components (2, 3, 4): ::"
+msgstr ""
+
+#: ../../matrix.rst:62
+msgid ""
+"# Taichi-scope\n"
+"a = ti.Matrix([2, 3, 4])"
 msgstr ""
 
 #: ../../matrix.rst:67
@@ -183,95 +195,135 @@ msgid ""
 "first row and (4, 5) in the second row: ::"
 msgstr ""
 
-#: ../../matrix.rst:86
-msgid "(vector) vector of elements forming first row (or column)"
+#: ../../matrix.rst:80
+msgid ""
+"# Taichi-scope\n"
+"a = ti.Matrix([[2, 3], [4, 5])"
 msgstr ""
 
 #: ../../matrix.rst:87
-msgid "(vector) vector of elements forming second row (or column)"
+msgid "(vector) vector of elements forming first row (or column)"
 msgstr ""
 
 #: ../../matrix.rst:88
+msgid "(vector) vector of elements forming second row (or column)"
+msgstr ""
+
+#: ../../matrix.rst:89
 msgid "(vector) vector of elements forming third row (or column)"
 msgstr ""
 
-#: ../../matrix.rst:90
+#: ../../matrix.rst:91
 msgid ""
 "For example, this creates a 3x3 matrix by concactinating vectors into "
 "rows (or columns): ::"
 msgstr ""
 
-#: ../../matrix.rst:109
+#: ../../matrix.rst:94
+msgid ""
+"# Taichi-scope\n"
+"v0 = ti.Vector([1.0, 2.0, 3.0])\n"
+"v1 = ti.Vector([4.0, 5.0, 6.0])\n"
+"v2 = ti.Vector([7.0, 8.0, 9.0])\n"
+"\n"
+"# to specify data in rows\n"
+"a = ti.Matrix(rows=[v0, v1, v2])\n"
+"\n"
+"# to specify data in columns instead\n"
+"a = ti.Matrix(cols=[v0, v1, v2])\n"
+"\n"
+"# lists can be used instead of vectors\n"
+"a = ti.Matrix(rows=[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])"
+msgstr ""
+
+#: ../../matrix.rst:110
 msgid "Accessing components"
 msgstr ""
 
-#: ../../matrix.rst:112
+#: ../../matrix.rst:113
 msgid "As global tensors of vectors"
 msgstr ""
 
-#: ../../matrix.rst:115
+#: ../../matrix.rst:116
 msgid "(tensor of matrices) the tensor of matrices"
 msgstr ""
 
-#: ../../matrix.rst:116
+#: ../../matrix.rst:117
 msgid "(scalar) index of the first tensor dimension"
 msgstr ""
 
-#: ../../matrix.rst:117
+#: ../../matrix.rst:118
 msgid "(scalar) index of the second tensor dimension"
 msgstr ""
 
-#: ../../matrix.rst:118 ../../matrix.rst:147
+#: ../../matrix.rst:119 ../../matrix.rst:148
 msgid "(scalar) row index of the matrix"
 msgstr ""
 
-#: ../../matrix.rst:119 ../../matrix.rst:148
+#: ../../matrix.rst:120 ../../matrix.rst:149
 msgid "(scalar) column index of the matrix"
 msgstr ""
 
-#: ../../matrix.rst:121
+#: ../../matrix.rst:122
 msgid "This extracts the first element in matrix ``a[6, 3]``: ::"
 msgstr ""
 
-#: ../../matrix.rst:132
+#: ../../matrix.rst:125
+msgid ""
+"x = a[6, 3][0, 0]\n"
+"\n"
+"# or\n"
+"mat = a[6, 3]\n"
+"x = mat[0, 0]"
+msgstr ""
+
+#: ../../matrix.rst:133
 msgid ""
 "**Always** use two pair of square brackets to access scalar elements from"
 " tensors of matrices."
 msgstr ""
 
-#: ../../matrix.rst:134
+#: ../../matrix.rst:135
 msgid ""
 "The indices in the first pair of brackets locate the matrix inside the "
 "tensor of matrices;"
 msgstr ""
 
-#: ../../matrix.rst:135
+#: ../../matrix.rst:136
 msgid ""
 "The indices in the second pair of brackets locate the scalar element "
 "inside the matrix."
 msgstr ""
 
-#: ../../matrix.rst:137
+#: ../../matrix.rst:138
 msgid ""
 "For 0-D tensors of matrices, indices in the first pair of brackets should"
 " be ``[None]``."
 msgstr ""
 
-#: ../../matrix.rst:146
+#: ../../matrix.rst:147
 msgid "(Matrix) the matrix"
 msgstr ""
 
-#: ../../matrix.rst:150
+#: ../../matrix.rst:151
 msgid ""
 "For example, this extracts the element in row 0 column 1 of matrix ``a``:"
 " ::"
 msgstr ""
 
-#: ../../matrix.rst:155
+#: ../../matrix.rst:154
+msgid "x = a[0, 1]"
+msgstr ""
+
+#: ../../matrix.rst:156
 msgid "This sets the element in row 1 column 3 of ``a`` to 4: ::"
 msgstr ""
 
-#: ../../matrix.rst:161
+#: ../../matrix.rst:159
+msgid "a[1, 3] = 4"
+msgstr ""
+
+#: ../../matrix.rst:162
 msgid "Methods"
 msgstr ""
 

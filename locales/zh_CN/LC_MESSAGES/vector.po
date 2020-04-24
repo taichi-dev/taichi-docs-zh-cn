@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-24 11:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,6 +65,12 @@ msgstr ""
 msgid "For example, this creates a 5x4 tensor of 3 component vectors: ::"
 msgstr ""
 
+#: ../../vector.rst:26
+msgid ""
+"# Python-scope\n"
+"a = ti.Vector(3, dt=ti.f32, shape=(5, 4))"
+msgstr ""
+
 #: ../../vector.rst:31
 msgid ""
 "In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while "
@@ -85,6 +91,12 @@ msgstr ""
 
 #: ../../vector.rst:42
 msgid "For example, this creates a 3D vector with components (2, 3, 4): ::"
+msgstr ""
+
+#: ../../vector.rst:45
+msgid ""
+"# Taichi-scope\n"
+"a = ti.Vector([2, 3, 4])"
 msgstr ""
 
 #: ../../vector.rst:50
@@ -109,6 +121,15 @@ msgstr ""
 
 #: ../../vector.rst:61
 msgid "This extracts the first component of vector ``a[6, 3]``: ::"
+msgstr ""
+
+#: ../../vector.rst:64
+msgid ""
+"x = a[6, 3][0]\n"
+"\n"
+"# or\n"
+"vec = a[6, 3]\n"
+"x = vec[0]"
 msgstr ""
 
 #: ../../vector.rst:72
@@ -143,8 +164,16 @@ msgstr ""
 msgid "For example, this extracts the first component of vector ``a``: ::"
 msgstr ""
 
+#: ../../vector.rst:92
+msgid "x = a[0]"
+msgstr ""
+
 #: ../../vector.rst:94
 msgid "This sets the second component of ``a`` to 4: ::"
+msgstr ""
+
+#: ../../vector.rst:97
+msgid "a[1] = 4"
 msgstr ""
 
 #: ../../vector.rst:99
@@ -178,6 +207,12 @@ msgstr ""
 msgid "For example, ::"
 msgstr ""
 
+#: ../../vector.rst:113
+msgid ""
+"a = ti.Vector([3, 4])\n"
+"a.norm() # sqrt(3*3 + 4*4 + 0) = 5"
+msgstr ""
+
 #: ../../vector.rst:116
 msgid "``a.norm(eps)`` is equivalent to ``ti.sqrt(a.dot(a) + eps)``"
 msgstr ""
@@ -196,6 +231,13 @@ msgstr ""
 msgid "E.g., ::"
 msgstr ""
 
+#: ../../vector.rst:131
+msgid ""
+"a = ti.Vector([1, 3])\n"
+"b = ti.Vector([2, 4])\n"
+"a.dot(b) # 1*2 + 3*4 = 14"
+msgstr ""
+
 #: ../../vector.rst:138 ../../vector.rst:139
 msgid "(Vector, 3 component)"
 msgstr ""
@@ -208,8 +250,23 @@ msgstr ""
 msgid "We use right-handed coordinate system, E.g., ::"
 msgstr ""
 
+#: ../../vector.rst:145
+msgid ""
+"a = ti.Vector([1, 2, 3])\n"
+"b = ti.Vector([4, 5, 6])\n"
+"c = ti.cross(a, b) # [2*6 - 5*3, 4*3 - 1*6, 1*5 - 4*2]"
+msgstr ""
+
 #: ../../vector.rst:154
 msgid "(Matrix) the outer product of ``a`` and ``b``"
+msgstr ""
+
+#: ../../vector.rst:159
+msgid ""
+"a = ti.Vector([1, 2, 3])\n"
+"b = ti.Vector([4, 5, 6])\n"
+"c = ti.outer_product(a, b) # NOTE: c[i, j] = a[i] * b[j]\n"
+"# c = [[1*4, 1*5, 1*6], [2*4, 2*5, 2*6], [3*4, 3*5, 3*6]]"
 msgstr ""
 
 #: ../../vector.rst:165
@@ -224,6 +281,13 @@ msgstr ""
 
 #: ../../vector.rst:172
 msgid "(Vector) vector with all components of ``a`` casted into type ``dt``"
+msgstr ""
+
+#: ../../vector.rst:177
+msgid ""
+"# Taichi-scope\n"
+"a = ti.Vector([1.6, 2.3])\n"
+"a.cast(ti.i32) # [2, 3]"
 msgstr ""
 
 #: ../../vector.rst:182
