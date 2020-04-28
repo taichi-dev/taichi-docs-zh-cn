@@ -85,4 +85,13 @@ fuzzy:
 	for file in $(LC_MESSAGES)/*.po; do echo $$(msgattrib --only-fuzzy --no-obsolete "$$file" | grep -c '#, fuzzy') $$file; done | grep -v ^0 | sort -gr
 
 
-.SILENT:
+post: all
+	-git branch -D post
+	git checkout -b post
+	git add -f bin
+	git commit "[post]"
+	git push -f -u origin post
+	git checkout $(BRANCH)
+
+
+#.SILENT:
