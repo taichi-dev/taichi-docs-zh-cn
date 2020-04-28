@@ -64,6 +64,7 @@ endif
 	rm -rf ./bin
 	cd $(TAICHI_CLONE); git checkout -- ./; git pull;
 	
+	mkdir -p bin
 	cp $(TAICHI_CLONE)/docs/*.rst ./bin
 	cp $(TAICHI_CLONE)/docs/*.jpg ./bin
 	cp $(TAICHI_CLONE)/docs/*.png ./bin
