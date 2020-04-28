@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-04-28 15:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "New features"
 msgstr ""
 
-#: ../../contributor_guide.rst:9 ../../contributor_guide.rst:177
+#: ../../contributor_guide.rst:9 ../../contributor_guide.rst:178
 msgid "Documentation"
 msgstr ""
 
@@ -550,36 +550,38 @@ msgid ""
 "<filename(s)>`` to run specific tests. e.g. ``ti test numpy_io`` and ``ti"
 " test test_numpy_io.py`` are equivalent. Use ``ti test -a <arch(s)>`` for"
 " test against specified architectures. e.g. ``ti test -a opengl`` or ``ti"
-" test numpy_io -a cuda,metal``. Use ``ti test -c`` to run only the C++ "
-"tests. e.g. ``ti test -c alg_simp``"
+" test numpy_io -a cuda,metal``. Use ``ti test -na <arch(s)>`` for test "
+"all architectures exclude some of them. e.g. ``ti test -na opengl,cuda``."
+" Use ``ti test -c`` to run only the C++ tests. e.g. ``ti test -c "
+"alg_simp``"
 msgstr ""
 
-#: ../../contributor_guide.rst:174
+#: ../../contributor_guide.rst:175
 msgid "For more options, see ``ti test -h``."
 msgstr ""
 
-#: ../../contributor_guide.rst:179
+#: ../../contributor_guide.rst:180
 msgid ""
 "Use ``ti doc`` to build the documentation locally. Open the documentation"
 " at ``taichi/doc/build/index.html``. On Linux/OS X, use ``watch -n 1 ti "
 "doc`` to continuously build the documentation."
 msgstr ""
 
-#: ../../contributor_guide.rst:184
+#: ../../contributor_guide.rst:185
 msgid "C++ and Python standards"
 msgstr ""
 
-#: ../../contributor_guide.rst:186
+#: ../../contributor_guide.rst:187
 msgid ""
 "The C++ part of Taichi is written in C++17, and the Python part in 3.6+. "
 "You can assume that C++17 and Python 3.6 features are always available."
 msgstr ""
 
-#: ../../contributor_guide.rst:191
+#: ../../contributor_guide.rst:192
 msgid "(Linux only) pinpointing runtime errors using ``gdb``"
 msgstr ""
 
-#: ../../contributor_guide.rst:192
+#: ../../contributor_guide.rst:193
 msgid ""
 "A quick way to pinpoint common runtime errors such as segmentation "
 "faults/assertion failures. When Taichi crashes, ``gdb`` will be triggered"
@@ -589,11 +591,11 @@ msgid ""
 "line of code triggering the error."
 msgstr ""
 
-#: ../../contributor_guide.rst:200
+#: ../../contributor_guide.rst:201
 msgid "Efficient code navigation across Python/C++"
 msgstr ""
 
-#: ../../contributor_guide.rst:201
+#: ../../contributor_guide.rst:202
 msgid ""
 "If you work on the language frontend (Python/C++ interface), to navigate "
 "around the code base, `ffi-navigator <https://github.com/tqchen/ffi-"
@@ -601,101 +603,117 @@ msgid ""
 " in C++. Follow their README to set up your editor."
 msgstr ""
 
-#: ../../contributor_guide.rst:207
+#: ../../contributor_guide.rst:208
 msgid "Folder structure"
 msgstr ""
 
-#: ../../contributor_guide.rst:209
+#: ../../contributor_guide.rst:210
 msgid "Key folders are"
 msgstr ""
 
-#: ../../contributor_guide.rst:211
+#: ../../contributor_guide.rst:212
 msgid "``taichi``: The core compiler implementation"
 msgstr ""
 
-#: ../../contributor_guide.rst:213
+#: ../../contributor_guide.rst:214
 msgid "``program``: Top-level constructs"
 msgstr ""
 
-#: ../../contributor_guide.rst:214
+#: ../../contributor_guide.rst:215
 msgid "``runtime``: Runtime environments"
 msgstr ""
 
-#: ../../contributor_guide.rst:215
+#: ../../contributor_guide.rst:216
 msgid "``codegen``: Code generators"
 msgstr ""
 
-#: ../../contributor_guide.rst:216
+#: ../../contributor_guide.rst:217
 msgid "``struct``: Struct compilers"
 msgstr ""
 
-#: ../../contributor_guide.rst:217
+#: ../../contributor_guide.rst:218
 msgid "``backends``: Device-dependent code generators/runtime environments"
 msgstr ""
 
-#: ../../contributor_guide.rst:218
+#: ../../contributor_guide.rst:219
 msgid "``llvm``: LLVM utils"
 msgstr ""
 
-#: ../../contributor_guide.rst:219
+#: ../../contributor_guide.rst:220
 msgid "``ir``: Intermediate representation"
 msgstr ""
 
-#: ../../contributor_guide.rst:220
+#: ../../contributor_guide.rst:221
 msgid "``transforms``: IR transform passes"
 msgstr ""
 
-#: ../../contributor_guide.rst:221
+#: ../../contributor_guide.rst:222
 msgid "``analysis``: Static analysis passes"
 msgstr ""
 
-#: ../../contributor_guide.rst:222
+#: ../../contributor_guide.rst:223
 msgid "``python``: C++/Python interfaces"
 msgstr ""
 
-#: ../../contributor_guide.rst:224
+#: ../../contributor_guide.rst:225
 msgid "``python``: Python frontend implementation"
 msgstr ""
 
-#: ../../contributor_guide.rst:225
+#: ../../contributor_guide.rst:226
 msgid "``examples``: Examples"
 msgstr ""
 
-#: ../../contributor_guide.rst:226
+#: ../../contributor_guide.rst:227
 msgid "``docs``: Documentation"
 msgstr ""
 
-#: ../../contributor_guide.rst:227
+#: ../../contributor_guide.rst:228
 msgid "``tests``: C++ and Python tests"
 msgstr ""
 
-#: ../../contributor_guide.rst:228
+#: ../../contributor_guide.rst:229
 msgid "``benchmarks``: Performance benchmarks"
 msgstr ""
 
-#: ../../contributor_guide.rst:229
+#: ../../contributor_guide.rst:230
 msgid "``misc``: Random (yet useful) files"
 msgstr ""
 
-#: ../../contributor_guide.rst:230
+#: ../../contributor_guide.rst:231
 msgid "..."
 msgstr ""
 
-#: ../../contributor_guide.rst:233
+#: ../../contributor_guide.rst:234
 msgid "Upgrading CUDA"
 msgstr ""
 
-#: ../../contributor_guide.rst:235
+#: ../../contributor_guide.rst:236
 msgid ""
 "Right now we are targeting CUDA 10. When upgrading CUDA version, the file"
 " ``external/cuda_libdevice/slim_libdevice.10.bc`` should also be replaced"
 " with a newer version."
 msgstr ""
 
-#: ../../contributor_guide.rst:238
+#: ../../contributor_guide.rst:239
 msgid ""
 "To generate the slimmed version of libdevice based on a full "
 "``libdevice.X.bc`` file from a CUDA installation, use ``ti run "
 "make_slim_libdevice [libdevice.X.bc file]``"
 msgstr ""
+
+#~ msgid ""
+#~ "Tests should be added to "
+#~ "``taichi/tests``. Use ``ti test`` to run"
+#~ " all the tests. Use ``ti test "
+#~ "-v`` for verbose outputs. Use ``ti "
+#~ "test <filename(s)>`` to run specific "
+#~ "tests. e.g. ``ti test numpy_io`` and "
+#~ "``ti test test_numpy_io.py`` are equivalent."
+#~ " Use ``ti test -a <arch(s)>`` for "
+#~ "test against specified architectures. e.g. "
+#~ "``ti test -a opengl`` or ``ti test"
+#~ " numpy_io -a cuda,metal``. Use ``ti "
+#~ "test -c`` to run only the C++ "
+#~ "tests. e.g. ``ti test -c alg_simp``"
+#~ msgstr ""
 

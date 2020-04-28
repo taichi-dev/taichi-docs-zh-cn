@@ -58,7 +58,7 @@ todo:
 .PHONY: merge
 merge: upgrade_venv
 ifneq "$(shell cd $(TAICHI_CLONE) 2>/dev/null && git symbolic-ref --short -q HEAD)" "$(BRANCH)"
-	$(error "You're merging from a different branch, please cd $(TAICHI_CLONE) && git checkout $(BRANCH)")
+	$(warning "You're merging from a different branch, please cd $(TAICHI_CLONE) && git checkout $(BRANCH)")
 endif
 	# files might be renamed in the origin doc, so we have to delete old files
 	rm -rf ./*.rst ./*.jpg ./*.png ./_static ./version ./conf.py
