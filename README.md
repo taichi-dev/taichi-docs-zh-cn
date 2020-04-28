@@ -47,6 +47,7 @@
    cd taichi-docs-zh-cn
    git remote add upstream https://github.com/StephenArk30/taichi-docs-zh-cn.git
    git submodule update --depth=1
+   make all
    ```
 
 ## 翻译前的准备
@@ -59,7 +60,7 @@
 
    ```bash
    git fetch upstream
-   make all
+   make merge
    git checkout -b hello upstream/master
    ```
    （这里 hello 也可以是任何名字，用**待翻译的文件名**来命名就是不错的选择）
