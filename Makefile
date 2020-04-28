@@ -89,7 +89,7 @@ post: all
 	-git branch -D post
 	git checkout -b post
 	git add -f bin
-	git commit "[post]"
+	git commit -m "[post]"
 	git push -f -u origin post
 	git checkout $(BRANCH)
 
