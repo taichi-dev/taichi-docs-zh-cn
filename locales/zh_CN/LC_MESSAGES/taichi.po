@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-28 16:20+0800\n"
+"POT-Creation-Date: 2020-04-28 16:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,7 +92,7 @@ msgid "Atomically compute ``x + y``/``x - y`` and store the result to ``x``."
 msgstr ""
 
 #: ../../taichi/docs/atomic.rst ../../taichi/docs/vector.rst
-msgid "Returns"
+msgid "返回"
 msgstr ""
 
 #: ../../taichi/docs/atomic.rst:38 ../../taichi/docs/atomic.rst:55
@@ -2475,7 +2475,7 @@ msgstr ""
 
 #: ../../taichi/docs/matrix.rst ../../taichi/docs/scalar_tensor.rst
 #: ../../taichi/docs/vector.rst
-msgid "Parameters"
+msgid "参数"
 msgstr ""
 
 #: ../../taichi/docs/matrix.rst:35
@@ -4299,5 +4299,11 @@ msgstr ""
 #~ " numpy_io -a cuda,metal``. Use ``ti "
 #~ "test -c`` to run only the C++ "
 #~ "tests. e.g. ``ti test -c alg_simp``"
+#~ msgstr ""
+
+#~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid "Parameters"
 #~ msgstr ""
 
