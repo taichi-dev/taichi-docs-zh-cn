@@ -60,18 +60,18 @@ merge: upgrade_venv
 ifneq "$(shell cd $(TAICHI_CLONE) 2>/dev/null && git symbolic-ref --short -q HEAD)" "$(BRANCH)"
 	$(warning "You're merging from a different branch, please cd $(TAICHI_CLONE) && git checkout $(BRANCH)")
 endif
-	# files might be renamed in the origin doc, so we have to delete old files
-	rm -rf ./*.rst ./*.jpg ./*.png ./_static ./version ./conf.py
+# files might be renamed in the origin doc, so we have to delete old files
+	rm -rf ./bin
 	cd $(TAICHI_CLONE); git checkout -- ./; git pull;
 	
-	cp $(TAICHI_CLONE)/docs/*.rst ./
-	cp $(TAICHI_CLONE)/docs/*.jpg ./
-	cp $(TAICHI_CLONE)/docs/*.png ./
-	cp -r $(TAICHI_CLONE)/docs/_static ./
-	cp $(TAICHI_CLONE)/docs/version ./
-	cp $(TAICHI_CLONE)/docs/conf.py ./
-	echo "gettext_additional_targets = ['literal-block']" >> conf.py
-	. $(VENV)/bin/activate; $(VENV)/bin/sphinx-build -M gettext . build; $(VENV)/bin/sphinx-intl update -p build/gettext -l $(LANGUAGE)
+	cp $(TAICHI_CLONE)/docs/*.rst ./bin
+	cp $(TAICHI_CLONE)/docs/*.jpg ./bin
+	cp $(TAICHI_CLONE)/docs/*.png ./bin
+	cp -r $(TAICHI_CLONE)/docs/_static ./bin
+	cp $(TAICHI_CLONE)/docs/version ./bin
+	cp $(TAICHI_CLONE)/docs/conf.py ./bin
+	echo "gettext_additional_targets = ['literal-block']" >> bin/conf.py
+	. $(VENV)/bin/activate; $(VENV)/bin/sphinx-build -M gettext bin build; $(VENV)/bin/sphinx-intl update -p build/gettext -l $(LANGUAGE)
 
 
 .PHONY: html
@@ -82,3 +82,6 @@ html:
 .PHONY: fuzzy
 fuzzy:
 	for file in $(LC_MESSAGES)/*.po; do echo $$(msgattrib --only-fuzzy --no-obsolete "$$file" | grep -c '#, fuzzy') $$file; done | grep -v ^0 | sort -gr
+
+
+.SILENT:
