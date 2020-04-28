@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-24 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-04-28 16:38+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../../syntax.rst:2
 msgid "Syntax"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../../syntax.rst:5
 msgid "Kernels"
-msgstr ""
+msgstr "内核"
 
 #: ../../syntax.rst:7
 msgid ""
@@ -42,12 +43,20 @@ msgid ""
 "  for i in x:\n"
 "    y[i] = x[i]"
 msgstr ""
+"@ti.kernel\n"
+"def print_xy(x: ti.i32, y: ti.f32):\n"
+"  print(x + y)\n"
+"\n"
+"@ti.kernel\n"
+"def copy(x: ti.template(), y: ti.template()):\n"
+"  for i in x:\n"
+"    y[i] = x[i]"
 
 #: ../../syntax.rst:20
 msgid ""
 "For differentiable programming kernels should better have either serial "
-"statements or a single parallel for-loop. If you don't use differentiable"
-" programming, feel free to ignore this tip."
+"statements or a single parallel for-loop. If you don't use "
+"differentiable programming, feel free to ignore this tip."
 msgstr ""
 
 #: ../../syntax.rst:22
@@ -84,7 +93,7 @@ msgstr ""
 
 #: ../../syntax.rst:55
 msgid "Functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../syntax.rst:57
 msgid ""
@@ -116,8 +125,8 @@ msgstr ""
 #: ../../syntax.rst:80
 msgid ""
 "Functions with multiple ``return``'s are not supported for now. Use a "
-"**local** variable to store the results, so that you end up with only one"
-" ``return``:"
+"**local** variable to store the results, so that you end up with only "
+"one ``return``:"
 msgstr ""
 
 #: ../../syntax.rst:82
@@ -158,8 +167,8 @@ msgstr ""
 #: ../../syntax.rst:113
 msgid ""
 "Non-power-of-two tensor dimensions are promoted into powers of two and "
-"thus these tensors will occupy more virtual address space. For example, a"
-" tensor of size ``(18, 65)`` will be materialized as ``(32, 128)``."
+"thus these tensors will occupy more virtual address space. For example, "
+"a tensor of size ``(18, 65)`` will be materialized as ``(32, 128)``."
 msgstr ""
 
 #: ../../syntax.rst:118
@@ -252,15 +261,15 @@ msgstr ""
 
 #: ../../syntax.rst:141
 msgid ""
-"Inplace adds are atomic on global data. I.e., ``a += b`` is equivalent to"
-" ``ti.atomic_add(a, b)``"
+"Inplace adds are atomic on global data. I.e., ``a += b`` is equivalent "
+"to ``ti.atomic_add(a, b)``"
 msgstr ""
 
 #: ../../syntax.rst:145
 msgid ""
-"Python 3 distinguishes ``/`` (true division) and ``//`` (floor division)."
-" For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = 0``, ``4.2"
-" // 2 = 2``. Taichi follows this design:"
+"Python 3 distinguishes ``/`` (true division) and ``//`` (floor "
+"division). For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = "
+"0``, ``4.2 // 2 = 2``. Taichi follows this design:"
 msgstr ""
 
 #: ../../syntax.rst:148
@@ -278,8 +287,8 @@ msgstr ""
 #: ../../syntax.rst:151
 msgid ""
 "To avoid such implicit casting, you can manually cast your operands to "
-"desired types, using ``ti.cast``. Read :ref:`default_precisions` for more"
-" details on default numerical types."
+"desired types, using ``ti.cast``. Read :ref:`default_precisions` for "
+"more details on default numerical types."
 msgstr ""
 
 #: ../../syntax.rst:155
@@ -347,16 +356,16 @@ msgstr ""
 #: ../../syntax.rst:179
 msgid ""
 "For example, indexing is always needed when accessing elements in Taichi "
-"tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the value"
-" in ``x`` if ``x`` is 0D. This is because ``x = 123`` will set ``x`` "
-"itself (instead of its containing value) to be the constant ``123`` in "
-"python syntax, and, unfortunately, we cannot modify this behavior."
+"tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the "
+"value in ``x`` if ``x`` is 0D. This is because ``x = 123`` will set "
+"``x`` itself (instead of its containing value) to be the constant "
+"``123`` in python syntax, and, unfortunately, we cannot modify this "
+"behavior."
 msgstr ""
 
 #: ../../syntax.rst:181
 msgid ""
-"Python has relatively low performance. This can cause a performance issue"
-" when initializing large Taichi tensors with pure python scripts. A "
+"Python has relatively low performance. This can cause a performance "
+"issue when initializing large Taichi tensors with pure python scripts. A "
 "Taichi kernel should be used to initialize a huge tensor."
 msgstr ""
-
