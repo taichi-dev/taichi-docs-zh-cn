@@ -7,11 +7,11 @@
 
 # Taichi 官方中文文档
 
-预览地址: https://taichi-zh.readthedocs.io/zh_CN/latest/
+预览地址: https://taichi.readthedocs.io/zh_CN/latest/
 
 | Version | Document Status                                              |
 | ------- | ------------------------------------------------------------ |
-| latest  | [![Documentation Status](https://readthedocs.org/projects/taichi-docs-zh-cn/badge/?version=latest)](https://taichi-zh.readthedocs.io/zh_CN/latest/?badge=latest) |
+| latest  | [![Documentation Status](https://readthedocs.org/projects/taichi-zh/badge/?version=latest)](https://taichi.readthedocs.io/zh_CN/latest/?badge=latest) |
 
 [Taichi](https://github.com/taichi-dev/taichi) 是一门高效的、以 Python 语法封装的计算机图形应用语言。这里是 Taichi 的中文文档。
 
