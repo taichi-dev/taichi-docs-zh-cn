@@ -45,7 +45,7 @@
    ```bash
    git clone https://github.com/你的用户名/taichi-docs-zh-cn.git --depth=1
    cd taichi-docs-zh-cn
-   git remote add upstream https://github.com/StephenArk30/taichi-docs-zh-cn.git
+   git remote add upstream https://github.com/taichi-dev/taichi-docs-zh-cn.git
    git submodule update --depth=1
    make all
    ```
@@ -75,7 +75,7 @@
 
 **注意: 翻译时我们只修改 .po 文件，不修改其它的任何文件，比如 .rst。**
 
-**关于翻译的一些规则请看 [Wiki](https://github.com/StephenArk30/taichi-docs-zh-cn/wiki)。**
+**关于翻译的一些规则请看 [Wiki](https://github.com/taichi/taichi-docs-zh-cn/wiki)。**
 
 关于 .po 文件的更多信息，可以查阅 [gettext wiki](https://en.wikipedia.org/wiki/Gettext) 和 [gettext manual](http://www.gnu.org/software/gettext/manual/gettext.html)。
 
