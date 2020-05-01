@@ -71,7 +71,6 @@ endif
 	cp $(TAICHI_CLONE)/docs/version ./
 	cp $(TAICHI_CLONE)/docs/conf.py ./
 	echo "gettext_additional_targets = ['literal-block']" >> conf.py
-	echo "language = '$(LANGUAGE)'" >> conf.py
 	echo "locale_dirs = ['locales/']" >> conf.py
 	. $(VENV)/bin/activate; $(VENV)/bin/sphinx-build -M gettext . build; $(VENV)/bin/sphinx-intl update -p build/gettext -l $(LANGUAGE)
 
