@@ -12,6 +12,7 @@ set PROJECT_PATH=%cd%
 if "%1" == "" goto all
 if "%1" == "merge" goto merge
 if "%1" == "html" goto html
+else goto all
 
 :all
 git submodule init
