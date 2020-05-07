@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-24 11:24+0800\n"
+"POT-Creation-Date: 2020-05-07 01:24-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,35 +60,32 @@ msgstr ""
 
 #: ../../dev_install.rst:25
 msgid ""
-"(If on Ubuntu) Execute ``sudo apt install libtinfo-dev clang-8`` (or "
-"``clang-7`` should work as well)."
+"(If on Ubuntu) Execute ``sudo apt install libtinfo-dev clang-8``. "
+"(``clang-7`` should work as well)."
 msgstr ""
 
 #: ../../dev_install.rst:27
-msgid "(If on Arch Linux) Execute"
+msgid "(If on other Linux distributions) Please build clang 8.0.1 from scratch:"
 msgstr ""
 
 #: ../../dev_install.rst:29
 msgid ""
-"wget "
-"https://archive.archlinux.org/packages/c/clang/clang-8.0.1-1-x86_64.pkg.tar.xz"
-"\n"
-"sudo pacman -Qp clang-8.0.1-1-x86_64.pkg.tar.xz"
-msgstr ""
-
-#: ../../dev_install.rst:35
-msgid ""
-"If you have installed ``clang`` (9.0.1) before, this command will "
-"overrides the existing ``clang``. If you don't want to break up "
-"depedencies, please build from scratch and install it in ``/opt``. Then "
-"add ``/opt/clang/bin`` to your ``$PATH``."
-msgstr ""
-
-#: ../../dev_install.rst:39
-msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
+"wget https://github.com/llvm/llvm-"
+"project/releases/download/llvmorg-8.0.1/cfe-8.0.1.src.tar.xz\n"
+"tar xvJf cfe-8.0.1.src.tar.xz\n"
+"cd cfe-8.0.1.src\n"
+"mkdir build\n"
+"cd build\n"
+"cmake ..\n"
+"make -j 8\n"
+"sudo make install"
 msgstr ""
 
 #: ../../dev_install.rst:41
+msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
+msgstr ""
+
+#: ../../dev_install.rst:43
 msgid ""
 "wget https://github.com/llvm/llvm-"
 "project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz\n"
@@ -105,15 +102,15 @@ msgid ""
 "sudo make install"
 msgstr ""
 
-#: ../../dev_install.rst:54
+#: ../../dev_install.rst:56
 msgid "Setting up Taichi for development"
 msgstr ""
 
-#: ../../dev_install.rst:56
+#: ../../dev_install.rst:58
 msgid "Clone the taichi repo, and build:"
 msgstr ""
 
-#: ../../dev_install.rst:58
+#: ../../dev_install.rst:60
 msgid ""
 "git clone https://github.com/taichi-dev/taichi --depth=1 --branch=master\n"
 "git submodule update --init --recursive --depth=1\n"
@@ -126,11 +123,11 @@ msgid ""
 "make -j 8"
 msgstr ""
 
-#: ../../dev_install.rst:70
+#: ../../dev_install.rst:72
 msgid "Add the following script to your ``~/.bashrc``:"
 msgstr ""
 
-#: ../../dev_install.rst:72
+#: ../../dev_install.rst:74
 msgid ""
 "export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository"
 "\n"
@@ -140,43 +137,43 @@ msgid ""
 "is in /opt"
 msgstr ""
 
-#: ../../dev_install.rst:79
+#: ../../dev_install.rst:81
 msgid "Execute ``source ~/.bashrc`` to reload shell config."
 msgstr ""
 
-#: ../../dev_install.rst:80
+#: ../../dev_install.rst:82
 msgid ""
 "Execute ``python3 -m taichi test`` to run all the tests. It may take up "
 "to 5 minutes to run all tests."
 msgstr ""
 
-#: ../../dev_install.rst:81
+#: ../../dev_install.rst:83
 msgid "Check out ``examples`` for runnable examples. Run them with ``python3``."
 msgstr ""
 
-#: ../../dev_install.rst:85
+#: ../../dev_install.rst:87
 msgid "Setting up CUDA 10.1 on Ubuntu 18.04"
 msgstr ""
 
-#: ../../dev_install.rst:87
+#: ../../dev_install.rst:89
 msgid ""
 "First, make sure you have CUDA 10.1 installed. Check this by running "
 "``nvcc --version`` or ``cat /usr/local/cuda/version.txt``"
 msgstr ""
 
-#: ../../dev_install.rst:91
+#: ../../dev_install.rst:93
 msgid ""
 "If you don't have it - go ahead to `this website "
 "<https://developer.nvidia.com/cuda-downloads>`_ and download it."
 msgstr ""
 
-#: ../../dev_install.rst:93
+#: ../../dev_install.rst:95
 msgid ""
 "These instructions were copied from the webiste above for x86_64 "
 "architecture"
 msgstr ""
 
-#: ../../dev_install.rst:95
+#: ../../dev_install.rst:97
 msgid ""
 "wget "
 "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64"
@@ -194,11 +191,11 @@ msgid ""
 "sudo apt-get -y install cuda"
 msgstr ""
 
-#: ../../dev_install.rst:106
+#: ../../dev_install.rst:108
 msgid "Prebuilt LLVM for Windows CI"
 msgstr ""
 
-#: ../../dev_install.rst:108
+#: ../../dev_install.rst:110
 msgid ""
 "cmake .. -G\"Visual Studio 15 2017 Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON "
 "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
@@ -206,24 +203,50 @@ msgid ""
 "-Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
 msgstr ""
 
-#: ../../dev_install.rst:112
+#: ../../dev_install.rst:114
 msgid ""
 "Then use Visual Studio to build. After building the ``INSTALL`` project "
 "(under folder \"CMakePredefinedTargets\"). After build completes, find "
 "your LLVM binaries/headers in `build/include`."
 msgstr ""
 
-#: ../../dev_install.rst:115
+#: ../../dev_install.rst:117
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../dev_install.rst:117
+#: ../../dev_install.rst:119
 msgid "Run with debug mode to see if there's any illegal memory access"
 msgstr ""
 
-#: ../../dev_install.rst:118
+#: ../../dev_install.rst:120
 msgid ""
 "Disable compiler optimizations to quickly confirm that the issue is not "
 "cause by optimization"
 msgstr ""
+
+#~ msgid ""
+#~ "(If on Ubuntu) Execute ``sudo apt "
+#~ "install libtinfo-dev clang-8`` (or "
+#~ "``clang-7`` should work as well)."
+#~ msgstr ""
+
+#~ msgid "(If on Arch Linux) Execute"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "wget "
+#~ "https://archive.archlinux.org/packages/c/clang/clang-8.0.1-1-x86_64.pkg.tar.xz"
+#~ "\n"
+#~ "sudo pacman -Qp clang-8.0.1-1-x86_64.pkg.tar.xz"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you have installed ``clang`` (9.0.1)"
+#~ " before, this command will overrides "
+#~ "the existing ``clang``. If you don't "
+#~ "want to break up depedencies, please "
+#~ "build from scratch and install it "
+#~ "in ``/opt``. Then add ``/opt/clang/bin`` "
+#~ "to your ``$PATH``."
+#~ msgstr ""
 

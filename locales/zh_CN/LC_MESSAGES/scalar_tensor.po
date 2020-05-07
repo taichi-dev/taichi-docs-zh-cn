@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-28 16:46+0800\n"
+"POT-Creation-Date: 2020-05-07 01:24-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "Declaration"
 msgstr ""
 
 #: ../../scalar_tensor.rst
-msgid "参数"
+msgid "Parameters"
 msgstr ""
 
 #: ../../scalar_tensor.rst:12
@@ -134,5 +134,8 @@ msgid "TODO: WIP"
 msgstr ""
 
 #~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "参数"
 #~ msgstr ""
 

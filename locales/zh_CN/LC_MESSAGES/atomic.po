@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-28 16:46+0800\n"
+"POT-Creation-Date: 2020-05-07 01:24-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgid "Atomically compute ``x + y``/``x - y`` and store the result to ``x``."
 msgstr ""
 
 #: ../../atomic.rst
-msgid "返回"
+msgid "Returns"
 msgstr ""
 
 #: ../../atomic.rst:38 ../../atomic.rst:55
@@ -147,5 +147,8 @@ msgid "(OK: supported; EXT: require extension; MISS: not supported)"
 msgstr ""
 
 #~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid "返回"
 #~ msgstr ""
 

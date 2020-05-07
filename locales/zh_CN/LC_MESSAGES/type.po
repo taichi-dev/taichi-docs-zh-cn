@@ -3,31 +3,32 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-24 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-07 01:07-0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: rexwangcc\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../../type.rst:2
 msgid "Type system"
-msgstr ""
+msgstr "类型系统"
 
 #: ../../type.rst:5
 msgid "Supported types"
-msgstr ""
+msgstr "支持的类型"
 
 #: ../../type.rst:6
 msgid "Currently, supported basic types in Taichi are"
-msgstr ""
+msgstr "目前，Taichi支持的基本类型有"
 
 #: ../../type.rst:8
 msgid "int8 ``ti.i8``"
@@ -71,11 +72,11 @@ msgstr ""
 
 #: ../../type.rst:20
 msgid "Supported types on each backends:"
-msgstr ""
+msgstr "每种后端支持的类型分别为："
 
 #: ../../type.rst:23
 msgid "type"
-msgstr ""
+msgstr "类型"
 
 #: ../../type.rst:23
 msgid "CPU/CUDA"
@@ -146,17 +147,19 @@ msgstr ""
 
 #: ../../type.rst:46
 msgid "(OK: supported, EXT: require extension, MISS: not supported)"
-msgstr ""
+msgstr "（OK：已支持，EXT：需要扩展支持，MISS：目前不支持）"
 
 #: ../../type.rst:49
 msgid "Boolean types are represented using ``ti.i32``."
-msgstr ""
+msgstr "布尔类型使用 ``ti.i32`` 来表示。"
 
 #: ../../type.rst:51
 msgid ""
 "Binary operations on different types will give you a promoted type, "
 "following the C programming language, e.g."
 msgstr ""
+"不同类型间的二元运算会返回一个提升后的类型，转换规则遵循C语言的类型提"
+"升，例如："
 
 #: ../../type.rst:53
 msgid "``i32 + f32 = f32``"
@@ -172,7 +175,7 @@ msgstr ""
 
 #: ../../type.rst:61
 msgid "Default precisions"
-msgstr ""
+msgstr "默认精度"
 
 #: ../../type.rst:63
 msgid ""
@@ -180,6 +183,9 @@ msgid ""
 "``42`` has type ``ti.i32`` and ``3.14`` has type ``ti.f32``. Default "
 "precisions can be specified when initializing Taichi:"
 msgstr ""
+"默认情况下，数值字面值（numeric literals）的精度均为32位（32-bit）。例"
+"如，``42`` 的类型为 ``ti.i32``，``3.14`` 的类型为 ``ti.f32``。默认精度可"
+"以在初始化Taichi时指定："
 
 #: ../../type.rst:67
 msgid ""
@@ -192,11 +198,11 @@ msgstr ""
 
 #: ../../type.rst:77
 msgid "Type casts"
-msgstr ""
+msgstr "类型转换"
 
 #: ../../type.rst:79
 msgid "Use ``ti.cast`` to type-cast scalar values."
-msgstr ""
+msgstr "使用 ``ti.cast`` 来进行标量值的类型转换。"
 
 #: ../../type.rst:81
 msgid ""
@@ -214,4 +220,16 @@ msgid ""
 "mat_int = mat.cast(int)\n"
 "mat_int2 = mat.cast(ti.i32)"
 msgstr ""
-
+"a = 1.4\n"
+"b = ti.cast(a, ti.i32)\n"
+"c = ti.cast(b, ti.f32)\n"
+"\n"
+"# 同样地, 使用 ``int()`` 和 ``float()``\n"
+"#   将类型转换为默认浮点/整数类型\n"
+"b = int(a)\n"
+"c = float(b)\n"
+"\n"
+"# 矩阵中逐个元素的类型转换\n"
+"mat = ti.Matrix([[3.0, 0.0], [0.3, 0.1]])\n"
+"mat_int = mat.cast(int)\n"
+"mat_int2 = mat.cast(ti.i32)"
