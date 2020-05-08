@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-28 16:11+0800\n"
-"PO-Revision-Date: 2020-05-08 13:32+0800\n"
+"PO-Revision-Date: 2020-05-08 15:54+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,13 +20,13 @@ msgstr ""
 
 #: ../../bin/contributor_guide.rst:2
 msgid "Contribution guidelines"
-msgstr "参与开发指南"
+msgstr "开发贡献指南"
 
 #: ../../bin/contributor_guide.rst:4
 msgid ""
 "First of all, thank you for contributing! We welcome contributions of all "
 "forms, including but not limited to"
-msgstr "首先，感谢你的参与贡献！我们欢迎一切形式的贡献，包括但不限于"
+msgstr "首先，感谢你的参与和贡献！我们欢迎一切形式的贡献，包括但不限于"
 
 #: ../../bin/contributor_guide.rst:7
 msgid "Bug fixes"
