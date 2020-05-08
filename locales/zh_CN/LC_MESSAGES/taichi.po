@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-28 16:46+0800\n"
+"POT-Creation-Date: 2020-05-07 01:24-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,15 +91,16 @@ msgstr ""
 msgid "Atomically compute ``x + y``/``x - y`` and store the result to ``x``."
 msgstr ""
 
-#: ../../taichi/docs/atomic.rst ../../taichi/docs/vector.rst
-msgid "返回"
+#: ../../taichi/docs/atomic.rst ../../taichi/docs/gui.rst
+#: ../../taichi/docs/vector.rst
+msgid "Returns"
 msgstr ""
 
 #: ../../taichi/docs/atomic.rst:38 ../../taichi/docs/atomic.rst:55
 msgid "The old value of ``x``."
 msgstr ""
 
-#: ../../taichi/docs/atomic.rst:40 ../../taichi/docs/vector.rst:110
+#: ../../taichi/docs/atomic.rst:40 ../../taichi/docs/vector.rst:112
 msgid "For example, ::"
 msgstr ""
 
@@ -1405,35 +1406,32 @@ msgstr ""
 
 #: ../../taichi/docs/dev_install.rst:25
 msgid ""
-"(If on Ubuntu) Execute ``sudo apt install libtinfo-dev clang-8`` (or "
-"``clang-7`` should work as well)."
+"(If on Ubuntu) Execute ``sudo apt install libtinfo-dev clang-8``. "
+"(``clang-7`` should work as well)."
 msgstr ""
 
 #: ../../taichi/docs/dev_install.rst:27
-msgid "(If on Arch Linux) Execute"
+msgid "(If on other Linux distributions) Please build clang 8.0.1 from scratch:"
 msgstr ""
 
 #: ../../taichi/docs/dev_install.rst:29
 msgid ""
-"wget "
-"https://archive.archlinux.org/packages/c/clang/clang-8.0.1-1-x86_64.pkg.tar.xz"
-"\n"
-"sudo pacman -Qp clang-8.0.1-1-x86_64.pkg.tar.xz"
-msgstr ""
-
-#: ../../taichi/docs/dev_install.rst:35
-msgid ""
-"If you have installed ``clang`` (9.0.1) before, this command will "
-"overrides the existing ``clang``. If you don't want to break up "
-"depedencies, please build from scratch and install it in ``/opt``. Then "
-"add ``/opt/clang/bin`` to your ``$PATH``."
-msgstr ""
-
-#: ../../taichi/docs/dev_install.rst:39
-msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
+"wget https://github.com/llvm/llvm-"
+"project/releases/download/llvmorg-8.0.1/cfe-8.0.1.src.tar.xz\n"
+"tar xvJf cfe-8.0.1.src.tar.xz\n"
+"cd cfe-8.0.1.src\n"
+"mkdir build\n"
+"cd build\n"
+"cmake ..\n"
+"make -j 8\n"
+"sudo make install"
 msgstr ""
 
 #: ../../taichi/docs/dev_install.rst:41
+msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
+msgstr ""
+
+#: ../../taichi/docs/dev_install.rst:43
 msgid ""
 "wget https://github.com/llvm/llvm-"
 "project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz\n"
@@ -1450,15 +1448,15 @@ msgid ""
 "sudo make install"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:54
+#: ../../taichi/docs/dev_install.rst:56
 msgid "Setting up Taichi for development"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:56
+#: ../../taichi/docs/dev_install.rst:58
 msgid "Clone the taichi repo, and build:"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:58
+#: ../../taichi/docs/dev_install.rst:60
 msgid ""
 "git clone https://github.com/taichi-dev/taichi --depth=1 --branch=master\n"
 "git submodule update --init --recursive --depth=1\n"
@@ -1471,11 +1469,11 @@ msgid ""
 "make -j 8"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:70
+#: ../../taichi/docs/dev_install.rst:72
 msgid "Add the following script to your ``~/.bashrc``:"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:72
+#: ../../taichi/docs/dev_install.rst:74
 msgid ""
 "export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository"
 "\n"
@@ -1485,43 +1483,43 @@ msgid ""
 "is in /opt"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:79
+#: ../../taichi/docs/dev_install.rst:81
 msgid "Execute ``source ~/.bashrc`` to reload shell config."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:80
+#: ../../taichi/docs/dev_install.rst:82
 msgid ""
 "Execute ``python3 -m taichi test`` to run all the tests. It may take up "
 "to 5 minutes to run all tests."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:81
+#: ../../taichi/docs/dev_install.rst:83
 msgid "Check out ``examples`` for runnable examples. Run them with ``python3``."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:85
+#: ../../taichi/docs/dev_install.rst:87
 msgid "Setting up CUDA 10.1 on Ubuntu 18.04"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:87
+#: ../../taichi/docs/dev_install.rst:89
 msgid ""
 "First, make sure you have CUDA 10.1 installed. Check this by running "
 "``nvcc --version`` or ``cat /usr/local/cuda/version.txt``"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:91
+#: ../../taichi/docs/dev_install.rst:93
 msgid ""
 "If you don't have it - go ahead to `this website "
 "<https://developer.nvidia.com/cuda-downloads>`_ and download it."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:93
+#: ../../taichi/docs/dev_install.rst:95
 msgid ""
 "These instructions were copied from the webiste above for x86_64 "
 "architecture"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:95
+#: ../../taichi/docs/dev_install.rst:97
 msgid ""
 "wget "
 "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64"
@@ -1539,11 +1537,11 @@ msgid ""
 "sudo apt-get -y install cuda"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:106
+#: ../../taichi/docs/dev_install.rst:108
 msgid "Prebuilt LLVM for Windows CI"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:108
+#: ../../taichi/docs/dev_install.rst:110
 msgid ""
 "cmake .. -G\"Visual Studio 15 2017 Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON "
 "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
@@ -1551,22 +1549,22 @@ msgid ""
 "-Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:112
+#: ../../taichi/docs/dev_install.rst:114
 msgid ""
 "Then use Visual Studio to build. After building the ``INSTALL`` project "
 "(under folder \"CMakePredefinedTargets\"). After build completes, find "
 "your LLVM binaries/headers in `build/include`."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:115
+#: ../../taichi/docs/dev_install.rst:117
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:117
+#: ../../taichi/docs/dev_install.rst:119
 msgid "Run with debug mode to see if there's any illegal memory access"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:118
+#: ../../taichi/docs/dev_install.rst:120
 msgid ""
 "Disable compiler optimizations to quickly confirm that the issue is not "
 "cause by optimization"
@@ -1842,6 +1840,404 @@ msgstr ""
 
 #: ../../taichi/docs/global_settings.rst:13
 msgid "To print verbosed details: ``export TI_VERBOSE=1``"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:4
+msgid "GUI system"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:6
+msgid ""
+"Taichi has a built-in GUI system to help users display graphic results "
+"easier."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:10
+msgid "Create a window"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst ../../taichi/docs/matrix.rst
+#: ../../taichi/docs/scalar_tensor.rst ../../taichi/docs/vector.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:15
+msgid "(string) the window title"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:16
+msgid "(scalar or tuple) resolution / size of the window"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:17
+msgid "(optional, RGB hex) background color of the window"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:18
+msgid "(GUI) an object represents the window"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:20
+msgid "Create a window. If ``res`` is scalar, then width will be equal to height."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:23
+msgid "This creates a window whose width is 1024, height is 768:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:27
+msgid "gui = ti.GUI('Window Title', (1024, 768))"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:32 ../../taichi/docs/gui.rst:54
+#: ../../taichi/docs/gui.rst:90 ../../taichi/docs/gui.rst:100
+#: ../../taichi/docs/gui.rst:114 ../../taichi/docs/gui.rst:125
+#: ../../taichi/docs/gui.rst:136
+msgid "(GUI) the window object"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:33
+msgid "(optional, string) see notes below"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:35
+msgid "Show the window on the screen."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:38
+msgid ""
+"If `filename` is specified, screenshot will be saved to the file "
+"specified by the name. For example, this screenshots each frame of the "
+"window, and save it in ``.png``'s:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:42
+msgid ""
+"for frame in range(10000):\n"
+"    render(img)\n"
+"    gui.set_image(img)\n"
+"    gui.show(f'{frame:06d}.png')"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:49
+msgid "Paint a window"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:55
+msgid "(np.array or Tensor) tensor containing the image, see notes below"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:57
+msgid "Set a image to display on the window."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:59
+msgid ""
+"The pixel, ``i`` from bottom to up, ``j`` from left to right, is set to "
+"the value of ``img[i, j]``."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:62
+msgid "If the window size is ``(x, y)``, then the ``img`` must be one of:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:64
+msgid "``ti.var(shape=(x, y))``, a grey-scale image"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:66
+msgid "``ti.var(shape=(x, y, 3))``, where `3` is for `(r, g, b)` channels"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:68
+msgid "``ti.Vector(3, shape=(x, y))`` (see :ref:`vector`)"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:70
+msgid "``np.ndarray(shape=(x, y))``"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:72
+msgid "``np.ndarray(shape=(x, y, 3))``"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:75
+msgid "The data type of ``img`` must be one of:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:77
+msgid "float32, clamped into [0, 1]"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:79
+msgid "float64, clamped into [0, 1]"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:81
+msgid "uint8, range [0, 255]"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:83
+msgid "uint16, range [0, 65535]"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:85
+msgid "uint32, range [0, UINT_MAX]"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:91
+msgid "(tuple of 2) the position of circle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:92
+msgid "(optional, RGB hex) color to fill the circle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:93 ../../taichi/docs/gui.rst:103
+msgid "(optional, scalar) the radius of circle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:95
+msgid "Draw a solid circle."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:101
+msgid "(np.array) the position of circles"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:102
+msgid "(optional, RGB hex or np.array of uint32) color(s) to fill circles"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:105
+msgid "Draw solid circles."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:109
+msgid ""
+"If ``color`` is a numpy array, circle at ``pos[i]`` will be colored with "
+"``color[i]``, therefore it must have the same size with ``pos``."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:115
+msgid "(tuple of 2) the first end point position of line"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:116
+msgid "(tuple of 2) the second end point position of line"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:117
+msgid "(optional, RGB hex) the color of line"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:118
+msgid "(optional, scalar) the width of line"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:120
+msgid "Draw a line."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:126
+msgid "(tuple of 2) the first end point position of triangle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:127
+msgid "(tuple of 2) the second end point position of triangle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:128
+msgid "(tuple of 2) the third end point position of triangle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:129
+msgid "(optional, RGB hex) the color to fill the triangle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:131
+msgid "Draw a solid triangle."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:137
+msgid "(tuple of 2) the top-left point position of rectangle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:138
+msgid "(tuple of 2) the bottom-right point position of rectangle"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:139
+msgid "(optional, RGB hex) the color of stroke line"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:140
+msgid "(optional, scalar) the width of stroke line"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:142
+msgid "Draw a hollow rectangle."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:146
+msgid "Event processing"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:148
+msgid ""
+"Every event have a key and type. *Event key* is the key that you pressed "
+"on keyboard or mouse, can be one of:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:153
+msgid ""
+"ti.GUI.ESCAPE\n"
+"ti.GUI.SHIFT\n"
+"ti.GUI.LEFT\n"
+"'a'\n"
+"'b'\n"
+"...\n"
+"ti.GUI.LMB\n"
+"ti.GUI.RMB"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:162
+msgid ""
+"*Event type* is the type of event, for now, there are just three type of "
+"event:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:166
+msgid ""
+"ti.GUI.RELEASE  # key up\n"
+"ti.GUI.PRESS    # key down\n"
+"ti.GUI.MOTION   # mouse moved"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:171
+msgid ""
+"A *event filter* is a list combined of *key*, *type* and *(type, key)* "
+"tuple, e.g.:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:173
+msgid ""
+"# if ESC pressed or released:\n"
+"gui.get_event(ti.GUI.ESCAPE)\n"
+"\n"
+"# if any key is pressed:\n"
+"gui.get_event(ti.GUI.PRESS)\n"
+"\n"
+"# if ESC pressed or SPACE released:\n"
+"gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, "
+"ti.GUI.SPACE))"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:187 ../../taichi/docs/gui.rst:212
+#: ../../taichi/docs/gui.rst:230 ../../taichi/docs/gui.rst:250
+msgid "(GUI)"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:188 ../../taichi/docs/gui.rst:213
+msgid "(optional, EventFilter) filter out matched events"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:189
+msgid "(bool) ``False`` if there is no pending event, vise versa"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:191
+msgid "Try to pop a event from the queue, and store it in ``gui.event``."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:193 ../../taichi/docs/gui.rst:253
+msgid "For example:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:197
+msgid ""
+"while gui.get_event():\n"
+"    print('Event key', gui.event.key)"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:201
+msgid "For example, loop until ESC is pressed:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:205
+msgid ""
+"gui = ti.GUI('Title', (640, 480))\n"
+"while not gui.get_event(ti.GUI.ESCAPE):\n"
+"    gui.set_image(img)\n"
+"    gui.show()"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:214
+msgid "(generator) a python generator, see below"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:216
+msgid ""
+"Basically the same as ``gui.get_event``, except for this one returns a "
+"generator of events instead of storing into ``gui.event``:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:220
+msgid ""
+"for e in gui.get_events():\n"
+"    if e.key == ti.GUI.ESCAPE:\n"
+"        exit()\n"
+"    elif e.type == ti.GUI.SPACE:\n"
+"        do_something()\n"
+"    elif e.type in ['a', ti.GUI.LEFT]:\n"
+"        ..."
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:231
+msgid "(EventKey) keys you want to detect"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:232
+msgid "(bool) ``True`` if one of the keys pressed, vice versa"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:236
+msgid ""
+"Must be used together with ``gui.get_event``, or it won't be updated! For"
+" example:"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:241
+msgid ""
+"while True:\n"
+"    gui.get_event()  # must be called before is_pressed\n"
+"    if gui.is_pressed('a', ti.GUI.LEFT):\n"
+"        print('Go left!')\n"
+"    elif gui.is_pressed('d', ti.GUI.RIGHT):\n"
+"        print('Go right!')"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:251
+msgid "(tuple of 2) current cursor position within the window"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:257
+msgid "mouse_x, mouse_y = gui.get_cursor_pos()"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:261
+msgid "Image I/O"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:263
+msgid ""
+"img = ti.imread('hello.png')\n"
+"ti.imshow(img, 'Window Title')\n"
+"ti.imwrite(img, 'hello2.png')"
+msgstr ""
+
+#: ../../taichi/docs/gui.rst:269
+msgid "TODO: complete here"
 msgstr ""
 
 #: ../../taichi/docs/hello.rst:2
@@ -2221,14 +2617,14 @@ msgid "Advanced Programming"
 msgstr ""
 
 #: ../../taichi/docs/index.rst:45
-msgid "Contribution"
+msgid "Contributing"
 msgstr ""
 
 #: ../../taichi/docs/index.rst:55
 msgid "Miscellaneous"
 msgstr ""
 
-#: ../../taichi/docs/index.rst:66
+#: ../../taichi/docs/index.rst:67
 msgid "Legacy"
 msgstr ""
 
@@ -2465,17 +2861,12 @@ msgid ""
 msgstr ""
 
 #: ../../taichi/docs/matrix.rst:28 ../../taichi/docs/scalar_tensor.rst:8
-#: ../../taichi/docs/vector.rst:12
+#: ../../taichi/docs/vector.rst:14
 msgid "Declaration"
 msgstr ""
 
 #: ../../taichi/docs/matrix.rst:31
 msgid "As global tensors of matrices"
-msgstr ""
-
-#: ../../taichi/docs/matrix.rst ../../taichi/docs/scalar_tensor.rst
-#: ../../taichi/docs/vector.rst
-msgid "参数"
 msgstr ""
 
 #: ../../taichi/docs/matrix.rst:35
@@ -2486,11 +2877,11 @@ msgstr ""
 msgid "(scalar) the number of columns in the matrix"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:37 ../../taichi/docs/vector.rst:20
+#: ../../taichi/docs/matrix.rst:37 ../../taichi/docs/vector.rst:22
 msgid "(DataType) data type of the components"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:38 ../../taichi/docs/vector.rst:21
+#: ../../taichi/docs/matrix.rst:38 ../../taichi/docs/vector.rst:23
 msgid "(scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
 msgstr ""
 
@@ -2511,15 +2902,15 @@ msgid ""
 msgstr ""
 
 #: ../../taichi/docs/matrix.rst:52 ../../taichi/docs/matrix.rst:143
-#: ../../taichi/docs/vector.rst:35 ../../taichi/docs/vector.rst:82
+#: ../../taichi/docs/vector.rst:37 ../../taichi/docs/vector.rst:84
 msgid "As a temporary local variable"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:56 ../../taichi/docs/vector.rst:39
+#: ../../taichi/docs/matrix.rst:56 ../../taichi/docs/vector.rst:41
 msgid "(scalar) the first component of the vector"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:57 ../../taichi/docs/vector.rst:40
+#: ../../taichi/docs/matrix.rst:57 ../../taichi/docs/vector.rst:42
 msgid "(scalar) the second component of the vector"
 msgstr ""
 
@@ -2600,12 +2991,12 @@ msgid ""
 "a = ti.Matrix(rows=[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:110 ../../taichi/docs/vector.rst:50
+#: ../../taichi/docs/matrix.rst:110 ../../taichi/docs/vector.rst:52
 msgid "Accessing components"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:113 ../../taichi/docs/vector.rst:15
-#: ../../taichi/docs/vector.rst:53
+#: ../../taichi/docs/matrix.rst:113 ../../taichi/docs/vector.rst:17
+#: ../../taichi/docs/vector.rst:55
 msgid "As global tensors of vectors"
 msgstr ""
 
@@ -2613,11 +3004,11 @@ msgstr ""
 msgid "(tensor of matrices) the tensor of matrices"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:117 ../../taichi/docs/vector.rst:57
+#: ../../taichi/docs/matrix.rst:117 ../../taichi/docs/vector.rst:59
 msgid "(scalar) index of the first tensor dimension"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:118 ../../taichi/docs/vector.rst:58
+#: ../../taichi/docs/matrix.rst:118 ../../taichi/docs/vector.rst:60
 msgid "(scalar) index of the second tensor dimension"
 msgstr ""
 
@@ -2688,7 +3079,7 @@ msgstr ""
 msgid "a[1, 3] = 4"
 msgstr ""
 
-#: ../../taichi/docs/matrix.rst:162 ../../taichi/docs/vector.rst:102
+#: ../../taichi/docs/matrix.rst:162 ../../taichi/docs/vector.rst:104
 msgid "Methods"
 msgstr ""
 
@@ -3400,108 +3791,119 @@ msgid "``min(a, b)``"
 msgstr ""
 
 #: ../../taichi/docs/syntax.rst:139
-msgid "``ti.length(dynamic_snode)``"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:140
 msgid "``x ** y``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:141
+#: ../../taichi/docs/syntax.rst:140
 msgid ""
 "Inplace adds are atomic on global data. I.e., ``a += b`` is equivalent to"
 " ``ti.atomic_add(a, b)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:145
+#: ../../taichi/docs/syntax.rst:142
+msgid ""
+"Note: when these scalar functions are applied on :ref:`matrix` and "
+":ref:`vector`, it's applied element-wise, for example:"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:144
+msgid ""
+"A = ti.sin(B)\n"
+"# is equalivant to (assuming B is a 3x2 matrix):\n"
+"for i in ti.static(range(3)):\n"
+"    for j in ti.static(range(2)):\n"
+"        A[i, j] = ti.sin(B[i, j])"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:154
 msgid ""
 "Python 3 distinguishes ``/`` (true division) and ``//`` (floor division)."
 " For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = 0``, ``4.2"
 " // 2 = 2``. Taichi follows this design:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:148
+#: ../../taichi/docs/syntax.rst:157
 msgid ""
 "*true divisions* on integral types will first cast their operands to the "
 "default float point type."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:149
+#: ../../taichi/docs/syntax.rst:158
 msgid ""
 "*floor divisions* on float-point types will first cast their operands to "
 "the default integer type."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:151
+#: ../../taichi/docs/syntax.rst:160
 msgid ""
 "To avoid such implicit casting, you can manually cast your operands to "
 "desired types, using ``ti.cast``. Read :ref:`default_precisions` for more"
 " details on default numerical types."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:155
+#: ../../taichi/docs/syntax.rst:164
 msgid "Debugging"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:157
+#: ../../taichi/docs/syntax.rst:166
 msgid "Debug your program with ``print(x)``."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:161
+#: ../../taichi/docs/syntax.rst:170
 msgid "Why Python frontend"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:163
+#: ../../taichi/docs/syntax.rst:172
 msgid "Embedding the language in ``python`` has the following advantages:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:165
+#: ../../taichi/docs/syntax.rst:174
 msgid "Easy to learn. Taichi has a very similar syntax to Python."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:166
+#: ../../taichi/docs/syntax.rst:175
 msgid "Easy to run. No ahead-of-time compilation is needed."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:167
+#: ../../taichi/docs/syntax.rst:176
 msgid "This design allows people to reuse existing python infrastructure:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:169
+#: ../../taichi/docs/syntax.rst:178
 msgid ""
 "IDEs. A python IDE mostly works for Taichi with syntax highlighting, "
 "syntax checking, and autocomplete."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:170
+#: ../../taichi/docs/syntax.rst:179
 msgid ""
 "Package manager (pip). A developed Taichi application and be easily "
 "submitted to ``PyPI`` and others can easily set it up with ``pip``."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:171
+#: ../../taichi/docs/syntax.rst:180
 msgid ""
 "Existing packages. Interacting with other python components (e.g. "
 "``matplotlib`` and ``numpy``) is just trivial."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:173
+#: ../../taichi/docs/syntax.rst:182
 msgid ""
 "The built-in AST manipulation tools in ``python`` allow us to do magical "
 "things, as long as the kernel body can be parsed by the Python parser."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:175
+#: ../../taichi/docs/syntax.rst:184
 msgid "However, this design has drawbacks as well:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:177
+#: ../../taichi/docs/syntax.rst:186
 msgid ""
 "Taichi kernels must parse-able by Python parsers. This means Taichi "
 "syntax cannot go beyond Python syntax."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:179
+#: ../../taichi/docs/syntax.rst:188
 msgid ""
 "For example, indexing is always needed when accessing elements in Taichi "
 "tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the value"
@@ -3510,7 +3912,7 @@ msgid ""
 "python syntax, and, unfortunately, we cannot modify this behavior."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:181
+#: ../../taichi/docs/syntax.rst:190
 msgid ""
 "Python has relatively low performance. This can cause a performance issue"
 " when initializing large Taichi tensors with pure python scripts. A "
@@ -3902,42 +4304,11 @@ msgstr ""
 msgid "Utilities"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:4
-msgid "TODO: update"
-msgstr ""
-
-#: ../../taichi/docs/utilities.rst:7
-msgid "GUI system"
-msgstr ""
-
-#: ../../taichi/docs/utilities.rst:9
-msgid ""
-"gui = ti.GUI('Title', (640, 480))\n"
-"while not gui.is_pressed(ti.GUI.ESCAPE):\n"
-"    gui.set_image(img)\n"
-"    gui.show()"
-msgstr ""
-
-#: ../../taichi/docs/utilities.rst:17
-msgid "Also checkout ``examples/keyboard.py`` for more advanced event processing."
-msgstr ""
-
-#: ../../taichi/docs/utilities.rst:21
-msgid "Image I/O"
-msgstr ""
-
-#: ../../taichi/docs/utilities.rst:23
-msgid ""
-"img = ti.imread('hello.png')\n"
-"ti.imshow(img, 'Window Title')\n"
-"ti.imwrite(img, 'hello2.png')"
-msgstr ""
-
-#: ../../taichi/docs/utilities.rst:31
+#: ../../taichi/docs/utilities.rst:6
 msgid "Logging"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:33
+#: ../../taichi/docs/utilities.rst:8
 msgid ""
 "'''\n"
 "level can be {}\n"
@@ -3951,18 +4322,18 @@ msgid ""
 "ti.set_logging_level(level)"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:46
+#: ../../taichi/docs/utilities.rst:21
 msgid ""
 "The default logging level is ``ti.INFO``. You can also override default "
 "logging level by setting the environment variable ``TI_LOG_LEVEL`` to "
 "values such as ``trace`` and ``warn``."
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:51
+#: ../../taichi/docs/utilities.rst:26
 msgid "Trigger GDB when the program crashes"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:53
+#: ../../taichi/docs/utilities.rst:28
 msgid ""
 "# Python\n"
 "ti.set_gdb_trigger(True)\n"
@@ -3971,35 +4342,35 @@ msgid ""
 "CoreState::set_trigger_gdb_when_crash(true);"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:62
+#: ../../taichi/docs/utilities.rst:37
 msgid "Interface System"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:63
+#: ../../taichi/docs/utilities.rst:38
 msgid "Print all interfaces and units"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:65
+#: ../../taichi/docs/utilities.rst:40
 msgid "ti.core.print_all_units()"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:70
+#: ../../taichi/docs/utilities.rst:45
 msgid "Serialization"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:72
+#: ../../taichi/docs/utilities.rst:47
 msgid ""
 "The serialization module of taichi allows you to serialize/deserialize "
 "objects into/from binary strings."
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:74
+#: ../../taichi/docs/utilities.rst:49
 msgid ""
 "You can use ``TI_IO`` macros to explicit define fields necessary in "
 "Taichi."
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:76
+#: ../../taichi/docs/utilities.rst:51
 msgid ""
 "// TI_IO_DEF\n"
 "struct Particle {\n"
@@ -4032,17 +4403,17 @@ msgid ""
 "// TI_IO_DEF_VIRT();"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:110
+#: ../../taichi/docs/utilities.rst:85
 msgid "Progress Notification"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:112
+#: ../../taichi/docs/utilities.rst:87
 msgid ""
 "The taichi messager can send an email to ``$TI_MONITOR_EMAIL`` when the "
 "task finished or crashed. To enable:"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:115
+#: ../../taichi/docs/utilities.rst:90
 msgid ""
 "from taichi.tools import messager\n"
 "messager.enable(task_id='test')"
@@ -4068,49 +4439,53 @@ msgid ""
 "N-dimensional array of ``n`` component vectors"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:19
+#: ../../taichi/docs/vector.rst:11
+msgid "See :ref:`tensor_matrix` for more details."
+msgstr ""
+
+#: ../../taichi/docs/vector.rst:21
 msgid "(scalar) the number of components in the vector"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:23
+#: ../../taichi/docs/vector.rst:25
 msgid "For example, this creates a 5x4 tensor of 3 component vectors: ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:26
+#: ../../taichi/docs/vector.rst:28
 msgid ""
 "# Python-scope\n"
 "a = ti.Vector(3, dt=ti.f32, shape=(5, 4))"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:31
+#: ../../taichi/docs/vector.rst:33
 msgid ""
 "In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while "
 "``ti.Vector`` declares tensors of vectors."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:42
+#: ../../taichi/docs/vector.rst:44
 msgid "For example, this creates a 3D vector with components (2, 3, 4): ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:45
+#: ../../taichi/docs/vector.rst:47
 msgid ""
 "# Taichi-scope\n"
 "a = ti.Vector([2, 3, 4])"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:56 ../../taichi/docs/vector.rst:86
+#: ../../taichi/docs/vector.rst:58 ../../taichi/docs/vector.rst:88
 msgid "(Vector) the vector"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:59
+#: ../../taichi/docs/vector.rst:61
 msgid "(scalar) index of the vector component"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:61
+#: ../../taichi/docs/vector.rst:63
 msgid "This extracts the first component of vector ``a[6, 3]``: ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:64
+#: ../../taichi/docs/vector.rst:66
 msgid ""
 "x = a[6, 3][0]\n"
 "\n"
@@ -4119,126 +4494,126 @@ msgid ""
 "x = vec[0]"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:72
+#: ../../taichi/docs/vector.rst:74
 msgid ""
 "**Always** use two pair of square brackets to access scalar elements from"
 " tensors of vectors."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:74
+#: ../../taichi/docs/vector.rst:76
 msgid ""
 "The indices in the first pair of brackets locate the vector inside the "
 "tensor of vectors;"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:75
+#: ../../taichi/docs/vector.rst:77
 msgid ""
 "The indices in the second pair of brackets locate the scalar element "
 "inside the vector."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:77
+#: ../../taichi/docs/vector.rst:79
 msgid ""
 "For 0-D tensors of vectors, indices in the first pair of brackets should "
 "be ``[None]``."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:87
+#: ../../taichi/docs/vector.rst:89
 msgid "(scalar) index of the component"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:89
+#: ../../taichi/docs/vector.rst:91
 msgid "For example, this extracts the first component of vector ``a``: ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:92
+#: ../../taichi/docs/vector.rst:94
 msgid "x = a[0]"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:94
+#: ../../taichi/docs/vector.rst:96
 msgid "This sets the second component of ``a`` to 4: ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:97
+#: ../../taichi/docs/vector.rst:99
 msgid "a[1] = 4"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:99
+#: ../../taichi/docs/vector.rst:101
 msgid "TODO: add descriptions about ``a(i, j)``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:106 ../../taichi/docs/vector.rst:124
-#: ../../taichi/docs/vector.rst:125 ../../taichi/docs/vector.rst:152
-#: ../../taichi/docs/vector.rst:153 ../../taichi/docs/vector.rst:170
+#: ../../taichi/docs/vector.rst:108 ../../taichi/docs/vector.rst:126
+#: ../../taichi/docs/vector.rst:127 ../../taichi/docs/vector.rst:154
+#: ../../taichi/docs/vector.rst:155 ../../taichi/docs/vector.rst:172
 msgid "(Vector)"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:107
+#: ../../taichi/docs/vector.rst:109
 msgid ""
 "(optional, scalar) a safe-guard value for ``sqrt``, usually 0. See the "
 "note below."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:108
+#: ../../taichi/docs/vector.rst:110
 msgid "(scalar) the magnitude / length / norm of vector"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:113
+#: ../../taichi/docs/vector.rst:115
 msgid ""
 "a = ti.Vector([3, 4])\n"
 "a.norm() # sqrt(3*3 + 4*4 + 0) = 5"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:116
+#: ../../taichi/docs/vector.rst:118
 msgid "``a.norm(eps)`` is equivalent to ``ti.sqrt(a.dot(a) + eps)``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:119
+#: ../../taichi/docs/vector.rst:121
 msgid ""
 "Set ``eps = 1e-5`` for example, to safe guard the operator's gradient on "
 "zero vectors during differentiable programming."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:126
+#: ../../taichi/docs/vector.rst:128
 msgid "(scalar) the dot (inner) product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:128 ../../taichi/docs/vector.rst:156
-#: ../../taichi/docs/vector.rst:174
+#: ../../taichi/docs/vector.rst:130 ../../taichi/docs/vector.rst:158
+#: ../../taichi/docs/vector.rst:176
 msgid "E.g., ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:131
+#: ../../taichi/docs/vector.rst:133
 msgid ""
 "a = ti.Vector([1, 3])\n"
 "b = ti.Vector([2, 4])\n"
 "a.dot(b) # 1*2 + 3*4 = 14"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:138 ../../taichi/docs/vector.rst:139
+#: ../../taichi/docs/vector.rst:140 ../../taichi/docs/vector.rst:141
 msgid "(Vector, 3 component)"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:140
+#: ../../taichi/docs/vector.rst:142
 msgid "(Vector, 3D) the cross product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:142
+#: ../../taichi/docs/vector.rst:144
 msgid "We use right-handed coordinate system, E.g., ::"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:145
+#: ../../taichi/docs/vector.rst:147
 msgid ""
 "a = ti.Vector([1, 2, 3])\n"
 "b = ti.Vector([4, 5, 6])\n"
 "c = ti.cross(a, b) # [2*6 - 5*3, 4*3 - 1*6, 1*5 - 4*2]"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:154
+#: ../../taichi/docs/vector.rst:156
 msgid "(Matrix) the outer product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:159
+#: ../../taichi/docs/vector.rst:161
 msgid ""
 "a = ti.Vector([1, 2, 3])\n"
 "b = ti.Vector([4, 5, 6])\n"
@@ -4246,28 +4621,28 @@ msgid ""
 "# c = [[1*4, 1*5, 1*6], [2*4, 2*5, 2*6], [3*4, 3*5, 3*6]]"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:165
+#: ../../taichi/docs/vector.rst:167
 msgid ""
 "This is not the same as `ti.cross`. ``a`` and ``b`` do not have to be 3 "
 "component vectors."
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:171
+#: ../../taichi/docs/vector.rst:173
 msgid "(DataType)"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:172
+#: ../../taichi/docs/vector.rst:174
 msgid "(Vector) vector with all components of ``a`` casted into type ``dt``"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:177
+#: ../../taichi/docs/vector.rst:179
 msgid ""
 "# Taichi-scope\n"
 "a = ti.Vector([1.6, 2.3])\n"
 "a.cast(ti.i32) # [2, 3]"
 msgstr ""
 
-#: ../../taichi/docs/vector.rst:182
+#: ../../taichi/docs/vector.rst:184
 msgid ""
 "Vectors are special matrices with only 1 column. In fact, ``ti.Vector`` "
 "is just an alias of ``ti.Matrix``."
@@ -4305,5 +4680,58 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(If on Ubuntu) Execute ``sudo apt "
+#~ "install libtinfo-dev clang-8`` (or "
+#~ "``clang-7`` should work as well)."
+#~ msgstr ""
+
+#~ msgid "(If on Arch Linux) Execute"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "wget "
+#~ "https://archive.archlinux.org/packages/c/clang/clang-8.0.1-1-x86_64.pkg.tar.xz"
+#~ "\n"
+#~ "sudo pacman -Qp clang-8.0.1-1-x86_64.pkg.tar.xz"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you have installed ``clang`` (9.0.1)"
+#~ " before, this command will overrides "
+#~ "the existing ``clang``. If you don't "
+#~ "want to break up depedencies, please "
+#~ "build from scratch and install it "
+#~ "in ``/opt``. Then add ``/opt/clang/bin`` "
+#~ "to your ``$PATH``."
+#~ msgstr ""
+
+#~ msgid "Contribution"
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "``ti.length(dynamic_snode)``"
+#~ msgstr ""
+
+#~ msgid "TODO: update"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "gui = ti.GUI('Title', (640, 480))\n"
+#~ "while not gui.is_pressed(ti.GUI.ESCAPE):\n"
+#~ "    gui.set_image(img)\n"
+#~ "    gui.show()"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Also checkout ``examples/keyboard.py`` for "
+#~ "more advanced event processing."
 #~ msgstr ""
 

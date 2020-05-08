@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-24 11:24+0800\n"
+"POT-Creation-Date: 2020-05-07 01:24-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,42 +21,11 @@ msgstr ""
 msgid "Utilities"
 msgstr ""
 
-#: ../../utilities.rst:4
-msgid "TODO: update"
-msgstr ""
-
-#: ../../utilities.rst:7
-msgid "GUI system"
-msgstr ""
-
-#: ../../utilities.rst:9
-msgid ""
-"gui = ti.GUI('Title', (640, 480))\n"
-"while not gui.is_pressed(ti.GUI.ESCAPE):\n"
-"    gui.set_image(img)\n"
-"    gui.show()"
-msgstr ""
-
-#: ../../utilities.rst:17
-msgid "Also checkout ``examples/keyboard.py`` for more advanced event processing."
-msgstr ""
-
-#: ../../utilities.rst:21
-msgid "Image I/O"
-msgstr ""
-
-#: ../../utilities.rst:23
-msgid ""
-"img = ti.imread('hello.png')\n"
-"ti.imshow(img, 'Window Title')\n"
-"ti.imwrite(img, 'hello2.png')"
-msgstr ""
-
-#: ../../utilities.rst:31
+#: ../../utilities.rst:6
 msgid "Logging"
 msgstr ""
 
-#: ../../utilities.rst:33
+#: ../../utilities.rst:8
 msgid ""
 "'''\n"
 "level can be {}\n"
@@ -70,18 +39,18 @@ msgid ""
 "ti.set_logging_level(level)"
 msgstr ""
 
-#: ../../utilities.rst:46
+#: ../../utilities.rst:21
 msgid ""
 "The default logging level is ``ti.INFO``. You can also override default "
 "logging level by setting the environment variable ``TI_LOG_LEVEL`` to "
 "values such as ``trace`` and ``warn``."
 msgstr ""
 
-#: ../../utilities.rst:51
+#: ../../utilities.rst:26
 msgid "Trigger GDB when the program crashes"
 msgstr ""
 
-#: ../../utilities.rst:53
+#: ../../utilities.rst:28
 msgid ""
 "# Python\n"
 "ti.set_gdb_trigger(True)\n"
@@ -90,35 +59,35 @@ msgid ""
 "CoreState::set_trigger_gdb_when_crash(true);"
 msgstr ""
 
-#: ../../utilities.rst:62
+#: ../../utilities.rst:37
 msgid "Interface System"
 msgstr ""
 
-#: ../../utilities.rst:63
+#: ../../utilities.rst:38
 msgid "Print all interfaces and units"
 msgstr ""
 
-#: ../../utilities.rst:65
+#: ../../utilities.rst:40
 msgid "ti.core.print_all_units()"
 msgstr ""
 
-#: ../../utilities.rst:70
+#: ../../utilities.rst:45
 msgid "Serialization"
 msgstr ""
 
-#: ../../utilities.rst:72
+#: ../../utilities.rst:47
 msgid ""
 "The serialization module of taichi allows you to serialize/deserialize "
 "objects into/from binary strings."
 msgstr ""
 
-#: ../../utilities.rst:74
+#: ../../utilities.rst:49
 msgid ""
 "You can use ``TI_IO`` macros to explicit define fields necessary in "
 "Taichi."
 msgstr ""
 
-#: ../../utilities.rst:76
+#: ../../utilities.rst:51
 msgid ""
 "// TI_IO_DEF\n"
 "struct Particle {\n"
@@ -151,19 +120,46 @@ msgid ""
 "// TI_IO_DEF_VIRT();"
 msgstr ""
 
-#: ../../utilities.rst:110
+#: ../../utilities.rst:85
 msgid "Progress Notification"
 msgstr ""
 
-#: ../../utilities.rst:112
+#: ../../utilities.rst:87
 msgid ""
 "The taichi messager can send an email to ``$TI_MONITOR_EMAIL`` when the "
 "task finished or crashed. To enable:"
 msgstr ""
 
-#: ../../utilities.rst:115
+#: ../../utilities.rst:90
 msgid ""
 "from taichi.tools import messager\n"
 "messager.enable(task_id='test')"
 msgstr ""
+
+#~ msgid "TODO: update"
+#~ msgstr ""
+
+#~ msgid "GUI system"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "gui = ti.GUI('Title', (640, 480))\n"
+#~ "while not gui.is_pressed(ti.GUI.ESCAPE):\n"
+#~ "    gui.set_image(img)\n"
+#~ "    gui.show()"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Also checkout ``examples/keyboard.py`` for "
+#~ "more advanced event processing."
+#~ msgstr ""
+
+#~ msgid "Image I/O"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "img = ti.imread('hello.png')\n"
+#~ "ti.imshow(img, 'Window Title')\n"
+#~ "ti.imwrite(img, 'hello2.png')"
+#~ msgstr ""
 
