@@ -3,23 +3,24 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-21 16:57+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-08 12:55+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../../tensor_matrix.rst:4
 msgid "Tensors and matrices"
-msgstr ""
+msgstr "张量与矩阵"
 
 #: ../../tensor_matrix.rst:6
 msgid ""
@@ -27,6 +28,8 @@ msgid ""
 "sparse or dense. An element of a tensor can be either a scalar or a "
 "vector/matrix."
 msgstr ""
+"在Taichi中，张量是全局变量。张量分为稀疏张量和密集张量。张量的元素可以是"
+"标量，也可以是矩阵。"
 
 #: ../../tensor_matrix.rst:9
 msgid ""
@@ -34,72 +37,87 @@ msgid ""
 "**tensor** and **matrix** are two completely different things. Matrices "
 "can be used as tensor elements, so you have tensors of matrices."
 msgstr ""
+"尽管数学上矩阵被当作2维张量，然而在Taichi中， **张量** 和 **矩阵** 是两个"
+"完全不同的概念。矩阵可以被当作张量的元素，这种就是由矩阵组成的张量。"
 
 #: ../../tensor_matrix.rst:12
 msgid "Tensors of scalars"
-msgstr ""
+msgstr "由标量组成的张量"
 
 #: ../../tensor_matrix.rst:13
 msgid "Every global variable is an N-dimensional tensor."
-msgstr ""
+msgstr "每个全局变量都是个N维张量。"
 
 #: ../../tensor_matrix.rst:14
 msgid "Global `scalars` are treated as 0-D tensors of scalars."
-msgstr ""
+msgstr "全局 *标量* 被当作0维张量。"
 
 #: ../../tensor_matrix.rst:15
 msgid ""
 "Tensors are accessed using indices, e.g. ``x[i, j, k]`` if ``x`` is a "
 "scalar 3D tensor. For a 0-D tensor, access it as ``x[None]``."
 msgstr ""
+"张量的元素通过指标来访问，例如：通过 ``x[i, j, k]`` 来访问3维张量 "
+"``x`` 。通过 ``x[None]`` 来访问0维张量。"
 
 #: ../../tensor_matrix.rst:16
 msgid ""
 "Even when accessing 0-D tensor ``x``, use ``x[None] = 0`` instead of ``x "
 "= 0``. Please always use indexing to access entries in tensors."
 msgstr ""
+"即使访问的是0维张量，也要用 ``x[None] = 0`` 而不是 ``x = 0`` ：请始终用指"
+"标来访问张量。"
 
 #: ../../tensor_matrix.rst:17
 msgid "Tensor values are initially zero."
-msgstr ""
+msgstr "张量的元素值全部会被初始化为0。"
 
 #: ../../tensor_matrix.rst:18
 msgid "Sparse tensors are initially inactive."
-msgstr ""
+msgstr "稀疏张量的元素全部会被初始化为 *未激活* 。"
 
 #: ../../tensor_matrix.rst:19
 msgid "See :ref:`scalar_tensor` for more details."
-msgstr ""
+msgstr "详情请见 :ref:`scalar_tensor` 。"
 
 #: ../../tensor_matrix.rst:23
 msgid "Tensors of matrices"
-msgstr ""
+msgstr "由矩阵组成的张量"
 
 #: ../../tensor_matrix.rst:24
 msgid ""
-"Suppose you have a ``128 x 64`` global grid ``A``, each node containing a"
-" ``3 x 2`` matrices. In this case you need to allocate a ``128 x 64`` "
+"Suppose you have a ``128 x 64`` global grid ``A``, each node containing "
+"a ``3 x 2`` matrices. In this case you need to allocate a ``128 x 64`` "
 "tensor of ``3 x 2`` matrix, using the statement ``A = ti.Matrix(3, 2, "
 "dt=ti.f32, shape=(128, 64))``."
 msgstr ""
+"假如你有个 ``128 x 64`` 的全局格子 ``A`` ， 每个节点包含一个 ``3 x 2`` 矩"
+"阵。 这时你要分配一个 ``128 x 64`` 的 *矩阵组成的张量* ： ``A = ti."
+"Matrix(3, 2, dt=ti.f32, shape=(128, 64))`` 。"
 
 #: ../../tensor_matrix.rst:26
 msgid ""
 "If you want to get the matrix of grid node ``i, j``, please use ``mat = "
 "A[i, j]``. ``mat`` is simply a ``3 x 2`` matrix"
 msgstr ""
+"如果你想获取 ``i, j`` 节点的那个矩阵，请用 ``mat = A[i, j]`` 。 ``mat`` "
+"自然就是个 ``3 x 2`` 的矩阵"
 
 #: ../../tensor_matrix.rst:27
 msgid ""
-"To get the element on the first row and second column of that matrix, use"
-" ``mat[0, 1]`` or ``A[i, j][0, 1]``."
+"To get the element on the first row and second column of that matrix, "
+"use ``mat[0, 1]`` or ``A[i, j][0, 1]``."
 msgstr ""
+"要获取第1行第2列的矩阵元素，请用： ``mat[0, 1]`` 或者 ``A[i, j][0, "
+"1]`` 。"
 
 #: ../../tensor_matrix.rst:28
 msgid ""
 "As you may have noticed, there are two indexing operators ``[]``, the "
 "first is for tensor indexing, the second for matrix indexing."
 msgstr ""
+"你可能已经注意到，我们用了两个下表运算符 ``[]`` ，其中第一个用来在张量中"
+"索引，第二个用来在矩阵中索引。"
 
 #: ../../tensor_matrix.rst:29
 msgid ""
@@ -124,8 +142,9 @@ msgstr ""
 #: ../../tensor_matrix.rst:36
 msgid ""
 "For performance reasons matrix operations will be unrolled, therefore we "
-"suggest using only small matrices. For example, ``2x1``, ``3x3``, ``4x4``"
-" matrices are fine, yet ``32x6`` is probably too big as a matrix size."
+"suggest using only small matrices. For example, ``2x1``, ``3x3``, "
+"``4x4`` matrices are fine, yet ``32x6`` is probably too big as a matrix "
+"size."
 msgstr ""
 
 #: ../../tensor_matrix.rst:41
@@ -137,9 +156,8 @@ msgstr ""
 #: ../../tensor_matrix.rst:43
 msgid ""
 "If you have a dimension that is too large (e.g. ``64``), it's better to "
-"declare a tensor of size ``64``. E.g., instead of declaring "
-"``ti.Matrix(64, 32, dt=ti.f32, shape=(3, 2))``, declare ``ti.Matrix(3, 2,"
-" dt=ti.f32, shape=(64, 32))``. Try to put large dimensions to tensors "
+"declare a tensor of size ``64``. E.g., instead of declaring ``ti."
+"Matrix(64, 32, dt=ti.f32, shape=(3, 2))``, declare ``ti.Matrix(3, 2, "
+"dt=ti.f32, shape=(64, 32))``. Try to put large dimensions to tensors "
 "instead of matrices."
 msgstr ""
-
