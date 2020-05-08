@@ -43,7 +43,7 @@ The Taichi Programming Language
 
 
 .. toctree::
-   :caption: Contribution
+   :caption: Contributing
    :maxdepth: 1
 
    dev_install
@@ -57,6 +57,7 @@ The Taichi Programming Language
    :maxdepth: 3
 
    utilities
+   gui
    global_settings
    performance
    acknowledgments
