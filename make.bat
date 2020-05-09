@@ -29,31 +29,37 @@ goto merge
 cd %TAICHI_CLONE%
 for /f %%i in ('git symbolic-ref --short -q HEAD') do set SUB_BRANCH=%%i
 cd %PROJECT_PATH%
-if "%SUB_BRANCH%" == "%BRANCH%" (
-	call %VENV%\Scripts\activate
-	call python -m pip install --upgrade Sphinx sphinx_rtd_theme sphinx-intl
-	del /q *.rst *.jpg *.png version conf.py
-	rd /s /q _static
-	cd %TAICHI_CLONE%
-	git checkout -- ./
-	git pull
-	cd %PROJECT_PATH%
-	copy %TAICHI_CLONE%\docs\*.rst
-	copy %TAICHI_CLONE%\docs\*.jpg
-	copy %TAICHI_CLONE%\docs\*.png
-	copy %TAICHI_CLONE%\docs\version
-	copy %TAICHI_CLONE%\docs\conf.py
-	xcopy /s /Y /i /e %TAICHI_CLONE%\docs\_static _static\
-	echo gettext_additional_targets = ['literal-block'] >> conf.py
-	echo locale_dirs = ['locales'] >> conf.py
-	call %VENV%\Scripts\sphinx-build -M gettext . build
-	call %VENV%\Scripts\sphinx-intl update -p build/gettext -l %LANGUAGE%
-	deactivate
-	goto end
-) else (
-	echo "You're merging from a different branch, please cd %TAICHI_CLONE% && git checkout %BRANCH%"
-	goto end
+if not "%SUB_BRANCH%" == "%BRANCH%" (
+	echo "You're merging from a different branch %BRANCH% against %SUB_BRANCH%, continue merging?[y/n]"
+	set /p ctn=
+	if not "%ctn%" == "y" (
+		goto end
+	)
 )
+goto do_merge
+
+
+:do_merge
+call %VENV%\Scripts\activate
+call python -m pip install --upgrade Sphinx sphinx_rtd_theme sphinx-intl
+del /q *.rst *.jpg *.png version conf.py
+rd /s /q _static
+cd %TAICHI_CLONE%
+git checkout -- ./
+git pull
+cd %PROJECT_PATH%
+copy %TAICHI_CLONE%\docs\*.rst
+copy %TAICHI_CLONE%\docs\*.jpg
+copy %TAICHI_CLONE%\docs\*.png
+copy %TAICHI_CLONE%\docs\version
+copy %TAICHI_CLONE%\docs\conf.py
+xcopy /s /Y /i /e %TAICHI_CLONE%\docs\_static _static\
+echo gettext_additional_targets = ['literal-block'] >> conf.py
+echo locale_dirs = ['locales'] >> conf.py
+call %VENV%\Scripts\sphinx-build -M gettext . build
+call %VENV%\Scripts\sphinx-intl update -p build/gettext -l %LANGUAGE%
+deactivate
+goto end
 
 
 :html
