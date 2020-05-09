@@ -32,9 +32,7 @@ cd %PROJECT_PATH%
 if not "%SUB_BRANCH%" == "%BRANCH%" (
 	echo "You're merging from a different branch %BRANCH% against %SUB_BRANCH%, continue merging?[y/n]"
 	set /p ctn=
-	if not "%ctn%" == "y" (
-		goto end
-	)
+	if not "%ctn%" == "y" goto end
 )
 goto do_merge
 
@@ -46,7 +44,7 @@ del /q *.rst *.jpg *.png version conf.py
 rd /s /q _static
 cd %TAICHI_CLONE%
 git checkout -- ./
-git pull
+git pull origin master
 cd %PROJECT_PATH%
 copy %TAICHI_CLONE%\docs\*.rst
 copy %TAICHI_CLONE%\docs\*.jpg
