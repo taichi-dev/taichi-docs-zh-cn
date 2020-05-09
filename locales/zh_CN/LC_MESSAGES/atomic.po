@@ -3,40 +3,35 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-07 01:24-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-09 14:04-0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: rexwangcc\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../../atomic.rst:4
 msgid "Atomic operations"
-msgstr ""
+msgstr "原子操作"
 
 #: ../../atomic.rst:6
-msgid ""
-"In Taichi, augmented assignments (e.g., ``x[i] += 1``) are automatically "
-"`atomic <https://en.wikipedia.org/wiki/Fetch-and-add>`_."
-msgstr ""
+msgid "In Taichi, augmented assignments (e.g., ``x[i] += 1``) are automatically `atomic <https://en.wikipedia.org/wiki/Fetch-and-add>`_."
+msgstr "在Taichi中，增量赋值（例如，``x[i] += 1`` ）自动即为 `原子操作 <https://en.wikipedia.org/wiki/Fetch-and-add>`_。"
 
 #: ../../atomic.rst:11
-msgid ""
-"When accumulating to global variables in parallel, make sure you use "
-"atomic operations. For example, to compute the sum of all elements in "
-"``x``, ::"
-msgstr ""
+msgid "When accumulating to global variables in parallel, make sure you use atomic operations. For example, to compute the sum of all elements in ``x``, ::"
+msgstr "当并行地叠加到全局变量时，请确认你使用原子操作。例如，当计算 ``x`` 中的所有元素之和时，::"
 
 #: ../../atomic.rst:14
-msgid ""
-"@ti.kernel\n"
+msgid "@ti.kernel\n"
 "def sum():\n"
 "    for i in x:\n"
 "        # Approach 1: OK\n"
@@ -47,25 +42,29 @@ msgid ""
 "\n"
 "        # Approach 3: Wrong result since the operation is not atomic.\n"
 "        total[None] = total[None] + x[i]"
-msgstr ""
+msgstr "@ti.kernel\n"
+"def sum():\n"
+"    for i in x:\n"
+"        # 方式 1: 正确\n"
+"        total[None] += x[i]\n"
+"\n"
+"        # 方式 2: 正确\n"
+"        ti.atomic_add(total[None], x[i])\n"
+"\n"
+"        # 方式 3: 非原子操作因而会得到错误结果\n"
+"        total[None] = total[None] + x[i]"
 
 #: ../../atomic.rst:28
-msgid ""
-"When atomic operations are applied to local values, the Taichi compiler "
-"will try to demote these operations into their non-atomic correspondence."
-msgstr ""
+msgid "When atomic operations are applied to local values, the Taichi compiler will try to demote these operations into their non-atomic correspondence."
+msgstr "当原子操作被应用于局部变量时，Taichi编译器将会试着将这些操作降级为它们对应的非原子操作。"
 
 #: ../../atomic.rst:30
-msgid ""
-"Apart from augmented assignments, explicit atomic operations such as "
-"``ti.atomic_add`` also do read-modify-write atomically. These operations "
-"additionally return the **old value** of the first argument. Below is the"
-" full list of explicit atomic operations:"
-msgstr ""
+msgid "Apart from augmented assignments, explicit atomic operations such as ``ti.atomic_add`` also do read-modify-write atomically. These operations additionally return the **old value** of the first argument. Below is the full list of explicit atomic operations:"
+msgstr "除增量赋值之外，显式原子操作例如 ``ti.atomic_add`` 等也会以原子方式进行读取-修改-写入（read-modify-write）。这些操作还会额外地返回第一个参数的 **旧值**。下面是显式原子操作的完整列表："
 
 #: ../../atomic.rst:36
 msgid "Atomically compute ``x + y``/``x - y`` and store the result to ``x``."
-msgstr ""
+msgstr "原子式地计算 ``x + y``/``x - y`` 并将计算结果存储到 ``x``。"
 
 #: ../../atomic.rst
 msgid "Returns"
@@ -73,33 +72,33 @@ msgstr ""
 
 #: ../../atomic.rst:38 ../../atomic.rst:55
 msgid "The old value of ``x``."
-msgstr ""
+msgstr "``x`` 的旧值。"
 
 #: ../../atomic.rst:40
 msgid "For example, ::"
-msgstr ""
+msgstr "例如，::"
 
 #: ../../atomic.rst:43
-msgid ""
-"x = 3\n"
+msgid "x = 3\n"
 "y = 4\n"
 "z = ti.atomic_add(x, y)\n"
 "# now z = 7, y = 4, z = 3"
-msgstr ""
+msgstr "x = 3\n"
+"y = 4\n"
+"z = ti.atomic_add(x, y)\n"
+"# 现在 z = 7, y = 4, z = 3"
 
 #: ../../atomic.rst:53
-msgid ""
-"Atomically compute ``x & y`` (bitwise and), ``x | y`` (bitwise or), ``x ^"
-" y`` (bitwise xor) and store the result to ``x``."
-msgstr ""
+msgid "Atomically compute ``x & y`` (bitwise and), ``x | y`` (bitwise or), ``x ^ y`` (bitwise xor) and store the result to ``x``."
+msgstr "原子式地计算 ``x & y`` （按位与），``x | y`` （按位或），``x ^ y`` （按位异或）并将计算结果存储到 ``x``。"
 
 #: ../../atomic.rst:60
 msgid "Supported atomic operations on each backend:"
-msgstr ""
+msgstr "每个后端所支持的原子操作："
 
 #: ../../atomic.rst:63
 msgid "type"
-msgstr ""
+msgstr "类型"
 
 #: ../../atomic.rst:63
 msgid "CPU/CUDA"
@@ -144,11 +143,10 @@ msgstr ""
 
 #: ../../atomic.rst:74
 msgid "(OK: supported; EXT: require extension; MISS: not supported)"
-msgstr ""
+msgstr "（OK：已支持，EXT：需要扩展支持，MISS：目前不支持）"
 
 #~ msgid "Returns"
 #~ msgstr ""
 
 #~ msgid "返回"
 #~ msgstr ""
-
