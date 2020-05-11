@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-07 01:24-0400\n"
+"POT-Creation-Date: 2020-05-11 13:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -109,7 +109,7 @@ msgid ""
 "x = 3\n"
 "y = 4\n"
 "z = ti.atomic_add(x, y)\n"
-"# now z = 7, y = 4, z = 3"
+"# now x = 7, y = 4, z = 3"
 msgstr ""
 
 #: ../../taichi/docs/atomic.rst:53
@@ -3593,12 +3593,47 @@ msgstr ""
 
 #: ../../taichi/docs/syntax.rst:20
 msgid ""
+"A kernel can have **scalar** return value. If a kernel has a return "
+"value, it must be type-hinted. The return value will be automatically "
+"casted into the hinted type. e.g.,"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:23
+msgid ""
+"@ti.kernel\n"
+"def add_xy(x: ti.f32, y: ti.f32) -> ti.i32:\n"
+"    return x + y  # same as: ti.cast(x + y, ti.i32)\n"
+"\n"
+"res = add_xy(2.3, 1.1)\n"
+"print(res)  # 3, since return type is ti.i32"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:34
+msgid ""
+"For now, we only support one scalar as return value. Returning "
+"``ti.Matrix`` or `ti.Vector`` is not supported. Python-style tuple return"
+" is not supported. e.g.:"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:49
+msgid ""
+"For correct gradient behaviors in differentiable programming, please "
+"refrain from using kernel return values. Instead, store the result into a"
+" global variable (e.g. ``loss[None]``)."
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:51
+msgid "(TODO: move the following to advanced topics)"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:53
+msgid ""
 "For differentiable programming kernels should better have either serial "
 "statements or a single parallel for-loop. If you don't use differentiable"
 " programming, feel free to ignore this tip."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:22
+#: ../../taichi/docs/syntax.rst:55
 msgid ""
 "@ti.kernel\n"
 "def a_hard_kernel_to_auto_differentiate():\n"
@@ -3630,18 +3665,18 @@ msgid ""
 "    ..."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:55
+#: ../../taichi/docs/syntax.rst:87
 msgid "Functions"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:57
+#: ../../taichi/docs/syntax.rst:89
 msgid ""
 "Use ``@ti.func`` to decorate your Taichi functions. These functions are "
 "callable only in `Taichi`-scope. Don't call them in `Python`-scope. All "
 "function calls are force-inlined, so no recursion supported."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:59
+#: ../../taichi/docs/syntax.rst:91
 msgid ""
 "@ti.func\n"
 "def laplacian(t, i, j):\n"
@@ -3661,14 +3696,14 @@ msgid ""
 "                     t - 2, i, j] - c * alpha * dt * laplacian_p"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:80
+#: ../../taichi/docs/syntax.rst:112
 msgid ""
 "Functions with multiple ``return``'s are not supported for now. Use a "
 "**local** variable to store the results, so that you end up with only one"
 " ``return``:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:82
+#: ../../taichi/docs/syntax.rst:114
 msgid ""
 "# Bad function - two return's\n"
 "@ti.func\n"
@@ -3689,124 +3724,120 @@ msgid ""
 "  return rst"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:104
+#: ../../taichi/docs/syntax.rst:136
 msgid ""
 "Currently, all functions are force-inlined. Therefore, no recursion is "
 "allowed."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:108
+#: ../../taichi/docs/syntax.rst:140
 msgid "Function arguments are passed by value."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:112
+#: ../../taichi/docs/syntax.rst:144
 msgid "Data layout"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:113
+#: ../../taichi/docs/syntax.rst:145
 msgid ""
 "Non-power-of-two tensor dimensions are promoted into powers of two and "
 "thus these tensors will occupy more virtual address space. For example, a"
 " tensor of size ``(18, 65)`` will be materialized as ``(32, 128)``."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:118
+#: ../../taichi/docs/syntax.rst:150
 msgid "Scalar arithmetics"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:119
+#: ../../taichi/docs/syntax.rst:151
 msgid "Supported scalar functions:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:121
+#: ../../taichi/docs/syntax.rst:153
 msgid "``ti.sin(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:122
+#: ../../taichi/docs/syntax.rst:154
 msgid "``ti.cos(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:123
+#: ../../taichi/docs/syntax.rst:155
 msgid "``ti.asin(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:124
+#: ../../taichi/docs/syntax.rst:156
 msgid "``ti.acos(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:125
+#: ../../taichi/docs/syntax.rst:157
 msgid "``ti.atan2(x, y)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:126
+#: ../../taichi/docs/syntax.rst:158
 msgid "``ti.cast(x, type)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:127
-msgid "``ti.sqr(x)``"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:128
+#: ../../taichi/docs/syntax.rst:159
 msgid "``ti.sqrt(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:129
+#: ../../taichi/docs/syntax.rst:160
 msgid "``ti.floor(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:130
+#: ../../taichi/docs/syntax.rst:161
 msgid "``ti.inv(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:131
+#: ../../taichi/docs/syntax.rst:162
 msgid "``ti.tan(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:132
+#: ../../taichi/docs/syntax.rst:163
 msgid "``ti.tanh(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:133
+#: ../../taichi/docs/syntax.rst:164
 msgid "``ti.exp(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:134
+#: ../../taichi/docs/syntax.rst:165
 msgid "``ti.log(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:135
+#: ../../taichi/docs/syntax.rst:166
 msgid "``ti.random(type)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:136
+#: ../../taichi/docs/syntax.rst:167
 msgid "``abs(x)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:137
+#: ../../taichi/docs/syntax.rst:168
 msgid "``max(a, b)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:138
+#: ../../taichi/docs/syntax.rst:169
 msgid "``min(a, b)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:139
+#: ../../taichi/docs/syntax.rst:170
 msgid "``x ** y``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:140
+#: ../../taichi/docs/syntax.rst:171
 msgid ""
 "Inplace adds are atomic on global data. I.e., ``a += b`` is equivalent to"
 " ``ti.atomic_add(a, b)``"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:142
+#: ../../taichi/docs/syntax.rst:173
 msgid ""
 "Note: when these scalar functions are applied on :ref:`matrix` and "
 ":ref:`vector`, it's applied element-wise, for example:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:144
+#: ../../taichi/docs/syntax.rst:175
 msgid ""
 "A = ti.sin(B)\n"
 "# is equalivant to (assuming B is a 3x2 matrix):\n"
@@ -3815,95 +3846,95 @@ msgid ""
 "        A[i, j] = ti.sin(B[i, j])"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:154
+#: ../../taichi/docs/syntax.rst:185
 msgid ""
 "Python 3 distinguishes ``/`` (true division) and ``//`` (floor division)."
 " For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = 0``, ``4.2"
 " // 2 = 2``. Taichi follows this design:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:157
+#: ../../taichi/docs/syntax.rst:188
 msgid ""
 "*true divisions* on integral types will first cast their operands to the "
 "default float point type."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:158
+#: ../../taichi/docs/syntax.rst:189
 msgid ""
 "*floor divisions* on float-point types will first cast their operands to "
 "the default integer type."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:160
+#: ../../taichi/docs/syntax.rst:191
 msgid ""
 "To avoid such implicit casting, you can manually cast your operands to "
 "desired types, using ``ti.cast``. Read :ref:`default_precisions` for more"
 " details on default numerical types."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:164
+#: ../../taichi/docs/syntax.rst:195
 msgid "Debugging"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:166
+#: ../../taichi/docs/syntax.rst:197
 msgid "Debug your program with ``print(x)``."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:170
+#: ../../taichi/docs/syntax.rst:201
 msgid "Why Python frontend"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:172
+#: ../../taichi/docs/syntax.rst:203
 msgid "Embedding the language in ``python`` has the following advantages:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:174
+#: ../../taichi/docs/syntax.rst:205
 msgid "Easy to learn. Taichi has a very similar syntax to Python."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:175
+#: ../../taichi/docs/syntax.rst:206
 msgid "Easy to run. No ahead-of-time compilation is needed."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:176
+#: ../../taichi/docs/syntax.rst:207
 msgid "This design allows people to reuse existing python infrastructure:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:178
+#: ../../taichi/docs/syntax.rst:209
 msgid ""
 "IDEs. A python IDE mostly works for Taichi with syntax highlighting, "
 "syntax checking, and autocomplete."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:179
+#: ../../taichi/docs/syntax.rst:210
 msgid ""
 "Package manager (pip). A developed Taichi application and be easily "
 "submitted to ``PyPI`` and others can easily set it up with ``pip``."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:180
+#: ../../taichi/docs/syntax.rst:211
 msgid ""
 "Existing packages. Interacting with other python components (e.g. "
 "``matplotlib`` and ``numpy``) is just trivial."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:182
+#: ../../taichi/docs/syntax.rst:213
 msgid ""
 "The built-in AST manipulation tools in ``python`` allow us to do magical "
 "things, as long as the kernel body can be parsed by the Python parser."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:184
+#: ../../taichi/docs/syntax.rst:215
 msgid "However, this design has drawbacks as well:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:186
+#: ../../taichi/docs/syntax.rst:217
 msgid ""
 "Taichi kernels must parse-able by Python parsers. This means Taichi "
 "syntax cannot go beyond Python syntax."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:188
+#: ../../taichi/docs/syntax.rst:219
 msgid ""
 "For example, indexing is always needed when accessing elements in Taichi "
 "tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the value"
@@ -3912,7 +3943,7 @@ msgid ""
 "python syntax, and, unfortunately, we cannot modify this behavior."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:190
+#: ../../taichi/docs/syntax.rst:221
 msgid ""
 "Python has relatively low performance. This can cause a performance issue"
 " when initializing large Taichi tensors with pure python scripts. A "
@@ -4304,11 +4335,11 @@ msgstr ""
 msgid "Utilities"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:6
+#: ../../taichi/docs/utilities.rst:5
 msgid "Logging"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:8
+#: ../../taichi/docs/utilities.rst:7
 msgid ""
 "'''\n"
 "level can be {}\n"
@@ -4322,18 +4353,18 @@ msgid ""
 "ti.set_logging_level(level)"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:21
+#: ../../taichi/docs/utilities.rst:20
 msgid ""
 "The default logging level is ``ti.INFO``. You can also override default "
 "logging level by setting the environment variable ``TI_LOG_LEVEL`` to "
 "values such as ``trace`` and ``warn``."
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:26
+#: ../../taichi/docs/utilities.rst:25
 msgid "Trigger GDB when the program crashes"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:28
+#: ../../taichi/docs/utilities.rst:27
 msgid ""
 "# Python\n"
 "ti.set_gdb_trigger(True)\n"
@@ -4342,35 +4373,35 @@ msgid ""
 "CoreState::set_trigger_gdb_when_crash(true);"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:37
+#: ../../taichi/docs/utilities.rst:36
 msgid "Interface System"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:38
+#: ../../taichi/docs/utilities.rst:37
 msgid "Print all interfaces and units"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:40
+#: ../../taichi/docs/utilities.rst:39
 msgid "ti.core.print_all_units()"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:45
+#: ../../taichi/docs/utilities.rst:44
 msgid "Serialization"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:47
+#: ../../taichi/docs/utilities.rst:46
 msgid ""
 "The serialization module of taichi allows you to serialize/deserialize "
 "objects into/from binary strings."
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:49
+#: ../../taichi/docs/utilities.rst:48
 msgid ""
 "You can use ``TI_IO`` macros to explicit define fields necessary in "
 "Taichi."
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:51
+#: ../../taichi/docs/utilities.rst:50
 msgid ""
 "// TI_IO_DEF\n"
 "struct Particle {\n"
@@ -4403,17 +4434,17 @@ msgid ""
 "// TI_IO_DEF_VIRT();"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:85
+#: ../../taichi/docs/utilities.rst:84
 msgid "Progress Notification"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:87
+#: ../../taichi/docs/utilities.rst:86
 msgid ""
 "The taichi messager can send an email to ``$TI_MONITOR_EMAIL`` when the "
 "task finished or crashed. To enable:"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:90
+#: ../../taichi/docs/utilities.rst:89
 msgid ""
 "from taichi.tools import messager\n"
 "messager.enable(task_id='test')"
@@ -4648,6 +4679,51 @@ msgid ""
 "is just an alias of ``ti.Matrix``."
 msgstr ""
 
+#: ../../taichi/external/spdlog/include/spdlog/fmt/bundled/LICENSE.rst:1
+msgid "Copyright (c) 2012 - present, Victor Zverovich"
+msgstr ""
+
+#: ../../taichi/external/spdlog/include/spdlog/fmt/bundled/LICENSE.rst:3
+msgid ""
+"Permission is hereby granted, free of charge, to any person obtaining a "
+"copy of this software and associated documentation files (the "
+"\"Software\"), to deal in the Software without restriction, including "
+"without limitation the rights to use, copy, modify, merge, publish, "
+"distribute, sublicense, and/or sell copies of the Software, and to permit"
+" persons to whom the Software is furnished to do so, subject to the "
+"following conditions:"
+msgstr ""
+
+#: ../../taichi/external/spdlog/include/spdlog/fmt/bundled/LICENSE.rst:11
+msgid ""
+"The above copyright notice and this permission notice shall be included "
+"in all copies or substantial portions of the Software."
+msgstr ""
+
+#: ../../taichi/external/spdlog/include/spdlog/fmt/bundled/LICENSE.rst:14
+msgid ""
+"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS"
+" OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF "
+"MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN"
+" NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,"
+" DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR "
+"OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE"
+" USE OR OTHER DEALINGS IN THE SOFTWARE."
+msgstr ""
+
+#: ../../taichi/external/spdlog/include/spdlog/fmt/bundled/LICENSE.rst:22
+msgid "--- Optional exception to the license ---"
+msgstr ""
+
+#: ../../taichi/external/spdlog/include/spdlog/fmt/bundled/LICENSE.rst:24
+msgid ""
+"As an exception, if, as a result of your compiling your source code, "
+"portions of this Software are embedded into a machine-executable object "
+"form of such source code, you may redistribute such embedded portions in "
+"such object form without including the above copyright and permission "
+"notices."
+msgstr ""
+
 #~ msgid "If you haven't done so, please install Taichi via ``pip``:"
 #~ msgstr ""
 
@@ -4733,5 +4809,15 @@ msgstr ""
 #~ msgid ""
 #~ "Also checkout ``examples/keyboard.py`` for "
 #~ "more advanced event processing."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "x = 3\n"
+#~ "y = 4\n"
+#~ "z = ti.atomic_add(x, y)\n"
+#~ "# now z = 7, y = 4, z = 3"
+#~ msgstr ""
+
+#~ msgid "``ti.sqr(x)``"
 #~ msgstr ""
 
