@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-04 14:20+0800\n"
-"PO-Revision-Date: 2020-05-09 21:15+0800\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2020-05-11 10:14+0800\n"
+"Last-Translator: archibate <17721388340@qq.com>\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -31,7 +31,7 @@ msgstr "内核"
 msgid ""
 "Kernel arguments must be type-hinted. Kernels can have at most 8 "
 "parameters, e.g.,"
-msgstr "内核参数必须有类型提示。内核最多只能有 8 个参数，例如："
+msgstr "内核参数必须有类型提示。内核最多只能有 8 个参数，例如,"
 
 #: ../../syntax.rst:9
 msgid ""
@@ -133,8 +133,8 @@ msgid ""
 "function calls are force-inlined, so no recursion supported."
 msgstr ""
 "使用 ``@ti.func`` 来装饰您的 Taichi 功能。这些函数只能在 `Taichi` 作用域"
-"内调用。不要在 `Python` 作用域内调用它们。所有函数调用都是强制内联的，因"
-"此不支持递归。"
+"内调用。不要在 `Python` 作用域内调用它们。所有函数调用都是强制内联"
+"（inline）的，因此不支持递归。"
 
 #: ../../syntax.rst:59
 msgid ""
@@ -201,7 +201,7 @@ msgid ""
 "    rst = 0.0\n"
 "  return rst"
 msgstr ""
-"# 不好的函数 - 两个返回值\n"
+"# 错误示范 - 两个返回语句\n"
 "@ti.func\n"
 "def safe_sqrt(x):\n"
 "  if x >= 0:\n"
@@ -209,7 +209,7 @@ msgstr ""
 "  else:\n"
 "    return 0.0\n"
 "\n"
-"# 好的函数 - 一个返回值\n"
+"# 正确示范 - 一个返回语句\n"
 "@ti.func\n"
 "def safe_sqrt(x):\n"
 "  rst = 0.0\n"
@@ -227,7 +227,7 @@ msgstr "目前，所有函数都是强制内联的。因此，不能使用递归
 
 #: ../../syntax.rst:108
 msgid "Function arguments are passed by value."
-msgstr "函数参数以值传递。"
+msgstr "函数的参数是以值传递的。"
 
 #: ../../syntax.rst:112
 msgid "Data layout"
@@ -239,17 +239,17 @@ msgid ""
 "thus these tensors will occupy more virtual address space. For example, "
 "a tensor of size ``(18, 65)`` will be materialized as ``(32, 128)``."
 msgstr ""
-"维度为非二的幂的张量将被提示为二的幂的维度，因此这些张量将占据更多的虚拟"
-"地址空间。例如，一个 ``(18, 65)`` 大小的张量将会被实例化为 ``(32, 128)`` "
-"大小。"
+"非二次幂（power-of-two）的张量维度将被提升至二次幂，因此这些张量将占据更"
+"多的虚拟地址空间。例如，一个 ``(18, 65)`` 大小的张量将会被实例化为 "
+"``(32, 128)`` 的大小。"
 
 #: ../../syntax.rst:118
 msgid "Scalar arithmetics"
-msgstr "标量算法"
+msgstr "标量算术"
 
 #: ../../syntax.rst:119
 msgid "Supported scalar functions:"
-msgstr "支持的标量函数："
+msgstr "Taichi 支持的标量函数："
 
 #: ../../syntax.rst:121
 msgid "``ti.sin(x)``"
@@ -332,7 +332,7 @@ msgid ""
 "Inplace adds are atomic on global data. I.e., ``a += b`` is equivalent "
 "to ``ti.atomic_add(a, b)``"
 msgstr ""
-"就地 (inplace) 加在全局变量上是原子性的。既，``a += b`` 和 ``ti."
+"全局变量的 *原地加法* （inplace add）是原子性的。即 ``a += b`` 和 ``ti."
 "atomic_add(a, b)`` 等价"
 
 #: ../../syntax.rst:142
@@ -340,8 +340,8 @@ msgid ""
 "Note: when these scalar functions are applied on :ref:`matrix` and :ref:"
 "`vector`, it's applied element-wise, for example:"
 msgstr ""
-"注意：当这些标量函数被作用在矩阵或向量上时，它们会被作用到所有元素，例"
-"如："
+"注意：当这些标量函数被作用在矩阵或向量上时，它们会被逐个作用到所有元素，"
+"例如："
 
 #: ../../syntax.rst:144
 msgid ""
@@ -363,9 +363,9 @@ msgid ""
 "division). For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = "
 "0``, ``4.2 // 2 = 2``. Taichi follows this design:"
 msgstr ""
-"Python 3 区分了 ``/``（浮点数除法）和 ``//``（整数除法）。例如，``1.0 / "
-"2.0 = 0.5``，``1 / 2 = 0.5``，``1 // 2 = 0``，``4.2 // 2 = 2``。Taichi 遵"
-"循了这个设计："
+"Python 3 中 ``/`` （浮点数除法）和 ``//`` （整数除法）是区分开来的。例"
+"如，``1.0 / 2.0 = 0.5``，``1 / 2 = 0.5``，``1 // 2 = 0``，``4.2 // 2 = "
+"2``。Taichi 也遵循了这个设计："
 
 #: ../../syntax.rst:157
 msgid ""
@@ -402,7 +402,7 @@ msgstr "使用 ``print(x)`` 调试你的程序。"
 
 #: ../../syntax.rst:170
 msgid "Why Python frontend"
-msgstr "为什么选用 Python 前端"
+msgstr "为什么选用 Python 作为前端"
 
 #: ../../syntax.rst:172
 msgid "Embedding the language in ``python`` has the following advantages:"
@@ -414,34 +414,34 @@ msgstr "容易学习。Taichi 具有和 Python 非常相似的语法。"
 
 #: ../../syntax.rst:175
 msgid "Easy to run. No ahead-of-time compilation is needed."
-msgstr "容易运行。无需预先编译。"
+msgstr "容易运行。无需预先编译即可运行。"
 
 #: ../../syntax.rst:176
 msgid "This design allows people to reuse existing python infrastructure:"
-msgstr "这种设计允许人们重用 python 的基础："
+msgstr "这种设计使我们得以重用 python 的基础设施："
 
 #: ../../syntax.rst:178
 msgid ""
 "IDEs. A python IDE mostly works for Taichi with syntax highlighting, "
 "syntax checking, and autocomplete."
 msgstr ""
-"IDE 们。一个 python 的 IDE 几乎支持所有的 Taichi 语法高亮、语法检查和自动"
-"补全。"
+"集成开发环境（IDE）。任何一个 python 的 IDE 将同样支持所有的 Taichi 语法"
+"高亮、语法检查和自动补全。"
 
 #: ../../syntax.rst:179
 msgid ""
 "Package manager (pip). A developed Taichi application and be easily "
 "submitted to ``PyPI`` and others can easily set it up with ``pip``."
 msgstr ""
-"包管理器 (pip)。一个开发好的 Taichi 应用可以被轻松地上传到 ``PyPI`` 并被"
-"其他人轻松地用 ``pip`` 安装。"
+"包管理器 (pip)。开发好的 Taichi 应用可以被轻松地上传到 ``PyPI`` 并被其他"
+"人轻松地用 ``pip`` 安装。"
 
 #: ../../syntax.rst:180
 msgid ""
 "Existing packages. Interacting with other python components (e.g. "
 "``matplotlib`` and ``numpy``) is just trivial."
 msgstr ""
-"现有的包。和其它 python 库（例如 ``matplotlib`` 和 ``numpy``）一起使用也"
+"现成的包。和其它 python 库（例如 ``matplotlib`` 和 ``numpy``）一起使用也"
 "是轻而易举的。"
 
 #: ../../syntax.rst:182
@@ -449,19 +449,19 @@ msgid ""
 "The built-in AST manipulation tools in ``python`` allow us to do magical "
 "things, as long as the kernel body can be parsed by the Python parser."
 msgstr ""
-"``python`` 内置的 AST（抽象语法树）处理工具允许我们完成一些有魔力的事情，"
-"只要内核主体还在被 Python 解释器解析。"
+"只要内核主体能够被 Python 解释器解析，``python`` 内置的 AST（抽象语法树）"
+"处理工具就允许我们完成一些神奇的事情。"
 
 #: ../../syntax.rst:184
 msgid "However, this design has drawbacks as well:"
-msgstr "然而，这些缺点也同时存在："
+msgstr "然而，这一设计同时也存在着这些缺点："
 
 #: ../../syntax.rst:186
 msgid ""
 "Taichi kernels must parse-able by Python parsers. This means Taichi "
 "syntax cannot go beyond Python syntax."
 msgstr ""
-"Taichi 内核必须是可以被 Python 解释器解析的。这意味着 Taichi 语法不能脱"
+"Taichi 内核必须是可以被 Python 解释器解析的。这意味着 Taichi 语法无法脱"
 "离 Python 的语法。"
 
 #: ../../syntax.rst:188
@@ -473,10 +473,10 @@ msgid ""
 "``123`` in python syntax, and, unfortunately, we cannot modify this "
 "behavior."
 msgstr ""
-"例如，在获取 Taichi 张量中的元素时下标总是需要的，就算张量的维度是 0。需"
-"要使用 ``x[None] = 123`` 来给 0D 的 ``x`` 设置值。这是因为在 python 语法"
-"中 ``x = 123`` 会设置 ``x`` 本身（而非其包含的值）为恒量 ``123``，而且不"
-"幸的是我们没法改变解释器的这个行为。"
+"例如，获取 Taichi 张量中的元素总是需要下标，即使是 0 维张量。需要用 "
+"``x[None] = 123`` 来给 0 维的 ``x`` 赋予值。这是因为在 python 语法中 ``x "
+"= 123`` 会设置 ``x`` 本身（而非其包含的值）为恒量 ``123``，而不幸的是我们"
+"没法改变解释器的这个行为。"
 
 #: ../../syntax.rst:190
 msgid ""
@@ -484,5 +484,5 @@ msgid ""
 "issue when initializing large Taichi tensors with pure python scripts. A "
 "Taichi kernel should be used to initialize a huge tensor."
 msgstr ""
-"Python 的性能相对较低。这可能会在用纯 python 脚本初始化大的 Taichi 张量时"
-"导致性能问题。所以应该在 Taichi 内核中初始化大的张量。"
+"Python 的性能相对较低。比如仅靠 Python 作用域来初始化很大的张量时，会导致"
+"性能问题。所以较大张量的初始化应该放在 Taichi 内核中。"
