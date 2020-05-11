@@ -82,11 +82,11 @@ msgstr "例如，::"
 msgid "x = 3\n"
 "y = 4\n"
 "z = ti.atomic_add(x, y)\n"
-"# now z = 7, y = 4, z = 3"
+"# now x = 7, y = 4, z = 3"
 msgstr "x = 3\n"
 "y = 4\n"
 "z = ti.atomic_add(x, y)\n"
-"# 现在 z = 7, y = 4, z = 3"
+"# 现在 x = 7, y = 4, z = 3"
 
 #: ../../atomic.rst:53
 msgid "Atomically compute ``x & y`` (bitwise and), ``x | y`` (bitwise or), ``x ^ y`` (bitwise xor) and store the result to ``x``."
