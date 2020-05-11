@@ -123,7 +123,7 @@ msgid ""
 "supported."
 msgstr ""
 "外部数组参数的类型提示是 ``ti.ext_arr()``。请参阅下面的示例。请注意，结构for循"
-"环不支持被应用在外部数组上。"
+"环不支持外部数组。"
 
 #: ../../external.rst:57
 msgid ""
