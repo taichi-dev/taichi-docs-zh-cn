@@ -66,10 +66,6 @@ msgstr "除增量赋值之外，显式原子操作例如 ``ti.atomic_add`` 等�
 msgid "Atomically compute ``x + y``/``x - y`` and store the result to ``x``."
 msgstr "原子式地计算 ``x + y``/``x - y`` 并将计算结果存储到 ``x``。"
 
-#: ../../atomic.rst
-msgid "Returns"
-msgstr ""
-
 #: ../../atomic.rst:38 ../../atomic.rst:55
 msgid "The old value of ``x``."
 msgstr "``x`` 的旧值。"
@@ -144,9 +140,3 @@ msgstr ""
 #: ../../atomic.rst:74
 msgid "(OK: supported; EXT: require extension; MISS: not supported)"
 msgstr "（OK：已支持，EXT：需要扩展支持，MISS：目前不支持）"
-
-#~ msgid "Returns"
-#~ msgstr ""
-
-#~ msgid "返回"
-#~ msgstr ""
