@@ -76,7 +76,7 @@ msgid ""
 "Aliases can also be created for class members and methods, which can help "
 "prevent cluttering objective data-oriented programming code with ``self``."
 msgstr ""
-"还可以为类成员和方法创建别名，这有助于防止使用 ``self`` 使目标数据导向的编"
+"还可以为类成员和方法创建别名，这有助于防止含有 ``self`` 的面向对象编"
 "程代码混乱。"
 
 #: ../../syntax_sugars.rst:32
