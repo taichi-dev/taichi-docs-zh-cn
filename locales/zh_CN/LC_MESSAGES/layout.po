@@ -1,0 +1,413 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016, Taichi Developers
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.6.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-12 14:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../layout.rst:4
+msgid "Advanced dense layouts"
+msgstr ""
+
+#: ../../layout.rst:6
+msgid ""
+"Tensors (:ref:`scalar_tensor`) can be *placed* in a specific shape and "
+"*layout*. Defining a proper layout can be critical to performance, "
+"especially for memory-bound applications. A carefully designed data "
+"layout can significantly improve cache/TLB-hit rates and cacheline "
+"utilization. Although when performance is not the first priority, you "
+"probably don't have to worry about it."
+msgstr ""
+
+#: ../../layout.rst:9
+msgid ""
+"In Taichi, the layout is defined in a recursive manner. See :ref:`snode` "
+"for more details about how this works. We suggest starting with the "
+"default layout specification (simply by specifying ``shape`` when "
+"creating tensors using ``ti.var/Vector/Matrix``), and then migrate to "
+"more advanced layouts using the ``ti.root.X`` syntax if necessary."
+msgstr ""
+
+#: ../../layout.rst:12
+msgid ""
+"Taichi decouples algorithms from data layouts, and the Taichi compiler "
+"automatically optimizes data accesses on a specific data layout. These "
+"Taichi features allow programmers to quickly experiment with different "
+"data layouts and figure out the most efficient one on a specific task and"
+" computer architecture."
+msgstr ""
+
+#: ../../layout.rst:16
+msgid "From ``shape`` to ``ti.root.X``"
+msgstr ""
+
+#: ../../layout.rst:18
+msgid "For example, this declares a 0-D tensor:"
+msgstr ""
+
+#: ../../layout.rst:20
+msgid ""
+"x = ti.var(ti.f32)\n"
+"ti.root.place(x)\n"
+"# is equivalent to:\n"
+"x = ti.var(ti.f32, shape=())"
+msgstr ""
+
+#: ../../layout.rst:27
+msgid "This declares a 1D tensor of size ``3``:"
+msgstr ""
+
+#: ../../layout.rst:29
+msgid ""
+"x = ti.var(ti.f32)\n"
+"ti.root.dense(ti.i, 3).place(x)\n"
+"# is equivalent to:\n"
+"x = ti.var(ti.f32, shape=3)"
+msgstr ""
+
+#: ../../layout.rst:36
+msgid "This declares a 2D tensor of shape ``(3, 4)``:"
+msgstr ""
+
+#: ../../layout.rst:38
+msgid ""
+"x = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (3, 4)).place(x)\n"
+"# is equivalent to:\n"
+"x = ti.var(ti.f32, shape=(3, 4))"
+msgstr ""
+
+#: ../../layout.rst:45
+msgid ""
+"You may wonder, why not simply specify the ``shape`` of the tensor? Why "
+"bother using the more complex version? Good question, let go forward and "
+"figure out why."
+msgstr ""
+
+#: ../../layout.rst:50
+msgid "Row-major versus column-major"
+msgstr ""
+
+#: ../../layout.rst:52
+msgid "Let's start with the simplest layout."
+msgstr ""
+
+#: ../../layout.rst:54
+msgid ""
+"Since address spaces are linear in modern computers, for 1D Taichi "
+"tensors, the address of the ``i``-th element is simply ``i``."
+msgstr ""
+
+#: ../../layout.rst:56
+msgid ""
+"To store a multi-dimensional tensor, however, it has to be flattened, in "
+"order to fit into the 1D address space. For example, to store a 2D tensor"
+" of size ``(3, 2)``, there are two ways to do this:"
+msgstr ""
+
+#: ../../layout.rst:59
+msgid "The address of ``(i, j)``-th is ``base + i * 2 + j`` (row-major)."
+msgstr ""
+
+#: ../../layout.rst:61
+msgid "The address of ``(i, j)``-th is ``base + j * 3 + i`` (column-major)."
+msgstr ""
+
+#: ../../layout.rst:63
+msgid "To specify which layout to use in Taichi:"
+msgstr ""
+
+#: ../../layout.rst:65
+msgid ""
+"ti.root.dense(ti.i, 3).dense(ti.j, 2).place(x)    # row-major (default)\n"
+"ti.root.dense(ti.j, 2).dense(ti.i, 3).place(y)    # column-major"
+msgstr ""
+
+#: ../../layout.rst:70
+msgid ""
+"Both ``x`` and ``y`` have the same shape of ``(3, 2)``, and they can be "
+"accessed in the same manner, where ``0 <= i < 3 && 0 <= j < 2``. They can"
+" be accessed in the same manner: ``x[i, j]`` and ``y[i, j]``. However, "
+"they have a very different memory layouts:"
+msgstr ""
+
+#: ../../layout.rst:73
+msgid ""
+"#     address low ........................... address high\n"
+"# x:  x[0,0]   x[0,1]   x[0,2] | x[1,0]   x[1,1]   x[1,2]\n"
+"# y:  y[0,0]   y[1,0] | y[0,1]   y[1,1] | y[0,2]   y[1,2]"
+msgstr ""
+
+#: ../../layout.rst:79
+msgid ""
+"See? ``x`` first increases the first index (i.e. row-major), while ``y`` "
+"first increases the second index (i.e. column-major)."
+msgstr ""
+
+#: ../../layout.rst:83
+msgid "For those people from C/C++, here's what they looks like:"
+msgstr ""
+
+#: ../../layout.rst:85
+msgid ""
+"int x[3][2];  // row-major\n"
+"int y[2][3];  // column-major\n"
+"\n"
+"for (int i = 0; i < 3; i++) {\n"
+"    for (int j = 0; j < 2; j++) {\n"
+"        do_something ( x[i][j] );\n"
+"        do_something ( y[j][i] );\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../layout.rst:99
+msgid "Array of Structures (AoS), Structure of Arrays (SoA)"
+msgstr ""
+
+#: ../../layout.rst:101
+msgid "Tensors of same size can be placed together."
+msgstr ""
+
+#: ../../layout.rst:103
+msgid ""
+"For example, this places two 1D tensors of size ``3`` (array of "
+"structure, AoS):"
+msgstr ""
+
+#: ../../layout.rst:105
+msgid "ti.root.dense(ti.i, 3).place(x, y)"
+msgstr ""
+
+#: ../../layout.rst:109
+msgid "Their memory layout:"
+msgstr ""
+
+#: ../../layout.rst:111
+msgid ""
+"#  address low ............. address high\n"
+"#  x[0]   y[0] | x[1]  y[1] | x[2]   y[2]"
+msgstr ""
+
+#: ../../layout.rst:116
+msgid ""
+"In contrast, this places two tensor placed separately (structure of "
+"array, SoA):"
+msgstr ""
+
+#: ../../layout.rst:118
+msgid ""
+"ti.root.dense(ti.i, 3).place(x)\n"
+"ti.root.dense(ti.i, 3).place(y)"
+msgstr ""
+
+#: ../../layout.rst:123
+msgid "Now, their memory layout:"
+msgstr ""
+
+#: ../../layout.rst:125
+msgid ""
+"#  address low ............. address high\n"
+"#  x[0]  x[1]   x[2] | y[0]   y[1]   y[2]"
+msgstr ""
+
+#: ../../layout.rst:131
+msgid ""
+"Normally, you don't have to worry about the performance nuances between "
+"different layouts, and should just define the simplest layout as a start."
+" However, locality sometimes have a significant impact on the "
+"performance, especially when the tensor is huge."
+msgstr ""
+
+#: ../../layout.rst:134
+msgid ""
+"**To improve spatial locality of memory accesses (i.e. cache hit rate / "
+"cacheline utilization), it's sometimes helpful to place the data elements"
+" within relatively close storage locations if they are often accessed "
+"together.** Take a simple 1D wave equation solver for example:"
+msgstr ""
+
+#: ../../layout.rst:137
+msgid ""
+"N = 200000\n"
+"pos = ti.var(ti.f32)\n"
+"vel = ti.var(ti.f32)\n"
+"ti.root.dense(ti.i, N).place(pos)\n"
+"ti.root.dense(ti.i, N).place(vel)\n"
+"\n"
+"@ti.kernel\n"
+"def step():\n"
+"    pos[i] += vel[i] * dt\n"
+"    vel[i] += -k * pos[i] * dt"
+msgstr ""
+
+#: ../../layout.rst:151
+msgid ""
+"Here, we placed ``pos`` and ``vel`` seperately. So the distance in "
+"address space between ``pos[i]`` and ``vel[i]`` is ``200000``. This will "
+"result in a poor spatial locality and lots of cache-misses, which damages"
+" the performance. A better placement is to place them together:"
+msgstr ""
+
+#: ../../layout.rst:154
+msgid "ti.root.dense(ti.i, N).place(pos, vel)"
+msgstr ""
+
+#: ../../layout.rst:158
+msgid ""
+"Then ``vel[i]`` is placed right next to ``pos[i]``, this can increase the"
+" cache-hit rate and therefore increase the performance."
+msgstr ""
+
+#: ../../layout.rst:162
+msgid "Flat layouts versus hierarchical layouts"
+msgstr ""
+
+#: ../../layout.rst:164
+msgid ""
+"By default, when allocating a ``ti.var``, it follows the simplest data "
+"layout."
+msgstr ""
+
+#: ../../layout.rst:166
+msgid ""
+"val = ti.var(ti.f32, shape=(32, 64, 128))\n"
+"# C++ equivalent: float val[32][64][128]"
+msgstr ""
+
+#: ../../layout.rst:171
+msgid ""
+"However, at times this data layout can be suboptimal for certain types of"
+" computer graphics tasks. For example, ``val[i, j, k]`` and ``val[i + 1, "
+"j, k]`` are very far away (``32 KB``) from each other, and leads to poor "
+"access locality under certain computation tasks. Specifically, in tasks "
+"such as texture trilinear interpolation, the two elements are not even "
+"within the same ``4KB`` pages, creating a huge cache/TLB pressure."
+msgstr ""
+
+#: ../../layout.rst:174
+msgid "A better layout might be"
+msgstr ""
+
+#: ../../layout.rst:176
+msgid ""
+"val = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ijk, (8, 16, 32)).dense(ti.ijk, (4, 4, 4)).place(val)"
+msgstr ""
+
+#: ../../layout.rst:181
+msgid ""
+"This organizes ``val`` in ``4x4x4`` blocks, so that with high probability"
+" ``val[i, j, k]`` and its neighbours are close to each other (i.e., in "
+"the same cacheline or memory page)."
+msgstr ""
+
+#: ../../layout.rst:185
+msgid "Struct-fors on advanced dense data layouts"
+msgstr ""
+
+#: ../../layout.rst:187
+msgid ""
+"Struct-fors on nested dense data structures will automatically follow "
+"their data order in memory. For example, if 2D scalar tensor ``A`` is "
+"stored in row-major order,"
+msgstr ""
+
+#: ../../layout.rst:189
+msgid ""
+"for i, j in A:\n"
+"  A[i, j] += 1"
+msgstr ""
+
+#: ../../layout.rst:194
+msgid ""
+"will iterate over elements of ``A`` following row-major order. If ``A`` "
+"is column-major, then the iteration follows the column-major order."
+msgstr ""
+
+#: ../../layout.rst:196
+msgid ""
+"If ``A`` is hierarchical, it will be iterated level by level. This "
+"maximizes the memory bandwidth utilization in most cases."
+msgstr ""
+
+#: ../../layout.rst:198
+msgid ""
+"Struct-for loops on sparse tensors follow the same philosophy, and will "
+"be discussed further in :ref:`sparse`."
+msgstr ""
+
+#: ../../layout.rst:202
+msgid "Examples"
+msgstr ""
+
+#: ../../layout.rst:204
+msgid "2D matrix, row-major"
+msgstr ""
+
+#: ../../layout.rst:206
+msgid ""
+"A = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (256, 256)).place(A)"
+msgstr ""
+
+#: ../../layout.rst:211
+msgid "2D matrix, column-major"
+msgstr ""
+
+#: ../../layout.rst:213
+msgid ""
+"A = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ji, (256, 256)).place(A) # Note ti.ji instead of ti.ij"
+msgstr ""
+
+#: ../../layout.rst:218
+msgid "`8x8` blocked 2D array of size `1024x1024`"
+msgstr ""
+
+#: ../../layout.rst:220
+msgid ""
+"density = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (128, 128)).dense(ti.ij, (8, 8)).place(density)"
+msgstr ""
+
+#: ../../layout.rst:226
+msgid "3D Particle positions and velocities, AoS"
+msgstr ""
+
+#: ../../layout.rst:228
+msgid ""
+"pos = ti.Vector(3, dt=ti.f32)\n"
+"vel = ti.Vector(3, dt=ti.f32)\n"
+"ti.root.dense(ti.i, 1024).place(pos, vel)\n"
+"# equivalent to\n"
+"ti.root.dense(ti.i, 1024).place(pos(0), pos(1), pos(2), vel(0), vel(1), "
+"vel(2))"
+msgstr ""
+
+#: ../../layout.rst:236
+msgid "3D Particle positions and velocities, SoA"
+msgstr ""
+
+#: ../../layout.rst:238
+msgid ""
+"pos = ti.Vector(3, dt=ti.f32)\n"
+"vel = ti.Vector(3, dt=ti.f32)\n"
+"for i in range(3):\n"
+"  ti.root.dense(ti.i, 1024).place(pos(i))\n"
+"for i in range(3):\n"
+"  ti.root.dense(ti.i, 1024).place(vel(i))"
+msgstr ""
+
