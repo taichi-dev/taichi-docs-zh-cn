@@ -226,7 +226,7 @@ msgstr ""
 
 #: ../../meta.rst:102
 msgid "For example, code for resetting this tensor of vectors should be"
-msgstr "例如，重置向量的张量（tensor of vectors）的代码应该为"
+msgstr "例如，向量张量（tensor of vectors）的重置代码应该为"
 
 #: ../../meta.rst:104
 msgid ""
