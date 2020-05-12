@@ -122,7 +122,7 @@ msgstr ""
 
 #: ../../differentiable_programming.rst:44
 msgid "Taichi programs that violate this rule has an undefined gradient behavior."
-msgstr "违反此规则的Taichi程序具有未定义的梯度行为。"
+msgstr "违反此规则的Taichi程序将在执行梯度运算时产生未定义的行为。"
 
 #: ../../differentiable_programming.rst:48
 msgid ""
