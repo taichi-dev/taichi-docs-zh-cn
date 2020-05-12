@@ -1,0 +1,296 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016, Taichi Developers
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.6.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-11 21:31-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../snode.rst:4
+msgid "Structural nodes (SNodes)"
+msgstr ""
+
+#: ../../snode.rst:6
+msgid ""
+"After writing the computation code, the user needs to specify the "
+"internal data structure hierarchy. Specifying a data structure includes "
+"choices at both the macro level, dictating how the data structure "
+"components nest with each other and the way they represent sparsity, and "
+"the micro level, dictating how data are grouped together (e.g. structure "
+"of arrays vs. array of structures). Our language provides *structural "
+"nodes (SNodes)* to compose the hierarchy and particular properties. These"
+" constructs and their semantics are listed below:"
+msgstr ""
+
+#: ../../snode.rst:9
+msgid "dense: A fixed-length contiguous array."
+msgstr ""
+
+#: ../../snode.rst:11
+msgid ""
+"bitmasked: This is similar to dense, but it also uses a mask to maintain "
+"sparsity information, one bit per child."
+msgstr ""
+
+#: ../../snode.rst:13
+msgid ""
+"pointer: Store pointers instead of the whole structure to save memory and"
+" maintain sparsity."
+msgstr ""
+
+#: ../../snode.rst:15
+msgid ""
+"dynamic: Variable-length array, with a predefined maximum length. It "
+"serves the role of ``std::vector`` in C++ or ``list`` in Python, and can "
+"be used to maintain objects (e.g. particles) contained in a block."
+msgstr ""
+
+#: ../../snode.rst:17
+msgid ""
+"See :ref:`layout` for more details about data layout. ``ti.root`` is the "
+"root node of the data structure."
+msgstr ""
+
+#: ../../snode.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../snode.rst:21
+msgid "(SNode) where to place"
+msgstr ""
+
+#: ../../snode.rst:22
+msgid "(tensor) tensor(s) to be placed"
+msgstr ""
+
+#: ../../snode.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../snode.rst:23
+msgid "(SNode) the ``snode`` itself"
+msgstr ""
+
+#: ../../snode.rst:25
+msgid "The following code places two 0-D tensors named ``x`` and ``y``:"
+msgstr ""
+
+#: ../../snode.rst:29
+msgid ""
+"x = ti.var(dt=ti.i32)\n"
+"y = ti.var(dt=ti.f32)\n"
+"ti.root.place(x, y)"
+msgstr ""
+
+#: ../../snode.rst:35 ../../snode.rst:62
+msgid "the tensor"
+msgstr ""
+
+#: ../../snode.rst:36
+msgid "(tuple of integers) the shape of tensor"
+msgstr ""
+
+#: ../../snode.rst:38
+msgid "For example,"
+msgstr ""
+
+#: ../../snode.rst:42
+msgid ""
+"ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
+"x.shape() # returns (3, 5, 4)"
+msgstr ""
+
+#: ../../snode.rst:47 ../../snode.rst:74
+msgid "(SNode)"
+msgstr ""
+
+#: ../../snode.rst:48
+msgid "axis (0 for ``i`` and 1 for ``j``)"
+msgstr ""
+
+#: ../../snode.rst:49
+msgid "(scalar) the size of tensor alone that axis"
+msgstr ""
+
+#: ../../snode.rst:51
+msgid "Equivalent to ``tensor.shape()[i]``."
+msgstr ""
+
+#: ../../snode.rst:55
+msgid ""
+"ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
+"x.snode().get_shape(0)  # 3\n"
+"x.snode().get_shape(1)  # 5\n"
+"x.snode().get_shape(2)  # 4"
+msgstr ""
+
+#: ../../snode.rst:63
+msgid "(scalar) the dimensionality of the tensor"
+msgstr ""
+
+#: ../../snode.rst:65
+msgid "Equivalent to ``len(tensor.shape())``."
+msgstr ""
+
+#: ../../snode.rst:69
+msgid ""
+"ti.root.dense(ti.ijk, (8, 9, 10)).place(x)\n"
+"x.dim()  # 3"
+msgstr ""
+
+#: ../../snode.rst:75
+msgid "(SNode) the parent node of ``snode``"
+msgstr ""
+
+#: ../../snode.rst:79
+msgid ""
+"blk1 = ti.root.dense(ti.i, 8)\n"
+"blk2 = blk1.dense(ti.j, 4)\n"
+"blk3 = blk2.bitmasked(ti.k, 6)\n"
+"blk1.parent()  # ti.root\n"
+"blk2.parent()  # blk1\n"
+"blk3.parent()  # blk2"
+msgstr ""
+
+#: ../../snode.rst:86
+msgid "TODO: add tensor.parent(), and add see also ref here"
+msgstr ""
+
+#: ../../snode.rst:90
+msgid "Node types"
+msgstr ""
+
+#: ../../snode.rst:95 ../../snode.rst:132
+msgid "(SNode) parent node where the child is derived from"
+msgstr ""
+
+#: ../../snode.rst:96
+msgid "(Index or Indices) indices used for this node"
+msgstr ""
+
+#: ../../snode.rst:97
+msgid "(scalar or tuple) shape the tensor of vectors"
+msgstr ""
+
+#: ../../snode.rst:98 ../../snode.rst:136
+msgid "(SNode) the derived child node"
+msgstr ""
+
+#: ../../snode.rst:100
+msgid "The following code places a 1-D tensor of size ``3``:"
+msgstr ""
+
+#: ../../snode.rst:104
+msgid ""
+"x = ti.var(dt=ti.i32)\n"
+"ti.root.dense(ti.i, 3).place(x)"
+msgstr ""
+
+#: ../../snode.rst:107
+msgid "The following code places a 2-D tensor of shape ``(3, 4)``:"
+msgstr ""
+
+#: ../../snode.rst:111
+msgid ""
+"x = ti.var(dt=ti.i32)\n"
+"ti.root.dense(ti.ij, (3, 4)).place(x)"
+msgstr ""
+
+#: ../../snode.rst:116
+msgid ""
+"If ``shape`` is a scalar and there are multiple indices, then ``shape`` "
+"will be automatically expanded to fit the number of indices. For example,"
+msgstr ""
+
+#: ../../snode.rst:121
+msgid "snode.dense(ti.ijk, 3)"
+msgstr ""
+
+#: ../../snode.rst:123
+msgid "is equivalent to"
+msgstr ""
+
+#: ../../snode.rst:127
+msgid "snode.dense(ti.ijk, (3, 3, 3))"
+msgstr ""
+
+#: ../../snode.rst:133
+msgid "(Index) the ``dynamic`` node indices"
+msgstr ""
+
+#: ../../snode.rst:134
+msgid "(scalar) the maximum size of the dynamic node"
+msgstr ""
+
+#: ../../snode.rst:135
+msgid ""
+"(optional, scalar) the number of elements in each dynamic memory "
+"allocation chunk"
+msgstr ""
+
+#: ../../snode.rst:138
+msgid ""
+"``dynamic`` nodes acts like ``std::vector`` in C++ or ``list`` in Python."
+" Taichi's dynamic memory allocation system allocates its memory on the "
+"fly."
+msgstr ""
+
+#: ../../snode.rst:141
+msgid "The following places a 1-D dynamic tensor of maximum size ``16``:"
+msgstr ""
+
+#: ../../snode.rst:145
+msgid "ti.root.dynamic(ti.i, 16).place(x)"
+msgstr ""
+
+#: ../../snode.rst:153
+msgid "TODO: add descriptions here"
+msgstr ""
+
+#: ../../snode.rst:156
+msgid "Working with ``dynamic`` SNodes"
+msgstr ""
+
+#: ../../snode.rst:160 ../../snode.rst:167
+msgid "(SNode, dynamic)"
+msgstr ""
+
+#: ../../snode.rst:161 ../../snode.rst:168
+msgid "(scalar or tuple of scalars) the ``dynamic`` node indices"
+msgstr ""
+
+#: ../../snode.rst:162
+msgid "(scalar) the current size of the dynamic node"
+msgstr ""
+
+#: ../../snode.rst:169
+msgid "(depends on SNode data type) value to store"
+msgstr ""
+
+#: ../../snode.rst:170
+msgid "(``int32``) the size of the dynamic node, before appending"
+msgstr ""
+
+#: ../../snode.rst:172
+msgid "Inserts ``val`` into the ``dynamic`` node with indices ``indices``."
+msgstr ""
+
+#: ../../snode.rst:177
+msgid "Indices"
+msgstr ""
+
+#: ../../snode.rst:187
+msgid "(TODO)"
+msgstr ""
+
