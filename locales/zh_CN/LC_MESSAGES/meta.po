@@ -112,7 +112,7 @@ msgstr "对稀疏张量而言，此处会返回其完整域的形状（full doma
 
 #: ../../meta.rst:50
 msgid "Compile-time evaluations"
-msgstr "编译时求值（evaluation）"
+msgstr "编译时求值（Compile-time evaluations）"
 
 #: ../../meta.rst:51
 msgid ""
