@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../syntax_sugars.rst:9
 msgid "For example, consider the simple kernel:"
-msgstr "例如，考虑简单的内核："
+msgstr "例如，考虑下面这个简单的内核："
 
 #: ../../syntax_sugars.rst:11
 msgid ""
