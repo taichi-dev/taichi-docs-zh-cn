@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-07 01:24-0400\n"
+"POT-Creation-Date: 2020-05-12 14:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,11 @@ msgstr ""
 #: ../../vector.rst:9
 msgid ""
 "as an element of a global tensor. In this case, the tensor is an "
-"N-dimensional array of ``n`` component vectors"
+"N-dimensional array of ``n`` component vectors."
 msgstr ""
 
 #: ../../vector.rst:11
-msgid "See :ref:`tensor_matrix` for more details."
+msgid "See :ref:`tensor` for more details."
 msgstr ""
 
 #: ../../vector.rst:14
@@ -188,8 +188,8 @@ msgstr ""
 msgid "Methods"
 msgstr ""
 
-#: ../../vector.rst:108 ../../vector.rst:126 ../../vector.rst:127
-#: ../../vector.rst:154 ../../vector.rst:155 ../../vector.rst:172
+#: ../../vector.rst:108 ../../vector.rst:127 ../../vector.rst:128
+#: ../../vector.rst:155 ../../vector.rst:156 ../../vector.rst:173
 msgid "(Vector)"
 msgstr ""
 
@@ -227,45 +227,45 @@ msgid ""
 "zero vectors during differentiable programming."
 msgstr ""
 
-#: ../../vector.rst:128
+#: ../../vector.rst:129
 msgid "(scalar) the dot (inner) product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../vector.rst:130 ../../vector.rst:158 ../../vector.rst:176
+#: ../../vector.rst:131 ../../vector.rst:159 ../../vector.rst:177
 msgid "E.g., ::"
 msgstr ""
 
-#: ../../vector.rst:133
+#: ../../vector.rst:134
 msgid ""
 "a = ti.Vector([1, 3])\n"
 "b = ti.Vector([2, 4])\n"
 "a.dot(b) # 1*2 + 3*4 = 14"
 msgstr ""
 
-#: ../../vector.rst:140 ../../vector.rst:141
+#: ../../vector.rst:141 ../../vector.rst:142
 msgid "(Vector, 3 component)"
 msgstr ""
 
-#: ../../vector.rst:142
+#: ../../vector.rst:143
 msgid "(Vector, 3D) the cross product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../vector.rst:144
+#: ../../vector.rst:145
 msgid "We use right-handed coordinate system, E.g., ::"
 msgstr ""
 
-#: ../../vector.rst:147
+#: ../../vector.rst:148
 msgid ""
 "a = ti.Vector([1, 2, 3])\n"
 "b = ti.Vector([4, 5, 6])\n"
 "c = ti.cross(a, b) # [2*6 - 5*3, 4*3 - 1*6, 1*5 - 4*2]"
 msgstr ""
 
-#: ../../vector.rst:156
+#: ../../vector.rst:157
 msgid "(Matrix) the outer product of ``a`` and ``b``"
 msgstr ""
 
-#: ../../vector.rst:161
+#: ../../vector.rst:162
 msgid ""
 "a = ti.Vector([1, 2, 3])\n"
 "b = ti.Vector([4, 5, 6])\n"
@@ -273,28 +273,28 @@ msgid ""
 "# c = [[1*4, 1*5, 1*6], [2*4, 2*5, 2*6], [3*4, 3*5, 3*6]]"
 msgstr ""
 
-#: ../../vector.rst:167
+#: ../../vector.rst:168
 msgid ""
 "This is not the same as `ti.cross`. ``a`` and ``b`` do not have to be 3 "
 "component vectors."
 msgstr ""
 
-#: ../../vector.rst:173
+#: ../../vector.rst:174
 msgid "(DataType)"
 msgstr ""
 
-#: ../../vector.rst:174
+#: ../../vector.rst:175
 msgid "(Vector) vector with all components of ``a`` casted into type ``dt``"
 msgstr ""
 
-#: ../../vector.rst:179
+#: ../../vector.rst:180
 msgid ""
 "# Taichi-scope\n"
 "a = ti.Vector([1.6, 2.3])\n"
 "a.cast(ti.i32) # [2, 3]"
 msgstr ""
 
-#: ../../vector.rst:184
+#: ../../vector.rst:185
 msgid ""
 "Vectors are special matrices with only 1 column. In fact, ``ti.Vector`` "
 "is just an alias of ``ti.Matrix``."
@@ -310,5 +310,15 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "as an element of a global tensor."
+#~ " In this case, the tensor is an"
+#~ " N-dimensional array of ``n`` component "
+#~ "vectors"
+#~ msgstr ""
+
+#~ msgid "See :ref:`tensor_matrix` for more details."
 #~ msgstr ""
 

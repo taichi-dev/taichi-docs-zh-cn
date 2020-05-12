@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-24 11:24+0800\n"
+"POT-Creation-Date: 2020-05-12 14:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,38 +21,34 @@ msgstr ""
 msgid "Internal designs (WIP)"
 msgstr ""
 
-#: ../../internal.rst:5
-msgid "Vector type system"
-msgstr ""
-
-#: ../../internal.rst:9
+#: ../../internal.rst:6
 msgid "Intermediate representation"
 msgstr ""
 
-#: ../../internal.rst:10
+#: ../../internal.rst:7
 msgid "Use ``ti.init(print_ir=True)`` to print IR on the console."
 msgstr ""
 
-#: ../../internal.rst:14
+#: ../../internal.rst:11
 msgid "Code generation"
 msgstr ""
 
-#: ../../internal.rst:18
+#: ../../internal.rst:15
 msgid "Statistics"
 msgstr ""
 
-#: ../../internal.rst:20
+#: ../../internal.rst:17
 msgid ""
 "In some cases, it is helpful to gather certain quantitative information "
 "about internal events during Taichi program execution. The ``Statistics``"
 " class is designed for this purpose."
 msgstr ""
 
-#: ../../internal.rst:23
+#: ../../internal.rst:20
 msgid "Usage:"
 msgstr ""
 
-#: ../../internal.rst:25
+#: ../../internal.rst:22
 msgid ""
 "#include \"taichi/util/statistics.h\"\n"
 "\n"
@@ -65,15 +61,18 @@ msgid ""
 "irpass::analysis::count_statements(this->ir));"
 msgstr ""
 
-#: ../../internal.rst:36
+#: ../../internal.rst:33
 msgid "Note the keys are ``std::string`` and values are ``double``."
 msgstr ""
 
-#: ../../internal.rst:38
+#: ../../internal.rst:35
 msgid "To print out all statistics in Python:"
 msgstr ""
 
-#: ../../internal.rst:40
+#: ../../internal.rst:37
 msgid "ti.core.print_stat()"
 msgstr ""
+
+#~ msgid "Vector type system"
+#~ msgstr ""
 
