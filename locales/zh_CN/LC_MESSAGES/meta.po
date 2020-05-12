@@ -128,7 +128,7 @@ msgid ""
 "+17, this is `if constexpr <https://en.cppreference.com/w/cpp/language/"
 "if>`_.)"
 msgstr ""
-"在编写编译时的分支条件时，请使用 ``ti.static`` （对使用C++17的人来说，这就"
+"用 ``ti.static`` 来进行编译时的分支展开（对C++17的用户来说，这相当于"
 "是 `if constexpr <https://en.cppreference.com/w/cpp/language/if>`_ ）"
 
 #: ../../meta.rst:56
