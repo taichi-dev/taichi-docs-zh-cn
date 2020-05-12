@@ -129,7 +129,7 @@ msgid ""
 "**static for-loops** (e.g. ``for i in ti.static(range(4))``) will get unrolled "
 "by the Python frontend preprocessor and does not count as a level of loop."
 msgstr ""
-"**静态for循环** （例如 ``for in in ti.static（range（4））`` ）将被Python前端预"
+"**静态for循环** （例如 ``for i in ti.static(range(4))`` ）将被Python前端预"
 "处理器展开，并且不算作循环级别。"
 
 #: ../../differentiable_programming.rst:51
