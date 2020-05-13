@@ -40,9 +40,8 @@ msgid ""
 "Matrix``), and then migrate to more advanced layouts using the ``ti.root."
 "X`` syntax."
 msgstr ""
-"我们建议从默认布局规范开始（使用 ``ti.var/Vector/Matrix`` 创建张量时，只"
-"需指定 ``shape`` 即可），然后再使用 ``ti.root.X`` 句法迁移到更高级的布"
-"局。"
+"我们建议从默认布局规范开始（在 ``ti.var/Vector/Matrix`` 中指定 ``shape`` 来创建张量）"
+"，然后再迁移到用 ``ti.root.X`` 句法的更高级布局。"
 
 #: ../../data_layout.rst:10
 msgid ""
