@@ -221,7 +221,7 @@ msgid ""
 "their data order in memory. For example, if 2D scalar tensor ``A`` is "
 "stored in row-major order,"
 msgstr ""
-"嵌套密集数据结构上的结构fors将自动遵循其在内存中的数据顺序。 例如，如果二"
+"嵌套密集数据结构上的结构 for 循环将自动遵循其在内存中的数据顺序。 例如，如果二"
 "维标量张量 ``A`` 以行优先顺序存储，"
 
 #: ../../data_layout.rst:104
