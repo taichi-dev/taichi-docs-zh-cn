@@ -237,8 +237,7 @@ msgid ""
 "will iterate over elements of ``A`` following row-major order. If ``A`` "
 "is column-major, then the iteration follows the column-major order."
 msgstr ""
-"将按照行优先顺序对A的元素进行迭代。 如果 ``A`` 是列主序，则迭代遵循列主"
-"序。"
+"将按照行优先的顺序对A的元素进行遍历。 如果 ``A`` 是列优先，则按照列优先进行遍历。"
 
 #: ../../data_layout.rst:111
 msgid ""
