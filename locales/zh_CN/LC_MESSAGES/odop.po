@@ -29,7 +29,7 @@ msgid ""
 "modularization hard."
 msgstr ""
 "Taichi是一种 `面向数据的 <https://en.wikipedia.org/wiki/Data-"
-"oriented_design>`_ 编程(DOP)语言。 但是，简单的DOP会使模块化变得困难。"
+"oriented_design>`_ 编程(DOP)语言。 但是，单纯的DOP会使模块化变得困难。"
 
 #: ../../odop.rst:6
 msgid ""
