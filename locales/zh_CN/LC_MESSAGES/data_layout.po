@@ -108,7 +108,7 @@ msgstr ""
 
 #: ../../data_layout.rst:41
 msgid "Advanced data layout specification"
-msgstr "先进的数据布局规范"
+msgstr "高级数据布局的指定"
 
 #: ../../data_layout.rst:43
 msgid "A better layout might be"
