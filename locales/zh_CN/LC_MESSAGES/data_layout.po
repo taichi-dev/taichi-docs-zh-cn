@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../../data_layout.rst:53
 msgid "Examples"
-msgstr "例子"
+msgstr "示例"
 
 #: ../../data_layout.rst:55
 msgid "2D matrix, row-major"
