@@ -244,7 +244,7 @@ msgid ""
 "If ``A`` is blocked, the iteration will happen within each block first. "
 "This maximizes memory bandwidth utilization in most cases."
 msgstr ""
-"如果 ``A`` 被阻止，则迭代将首先在每个块内发生。 在大多数情况下，这可以最"
+"如果 ``A`` 是分块的，则迭代将首先在每个块内发生。 在大多数情况下，这可以最"
 "大化内存带宽利用率。"
 
 #: ../../data_layout.rst:113
