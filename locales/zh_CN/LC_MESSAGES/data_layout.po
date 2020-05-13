@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../data_layout.rst:16
 msgid "The default data layout using ``shape``"
-msgstr "使用 ``shape`` 的默认数据布局"
+msgstr "使用 ``shape`` 时默认的数据布局"
 
 #: ../../data_layout.rst:18
 msgid ""
