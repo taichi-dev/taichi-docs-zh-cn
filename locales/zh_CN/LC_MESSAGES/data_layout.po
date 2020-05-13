@@ -213,7 +213,7 @@ msgstr ""
 
 #: ../../data_layout.rst:100
 msgid "Struct-fors on advanced (dense) data layouts"
-msgstr "对高级（密集）数据布局进行for构造"
+msgstr "对高级（密集）数据布局进行结构 for 循环"
 
 #: ../../data_layout.rst:102
 msgid ""
