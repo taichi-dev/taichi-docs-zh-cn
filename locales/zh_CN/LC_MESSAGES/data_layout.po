@@ -161,7 +161,7 @@ msgstr ""
 
 #: ../../data_layout.rst:69
 msgid "`8x8` blocked 2D array of size `1024x1024`"
-msgstr "`8x8` 阻止了大小为 `1024x1024` 的二维数组"
+msgstr "按 `8x8` 分块，大小为 `1024x1024` 的二维数组"
 
 #: ../../data_layout.rst:71
 msgid ""
