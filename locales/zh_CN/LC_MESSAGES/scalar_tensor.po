@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-08 12:01+0800\n"
+"POT-Creation-Date: 2020-05-12 14:33+0800\n"
 "PO-Revision-Date: 2020-05-08 12:36+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -91,9 +91,10 @@ msgstr ""
 "# 等价于：x = ti.var(ti.f32, shape=(4, 3))"
 
 #: ../../scalar_tensor.rst:44
+#, fuzzy
 msgid ""
-"Not providing ``shape`` allows you to *place* the tensor as *sparse* "
-"tensors, see :ref:`sparse` for more details."
+"Not providing ``shape`` allows you to *place* the tensor in a layout "
+"other than the default *dense*, see :ref:`layout` for more details."
 msgstr "不提供形状 ``shape`` 还可以使你定义张量为 *稀疏* 张量，见 :ref:`sparse` 。"
 
 #: ../../scalar_tensor.rst:49

@@ -3,41 +3,42 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-24 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-12 00:37-0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../meta.rst:4
 msgid "Metaprogramming"
-msgstr ""
+msgstr "元编程"
 
 #: ../../meta.rst:6
 msgid "Taichi provides metaprogramming infrastructures. Metaprogramming can"
-msgstr ""
+msgstr "Taichi为元编程提供了基础架构。元编程可以"
 
 #: ../../meta.rst:8
 msgid ""
 "Unify the development of dimensionality-dependent code, such as 2D/3D "
 "physical simulations"
-msgstr ""
+msgstr "统一对维度依赖的代码开发，例如2维/3维（2D/3D）物理仿真"
 
 #: ../../meta.rst:9
 msgid "Improve run-time performance by from run-time costs to compile time"
-msgstr ""
+msgstr "通过将运行时开销转移到编译时来提高运行时的性能"
 
 #: ../../meta.rst:10
 msgid "Simplify the development of Taichi standard library"
-msgstr ""
+msgstr "简化Taichi标准库的开发"
 
 #: ../../meta.rst:12
 msgid ""
@@ -45,10 +46,12 @@ msgid ""
 "happen at *compile-time*. Every kernel in Taichi is a template kernel, "
 "even if it has no template arguments."
 msgstr ""
+"Taichi内核是 *惰性实例化* 的，并且很多有计算可以发生在 *编译时*。即使没有模"
+"板参数，Taichi中的每一个内核也都是模板内核。"
 
 #: ../../meta.rst:15
 msgid "Dimensionality-independent programming using grouped indices"
-msgstr ""
+msgstr "使用组合索引（grouped indices）的对维度不依赖的编程"
 
 #: ../../meta.rst:17
 msgid ""
@@ -67,17 +70,32 @@ msgid ""
 "  for i, j in x:\n"
 "    y[i, j + 1] = i + j"
 msgstr ""
+"@ti.kernel\n"
+"def copy(x: ti.template(), y: ti.template()):\n"
+"  for I in ti.grouped(y):\n"
+"    x[I] = y[I]\n"
+"\n"
+"@ti.kernel\n"
+"def array_op(x: ti.template(), y: ti.template()):\n"
+"  # 如果张量x是 2维的\n"
+"  for I in ti.grouped(x): # I 是一个大小为为x.dim()，类型为i32的向量\n"
+"    y[I + ti.Vector([0, 1])] = I[0] + I[1]\n"
+"  # 等价于\n"
+"  for i, j in x:\n"
+"    y[i, j + 1] = i + j"
 
 #: ../../meta.rst:34
 msgid "Tensor size reflection"
-msgstr ""
+msgstr "张量尺寸的反射（size reflection）"
 
 #: ../../meta.rst:36
 msgid ""
 "Sometimes it will be useful to get the dimensionality (``tensor.dim()``) "
-"and shape (``tensor.shape()``) of tensors. These functions can be used in"
-" both Taichi kernels and python scripts."
+"and shape (``tensor.shape()``) of tensors. These functions can be used in "
+"both Taichi kernels and python scripts."
 msgstr ""
+"有些时候获取张量的维度（ ``tensor.dim()`` ）和形状（ ``tensor.shape()`` ）"
+"是很有用的。这些函数既可以被应用在Taichi内核中，也可以被用在Python脚本中。"
 
 #: ../../meta.rst:39
 msgid ""
@@ -90,25 +108,28 @@ msgstr ""
 
 #: ../../meta.rst:47
 msgid "For sparse tensors, the full domain shape will be returned."
-msgstr ""
+msgstr "对稀疏张量而言，此处会返回其完整域的形状（full domain shape）。"
 
 #: ../../meta.rst:50
 msgid "Compile-time evaluations"
-msgstr ""
+msgstr "编译时求值（Compile-time evaluations）"
 
 #: ../../meta.rst:51
 msgid ""
 "Using compile-time evaluation will allow certain computation to happen "
-"when kernels are instantiated. Such computation has no overhead at "
-"runtime."
+"when kernels are instantiated. Such computation has no overhead at runtime."
 msgstr ""
+"使用编译时求值可以使得某些计算在内核被实例化时发生。这些计算不会有运行时开"
+"支。"
 
 #: ../../meta.rst:54
 msgid ""
-"Use ``ti.static`` for compile-time branching (for those who come from "
-"C++17, this is `if constexpr "
-"<https://en.cppreference.com/w/cpp/language/if>`_.)"
+"Use ``ti.static`` for compile-time branching (for those who come from C+"
+"+17, this is `if constexpr <https://en.cppreference.com/w/cpp/language/"
+"if>`_.)"
 msgstr ""
+"用 ``ti.static`` 来进行编译时的分支展开（对C++17的用户来说，这相当于"
+"是 `if constexpr <https://en.cppreference.com/w/cpp/language/if>`_ ）"
 
 #: ../../meta.rst:56
 msgid ""
@@ -119,10 +140,16 @@ msgid ""
 "  if ti.static(enable_projection): # No runtime overhead\n"
 "    x[0] = 1"
 msgstr ""
+"enable_projection = True\n"
+"\n"
+"@ti.kernel\n"
+"def static():\n"
+"  if ti.static(enable_projection): # 没有运行时开销\n"
+"    x[0] = 1"
 
 #: ../../meta.rst:66
 msgid "Use ``ti.static`` for forced loop unrolling"
-msgstr ""
+msgstr "使用 ``ti.static`` 强制循环展开（forced loop unrolling）"
 
 #: ../../meta.rst:68
 msgid ""
@@ -149,31 +176,57 @@ msgid ""
 " x[f + 1, p] = x[f, p] + dt * v[f + 1, p]\n"
 " C[f + 1, p] = new_C"
 msgstr ""
+"@ti.kernel\n"
+"def g2p(f: ti.i32):\n"
+"for p in range(0, n_particles):\n"
+" base = ti.cast(x[f, p] * inv_dx - 0.5, ti.i32)\n"
+" fx = x[f, p] * inv_dx - ti.cast(base, real)\n"
+" w = [0.5 * ti.sqr(1.5 - fx), 0.75 - ti.sqr(fx - 1.0),\n"
+"      0.5 * ti.sqr(fx - 0.5)]\n"
+" new_v = ti.Vector([0.0, 0.0])\n"
+" new_C = ti.Matrix([[0.0, 0.0], [0.0, 0.0]])\n"
+"\n"
+" # 展开了9次迭代来获得更高的性能\n"
+" for i in ti.static(range(3)):\n"
+"   for j in ti.static(range(3)):\n"
+"     dpos = ti.cast(ti.Vector([i, j]), real) - fx\n"
+"     g_v = grid_v_out[base(0) + i, base(1) + j]\n"
+"     weight = w[i](0) * w[j](1)\n"
+"     new_v += weight * g_v\n"
+"     new_C += 4 * weight * ti.outer_product(g_v, dpos) * inv_dx\n"
+"\n"
+" v[f + 1, p] = new_v\n"
+" x[f + 1, p] = x[f, p] + dt * v[f + 1, p]\n"
+" C[f + 1, p] = new_C"
 
 #: ../../meta.rst:95
 msgid "When to use for loops with ``ti.static``"
-msgstr ""
+msgstr "何时使用 ``ti.static`` 来进行for循环"
 
 #: ../../meta.rst:97
 msgid "There are several reasons why ``ti.static`` for loops should be used."
-msgstr ""
+msgstr "下面有一些为何应该在for循环的同时使用``ti.static``的原因。"
 
 #: ../../meta.rst:99
 msgid "Loop unrolling for performance."
-msgstr ""
+msgstr "循环展开以提高性能。"
 
 #: ../../meta.rst:100
 msgid ""
 "Loop over vector/matrix elements. Indices into Taichi matrices must be a "
 "compile-time constant. Indexing into taichi tensors can be run-time "
-"variables. For example, if ``x`` is a 1-D tensor of 3D vector, accessed "
-"as ``x[tensor_index][matrix index]``. The first index can be variable, "
-"yet the second must be a constant."
+"variables. For example, if ``x`` is a 1-D tensor of 3D vector, accessed as "
+"``x[tensor_index][matrix index]``. The first index can be variable, yet "
+"the second must be a constant."
 msgstr ""
+"对向量/矩阵的元素进行循环。矩阵的索引必须为编译时常量。张"
+"量的索引可以为运行时变量。例如，如果 ``x`` 是由3维向量组成的1维张量，并可"
+"以 ``x[tensor_index][matrix_index]`` 的形式访问。第一个索引（tensor_index）"
+"可以是变量，但是第二个索引（matrix_index）必须是一个常量。"
 
 #: ../../meta.rst:102
 msgid "For example, code for resetting this tensor of vectors should be"
-msgstr ""
+msgstr "例如，向量张量（tensor of vectors）的重置代码应该为"
 
 #: ../../meta.rst:104
 msgid ""
@@ -181,9 +234,14 @@ msgid ""
 "def reset():\n"
 "  for i in x:\n"
 "    for j in ti.static(range(3)):\n"
-"      # The inner loop must be unrolled since j is a vector index instead"
-"\n"
+"      # The inner loop must be unrolled since j is a vector index instead\n"
 "      # of a global tensor index.\n"
 "      x[i][j] = 0"
 msgstr ""
-
+"@ti.kernel\n"
+"def reset():\n"
+"  for i in x:\n"
+"    for j in ti.static(range(3)):\n"
+"      # 内层循环必须被展开，因为k是是向量的索引\n"
+"      # 而不是全局的张量索引。\n"
+"      x[i][j] = 0"

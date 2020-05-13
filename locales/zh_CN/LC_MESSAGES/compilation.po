@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-24 11:24+0800\n"
-"PO-Revision-Date: 2020-05-12 22:59+0800\n"
+"PO-Revision-Date: 2020-05-13 09:21+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../compilation.rst:4
 msgid "The life of a Taichi kernel"
-msgstr "Taichi内核的生命"
+msgstr "Taichi内核的生命周期"
 
 #: ../../compilation.rst:6
 msgid ""
@@ -51,7 +51,9 @@ msgstr ""
 
 #: ../../compilation.rst:14
 msgid "Taichi IR compilation, optimization, and binary generation"
-msgstr "Taichi IR编译，优化和二进制生成"
+msgstr ""
+"Taichi 中间码编译，优化和二进制生成 ( IR: `Intermediate representation "
+"<https://en.wikipedia.org/wiki/Intermediate_representation>`_ )"
 
 #: ../../compilation.rst:15
 msgid "Launching"
@@ -199,8 +201,10 @@ msgid ""
 "hierarchical static single assignment (SSA) IR, which allows a series of "
 "further IR passes to happen, such as"
 msgstr ""
-"Taichi 抽象语法树降低通行Taichi前端IR转换为分层静态单任务(SSA) IR，从而允"
-"许进行进一步一系列的IR通行，例如"
+"AST 的降阶过程 (lowering pass) 会将前端中间码转换为分层静态单任务 (SSA: "
+"`Static Single Assignment <https://en.wikipedia.org/wiki/"
+"Static_single_assignment_form>`_ ) 的中间码，从而可以用更多的过程进一步处"
+"理中间码，例如"
 
 #: ../../compilation.rst:94
 msgid "Loop vectorization"
@@ -250,8 +254,8 @@ msgid ""
 "Finally, the optimized SSA IR is fed into the LLVM IR codegen, and LLVM "
 "JIT generates high-performance executable CPU/GPU programs."
 msgstr ""
-"最后，经过优化的SSA IR 被反馈进 LLVM IR 码元，并且LLVM JIT生成了高性能可"
-"执行的 CPU / GPU 程序。"
+"最后，经过优化的SSA 中间码被反馈进 LLVM 中间码码元，并且LLVM JIT生成了高"
+"性能可执行的 CPU / GPU 程序。"
 
 #: ../../compilation.rst:109
 msgid "Kernel launching"
