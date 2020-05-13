@@ -77,7 +77,7 @@ msgstr ""
 msgid ""
 "Or equivalently, the same data layout can be specified using advanced "
 "`data layout description`:"
-msgstr "或者等效地，可以使用高级``数据布局描述``来指定相同的数据布局："
+msgstr "同样的数据布局也可以用高级数据布局来描述："
 
 #: ../../data_layout.rst:27
 msgid ""
