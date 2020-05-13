@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-21 16:57+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-13 10:20-0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../cpp_style.rst:2
 msgid "C++ Style"
@@ -23,93 +24,96 @@ msgstr ""
 
 #: ../../cpp_style.rst:5
 msgid "Naming"
-msgstr ""
+msgstr "命名规则"
 
 #: ../../cpp_style.rst:6
 msgid ""
 "Variable names should consist of lowercase words connected by "
 "underscores, e.g. ``llvm_context``."
 msgstr ""
+"变量名称应当由小写词语通过下划线连接组成，例如 ``llvm_context``。"
 
 #: ../../cpp_style.rst:7
 msgid ""
 "Class and struct names should consist of words with first letters "
 "capitalized, e.g. ``CodegenLLVM``."
-msgstr ""
+msgstr "类和结构体应当由首字母大写的词语组成，例如 ``CodegenLLVM``。"
 
 #: ../../cpp_style.rst:8
 msgid ""
 "Macros should be capital start with ``TI``, such as ``TI_INFO``, "
 "``TI_IMPLEMENTATION``."
-msgstr ""
+msgstr "请用由 ``TI`` 开头的形式来命名宏， 例如 ``TI_INFO``。"
 
 #: ../../cpp_style.rst:10
 msgid ""
 "We do not encourage the use of macro, although there are cases where "
 "macros are inevitable."
-msgstr ""
+msgstr "在碰到不可避免的情况以外我们不提倡在代码中使用宏。"
 
 #: ../../cpp_style.rst:12
 msgid ""
 "Filenames should consist of lowercase words connected by underscores, "
 "e.g. ``ir_printer.cpp``."
 msgstr ""
+"文件名称应当由小写词语通过下划线连接组成， 例如 ``ir_printer.cpp``。"
 
 #: ../../cpp_style.rst:15
 msgid "Dos"
-msgstr ""
+msgstr "提倡的使用方法"
 
 #: ../../cpp_style.rst:16
 msgid "Use ``auto`` for local variables when appropriate."
-msgstr ""
+msgstr "在适当的情况下对局部变量添加 ``auto`` 关键字。"
 
 #: ../../cpp_style.rst:17
 msgid "Mark ``override`` and ``const`` when necessary."
-msgstr ""
+msgstr "在必要的情况下添加 ``override`` 和 ``const`` 关键字。"
 
 #: ../../cpp_style.rst:20
 msgid "Don'ts"
-msgstr ""
+msgstr "不提倡的使用方法"
 
 #: ../../cpp_style.rst:21
 msgid "C language legacies:"
-msgstr ""
+msgstr "C语言中的既有范式："
 
 #: ../../cpp_style.rst:23
 msgid "``printf`` (use ``fmtlib::print`` instead)."
-msgstr ""
+msgstr "``printf`` （请使用 ``fmtlib::print``）。"
 
 #: ../../cpp_style.rst:24
 msgid ""
-"``new`` & ``free``. Use smart pointers (``std::unique_ptr, "
-"std::shared_ptr`` instead for ownership management)."
+"``new`` & ``free``. Use smart pointers (``std::unique_ptr, std::"
+"shared_ptr`` instead for ownership management)."
 msgstr ""
+"``new`` 和 ``free``。 请使用智能指针（例如``std::unique_ptr, std::"
+"shared_ptr``，而不是手动管理所有关系）"
 
 #: ../../cpp_style.rst:26
 msgid "Prefix member functions with ``m_`` or ``_``."
-msgstr ""
+msgstr "前缀成员函数，例如 ``m_``, ``_`` 等。"
 
 #: ../../cpp_style.rst:27
 msgid "Virtual function call in constructors/destructors."
-msgstr ""
+msgstr "在构造函数和析构函数中调用虚函数。"
 
 #: ../../cpp_style.rst:28
 msgid "``NULL``, use ``nullptr`` instead."
-msgstr ""
+msgstr "空指针 ``NULL``。 应当使用``nullptr``。"
 
 #: ../../cpp_style.rst:29
 msgid "``using namespace std;`` in global scope."
-msgstr ""
+msgstr "在全局环境下使用 ``using namespace std;`` 。"
 
 #: ../../cpp_style.rst:30
 msgid "``typedef``. Use ``using`` instead."
-msgstr ""
+msgstr "``typedef``。 应当使用 ``using`` 。"
 
 #: ../../cpp_style.rst:33
 msgid "Automatic code formatting"
-msgstr ""
+msgstr "自动格式化代码"
 
 #: ../../cpp_style.rst:34
 msgid "Please run ``ti format``"
-msgstr ""
-
+msgstr "请运行 ``ti format``"
