@@ -71,7 +71,7 @@ msgid ""
 "# C++ equivalent: float val[32][64][128]"
 msgstr ""
 "val = ti.var(ti.f32, shape=(32, 64, 128))\n"
-"# C++ 当量: float val[32][64][128]"
+"# 在 C++ 中相当于: float val[32][64][128]"
 
 #: ../../data_layout.rst:25
 msgid ""
