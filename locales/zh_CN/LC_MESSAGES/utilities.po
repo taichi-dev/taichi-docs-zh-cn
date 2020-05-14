@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../utilities.rst:2
 msgid "Utilities"
-msgstr "工具"
+msgstr "实用工具"
 
 #: ../../utilities.rst:6
 msgid "Logging"
@@ -178,7 +178,7 @@ msgid ""
 "task finished or crashed. To enable:"
 msgstr ""
 "当任务完成或崩溃时，taichi消息传递程序可以将邮件发送到 ``"
-"$TI_MONITOR_EMAIL`` 。 启用："
+"$TI_MONITOR_EMAIL`` 。 要启用的话："
 
 #: ../../utilities.rst:90
 msgid ""
