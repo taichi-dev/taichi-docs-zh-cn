@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../cpp_style.rst:2
 msgid "C++ Style"
-msgstr ""
+msgstr "C++ 代码风格规范"
 
 #: ../../cpp_style.rst:5
 msgid "Naming"
@@ -87,8 +87,8 @@ msgid ""
 "``new`` & ``free``. Use smart pointers (``std::unique_ptr, std::"
 "shared_ptr`` instead for ownership management)."
 msgstr ""
-"``new`` 和 ``free``。 请使用智能指针（例如``std::unique_ptr, std::"
-"shared_ptr``，而不是手动管理所有关系）"
+"``new`` 和 ``free``。 请使用智能指针（例如 ``std::unique_ptr, std::"
+"shared_ptr`` ，而不是手动管理所有关系）"
 
 #: ../../cpp_style.rst:26
 msgid "Prefix member functions with ``m_`` or ``_``."
@@ -100,7 +100,7 @@ msgstr "在构造函数和析构函数中调用虚函数。"
 
 #: ../../cpp_style.rst:28
 msgid "``NULL``, use ``nullptr`` instead."
-msgstr "空指针 ``NULL``。 应当使用``nullptr``。"
+msgstr "空指针 ``NULL``。 应当使用 ``nullptr``。"
 
 #: ../../cpp_style.rst:29
 msgid "``using namespace std;`` in global scope."
