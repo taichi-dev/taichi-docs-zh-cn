@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-07 01:24-0400\n"
+"POT-Creation-Date: 2020-05-13 20:53-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Utilities"
 msgstr ""
 
-#: ../../utilities.rst:6
+#: ../../utilities.rst:5
 msgid "Logging"
 msgstr ""
 
-#: ../../utilities.rst:8
+#: ../../utilities.rst:7
 msgid ""
 "'''\n"
 "level can be {}\n"
@@ -39,55 +39,162 @@ msgid ""
 "ti.set_logging_level(level)"
 msgstr ""
 
-#: ../../utilities.rst:21
+#: ../../utilities.rst:20
 msgid ""
 "The default logging level is ``ti.INFO``. You can also override default "
-"logging level by setting the environment variable ``TI_LOG_LEVEL`` to "
-"values such as ``trace`` and ``warn``."
+"logging level by setting the environment variable like "
+"``TI_LOG_LEVEL=warn``."
 msgstr ""
 
-#: ../../utilities.rst:26
+#: ../../utilities.rst:27
+msgid "Benchmarking and Regression Tests"
+msgstr ""
+
+#: ../../utilities.rst:29
+msgid ""
+"Run ``ti benchmark`` to run tests in benchmark mode. This will record the"
+" performance of ``ti test``, and save it in ``benchmarks/output``."
+msgstr ""
+
+#: ../../utilities.rst:31
+msgid ""
+"Run ``ti regression`` to show the difference between previous result in "
+"``benchmarks/baseline``. And you can see if the performance is increasing"
+" or decreasing after your commits. This is really helpful when your work "
+"is related to IR optimizations."
+msgstr ""
+
+#: ../../utilities.rst:33
+msgid ""
+"Run ``ti baseline`` to save the benchmark result to "
+"``benchmarks/baseline`` for furture comparsion, this may be executed on "
+"performance related PRs, before they are merged into master."
+msgstr ""
+
+#: ../../utilities.rst:35
+msgid ""
+"For example, this is part of the output by ``ti regression`` after "
+"enabling constant folding optimization pass:"
+msgstr ""
+
+#: ../../utilities.rst:37
+msgid ""
+"linalg__________________polar_decomp______________________________\n"
+"codegen_offloaded_tasks                       37 ->    39    +5.4%\n"
+"codegen_statements                          3179 ->  3162    -0.5%\n"
+"codegen_kernel_statements                   2819 ->  2788    -1.1%\n"
+"codegen_evaluator_statements                   0 ->    14    +inf%\n"
+"\n"
+"linalg__________________init_matrix_from_vectors__________________\n"
+"codegen_offloaded_tasks                       37 ->    39    +5.4%\n"
+"codegen_statements                          3180 ->  3163    -0.5%\n"
+"codegen_kernel_statements                   2820 ->  2789    -1.1%\n"
+"codegen_evaluator_statements                   0 ->    14    +inf%"
+msgstr ""
+
+#: ../../utilities.rst:53
+msgid ""
+"Currently ``ti benchmark`` only support benchmarking number-of-"
+"statements, no time benchmarking is included since it depends on hardware"
+" performance and therefore hard to compare if the baseline is from "
+"another machine. We are to purchase a fixed-performance machine as a time"
+" benchmark server at some point. Discussion at: https://github.com"
+"/taichi-dev/taichi/issue/948"
+msgstr ""
+
+#: ../../utilities.rst:58
+msgid ""
+"The suggested workflow for **the PR author** to run the regression tests "
+"is:"
+msgstr ""
+
+#: ../../utilities.rst:60
+msgid "When a performance related PR is ready, checkout that PR locally."
+msgstr ""
+
+#: ../../utilities.rst:62
+msgid "Run ``ti benchmark && ti regression`` to obtain the result."
+msgstr ""
+
+#: ../../utilities.rst:64
+msgid "Decide wheater to approve or request change, depends on the result."
+msgstr ""
+
+#: ../../utilities.rst:66 ../../utilities.rst:77
+msgid ""
+"Right before merge, run ``ti baseline`` to save the benchmark result as "
+"new baseline."
+msgstr ""
+
+#: ../../utilities.rst:69
+msgid ""
+"**Reviewers** can also ask the PR author to run and upload the test "
+"result, if they consider the PR performance sensitive. If the reviewers "
+"would like to run the regression tests themselves, the suggested workflow"
+" is:"
+msgstr ""
+
+#: ../../utilities.rst:71
+msgid ""
+"When a stage of work is done, run ``ti benchmark && ti regression`` to "
+"obtain result."
+msgstr ""
+
+#: ../../utilities.rst:73
+msgid ""
+"When ready for review, post the latest result in PR comments, wait for "
+"the reviewer."
+msgstr ""
+
+#: ../../utilities.rst:75
+msgid "Get feedback from the reviewer, and improve the result."
+msgstr ""
+
+#: ../../utilities.rst:81
 msgid "Trigger GDB when the program crashes"
 msgstr ""
 
-#: ../../utilities.rst:28
+#: ../../utilities.rst:83
 msgid ""
 "# Python\n"
 "ti.set_gdb_trigger(True)\n"
 "\n"
 "// C++\n"
-"CoreState::set_trigger_gdb_when_crash(true);"
+"CoreState::set_trigger_gdb_when_crash(true);\n"
+"\n"
+"# Shell\n"
+"export TI_GDB_TRIGGER=1"
 msgstr ""
 
-#: ../../utilities.rst:37
+#: ../../utilities.rst:95
 msgid "Interface System"
 msgstr ""
 
-#: ../../utilities.rst:38
+#: ../../utilities.rst:96
 msgid "Print all interfaces and units"
 msgstr ""
 
-#: ../../utilities.rst:40
+#: ../../utilities.rst:98
 msgid "ti.core.print_all_units()"
 msgstr ""
 
-#: ../../utilities.rst:45
+#: ../../utilities.rst:103
 msgid "Serialization"
 msgstr ""
 
-#: ../../utilities.rst:47
+#: ../../utilities.rst:105
 msgid ""
 "The serialization module of taichi allows you to serialize/deserialize "
 "objects into/from binary strings."
 msgstr ""
 
-#: ../../utilities.rst:49
+#: ../../utilities.rst:107
 msgid ""
 "You can use ``TI_IO`` macros to explicit define fields necessary in "
 "Taichi."
 msgstr ""
 
-#: ../../utilities.rst:51
+#: ../../utilities.rst:109
 msgid ""
 "// TI_IO_DEF\n"
 "struct Particle {\n"
@@ -120,17 +227,17 @@ msgid ""
 "// TI_IO_DEF_VIRT();"
 msgstr ""
 
-#: ../../utilities.rst:85
+#: ../../utilities.rst:143
 msgid "Progress Notification"
 msgstr ""
 
-#: ../../utilities.rst:87
+#: ../../utilities.rst:145
 msgid ""
 "The taichi messager can send an email to ``$TI_MONITOR_EMAIL`` when the "
 "task finished or crashed. To enable:"
 msgstr ""
 
-#: ../../utilities.rst:90
+#: ../../utilities.rst:148
 msgid ""
 "from taichi.tools import messager\n"
 "messager.enable(task_id='test')"
@@ -161,5 +268,21 @@ msgstr ""
 #~ "img = ti.imread('hello.png')\n"
 #~ "ti.imshow(img, 'Window Title')\n"
 #~ "ti.imwrite(img, 'hello2.png')"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The default logging level is "
+#~ "``ti.INFO``. You can also override "
+#~ "default logging level by setting the "
+#~ "environment variable ``TI_LOG_LEVEL`` to "
+#~ "values such as ``trace`` and ``warn``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "# Python\n"
+#~ "ti.set_gdb_trigger(True)\n"
+#~ "\n"
+#~ "// C++\n"
+#~ "CoreState::set_trigger_gdb_when_crash(true);"
 #~ msgstr ""
 
