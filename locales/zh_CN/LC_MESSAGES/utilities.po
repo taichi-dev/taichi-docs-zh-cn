@@ -170,7 +170,7 @@ msgstr ""
 
 #: ../../utilities.rst:85
 msgid "Progress Notification"
-msgstr "进程通知"
+msgstr "进展通知"
 
 #: ../../utilities.rst:87
 msgid ""
