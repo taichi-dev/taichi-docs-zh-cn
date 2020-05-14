@@ -3,89 +3,91 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-07 01:24-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-14 10:20+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../gui.rst:4
 msgid "GUI system"
-msgstr ""
+msgstr "GUI系统"
 
 #: ../../gui.rst:6
 msgid ""
-"Taichi has a built-in GUI system to help users display graphic results "
-"easier."
-msgstr ""
+"Taichi has a built-in GUI system to help users display graphic results easier."
+msgstr "Taichi具有内置的GUI系统，可帮助用户更轻松地显示图形结果。"
 
 #: ../../gui.rst:10
 msgid "Create a window"
-msgstr ""
+msgstr "创建一个窗口"
 
 #: ../../gui.rst
 msgid "Parameters"
-msgstr ""
+msgstr "参量"
 
 #: ../../gui.rst:15
 msgid "(string) the window title"
-msgstr ""
+msgstr "（字符串）窗口标题"
 
 #: ../../gui.rst:16
 msgid "(scalar or tuple) resolution / size of the window"
-msgstr ""
+msgstr "（标量或元组）分辨率/窗口大小"
 
 #: ../../gui.rst:17
 msgid "(optional, RGB hex) background color of the window"
-msgstr ""
+msgstr "（可选，RGB十六进制）窗口的背景颜色"
 
 #: ../../gui.rst
 msgid "Returns"
-msgstr ""
+msgstr "返回"
 
 #: ../../gui.rst:18
 msgid "(GUI) an object represents the window"
-msgstr ""
+msgstr "(GUI)对象代表窗口"
 
 #: ../../gui.rst:20
 msgid "Create a window. If ``res`` is scalar, then width will be equal to height."
-msgstr ""
+msgstr "创建一个窗口。 如果 ``res`` 是标量，则宽度将等于高度。"
 
 #: ../../gui.rst:23
 msgid "This creates a window whose width is 1024, height is 768:"
-msgstr ""
+msgstr "这将创建一个宽度为1024，高度为768的窗口："
 
 #: ../../gui.rst:27
 msgid "gui = ti.GUI('Window Title', (1024, 768))"
-msgstr ""
+msgstr "gui = ti.GUI('Window Title', (1024, 768))"
 
 #: ../../gui.rst:32 ../../gui.rst:54 ../../gui.rst:90 ../../gui.rst:100
 #: ../../gui.rst:114 ../../gui.rst:125 ../../gui.rst:136
 msgid "(GUI) the window object"
-msgstr ""
+msgstr "(GUI)窗口对象"
 
 #: ../../gui.rst:33
 msgid "(optional, string) see notes below"
-msgstr ""
+msgstr "（可选，字符串）请参阅以下注释"
 
 #: ../../gui.rst:35
 msgid "Show the window on the screen."
-msgstr ""
+msgstr "在屏幕上显示窗口。"
 
 #: ../../gui.rst:38
 msgid ""
-"If `filename` is specified, screenshot will be saved to the file "
-"specified by the name. For example, this screenshots each frame of the "
-"window, and save it in ``.png``'s:"
+"If `filename` is specified, screenshot will be saved to the file specified by "
+"the name. For example, this screenshots each frame of the window, and save it "
+"in ``.png``'s:"
 msgstr ""
+"如果指定了 `文件名` ，则屏幕截图将保存到该名称指定的文件中。 例如，此屏幕快照窗"
+"口的每个帧，并将其保存在 ``.png`` 的："
 
 #: ../../gui.rst:42
 msgid ""
@@ -94,176 +96,184 @@ msgid ""
 "    gui.set_image(img)\n"
 "    gui.show(f'{frame:06d}.png')"
 msgstr ""
+"for frame in range(10000):\n"
+"    render(img)\n"
+"    gui.set_image(img)\n"
+"    gui.show(f'{frame:06d}.png')"
 
 #: ../../gui.rst:49
 msgid "Paint a window"
-msgstr ""
+msgstr "画一个窗户"
 
 #: ../../gui.rst:55
 msgid "(np.array or Tensor) tensor containing the image, see notes below"
-msgstr ""
+msgstr "（np.array或Tensor）张量包含图像，请参见下面的注释"
 
 #: ../../gui.rst:57
 msgid "Set a image to display on the window."
-msgstr ""
+msgstr "设置要在窗口上显示的图像。"
 
 #: ../../gui.rst:59
 msgid ""
-"The pixel, ``i`` from bottom to up, ``j`` from left to right, is set to "
-"the value of ``img[i, j]``."
-msgstr ""
+"The pixel, ``i`` from bottom to up, ``j`` from left to right, is set to the "
+"value of ``img[i, j]``."
+msgstr "从下到上的像素 ``i``，从左到右的像素 ``j`` 被设置为 ``img[i, j]`` 的值。"
 
 #: ../../gui.rst:62
 msgid "If the window size is ``(x, y)``, then the ``img`` must be one of:"
-msgstr ""
+msgstr "如果窗口大小是 ``(x, y)`` ，则 ``img`` 必须是以下之一："
 
 #: ../../gui.rst:64
 msgid "``ti.var(shape=(x, y))``, a grey-scale image"
-msgstr ""
+msgstr "``ti.var(shape=(x, y))`` ，灰度图像"
 
 #: ../../gui.rst:66
 msgid "``ti.var(shape=(x, y, 3))``, where `3` is for `(r, g, b)` channels"
-msgstr ""
+msgstr "``ti.var(shape=(x, y, 3))`` ，其中 `3` 代表 `(r, g, b)` 通道"
 
 #: ../../gui.rst:68
 msgid "``ti.Vector(3, shape=(x, y))`` (see :ref:`vector`)"
-msgstr ""
+msgstr "``ti.Vector(3, shape=(x, y))`` （参见 :ref:`vector`）"
 
 #: ../../gui.rst:70
 msgid "``np.ndarray(shape=(x, y))``"
-msgstr ""
+msgstr "``np.ndarray(shape=(x, y))``"
 
 #: ../../gui.rst:72
 msgid "``np.ndarray(shape=(x, y, 3))``"
-msgstr ""
+msgstr "``np.ndarray(shape=(x, y, 3))``"
 
 #: ../../gui.rst:75
 msgid "The data type of ``img`` must be one of:"
-msgstr ""
+msgstr " ``img`` 的数据类型必须是以下之一："
 
 #: ../../gui.rst:77
 msgid "float32, clamped into [0, 1]"
-msgstr ""
+msgstr "float32，固定为 [0, 1]"
 
 #: ../../gui.rst:79
 msgid "float64, clamped into [0, 1]"
-msgstr ""
+msgstr "float64，固定为 [0, 1]"
 
 #: ../../gui.rst:81
 msgid "uint8, range [0, 255]"
-msgstr ""
+msgstr "uint8，范围 [0, 255]"
 
 #: ../../gui.rst:83
 msgid "uint16, range [0, 65535]"
-msgstr ""
+msgstr "uint16，范围 [0, 65535]"
 
 #: ../../gui.rst:85
 msgid "uint32, range [0, UINT_MAX]"
-msgstr ""
+msgstr "uint32，范围 [0, UINT_MAX]"
 
 #: ../../gui.rst:91
 msgid "(tuple of 2) the position of circle"
-msgstr ""
+msgstr "（2元组）圆的位置"
 
 #: ../../gui.rst:92
 msgid "(optional, RGB hex) color to fill the circle"
-msgstr ""
+msgstr "（可选，RGB十六进制）颜色填充圆圈"
 
 #: ../../gui.rst:93 ../../gui.rst:103
 msgid "(optional, scalar) the radius of circle"
-msgstr ""
+msgstr "（可选，标量）圆的半径"
 
 #: ../../gui.rst:95
 msgid "Draw a solid circle."
-msgstr ""
+msgstr "画一个实心圆。"
 
 #: ../../gui.rst:101
 msgid "(np.array) the position of circles"
-msgstr ""
+msgstr "(np.array) 圆的位置"
 
 #: ../../gui.rst:102
 msgid "(optional, RGB hex or np.array of uint32) color(s) to fill circles"
-msgstr ""
+msgstr "（可选，uint32的RGB十六进制或np.array）颜色以填充圆圈"
 
 #: ../../gui.rst:105
 msgid "Draw solid circles."
-msgstr ""
+msgstr "画多个实心圆。"
 
 #: ../../gui.rst:109
 msgid ""
 "If ``color`` is a numpy array, circle at ``pos[i]`` will be colored with "
 "``color[i]``, therefore it must have the same size with ``pos``."
 msgstr ""
+"如果 ``color`` 是一个numpy数组，则 ``pos[i]`` 的圆圈将使用 ``color[i]`` 进行着"
+"色，因此它的大小必须与 ``pos`` 相同。"
 
 #: ../../gui.rst:115
 msgid "(tuple of 2) the first end point position of line"
-msgstr ""
+msgstr "（2元组）直线的第一个端点位置"
 
 #: ../../gui.rst:116
 msgid "(tuple of 2) the second end point position of line"
-msgstr ""
+msgstr "（2元组）直线的第二个端点位置"
 
 #: ../../gui.rst:117
 msgid "(optional, RGB hex) the color of line"
-msgstr ""
+msgstr "（可选，RGB十六进制）线条颜色"
 
 #: ../../gui.rst:118
 msgid "(optional, scalar) the width of line"
-msgstr ""
+msgstr "（可选，标量）线的宽度"
 
 #: ../../gui.rst:120
 msgid "Draw a line."
-msgstr ""
+msgstr "画一条线。"
 
 #: ../../gui.rst:126
 msgid "(tuple of 2) the first end point position of triangle"
-msgstr ""
+msgstr "画一条线。"
 
 #: ../../gui.rst:127
 msgid "(tuple of 2) the second end point position of triangle"
-msgstr ""
+msgstr "（2元组）三角形的第二个端点位置"
 
 #: ../../gui.rst:128
 msgid "(tuple of 2) the third end point position of triangle"
-msgstr ""
+msgstr "（2个元组）三角形的第三个端点位置"
 
 #: ../../gui.rst:129
 msgid "(optional, RGB hex) the color to fill the triangle"
-msgstr ""
+msgstr "（可选，RGB十六进制）填充三角形的颜色"
 
 #: ../../gui.rst:131
 msgid "Draw a solid triangle."
-msgstr ""
+msgstr "画一个实心三角形。"
 
 #: ../../gui.rst:137
 msgid "(tuple of 2) the top-left point position of rectangle"
-msgstr ""
+msgstr "（2元组）矩形的左上角位置"
 
 #: ../../gui.rst:138
 msgid "(tuple of 2) the bottom-right point position of rectangle"
-msgstr ""
+msgstr "（2元组）矩形的右下角位置"
 
 #: ../../gui.rst:139
 msgid "(optional, RGB hex) the color of stroke line"
-msgstr ""
+msgstr "（可选，RGB十六进制）描边线的颜色"
 
 #: ../../gui.rst:140
 msgid "(optional, scalar) the width of stroke line"
-msgstr ""
+msgstr "（可选，标量）描边线的宽度"
 
 #: ../../gui.rst:142
 msgid "Draw a hollow rectangle."
-msgstr ""
+msgstr "画一个空心的矩形。"
 
 #: ../../gui.rst:146
 msgid "Event processing"
-msgstr ""
+msgstr "事件处理"
 
 #: ../../gui.rst:148
 msgid ""
-"Every event have a key and type. *Event key* is the key that you pressed "
-"on keyboard or mouse, can be one of:"
+"Every event have a key and type. *Event key* is the key that you pressed on "
+"keyboard or mouse, can be one of:"
 msgstr ""
+"每个事件都有一个键和类型。 *Event key* 是您在键盘或鼠标上按下的键，可以是以下之"
+"一："
 
 #: ../../gui.rst:153
 msgid ""
@@ -276,12 +286,19 @@ msgid ""
 "ti.GUI.LMB\n"
 "ti.GUI.RMB"
 msgstr ""
+"ti.GUI.ESCAPE\n"
+"ti.GUI.SHIFT\n"
+"ti.GUI.LEFT\n"
+"'a'\n"
+"'b'\n"
+"...\n"
+"ti.GUI.LMB\n"
+"ti.GUI.RMB"
 
 #: ../../gui.rst:162
 msgid ""
-"*Event type* is the type of event, for now, there are just three type of "
-"event:"
-msgstr ""
+"*Event type* is the type of event, for now, there are just three type of event:"
+msgstr "*Event type* 是事件的类型，目前只有三种类型的事件："
 
 #: ../../gui.rst:166
 msgid ""
@@ -289,12 +306,16 @@ msgid ""
 "ti.GUI.PRESS    # key down\n"
 "ti.GUI.MOTION   # mouse moved"
 msgstr ""
+"ti.GUI.RELEASE  # 松开键\n"
+"ti.GUI.PRESS   # 按下键\n"
+"ti.GUI.MOTION   #鼠标移动"
 
 #: ../../gui.rst:171
 msgid ""
-"A *event filter* is a list combined of *key*, *type* and *(type, key)* "
-"tuple, e.g.:"
+"A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e."
+"g.:"
 msgstr ""
+"*事件过滤器* 是一个由 *键*，*类型* 和 *（类型，键）* 元组组成的列表，例如："
 
 #: ../../gui.rst:173
 msgid ""
@@ -305,39 +326,48 @@ msgid ""
 "gui.get_event(ti.GUI.PRESS)\n"
 "\n"
 "# if ESC pressed or SPACE released:\n"
-"gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, "
-"ti.GUI.SPACE))"
+"gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, ti.GUI.SPACE))"
 msgstr ""
+"# 如果按下或释放ESC:\n"
+"gui.get_event(ti.GUI.ESCAPE)\n"
+"\n"
+"# 如果按下任何键:\n"
+"gui.get_event(ti.GUI.PRESS)\n"
+"\n"
+"# 如果按ESC或释放SPACE:\n"
+"gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, ti.GUI.SPACE))"
 
 #: ../../gui.rst:187 ../../gui.rst:212 ../../gui.rst:230 ../../gui.rst:250
 msgid "(GUI)"
-msgstr ""
+msgstr "(GUI)"
 
 #: ../../gui.rst:188 ../../gui.rst:213
 msgid "(optional, EventFilter) filter out matched events"
-msgstr ""
+msgstr "（可选，EventFilter）过滤掉匹配的事件"
 
 #: ../../gui.rst:189
 msgid "(bool) ``False`` if there is no pending event, vise versa"
-msgstr ""
+msgstr "(bool) ``False`` 如果没有待处理的事件，反之亦然"
 
 #: ../../gui.rst:191
 msgid "Try to pop a event from the queue, and store it in ``gui.event``."
-msgstr ""
+msgstr "尝试从队列中弹出事件，并将其存储在 ``gui.event``中。"
 
 #: ../../gui.rst:193 ../../gui.rst:253
 msgid "For example:"
-msgstr ""
+msgstr "例如："
 
 #: ../../gui.rst:197
 msgid ""
 "while gui.get_event():\n"
 "    print('Event key', gui.event.key)"
 msgstr ""
+"while gui.get_event():\n"
+"    print('Event key', gui.event.key)"
 
 #: ../../gui.rst:201
 msgid "For example, loop until ESC is pressed:"
-msgstr ""
+msgstr "例如，循环直到按下ESC："
 
 #: ../../gui.rst:205
 msgid ""
@@ -346,16 +376,22 @@ msgid ""
 "    gui.set_image(img)\n"
 "    gui.show()"
 msgstr ""
+"gui = ti.GUI('Title', (640, 480))\n"
+"while not gui.get_event(ti.GUI.ESCAPE):\n"
+"    gui.set_image(img)\n"
+"    gui.show()"
 
 #: ../../gui.rst:214
 msgid "(generator) a python generator, see below"
-msgstr ""
+msgstr "（生成器）python生成器，请参见下文"
 
 #: ../../gui.rst:216
 msgid ""
 "Basically the same as ``gui.get_event``, except for this one returns a "
 "generator of events instead of storing into ``gui.event``:"
 msgstr ""
+"基本上与 ``gui.get_event`` 相同，只不过它返回一个事件生成器，而不是存储到 ``gui."
+"event`` 中："
 
 #: ../../gui.rst:220
 msgid ""
@@ -367,20 +403,27 @@ msgid ""
 "    elif e.type in ['a', ti.GUI.LEFT]:\n"
 "        ..."
 msgstr ""
+"for e in gui.get_events():\n"
+"    if e.key == ti.GUI.ESCAPE:\n"
+"        exit()\n"
+"    elif e.type == ti.GUI.SPACE:\n"
+"        do_something()\n"
+"    elif e.type in ['a', ti.GUI.LEFT]:\n"
+"        ..."
 
 #: ../../gui.rst:231
 msgid "(EventKey) keys you want to detect"
-msgstr ""
+msgstr "您要检测的(EventKey)键"
 
 #: ../../gui.rst:232
 msgid "(bool) ``True`` if one of the keys pressed, vice versa"
-msgstr ""
+msgstr "(bool) ``True``（如果按下其中一个键），反之亦然"
 
 #: ../../gui.rst:236
 msgid ""
-"Must be used together with ``gui.get_event``, or it won't be updated! For"
-" example:"
-msgstr ""
+"Must be used together with ``gui.get_event``, or it won't be updated! For "
+"example:"
+msgstr "必须与 ``gui.get_event`` 一起使用，否则将不会更新！ 例如："
 
 #: ../../gui.rst:241
 msgid ""
@@ -391,18 +434,24 @@ msgid ""
 "    elif gui.is_pressed('d', ti.GUI.RIGHT):\n"
 "        print('Go right!')"
 msgstr ""
+"while True:\n"
+"    gui.get_event()  # must be called before is_pressed\n"
+"    if gui.is_pressed('a', ti.GUI.LEFT):\n"
+"        print('Go left!')\n"
+"    elif gui.is_pressed('d', ti.GUI.RIGHT):\n"
+"        print('Go right!')"
 
 #: ../../gui.rst:251
 msgid "(tuple of 2) current cursor position within the window"
-msgstr ""
+msgstr "（2元组）窗口中的当前光标位置"
 
 #: ../../gui.rst:257
 msgid "mouse_x, mouse_y = gui.get_cursor_pos()"
-msgstr ""
+msgstr "mouse_x, mouse_y = gui.get_cursor_pos()"
 
 #: ../../gui.rst:261
 msgid "Image I/O"
-msgstr ""
+msgstr "图片输入/输出"
 
 #: ../../gui.rst:263
 msgid ""
@@ -410,8 +459,10 @@ msgid ""
 "ti.imshow(img, 'Window Title')\n"
 "ti.imwrite(img, 'hello2.png')"
 msgstr ""
+"img = ti.imread('hello.png')\n"
+"ti.imshow(img, 'Window Title')\n"
+"ti.imwrite(img, 'hello2.png')"
 
 #: ../../gui.rst:269
 msgid "TODO: complete here"
-msgstr ""
-
+msgstr "TODO：在这里完成"
