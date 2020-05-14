@@ -3,27 +3,28 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-07 01:24-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-14 09:53+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../utilities.rst:2
 msgid "Utilities"
-msgstr ""
+msgstr "实用工具"
 
 #: ../../utilities.rst:6
 msgid "Logging"
-msgstr ""
+msgstr "日志"
 
 #: ../../utilities.rst:8
 msgid ""
@@ -38,6 +39,16 @@ msgid ""
 "'''\n"
 "ti.set_logging_level(level)"
 msgstr ""
+"'''\n"
+"level can be {}\n"
+"    ti.TRACE\n"
+"    ti.DEBUG\n"
+"    ti.INFO\n"
+"    ti.WARN\n"
+"    ti.ERR\n"
+"    ti.CRITICAL\n"
+"'''\n"
+"ti.set_logging_level(level)"
 
 #: ../../utilities.rst:21
 msgid ""
@@ -45,10 +56,13 @@ msgid ""
 "logging level by setting the environment variable ``TI_LOG_LEVEL`` to "
 "values such as ``trace`` and ``warn``."
 msgstr ""
+"默认日志记录级别为 ``ti.INFO``。 你还可以通过将环境变量 "
+"``TI_LOG_LEVEL`` 设置为诸如 ``trace`` 和 ``warn`` 之类的值来覆盖默认日志"
+"记录级别。"
 
 #: ../../utilities.rst:26
 msgid "Trigger GDB when the program crashes"
-msgstr ""
+msgstr "程序崩溃时触发GDB"
 
 #: ../../utilities.rst:28
 msgid ""
@@ -58,34 +72,39 @@ msgid ""
 "// C++\n"
 "CoreState::set_trigger_gdb_when_crash(true);"
 msgstr ""
+"# Python\n"
+"ti.set_gdb_trigger(True)\n"
+"\n"
+"// C++\n"
+"CoreState::set_trigger_gdb_when_crash(true);"
 
 #: ../../utilities.rst:37
 msgid "Interface System"
-msgstr ""
+msgstr "接口系统"
 
 #: ../../utilities.rst:38
 msgid "Print all interfaces and units"
-msgstr ""
+msgstr "打印所有接口和单位"
 
 #: ../../utilities.rst:40
 msgid "ti.core.print_all_units()"
-msgstr ""
+msgstr "ti.core.print_all_units()"
 
 #: ../../utilities.rst:45
 msgid "Serialization"
-msgstr ""
+msgstr "序列化"
 
 #: ../../utilities.rst:47
 msgid ""
 "The serialization module of taichi allows you to serialize/deserialize "
 "objects into/from binary strings."
-msgstr ""
+msgstr "taichi的序列化模块可以允许你将对象序列化/反序列化成二进制字符串。"
 
 #: ../../utilities.rst:49
 msgid ""
 "You can use ``TI_IO`` macros to explicit define fields necessary in "
 "Taichi."
-msgstr ""
+msgstr "你可以使用 ``TI_IO`` 宏来显式定义太极拳中必要的字段。"
 
 #: ../../utilities.rst:51
 msgid ""
@@ -119,47 +138,52 @@ msgid ""
 "\n"
 "// TI_IO_DEF_VIRT();"
 msgstr ""
+"// TI_IO_DEF\n"
+"struct Particle {\n"
+"    Vector3f position, velocity;\n"
+"    real mass;\n"
+"    string name;\n"
+"\n"
+"    TI_IO_DEF(position, velocity, mass, name);\n"
+"}\n"
+"\n"
+"// TI_IO_DECL\n"
+"struct Particle {\n"
+"    Vector3f position, velocity;\n"
+"    real mass;\n"
+"    bool has_name\n"
+"    string name;\n"
+"\n"
+"    TI_IO_DECL() {\n"
+"        TI_IO(position);\n"
+"        TI_IO(velocity);\n"
+"        TI_IO(mass);\n"
+"        TI_IO(has_name);\n"
+"        // More flexibility:\n"
+"        if (has_name) {\n"
+"            TI_IO(name);\n"
+"        }\n"
+"    }\n"
+"}\n"
+"\n"
+"// TI_IO_DEF_VIRT();"
 
 #: ../../utilities.rst:85
 msgid "Progress Notification"
-msgstr ""
+msgstr "进展通知"
 
 #: ../../utilities.rst:87
 msgid ""
 "The taichi messager can send an email to ``$TI_MONITOR_EMAIL`` when the "
 "task finished or crashed. To enable:"
 msgstr ""
+"当任务完成或崩溃时，taichi消息传递程序可以将邮件发送到 ``"
+"$TI_MONITOR_EMAIL`` 。 要启用的话："
 
 #: ../../utilities.rst:90
 msgid ""
 "from taichi.tools import messager\n"
 "messager.enable(task_id='test')"
 msgstr ""
-
-#~ msgid "TODO: update"
-#~ msgstr ""
-
-#~ msgid "GUI system"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "gui = ti.GUI('Title', (640, 480))\n"
-#~ "while not gui.is_pressed(ti.GUI.ESCAPE):\n"
-#~ "    gui.set_image(img)\n"
-#~ "    gui.show()"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Also checkout ``examples/keyboard.py`` for "
-#~ "more advanced event processing."
-#~ msgstr ""
-
-#~ msgid "Image I/O"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "img = ti.imread('hello.png')\n"
-#~ "ti.imshow(img, 'Window Title')\n"
-#~ "ti.imwrite(img, 'hello2.png')"
-#~ msgstr ""
-
+"from taichi.tools import messager\n"
+"messager.enable(task_id='test')"
