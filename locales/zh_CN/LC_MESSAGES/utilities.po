@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
@@ -16,14 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../utilities.rst:2
 msgid "Utilities"
-msgstr ""
+msgstr "实用工具"
 
 #: ../../utilities.rst:5
 msgid "Logging"
-msgstr ""
+msgstr "日志"
 
 #: ../../utilities.rst:7
 msgid ""
@@ -38,6 +41,16 @@ msgid ""
 "'''\n"
 "ti.set_logging_level(level)"
 msgstr ""
+"'''\n"
+"level can be {}\n"
+"    ti.TRACE\n"
+"    ti.DEBUG\n"
+"    ti.INFO\n"
+"    ti.WARN\n"
+"    ti.ERR\n"
+"    ti.CRITICAL\n"
+"'''\n"
+"ti.set_logging_level(level)"
 
 #: ../../utilities.rst:20
 msgid ""
@@ -45,6 +58,9 @@ msgid ""
 "logging level by setting the environment variable like "
 "``TI_LOG_LEVEL=warn``."
 msgstr ""
+"默认日志记录级别为 ``ti.INFO``。 你还可以通过将环境变量 "
+"``TI_LOG_LEVEL`` 设置为诸如 ``trace`` 和 ``warn`` 之类的值来覆盖默认日志"
+"记录级别。"
 
 #: ../../utilities.rst:27
 msgid "Benchmarking and Regression Tests"
@@ -152,7 +168,7 @@ msgstr ""
 
 #: ../../utilities.rst:81
 msgid "Trigger GDB when the program crashes"
-msgstr ""
+msgstr "程序崩溃时触发GDB"
 
 #: ../../utilities.rst:83
 msgid ""
@@ -165,34 +181,39 @@ msgid ""
 "# Shell\n"
 "export TI_GDB_TRIGGER=1"
 msgstr ""
+"# Python\n"
+"ti.set_gdb_trigger(True)\n"
+"\n"
+"// C++\n"
+"CoreState::set_trigger_gdb_when_crash(true);"
 
 #: ../../utilities.rst:95
 msgid "Interface System"
-msgstr ""
+msgstr "接口系统"
 
 #: ../../utilities.rst:96
 msgid "Print all interfaces and units"
-msgstr ""
+msgstr "打印所有接口和单位"
 
 #: ../../utilities.rst:98
 msgid "ti.core.print_all_units()"
-msgstr ""
+msgstr "ti.core.print_all_units()"
 
 #: ../../utilities.rst:103
 msgid "Serialization"
-msgstr ""
+msgstr "序列化"
 
 #: ../../utilities.rst:105
 msgid ""
 "The serialization module of taichi allows you to serialize/deserialize "
 "objects into/from binary strings."
-msgstr ""
+msgstr "taichi的序列化模块可以允许你将对象序列化/反序列化成二进制字符串。"
 
 #: ../../utilities.rst:107
 msgid ""
 "You can use ``TI_IO`` macros to explicit define fields necessary in "
 "Taichi."
-msgstr ""
+msgstr "你可以使用 ``TI_IO`` 宏来显式定义太极拳中必要的字段。"
 
 #: ../../utilities.rst:109
 msgid ""
@@ -226,22 +247,55 @@ msgid ""
 "\n"
 "// TI_IO_DEF_VIRT();"
 msgstr ""
+"// TI_IO_DEF\n"
+"struct Particle {\n"
+"    Vector3f position, velocity;\n"
+"    real mass;\n"
+"    string name;\n"
+"\n"
+"    TI_IO_DEF(position, velocity, mass, name);\n"
+"}\n"
+"\n"
+"// TI_IO_DECL\n"
+"struct Particle {\n"
+"    Vector3f position, velocity;\n"
+"    real mass;\n"
+"    bool has_name\n"
+"    string name;\n"
+"\n"
+"    TI_IO_DECL() {\n"
+"        TI_IO(position);\n"
+"        TI_IO(velocity);\n"
+"        TI_IO(mass);\n"
+"        TI_IO(has_name);\n"
+"        // More flexibility:\n"
+"        if (has_name) {\n"
+"            TI_IO(name);\n"
+"        }\n"
+"    }\n"
+"}\n"
+"\n"
+"// TI_IO_DEF_VIRT();"
 
 #: ../../utilities.rst:143
 msgid "Progress Notification"
-msgstr ""
+msgstr "进展通知"
 
 #: ../../utilities.rst:145
 msgid ""
 "The taichi messager can send an email to ``$TI_MONITOR_EMAIL`` when the "
 "task finished or crashed. To enable:"
 msgstr ""
+"当任务完成或崩溃时，taichi消息传递程序可以将邮件发送到 ``"
+"$TI_MONITOR_EMAIL`` 。 要启用的话："
 
 #: ../../utilities.rst:148
 msgid ""
 "from taichi.tools import messager\n"
 "messager.enable(task_id='test')"
 msgstr ""
+"from taichi.tools import messager\n"
+"messager.enable(task_id='test')"
 
 #~ msgid "TODO: update"
 #~ msgstr ""
@@ -285,4 +339,3 @@ msgstr ""
 #~ "// C++\n"
 #~ "CoreState::set_trigger_gdb_when_crash(true);"
 #~ msgstr ""
-

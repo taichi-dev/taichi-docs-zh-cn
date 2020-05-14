@@ -3,23 +3,24 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-24 11:24+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-13 13:33+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../data_layout.rst:2
 msgid "Advanced data layouts"
-msgstr ""
+msgstr "高级数据布局"
 
 #: ../../data_layout.rst:4
 msgid ""
@@ -27,45 +28,56 @@ msgid ""
 "applications. A carefully designed data layout can significantly improve "
 "cache/TLB-hit rates and cacheline utilization."
 msgstr ""
+"内存布局是性能的关键，特别是对于内存密集型的应用程序而言。 精心设计的数据布"
+"局可以显着提高缓存 / 旁路转换缓冲(TLB)命中率和缓存行利用率。(TLB: "
+"`Translation lookaside buffer <https://en.wikipedia.org/wiki/"
+"Translation_lookaside_buffer>`_ )"
 
 #: ../../data_layout.rst:7
 msgid ""
 "We suggested starting with the default layout specification (simply by "
-"specifying ``shape`` when creating tensors using "
-"``ti.var/Vector/Matrix``), and then migrate to more advanced layouts "
-"using the ``ti.root.X`` syntax."
+"specifying ``shape`` when creating tensors using ``ti.var/Vector/"
+"Matrix``), and then migrate to more advanced layouts using the ``ti.root."
+"X`` syntax."
 msgstr ""
+"我们建议从默认布局规范开始（在 ``ti.var/Vector/Matrix`` 中指定 ``shape`` 来创建张量）"
+"，然后再迁移到用 ``ti.root.X`` 句法的更高级布局。"
 
 #: ../../data_layout.rst:10
 msgid ""
 "Taichi decouples algorithms from data layouts, and the Taichi compiler "
 "automatically optimizes data accesses on a specific data layout. These "
 "Taichi features allow programmers to quickly experiment with different "
-"data layouts and figure out the most efficient one on a specific task and"
-" computer architecture."
+"data layouts and figure out the most efficient one on a specific task "
+"and computer architecture."
 msgstr ""
+"Taichi将算法与数据布局分离，并且Taichi编译器会自动优化特定数据布局上的数"
+"据访问。 这些Taichi功能使程序员可以快速尝试不同的数据布局，并找出针对特定"
+"任务和计算机体系结构最有效的布局。"
 
 #: ../../data_layout.rst:16
 msgid "The default data layout using ``shape``"
-msgstr ""
+msgstr "使用 ``shape`` 时默认的数据布局"
 
 #: ../../data_layout.rst:18
 msgid ""
-"By default, when allocating a ``ti.var`` , it follows the most naive data"
-" layout"
-msgstr ""
+"By default, when allocating a ``ti.var`` , it follows the most naive "
+"data layout"
+msgstr "默认情况下，分配``ti.var``时，它遵循最朴素的数据布局"
 
 #: ../../data_layout.rst:20
 msgid ""
 "val = ti.var(ti.f32, shape=(32, 64, 128))\n"
 "# C++ equivalent: float val[32][64][128]"
 msgstr ""
+"val = ti.var(ti.f32, shape=(32, 64, 128))\n"
+"# 在 C++ 中相当于: float val[32][64][128]"
 
 #: ../../data_layout.rst:25
 msgid ""
 "Or equivalently, the same data layout can be specified using advanced "
 "`data layout description`:"
-msgstr ""
+msgstr "同样的数据布局也可以用高级数据布局来描述："
 
 #: ../../data_layout.rst:27
 msgid ""
@@ -74,6 +86,10 @@ msgid ""
 "# Specify the shape and layout\n"
 "ti.root.dense(ti.ijk, (32, 64, 128)).place(val)"
 msgstr ""
+"# 创建全局张量\n"
+"val = ti.var(ti.f32)\n"
+"# 指定形状和布局\n"
+"ti.root.dense(ti.ijk, (32, 64, 128)).place(val)"
 
 #: ../../data_layout.rst:34
 msgid ""
@@ -84,65 +100,80 @@ msgid ""
 "trilinear interpolation, the two elements are not even within the same "
 "``4KB`` pages, creating a huge cache/TLB pressure."
 msgstr ""
+"但是，对于计算机图形任务而言，这种数据布局通常不是最理想的。 例如，``val "
+"[i, j, k]`` 和 ``val [i + 1, j, k]`` 彼此之间的距离非常远 (``32 KB``)，并"
+"导致在某些计算任务下低效的访问位置。 具体来说，在诸如纹理三线性插值之类的"
+"任务中，这两个元素甚至不在同一 ``4KB`` 的页面内，从而产生巨大的缓存/转址"
+"旁路缓存压力。"
 
 #: ../../data_layout.rst:41
 msgid "Advanced data layout specification"
-msgstr ""
+msgstr "高级数据布局的指定"
 
 #: ../../data_layout.rst:43
 msgid "A better layout might be"
-msgstr ""
+msgstr "更好的布局可能是"
 
 #: ../../data_layout.rst:45
 msgid ""
 "val = ti.var(ti.f32)\n"
 "ti.root.dense(ti.ijk, (8, 16, 32)).dense(ti.ijk, (4, 4, 4)).place(val)"
 msgstr ""
+"val = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ijk, (8, 16, 32)).dense(ti.ijk, (4, 4, 4)).place(val)"
 
 #: ../../data_layout.rst:50
 msgid ""
-"This organizes ``val`` in ``4x4x4`` blocks, so that with high probability"
-" ``val[i, j, k]`` and its neighbours are close to each other (i.e., in "
-"the same cacheline or memory page)."
+"This organizes ``val`` in ``4x4x4`` blocks, so that with high "
+"probability ``val[i, j, k]`` and its neighbours are close to each other "
+"(i.e., in the same cacheline or memory page)."
 msgstr ""
+"这会在 ``4x4x4`` 模块中组织 `` val``，因此很有可能 ``val [i, j, k]`` 及其"
+"邻居彼此靠近（即，在同一高速缓存行或内存页中） ）。"
 
 #: ../../data_layout.rst:53
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
 #: ../../data_layout.rst:55
 msgid "2D matrix, row-major"
-msgstr ""
+msgstr "二维矩阵，行优先"
 
 #: ../../data_layout.rst:57
 msgid ""
 "A = ti.var(ti.f32)\n"
 "ti.root.dense(ti.ij, (256, 256)).place(A)"
 msgstr ""
+"A = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (256, 256)).place(A)"
 
 #: ../../data_layout.rst:62
 msgid "2D matrix, column-major"
-msgstr ""
+msgstr "二维矩阵，列优先"
 
 #: ../../data_layout.rst:64
 msgid ""
 "A = ti.var(ti.f32)\n"
 "ti.root.dense(ti.ji, (256, 256)).place(A) # Note ti.ji instead of ti.ij"
 msgstr ""
+"A = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ji, (256, 256)).place(A) # 注意 ti.ji 而不是ti.ij"
 
 #: ../../data_layout.rst:69
 msgid "`8x8` blocked 2D array of size `1024x1024`"
-msgstr ""
+msgstr "按 `8x8` 分块，大小为 `1024x1024` 的二维数组"
 
 #: ../../data_layout.rst:71
 msgid ""
 "density = ti.var(ti.f32)\n"
 "ti.root.dense(ti.ij, (128, 128)).dense(ti.ij, (8, 8)).place(density)"
 msgstr ""
+"density = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (128, 128)).dense(ti.ij, (8, 8)).place(density)"
 
 #: ../../data_layout.rst:77
 msgid "3D Particle positions and velocities, arrays-of-structures"
-msgstr ""
+msgstr "3D粒子位置和速度，结构阵列"
 
 #: ../../data_layout.rst:79
 msgid ""
@@ -153,10 +184,16 @@ msgid ""
 "ti.root.dense(ti.i, 1024).place(pos(0), pos(1), pos(2), vel(0), vel(1), "
 "vel(2))"
 msgstr ""
+"pos = ti.Vector(3, dt=ti.f32)\n"
+"vel = ti.Vector(3, dt=ti.f32)\n"
+"ti.root.dense(ti.i, 1024).place(pos, vel)\n"
+"# equivalent to\n"
+"ti.root.dense(ti.i, 1024).place(pos(0), pos(1), pos(2), vel(0), vel(1), "
+"vel(2))"
 
 #: ../../data_layout.rst:87
 msgid "3D Particle positions and velocities, structures-of-arrays"
-msgstr ""
+msgstr "3D粒子位置和速度，阵列结构"
 
 #: ../../data_layout.rst:89
 msgid ""
@@ -167,10 +204,16 @@ msgid ""
 "for i in range(3):\n"
 "  ti.root.dense(ti.i, 1024).place(vel(i))"
 msgstr ""
+"pos = ti.Vector(3, dt=ti.f32)\n"
+"vel = ti.Vector(3, dt=ti.f32)\n"
+"for i in range(3):\n"
+"  ti.root.dense(ti.i, 1024).place(pos(i))\n"
+"for i in range(3):\n"
+"  ti.root.dense(ti.i, 1024).place(vel(i))"
 
 #: ../../data_layout.rst:100
 msgid "Struct-fors on advanced (dense) data layouts"
-msgstr ""
+msgstr "对高级（密集）数据布局进行结构 for 循环"
 
 #: ../../data_layout.rst:102
 msgid ""
@@ -178,28 +221,34 @@ msgid ""
 "their data order in memory. For example, if 2D scalar tensor ``A`` is "
 "stored in row-major order,"
 msgstr ""
+"嵌套密集数据结构上的结构 for 循环将自动遵循其在内存中的数据顺序。 例如，如果二"
+"维标量张量 ``A`` 以行优先顺序存储，"
 
 #: ../../data_layout.rst:104
 msgid ""
 "for i, j in A:\n"
 "  A[i, j] += 1"
 msgstr ""
+"for i, j in A:\n"
+"  A[i, j] += 1"
 
 #: ../../data_layout.rst:109
 msgid ""
 "will iterate over elements of ``A`` following row-major order. If ``A`` "
 "is column-major, then the iteration follows the column-major order."
 msgstr ""
+"将按照行优先的顺序对A的元素进行遍历。 如果 ``A`` 是列优先，则按照列优先进行遍历。"
 
 #: ../../data_layout.rst:111
 msgid ""
 "If ``A`` is blocked, the iteration will happen within each block first. "
 "This maximizes memory bandwidth utilization in most cases."
 msgstr ""
+"如果 ``A`` 是分块的，则迭代将首先在每个块内发生。 在大多数情况下，这可以最"
+"大化内存带宽利用率。"
 
 #: ../../data_layout.rst:113
 msgid ""
 "Struct-fors on sparse tensors follows the same philosophy, and will be "
 "discussed further in :ref:`sparse`."
-msgstr ""
-
+msgstr "稀疏张量的结构 for 循环遵循相同的原理，将在 :ref:`sparse` 中进一步讨论。"
