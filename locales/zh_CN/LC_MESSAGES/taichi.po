@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 14:33+0800\n"
+"POT-Creation-Date: 2020-05-13 20:53-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,12 +130,12 @@ msgstr ""
 msgid "CPU/CUDA"
 msgstr ""
 
-#: ../../taichi/docs/atomic.rst:63 ../../taichi/docs/hello.rst:88
+#: ../../taichi/docs/atomic.rst:63 ../../taichi/docs/hello.rst:87
 #: ../../taichi/docs/type.rst:23
 msgid "OpenGL"
 msgstr ""
 
-#: ../../taichi/docs/atomic.rst:63 ../../taichi/docs/hello.rst:88
+#: ../../taichi/docs/atomic.rst:63 ../../taichi/docs/hello.rst:87
 #: ../../taichi/docs/type.rst:23
 msgid "Metal"
 msgstr ""
@@ -146,8 +146,8 @@ msgstr ""
 
 #: ../../taichi/docs/atomic.rst:65 ../../taichi/docs/atomic.rst:67
 #: ../../taichi/docs/atomic.rst:69 ../../taichi/docs/atomic.rst:71
-#: ../../taichi/docs/hello.rst:90 ../../taichi/docs/hello.rst:92
-#: ../../taichi/docs/hello.rst:94 ../../taichi/docs/type.rst:25
+#: ../../taichi/docs/hello.rst:89 ../../taichi/docs/hello.rst:91
+#: ../../taichi/docs/hello.rst:93 ../../taichi/docs/type.rst:25
 #: ../../taichi/docs/type.rst:27 ../../taichi/docs/type.rst:29
 #: ../../taichi/docs/type.rst:31 ../../taichi/docs/type.rst:33
 #: ../../taichi/docs/type.rst:35 ../../taichi/docs/type.rst:37
@@ -415,7 +415,7 @@ msgid "New features"
 msgstr ""
 
 #: ../../taichi/docs/contributor_guide.rst:9
-#: ../../taichi/docs/contributor_guide.rst:178
+#: ../../taichi/docs/contributor_guide.rst:179
 msgid "Documentation"
 msgstr ""
 
@@ -874,44 +874,50 @@ msgid ""
 "compilation process."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:149
+#: ../../taichi/docs/contributor_guide.rst:148
+msgid ""
+":ref:`regression` may worth checking out when the work involves IR "
+"optimization."
+msgstr ""
+
+#: ../../taichi/docs/contributor_guide.rst:150
 msgid ""
 "When creating a Taichi program using ``ti.init(arch=desired_arch, "
 "**kwargs)``, pass in the following parameters to make the Taichi compiler"
 " print out IR:"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:151
+#: ../../taichi/docs/contributor_guide.rst:152
 msgid ""
 "``print_preprocessed = True``: print results of the frontend Python AST "
 "transform. The resulting scripts will generate a Taichi Frontend AST when"
 " executed."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:152
+#: ../../taichi/docs/contributor_guide.rst:153
 msgid ""
 "``print_ir = True``: print the Taichi IR transformation process of kernel"
 " (excluding accessors) compilation."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:153
+#: ../../taichi/docs/contributor_guide.rst:154
 msgid "``print_kernel_llvm_ir = True``: print the emitted LLVM IR by Taichi."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:154
+#: ../../taichi/docs/contributor_guide.rst:155
 msgid ""
 "``print_kernel_llvm_ir_optimized = True``: print the optimized LLVM IR "
 "for each kernel."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:155
+#: ../../taichi/docs/contributor_guide.rst:156
 msgid ""
 "``print_accessor_ir = True``: print the IR transformation process of data"
 " accessors, which are special and simple kernels. (This is rarely used, "
 "unless you are debugging the compilation of data accessors.)"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:159
+#: ../../taichi/docs/contributor_guide.rst:160
 msgid ""
 "Data accessors in Python-scope are implemented as special Taichi kernels."
 " For example, ``x[1, 2, 3] = 3`` will call the writing accessor kernel of"
@@ -919,11 +925,11 @@ msgid ""
 "``y``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:165
+#: ../../taichi/docs/contributor_guide.rst:166
 msgid "Testing"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:167
+#: ../../taichi/docs/contributor_guide.rst:168
 msgid ""
 "Tests should be added to ``taichi/tests``. Use ``ti test`` to run all the"
 " tests. Use ``ti test -v`` for verbose outputs. Use ``ti test "
@@ -936,32 +942,32 @@ msgid ""
 "alg_simp``"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:175
+#: ../../taichi/docs/contributor_guide.rst:176
 msgid "For more options, see ``ti test -h``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:180
+#: ../../taichi/docs/contributor_guide.rst:181
 msgid ""
 "Use ``ti doc`` to build the documentation locally. Open the documentation"
 " at ``taichi/doc/build/index.html``. On Linux/OS X, use ``watch -n 1 ti "
 "doc`` to continuously build the documentation."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:185
+#: ../../taichi/docs/contributor_guide.rst:186
 msgid "C++ and Python standards"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:187
+#: ../../taichi/docs/contributor_guide.rst:188
 msgid ""
 "The C++ part of Taichi is written in C++17, and the Python part in 3.6+. "
 "You can assume that C++17 and Python 3.6 features are always available."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:192
+#: ../../taichi/docs/contributor_guide.rst:193
 msgid "(Linux only) pinpointing runtime errors using ``gdb``"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:193
+#: ../../taichi/docs/contributor_guide.rst:194
 msgid ""
 "A quick way to pinpoint common runtime errors such as segmentation "
 "faults/assertion failures. When Taichi crashes, ``gdb`` will be triggered"
@@ -971,11 +977,11 @@ msgid ""
 "line of code triggering the error."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:201
+#: ../../taichi/docs/contributor_guide.rst:202
 msgid "Efficient code navigation across Python/C++"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:202
+#: ../../taichi/docs/contributor_guide.rst:203
 msgid ""
 "If you work on the language frontend (Python/C++ interface), to navigate "
 "around the code base, `ffi-navigator <https://github.com/tqchen/ffi-"
@@ -983,98 +989,98 @@ msgid ""
 " in C++. Follow their README to set up your editor."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:208
+#: ../../taichi/docs/contributor_guide.rst:209
 msgid "Folder structure"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:210
+#: ../../taichi/docs/contributor_guide.rst:211
 msgid "Key folders are"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:212
+#: ../../taichi/docs/contributor_guide.rst:213
 msgid "``taichi``: The core compiler implementation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:214
+#: ../../taichi/docs/contributor_guide.rst:215
 msgid "``program``: Top-level constructs"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:215
+#: ../../taichi/docs/contributor_guide.rst:216
 msgid "``runtime``: Runtime environments"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:216
+#: ../../taichi/docs/contributor_guide.rst:217
 msgid "``codegen``: Code generators"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:217
+#: ../../taichi/docs/contributor_guide.rst:218
 msgid "``struct``: Struct compilers"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:218
+#: ../../taichi/docs/contributor_guide.rst:219
 msgid "``backends``: Device-dependent code generators/runtime environments"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:219
+#: ../../taichi/docs/contributor_guide.rst:220
 msgid "``llvm``: LLVM utils"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:220
+#: ../../taichi/docs/contributor_guide.rst:221
 msgid "``ir``: Intermediate representation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:221
+#: ../../taichi/docs/contributor_guide.rst:222
 msgid "``transforms``: IR transform passes"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:222
+#: ../../taichi/docs/contributor_guide.rst:223
 msgid "``analysis``: Static analysis passes"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:223
+#: ../../taichi/docs/contributor_guide.rst:224
 msgid "``python``: C++/Python interfaces"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:225
+#: ../../taichi/docs/contributor_guide.rst:226
 msgid "``python``: Python frontend implementation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:226
+#: ../../taichi/docs/contributor_guide.rst:227
 msgid "``examples``: Examples"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:227
+#: ../../taichi/docs/contributor_guide.rst:228
 msgid "``docs``: Documentation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:228
+#: ../../taichi/docs/contributor_guide.rst:229
 msgid "``tests``: C++ and Python tests"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:229
+#: ../../taichi/docs/contributor_guide.rst:230
 msgid "``benchmarks``: Performance benchmarks"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:230
+#: ../../taichi/docs/contributor_guide.rst:231
 msgid "``misc``: Random (yet useful) files"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:231
+#: ../../taichi/docs/contributor_guide.rst:232
 msgid "..."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:234
+#: ../../taichi/docs/contributor_guide.rst:235
 msgid "Upgrading CUDA"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:236
+#: ../../taichi/docs/contributor_guide.rst:237
 msgid ""
 "Right now we are targeting CUDA 10. When upgrading CUDA version, the file"
 " ``external/cuda_libdevice/slim_libdevice.10.bc`` should also be replaced"
 " with a newer version."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:239
+#: ../../taichi/docs/contributor_guide.rst:240
 msgid ""
 "To generate the slimmed version of libdevice based on a full "
 "``libdevice.X.bc`` file from a CUDA installation, use ``ti run "
@@ -1384,27 +1390,27 @@ msgid ""
 "cause by optimization"
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:2
+#: ../../taichi/docs/differentiable_programming.rst:4
 #: ../../taichi/docs/overview.rst:10
 msgid "Differentiable programming"
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:4
+#: ../../taichi/docs/differentiable_programming.rst:6
 msgid ""
-"Please check out `the DiffTaichi paper "
+"This page is work in progress. Please check out `the DiffTaichi paper "
 "<https://arxiv.org/pdf/1910.00935.pdf>`_ and `video "
 "<https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ to learn more about "
 "Taichi differentiable programming."
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:6
+#: ../../taichi/docs/differentiable_programming.rst:8
 msgid ""
 "The `DiffTaichi repo <https://github.com/yuanming-hu/difftaichi>`_ "
 "contains 10 differentiable physical simulators built with Taichi "
 "differentiable programming."
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:9
+#: ../../taichi/docs/differentiable_programming.rst:11
 msgid ""
 "Unlike tools such as TensorFlow where **immutable** output buffers are "
 "generated, the **imperative** programming paradigm adopted in Taichi "
@@ -1413,24 +1419,24 @@ msgid ""
 "assumption on Taichi programs for differentiable programming:"
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:14
+#: ../../taichi/docs/differentiable_programming.rst:16
 msgid "**Global Data Access Rules:**"
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:16
+#: ../../taichi/docs/differentiable_programming.rst:18
 msgid ""
 "If a global tensor element is written more than once, then starting from "
 "the second write, the write **must** come in the form of an atomic add "
 "(“accumulation\", using ``ti.atomic_add`` or simply ``+=``)."
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:18
+#: ../../taichi/docs/differentiable_programming.rst:20
 msgid ""
 "No read accesses happen to a global tensor element, until its "
 "accumulation is done."
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:20
+#: ../../taichi/docs/differentiable_programming.rst:22
 msgid ""
 "**Kernel Simplicity Rule:** Kernel body consists of multiple `simply "
 "nested` for-loops. I.e., each for-loop can either contain exactly one "
@@ -1438,11 +1444,11 @@ msgid ""
 "without loops."
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:23
+#: ../../taichi/docs/differentiable_programming.rst:25
 msgid "Example:"
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:25
+#: ../../taichi/docs/differentiable_programming.rst:27
 msgid ""
 "@ti.kernel\n"
 "def differentiable_task():\n"
@@ -1462,44 +1468,44 @@ msgid ""
 "      ..."
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:44
+#: ../../taichi/docs/differentiable_programming.rst:46
 msgid "Taichi programs that violate this rule has an undefined gradient behavior."
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:48
+#: ../../taichi/docs/differentiable_programming.rst:50
 msgid ""
 "**static for-loops** (e.g. ``for i in ti.static(range(4))``) will get "
 "unrolled by the Python frontend preprocessor and does not count as a "
 "level of loop."
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:51
+#: ../../taichi/docs/differentiable_programming.rst:53
 msgid ""
 "A few examples with neural network controllers optimized using "
 "differentiable simulators and brute-force gradient descent:"
 msgstr ""
 
-#: ../../taichi/docs/differentiable_programming.rst:59
+#: ../../taichi/docs/differentiable_programming.rst:61
 msgid "Documentation WIP."
 msgstr ""
 
-#: ../../taichi/docs/external.rst:2
+#: ../../taichi/docs/external.rst:4
 msgid "Interacting with external arrays"
 msgstr ""
 
-#: ../../taichi/docs/external.rst:4
-msgid "Here ``external arrays`` refer to ``numpy.ndarray`` or ``torch.Tensor``."
-msgstr ""
-
-#: ../../taichi/docs/external.rst:7
-msgid "Conversion between Taichi tensors and external arrays"
+#: ../../taichi/docs/external.rst:6
+msgid "**External arrays** refer to ``numpy.ndarray`` or ``torch.Tensor``."
 msgstr ""
 
 #: ../../taichi/docs/external.rst:9
-msgid "Use ``to_numpy``/``from_numpy``/``to_torch``/``from_torch``:"
+msgid "Conversion between Taichi tensors and external arrays"
 msgstr ""
 
 #: ../../taichi/docs/external.rst:11
+msgid "Use ``to_numpy``/``from_numpy``/``to_torch``/``from_torch``:"
+msgstr ""
+
+#: ../../taichi/docs/external.rst:13
 msgid ""
 "n = 4\n"
 "m = 7\n"
@@ -1539,18 +1545,18 @@ msgid ""
 "assert arr.shape == (n, m, 3, 4)"
 msgstr ""
 
-#: ../../taichi/docs/external.rst:52
-msgid "Use external arrays as Taichi kernel parameters"
+#: ../../taichi/docs/external.rst:54
+msgid "Using external arrays as Taichi kernel parameters"
 msgstr ""
 
-#: ../../taichi/docs/external.rst:54
+#: ../../taichi/docs/external.rst:56
 msgid ""
 "The type hint for external array parameters is ``ti.ext_arr()``. Please "
 "see the example below. Note that struct-for's on external arrays are not "
 "supported."
 msgstr ""
 
-#: ../../taichi/docs/external.rst:57
+#: ../../taichi/docs/external.rst:59
 msgid ""
 "n = 4\n"
 "m = 7\n"
@@ -1653,7 +1659,7 @@ msgid "To print intermediate IR generated: ``export TI_PRINT_IR=1``"
 msgstr ""
 
 #: ../../taichi/docs/global_settings.rst:13
-msgid "To print verbosed details: ``export TI_VERBOSE=1``"
+msgid "To print verbose details: ``export TI_VERBOSE=1``"
 msgstr ""
 
 #: ../../taichi/docs/gui.rst:4
@@ -2119,7 +2125,7 @@ msgid ""
 msgstr ""
 
 #: ../../taichi/docs/hello.rst:54
-msgid "Let's dive into components of this simple Taichi program."
+msgid "Let's dive into this simple Taichi program."
 msgstr ""
 
 #: ../../taichi/docs/hello.rst:57
@@ -2128,29 +2134,25 @@ msgstr ""
 
 #: ../../taichi/docs/hello.rst:58
 msgid ""
-"Taichi is a domain-specific language (DSL) embedded in Python. Heavy "
-"engineering has been done to make Taichi as easy to use as a Python "
-"package."
+"Taichi is a domain-specific language (DSL) embedded in Python. To make "
+"Taichi as easy to use as a Python package, we have done heavy engineering"
+" with this goal in mind - letting every Python programmer write Taichi "
+"codes with minimal learning effort. You can even use your favorite Python"
+" package management system, Python IDEs and other Python packages in "
+"conjunction with Taichi."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:61
-msgid ""
-"After minimal learning efforts, every Python programmer will be capable "
-"of writing Taichi programs, You can also reuse the Python package "
-"management system, Python IDEs, and existing Python packages."
-msgstr ""
-
-#: ../../taichi/docs/hello.rst:65 ../../taichi/docs/overview.rst:8
+#: ../../taichi/docs/hello.rst:64 ../../taichi/docs/overview.rst:8
 msgid "Portability"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:67
+#: ../../taichi/docs/hello.rst:66
 msgid ""
-"Taichi code can run on CPUs or GPUs. Initialize Taichi according to your "
-"hardware platform:"
+"Taichi programs run on either CPUs or GPUs. Initialize Taichi according "
+"to your hardware platform as follows:"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:69
+#: ../../taichi/docs/hello.rst:68
 msgid ""
 "# Run on GPU, automatically detect backend\n"
 "ti.init(arch=ti.gpu)\n"
@@ -2166,148 +2168,148 @@ msgid ""
 "ti.init(arch=ti.cpu)"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:85
+#: ../../taichi/docs/hello.rst:84
 msgid "Supported backends on different platforms:"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:88
+#: ../../taichi/docs/hello.rst:87
 msgid "platform"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:88
+#: ../../taichi/docs/hello.rst:87
 msgid "CPU"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:88
+#: ../../taichi/docs/hello.rst:87
 msgid "CUDA"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:90 ../../taichi/docs/legacy_installation.rst:34
+#: ../../taichi/docs/hello.rst:89 ../../taichi/docs/legacy_installation.rst:34
 msgid "Windows"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:90 ../../taichi/docs/hello.rst:92
-#: ../../taichi/docs/hello.rst:94
+#: ../../taichi/docs/hello.rst:89 ../../taichi/docs/hello.rst:91
+#: ../../taichi/docs/hello.rst:93
 msgid "N/A"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:92
+#: ../../taichi/docs/hello.rst:91
 msgid "Linux"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:94
+#: ../../taichi/docs/hello.rst:93
 msgid "Mac OS X"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:97
+#: ../../taichi/docs/hello.rst:96
 msgid "(OK: supported; N/A: not available)"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:99
+#: ../../taichi/docs/hello.rst:98
 msgid ""
-"With ``arch=ti.gpu``, Taichi will try to run on CUDA. If CUDA is not "
-"supported on your machine, Taichi will fall back to Metal or OpenGL. If "
-"no GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will fall "
-"back to CPUs."
+"With ``arch=ti.gpu``, Taichi will first try to run with CUDA. If CUDA is "
+"not supported on your machine, Taichi will fall back on Metal or OpenGL. "
+"If no GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will fall"
+" back on CPUs."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:105
+#: ../../taichi/docs/hello.rst:104
 msgid ""
-"When using the CUDA backend on Windows systems or ARM devices (e.g. "
-"NVIDIA Jetson), Taichi will by default allocate 1 GB memory for tensor "
-"storage. You can override this by initializing with "
+"When used with the CUDA backend on Windows or ARM devices (e.g. NVIDIA "
+"Jetson), Taichi by default allocates 1 GB GPU memory for tensor storage. "
+"You can override this behavior by initializing with "
 "``ti.init(arch=ti.cuda, device_memory_GB=3.4)`` to allocate ``3.4`` GB "
 "GPU memory, or ``ti.init(arch=ti.cuda, device_memory_fraction=0.3)`` to "
-"allocate ``30%`` of total available GPU memory."
+"allocate ``30%`` of the total GPU memory."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:110
+#: ../../taichi/docs/hello.rst:109
 msgid ""
-"On other platforms Taichi will make use of its on-demand memory allocator"
-" to adaptively allocate memory."
+"On other platforms, Taichi will make use of its on-demand memory "
+"allocator to adaptively allocate memory."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:113
+#: ../../taichi/docs/hello.rst:112
 msgid "(Sparse) tensors"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:115
+#: ../../taichi/docs/hello.rst:114
 msgid ""
-"Taichi is a data-oriented programming language, where dense or spatially-"
-"sparse tensors are first-class citizens. See :ref:`sparse` for more "
+"Taichi is a data-oriented programming language where dense or spatially-"
+"sparse tensors are the first-class citizens. See :ref:`sparse` for more "
 "details on sparse tensors."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:118
+#: ../../taichi/docs/hello.rst:117
 msgid ""
 "In the code above, ``pixels = ti.var(dt=ti.f32, shape=(n * 2, n))`` "
-"allocates a 2D dense tensor named ``pixel`` of size ``(640, 320)`` and "
+"allocates a 2D dense tensor named ``pixels`` of size ``(640, 320)`` and "
 "element data type ``ti.f32`` (i.e. ``float`` in C)."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:122
+#: ../../taichi/docs/hello.rst:121
 msgid "Functions and kernels"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:124
+#: ../../taichi/docs/hello.rst:123
 msgid ""
-"Computation happens within Taichi **kernels**. Kernel arguments must be "
-"type-hinted. The language used in Taichi kernels and functions looks "
-"exactly like Python, yet the Taichi frontend compiler converts it into a "
-"language that is **compiled, statically-typed, lexically-scoped, "
-"parallel, and differentiable**."
+"Computation resides in Taichi **kernels**. Kernel arguments must be type-"
+"hinted. The language used in Taichi kernels and functions looks exactly "
+"like Python, yet the Taichi frontend compiler converts it into a language"
+" that is **compiled, statically-typed, lexically-scoped, parallel and "
+"differentiable**."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:128
+#: ../../taichi/docs/hello.rst:127
 msgid ""
-"You can also define Taichi **functions** with ``ti.func``, which can be "
-"called and reused by kernels and other functions."
+"Taichi **functions**, which can be called by Taichi kernels and other "
+"Taichi functions, should be defined with the keyword ``ti.func``."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:132
+#: ../../taichi/docs/hello.rst:131
 msgid ""
-"**Taichi-scope v.s. Python-scope**: everything decorated with "
+"**Taichi-scopes v.s. Python-scopes**: everything decorated with "
 "``ti.kernel`` and ``ti.func`` is in Taichi-scope, which will be compiled "
-"by the Taichi compiler. Code outside the Taichi-scopes is simply normal "
-"Python code."
+"by the Taichi compiler. Everything else is in Python-scopes. They are "
+"simply Python code."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:137
+#: ../../taichi/docs/hello.rst:136
 msgid ""
 "Taichi kernels must be called in the Python-scope. I.e., **nested kernels"
 " are not supported**. Nested functions are allowed. **Recursive functions"
 " are not supported for now**."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:140
+#: ../../taichi/docs/hello.rst:139
 msgid "Taichi functions can only be called in Taichi-scope."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:142
+#: ../../taichi/docs/hello.rst:141
 msgid ""
-"For those who came from the world of CUDA, ``ti.func`` corresponds to "
-"``__device__``, and ``ti.kernel`` corresponds to ``__global__``."
+"For those who come from the world of CUDA, ``ti.func`` corresponds to "
+"``__device__`` while ``ti.kernel`` corresponds to ``__global__``."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:146
+#: ../../taichi/docs/hello.rst:145
 msgid "Parallel for-loops"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:147
+#: ../../taichi/docs/hello.rst:146
 msgid ""
 "For loops at the outermost scope in a Taichi kernel is **automatically "
 "parallelized**. For loops can have two forms, i.e. `range-for loops` and "
 "`struct-for loops`."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:150
+#: ../../taichi/docs/hello.rst:149
 msgid ""
 "**Range-for loops** are no different from Python for loops, except that "
 "it will be parallelized when used at the outermost scope. Range-for loops"
 " can be nested."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:153
+#: ../../taichi/docs/hello.rst:152
 msgid ""
 "@ti.kernel\n"
 "def fill():\n"
@@ -2327,13 +2329,13 @@ msgid ""
 "        x[i, j, k] = i + j + k"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:174 ../../taichi/docs/hello.rst:200
+#: ../../taichi/docs/hello.rst:173 ../../taichi/docs/hello.rst:199
 msgid ""
 "It is the loop **at the outermost scope** that gets parallelized, not the"
 " outermost loop."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:176
+#: ../../taichi/docs/hello.rst:175
 msgid ""
 "@ti.kernel\n"
 "def foo():\n"
@@ -2347,26 +2349,26 @@ msgid ""
 "            ..."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:189
+#: ../../taichi/docs/hello.rst:188
 msgid ""
-"**Struct-for loops** have are particularly useful when iterating over "
-"(sparse) tensor elements. In the code above, ``for i, j in pixels`` loops"
-" over all the pixel coordinates, i.e. ``(0, 0), (0, 1), (0, 2), ... , (0,"
-" 319), (1, 0), ..., (639, 319)``."
+"**Struct-for loops** are particularly useful when iterating over (sparse)"
+" tensor elements. In the code above, ``for i, j in pixels`` loops over "
+"all the pixel coordinates, i.e. ``(0, 0), (0, 1), (0, 2), ... , (0, 319),"
+" (1, 0), ..., (639, 319)``."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:194
+#: ../../taichi/docs/hello.rst:193
 msgid ""
 "Struct-for is the key to :ref:`sparse` in Taichi, as it will only loop "
 "over active elements in a sparse tensor. In dense tensors, all elements "
 "are active."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:198
-msgid "Struct-for's must live at the outer-most scope of kernels."
+#: ../../taichi/docs/hello.rst:197
+msgid "Struct-for loops must live at the outer-most scope of kernels."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:202
+#: ../../taichi/docs/hello.rst:201
 msgid ""
 "@ti.kernel\n"
 "def foo():\n"
@@ -2382,11 +2384,11 @@ msgid ""
 "            ..."
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:221
+#: ../../taichi/docs/hello.rst:220
 msgid "``break`` **is not supported in parallel loops**:"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:223
+#: ../../taichi/docs/hello.rst:222
 msgid ""
 "@ti.kernel\n"
 "def foo():\n"
@@ -2406,34 +2408,44 @@ msgid ""
 "          break # OK!"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:244
+#: ../../taichi/docs/hello.rst:243
 msgid "Interacting with Python"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:246
+#: ../../taichi/docs/hello.rst:245
 msgid ""
 "Everything outside Taichi-scopes (``ti.func`` and ``ti.kernel``) is "
-"simply Python. You can use your favorite Python packages (e.g. ``numpy``,"
-" ``pytorch``, ``matplotlib``) with Taichi."
+"simply Python code. In Python-scopes, you can access Taichi tensor "
+"elements using plain indexing syntax. For example, to access a single "
+"pixel of the rendered image in Python, simply use"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:248
+#: ../../taichi/docs/hello.rst:249
 msgid ""
-"In Python-scope, you can access Taichi tensors using plain indexing "
-"syntax, and helper functions such as ``from_numpy`` and ``to_torch``:"
+"pixels[42, 11] = 0.7\n"
+"print(pixels[42, 11]) # prints 0.7"
 msgstr ""
 
-#: ../../taichi/docs/hello.rst:250
+#: ../../taichi/docs/hello.rst:255
 msgid ""
-"image[42, 11] = 0.7\n"
-"print(image[1, 63])\n"
-"\n"
+"You can also use your favorite Python packages (e.g. ``numpy``, "
+"``pytorch``, ``matplotlib``) together with Taichi. Taichi provides helper"
+" functions such as ``from_numpy`` and ``to_torch`` for tensor format "
+"conversion:"
+msgstr ""
+
+#: ../../taichi/docs/hello.rst:258
+msgid ""
 "import numpy as np\n"
 "pixels.from_numpy(np.random.rand(n * 2, n))\n"
 "\n"
 "import matplotlib.pyplot as plt\n"
 "plt.imshow(pixels.to_numpy())\n"
 "plt.show()"
+msgstr ""
+
+#: ../../taichi/docs/hello.rst:267
+msgid "See :ref:`external` for more details."
 msgstr ""
 
 #: ../../taichi/docs/index.rst:4
@@ -2522,6 +2534,76 @@ msgstr ""
 
 #: ../../taichi/docs/internal.rst:37
 msgid "ti.core.print_stat()"
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:43
+msgid "Why Python frontend"
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:45
+msgid "Embedding Taichi in ``python`` has the following advantages:"
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:47
+msgid "Easy to learn. Taichi has a very similar syntax to Python."
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:48
+msgid "Easy to run. No ahead-of-time compilation is needed."
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:49
+msgid "This design allows people to reuse existing python infrastructure:"
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:51
+msgid ""
+"IDEs. A python IDE mostly works for Taichi with syntax highlighting, "
+"syntax checking, and autocomplete."
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:52
+msgid ""
+"Package manager (pip). A developed Taichi application and be easily "
+"submitted to ``PyPI`` and others can easily set it up with ``pip``."
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:53
+msgid ""
+"Existing packages. Interacting with other python components (e.g. "
+"``matplotlib`` and ``numpy``) is just trivial."
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:55
+msgid ""
+"The built-in AST manipulation tools in ``python`` allow us to do magical "
+"things, as long as the kernel body can be parsed by the Python parser."
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:57
+msgid "However, this design has drawbacks as well:"
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:59
+msgid ""
+"Taichi kernels must parse-able by Python parsers. This means Taichi "
+"syntax cannot go beyond Python syntax."
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:61
+msgid ""
+"For example, indexing is always needed when accessing elements in Taichi "
+"tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the value"
+" in ``x`` if ``x`` is 0D. This is because ``x = 123`` will set ``x`` "
+"itself (instead of its containing value) to be the constant ``123`` in "
+"python syntax, and, unfortunately, we cannot modify this behavior."
+msgstr ""
+
+#: ../../taichi/docs/internal.rst:63
+msgid ""
+"Python has relatively low performance. This can cause a performance issue"
+" when initializing large Taichi tensors with pure python scripts. A "
+"Taichi kernel should be used to initialize a huge tensor."
 msgstr ""
 
 #: ../../taichi/docs/layout.rst:4
@@ -3338,40 +3420,52 @@ msgid ""
 "even if it has no template arguments."
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:15
-msgid "Dimensionality-independent programming using grouped indices"
+#: ../../taichi/docs/meta.rst:18
+msgid "Template metaprogramming"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:17
+#: ../../taichi/docs/meta.rst:20
 msgid ""
 "@ti.kernel\n"
 "def copy(x: ti.template(), y: ti.template()):\n"
-"  for I in ti.grouped(y):\n"
-"    x[I] = y[I]\n"
+"    for i in x:\n"
+"        y[i] = x[i]"
+msgstr ""
+
+#: ../../taichi/docs/meta.rst:29
+msgid "Dimensionality-independent programming using grouped indices"
+msgstr ""
+
+#: ../../taichi/docs/meta.rst:31
+msgid ""
+"@ti.kernel\n"
+"def copy(x: ti.template(), y: ti.template()):\n"
+"    for I in ti.grouped(y):\n"
+"        x[I] = y[I]\n"
 "\n"
 "@ti.kernel\n"
 "def array_op(x: ti.template(), y: ti.template()):\n"
-"  # If tensor x is 2D\n"
-"  for I in ti.grouped(x): # I is a vector of size x.dim() and data type "
-"i32\n"
-"    y[I + ti.Vector([0, 1])] = I[0] + I[1]\n"
-"  # is equivalent to\n"
-"  for i, j in x:\n"
-"    y[i, j + 1] = i + j"
+"    # If tensor x is 2D\n"
+"    for I in ti.grouped(x): # I is a vector of size x.dim() and data type"
+" i32\n"
+"        y[I + ti.Vector([0, 1])] = I[0] + I[1]\n"
+"    # is equivalent to\n"
+"    for i, j in x:\n"
+"        y[i, j + 1] = i + j"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:34
+#: ../../taichi/docs/meta.rst:48
 msgid "Tensor size reflection"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:36
+#: ../../taichi/docs/meta.rst:50
 msgid ""
 "Sometimes it will be useful to get the dimensionality (``tensor.dim()``) "
 "and shape (``tensor.shape()``) of tensors. These functions can be used in"
 " both Taichi kernels and python scripts."
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:39
+#: ../../taichi/docs/meta.rst:53
 msgid ""
 "@ti.func\n"
 "def print_tensor_size(x: ti.template()):\n"
@@ -3380,29 +3474,29 @@ msgid ""
 "    print(x.shape()[i])"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:47
+#: ../../taichi/docs/meta.rst:61
 msgid "For sparse tensors, the full domain shape will be returned."
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:50
+#: ../../taichi/docs/meta.rst:64
 msgid "Compile-time evaluations"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:51
+#: ../../taichi/docs/meta.rst:65
 msgid ""
 "Using compile-time evaluation will allow certain computation to happen "
 "when kernels are instantiated. Such computation has no overhead at "
 "runtime."
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:54
+#: ../../taichi/docs/meta.rst:68
 msgid ""
 "Use ``ti.static`` for compile-time branching (for those who come from "
 "C++17, this is `if constexpr "
 "<https://en.cppreference.com/w/cpp/language/if>`_.)"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:56
+#: ../../taichi/docs/meta.rst:70
 msgid ""
 "enable_projection = True\n"
 "\n"
@@ -3412,11 +3506,11 @@ msgid ""
 "    x[0] = 1"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:66
+#: ../../taichi/docs/meta.rst:80
 msgid "Use ``ti.static`` for forced loop unrolling"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:68
+#: ../../taichi/docs/meta.rst:82
 msgid ""
 "@ti.kernel\n"
 "def g2p(f: ti.i32):\n"
@@ -3442,19 +3536,19 @@ msgid ""
 " C[f + 1, p] = new_C"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:95
+#: ../../taichi/docs/meta.rst:109
 msgid "When to use for loops with ``ti.static``"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:97
+#: ../../taichi/docs/meta.rst:111
 msgid "There are several reasons why ``ti.static`` for loops should be used."
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:99
+#: ../../taichi/docs/meta.rst:113
 msgid "Loop unrolling for performance."
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:100
+#: ../../taichi/docs/meta.rst:114
 msgid ""
 "Loop over vector/matrix elements. Indices into Taichi matrices must be a "
 "compile-time constant. Indexing into taichi tensors can be run-time "
@@ -3463,11 +3557,11 @@ msgid ""
 "yet the second must be a constant."
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:102
+#: ../../taichi/docs/meta.rst:116
 msgid "For example, code for resetting this tensor of vectors should be"
 msgstr ""
 
-#: ../../taichi/docs/meta.rst:104
+#: ../../taichi/docs/meta.rst:118
 msgid ""
 "@ti.kernel\n"
 "def reset():\n"
@@ -3790,70 +3884,70 @@ msgid ""
 "be used to maintain objects (e.g. particles) contained in a block."
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:17
+#: ../../taichi/docs/snode.rst:18
 msgid ""
-"See :ref:`layout` for more details about data layout. ``ti.root`` is the "
-"root node of the data structure."
-msgstr ""
-
-#: ../../taichi/docs/snode.rst:21
-msgid "(SNode) where to place"
+"See :ref:`layout` for more details. ``ti.root`` is the root node of the "
+"data structure."
 msgstr ""
 
 #: ../../taichi/docs/snode.rst:22
-msgid "(tensor) tensor(s) to be placed"
+msgid "(SNode) where to place"
 msgstr ""
 
 #: ../../taichi/docs/snode.rst:23
+msgid "(tensor) tensor(s) to be placed"
+msgstr ""
+
+#: ../../taichi/docs/snode.rst:24
 msgid "(SNode) the ``snode`` itself"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:25
+#: ../../taichi/docs/snode.rst:26
 msgid "The following code places two 0-D tensors named ``x`` and ``y``:"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:29
+#: ../../taichi/docs/snode.rst:30
 msgid ""
 "x = ti.var(dt=ti.i32)\n"
 "y = ti.var(dt=ti.f32)\n"
 "ti.root.place(x, y)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:35 ../../taichi/docs/snode.rst:62
+#: ../../taichi/docs/snode.rst:36 ../../taichi/docs/snode.rst:63
 msgid "the tensor"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:36
+#: ../../taichi/docs/snode.rst:37
 msgid "(tuple of integers) the shape of tensor"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:38
+#: ../../taichi/docs/snode.rst:39
 msgid "For example,"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:42
+#: ../../taichi/docs/snode.rst:43
 msgid ""
 "ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
 "x.shape() # returns (3, 5, 4)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:47 ../../taichi/docs/snode.rst:74
+#: ../../taichi/docs/snode.rst:48 ../../taichi/docs/snode.rst:75
 msgid "(SNode)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:48
+#: ../../taichi/docs/snode.rst:49
 msgid "axis (0 for ``i`` and 1 for ``j``)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:49
+#: ../../taichi/docs/snode.rst:50
 msgid "(scalar) the size of tensor alone that axis"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:51
+#: ../../taichi/docs/snode.rst:52
 msgid "Equivalent to ``tensor.shape()[i]``."
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:55
+#: ../../taichi/docs/snode.rst:56
 msgid ""
 "ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
 "x.snode().get_shape(0)  # 3\n"
@@ -3861,25 +3955,25 @@ msgid ""
 "x.snode().get_shape(2)  # 4"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:63
+#: ../../taichi/docs/snode.rst:64
 msgid "(scalar) the dimensionality of the tensor"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:65
+#: ../../taichi/docs/snode.rst:66
 msgid "Equivalent to ``len(tensor.shape())``."
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:69
+#: ../../taichi/docs/snode.rst:70
 msgid ""
 "ti.root.dense(ti.ijk, (8, 9, 10)).place(x)\n"
 "x.dim()  # 3"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:75
+#: ../../taichi/docs/snode.rst:76
 msgid "(SNode) the parent node of ``snode``"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:79
+#: ../../taichi/docs/snode.rst:80
 msgid ""
 "blk1 = ti.root.dense(ti.i, 8)\n"
 "blk2 = blk1.dense(ti.j, 4)\n"
@@ -3889,134 +3983,146 @@ msgid ""
 "blk3.parent()  # blk2"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:86
+#: ../../taichi/docs/snode.rst:87
 msgid "TODO: add tensor.parent(), and add see also ref here"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:90
+#: ../../taichi/docs/snode.rst:91
 msgid "Node types"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:95 ../../taichi/docs/snode.rst:132
+#: ../../taichi/docs/snode.rst:96 ../../taichi/docs/snode.rst:133
 msgid "(SNode) parent node where the child is derived from"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:96
+#: ../../taichi/docs/snode.rst:97
 msgid "(Index or Indices) indices used for this node"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:97
+#: ../../taichi/docs/snode.rst:98
 msgid "(scalar or tuple) shape the tensor of vectors"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:98 ../../taichi/docs/snode.rst:136
+#: ../../taichi/docs/snode.rst:99 ../../taichi/docs/snode.rst:137
 msgid "(SNode) the derived child node"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:100
+#: ../../taichi/docs/snode.rst:101
 msgid "The following code places a 1-D tensor of size ``3``:"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:104
+#: ../../taichi/docs/snode.rst:105
 msgid ""
 "x = ti.var(dt=ti.i32)\n"
 "ti.root.dense(ti.i, 3).place(x)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:107
+#: ../../taichi/docs/snode.rst:108
 msgid "The following code places a 2-D tensor of shape ``(3, 4)``:"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:111
+#: ../../taichi/docs/snode.rst:112
 msgid ""
 "x = ti.var(dt=ti.i32)\n"
 "ti.root.dense(ti.ij, (3, 4)).place(x)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:116
+#: ../../taichi/docs/snode.rst:117
 msgid ""
 "If ``shape`` is a scalar and there are multiple indices, then ``shape`` "
 "will be automatically expanded to fit the number of indices. For example,"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:121
+#: ../../taichi/docs/snode.rst:122
 msgid "snode.dense(ti.ijk, 3)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:123
+#: ../../taichi/docs/snode.rst:124
 msgid "is equivalent to"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:127
+#: ../../taichi/docs/snode.rst:128
 msgid "snode.dense(ti.ijk, (3, 3, 3))"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:133
+#: ../../taichi/docs/snode.rst:134
 msgid "(Index) the ``dynamic`` node indices"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:134
+#: ../../taichi/docs/snode.rst:135
 msgid "(scalar) the maximum size of the dynamic node"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:135
+#: ../../taichi/docs/snode.rst:136
 msgid ""
 "(optional, scalar) the number of elements in each dynamic memory "
 "allocation chunk"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:138
+#: ../../taichi/docs/snode.rst:139
 msgid ""
 "``dynamic`` nodes acts like ``std::vector`` in C++ or ``list`` in Python."
 " Taichi's dynamic memory allocation system allocates its memory on the "
 "fly."
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:141
+#: ../../taichi/docs/snode.rst:142
 msgid "The following places a 1-D dynamic tensor of maximum size ``16``:"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:145
+#: ../../taichi/docs/snode.rst:146
 msgid "ti.root.dynamic(ti.i, 16).place(x)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:153
+#: ../../taichi/docs/snode.rst:154
 msgid "TODO: add descriptions here"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:156
+#: ../../taichi/docs/snode.rst:157
 msgid "Working with ``dynamic`` SNodes"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:160 ../../taichi/docs/snode.rst:167
+#: ../../taichi/docs/snode.rst:161 ../../taichi/docs/snode.rst:168
 msgid "(SNode, dynamic)"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:161 ../../taichi/docs/snode.rst:168
+#: ../../taichi/docs/snode.rst:162 ../../taichi/docs/snode.rst:169
 msgid "(scalar or tuple of scalars) the ``dynamic`` node indices"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:162
+#: ../../taichi/docs/snode.rst:163
 msgid "(scalar) the current size of the dynamic node"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:169
+#: ../../taichi/docs/snode.rst:170
 msgid "(depends on SNode data type) value to store"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:170
+#: ../../taichi/docs/snode.rst:171
 msgid "(``int32``) the size of the dynamic node, before appending"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:172
+#: ../../taichi/docs/snode.rst:173
 msgid "Inserts ``val`` into the ``dynamic`` node with indices ``indices``."
 msgstr ""
 
 #: ../../taichi/docs/snode.rst:177
+msgid "Taichi tensors like powers of two"
+msgstr ""
+
+#: ../../taichi/docs/snode.rst:179
+msgid ""
+"Non-power-of-two tensor dimensions are promoted into powers of two and "
+"thus these tensors will occupy more virtual address space. For example, a"
+" (dense) tensor of size ``(18, 65)`` will be materialized as ``(32, "
+"128)``."
+msgstr ""
+
+#: ../../taichi/docs/snode.rst:184
 msgid "Indices"
 msgstr ""
 
-#: ../../taichi/docs/snode.rst:187
+#: ../../taichi/docs/snode.rst:194
 msgid "(TODO)"
 msgstr ""
 
@@ -4075,22 +4181,17 @@ msgstr ""
 msgid ""
 "@ti.kernel\n"
 "def print_xy(x: ti.i32, y: ti.f32):\n"
-"  print(x + y)\n"
-"\n"
-"@ti.kernel\n"
-"def copy(x: ti.template(), y: ti.template()):\n"
-"  for i in x:\n"
-"    y[i] = x[i]"
+"    print(x + y)"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:20
+#: ../../taichi/docs/syntax.rst:16
 msgid ""
-"A kernel can have **scalar** return value. If a kernel has a return "
+"A kernel can have a **scalar** return value. If a kernel has a return "
 "value, it must be type-hinted. The return value will be automatically "
-"casted into the hinted type. e.g.,"
+"cast into the hinted type. e.g.,"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:23
+#: ../../taichi/docs/syntax.rst:19
 msgid ""
 "@ti.kernel\n"
 "def add_xy(x: ti.f32, y: ti.f32) -> ti.i32:\n"
@@ -4100,117 +4201,88 @@ msgid ""
 "print(res)  # 3, since return type is ti.i32"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:33 ../../taichi/docs/syntax.rst:56
-msgid ""
-"For differentiable programming kernels should better have either serial "
-"statements or a single parallel for-loop. If you don't use differentiable"
-" programming, feel free to ignore this tip."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:37
+#: ../../taichi/docs/syntax.rst:31
 msgid ""
 "For now, we only support one scalar as return value. Returning "
-"``ti.Matrix`` or `ti.Vector`` is not supported. Python-style tuple return"
-" is not supported. e.g.:"
+"``ti.Matrix`` or ``ti.Vector`` is not supported. Python-style tuple "
+"return is not supported either. For example:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:39
+#: ../../taichi/docs/syntax.rst:33
 msgid ""
 "@ti.kernel\n"
 "def bad_kernel() -> ti.Matrix:\n"
-"    return ti.Matrix([[1, 0], [0, 1]])  # ERROR!\n"
+"    return ti.Matrix([[1, 0], [0, 1]])  # Error\n"
 "\n"
 "@ti.kernel\n"
 "def bad_kernel() -> (ti.i32, ti.f32):\n"
 "    x = 1\n"
 "    y = 0.5\n"
-"    return x, y  #  ERROR!"
+"    return x, y  # Error"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:46
+msgid ""
+"We also support **template arguments** (see "
+":ref:`template_metaprogramming`) and **external array arguments** (see "
+":ref:`external`) in Taichi kernels."
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:50
+msgid ""
+"When using differentiable programming, there are a few more constraints "
+"on kernel structures. See the **Kernel Simplicity Rule** in "
+":ref:`differentiable`."
 msgstr ""
 
 #: ../../taichi/docs/syntax.rst:52
 msgid ""
-"For correct gradient behaviors in differentiable programming, please "
-"refrain from using kernel return values. Instead, store the result into a"
-" global variable (e.g. ``loss[None]``)."
+"Also, please do not use kernel return values in differentiable "
+"programming, since the return value will not be tracked by automatic "
+"differentiation. Instead, store the result into a global variable (e.g. "
+"``loss[None]``)."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:54
-msgid "(TODO: move the following to advanced topics)"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:58
-msgid ""
-"@ti.kernel\n"
-"def a_hard_kernel_to_auto_differentiate():\n"
-"  sum = 0\n"
-"  for i in x:\n"
-"    sum += x[i]\n"
-"  for i in y:\n"
-"    y[i] = sum\n"
-"\n"
-"# instead, split it into multiple kernels to be nice to the Taichi "
-"autodiff compiler:\n"
-"\n"
-"@ti.kernel\n"
-"def reduce():\n"
-"  for i in x:\n"
-"    sum[None] += x[i]\n"
-"\n"
-"@ti.kernel\n"
-"def assign()\n"
-"  for i in y:\n"
-"    y[i] = sum[None]\n"
-"\n"
-"def main():\n"
-"  with ti.Tape(loss):\n"
-"    ...\n"
-"    sum[None] = 0\n"
-"    reduce()\n"
-"    assign()\n"
-"    ..."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:90
+#: ../../taichi/docs/syntax.rst:55
 msgid "Functions"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:92
+#: ../../taichi/docs/syntax.rst:57
 msgid ""
 "Use ``@ti.func`` to decorate your Taichi functions. These functions are "
-"callable only in `Taichi`-scope. Don't call them in `Python`-scope. All "
-"function calls are force-inlined, so no recursion supported."
+"callable only in `Taichi`-scope. Do not call them in `Python`-scopes."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:94
+#: ../../taichi/docs/syntax.rst:59
 msgid ""
 "@ti.func\n"
 "def laplacian(t, i, j):\n"
-"  return inv_dx2 * (\n"
-"      -4 * p[t, i, j] + p[t, i, j - 1] + p[t, i, j + 1] + p[t, i + 1, j] "
-"+\n"
-"      p[t, i - 1, j])\n"
+"    return inv_dx2 * (\n"
+"        -4 * p[t, i, j] + p[t, i, j - 1] + p[t, i, j + 1] + p[t, i + 1, "
+"j] +\n"
+"        p[t, i - 1, j])\n"
 "\n"
 "@ti.kernel\n"
 "def fdtd(t: ti.i32):\n"
-"  for i in range(n_grid): # Parallelized over GPU threads\n"
-"    for j in range(n_grid):\n"
-"      laplacian_p = laplacian(t - 2, i, j)\n"
-"      laplacian_q = laplacian(t - 1, i, j)\n"
-"      p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
-"          c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
-"                     t - 2, i, j] - c * alpha * dt * laplacian_p"
+"    for i in range(n_grid): # Parallelized\n"
+"        for j in range(n_grid): # Serial loops in each parallel threads\n"
+"            laplacian_p = laplacian(t - 2, i, j)\n"
+"            laplacian_q = laplacian(t - 1, i, j)\n"
+"            p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
+"                c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
+"                           t - 2, i, j] - c * alpha * dt * laplacian_p"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:115
+#: ../../taichi/docs/syntax.rst:80
 msgid ""
-"Functions with multiple ``return``'s are not supported for now. Use a "
-"**local** variable to store the results, so that you end up with only one"
-" ``return``:"
+"Functions with multiple ``return`` statements are not supported for now. "
+"Use a **local** variable to store the results, so that you end up with "
+"only one ``return`` statement:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:117
+#: ../../taichi/docs/syntax.rst:82
 msgid ""
-"# Bad function - two return's\n"
+"# Bad function - two return statements\n"
 "@ti.func\n"
 "def safe_sqrt(x):\n"
 "  if x >= 0:\n"
@@ -4218,7 +4290,7 @@ msgid ""
 "  else:\n"
 "    return 0.0\n"
 "\n"
-"# Good function - single return\n"
+"# Good function - single return statement\n"
 "@ti.func\n"
 "def safe_sqrt(x):\n"
 "  rst = 0.0\n"
@@ -4229,170 +4301,91 @@ msgid ""
 "  return rst"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:139
+#: ../../taichi/docs/syntax.rst:104
 msgid ""
 "Currently, all functions are force-inlined. Therefore, no recursion is "
 "allowed."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:143
+#: ../../taichi/docs/syntax.rst:108
 msgid "Function arguments are passed by value."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:147
-msgid "Data layout"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:148
-msgid ""
-"Non-power-of-two tensor dimensions are promoted into powers of two and "
-"thus these tensors will occupy more virtual address space. For example, a"
-" tensor of size ``(18, 65)`` will be materialized as ``(32, 128)``."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:153
+#: ../../taichi/docs/syntax.rst:113
 msgid "Scalar arithmetics"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:154
+#: ../../taichi/docs/syntax.rst:114
 msgid "Supported scalar functions:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:178
-msgid ""
-"Note: when these scalar functions are applied on :ref:`matrix` and "
-":ref:`vector`, it's applied element-wise, for example:"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:180
-msgid ""
-"A = ti.sin(B)\n"
-"# is equalivant to (assuming B is a 3x2 matrix):\n"
-"for i in ti.static(range(3)):\n"
-"    for j in ti.static(range(2)):\n"
-"        A[i, j] = ti.sin(B[i, j])"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:190
+#: ../../taichi/docs/syntax.rst:140
 msgid ""
 "Python 3 distinguishes ``/`` (true division) and ``//`` (floor division)."
 " For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = 0``, ``4.2"
 " // 2 = 2``. Taichi follows this design:"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:193
+#: ../../taichi/docs/syntax.rst:143
 msgid ""
-"*true divisions* on integral types will first cast their operands to the "
-"default float point type."
+"**true divisions** on integral types will first cast their operands to "
+"the default float point type."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:194
+#: ../../taichi/docs/syntax.rst:144
 msgid ""
-"*floor divisions* on float-point types will first cast their operands to "
-"the default integer type."
+"**floor divisions** on float-point types will first cast their operands "
+"to the default integer type."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:196
+#: ../../taichi/docs/syntax.rst:146
 msgid ""
 "To avoid such implicit casting, you can manually cast your operands to "
-"desired types, using ``ti.cast``. Read :ref:`default_precisions` for more"
-" details on default numerical types."
+"desired types, using ``ti.cast``. See :ref:`default_precisions` for more "
+"details on default numerical types."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:200
+#: ../../taichi/docs/syntax.rst:151
+msgid ""
+"When these scalar functions are applied on :ref:`matrix` and "
+":ref:`vector`, they are applied in an element-wise manner. For example:"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:154
+msgid ""
+"B = ti.Matrix([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])\n"
+"\n"
+"A = ti.sin(B)\n"
+"# is equivalent to\n"
+"for i in ti.static(range(2)):\n"
+"    for j in ti.static(range(3)):\n"
+"        A[i, j] = ti.sin(B[i, j])"
+msgstr ""
+
+#: ../../taichi/docs/syntax.rst:166
 msgid "Debugging"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:202
+#: ../../taichi/docs/syntax.rst:168
 msgid ""
 "Debug your program with ``print(x)``. For example, if ``x`` is ``23``, "
-"then it shows:"
+"then it prints"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:204
+#: ../../taichi/docs/syntax.rst:170
 msgid "[debug] x = 23"
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:208
+#: ../../taichi/docs/syntax.rst:174
 msgid "in the console."
 msgstr ""
 
-#: ../../taichi/docs/syntax.rst:212
+#: ../../taichi/docs/syntax.rst:178
 msgid ""
 "This is not the same as the ``print`` in Python-scope. For now ``print`` "
 "in Taichi only takes **scalar numbers** as input. Strings, vectors and "
 "matrices are not supported. Please use ``print(v[0]); print(v[1])`` if "
 "you want to print a vector."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:216
-msgid "Why Python frontend"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:218
-msgid "Embedding the language in ``python`` has the following advantages:"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:220
-msgid "Easy to learn. Taichi has a very similar syntax to Python."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:221
-msgid "Easy to run. No ahead-of-time compilation is needed."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:222
-msgid "This design allows people to reuse existing python infrastructure:"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:224
-msgid ""
-"IDEs. A python IDE mostly works for Taichi with syntax highlighting, "
-"syntax checking, and autocomplete."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:225
-msgid ""
-"Package manager (pip). A developed Taichi application and be easily "
-"submitted to ``PyPI`` and others can easily set it up with ``pip``."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:226
-msgid ""
-"Existing packages. Interacting with other python components (e.g. "
-"``matplotlib`` and ``numpy``) is just trivial."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:228
-msgid ""
-"The built-in AST manipulation tools in ``python`` allow us to do magical "
-"things, as long as the kernel body can be parsed by the Python parser."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:230
-msgid "However, this design has drawbacks as well:"
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:232
-msgid ""
-"Taichi kernels must parse-able by Python parsers. This means Taichi "
-"syntax cannot go beyond Python syntax."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:234
-msgid ""
-"For example, indexing is always needed when accessing elements in Taichi "
-"tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the value"
-" in ``x`` if ``x`` is 0D. This is because ``x = 123`` will set ``x`` "
-"itself (instead of its containing value) to be the constant ``123`` in "
-"python syntax, and, unfortunately, we cannot modify this behavior."
-msgstr ""
-
-#: ../../taichi/docs/syntax.rst:236
-msgid ""
-"Python has relatively low performance. This can cause a performance issue"
-" when initializing large Taichi tensors with pure python scripts. A "
-"Taichi kernel should be used to initialize a huge tensor."
 msgstr ""
 
 #: ../../taichi/docs/syntax_sugars.rst:2
@@ -4408,7 +4401,7 @@ msgid ""
 "Creating aliases for global variables and functions with cumbersome names"
 " can sometimes improve readability. In Taichi, this can be done by "
 "assigning kernel and function local variables with ``ti.static()``, which"
-" forces Taichi to use standard python pointer assignement."
+" forces Taichi to use standard python pointer assignment."
 msgstr ""
 
 #: ../../taichi/docs/syntax_sugars.rst:9
@@ -4739,7 +4732,8 @@ msgstr ""
 msgid ""
 "By default, numerical literals have 32-bit precisions. For example, "
 "``42`` has type ``ti.i32`` and ``3.14`` has type ``ti.f32``. Default "
-"precisions can be specified when initializing Taichi:"
+"integer and float-point precisions (``default_ip`` and ``default_fp``) "
+"can be specified when initializing Taichi:"
 msgstr ""
 
 #: ../../taichi/docs/type.rst:67
@@ -4756,7 +4750,7 @@ msgid "Type casts"
 msgstr ""
 
 #: ../../taichi/docs/type.rst:79
-msgid "Use ``ti.cast`` to type-cast scalar values."
+msgid "Use ``ti.cast`` to cast scalar values."
 msgstr ""
 
 #: ../../taichi/docs/type.rst:81
@@ -4774,6 +4768,14 @@ msgid ""
 "mat = ti.Matrix([[3.0, 0.0], [0.3, 0.1]])\n"
 "mat_int = mat.cast(int)\n"
 "mat_int2 = mat.cast(ti.i32)"
+msgstr ""
+
+#: ../../taichi/docs/type.rst:97
+msgid ""
+"Use ``ti.bit_cast`` to bit-cast a value into another data type. The "
+"underlying bits will be preserved in this cast. The new type must have "
+"the same width as the the old type. For example, bit-casting ``i32`` to "
+"``f64`` is not allowed. Use this operation with caution."
 msgstr ""
 
 #: ../../taichi/docs/utilities.rst:2
@@ -4801,52 +4803,159 @@ msgstr ""
 #: ../../taichi/docs/utilities.rst:20
 msgid ""
 "The default logging level is ``ti.INFO``. You can also override default "
-"logging level by setting the environment variable ``TI_LOG_LEVEL`` to "
-"values such as ``trace`` and ``warn``."
-msgstr ""
-
-#: ../../taichi/docs/utilities.rst:25
-msgid "Trigger GDB when the program crashes"
+"logging level by setting the environment variable like "
+"``TI_LOG_LEVEL=warn``."
 msgstr ""
 
 #: ../../taichi/docs/utilities.rst:27
+msgid "Benchmarking and Regression Tests"
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:29
+msgid ""
+"Run ``ti benchmark`` to run tests in benchmark mode. This will record the"
+" performance of ``ti test``, and save it in ``benchmarks/output``."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:31
+msgid ""
+"Run ``ti regression`` to show the difference between previous result in "
+"``benchmarks/baseline``. And you can see if the performance is increasing"
+" or decreasing after your commits. This is really helpful when your work "
+"is related to IR optimizations."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:33
+msgid ""
+"Run ``ti baseline`` to save the benchmark result to "
+"``benchmarks/baseline`` for furture comparsion, this may be executed on "
+"performance related PRs, before they are merged into master."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:35
+msgid ""
+"For example, this is part of the output by ``ti regression`` after "
+"enabling constant folding optimization pass:"
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:37
+msgid ""
+"linalg__________________polar_decomp______________________________\n"
+"codegen_offloaded_tasks                       37 ->    39    +5.4%\n"
+"codegen_statements                          3179 ->  3162    -0.5%\n"
+"codegen_kernel_statements                   2819 ->  2788    -1.1%\n"
+"codegen_evaluator_statements                   0 ->    14    +inf%\n"
+"\n"
+"linalg__________________init_matrix_from_vectors__________________\n"
+"codegen_offloaded_tasks                       37 ->    39    +5.4%\n"
+"codegen_statements                          3180 ->  3163    -0.5%\n"
+"codegen_kernel_statements                   2820 ->  2789    -1.1%\n"
+"codegen_evaluator_statements                   0 ->    14    +inf%"
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:53
+msgid ""
+"Currently ``ti benchmark`` only support benchmarking number-of-"
+"statements, no time benchmarking is included since it depends on hardware"
+" performance and therefore hard to compare if the baseline is from "
+"another machine. We are to purchase a fixed-performance machine as a time"
+" benchmark server at some point. Discussion at: https://github.com"
+"/taichi-dev/taichi/issue/948"
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:58
+msgid ""
+"The suggested workflow for **the PR author** to run the regression tests "
+"is:"
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:60
+msgid "When a performance related PR is ready, checkout that PR locally."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:62
+msgid "Run ``ti benchmark && ti regression`` to obtain the result."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:64
+msgid "Decide wheater to approve or request change, depends on the result."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:66 ../../taichi/docs/utilities.rst:77
+msgid ""
+"Right before merge, run ``ti baseline`` to save the benchmark result as "
+"new baseline."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:69
+msgid ""
+"**Reviewers** can also ask the PR author to run and upload the test "
+"result, if they consider the PR performance sensitive. If the reviewers "
+"would like to run the regression tests themselves, the suggested workflow"
+" is:"
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:71
+msgid ""
+"When a stage of work is done, run ``ti benchmark && ti regression`` to "
+"obtain result."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:73
+msgid ""
+"When ready for review, post the latest result in PR comments, wait for "
+"the reviewer."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:75
+msgid "Get feedback from the reviewer, and improve the result."
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:81
+msgid "Trigger GDB when the program crashes"
+msgstr ""
+
+#: ../../taichi/docs/utilities.rst:83
 msgid ""
 "# Python\n"
 "ti.set_gdb_trigger(True)\n"
 "\n"
 "// C++\n"
-"CoreState::set_trigger_gdb_when_crash(true);"
+"CoreState::set_trigger_gdb_when_crash(true);\n"
+"\n"
+"# Shell\n"
+"export TI_GDB_TRIGGER=1"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:36
+#: ../../taichi/docs/utilities.rst:95
 msgid "Interface System"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:37
+#: ../../taichi/docs/utilities.rst:96
 msgid "Print all interfaces and units"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:39
+#: ../../taichi/docs/utilities.rst:98
 msgid "ti.core.print_all_units()"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:44
+#: ../../taichi/docs/utilities.rst:103
 msgid "Serialization"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:46
+#: ../../taichi/docs/utilities.rst:105
 msgid ""
 "The serialization module of taichi allows you to serialize/deserialize "
 "objects into/from binary strings."
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:48
+#: ../../taichi/docs/utilities.rst:107
 msgid ""
 "You can use ``TI_IO`` macros to explicit define fields necessary in "
 "Taichi."
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:50
+#: ../../taichi/docs/utilities.rst:109
 msgid ""
 "// TI_IO_DEF\n"
 "struct Particle {\n"
@@ -4879,17 +4988,17 @@ msgid ""
 "// TI_IO_DEF_VIRT();"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:84
+#: ../../taichi/docs/utilities.rst:143
 msgid "Progress Notification"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:86
+#: ../../taichi/docs/utilities.rst:145
 msgid ""
 "The taichi messager can send an email to ``$TI_MONITOR_EMAIL`` when the "
 "task finished or crashed. To enable:"
 msgstr ""
 
-#: ../../taichi/docs/utilities.rst:89
+#: ../../taichi/docs/utilities.rst:148
 msgid ""
 "from taichi.tools import messager\n"
 "messager.enable(task_id='test')"
@@ -5718,5 +5827,437 @@ msgstr ""
 #~ "portions in such object form without "
 #~ "including the above copyright and "
 #~ "permission notices."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please check out `the DiffTaichi paper"
+#~ " <https://arxiv.org/pdf/1910.00935.pdf>`_ and `video"
+#~ " <https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ to "
+#~ "learn more about Taichi differentiable "
+#~ "programming."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Here ``external arrays`` refer to "
+#~ "``numpy.ndarray`` or ``torch.Tensor``."
+#~ msgstr ""
+
+#~ msgid "Use external arrays as Taichi kernel parameters"
+#~ msgstr ""
+
+#~ msgid "To print verbosed details: ``export TI_VERBOSE=1``"
+#~ msgstr ""
+
+#~ msgid "Let's dive into components of this simple Taichi program."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Taichi is a domain-specific language "
+#~ "(DSL) embedded in Python. Heavy "
+#~ "engineering has been done to make "
+#~ "Taichi as easy to use as a "
+#~ "Python package."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After minimal learning efforts, every "
+#~ "Python programmer will be capable of "
+#~ "writing Taichi programs, You can also"
+#~ " reuse the Python package management "
+#~ "system, Python IDEs, and existing Python"
+#~ " packages."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Taichi code can run on CPUs or "
+#~ "GPUs. Initialize Taichi according to "
+#~ "your hardware platform:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "With ``arch=ti.gpu``, Taichi will try to"
+#~ " run on CUDA. If CUDA is not"
+#~ " supported on your machine, Taichi "
+#~ "will fall back to Metal or OpenGL."
+#~ " If no GPU backend (CUDA, Metal, "
+#~ "or OpenGL) is supported, Taichi will "
+#~ "fall back to CPUs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When using the CUDA backend on "
+#~ "Windows systems or ARM devices (e.g. "
+#~ "NVIDIA Jetson), Taichi will by default"
+#~ " allocate 1 GB memory for tensor "
+#~ "storage. You can override this by "
+#~ "initializing with ``ti.init(arch=ti.cuda, "
+#~ "device_memory_GB=3.4)`` to allocate ``3.4`` GB"
+#~ " GPU memory, or ``ti.init(arch=ti.cuda, "
+#~ "device_memory_fraction=0.3)`` to allocate ``30%``"
+#~ " of total available GPU memory."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "On other platforms Taichi will make "
+#~ "use of its on-demand memory "
+#~ "allocator to adaptively allocate memory."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Taichi is a data-oriented programming"
+#~ " language, where dense or spatially-"
+#~ "sparse tensors are first-class citizens."
+#~ " See :ref:`sparse` for more details "
+#~ "on sparse tensors."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the code above, ``pixels = "
+#~ "ti.var(dt=ti.f32, shape=(n * 2, n))`` "
+#~ "allocates a 2D dense tensor named "
+#~ "``pixel`` of size ``(640, 320)`` and "
+#~ "element data type ``ti.f32`` (i.e. "
+#~ "``float`` in C)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Computation happens within Taichi **kernels**."
+#~ " Kernel arguments must be type-"
+#~ "hinted. The language used in Taichi "
+#~ "kernels and functions looks exactly like"
+#~ " Python, yet the Taichi frontend "
+#~ "compiler converts it into a language "
+#~ "that is **compiled, statically-typed, "
+#~ "lexically-scoped, parallel, and differentiable**."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can also define Taichi **functions**"
+#~ " with ``ti.func``, which can be "
+#~ "called and reused by kernels and "
+#~ "other functions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Taichi-scope v.s. Python-scope**: "
+#~ "everything decorated with ``ti.kernel`` and"
+#~ " ``ti.func`` is in Taichi-scope, "
+#~ "which will be compiled by the "
+#~ "Taichi compiler. Code outside the "
+#~ "Taichi-scopes is simply normal Python "
+#~ "code."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For those who came from the world"
+#~ " of CUDA, ``ti.func`` corresponds to "
+#~ "``__device__``, and ``ti.kernel`` corresponds "
+#~ "to ``__global__``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Struct-for loops** have are "
+#~ "particularly useful when iterating over "
+#~ "(sparse) tensor elements. In the code"
+#~ " above, ``for i, j in pixels`` "
+#~ "loops over all the pixel coordinates,"
+#~ " i.e. ``(0, 0), (0, 1), (0, 2),"
+#~ " ... , (0, 319), (1, 0), ...,"
+#~ " (639, 319)``."
+#~ msgstr ""
+
+#~ msgid "Struct-for's must live at the outer-most scope of kernels."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Everything outside Taichi-scopes (``ti.func``"
+#~ " and ``ti.kernel``) is simply Python. "
+#~ "You can use your favorite Python "
+#~ "packages (e.g. ``numpy``, ``pytorch``, "
+#~ "``matplotlib``) with Taichi."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In Python-scope, you can access "
+#~ "Taichi tensors using plain indexing "
+#~ "syntax, and helper functions such as "
+#~ "``from_numpy`` and ``to_torch``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "image[42, 11] = 0.7\n"
+#~ "print(image[1, 63])\n"
+#~ "\n"
+#~ "import numpy as np\n"
+#~ "pixels.from_numpy(np.random.rand(n * 2, n))\n"
+#~ "\n"
+#~ "import matplotlib.pyplot as plt\n"
+#~ "plt.imshow(pixels.to_numpy())\n"
+#~ "plt.show()"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "@ti.kernel\n"
+#~ "def copy(x: ti.template(), y: ti.template()):\n"
+#~ "  for I in ti.grouped(y):\n"
+#~ "    x[I] = y[I]\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def array_op(x: ti.template(), y: ti.template()):\n"
+#~ "  # If tensor x is 2D\n"
+#~ "  for I in ti.grouped(x): # I "
+#~ "is a vector of size x.dim() and"
+#~ " data type i32\n"
+#~ "    y[I + ti.Vector([0, 1])] = I[0] + I[1]\n"
+#~ "  # is equivalent to\n"
+#~ "  for i, j in x:\n"
+#~ "    y[i, j + 1] = i + j"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "See :ref:`layout` for more details about"
+#~ " data layout. ``ti.root`` is the root"
+#~ " node of the data structure."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "@ti.kernel\n"
+#~ "def print_xy(x: ti.i32, y: ti.f32):\n"
+#~ "  print(x + y)\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def copy(x: ti.template(), y: ti.template()):\n"
+#~ "  for i in x:\n"
+#~ "    y[i] = x[i]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A kernel can have **scalar** return "
+#~ "value. If a kernel has a return"
+#~ " value, it must be type-hinted. "
+#~ "The return value will be automatically"
+#~ " casted into the hinted type. e.g.,"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For differentiable programming kernels should"
+#~ " better have either serial statements "
+#~ "or a single parallel for-loop. If"
+#~ " you don't use differentiable programming,"
+#~ " feel free to ignore this tip."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For now, we only support one "
+#~ "scalar as return value. Returning "
+#~ "``ti.Matrix`` or `ti.Vector`` is not "
+#~ "supported. Python-style tuple return is"
+#~ " not supported. e.g.:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "@ti.kernel\n"
+#~ "def bad_kernel() -> ti.Matrix:\n"
+#~ "    return ti.Matrix([[1, 0], [0, 1]])  # ERROR!\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def bad_kernel() -> (ti.i32, ti.f32):\n"
+#~ "    x = 1\n"
+#~ "    y = 0.5\n"
+#~ "    return x, y  #  ERROR!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For correct gradient behaviors in "
+#~ "differentiable programming, please refrain "
+#~ "from using kernel return values. "
+#~ "Instead, store the result into a "
+#~ "global variable (e.g. ``loss[None]``)."
+#~ msgstr ""
+
+#~ msgid "(TODO: move the following to advanced topics)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "@ti.kernel\n"
+#~ "def a_hard_kernel_to_auto_differentiate():\n"
+#~ "  sum = 0\n"
+#~ "  for i in x:\n"
+#~ "    sum += x[i]\n"
+#~ "  for i in y:\n"
+#~ "    y[i] = sum\n"
+#~ "\n"
+#~ "# instead, split it into multiple "
+#~ "kernels to be nice to the Taichi"
+#~ " autodiff compiler:\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def reduce():\n"
+#~ "  for i in x:\n"
+#~ "    sum[None] += x[i]\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def assign()\n"
+#~ "  for i in y:\n"
+#~ "    y[i] = sum[None]\n"
+#~ "\n"
+#~ "def main():\n"
+#~ "  with ti.Tape(loss):\n"
+#~ "    ...\n"
+#~ "    sum[None] = 0\n"
+#~ "    reduce()\n"
+#~ "    assign()\n"
+#~ "    ..."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use ``@ti.func`` to decorate your Taichi"
+#~ " functions. These functions are callable"
+#~ " only in `Taichi`-scope. Don't call "
+#~ "them in `Python`-scope. All function "
+#~ "calls are force-inlined, so no "
+#~ "recursion supported."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "@ti.func\n"
+#~ "def laplacian(t, i, j):\n"
+#~ "  return inv_dx2 * (\n"
+#~ "      -4 * p[t, i, j] + p[t,"
+#~ " i, j - 1] + p[t, i, j"
+#~ " + 1] + p[t, i + 1, j]"
+#~ " +\n"
+#~ "      p[t, i - 1, j])\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def fdtd(t: ti.i32):\n"
+#~ "  for i in range(n_grid): # Parallelized over GPU threads\n"
+#~ "    for j in range(n_grid):\n"
+#~ "      laplacian_p = laplacian(t - 2, i, j)\n"
+#~ "      laplacian_q = laplacian(t - 1, i, j)\n"
+#~ "      p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
+#~ "          c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
+#~ "                     t - 2, i, j] - c * alpha * dt * laplacian_p"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Functions with multiple ``return``'s are "
+#~ "not supported for now. Use a "
+#~ "**local** variable to store the results,"
+#~ " so that you end up with only"
+#~ " one ``return``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "# Bad function - two return's\n"
+#~ "@ti.func\n"
+#~ "def safe_sqrt(x):\n"
+#~ "  if x >= 0:\n"
+#~ "    return ti.sqrt(x)\n"
+#~ "  else:\n"
+#~ "    return 0.0\n"
+#~ "\n"
+#~ "# Good function - single return\n"
+#~ "@ti.func\n"
+#~ "def safe_sqrt(x):\n"
+#~ "  rst = 0.0\n"
+#~ "  if x >= 0:\n"
+#~ "    rst = ti.sqrt(x)\n"
+#~ "  else:\n"
+#~ "    rst = 0.0\n"
+#~ "  return rst"
+#~ msgstr ""
+
+#~ msgid "Data layout"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Non-power-of-two tensor dimensions "
+#~ "are promoted into powers of two "
+#~ "and thus these tensors will occupy "
+#~ "more virtual address space. For example,"
+#~ " a tensor of size ``(18, 65)`` "
+#~ "will be materialized as ``(32, 128)``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: when these scalar functions are"
+#~ " applied on :ref:`matrix` and "
+#~ ":ref:`vector`, it's applied element-wise, "
+#~ "for example:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A = ti.sin(B)\n"
+#~ "# is equalivant to (assuming B is a 3x2 matrix):\n"
+#~ "for i in ti.static(range(3)):\n"
+#~ "    for j in ti.static(range(2)):\n"
+#~ "        A[i, j] = ti.sin(B[i, j])"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*true divisions* on integral types will"
+#~ " first cast their operands to the "
+#~ "default float point type."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*floor divisions* on float-point types"
+#~ " will first cast their operands to"
+#~ " the default integer type."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To avoid such implicit casting, you "
+#~ "can manually cast your operands to "
+#~ "desired types, using ``ti.cast``. Read "
+#~ ":ref:`default_precisions` for more details on"
+#~ " default numerical types."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Debug your program with ``print(x)``. "
+#~ "For example, if ``x`` is ``23``, "
+#~ "then it shows:"
+#~ msgstr ""
+
+#~ msgid "Embedding the language in ``python`` has the following advantages:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Creating aliases for global variables "
+#~ "and functions with cumbersome names can"
+#~ " sometimes improve readability. In Taichi,"
+#~ " this can be done by assigning "
+#~ "kernel and function local variables with"
+#~ " ``ti.static()``, which forces Taichi to"
+#~ " use standard python pointer assignement."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By default, numerical literals have "
+#~ "32-bit precisions. For example, ``42`` "
+#~ "has type ``ti.i32`` and ``3.14`` has "
+#~ "type ``ti.f32``. Default precisions can "
+#~ "be specified when initializing Taichi:"
+#~ msgstr ""
+
+#~ msgid "Use ``ti.cast`` to type-cast scalar values."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The default logging level is "
+#~ "``ti.INFO``. You can also override "
+#~ "default logging level by setting the "
+#~ "environment variable ``TI_LOG_LEVEL`` to "
+#~ "values such as ``trace`` and ``warn``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "# Python\n"
+#~ "ti.set_gdb_trigger(True)\n"
+#~ "\n"
+#~ "// C++\n"
+#~ "CoreState::set_trigger_gdb_when_crash(true);"
 #~ msgstr ""
 

@@ -7,36 +7,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-24 11:24+0800\n"
+"POT-Creation-Date: 2020-05-13 20:53-0400\n"
 "PO-Revision-Date: 2020-05-11 00:01-0400\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.3.1\n"
 
-#: ../../external.rst:2
+#: ../../external.rst:4
 msgid "Interacting with external arrays"
 msgstr "与外部数组进行交互"
 
-#: ../../external.rst:4
-msgid "Here ``external arrays`` refer to ``numpy.ndarray`` or ``torch.Tensor``."
-msgstr ""
-"此处 ``外部数组（external arrays）`` 是指 ``numpy.ndarray`` 或 ``torch."
-"Tensor``。"
+#: ../../external.rst:6
+#, fuzzy
+msgid "**External arrays** refer to ``numpy.ndarray`` or ``torch.Tensor``."
+msgstr "此处 ``外部数组（external arrays）`` 是指 ``numpy.ndarray`` 或 ``torch.Tensor``。"
 
-#: ../../external.rst:7
+#: ../../external.rst:9
 msgid "Conversion between Taichi tensors and external arrays"
 msgstr "Taichi张量与外部数组之间的转换"
 
-#: ../../external.rst:9
+#: ../../external.rst:11
 msgid "Use ``to_numpy``/``from_numpy``/``to_torch``/``from_torch``:"
 msgstr "使用 ``to_numpy``/``from_numpy``/``to_torch``/``from_torch``："
 
-#: ../../external.rst:11
+#: ../../external.rst:13
 msgid ""
 "n = 4\n"
 "m = 7\n"
@@ -112,20 +111,19 @@ msgstr ""
 "arr = mat.to_numpy()\n"
 "assert arr.shape == (n, m, 3, 4)"
 
-#: ../../external.rst:52
-msgid "Use external arrays as Taichi kernel parameters"
+#: ../../external.rst:54
+#, fuzzy
+msgid "Using external arrays as Taichi kernel parameters"
 msgstr "使用外部数组作为Taichi内核的参数"
 
-#: ../../external.rst:54
+#: ../../external.rst:56
 msgid ""
-"The type hint for external array parameters is ``ti.ext_arr()``. Please see "
-"the example below. Note that struct-for's on external arrays are not "
+"The type hint for external array parameters is ``ti.ext_arr()``. Please "
+"see the example below. Note that struct-for's on external arrays are not "
 "supported."
-msgstr ""
-"外部数组参数的类型提示是 ``ti.ext_arr()``。请参阅下面的示例。请注意，结构for循"
-"环不支持外部数组。"
+msgstr "外部数组参数的类型提示是 ``ti.ext_arr()``。请参阅下面的示例。请注意，结构for循环不支持外部数组。"
 
-#: ../../external.rst:57
+#: ../../external.rst:59
 msgid ""
 "n = 4\n"
 "m = 7\n"
@@ -150,3 +148,4 @@ msgid ""
 "  for j in range(m):\n"
 "    assert a[i, j] == i * j + i + j"
 msgstr ""
+
