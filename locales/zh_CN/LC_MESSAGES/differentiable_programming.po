@@ -7,84 +7,86 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-24 11:24+0800\n"
+"POT-Creation-Date: 2020-05-13 20:53-0400\n"
 "PO-Revision-Date: 2020-05-12 14:47+0800\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.3.1\n"
 
-#: ../../differentiable_programming.rst:2
+#: ../../differentiable_programming.rst:4
 msgid "Differentiable programming"
 msgstr "可微编程"
 
-#: ../../differentiable_programming.rst:4
+#: ../../differentiable_programming.rst:6
+#, fuzzy
 msgid ""
-"Please check out `the DiffTaichi paper <https://arxiv.org/pdf/1910.00935.pdf>`_ "
-"and `video <https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ to learn more about "
+"This page is work in progress. Please check out `the DiffTaichi paper "
+"<https://arxiv.org/pdf/1910.00935.pdf>`_ and `video "
+"<https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ to learn more about "
 "Taichi differentiable programming."
 msgstr ""
-"了解更多可微编程的信息，请查看 `DiffTaichi的论文 <https://arxiv.org/"
-"pdf/1910.00935.pdf>`_ 和 `视频 <https://www.youtube.com/watch?"
-"v=Z1xvAZve9aE>`_ 。"
+"了解更多可微编程的信息，请查看 `DiffTaichi的论文 <https://arxiv.org/pdf/1910.00935.pdf>`_ 和"
+" `视频 <https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ 。"
 
-#: ../../differentiable_programming.rst:6
+#: ../../differentiable_programming.rst:8
 msgid ""
-"The `DiffTaichi repo <https://github.com/yuanming-hu/difftaichi>`_ contains 10 "
-"differentiable physical simulators built with Taichi differentiable programming."
+"The `DiffTaichi repo <https://github.com/yuanming-hu/difftaichi>`_ "
+"contains 10 differentiable physical simulators built with Taichi "
+"differentiable programming."
 msgstr ""
-"`DiffTaichi仓库 <https://github.com/yuanming-hu/difftaichi>`_ 包含10个使用Taichi"
-"可微分编程构建的可微编程物理模拟器。"
+"`DiffTaichi仓库 <https://github.com/yuanming-hu/difftaichi>`_ "
+"包含10个使用Taichi可微分编程构建的可微编程物理模拟器。"
 
-#: ../../differentiable_programming.rst:9
+#: ../../differentiable_programming.rst:11
 msgid ""
 "Unlike tools such as TensorFlow where **immutable** output buffers are "
-"generated, the **imperative** programming paradigm adopted in Taichi allows "
-"programmers to freely modify global tensors. To make automatic differentiation "
-"well-defined under this setting, we make the following assumption on Taichi "
-"programs for differentiable programming:"
+"generated, the **imperative** programming paradigm adopted in Taichi "
+"allows programmers to freely modify global tensors. To make automatic "
+"differentiation well-defined under this setting, we make the following "
+"assumption on Taichi programs for differentiable programming:"
 msgstr ""
-"与TensorFlow等生成 **不可变** 输出缓冲区的工具不同，Taichi采用的 **命令式** 编程"
-"范式允许程序员自由修改全局张量（多维数组）："
+"与TensorFlow等生成 **不可变** 输出缓冲区的工具不同，Taichi采用的 **命令式** "
+"编程范式允许程序员自由修改全局张量（多维数组）："
 
-#: ../../differentiable_programming.rst:14
+#: ../../differentiable_programming.rst:16
 msgid "**Global Data Access Rules:**"
 msgstr "**全局数据访问规则：**"
 
-#: ../../differentiable_programming.rst:16
-msgid ""
-"If a global tensor element is written more than once, then starting from the "
-"second write, the write **must** come in the form of an atomic add "
-"(“accumulation\", using ``ti.atomic_add`` or simply ``+=``)."
-msgstr ""
-"如果全局张量元素被多次写入，则从第二次写入开始，写入 **必须** 以原子加法的形式出"
-"现（ ``累加``，使用 ``ti.atomic_add`` 或直接使用 ``+ =`` ）。"
-
 #: ../../differentiable_programming.rst:18
 msgid ""
-"No read accesses happen to a global tensor element, until its accumulation is "
-"done."
-msgstr "在完成全局张量元素的累加之前，不会对全局张量元素进行读取访问。"
+"If a global tensor element is written more than once, then starting from "
+"the second write, the write **must** come in the form of an atomic add "
+"(“accumulation\", using ``ti.atomic_add`` or simply ``+=``)."
+msgstr ""
+"如果全局张量元素被多次写入，则从第二次写入开始，写入 **必须** 以原子加法的形式出现（ ``累加``，使用 ``ti.atomic_add``"
+" 或直接使用 ``+ =`` ）。"
 
 #: ../../differentiable_programming.rst:20
 msgid ""
-"**Kernel Simplicity Rule:** Kernel body consists of multiple `simply nested` "
-"for-loops. I.e., each for-loop can either contain exactly one (nested) for-loop "
-"(and no other statements), or a group of statements without loops."
-msgstr ""
-"**内核(Kernel)简化规则：** 内核主体由多个 `简单嵌套` 的for循环组成。 即，每个for"
-"循环可以只包含一个（嵌套的）for循环（不包含其他语句），也可以包含一组没有循环的"
-"语句。"
+"No read accesses happen to a global tensor element, until its "
+"accumulation is done."
+msgstr "在完成全局张量元素的累加之前，不会对全局张量元素进行读取访问。"
 
-#: ../../differentiable_programming.rst:23
+#: ../../differentiable_programming.rst:22
+msgid ""
+"**Kernel Simplicity Rule:** Kernel body consists of multiple `simply "
+"nested` for-loops. I.e., each for-loop can either contain exactly one "
+"(nested) for-loop (and no other statements), or a group of statements "
+"without loops."
+msgstr ""
+"**内核(Kernel)简化规则：** 内核主体由多个 `简单嵌套` 的for循环组成。 "
+"即，每个for循环可以只包含一个（嵌套的）for循环（不包含其他语句），也可以包含一组没有循环的语句。"
+
+#: ../../differentiable_programming.rst:25
 msgid "Example:"
 msgstr "例子："
 
-#: ../../differentiable_programming.rst:25
+#: ../../differentiable_programming.rst:27
 msgid ""
 "@ti.kernel\n"
 "def differentiable_task():\n"
@@ -120,24 +122,26 @@ msgstr ""
 "    for j in range(20):\n"
 "      ..."
 
-#: ../../differentiable_programming.rst:44
+#: ../../differentiable_programming.rst:46
 msgid "Taichi programs that violate this rule has an undefined gradient behavior."
 msgstr "违反此规则的Taichi程序将在执行梯度运算时产生未定义的行为。"
 
-#: ../../differentiable_programming.rst:48
+#: ../../differentiable_programming.rst:50
 msgid ""
-"**static for-loops** (e.g. ``for i in ti.static(range(4))``) will get unrolled "
-"by the Python frontend preprocessor and does not count as a level of loop."
+"**static for-loops** (e.g. ``for i in ti.static(range(4))``) will get "
+"unrolled by the Python frontend preprocessor and does not count as a "
+"level of loop."
 msgstr ""
-"**静态for循环** （例如 ``for i in ti.static(range(4))`` ）将被Python前端预"
-"处理器展开，并且不算作循环级别。"
+"**静态for循环** （例如 ``for i in ti.static(range(4))`` "
+"）将被Python前端预处理器展开，并且不算作循环级别。"
 
-#: ../../differentiable_programming.rst:51
+#: ../../differentiable_programming.rst:53
 msgid ""
-"A few examples with neural network controllers optimized using differentiable "
-"simulators and brute-force gradient descent:"
+"A few examples with neural network controllers optimized using "
+"differentiable simulators and brute-force gradient descent:"
 msgstr "使用微分模拟器和蛮力梯度下降对神经网络控制器进行优化的一些示例："
 
-#: ../../differentiable_programming.rst:59
+#: ../../differentiable_programming.rst:61
 msgid "Documentation WIP."
 msgstr "文档制作中。"
+

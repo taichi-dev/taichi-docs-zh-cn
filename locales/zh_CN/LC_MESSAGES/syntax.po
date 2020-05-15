@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 14:33+0800\n"
+"POT-Creation-Date: 2020-05-13 20:53-0400\n"
 "PO-Revision-Date: 2020-05-11 10:16+0800\n"
 "Last-Translator: archibate <17721388340@qq.com>\n"
 "Language: zh_CN\n"
@@ -36,30 +36,17 @@ msgstr "内核参数必须有类型提示。内核最多只能有 8 个参数，
 msgid ""
 "@ti.kernel\n"
 "def print_xy(x: ti.i32, y: ti.f32):\n"
-"  print(x + y)\n"
-"\n"
-"@ti.kernel\n"
-"def copy(x: ti.template(), y: ti.template()):\n"
-"  for i in x:\n"
-"    y[i] = x[i]"
+"    print(x + y)"
 msgstr ""
-"@ti.kernel\n"
-"def print_xy(x: ti.i32, y: ti.f32):\n"
-"  print(x + y)\n"
-"\n"
-"@ti.kernel\n"
-"def copy(x: ti.template(), y: ti.template()):\n"
-"  for i in x:\n"
-"    y[i] = x[i]"
 
-#: ../../syntax.rst:20
+#: ../../syntax.rst:16
 msgid ""
-"A kernel can have **scalar** return value. If a kernel has a return "
+"A kernel can have a **scalar** return value. If a kernel has a return "
 "value, it must be type-hinted. The return value will be automatically "
-"casted into the hinted type. e.g.,"
+"cast into the hinted type. e.g.,"
 msgstr ""
 
-#: ../../syntax.rst:23
+#: ../../syntax.rst:19
 msgid ""
 "@ti.kernel\n"
 "def add_xy(x: ti.f32, y: ti.f32) -> ti.i32:\n"
@@ -69,134 +56,80 @@ msgid ""
 "print(res)  # 3, since return type is ti.i32"
 msgstr ""
 
-#: ../../syntax.rst:33 ../../syntax.rst:56
-msgid ""
-"For differentiable programming kernels should better have either serial "
-"statements or a single parallel for-loop. If you don't use differentiable"
-" programming, feel free to ignore this tip."
-msgstr "对于可微编程，内核中最好使用串行语句或单个并行 for 循环。如果您不使用可微编程，可以忽略此提示。"
-
-#: ../../syntax.rst:37
+#: ../../syntax.rst:31
 msgid ""
 "For now, we only support one scalar as return value. Returning "
-"``ti.Matrix`` or `ti.Vector`` is not supported. Python-style tuple return"
-" is not supported. e.g.:"
+"``ti.Matrix`` or ``ti.Vector`` is not supported. Python-style tuple "
+"return is not supported either. For example:"
 msgstr ""
 
-#: ../../syntax.rst:39
+#: ../../syntax.rst:33
 msgid ""
 "@ti.kernel\n"
 "def bad_kernel() -> ti.Matrix:\n"
-"    return ti.Matrix([[1, 0], [0, 1]])  # ERROR!\n"
+"    return ti.Matrix([[1, 0], [0, 1]])  # Error\n"
 "\n"
 "@ti.kernel\n"
 "def bad_kernel() -> (ti.i32, ti.f32):\n"
 "    x = 1\n"
 "    y = 0.5\n"
-"    return x, y  #  ERROR!"
+"    return x, y  # Error"
+msgstr ""
+
+#: ../../syntax.rst:46
+msgid ""
+"We also support **template arguments** (see "
+":ref:`template_metaprogramming`) and **external array arguments** (see "
+":ref:`external`) in Taichi kernels."
+msgstr ""
+
+#: ../../syntax.rst:50
+msgid ""
+"When using differentiable programming, there are a few more constraints "
+"on kernel structures. See the **Kernel Simplicity Rule** in "
+":ref:`differentiable`."
 msgstr ""
 
 #: ../../syntax.rst:52
 msgid ""
-"For correct gradient behaviors in differentiable programming, please "
-"refrain from using kernel return values. Instead, store the result into a"
-" global variable (e.g. ``loss[None]``)."
+"Also, please do not use kernel return values in differentiable "
+"programming, since the return value will not be tracked by automatic "
+"differentiation. Instead, store the result into a global variable (e.g. "
+"``loss[None]``)."
 msgstr ""
 
-#: ../../syntax.rst:54
-msgid "(TODO: move the following to advanced topics)"
-msgstr ""
-
-#: ../../syntax.rst:58
-msgid ""
-"@ti.kernel\n"
-"def a_hard_kernel_to_auto_differentiate():\n"
-"  sum = 0\n"
-"  for i in x:\n"
-"    sum += x[i]\n"
-"  for i in y:\n"
-"    y[i] = sum\n"
-"\n"
-"# instead, split it into multiple kernels to be nice to the Taichi "
-"autodiff compiler:\n"
-"\n"
-"@ti.kernel\n"
-"def reduce():\n"
-"  for i in x:\n"
-"    sum[None] += x[i]\n"
-"\n"
-"@ti.kernel\n"
-"def assign()\n"
-"  for i in y:\n"
-"    y[i] = sum[None]\n"
-"\n"
-"def main():\n"
-"  with ti.Tape(loss):\n"
-"    ...\n"
-"    sum[None] = 0\n"
-"    reduce()\n"
-"    assign()\n"
-"    ..."
-msgstr ""
-"@ti.kernel\n"
-"def a_hard_kernel_to_auto_differentiate():\n"
-"  sum = 0\n"
-"  for i in x:\n"
-"    sum += x[i]\n"
-"  for i in y:\n"
-"    y[i] = sum\n"
-"\n"
-"# 相对地，将上面的部分拆为多个内核对 Taichi 的自动差异 (autodiff) 编译器更好\n"
-"\n"
-"@ti.kernel\n"
-"def reduce():\n"
-"  for i in x:\n"
-"    sum[None] += x[i]\n"
-"\n"
-"@ti.kernel\n"
-"def assign()\n"
-"  for i in y:\n"
-"    y[i] = sum[None]\n"
-"\n"
-"def main():\n"
-"  with ti.Tape(loss):\n"
-"    ...\n"
-"    sum[None] = 0\n"
-"    reduce()\n"
-"    assign()\n"
-"    ..."
-
-#: ../../syntax.rst:90
+#: ../../syntax.rst:55
 msgid "Functions"
 msgstr "函数"
 
-#: ../../syntax.rst:92
+#: ../../syntax.rst:57
+#, fuzzy
 msgid ""
 "Use ``@ti.func`` to decorate your Taichi functions. These functions are "
-"callable only in `Taichi`-scope. Don't call them in `Python`-scope. All "
-"function calls are force-inlined, so no recursion supported."
+"callable only in `Taichi`-scope. Do not call them in `Python`-scopes."
 msgstr ""
 "使用 ``@ti.func`` 来装饰您的 Taichi 功能。这些函数只能在 `Taichi` 作用域内调用。不要在 `Python` "
 "作用域内调用它们。所有函数调用都是强制内联（inline）的，因此不支持递归。"
 
-#: ../../syntax.rst:94
+#: ../../syntax.rst:59
+#, fuzzy
 msgid ""
 "@ti.func\n"
 "def laplacian(t, i, j):\n"
-"  return inv_dx2 * (\n"
-"      -4 * p[t, i, j] + p[t, i, j - 1] + p[t, i, j + 1] + p[t, i + 1, j] "
-"+\n"
-"      p[t, i - 1, j])\n"
+"    return inv_dx2 * (\n"
+"        -4 * p[t, i, j] + p[t, i, j - 1] + p[t, i, j + 1] + p[t, i + 1, "
+"j] +\n"
+"        p[t, i - 1, j])\n"
 "\n"
 "@ti.kernel\n"
 "def fdtd(t: ti.i32):\n"
-"  for i in range(n_grid): # Parallelized over GPU threads\n"
-"    for j in range(n_grid):\n"
-"      laplacian_p = laplacian(t - 2, i, j)\n"
-"      laplacian_q = laplacian(t - 1, i, j)\n"
-"      p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
-"          c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
-"                     t - 2, i, j] - c * alpha * dt * laplacian_p"
+"    for i in range(n_grid): # Parallelized\n"
+"        for j in range(n_grid): # Serial loops in each parallel threads\n"
+"            laplacian_p = laplacian(t - 2, i, j)\n"
+"            laplacian_q = laplacian(t - 1, i, j)\n"
+"            p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
+"                c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
+"                           t - 2, i, j] - c * alpha * dt * laplacian_p"
 msgstr ""
 "@ti.func\n"
 "def laplacian(t, i, j):\n"
@@ -215,16 +148,18 @@ msgstr ""
 "          c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
 "                     t - 2, i, j] - c * alpha * dt * laplacian_p"
 
-#: ../../syntax.rst:115
+#: ../../syntax.rst:80
+#, fuzzy
 msgid ""
-"Functions with multiple ``return``'s are not supported for now. Use a "
-"**local** variable to store the results, so that you end up with only one"
-" ``return``:"
+"Functions with multiple ``return`` statements are not supported for now. "
+"Use a **local** variable to store the results, so that you end up with "
+"only one ``return`` statement:"
 msgstr "目前不支持具有多个 ``return`` 语句的函数。请用 **局部变量** 暂存结果，以便最终只有一个 ``return`` ："
 
-#: ../../syntax.rst:117
+#: ../../syntax.rst:82
+#, fuzzy
 msgid ""
-"# Bad function - two return's\n"
+"# Bad function - two return statements\n"
 "@ti.func\n"
 "def safe_sqrt(x):\n"
 "  if x >= 0:\n"
@@ -232,7 +167,7 @@ msgid ""
 "  else:\n"
 "    return 0.0\n"
 "\n"
-"# Good function - single return\n"
+"# Good function - single return statement\n"
 "@ti.func\n"
 "def safe_sqrt(x):\n"
 "  rst = 0.0\n"
@@ -260,58 +195,25 @@ msgstr ""
 "    rst = 0.0\n"
 "  return rst"
 
-#: ../../syntax.rst:139
+#: ../../syntax.rst:104
 msgid ""
 "Currently, all functions are force-inlined. Therefore, no recursion is "
 "allowed."
 msgstr "目前，所有函数都是强制内联的。因此，不能使用递归。"
 
-#: ../../syntax.rst:143
+#: ../../syntax.rst:108
 msgid "Function arguments are passed by value."
 msgstr "函数的参数是以值传递的。"
 
-#: ../../syntax.rst:147
-msgid "Data layout"
-msgstr "数据结构"
-
-#: ../../syntax.rst:148
-msgid ""
-"Non-power-of-two tensor dimensions are promoted into powers of two and "
-"thus these tensors will occupy more virtual address space. For example, a"
-" tensor of size ``(18, 65)`` will be materialized as ``(32, 128)``."
-msgstr ""
-"非二次幂（power-of-two）的张量维度将被提升至二次幂，因此这些张量将占据更多的虚拟地址空间。例如，一个 ``(18, 65)`` "
-"大小的张量将会被实例化为 ``(32, 128)`` 的大小。"
-
-#: ../../syntax.rst:153
+#: ../../syntax.rst:113
 msgid "Scalar arithmetics"
 msgstr "标量算术"
 
-#: ../../syntax.rst:154
+#: ../../syntax.rst:114
 msgid "Supported scalar functions:"
 msgstr "Taichi 支持的标量函数："
 
-#: ../../syntax.rst:178
-msgid ""
-"Note: when these scalar functions are applied on :ref:`matrix` and "
-":ref:`vector`, it's applied element-wise, for example:"
-msgstr "注意：当这些标量函数被作用在矩阵或向量上时，它们会被逐个作用到所有元素，例如："
-
-#: ../../syntax.rst:180
-msgid ""
-"A = ti.sin(B)\n"
-"# is equalivant to (assuming B is a 3x2 matrix):\n"
-"for i in ti.static(range(3)):\n"
-"    for j in ti.static(range(2)):\n"
-"        A[i, j] = ti.sin(B[i, j])"
-msgstr ""
-"A = ti.sin(B)\n"
-"# 相当于（假设 B 是一个 3x2 的矩阵）:\n"
-"for i in ti.static(range(3)):\n"
-"    for j in ti.static(range(2)):\n"
-"        A[i, j] = ti.sin(B[i, j])"
-
-#: ../../syntax.rst:190
+#: ../../syntax.rst:140
 msgid ""
 "Python 3 distinguishes ``/`` (true division) and ``//`` (floor division)."
 " For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = 0``, ``4.2"
@@ -320,127 +222,79 @@ msgstr ""
 "Python 3 中 ``/`` （浮点数除法）和 ``//`` （整数除法）是区分开来的。例如，``1.0 / 2.0 = 0.5``，``1 "
 "/ 2 = 0.5``，``1 // 2 = 0``，``4.2 // 2 = 2``。Taichi 也遵循了这个设计："
 
-#: ../../syntax.rst:193
+#: ../../syntax.rst:143
+#, fuzzy
 msgid ""
-"*true divisions* on integral types will first cast their operands to the "
-"default float point type."
+"**true divisions** on integral types will first cast their operands to "
+"the default float point type."
 msgstr "*浮点数除法 (true divisions)* 用在整数型上会首先将它们的操作数投射到默认的浮点数型。"
 
-#: ../../syntax.rst:194
+#: ../../syntax.rst:144
+#, fuzzy
 msgid ""
-"*floor divisions* on float-point types will first cast their operands to "
-"the default integer type."
+"**floor divisions** on float-point types will first cast their operands "
+"to the default integer type."
 msgstr "*整数除法 (floor divisions)* 用在浮点数型上会首先将它们的操作数投射到默认的整数型。"
 
-#: ../../syntax.rst:196
+#: ../../syntax.rst:146
+#, fuzzy
 msgid ""
 "To avoid such implicit casting, you can manually cast your operands to "
-"desired types, using ``ti.cast``. Read :ref:`default_precisions` for more"
-" details on default numerical types."
+"desired types, using ``ti.cast``. See :ref:`default_precisions` for more "
+"details on default numerical types."
 msgstr ""
 "为避免这样的隐式转换，你可以手动使用 ``ti.cast`` 将你的操作数转换为你需要的类型。查看 "
 ":ref:`default_precisions` 获取数字类型的更多细节。"
 
-#: ../../syntax.rst:200
+#: ../../syntax.rst:151
+#, fuzzy
+msgid ""
+"When these scalar functions are applied on :ref:`matrix` and "
+":ref:`vector`, they are applied in an element-wise manner. For example:"
+msgstr "注意：当这些标量函数被作用在矩阵或向量上时，它们会被逐个作用到所有元素，例如："
+
+#: ../../syntax.rst:154
+#, fuzzy
+msgid ""
+"B = ti.Matrix([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])\n"
+"\n"
+"A = ti.sin(B)\n"
+"# is equivalent to\n"
+"for i in ti.static(range(2)):\n"
+"    for j in ti.static(range(3)):\n"
+"        A[i, j] = ti.sin(B[i, j])"
+msgstr ""
+"A = ti.sin(B)\n"
+"# 相当于（假设 B 是一个 3x2 的矩阵）:\n"
+"for i in ti.static(range(3)):\n"
+"    for j in ti.static(range(2)):\n"
+"        A[i, j] = ti.sin(B[i, j])"
+
+#: ../../syntax.rst:166
 msgid "Debugging"
 msgstr "调试"
 
-#: ../../syntax.rst:202
+#: ../../syntax.rst:168
 msgid ""
 "Debug your program with ``print(x)``. For example, if ``x`` is ``23``, "
-"then it shows:"
+"then it prints"
 msgstr ""
 
-#: ../../syntax.rst:204
+#: ../../syntax.rst:170
 msgid "[debug] x = 23"
 msgstr ""
 
-#: ../../syntax.rst:208
+#: ../../syntax.rst:174
 msgid "in the console."
 msgstr ""
 
-#: ../../syntax.rst:212
+#: ../../syntax.rst:178
 msgid ""
 "This is not the same as the ``print`` in Python-scope. For now ``print`` "
 "in Taichi only takes **scalar numbers** as input. Strings, vectors and "
 "matrices are not supported. Please use ``print(v[0]); print(v[1])`` if "
 "you want to print a vector."
 msgstr ""
-
-#: ../../syntax.rst:216
-msgid "Why Python frontend"
-msgstr "为什么选用 Python 作为前端"
-
-#: ../../syntax.rst:218
-msgid "Embedding the language in ``python`` has the following advantages:"
-msgstr "将语言嵌入到 ``python`` 有如下优点："
-
-#: ../../syntax.rst:220
-msgid "Easy to learn. Taichi has a very similar syntax to Python."
-msgstr "容易学习。Taichi 具有和 Python 非常相似的语法。"
-
-#: ../../syntax.rst:221
-msgid "Easy to run. No ahead-of-time compilation is needed."
-msgstr "容易运行。无需预先编译即可运行。"
-
-#: ../../syntax.rst:222
-msgid "This design allows people to reuse existing python infrastructure:"
-msgstr "这种设计使我们得以重用 python 的基础设施："
-
-#: ../../syntax.rst:224
-msgid ""
-"IDEs. A python IDE mostly works for Taichi with syntax highlighting, "
-"syntax checking, and autocomplete."
-msgstr "集成开发环境（IDE）。任何一个 python 的 IDE 将同样支持所有的 Taichi 语法高亮、语法检查和自动补全。"
-
-#: ../../syntax.rst:225
-msgid ""
-"Package manager (pip). A developed Taichi application and be easily "
-"submitted to ``PyPI`` and others can easily set it up with ``pip``."
-msgstr "包管理器 (pip)。开发好的 Taichi 应用可以被轻松地上传到 ``PyPI`` 并被其他人轻松地用 ``pip`` 安装。"
-
-#: ../../syntax.rst:226
-msgid ""
-"Existing packages. Interacting with other python components (e.g. "
-"``matplotlib`` and ``numpy``) is just trivial."
-msgstr "现成的包。和其它 python 库（例如 ``matplotlib`` 和 ``numpy``）一起使用也是轻而易举的。"
-
-#: ../../syntax.rst:228
-msgid ""
-"The built-in AST manipulation tools in ``python`` allow us to do magical "
-"things, as long as the kernel body can be parsed by the Python parser."
-msgstr "只要内核主体能够被 Python 解释器解析，``python`` 内置的 AST（抽象语法树）处理工具就允许我们完成一些神奇的事情。"
-
-#: ../../syntax.rst:230
-msgid "However, this design has drawbacks as well:"
-msgstr "然而，这一设计同时也存在着这些缺点："
-
-#: ../../syntax.rst:232
-msgid ""
-"Taichi kernels must parse-able by Python parsers. This means Taichi "
-"syntax cannot go beyond Python syntax."
-msgstr "Taichi 内核必须是可以被 Python 解释器解析的。这意味着 Taichi 语法无法脱离 Python 的语法。"
-
-#: ../../syntax.rst:234
-msgid ""
-"For example, indexing is always needed when accessing elements in Taichi "
-"tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the value"
-" in ``x`` if ``x`` is 0D. This is because ``x = 123`` will set ``x`` "
-"itself (instead of its containing value) to be the constant ``123`` in "
-"python syntax, and, unfortunately, we cannot modify this behavior."
-msgstr ""
-"例如，获取 Taichi 张量中的元素总是需要下标，即使是 0 维张量。需要用 ``x[None] = 123`` 来给 0 维的 ``x`` "
-"赋予值。这是因为在 python 语法中 ``x = 123`` 会设置 ``x`` 本身（而非其包含的值）为恒量 "
-"``123``，而不幸的是我们没法改变解释器的这个行为。"
-
-#: ../../syntax.rst:236
-msgid ""
-"Python has relatively low performance. This can cause a performance issue"
-" when initializing large Taichi tensors with pure python scripts. A "
-"Taichi kernel should be used to initialize a huge tensor."
-msgstr ""
-"Python 的性能相对较低。比如仅靠 Python 作用域来初始化很大的张量时，会导致性能问题。所以较大张量的初始化应该放在 Taichi "
-"内核中。"
 
 #~ msgid "``ti.sqr(x)``"
 #~ msgstr ""
@@ -509,4 +363,231 @@ msgstr ""
 
 #~ msgid "Debug your program with ``print(x)``."
 #~ msgstr "使用 ``print(x)`` 调试你的程序。"
+
+#~ msgid ""
+#~ "@ti.kernel\n"
+#~ "def print_xy(x: ti.i32, y: ti.f32):\n"
+#~ "  print(x + y)\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def copy(x: ti.template(), y: ti.template()):\n"
+#~ "  for i in x:\n"
+#~ "    y[i] = x[i]"
+#~ msgstr ""
+#~ "@ti.kernel\n"
+#~ "def print_xy(x: ti.i32, y: ti.f32):\n"
+#~ "  print(x + y)\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def copy(x: ti.template(), y: ti.template()):\n"
+#~ "  for i in x:\n"
+#~ "    y[i] = x[i]"
+
+#~ msgid ""
+#~ "A kernel can have **scalar** return "
+#~ "value. If a kernel has a return"
+#~ " value, it must be type-hinted. "
+#~ "The return value will be automatically"
+#~ " casted into the hinted type. e.g.,"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For differentiable programming kernels should"
+#~ " better have either serial statements "
+#~ "or a single parallel for-loop. If"
+#~ " you don't use differentiable programming,"
+#~ " feel free to ignore this tip."
+#~ msgstr "对于可微编程，内核中最好使用串行语句或单个并行 for 循环。如果您不使用可微编程，可以忽略此提示。"
+
+#~ msgid ""
+#~ "For now, we only support one "
+#~ "scalar as return value. Returning "
+#~ "``ti.Matrix`` or `ti.Vector`` is not "
+#~ "supported. Python-style tuple return is"
+#~ " not supported. e.g.:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "@ti.kernel\n"
+#~ "def bad_kernel() -> ti.Matrix:\n"
+#~ "    return ti.Matrix([[1, 0], [0, 1]])  # ERROR!\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def bad_kernel() -> (ti.i32, ti.f32):\n"
+#~ "    x = 1\n"
+#~ "    y = 0.5\n"
+#~ "    return x, y  #  ERROR!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For correct gradient behaviors in "
+#~ "differentiable programming, please refrain "
+#~ "from using kernel return values. "
+#~ "Instead, store the result into a "
+#~ "global variable (e.g. ``loss[None]``)."
+#~ msgstr ""
+
+#~ msgid "(TODO: move the following to advanced topics)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "@ti.kernel\n"
+#~ "def a_hard_kernel_to_auto_differentiate():\n"
+#~ "  sum = 0\n"
+#~ "  for i in x:\n"
+#~ "    sum += x[i]\n"
+#~ "  for i in y:\n"
+#~ "    y[i] = sum\n"
+#~ "\n"
+#~ "# instead, split it into multiple "
+#~ "kernels to be nice to the Taichi"
+#~ " autodiff compiler:\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def reduce():\n"
+#~ "  for i in x:\n"
+#~ "    sum[None] += x[i]\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def assign()\n"
+#~ "  for i in y:\n"
+#~ "    y[i] = sum[None]\n"
+#~ "\n"
+#~ "def main():\n"
+#~ "  with ti.Tape(loss):\n"
+#~ "    ...\n"
+#~ "    sum[None] = 0\n"
+#~ "    reduce()\n"
+#~ "    assign()\n"
+#~ "    ..."
+#~ msgstr ""
+#~ "@ti.kernel\n"
+#~ "def a_hard_kernel_to_auto_differentiate():\n"
+#~ "  sum = 0\n"
+#~ "  for i in x:\n"
+#~ "    sum += x[i]\n"
+#~ "  for i in y:\n"
+#~ "    y[i] = sum\n"
+#~ "\n"
+#~ "# 相对地，将上面的部分拆为多个内核对 Taichi 的自动差异 (autodiff) 编译器更好\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def reduce():\n"
+#~ "  for i in x:\n"
+#~ "    sum[None] += x[i]\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def assign()\n"
+#~ "  for i in y:\n"
+#~ "    y[i] = sum[None]\n"
+#~ "\n"
+#~ "def main():\n"
+#~ "  with ti.Tape(loss):\n"
+#~ "    ...\n"
+#~ "    sum[None] = 0\n"
+#~ "    reduce()\n"
+#~ "    assign()\n"
+#~ "    ..."
+
+#~ msgid "Data layout"
+#~ msgstr "数据结构"
+
+#~ msgid ""
+#~ "Non-power-of-two tensor dimensions "
+#~ "are promoted into powers of two "
+#~ "and thus these tensors will occupy "
+#~ "more virtual address space. For example,"
+#~ " a tensor of size ``(18, 65)`` "
+#~ "will be materialized as ``(32, 128)``."
+#~ msgstr ""
+#~ "非二次幂（power-of-two）的张量维度将被提升至二次幂，因此这些张量将占据更多的虚拟地址空间。例如，一个"
+#~ " ``(18, 65)`` 大小的张量将会被实例化为 ``(32, 128)``"
+#~ " 的大小。"
+
+#~ msgid ""
+#~ "Debug your program with ``print(x)``. "
+#~ "For example, if ``x`` is ``23``, "
+#~ "then it shows:"
+#~ msgstr ""
+
+#~ msgid "Why Python frontend"
+#~ msgstr "为什么选用 Python 作为前端"
+
+#~ msgid "Embedding the language in ``python`` has the following advantages:"
+#~ msgstr "将语言嵌入到 ``python`` 有如下优点："
+
+#~ msgid "Easy to learn. Taichi has a very similar syntax to Python."
+#~ msgstr "容易学习。Taichi 具有和 Python 非常相似的语法。"
+
+#~ msgid "Easy to run. No ahead-of-time compilation is needed."
+#~ msgstr "容易运行。无需预先编译即可运行。"
+
+#~ msgid "This design allows people to reuse existing python infrastructure:"
+#~ msgstr "这种设计使我们得以重用 python 的基础设施："
+
+#~ msgid ""
+#~ "IDEs. A python IDE mostly works "
+#~ "for Taichi with syntax highlighting, "
+#~ "syntax checking, and autocomplete."
+#~ msgstr "集成开发环境（IDE）。任何一个 python 的 IDE 将同样支持所有的 Taichi 语法高亮、语法检查和自动补全。"
+
+#~ msgid ""
+#~ "Package manager (pip). A developed "
+#~ "Taichi application and be easily "
+#~ "submitted to ``PyPI`` and others can "
+#~ "easily set it up with ``pip``."
+#~ msgstr "包管理器 (pip)。开发好的 Taichi 应用可以被轻松地上传到 ``PyPI`` 并被其他人轻松地用 ``pip`` 安装。"
+
+#~ msgid ""
+#~ "Existing packages. Interacting with other "
+#~ "python components (e.g. ``matplotlib`` and "
+#~ "``numpy``) is just trivial."
+#~ msgstr "现成的包。和其它 python 库（例如 ``matplotlib`` 和 ``numpy``）一起使用也是轻而易举的。"
+
+#~ msgid ""
+#~ "The built-in AST manipulation tools "
+#~ "in ``python`` allow us to do "
+#~ "magical things, as long as the "
+#~ "kernel body can be parsed by the"
+#~ " Python parser."
+#~ msgstr "只要内核主体能够被 Python 解释器解析，``python`` 内置的 AST（抽象语法树）处理工具就允许我们完成一些神奇的事情。"
+
+#~ msgid "However, this design has drawbacks as well:"
+#~ msgstr "然而，这一设计同时也存在着这些缺点："
+
+#~ msgid ""
+#~ "Taichi kernels must parse-able by "
+#~ "Python parsers. This means Taichi syntax"
+#~ " cannot go beyond Python syntax."
+#~ msgstr "Taichi 内核必须是可以被 Python 解释器解析的。这意味着 Taichi 语法无法脱离 Python 的语法。"
+
+#~ msgid ""
+#~ "For example, indexing is always needed"
+#~ " when accessing elements in Taichi "
+#~ "tensors, even if the tensor is 0D."
+#~ " Use ``x[None] = 123`` to set "
+#~ "the value in ``x`` if ``x`` is "
+#~ "0D. This is because ``x = 123``"
+#~ " will set ``x`` itself (instead of"
+#~ " its containing value) to be the "
+#~ "constant ``123`` in python syntax, and,"
+#~ " unfortunately, we cannot modify this "
+#~ "behavior."
+#~ msgstr ""
+#~ "例如，获取 Taichi 张量中的元素总是需要下标，即使是 0 维张量。需要用 "
+#~ "``x[None] = 123`` 来给 0 维的 ``x``"
+#~ " 赋予值。这是因为在 python 语法中 ``x = 123`` "
+#~ "会设置 ``x`` 本身（而非其包含的值）为恒量 "
+#~ "``123``，而不幸的是我们没法改变解释器的这个行为。"
+
+#~ msgid ""
+#~ "Python has relatively low performance. "
+#~ "This can cause a performance issue "
+#~ "when initializing large Taichi tensors "
+#~ "with pure python scripts. A Taichi "
+#~ "kernel should be used to initialize "
+#~ "a huge tensor."
+#~ msgstr ""
+#~ "Python 的性能相对较低。比如仅靠 Python "
+#~ "作用域来初始化很大的张量时，会导致性能问题。所以较大张量的初始化应该放在 Taichi 内核中。"
 

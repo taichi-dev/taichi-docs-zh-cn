@@ -64,5 +64,5 @@ msgid "To print intermediate IR generated: ``export TI_PRINT_IR=1``"
 msgstr "要打印生成的中间表示码： ``export TI_PRINT_IR=1``"
 
 #: ../../global_settings.rst:13
-msgid "To print verbosed details: ``export TI_VERBOSE=1``"
+msgid "To print verbose details: ``export TI_VERBOSE=1``"
 msgstr "要打印详细信息： ``export TI_VERBOSE=1``"
