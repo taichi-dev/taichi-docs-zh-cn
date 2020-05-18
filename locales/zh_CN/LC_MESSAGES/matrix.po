@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-17 23:33+0800\n"
-"PO-Revision-Date: 2020-05-18 10:55+0800\n"
+"PO-Revision-Date: 2020-05-18 19:27+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: ../../matrix.rst:15
 msgid "``ti.cross(a, b)``, where ``a`` and ``b`` are 3D vectors (i.e. ``3x1`` matrices)"
-msgstr ""
+msgstr "``ti.cross(a, b)`` , 其中， ``a`` 和 ``b`` 是3维向量（例如， ``3x1`` 的矩阵）"
 
 #: ../../matrix.rst:16
 msgid "``A.cast(type)``"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../matrix.rst:18
 msgid "``U, sigma, V = ti.svd(A, ti.f32)`` (Note that ``sigma`` is a ``3x3`` diagonal matrix)"
-msgstr ""
+msgstr "``U, sigma, V = ti.svd(A, ti.f32)``  （其中 ``sigma`` 是一个 ``3x3`` 矩阵）"
 
 #: ../../matrix.rst:20
 msgid "TODO: doc here better like Vector. WIP"
@@ -89,7 +89,7 @@ msgstr "作为临时本地变量。一个由 ``n*m`` 个标量构成的 ``n×m``
 
 #: ../../matrix.rst:25
 msgid "as a an element of a global tensor. In this case, the tensor is an N-dimensional array of ``n by m`` matrices."
-msgstr "作为全局张量的一个成员。在这种情况下， 张量是一个由 ``n×m`` 阶矩阵构成的N-维的向量。"
+msgstr "作为全局张量的一个成员。在这种情况下， 张量是一个由 ``n×m`` 阶矩阵构成的N-维的数组。"
 
 #: ../../matrix.rst:28
 msgid "Declaration"
@@ -220,7 +220,7 @@ msgstr "元素访问"
 
 #: ../../matrix.rst:113
 msgid "As global tensors of vectors"
-msgstr "作为全局的向量构成的张量"
+msgstr "作为全局的由向量构成的张量"
 
 #: ../../matrix.rst:116
 msgid "(tensor of matrices) the tensor of matrices"
@@ -260,15 +260,15 @@ msgstr "访问矩阵形式张量中的标量元素时， **必须** 使用两对
 
 #: ../../matrix.rst:135
 msgid "The indices in the first pair of brackets locate the matrix inside the tensor of matrices;"
-msgstr "第一对方括号中的索引找到张量中的矩阵;"
+msgstr "第一对方括号中的下标找到张量中的矩阵;"
 
 #: ../../matrix.rst:136
 msgid "The indices in the second pair of brackets locate the scalar element inside the matrix."
-msgstr "第二对方括号中的索引找到矩阵中的标量元素。"
+msgstr "第二对方括号中的下标找到矩阵中的标量元素。"
 
 #: ../../matrix.rst:138
 msgid "For 0-D tensors of matrices, indices in the first pair of brackets should be ``[None]``."
-msgstr "对于0维的矩阵形式的张量，第一对方括号中的索引应该为 ``[None]`` 。"
+msgstr "对于0维的矩阵形式的张量，第一对方括号中的下标应该为 ``[None]`` 。"
 
 #: ../../matrix.rst:147
 msgid "(Matrix) the matrix"
