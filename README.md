@@ -108,7 +108,7 @@ Pull request 的详细操作方法可以参考：[Pull Request 的命令行管�
 
 翻译全被认领了？没关系！你还可以帮我们**更新**旧的翻译。
 
-[带有 needs update 标签的 Issue](https://github.com/taichi-dev/taichi-docs-zh-cn/issues?q=is%3Aissue+is%3Aopen+label%3A%22needs+update%22) 是需要更新的翻译。
+带有 [needs update 标签](https://github.com/taichi-dev/taichi-docs-zh-cn/issues?q=is%3Aissue+is%3Aopen+label%3A%22needs+update%22)的 Issue 是需要更新的翻译。
 比如 `[翻译需要更新] hello`，要认领的话，就另外新建一个 Issue，标题为: `[翻译中] hello`。告诉大家你已经在更新这个翻译了。管理员会关闭之前那个 `[翻译需要更新] hello` 的 Issue。
 
 ## 开始翻译！
