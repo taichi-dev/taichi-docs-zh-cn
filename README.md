@@ -104,12 +104,29 @@ git push origin HEAD
 
 Pull request 的详细操作方法可以参考：[Pull Request 的命令行管理](http://www.ruanyifeng.com/blog/2017/07/pull_request.html)。
 
-## 我们还提供了一些便利的工具...
+# 如何更新旧翻译？
 
-Taichi 原文档更新之后，要想知道哪些部分更新了，可以输入下面的命令：
+翻译全被认领了？没关系！你还可以帮我们**更新**旧的翻译。
+
+在 [Issue 页面](https://github.com/taichi-dev/taichi-docs-zh-cn/issues)中，可以看到若干 `[翻译需要更新] hello` 这样的 Issue，这些就是需要更新的翻译了。
+要认领的话，就另外新建一个 Issue，标题为: `[翻译中] hello`。告诉大家你已经在更新这个翻译了。管理员会关闭之前那个 `[翻译需要更新] hello` 的 Issue。
+
+## 开始翻译！
+
+同样是使用 poedit 打开相应的 .po 文件：
+
+```bash
+poedit locales/zh_CN/LC_MESSAGES/hello.po
+```
+
+你会看到其中几行显示为橘黄色字体，那些就是原文档更新需要变动的部分了。
+
+## 我们还有一个小工具...
+
+Taichi 的原文档更新了之后，我们也需要更新相应的中文文档。要想知道哪些部分更新了，可以输入下面的命令：
 
 ```bash
 make fuzzy
 ```
 
-你应该会看到几行 .po 文件名，这些就是原文档更新之后存在差异的文件。在有差异的字符串前会有`#, fuzzy`的注释。不过该命令暂时只支持 *nix 平台。
+你会看到几行 .po 文件名，这些就是原文档更新之后存在差异的文件。在有差异的字符串前会有 `#, fuzzy` 的注释。不过该命令暂时只支持 *nix 平台。
