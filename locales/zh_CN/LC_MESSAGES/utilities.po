@@ -95,7 +95,7 @@ msgstr ""
 msgid ""
 "For example, this is part of the output by ``ti regression`` after "
 "enabling constant folding optimization pass:"
-msgstr "例如，这是启用恒定折叠优化传递后 ``ti regression`` 输出的一部分："
+msgstr "例如，这是启用常数折叠优化传递后 ``ti regression`` 输出的一部分："
 
 #: ../../utilities.rst:37
 msgid ""
