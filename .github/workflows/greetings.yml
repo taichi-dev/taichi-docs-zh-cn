@@ -1,6 +1,8 @@
-name: 给第一次参与贡献的人打声招呼
+name: 打声招呼
 on:
   pull_request:
+    types: [opened]
+  issues:
     types: [opened]
 
 jobs:
