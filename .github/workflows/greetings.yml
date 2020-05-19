@@ -1,7 +1,7 @@
 name: 给第一次参与贡献的人打声招呼
 on:
   pull_request:
-    type: [opened]
+    types: [opened]
 
 jobs:
   greeting:
