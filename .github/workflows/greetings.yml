@@ -1,6 +1,8 @@
 name: 给第一次参与贡献的人打声招呼
-
-on: [pull_request, issues]
+on:
+  pull_request:
+    type: [opened]
+  # TODO: also add issues
 
 jobs:
   greeting:
@@ -10,4 +12,4 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: '你好，欢迎来到 Taichi 中文社区！'
-        pr-message: '翻译辛苦了！接下来，请休息一会，审核菌马上就来……'
+        pr-message: '翻译辛苦了！请休息一会，审核菌马上就来……'
