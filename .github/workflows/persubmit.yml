@@ -14,5 +14,7 @@ jobs:
         python-version: 3.8
     - name: 将文档编译为 HTML
       run: |
+        git submodule update --init --depth=1
+        pushd taichi && git checkout master && popd
         make all
         make html
