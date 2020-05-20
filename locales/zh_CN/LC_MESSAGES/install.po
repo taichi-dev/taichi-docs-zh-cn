@@ -3,27 +3,28 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2020-05-19 23:48+0800\n"
+"PO-Revision-Date: 2020-05-20 15:08+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../install.rst:2
 msgid "Installation"
-msgstr ""
+msgstr "Taichi安装"
 
 #: ../../install.rst:4
 msgid "Taichi can be easily installed via ``pip``:"
-msgstr ""
+msgstr "Taichi 可以很轻松的通过 ``pip`` 进行安装 :"
 
 #: ../../install.rst:6
 msgid "python3 -m pip install taichi"
@@ -31,41 +32,45 @@ msgstr ""
 
 #: ../../install.rst:12
 msgid "Currently, Taichi only supports Python 3.6/3.7/3.8."
-msgstr ""
+msgstr "目前，Taichi支持的Python版本有3.6/3.7/3.8。"
 
 #: ../../install.rst:15
 msgid "On Ubuntu 19.04+, please execute ``sudo apt install libtinfo5``."
 msgstr ""
+"对于Ubuntu 19.04+，请执行 ``sudo apt install libtinfo5``  安装依赖项。"
 
 #: ../../install.rst:16
 msgid "On Arch Linux, please execute ``yaourt -S ncurses5-compat-libs``."
 msgstr ""
+"对于Arch Linux，请执行 ``yaourt -S ncurses5-compat-libs`` 安装依赖项。"
 
 #: ../../install.rst:17
 msgid ""
 "On Windows, please install `Microsoft Visual C++ Redistributable "
 "<https://aka.ms/vs/16/release/vc_redist.x64.exe>`_ if you haven't."
 msgstr ""
+"对于Windows，请预先安装运行组件库 `Microsoft Visual C++ Redistributable "
+"<https://aka.ms/vs/16/release/vc_redist.x64.exe>`_ ."
 
 #: ../../install.rst:21
 msgid "Troubleshooting"
-msgstr ""
+msgstr "故障排除"
 
 #: ../../install.rst:24
 msgid "CUDA issues"
-msgstr ""
+msgstr "CUDA相关问题"
 
 #: ../../install.rst:26
 msgid "If Taichi crashes with the following messages:"
-msgstr ""
+msgstr "如果Taichi报告以下崩溃信息:"
 
 #: ../../install.rst:28
 msgid ""
 "[Taichi] mode=release\n"
 "[Taichi] version 0.6.0, supported archs: [cpu, cuda, opengl], commit "
 "14094f25, python 3.8.2\n"
-"[W 05/14/20 10:46:49.549] [cuda_driver.h:call_with_warning@60] CUDA Error"
-" CUDA_ERROR_INVALID_DEVICE: invalid device ordinal while calling "
+"[W 05/14/20 10:46:49.549] [cuda_driver.h:call_with_warning@60] CUDA "
+"Error CUDA_ERROR_INVALID_DEVICE: invalid device ordinal while calling "
 "mem_advise (cuMemAdvise)\n"
 "[E 05/14/20 10:46:49.911] Received signal 7 (Bus error)"
 msgstr ""
@@ -73,38 +78,48 @@ msgstr ""
 #: ../../install.rst:36
 msgid ""
 "This might be due to the fact that your NVIDIA GPU is pre-Pascal and has "
-"limited support for `Unified Memory "
-"<https://www.nextplatform.com/2019/01/24/unified-memory-the-final-piece-"
-"of-the-gpu-programming-puzzle/>`_."
+"limited support for `Unified Memory <https://www.nextplatform."
+"com/2019/01/24/unified-memory-the-final-piece-of-the-gpu-programming-"
+"puzzle/>`_."
 msgstr ""
+"这可能是因为你使用的 NVIDIA GPU低于Pascal架构，这对 `统一寻址(Unified "
+"Memory) <https://www.nextplatform.com/2019/01/24/unified-memory-the-"
+"final-piece-of-the-gpu-programming-puzzle/>`_.会有限制。"
 
 #: ../../install.rst:38
 msgid ""
 "**Possible solution**: add ``export TI_USE_UNIFIED_MEMORY=0`` to your "
 "``~/.bashrc``. This disables unified memory usage in CUDA backend."
 msgstr ""
+"**解决方案**: 尝试添加 ``export TI_USE_UNIFIED_MEMORY=0`` 到 ``~/."
+"bashrc`` 。该操作将禁用CUDA后端使用unified memory。"
 
 #: ../../install.rst:41
 msgid "If you find other CUDA problems:"
-msgstr ""
+msgstr "如果你遇到了其他CUDA相关问题，不要气馁:"
 
 #: ../../install.rst:43
 msgid ""
-"**Possible solution**: add ``export TI_ENABLE_CUDA=0`` to your  "
-"``~/.bashrc``. This disables the CUDA backend completely and Taichi will "
-"fall back on other GPU backends such as OpenGL."
+"**Possible solution**: add ``export TI_ENABLE_CUDA=0`` to your  ``~/."
+"bashrc``. This disables the CUDA backend completely and Taichi will fall "
+"back on other GPU backends such as OpenGL."
 msgstr ""
+"**解决方案**:尝试添加 ``export TI_ENABLE_CUDA=0`` 到 ``~/.bashrc`` 。该操"
+"作将完全禁用CUDA后端，这样Taichi会依赖于其他GPU后端，如OpenGL。"
 
 #: ../../install.rst:46
 msgid "OpenGL issues"
-msgstr ""
+msgstr "OpenGL相关问题"
 
 #: ../../install.rst:48
 msgid ""
 "If Taichi crashes with a stack backtrace containing a line of "
-"``glfwCreateWindow`` (see `#958 <https://github.com/taichi-"
-"dev/taichi/issues/958>`_):"
+"``glfwCreateWindow`` (see `#958 <https://github.com/taichi-dev/taichi/"
+"issues/958>`_):"
 msgstr ""
+"针对Taichi 打印出的调用栈(stack backtrace)中包含 ``glfwCreateWindow`` 等"
+"信息的情况(更详细的问题描述请对照 `#958 <https://github.com/taichi-dev/"
+"taichi/issues/958>`_):"
 
 #: ../../install.rst:50
 msgid ""
@@ -120,33 +135,39 @@ msgid ""
 "_glfwPlatformCreateWindow\n"
 "/lib/python3.8/site-packages/taichi/core/../lib/taichi_core.so: "
 "glfwCreateWindow\n"
-"/lib/python3.8/site-packages/taichi/core/../lib/taichi_core.so: "
-"taichi::lang::opengl::initialize_opengl(bool)\n"
+"/lib/python3.8/site-packages/taichi/core/../lib/taichi_core.so: taichi::"
+"lang::opengl::initialize_opengl(bool)\n"
 "\n"
 "... (many lines, omitted)"
 msgstr ""
 
 #: ../../install.rst:66
 msgid ""
-"This is likely because you are running Taichi on a (virtual) machine with"
-" an old OpenGL API. Taichi requires OpenGL 4.3+ to work."
+"This is likely because you are running Taichi on a (virtual) machine "
+"with an old OpenGL API. Taichi requires OpenGL 4.3+ to work."
 msgstr ""
+"这很可能是因为你运行Taichi的虚拟机上的OpenGL版本过低。Taichi需要OpenGL "
+"4.3+ 才能工作。"
 
 #: ../../install.rst:68
 msgid ""
-"**Possible solution**: add ``export TI_ENABLE_OPENGL=0`` to your  "
-"``~/.bashrc`` even if you initialize Taichi with other backends than "
-"OpenGL. This disables the OpenGL backend detection to avoid "
-"incompatibilities."
+"**Possible solution**: add ``export TI_ENABLE_OPENGL=0`` to your  ``~/."
+"bashrc`` even if you initialize Taichi with other backends than OpenGL. "
+"This disables the OpenGL backend detection to avoid incompatibilities."
 msgstr ""
+"**解决方案**: 尝试添加 ``export TI_ENABLE_OPENGL=0`` 到 ``~/.bashrc`` 。"
+"该操作将禁用OpenGL后端检测，以避免OpenGL版本不兼容的问题。"
 
 #: ../../install.rst:72
 msgid "Linux issues"
-msgstr ""
+msgstr "Linux相关问题"
 
 #: ../../install.rst:74
 msgid ""
-"If Taichi crashes and reports ``libtinfo.so.5 not found``: Please install"
-" ``libtinfo5`` on Ubuntu or ``ncurses5-compat-libs`` (AUR) on Arch Linux."
+"If Taichi crashes and reports ``libtinfo.so.5 not found``: Please "
+"install ``libtinfo5`` on Ubuntu or ``ncurses5-compat-libs`` (AUR) on "
+"Arch Linux."
 msgstr ""
-
+"如果Taichi崩溃并报告 ``libtinfo.so.5 not found`` :那么请尝试在Ubuntu上安"
+"装 ``libtinfo5`` 或在Arch Linux上相应安装 ``ncurses5-compat-libs`` (AUR)"
+"进行解决。"
