@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.6.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-20 15:41+0800\n"
-"PO-Revision-Date: 2020-05-21 00:05+0800\n"
+"PO-Revision-Date: 2020-05-21 00:26+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -164,11 +164,11 @@ msgstr "``uint32``，范围 ``[0, 4294967295]``"
 
 #: ../../gui.rst:85
 msgid "``float32``, range ``[0, 1]``"
-msgstr "``float32``，固定为 ``[0, 1]``"
+msgstr "``float32``，范围 ``[0, 1]``"
 
 #: ../../gui.rst:87
 msgid "``float64``, range ``[0, 1]``"
-msgstr "``float64``，固定为 ``[0, 1]``"
+msgstr "``float64``，范围 ``[0, 1]``"
 
 #: ../../gui.rst:91
 msgid ""
