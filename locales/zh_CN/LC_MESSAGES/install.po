@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.6.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-19 23:48+0800\n"
-"PO-Revision-Date: 2020-05-20 15:08+0800\n"
+"PO-Revision-Date: 2020-05-20 19:58+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: ../../install.rst:2
 msgid "Installation"
-msgstr "Taichi安装"
+msgstr "安装Taichi"
 
 #: ../../install.rst:4
 msgid "Taichi can be easily installed via ``pip``:"
-msgstr "Taichi 可以很轻松的通过 ``pip`` 进行安装 :"
+msgstr "Taichi 可以很容易的通过 ``pip`` 进行安装 :"
 
 #: ../../install.rst:6
 msgid "python3 -m pip install taichi"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../../install.rst:12
 msgid "Currently, Taichi only supports Python 3.6/3.7/3.8."
-msgstr "目前，Taichi支持的Python版本有3.6/3.7/3.8。"
+msgstr "目前，Taichi支持的Python版本有 3.6/3.7/3.8。"
 
 #: ../../install.rst:15
 msgid "On Ubuntu 19.04+, please execute ``sudo apt install libtinfo5``."
@@ -84,7 +84,7 @@ msgid ""
 msgstr ""
 "这可能是因为你使用的 NVIDIA GPU低于Pascal架构，这对 `统一寻址(Unified "
 "Memory) <https://www.nextplatform.com/2019/01/24/unified-memory-the-"
-"final-piece-of-the-gpu-programming-puzzle/>`_.会有限制。"
+"final-piece-of-the-gpu-programming-puzzle/>`_ 会有限制。"
 
 #: ../../install.rst:38
 msgid ""
@@ -92,7 +92,7 @@ msgid ""
 "``~/.bashrc``. This disables unified memory usage in CUDA backend."
 msgstr ""
 "**解决方案**: 尝试添加 ``export TI_USE_UNIFIED_MEMORY=0`` 到 ``~/."
-"bashrc`` 。该操作将禁用CUDA后端使用unified memory。"
+"bashrc`` 。该操作将禁用CUDA后端使用统一寻址。"
 
 #: ../../install.rst:41
 msgid "If you find other CUDA problems:"
