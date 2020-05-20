@@ -297,9 +297,3 @@ msgstr ""
 #: ../../matrix.rst:164
 msgid "TODO: WIP"
 msgstr ""
-
-#~ msgid "Parameters"
-#~ msgstr ""
-
-#~ msgid "参数"
-#~ msgstr ""

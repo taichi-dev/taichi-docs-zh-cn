@@ -83,3 +83,7 @@ html:
 .PHONY: fuzzy
 fuzzy:
 	for file in $(LC_MESSAGES)/*.po; do echo $$(msgattrib --only-fuzzy --no-obsolete "$$file" | grep -c '#, fuzzy') $$file; done | grep -v ^0 | sort -gr
+
+ifdef QUIET
+.SILENT:
+endif

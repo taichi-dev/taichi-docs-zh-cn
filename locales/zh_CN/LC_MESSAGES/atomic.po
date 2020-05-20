@@ -174,13 +174,3 @@ msgstr ""
 #, fuzzy
 msgid "(OK: supported; EXT: require extension; N/A: not available)"
 msgstr "（OK：已支持，EXT：需要扩展支持，MISS：目前不支持）"
-
-#~ msgid "Returns"
-#~ msgstr ""
-
-#~ msgid "返回"
-#~ msgstr ""
-
-#~ msgid "MISS"
-#~ msgstr ""
-

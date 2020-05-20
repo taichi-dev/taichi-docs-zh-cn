@@ -306,18 +306,6 @@ msgid ""
 "is just an alias of ``ti.Matrix``."
 msgstr "向量是只有一列的特殊矩阵。实际上，``ti.Vector`` 只是 ``ti.Matrix`` 的别名。"
 
-#~ msgid "Parameters"
-#~ msgstr ""
-
-#~ msgid "Returns"
-#~ msgstr ""
-
-#~ msgid "参数"
-#~ msgstr ""
-
-#~ msgid "返回"
-#~ msgstr ""
-
 #~ msgid ""
 #~ "as an element of a global tensor."
 #~ " In this case, the tensor is an"

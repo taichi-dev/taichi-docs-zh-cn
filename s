@@ -1,0 +1,1 @@
+locales/zh_CN/LC_MESSAGES/
