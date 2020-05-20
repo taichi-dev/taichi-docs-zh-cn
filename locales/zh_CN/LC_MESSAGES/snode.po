@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 20:53-0400\n"
+"POT-Creation-Date: 2020-05-20 10:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,9 +28,9 @@ msgid ""
 "choices at both the macro level, dictating how the data structure "
 "components nest with each other and the way they represent sparsity, and "
 "the micro level, dictating how data are grouped together (e.g. structure "
-"of arrays vs. array of structures). Our language provides *structural "
-"nodes (SNodes)* to compose the hierarchy and particular properties. These"
-" constructs and their semantics are listed below:"
+"of arrays vs. array of structures). Taichi provides *Structural Nodes "
+"(SNodes)* to compose the hierarchy and particular properties. These "
+"constructs and their semantics are listed below:"
 msgstr ""
 
 #: ../../snode.rst:9
@@ -93,8 +93,8 @@ msgid ""
 "ti.root.place(x, y)"
 msgstr ""
 
-#: ../../snode.rst:36 ../../snode.rst:63
-msgid "the tensor"
+#: ../../snode.rst:36 ../../snode.rst:65
+msgid "(Tensor)"
 msgstr ""
 
 #: ../../snode.rst:37
@@ -111,23 +111,23 @@ msgid ""
 "x.shape() # returns (3, 5, 4)"
 msgstr ""
 
-#: ../../snode.rst:48 ../../snode.rst:75
+#: ../../snode.rst:49 ../../snode.rst:78
 msgid "(SNode)"
 msgstr ""
 
-#: ../../snode.rst:49
+#: ../../snode.rst:50
 msgid "axis (0 for ``i`` and 1 for ``j``)"
 msgstr ""
 
-#: ../../snode.rst:50
+#: ../../snode.rst:51
 msgid "(scalar) the size of tensor alone that axis"
 msgstr ""
 
-#: ../../snode.rst:52
+#: ../../snode.rst:53
 msgid "Equivalent to ``tensor.shape()[i]``."
 msgstr ""
 
-#: ../../snode.rst:56
+#: ../../snode.rst:57
 msgid ""
 "ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
 "x.snode().get_shape(0)  # 3\n"
@@ -135,25 +135,25 @@ msgid ""
 "x.snode().get_shape(2)  # 4"
 msgstr ""
 
-#: ../../snode.rst:64
+#: ../../snode.rst:66
 msgid "(scalar) the dimensionality of the tensor"
 msgstr ""
 
-#: ../../snode.rst:66
+#: ../../snode.rst:68
 msgid "Equivalent to ``len(tensor.shape())``."
 msgstr ""
 
-#: ../../snode.rst:70
+#: ../../snode.rst:72
 msgid ""
 "ti.root.dense(ti.ijk, (8, 9, 10)).place(x)\n"
 "x.dim()  # 3"
 msgstr ""
 
-#: ../../snode.rst:76
+#: ../../snode.rst:79
 msgid "(SNode) the parent node of ``snode``"
 msgstr ""
 
-#: ../../snode.rst:80
+#: ../../snode.rst:83
 msgid ""
 "blk1 = ti.root.dense(ti.i, 8)\n"
 "blk2 = blk1.dense(ti.j, 4)\n"
@@ -163,134 +163,130 @@ msgid ""
 "blk3.parent()  # blk2"
 msgstr ""
 
-#: ../../snode.rst:87
-msgid "TODO: add tensor.parent(), and add see also ref here"
-msgstr ""
-
-#: ../../snode.rst:91
+#: ../../snode.rst:92
 msgid "Node types"
 msgstr ""
 
-#: ../../snode.rst:96 ../../snode.rst:133
+#: ../../snode.rst:97 ../../snode.rst:134
 msgid "(SNode) parent node where the child is derived from"
 msgstr ""
 
-#: ../../snode.rst:97
+#: ../../snode.rst:98
 msgid "(Index or Indices) indices used for this node"
 msgstr ""
 
-#: ../../snode.rst:98
+#: ../../snode.rst:99
 msgid "(scalar or tuple) shape the tensor of vectors"
 msgstr ""
 
-#: ../../snode.rst:99 ../../snode.rst:137
+#: ../../snode.rst:100 ../../snode.rst:138
 msgid "(SNode) the derived child node"
 msgstr ""
 
-#: ../../snode.rst:101
+#: ../../snode.rst:102
 msgid "The following code places a 1-D tensor of size ``3``:"
 msgstr ""
 
-#: ../../snode.rst:105
+#: ../../snode.rst:106
 msgid ""
 "x = ti.var(dt=ti.i32)\n"
 "ti.root.dense(ti.i, 3).place(x)"
 msgstr ""
 
-#: ../../snode.rst:108
+#: ../../snode.rst:109
 msgid "The following code places a 2-D tensor of shape ``(3, 4)``:"
 msgstr ""
 
-#: ../../snode.rst:112
+#: ../../snode.rst:113
 msgid ""
 "x = ti.var(dt=ti.i32)\n"
 "ti.root.dense(ti.ij, (3, 4)).place(x)"
 msgstr ""
 
-#: ../../snode.rst:117
+#: ../../snode.rst:118
 msgid ""
 "If ``shape`` is a scalar and there are multiple indices, then ``shape`` "
 "will be automatically expanded to fit the number of indices. For example,"
 msgstr ""
 
-#: ../../snode.rst:122
+#: ../../snode.rst:123
 msgid "snode.dense(ti.ijk, 3)"
 msgstr ""
 
-#: ../../snode.rst:124
+#: ../../snode.rst:125
 msgid "is equivalent to"
 msgstr ""
 
-#: ../../snode.rst:128
+#: ../../snode.rst:129
 msgid "snode.dense(ti.ijk, (3, 3, 3))"
 msgstr ""
 
-#: ../../snode.rst:134
+#: ../../snode.rst:135
 msgid "(Index) the ``dynamic`` node indices"
 msgstr ""
 
-#: ../../snode.rst:135
+#: ../../snode.rst:136
 msgid "(scalar) the maximum size of the dynamic node"
 msgstr ""
 
-#: ../../snode.rst:136
+#: ../../snode.rst:137
 msgid ""
 "(optional, scalar) the number of elements in each dynamic memory "
 "allocation chunk"
 msgstr ""
 
-#: ../../snode.rst:139
+#: ../../snode.rst:140
 msgid ""
 "``dynamic`` nodes acts like ``std::vector`` in C++ or ``list`` in Python."
 " Taichi's dynamic memory allocation system allocates its memory on the "
 "fly."
 msgstr ""
 
-#: ../../snode.rst:142
+#: ../../snode.rst:143
 msgid "The following places a 1-D dynamic tensor of maximum size ``16``:"
 msgstr ""
 
-#: ../../snode.rst:146
+#: ../../snode.rst:147
 msgid "ti.root.dynamic(ti.i, 16).place(x)"
 msgstr ""
 
-#: ../../snode.rst:154
+#: ../../snode.rst:155
 msgid "TODO: add descriptions here"
 msgstr ""
 
-#: ../../snode.rst:157
+#: ../../snode.rst:158
 msgid "Working with ``dynamic`` SNodes"
 msgstr ""
 
-#: ../../snode.rst:161 ../../snode.rst:168
+#: ../../snode.rst:162 ../../snode.rst:169
 msgid "(SNode, dynamic)"
 msgstr ""
 
-#: ../../snode.rst:162 ../../snode.rst:169
+#: ../../snode.rst:163 ../../snode.rst:170
 msgid "(scalar or tuple of scalars) the ``dynamic`` node indices"
 msgstr ""
 
-#: ../../snode.rst:163
+#: ../../snode.rst:164
 msgid "(scalar) the current size of the dynamic node"
 msgstr ""
 
-#: ../../snode.rst:170
+#: ../../snode.rst:171
 msgid "(depends on SNode data type) value to store"
 msgstr ""
 
-#: ../../snode.rst:171
+#: ../../snode.rst:172
 msgid "(``int32``) the size of the dynamic node, before appending"
 msgstr ""
 
-#: ../../snode.rst:173
+#: ../../snode.rst:174
 msgid "Inserts ``val`` into the ``dynamic`` node with indices ``indices``."
 msgstr ""
 
-#: ../../snode.rst:177
+#: ../../snode.rst:178
 msgid "Taichi tensors like powers of two"
 msgstr ""
 
-#: ../../snode.rst:179
+#: ../../snode.rst:180
 msgid ""
 "Non-power-of-two tensor dimensions are promoted into powers of two and "
 "thus these tensors will occupy more virtual address space. For example, a"
@@ -298,11 +294,11 @@ msgid ""
 "128)``."
 msgstr ""
 
-#: ../../snode.rst:184
+#: ../../snode.rst:185
 msgid "Indices"
 msgstr ""
 
-#: ../../snode.rst:194
+#: ../../snode.rst:195
 msgid "(TODO)"
 msgstr ""
 
@@ -310,5 +306,29 @@ msgstr ""
 #~ "See :ref:`layout` for more details about"
 #~ " data layout. ``ti.root`` is the root"
 #~ " node of the data structure."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After writing the computation code, the"
+#~ " user needs to specify the internal"
+#~ " data structure hierarchy. Specifying a "
+#~ "data structure includes choices at both"
+#~ " the macro level, dictating how the"
+#~ " data structure components nest with "
+#~ "each other and the way they "
+#~ "represent sparsity, and the micro level,"
+#~ " dictating how data are grouped "
+#~ "together (e.g. structure of arrays vs."
+#~ " array of structures). Our language "
+#~ "provides *structural nodes (SNodes)* to "
+#~ "compose the hierarchy and particular "
+#~ "properties. These constructs and their "
+#~ "semantics are listed below:"
+#~ msgstr ""
+
+#~ msgid "the tensor"
+#~ msgstr ""
+
+#~ msgid "TODO: add tensor.parent(), and add see also ref here"
 #~ msgstr ""
 

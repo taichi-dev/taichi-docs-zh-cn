@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 20:53-0400\n"
+"POT-Creation-Date: 2020-05-20 10:00+0800\n"
 "PO-Revision-Date: 2020-05-08 15:55+0800\n"
 "Last-Translator: rexwangcc\n"
 "Language: zh_CN\n"
@@ -71,7 +71,8 @@ msgid "float64 ``ti.f64``"
 msgstr ""
 
 #: ../../type.rst:20
-msgid "Supported types on each backends:"
+#, fuzzy
+msgid "Supported types on each backend:"
 msgstr "每种后端支持的类型分别为："
 
 #: ../../type.rst:23
@@ -102,7 +103,7 @@ msgstr ""
 
 #: ../../type.rst:25 ../../type.rst:27 ../../type.rst:31 ../../type.rst:33
 #: ../../type.rst:35 ../../type.rst:37 ../../type.rst:39 ../../type.rst:43
-msgid "MISS"
+msgid "N/A"
 msgstr ""
 
 #: ../../type.rst:27
@@ -146,11 +147,13 @@ msgid "f64"
 msgstr ""
 
 #: ../../type.rst:46
-msgid "(OK: supported, EXT: require extension, MISS: not supported)"
+#, fuzzy
+msgid "(OK: supported, EXT: require extension, N/A: not available)"
 msgstr "（OK：已支持，EXT：需要扩展支持，MISS：目前不支持）"
 
 #: ../../type.rst:49
-msgid "Boolean types are represented using ``ti.i32``."
+#, fuzzy
+msgid "Boolean types should be represented using ``ti.i32``."
 msgstr "布尔类型使用 ``ti.i32`` 来表示。"
 
 #: ../../type.rst:51
@@ -205,13 +208,14 @@ msgid "Use ``ti.cast`` to cast scalar values."
 msgstr "使用 ``ti.cast`` 来进行标量值的类型转换。"
 
 #: ../../type.rst:81
+#, fuzzy
 msgid ""
 "a = 1.4\n"
 "b = ti.cast(a, ti.i32)\n"
 "c = ti.cast(b, ti.f32)\n"
 "\n"
 "# Equivalently, use ``int()`` and ``float()``\n"
-"#   to converting to default float-point/integer types\n"
+"# to convert values to default float-point/integer types\n"
 "b = int(a)\n"
 "c = float(b)\n"
 "\n"
@@ -241,4 +245,7 @@ msgid ""
 "the same width as the the old type. For example, bit-casting ``i32`` to "
 "``f64`` is not allowed. Use this operation with caution."
 msgstr ""
+
+#~ msgid "MISS"
+#~ msgstr ""
 

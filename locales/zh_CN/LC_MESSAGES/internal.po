@@ -7,61 +7,173 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 20:53-0400\n"
+"POT-Creation-Date: 2020-05-20 10:00+0800\n"
 "PO-Revision-Date: 2020-05-13 22:01-0400\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: ../../internal.rst:2
 msgid "Internal designs (WIP)"
 msgstr "内部设计（WIP）"
 
-#: ../../internal.rst:6
+#: ../../internal.rst:5
 msgid "Intermediate representation"
 msgstr "中间表示（Intermediate representation）"
 
-#: ../../internal.rst:7
+#: ../../internal.rst:6
 msgid "Use ``ti.init(print_ir=True)`` to print IR on the console."
 msgstr "使用 ``ti.init(print_ir=True)`` 来将中间表示代码输出到控制台。"
 
-#: ../../internal.rst:11
-msgid "Code generation"
+#: ../../internal.rst:10
+#, fuzzy
+msgid "List generation (WIP)"
 msgstr "代码生成"
 
-#: ../../internal.rst:15
-msgid "Statistics"
-msgstr "统计量"
+#: ../../internal.rst:12
+msgid ""
+"Struct-fors in Taichi loop over all active elements of a (sparse) data "
+"structure **in parallel**. Evenly distributing work onto processor cores "
+"is challenging on sparse data structures: naively splitting an irregular "
+"tree into pieces can easily lead to partitions with drastically different"
+" numbers of leaf elements."
+msgstr ""
 
 #: ../../internal.rst:17
 msgid ""
-"In some cases, it is helpful to gather certain quantitative information "
-"about internal events during Taichi program execution. The "
-"``Statistics`` class is designed for this purpose."
+"Our strategy is to generate lists of active SNode elements layer by "
+"layer. The list generation computation happens on the same device as "
+"normal computation kernels, depending on the ``arch`` argument when the "
+"user calls ``ti.init``."
 msgstr ""
-"在某些情况下，在Taichi程序的执行过程中，收集关于内部事件的特定的量化信息"
-"是很用帮助的。``Statistics`` 类就是为此设计的。"
 
-#: ../../internal.rst:20
+#: ../../internal.rst:21
+msgid ""
+"List generations flatten the data structure leaf elements into a 1D dense"
+" array, circumventing the irregularity of incomplete trees. Then we can "
+"simply invoke a regular **parallel for** over the list."
+msgstr ""
+
+#: ../../internal.rst:24
+msgid "For example,"
+msgstr ""
+
+#: ../../internal.rst:26
+msgid ""
+"# misc/listgen_demo.py\n"
+"\n"
+"import taichi as ti\n"
+"\n"
+"ti.init(print_ir=True)\n"
+"\n"
+"x = ti.var(ti.i32)\n"
+"ti.root.dense(ti.i, 4).bitmasked(ti.i, 4).place(x)\n"
+"\n"
+"@ti.kernel\n"
+"def func():\n"
+"    for i in x:\n"
+"        print(i)\n"
+"\n"
+"func()"
+msgstr ""
+
+#: ../../internal.rst:45
+msgid "gives you the following IR:"
+msgstr ""
+
+#: ../../internal.rst:47
+msgid ""
+"$0 = offloaded clear_list S1dense\n"
+"$1 = offloaded listgen S0root->S1dense\n"
+"$2 = offloaded clear_list S2bitmasked\n"
+"$3 = offloaded listgen S1dense->S2bitmasked\n"
+"$4 = offloaded struct_for(S2bitmasked) block_dim=0 {\n"
+"  <i32 x1> $5 = loop index 0\n"
+"  print i, $5\n"
+"}"
+msgstr ""
+
+#: ../../internal.rst:59
+msgid "Note that ``func`` leads to two list generations:"
+msgstr ""
+
+#: ../../internal.rst:61
+msgid ""
+"(Tasks ``$0`` and ``$1``) based on the list of ``root`` node (``S0``), "
+"generate the list of the ``dense`` nodes (``S1``);"
+msgstr ""
+
+#: ../../internal.rst:62
+msgid ""
+"(Tasks ``$2`` and ``$3``) based on the list of ``dense`` nodes (``S1``), "
+"generate the list of ``bitmasked`` nodes (``S2``)."
+msgstr ""
+
+#: ../../internal.rst:64
+msgid ""
+"The list of ``root`` node always has exactly one element (instance), so "
+"we never clear or re-generate this list."
+msgstr ""
+
+#: ../../internal.rst:68
+msgid ""
+"The list of ``place`` (leaf) nodes (e.g., ``S3`` in this example) is "
+"never generated. Instead, we simply loop over the list of their parent "
+"nodes, and for each parent node we enumerate the ``place`` nodes on-the-"
+"fly (without actually generating a list)."
+msgstr ""
+
+#: ../../internal.rst:72
+msgid ""
+"The motivation for this design is to amortize list generation overhead. "
+"Generating one list element per leaf node (``place`` SNode) element is "
+"too expensive, likely much more expensive than the essential computation "
+"happening on the leaf element. Therefore we only generate their parent "
+"element list, so that the list generation cost is amortized over multiple"
+" child elements of a second-to-last-level SNode element."
+msgstr ""
+
+#: ../../internal.rst:78
+msgid ""
+"In the example above, although we have ``16`` instances of ``x``, we only"
+" generate a list of ``4`` ``bitmasked`` nodes (and ``1`` ``dense`` node)."
+msgstr ""
+
+#: ../../internal.rst:83
+msgid "Code generation"
+msgstr "代码生成"
+
+#: ../../internal.rst:87
+msgid "Statistics"
+msgstr "统计量"
+
+#: ../../internal.rst:89
+msgid ""
+"In some cases, it is helpful to gather certain quantitative information "
+"about internal events during Taichi program execution. The ``Statistics``"
+" class is designed for this purpose."
+msgstr "在某些情况下，在Taichi程序的执行过程中，收集关于内部事件的特定的量化信息是很用帮助的。``Statistics`` 类就是为此设计的。"
+
+#: ../../internal.rst:92
 msgid "Usage:"
 msgstr "用法："
 
-#: ../../internal.rst:22
+#: ../../internal.rst:94
 msgid ""
 "#include \"taichi/util/statistics.h\"\n"
 "\n"
 "// add 1.0 to counter \"codegen_offloaded_tasks\"\n"
 "taichi::stat.add(\"codegen_offloaded_tasks\");\n"
 "\n"
-"// add the number of statements in \"ir\" to counter \"codegen_statements"
-"\"\n"
-"taichi::stat.add(\"codegen_statements\", irpass::analysis::"
-"count_statements(this->ir));"
+"// add the number of statements in \"ir\" to counter "
+"\"codegen_statements\"\n"
+"taichi::stat.add(\"codegen_statements\", "
+"irpass::analysis::count_statements(this->ir));"
 msgstr ""
 "#include “taichi/util/statistics.h”\n"
 "\n"
@@ -69,104 +181,91 @@ msgstr ""
 "taichi::stat.add(“codegen_offloaded_tasks”);\n"
 "\n"
 "// 将“中间表示”中语句的数量加到计数器“codegen_statements”上\n"
-"taichi::stat.add(“codegen_statements”, irpass::analysis::"
-"count_statements(this->ir));"
+"taichi::stat.add(“codegen_statements”, "
+"irpass::analysis::count_statements(this->ir));"
 
-#: ../../internal.rst:33
+#: ../../internal.rst:105
 msgid "Note the keys are ``std::string`` and values are ``double``."
 msgstr "注意键为 ``std::string`` 而值类型为 ``double``。"
 
-#: ../../internal.rst:35
+#: ../../internal.rst:107
 msgid "To print out all statistics in Python:"
 msgstr "在Python中使用如下方式来打印出所有的统计量："
 
-#: ../../internal.rst:37
+#: ../../internal.rst:109
 msgid "ti.core.print_stat()"
 msgstr ""
 
-#: ../../internal.rst:43
+#: ../../internal.rst:115
 msgid "Why Python frontend"
 msgstr "为什么使用Python作为前端语言"
 
-#: ../../internal.rst:45
+#: ../../internal.rst:117
 msgid "Embedding Taichi in ``python`` has the following advantages:"
 msgstr "将Taichi嵌入到 ``Python`` 中有以下优点："
 
-#: ../../internal.rst:47
+#: ../../internal.rst:119
 msgid "Easy to learn. Taichi has a very similar syntax to Python."
 msgstr "易于学习。Taichi的语法与Python非常相似。"
 
-#: ../../internal.rst:48
+#: ../../internal.rst:120
 msgid "Easy to run. No ahead-of-time compilation is needed."
 msgstr "易于运行。不需要运行前编译（ahead-of-time compilation）。"
 
-#: ../../internal.rst:49
+#: ../../internal.rst:121
 msgid "This design allows people to reuse existing python infrastructure:"
 msgstr "这样的设计使用户可以重复利用已有的Python基础架构："
 
-#: ../../internal.rst:51
+#: ../../internal.rst:123
 msgid ""
 "IDEs. A python IDE mostly works for Taichi with syntax highlighting, "
 "syntax checking, and autocomplete."
-msgstr ""
-"集成开发环境（IDEs）。大部分Python的集成开发环境提供的语法高亮，语法检查"
-"和自动补全功能可以用于Taichi。"
+msgstr "集成开发环境（IDEs）。大部分Python的集成开发环境提供的语法高亮，语法检查和自动补全功能可以用于Taichi。"
 
-#: ../../internal.rst:52
+#: ../../internal.rst:124
 msgid ""
 "Package manager (pip). A developed Taichi application and be easily "
 "submitted to ``PyPI`` and others can easily set it up with ``pip``."
-msgstr ""
-"包管理器（pip）。开发好的Taichi程序可以被简单地提交至 ``PyPI`` 并且其他用"
-"户可以轻松地使用 ``pip`` 安装它。"
+msgstr "包管理器（pip）。开发好的Taichi程序可以被简单地提交至 ``PyPI`` 并且其他用户可以轻松地使用 ``pip`` 安装它。"
 
-#: ../../internal.rst:53
+#: ../../internal.rst:125
 msgid ""
 "Existing packages. Interacting with other python components (e.g. "
 "``matplotlib`` and ``numpy``) is just trivial."
-msgstr ""
-"现有的包。用户可以很轻松地与其他Python组件（例如 ``matplotlib`` 和 "
-"``numpy``）交互。"
+msgstr "现有的包。用户可以很轻松地与其他Python组件（例如 ``matplotlib`` 和 ``numpy``）交互。"
 
-#: ../../internal.rst:55
+#: ../../internal.rst:127
 msgid ""
 "The built-in AST manipulation tools in ``python`` allow us to do magical "
 "things, as long as the kernel body can be parsed by the Python parser."
-msgstr ""
-"只要内核主体可以被Python的解析器解析，那么 ``Python`` 内置的处理抽象语法"
-"树（AST）的工具让我们可以做一些奇妙的事情。"
+msgstr "只要内核主体可以被Python的解析器解析，那么 ``Python`` 内置的处理抽象语法树（AST）的工具让我们可以做一些奇妙的事情。"
 
-#: ../../internal.rst:57
+#: ../../internal.rst:129
 msgid "However, this design has drawbacks as well:"
 msgstr "但是，这样的设计同样存在一些不足之处："
 
-#: ../../internal.rst:59
+#: ../../internal.rst:131
 msgid ""
 "Taichi kernels must parse-able by Python parsers. This means Taichi "
 "syntax cannot go beyond Python syntax."
-msgstr ""
-"Taichi内核必须能被Python解析器解析。这意味着Taichi的语法不能超出Python的"
-"语法范畴。"
+msgstr "Taichi内核必须能被Python解析器解析。这意味着Taichi的语法不能超出Python的语法范畴。"
 
-#: ../../internal.rst:61
+#: ../../internal.rst:133
 msgid ""
 "For example, indexing is always needed when accessing elements in Taichi "
-"tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the "
-"value in ``x`` if ``x`` is 0D. This is because ``x = 123`` will set "
-"``x`` itself (instead of its containing value) to be the constant "
-"``123`` in python syntax, and, unfortunately, we cannot modify this "
-"behavior."
+"tensors, even if the tensor is 0D. Use ``x[None] = 123`` to set the value"
+" in ``x`` if ``x`` is 0D. This is because ``x = 123`` will set ``x`` "
+"itself (instead of its containing value) to be the constant ``123`` in "
+"python syntax, and, unfortunately, we cannot modify this behavior."
 msgstr ""
-"例如，访问Taichi张量时，即使张量是0维度的也必须使用索引。如果 ``x`` 是0维"
-"的，需要使用 ``x[None] = 123`` 来给 ``x`` 中的量赋值。这是因为在Python语"
-"法中， ``x = 123`` 将会将 ``x`` 本身（而不是它包含的值）设为常数 "
+"例如，访问Taichi张量时，即使张量是0维度的也必须使用索引。如果 ``x`` 是0维的，需要使用 ``x[None] = 123`` 来给 "
+"``x`` 中的量赋值。这是因为在Python语法中， ``x = 123`` 将会将 ``x`` 本身（而不是它包含的值）设为常数 "
 "``123`` ，不幸的是，我们无法更改这种行为。"
 
-#: ../../internal.rst:63
+#: ../../internal.rst:135
 msgid ""
-"Python has relatively low performance. This can cause a performance "
-"issue when initializing large Taichi tensors with pure python scripts. A "
+"Python has relatively low performance. This can cause a performance issue"
+" when initializing large Taichi tensors with pure python scripts. A "
 "Taichi kernel should be used to initialize a huge tensor."
-msgstr ""
-"Python的性能相对较为低下。这在使用纯Python脚本初始化较大Taichi张量时会导"
-"致一些性能问题。初始化较大张量时必须使用Taichi内核。"
+msgstr "Python的性能相对较为低下。这在使用纯Python脚本初始化较大Taichi张量时会导致一些性能问题。初始化较大张量时必须使用Taichi内核。"
+
