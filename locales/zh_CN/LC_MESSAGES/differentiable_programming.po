@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 20:53-0400\n"
+"POT-Creation-Date: 2020-05-20 15:41+0800\n"
 "PO-Revision-Date: 2020-05-12 14:47+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -141,7 +141,15 @@ msgid ""
 "differentiable simulators and brute-force gradient descent:"
 msgstr "使用微分模拟器和蛮力梯度下降对神经网络控制器进行优化的一些示例："
 
-#: ../../differentiable_programming.rst:61
+#: ../../differentiable_programming.rst:63
+msgid ""
+"Apart from differentiating the simulation time steps, you can also "
+"automatically differentiate (negative) potential energies to get forces. "
+"Here is an `example <https://github.com/taichi-"
+"dev/taichi/blob/master/examples/mpm_lagrangian_forces.py>`_."
+msgstr ""
+
+#: ../../differentiable_programming.rst:66
 msgid "Documentation WIP."
 msgstr "文档制作中。"
 

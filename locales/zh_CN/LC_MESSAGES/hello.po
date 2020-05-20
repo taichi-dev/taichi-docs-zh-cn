@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 14:33+0800\n"
+"POT-Creation-Date: 2020-05-20 15:41+0800\n"
 "PO-Revision-Date: 2020-05-12 15:07-0400\n"
 "Last-Translator: archibate <17721388340@qq.com>\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: ../../hello.rst:2
 msgid "Hello, world!"
@@ -25,32 +24,21 @@ msgstr "你好，世界！"
 
 #: ../../hello.rst:4
 msgid ""
-"We introduce the Taichi programming language through a very basic `fractal` "
-"example."
+"We introduce the Taichi programming language through a very basic "
+"`fractal` example."
 msgstr "我们将通过一个分形程序的例子来介绍Taichi。"
 
 #: ../../hello.rst:6
-msgid "First of all, let's install Taichi via ``pip``:"
-msgstr "如果你还没有安装，请先通过 ``pip`` 安装Taichi："
-
-#: ../../hello.rst:8
+#, fuzzy
 msgid ""
-"# Python 3.6+ needed\n"
-"python3 -m pip install taichi"
+"Running the Taichi code below (``python3 fractal.py``) will give you an "
+"animation of `Julia set <https://en.wikipedia.org/wiki/Julia_set>`_:"
 msgstr ""
-"# 需要 Python 3.6 及以上\n"
-"python3 -m pip install taichi"
+"现在你可以通过 ``python3 fractal.py`` 运行下面这段Taichi代码了，我们将得到 `Julia 集 "
+"<https://baike.baidu.com/item/%E6%9C%B1%E5%88%A9%E4%BA%9A%E9%9B%86%E5%90%88/4140547>`_"
+" 的图像："
 
-#: ../../hello.rst:13
-msgid ""
-"Now you are ready to run the Taichi code below (``python3 fractal.py``) to "
-"compute a `Julia set <https://en.wikipedia.org/wiki/Julia_set>`_:"
-msgstr ""
-"现在你可以通过 ``python3 fractal.py`` 运行下面这段Taichi代码了，我们将得到 "
-"`Julia 集 <https://baike.baidu.com/item/%E6%9C%B1%E5%88%A9%E4%BA%9A%E9%9B"
-"%86%E5%90%88/4140547>`_ 的图像："
-
-#: ../../hello.rst:18
+#: ../../hello.rst:11
 msgid ""
 "# fractal.py\n"
 "\n"
@@ -117,44 +105,37 @@ msgstr ""
 "  gui.set_image(pixels)\n"
 "  gui.show()"
 
-#: ../../hello.rst:54
+#: ../../hello.rst:47
 #, fuzzy
 msgid "Let's dive into this simple Taichi program."
 msgstr "我们来深入剖析一下这段小小的Taichi程序吧。"
 
-#: ../../hello.rst:57
+#: ../../hello.rst:50
 msgid "import taichi as ti"
 msgstr "import taichi as ti"
 
-#: ../../hello.rst:58
+#: ../../hello.rst:51
 msgid ""
-"Taichi is a domain-specific language (DSL) embedded in Python. Heavy "
-"engineering has been done to make Taichi as easy to use as a Python package."
+"Taichi is a domain-specific language (DSL) embedded in Python. To make "
+"Taichi as easy to use as a Python package, we have done heavy engineering"
+" with this goal in mind - letting every Python programmer write Taichi "
+"programs with minimal learning effort. You can even use your favorite "
+"Python package management system, Python IDEs and other Python packages "
+"in conjunction with Taichi."
 msgstr ""
-"Taichi是一个嵌入Python的领域特定编程语言 (domain-specific language, DSL) 。"
-"经过开发者们的大量软件工程，Taichi就像是一个普通的Python包一样容易使用。"
 
-#: ../../hello.rst:61
-msgid ""
-"After minimal learning efforts, every Python programmer will be capable of "
-"writing Taichi programs, You can also reuse the Python package management "
-"system, Python IDEs, and existing Python packages."
-msgstr ""
-"只要学习很少的新知识，几乎每个Python程序员都可以熟练使用Taichi。Taichi可以和"
-"现成的Python包管理系统、Python集成开发环境(IDE)、Python包一起使用。"
-
-#: ../../hello.rst:64
+#: ../../hello.rst:57
 msgid "Portability"
 msgstr "可移植性"
 
-#: ../../hello.rst:66
+#: ../../hello.rst:59
 #, fuzzy
 msgid ""
 "Taichi programs run on either CPUs or GPUs. Initialize Taichi according "
 "to your hardware platform as follows:"
 msgstr "Taichi既能在CPU，也能在GPU上运行。你只需根据你的平台初始化Taichi："
 
-#: ../../hello.rst:68
+#: ../../hello.rst:61
 msgid ""
 "# Run on GPU, automatically detect backend\n"
 "ti.init(arch=ti.gpu)\n"
@@ -182,191 +163,180 @@ msgstr ""
 "# 在 CPU 上运行 (默认)\n"
 "ti.init(arch=ti.cpu)"
 
-#: ../../hello.rst:84
+#: ../../hello.rst:77
 msgid "Supported backends on different platforms:"
 msgstr "不同操作系统所支持的后端："
 
-#: ../../hello.rst:87
+#: ../../hello.rst:80
 msgid "platform"
 msgstr "平台"
 
-#: ../../hello.rst:87
+#: ../../hello.rst:80
 msgid "CPU"
 msgstr ""
 
-#: ../../hello.rst:87
+#: ../../hello.rst:80
 msgid "CUDA"
 msgstr ""
 
-#: ../../hello.rst:87
+#: ../../hello.rst:80
 msgid "OpenGL"
 msgstr ""
 
-#: ../../hello.rst:87
+#: ../../hello.rst:80
 msgid "Metal"
 msgstr ""
 
-#: ../../hello.rst:89
+#: ../../hello.rst:82
 msgid "Windows"
 msgstr ""
 
-#: ../../hello.rst:89 ../../hello.rst:91 ../../hello.rst:93
+#: ../../hello.rst:82 ../../hello.rst:84 ../../hello.rst:86
 msgid "OK"
 msgstr "可用"
 
-#: ../../hello.rst:89 ../../hello.rst:91 ../../hello.rst:93
+#: ../../hello.rst:82 ../../hello.rst:84 ../../hello.rst:86
 msgid "N/A"
 msgstr "不可用"
 
-#: ../../hello.rst:91
+#: ../../hello.rst:84
 msgid "Linux"
 msgstr ""
 
-#: ../../hello.rst:93
+#: ../../hello.rst:86
 msgid "Mac OS X"
 msgstr ""
 
-#: ../../hello.rst:97
+#: ../../hello.rst:89
 msgid "(OK: supported; N/A: not available)"
-msgstr ""
-"（可用: 该系统上有最完整的支持；不可用: 由于平台限制，我们无法实现该后端）"
+msgstr "（可用: 该系统上有最完整的支持；不可用: 由于平台限制，我们无法实现该后端）"
 
-#: ../../hello.rst:99
+#: ../../hello.rst:91
 msgid ""
-"With ``arch=ti.gpu``, Taichi will try to run on CUDA. If CUDA is not "
-"supported on your machine, Taichi will fall back to Metal or OpenGL. If no "
-"GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will fall back to "
-"CPUs."
+"With ``arch=ti.gpu``, Taichi will first try to run with CUDA. If CUDA is "
+"not supported on your machine, Taichi will fall back on Metal or OpenGL. "
+"If no GPU backend (CUDA, Metal, or OpenGL) is supported, Taichi will fall"
+" back on CPUs."
 msgstr ""
-"当指定 ``arch=ti.gpu`` 时， Taichi 首先会尝试 CUDA。如果你的系统不支持 "
-"CUDA，Taichi 会尝试 Metal 或者 OpenGL。如果没有任何可用的 GPU 后端 （CUDA，"
-"Metal，OpenGL）, Taichi 会用 CPU 运行。"
 
-#: ../../hello.rst:104
+#: ../../hello.rst:97
+#, fuzzy
 msgid ""
-"When using the CUDA backend on Windows systems or ARM devices (e.g. NVIDIA "
-"Jetson), Taichi will by default allocate 1 GB memory for tensor storage. "
-"You can override this by initializing with ``ti.init(arch=ti.cuda, "
-"device_memory_GB=3.4)`` to allocate ``3.4`` GB GPU memory, or ``ti."
-"init(arch=ti.cuda, device_memory_fraction=0.3)`` to allocate ``30%`` of "
-"total available GPU memory."
+"When used with the CUDA backend on Windows or ARM devices (e.g. NVIDIA "
+"Jetson), Taichi by default allocates 1 GB GPU memory for tensor storage. "
+"You can override this behavior by initializing with "
+"``ti.init(arch=ti.cuda, device_memory_GB=3.4)`` to allocate ``3.4`` GB "
+"GPU memory, or ``ti.init(arch=ti.cuda, device_memory_fraction=0.3)`` to "
+"allocate ``30%`` of the total GPU memory."
 msgstr ""
-"当在 Windows 操作系统 或者 ARM 设备（如 NVIDIA Jetson ）上使用 CUDA 后端"
-"时， Taichi 会默认分配 1 GB 显存用于张量存储。要改变这一行为，您可以通过初始"
-"化指令 ``ti.init(arch=ti.cuda, device_memory_GB=3.4)`` 来分配 ``3.4`` GB 显"
-"存，或者使用 ``ti.init(arch=ti.cuda, device_memory_fraction=0.3)`` 来分配所"
-"有可用显存的 ``30%``."
+"当在 Windows 操作系统 或者 ARM 设备（如 NVIDIA Jetson ）上使用 CUDA 后端时， Taichi 会默认分配 1 "
+"GB 显存用于张量存储。要改变这一行为，您可以通过初始化指令 ``ti.init(arch=ti.cuda, "
+"device_memory_GB=3.4)`` 来分配 ``3.4`` GB 显存，或者使用 ``ti.init(arch=ti.cuda, "
+"device_memory_fraction=0.3)`` 来分配所有可用显存的 ``30%``."
 
-#: ../../hello.rst:109
+#: ../../hello.rst:102
+#, fuzzy
 msgid ""
-"On other platforms Taichi will make use of its on-demand memory allocator "
-"to adaptively allocate memory."
+"On other platforms, Taichi will make use of its on-demand memory "
+"allocator to adaptively allocate memory."
 msgstr "在其他平台上， Taichi 会使用自适应内存分配器来动态地分配内存。"
 
-#: ../../hello.rst:113
+#: ../../hello.rst:105
 msgid "(Sparse) tensors"
 msgstr "（稀疏）张量"
 
-#: ../../hello.rst:114
+#: ../../hello.rst:107
 #, fuzzy
 msgid ""
-"Taichi is a data-oriented programming language, where dense or spatially-"
-"sparse tensors are first-class citizens. See :ref:`sparse` for more details "
-"on sparse tensors."
-msgstr ""
-"Taichi是一门面向数据的编程语言，（稠密、稀疏）张量是一等公民。欲了解更多关于"
-"稀疏张量的内容，请见 :ref:`sparse`。"
+"Taichi is a data-oriented programming language where dense or spatially-"
+"sparse tensors are the first-class citizens. See :ref:`sparse` for more "
+"details on sparse tensors."
+msgstr "Taichi是一门面向数据的编程语言，（稠密、稀疏）张量是一等公民。欲了解更多关于稀疏张量的内容，请见 :ref:`sparse`。"
 
-#: ../../hello.rst:118
+#: ../../hello.rst:110
 msgid ""
 "In the code above, ``pixels = ti.var(dt=ti.f32, shape=(n * 2, n))`` "
 "allocates a 2D dense tensor named ``pixels`` of size ``(640, 320)`` and "
 "element data type ``ti.f32`` (i.e. ``float`` in C)."
 msgstr ""
-"在以上代码中，``pixels = ti.var(dt=ti.f32, shape=(n * 2, n))`` 分配一个叫做 "
-"``pixel`` 的二维张量，大小是 ``(640, 320)`` ，数据类型是 ``ti.f32`` (也即C语"
-"言的 ``float``)."
+"在以上代码中，``pixels = ti.var(dt=ti.f32, shape=(n * 2, n))`` 分配一个叫做 ``pixel`` "
+"的二维张量，大小是 ``(640, 320)`` ，数据类型是 ``ti.f32`` (也即C语言的 ``float``)."
 
-#: ../../hello.rst:121
+#: ../../hello.rst:114
 msgid "Functions and kernels"
 msgstr "函数与内核"
 
-#: ../../hello.rst:123
+#: ../../hello.rst:116
 #, fuzzy
 msgid ""
-"Computation happens within Taichi **kernels**. Kernel arguments must be "
-"type-hinted. The language used in Taichi kernels and functions looks "
-"exactly like Python, yet the Taichi frontend compiler converts it into a "
-"language that is **compiled, statically-typed, lexically-scoped, parallel, "
-"and differentiable**."
+"Computation resides in Taichi **kernels**. Kernel arguments must be type-"
+"hinted. The language used in Taichi kernels and functions looks exactly "
+"like Python, yet the Taichi frontend compiler converts it into a language"
+" that is **compiled, statically-typed, lexically-scoped, parallel and "
+"differentiable**."
 msgstr ""
-"Taichi的计算是在 **内核** 中进行的。内核的参数必须显式指定类型。Taichi内核与"
-"函数中所用的语法，看起来和Python的很像，Taichi的前端编译器会将其转换为 **编"
-"译型，静态类型，有词法作用域，并行执行，可微分** 的语言。"
+"Taichi的计算是在 **内核** "
+"中进行的。内核的参数必须显式指定类型。Taichi内核与函数中所用的语法，看起来和Python的很像，Taichi的前端编译器会将其转换为 "
+"**编译型，静态类型，有词法作用域，并行执行，可微分** 的语言。"
 
-#: ../../hello.rst:127
+#: ../../hello.rst:120
 msgid ""
-"You can also define Taichi **functions** with ``ti.func``, which can be "
-"called and reused by kernels and other functions."
+"Taichi **functions**, which can be called by Taichi kernels and other "
+"Taichi functions, should be defined with the keyword ``ti.func``."
 msgstr ""
-"除了内核，还可以通过 ``@ti.func`` 来定义 **函数** ，函数可以被内核或函数调"
-"用，以实现代码重用。"
+
+#: ../../hello.rst:124
+#, fuzzy
+msgid ""
+"**Taichi-scopes v.s. Python-scopes**: everything decorated with "
+"``ti.kernel`` and ``ti.func`` is in Taichi-scope, which will be compiled "
+"by the Taichi compiler. Everything else is in Python-scopes. They are "
+"simply Python code."
+msgstr ""
+"**Taichi作用域 与 Python作用域**：任何带有 ``@ti.kernel`` 和 ``@ti.func`` "
+"装饰器的函数体都在Taichi作用域中，这些代码会被Taichi编译。而在Taichi作用域之外的就是Python作用域了，它们是单纯的Python代码。"
+
+#: ../../hello.rst:129
+msgid ""
+"Taichi kernels must be called in the Python-scope. I.e., **nested kernels"
+" are not supported**. Nested functions are allowed. **Recursive functions"
+" are not supported for now**."
+msgstr "Taichi内核只有在Python作用域中才能调用，也就是说，**我们不支持嵌套内核**。嵌套函数支持，但 **递归函数不支持** 。"
 
 #: ../../hello.rst:132
-msgid ""
-"**Taichi-scope v.s. Python-scope**: everything decorated with ``ti.kernel`` "
-"and ``ti.func`` is in Taichi-scope, which will be compiled by the Taichi "
-"compiler. Code outside the Taichi-scopes is simply normal Python code."
-msgstr ""
-"**Taichi作用域 与 Python作用域**：任何带有 ``@ti.kernel`` 和 ``@ti.func`` 装"
-"饰器的函数体都在Taichi作用域中，这些代码会被Taichi编译。而在Taichi作用域之外"
-"的就是Python作用域了，它们是单纯的Python代码。"
-
-#: ../../hello.rst:136
-msgid ""
-"Taichi kernels must be called in the Python-scope. I.e., **nested kernels "
-"are not supported**. Nested functions are allowed. **Recursive functions "
-"are not supported for now**."
-msgstr ""
-"Taichi内核只有在Python作用域中才能调用，也就是说，**我们不支持嵌套内核**。嵌"
-"套函数支持，但 **递归函数不支持** 。"
-
-#: ../../hello.rst:139
 msgid "Taichi functions can only be called in Taichi-scope."
 msgstr "Taichi函数只有在Taichi作用域中才能调用。"
 
-#: ../../hello.rst:141
+#: ../../hello.rst:134
 #, fuzzy
 msgid ""
 "For those who come from the world of CUDA, ``ti.func`` corresponds to "
 "``__device__`` while ``ti.kernel`` corresponds to ``__global__``."
 msgstr ""
-"用CUDA世界的话说，就是 ``ti.func`` 对应于 ``__device__``，``ti.kernel`` 对应"
-"于 ``__global__``。"
+"用CUDA世界的话说，就是 ``ti.func`` 对应于 ``__device__``，``ti.kernel`` 对应于 "
+"``__global__``。"
 
-#: ../../hello.rst:145
+#: ../../hello.rst:138
 msgid "Parallel for-loops"
 msgstr "并行执行的for循环"
 
-#: ../../hello.rst:147
+#: ../../hello.rst:139
 msgid ""
 "For loops at the outermost scope in a Taichi kernel is **automatically "
 "parallelized**. For loops can have two forms, i.e. `range-for loops` and "
 "`struct-for loops`."
-msgstr ""
-"最外层作用域的 for 循环会自动被并行执行。Taichi 的 for 循环具有两种形式，区"
-"间 for 循环，和结构 for 循环。"
+msgstr "最外层作用域的 for 循环会自动被并行执行。Taichi 的 for 循环具有两种形式，区间 for 循环，和结构 for 循环。"
 
-#: ../../hello.rst:150
+#: ../../hello.rst:142
 msgid ""
-"**Range-for loops** are no different from Python for loops, except that it "
-"will be parallelized when used at the outermost scope. Range-for loops can "
-"be nested."
+"**Range-for loops** are no different from Python for loops, except that "
+"it will be parallelized when used at the outermost scope. Range-for loops"
+" can be nested."
 msgstr ""
-"**区间for循环** 和普通的 Python for 循环没多大区别，只是 Taichi 最外层的 "
-"for 会并行执行而已。区间 for 循环可以嵌套。"
+"**区间for循环** 和普通的 Python for 循环没多大区别，只是 Taichi 最外层的 for 会并行执行而已。区间 for "
+"循环可以嵌套。"
 
-#: ../../hello.rst:153
+#: ../../hello.rst:145
 msgid ""
 "@ti.kernel\n"
 "def fill():\n"
@@ -402,13 +372,13 @@ msgstr ""
 "  for i, j, k in ti.ndrange((3, 8), (1, 6), 9):\n"
 "    x[i, j, k] = i + j + k"
 
-#: ../../hello.rst:173 ../../hello.rst:199
+#: ../../hello.rst:166 ../../hello.rst:192
 msgid ""
-"It is the loop **at the outermost scope** that gets parallelized, not the "
-"outermost loop."
+"It is the loop **at the outermost scope** that gets parallelized, not the"
+" outermost loop."
 msgstr "是最外层 **作用域** 的循环并行执行，而不是最外层的循环。"
 
-#: ../../hello.rst:175
+#: ../../hello.rst:168
 msgid ""
 "@ti.kernel\n"
 "def foo():\n"
@@ -432,31 +402,33 @@ msgstr ""
 "        for i in range(10): # 串行 :-(\n"
 "            …"
 
-#: ../../hello.rst:189
+#: ../../hello.rst:181
+#, fuzzy
 msgid ""
-"**Struct-for loops** have are particularly useful when iterating over "
-"(sparse) tensor elements. In the code above, ``for i, j in pixels`` loops "
-"over all the pixel coordinates, i.e. ``(0, 0), (0, 1), (0, 2), ... , (0, "
-"319), (1, 0), ..., (639, 319)``."
+"**Struct-for loops** are particularly useful when iterating over (sparse)"
+" tensor elements. In the code above, ``for i, j in pixels`` loops over "
+"all the pixel coordinates, i.e. ``(0, 0), (0, 1), (0, 2), ... , (0, 319),"
+" (1, 0), ..., (639, 319)``."
 msgstr ""
-"**结构for循环** 在遍历（稀疏）张量元素的时候很有用。例如在上述的代码中，"
-"``for i, j in pixels`` 将遍历所有像素坐标点, 即 ``(0, 0), (0, 1), (0, "
-"2), ... , (0, 319), (1, 0), ..., (639, 319)``。"
+"**结构for循环** 在遍历（稀疏）张量元素的时候很有用。例如在上述的代码中，``for i, j in pixels`` "
+"将遍历所有像素坐标点, 即 ``(0, 0), (0, 1), (0, 2), ... , (0, 319), (1, 0), ..., "
+"(639, 319)``。"
 
-#: ../../hello.rst:193
+#: ../../hello.rst:186
 msgid ""
-"Struct-for is the key to :ref:`sparse` in Taichi, as it will only loop over "
-"active elements in a sparse tensor. In dense tensors, all elements are "
-"active."
+"Struct-for is the key to :ref:`sparse` in Taichi, as it will only loop "
+"over active elements in a sparse tensor. In dense tensors, all elements "
+"are active."
 msgstr ""
-"结构 for 循环是 Taichi 稀疏计算（:ref:`sparse`）的关键，它只会遍历稀疏张量中"
-"的活跃元素。对于稠密张量而言，所有元素都是活跃元素。"
+"结构 for 循环是 Taichi "
+"稀疏计算（:ref:`sparse`）的关键，它只会遍历稀疏张量中的活跃元素。对于稠密张量而言，所有元素都是活跃元素。"
 
-#: ../../hello.rst:198
-msgid "Struct-for's must live at the outer-most scope of kernels."
+#: ../../hello.rst:190
+#, fuzzy
+msgid "Struct-for loops must live at the outer-most scope of kernels."
 msgstr "结构for循环是只能用于内核的最外层作用域。"
 
-#: ../../hello.rst:201
+#: ../../hello.rst:194
 msgid ""
 "@ti.kernel\n"
 "def foo():\n"
@@ -467,8 +439,8 @@ msgid ""
 "def bar(k: ti.i32):\n"
 "    # The outermost scope is a `if` statement\n"
 "    if k > 42:\n"
-"        for i in x: # Not allowed. Struct-fors must live in the outermost "
-"scope.\n"
+"        for i in x: # Not allowed. Struct-fors must live in the outermost"
+" scope.\n"
 "            ..."
 msgstr ""
 "@ti.kernel\n"
@@ -483,11 +455,11 @@ msgstr ""
 "        for i in x: # 语法错误。结构 for 循环 只能用于最外层作用域\n"
 "            … "
 
-#: ../../hello.rst:221
+#: ../../hello.rst:213
 msgid "``break`` **is not supported in parallel loops**:"
 msgstr "**并行** 循环不支持 ``break`` 语句："
 
-#: ../../hello.rst:223
+#: ../../hello.rst:215
 msgid ""
 "@ti.kernel\n"
 "def foo():\n"
@@ -519,29 +491,25 @@ msgstr ""
 "          ...\n"
 "          break # 可以"
 
-#: ../../hello.rst:243
+#: ../../hello.rst:236
 msgid "Interacting with Python"
 msgstr "与 Python 交互"
 
-#: ../../hello.rst:245
+#: ../../hello.rst:238
 msgid ""
-"Everything outside Taichi-scopes (``ti.func`` and ``ti.kernel``) is simply "
-"Python. You can use your favorite Python packages (e.g. ``numpy``, "
-"``pytorch``, ``matplotlib``) with Taichi."
+"Everything outside Taichi-scopes (``ti.func`` and ``ti.kernel``) is "
+"simply Python code. In Python-scopes, you can access Taichi tensor "
+"elements using plain indexing syntax. For example, to access a single "
+"pixel of the rendered image in Python, simply use"
 msgstr ""
-"Taichi 作用域 (``ti.func`` 和 ``ti.kernel``) 外的代码就是普通的 Python 代"
-"码。 您可以随意使用喜欢的 Python 包 （如 ``numpy``，``pytorch``， "
-"``matplotlib``）与 Taichi 交互。"
 
-#: ../../hello.rst:249
+#: ../../hello.rst:242
 msgid ""
-"In Python-scope, you can access Taichi tensors using plain indexing syntax, "
-"and helper functions such as ``from_numpy`` and ``to_torch``:"
+"pixels[42, 11] = 0.7\n"
+"print(pixels[42, 11]) # prints 0.7"
 msgstr ""
-"在 Python 作用域，您可以用普通下标语法访问 Taichi 张量。我们也提供简单的转换"
-"函数，如 ``from_numpy`` 和 ``to_torch``："
 
-#: ../../hello.rst:255
+#: ../../hello.rst:248
 msgid ""
 "You can also use your favorite Python packages (e.g. ``numpy``, "
 "``pytorch``, ``matplotlib``) together with Taichi. Taichi provides helper"
@@ -549,7 +517,7 @@ msgid ""
 "conversion:"
 msgstr ""
 
-#: ../../hello.rst:258
+#: ../../hello.rst:251
 msgid ""
 "import numpy as np\n"
 "pixels.from_numpy(np.random.rand(n * 2, n))\n"
@@ -559,18 +527,20 @@ msgid ""
 "plt.show()"
 msgstr ""
 
-#: ../../hello.rst:267
+#: ../../hello.rst:260
 msgid "See :ref:`external` for more details."
 msgstr ""
 
 #~ msgid ""
-#~ "This design decision virtually makes every Python programmer capable of "
-#~ "writing Taichi programs, after minimal learning efforts. You can also "
-#~ "reuse the package management system, Python IDEs, and existing Python "
-#~ "packages."
+#~ "This design decision virtually makes "
+#~ "every Python programmer capable of "
+#~ "writing Taichi programs, after minimal "
+#~ "learning efforts. You can also reuse "
+#~ "the package management system, Python "
+#~ "IDEs, and existing Python packages."
 #~ msgstr ""
-#~ "这样的设计使任何已经掌握Python的程序员，无需很多额外的学习，就能编写"
-#~ "Taichi程序。从而利用现成的包管理系统，Python IDE和Python包。"
+#~ "这样的设计使任何已经掌握Python的程序员，无需很多额外的学习，就能编写Taichi程序。从而利用现成的包管理系统，Python "
+#~ "IDE和Python包。"
 
 #~ msgid ""
 #~ "# Run on GPU, automatically detect backend\n"
@@ -623,3 +593,75 @@ msgstr ""
 #~ "  if k > 42:\n"
 #~ "    for i in x:\n"
 #~ "      ..."
+
+#~ msgid "First of all, let's install Taichi via ``pip``:"
+#~ msgstr "如果你还没有安装，请先通过 ``pip`` 安装Taichi："
+
+#~ msgid ""
+#~ "# Python 3.6+ needed\n"
+#~ "python3 -m pip install taichi"
+#~ msgstr ""
+#~ "# 需要 Python 3.6 及以上\n"
+#~ "python3 -m pip install taichi"
+
+#~ msgid ""
+#~ "Taichi is a domain-specific language "
+#~ "(DSL) embedded in Python. Heavy "
+#~ "engineering has been done to make "
+#~ "Taichi as easy to use as a "
+#~ "Python package."
+#~ msgstr ""
+#~ "Taichi是一个嵌入Python的领域特定编程语言 (domain-specific "
+#~ "language, DSL) 。经过开发者们的大量软件工程，Taichi就像是一个普通的Python包一样容易使用。"
+
+#~ msgid ""
+#~ "After minimal learning efforts, every "
+#~ "Python programmer will be capable of "
+#~ "writing Taichi programs, You can also"
+#~ " reuse the Python package management "
+#~ "system, Python IDEs, and existing Python"
+#~ " packages."
+#~ msgstr "只要学习很少的新知识，几乎每个Python程序员都可以熟练使用Taichi。Taichi可以和现成的Python包管理系统、Python集成开发环境(IDE)、Python包一起使用。"
+
+#~ msgid ""
+#~ "With ``arch=ti.gpu``, Taichi will try to"
+#~ " run on CUDA. If CUDA is not"
+#~ " supported on your machine, Taichi "
+#~ "will fall back to Metal or OpenGL."
+#~ " If no GPU backend (CUDA, Metal, "
+#~ "or OpenGL) is supported, Taichi will "
+#~ "fall back to CPUs."
+#~ msgstr ""
+#~ "当指定 ``arch=ti.gpu`` 时， Taichi 首先会尝试 "
+#~ "CUDA。如果你的系统不支持 CUDA，Taichi 会尝试 Metal 或者 "
+#~ "OpenGL。如果没有任何可用的 GPU 后端 （CUDA，Metal，OpenGL）, "
+#~ "Taichi 会用 CPU 运行。"
+
+#~ msgid ""
+#~ "You can also define Taichi **functions**"
+#~ " with ``ti.func``, which can be "
+#~ "called and reused by kernels and "
+#~ "other functions."
+#~ msgstr "除了内核，还可以通过 ``@ti.func`` 来定义 **函数** ，函数可以被内核或函数调用，以实现代码重用。"
+
+#~ msgid ""
+#~ "Everything outside Taichi-scopes (``ti.func``"
+#~ " and ``ti.kernel``) is simply Python. "
+#~ "You can use your favorite Python "
+#~ "packages (e.g. ``numpy``, ``pytorch``, "
+#~ "``matplotlib``) with Taichi."
+#~ msgstr ""
+#~ "Taichi 作用域 (``ti.func`` 和 ``ti.kernel``) "
+#~ "外的代码就是普通的 Python 代码。 您可以随意使用喜欢的 Python 包"
+#~ " （如 ``numpy``，``pytorch``， ``matplotlib``）与 "
+#~ "Taichi 交互。"
+
+#~ msgid ""
+#~ "In Python-scope, you can access "
+#~ "Taichi tensors using plain indexing "
+#~ "syntax, and helper functions such as "
+#~ "``from_numpy`` and ``to_torch``:"
+#~ msgstr ""
+#~ "在 Python 作用域，您可以用普通下标语法访问 Taichi "
+#~ "张量。我们也提供简单的转换函数，如 ``from_numpy`` 和 ``to_torch``："
+

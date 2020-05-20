@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 14:33+0800\n"
+"POT-Creation-Date: 2020-05-20 15:41+0800\n"
 "PO-Revision-Date: 2020-05-08 12:36+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -145,10 +145,145 @@ msgstr ""
 "# 错误：任一变量访问过后不能再创建新的变量!"
 
 #: ../../scalar_tensor.rst:76
-msgid "Attribute"
-msgstr "属性"
+msgid "Accessing components"
+msgstr ""
 
 #: ../../scalar_tensor.rst:78
-msgid "TODO: WIP"
-msgstr "TODO: 施工中"
+msgid "You can access an element of the Taichi tensor by an index or indices."
+msgstr ""
+
+#: ../../scalar_tensor.rst:82
+#, fuzzy
+msgid "(Tensor) the tensor of scalars"
+msgstr "标量组成的张量"
+
+#: ../../scalar_tensor.rst:83
+msgid "(scalar) index of the first tensor dimension"
+msgstr ""
+
+#: ../../scalar_tensor.rst:84
+msgid "(scalar) index of the second tensor dimension"
+msgstr ""
+
+#: ../../scalar_tensor.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../scalar_tensor.rst:85
+msgid "(scalar) the element at ``[p, q, ...]``"
+msgstr ""
+
+#: ../../scalar_tensor.rst:87
+msgid "This extracts the element value at index ``[3, 4]`` of tensor ``a``: ::"
+msgstr ""
+
+#: ../../scalar_tensor.rst:90
+msgid "x = a[3, 4]"
+msgstr ""
+
+#: ../../scalar_tensor.rst:92
+msgid "This sets the element value at index ``2`` of 1D tensor ``b`` to ``5``: ::"
+msgstr ""
+
+#: ../../scalar_tensor.rst:95
+msgid "a[2] = 2"
+msgstr ""
+
+#: ../../scalar_tensor.rst:99
+msgid ""
+"In Python, x[(exp1, exp2, ..., expN)] is equivalent to x[exp1, exp2, ...,"
+" expN]; the latter is just syntactic sugar for the former."
+msgstr ""
+
+#: ../../scalar_tensor.rst:103
+msgid ""
+"The returned value can also be ``Vector`` / ``Matrix`` if ``a`` is a "
+"tensor of vector / matrix, see :ref:`vector` for more details."
+msgstr ""
+
+#: ../../scalar_tensor.rst:107
+msgid "Meta data"
+msgstr ""
+
+#: ../../scalar_tensor.rst:111 ../../scalar_tensor.rst:128
+#: ../../scalar_tensor.rst:145 ../../scalar_tensor.rst:156
+msgid "(Tensor) the tensor"
+msgstr ""
+
+#: ../../scalar_tensor.rst:112
+msgid "(scalar) the length of ``a``"
+msgstr ""
+
+#: ../../scalar_tensor.rst:116
+msgid ""
+"x = ti.var(ti.i32, (6, 5))\n"
+"x.dim()  # 2\n"
+"\n"
+"y = ti.var(ti.i32, 6)\n"
+"y.dim()  # 1\n"
+"\n"
+"z = ti.var(ti.i32, ())\n"
+"z.dim()  # 0"
+msgstr ""
+
+#: ../../scalar_tensor.rst:129
+#, fuzzy
+msgid "(tuple) the shape of tensor ``a``"
+msgstr "（可选，标量或tuple）张量的形状"
+
+#: ../../scalar_tensor.rst:133
+msgid ""
+"x = ti.var(ti.i32, (6, 5))\n"
+"x.shape()  # (6, 5)\n"
+"\n"
+"y = ti.var(ti.i32, 6)\n"
+"y.shape()  # (6,)\n"
+"\n"
+"z = ti.var(ti.i32, ())\n"
+"z.shape()  # ()"
+msgstr ""
+
+#: ../../scalar_tensor.rst:146
+msgid "(DataType) the data type of ``a``"
+msgstr ""
+
+#: ../../scalar_tensor.rst:150
+msgid ""
+"x = ti.var(ti.i32, (2, 3))\n"
+"x.data_type()  # ti.i32"
+msgstr ""
+
+#: ../../scalar_tensor.rst:157
+msgid ""
+"(optional, scalar) the number of parent steps, i.e. ``n=1`` for parent, "
+"``n=2`` grandparent, etc..."
+msgstr ""
+
+#: ../../scalar_tensor.rst:158
+msgid "(SNode) the parent of ``a``'s containing SNode"
+msgstr ""
+
+#: ../../scalar_tensor.rst:170
+msgid "::"
+msgstr ""
+
+#: ../../scalar_tensor.rst:161
+msgid ""
+"x = ti.var(ti.i32) y = ti.var(ti.i32) blk1 = ti.root.dense(ti.ij, (6, 5))"
+" blk2 = blk1.dense(ti.ij, (3, 2)) blk1.place(x) blk2.place(y)"
+msgstr ""
+
+#: ../../scalar_tensor.rst:168
+msgid "x.parent()   # blk1 y.parent()   # blk2 y.parent(2)  # blk1"
+msgstr ""
+
+#: ../../scalar_tensor.rst:172
+msgid "See :ref:`snode` for more details."
+msgstr ""
+
+#~ msgid "Attribute"
+#~ msgstr "属性"
+
+#~ msgid "TODO: WIP"
+#~ msgstr "TODO: 施工中"
 

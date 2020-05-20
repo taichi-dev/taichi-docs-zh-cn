@@ -1,4 +1,4 @@
-.. _linalg:
+.. _matrix:
 
 Matrices
 ========
@@ -160,3 +160,5 @@ As a temporary local variable
 
 Methods
 -------
+
+TODO: WIP

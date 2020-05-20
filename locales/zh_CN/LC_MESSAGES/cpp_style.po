@@ -7,113 +7,135 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-21 16:57+0800\n"
+"POT-Creation-Date: 2020-05-20 15:41+0800\n"
 "PO-Revision-Date: 2020-05-13 10:20-0400\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: ../../cpp_style.rst:2
-msgid "C++ Style"
+#, fuzzy
+msgid "C++ style"
 msgstr "C++ 代码风格规范"
 
-#: ../../cpp_style.rst:5
+#: ../../cpp_style.rst:4
+msgid ""
+"We generally follow `Google C++ Style Guide "
+"<https://google.github.io/styleguide/cppguide.html>`_."
+msgstr ""
+
+#: ../../cpp_style.rst:7
 msgid "Naming"
 msgstr "命名规则"
 
-#: ../../cpp_style.rst:6
+#: ../../cpp_style.rst:8
 msgid ""
 "Variable names should consist of lowercase words connected by "
 "underscores, e.g. ``llvm_context``."
-msgstr ""
-"变量名称应当由小写词语通过下划线连接组成，例如 ``llvm_context``。"
+msgstr "变量名称应当由小写词语通过下划线连接组成，例如 ``llvm_context``。"
 
-#: ../../cpp_style.rst:7
+#: ../../cpp_style.rst:9
 msgid ""
 "Class and struct names should consist of words with first letters "
 "capitalized, e.g. ``CodegenLLVM``."
 msgstr "类和结构体应当由首字母大写的词语组成，例如 ``CodegenLLVM``。"
 
-#: ../../cpp_style.rst:8
+#: ../../cpp_style.rst:10
 msgid ""
 "Macros should be capital start with ``TI``, such as ``TI_INFO``, "
 "``TI_IMPLEMENTATION``."
 msgstr "请用由 ``TI`` 开头的形式来命名宏， 例如 ``TI_INFO``。"
 
-#: ../../cpp_style.rst:10
+#: ../../cpp_style.rst:12
 msgid ""
 "We do not encourage the use of macro, although there are cases where "
 "macros are inevitable."
 msgstr "在碰到不可避免的情况以外我们不提倡在代码中使用宏。"
 
-#: ../../cpp_style.rst:12
+#: ../../cpp_style.rst:14
 msgid ""
 "Filenames should consist of lowercase words connected by underscores, "
 "e.g. ``ir_printer.cpp``."
-msgstr ""
-"文件名称应当由小写词语通过下划线连接组成， 例如 ``ir_printer.cpp``。"
+msgstr "文件名称应当由小写词语通过下划线连接组成， 例如 ``ir_printer.cpp``。"
 
-#: ../../cpp_style.rst:15
+#: ../../cpp_style.rst:17
 msgid "Dos"
 msgstr "提倡的使用方法"
 
-#: ../../cpp_style.rst:16
+#: ../../cpp_style.rst:18
 msgid "Use ``auto`` for local variables when appropriate."
 msgstr "在适当的情况下对局部变量添加 ``auto`` 关键字。"
 
-#: ../../cpp_style.rst:17
+#: ../../cpp_style.rst:19
 msgid "Mark ``override`` and ``const`` when necessary."
 msgstr "在必要的情况下添加 ``override`` 和 ``const`` 关键字。"
 
-#: ../../cpp_style.rst:20
+#: ../../cpp_style.rst:22
 msgid "Don'ts"
 msgstr "不提倡的使用方法"
 
-#: ../../cpp_style.rst:21
+#: ../../cpp_style.rst:23
 msgid "C language legacies:"
 msgstr "C语言中的既有范式："
 
-#: ../../cpp_style.rst:23
-msgid "``printf`` (use ``fmtlib::print`` instead)."
+#: ../../cpp_style.rst:25
+#, fuzzy
+msgid "``printf`` (Use ``fmtlib::print`` instead)."
 msgstr "``printf`` （请使用 ``fmtlib::print``）。"
 
-#: ../../cpp_style.rst:24
-msgid ""
-"``new`` & ``free``. Use smart pointers (``std::unique_ptr, std::"
-"shared_ptr`` instead for ownership management)."
-msgstr ""
-"``new`` 和 ``free``。 请使用智能指针（例如 ``std::unique_ptr, std::"
-"shared_ptr`` ，而不是手动管理所有关系）"
-
 #: ../../cpp_style.rst:26
+#, fuzzy
+msgid ""
+"``new`` and ``free``. (Use smart pointers ``std::unique_ptr, "
+"std::shared_ptr`` instead for ownership management)."
+msgstr ""
+"``new`` 和 ``free``。 请使用智能指针（例如 ``std::unique_ptr, std::shared_ptr`` "
+"，而不是手动管理所有关系）"
+
+#: ../../cpp_style.rst:27
+#, fuzzy
+msgid "``#include <math.h>`` (Use ``#include <cmath>`` instead)."
+msgstr "``printf`` （请使用 ``fmtlib::print``）。"
+
+#: ../../cpp_style.rst:29
+msgid ""
+"Exceptions (We are on our way to **remove** all C++ exception usages in "
+"Taichi)."
+msgstr ""
+
+#: ../../cpp_style.rst:30
 msgid "Prefix member functions with ``m_`` or ``_``."
 msgstr "前缀成员函数，例如 ``m_``, ``_`` 等。"
 
-#: ../../cpp_style.rst:27
+#: ../../cpp_style.rst:31
 msgid "Virtual function call in constructors/destructors."
 msgstr "在构造函数和析构函数中调用虚函数。"
 
-#: ../../cpp_style.rst:28
-msgid "``NULL``, use ``nullptr`` instead."
+#: ../../cpp_style.rst:32
+#, fuzzy
+msgid "``NULL`` (Use ``nullptr`` instead)."
 msgstr "空指针 ``NULL``。 应当使用 ``nullptr``。"
 
-#: ../../cpp_style.rst:29
-msgid "``using namespace std;`` in global scope."
+#: ../../cpp_style.rst:33
+#, fuzzy
+msgid "``using namespace std;`` in the global scope."
 msgstr "在全局环境下使用 ``using namespace std;`` 。"
 
-#: ../../cpp_style.rst:30
-msgid "``typedef``. Use ``using`` instead."
+#: ../../cpp_style.rst:34
+#, fuzzy
+msgid "``typedef`` (Use ``using`` instead)."
 msgstr "``typedef``。 应当使用 ``using`` 。"
 
-#: ../../cpp_style.rst:33
+#: ../../cpp_style.rst:37
 msgid "Automatic code formatting"
 msgstr "自动格式化代码"
 
-#: ../../cpp_style.rst:34
+#: ../../cpp_style.rst:38
 msgid "Please run ``ti format``"
 msgstr "请运行 ``ti format``"
+
