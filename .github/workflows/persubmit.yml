@@ -1,0 +1,29 @@
+name: 提交检查
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [master]
+  push:
+    branches: [master]
+
+jobs:
+  build_html:
+    name: 构建 HTML
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: 将文档编译成 HTML
+      run: |
+        git log -1
+        git checkout -b _checkout
+        git submodule update --init --depth=1
+        pushd taichi
+        git checkout master
+        git log -1
+        git checkout -b _checkout
+        popd
+        make all
+        make html
