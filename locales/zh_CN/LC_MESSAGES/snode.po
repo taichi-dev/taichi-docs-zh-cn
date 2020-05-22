@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.6.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-20 15:41+0800\n"
-"PO-Revision-Date: 2020-05-21 20:17+0800\n"
+"PO-Revision-Date: 2020-05-22 22:23+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,14 +47,15 @@ msgid ""
 "bitmasked: This is similar to dense, but it also uses a mask to maintain "
 "sparsity information, one bit per child."
 msgstr ""
-"位掩码(bitmasked)：类似于稠密集合，但实现了通过掩码保持数据的稀疏信息。比"
-"如为稠密集合的元素分配掩码来记录稀疏信息。"
+"位掩码集合(bitmasked)：类似于稠密集合，但实现了通过掩码保持数据的稀疏信"
+"息。比如为稠密集合的元素分配掩码来记录稀疏信息。"
 
 #: ../../snode.rst:13
 msgid ""
 "pointer: Store pointers instead of the whole structure to save memory "
 "and maintain sparsity."
-msgstr "指针(pointer)：存储指针而不是整个结构，以节省内存和保持稀疏性。"
+msgstr ""
+"指针集合(pointer)：存储指针而不是整个结构，以节省内存和保持稀疏性。"
 
 #: ../../snode.rst:15
 msgid ""
@@ -107,7 +108,7 @@ msgstr ""
 
 #: ../../snode.rst:36 ../../snode.rst:65
 msgid "(Tensor)"
-msgstr "(张量)"
+msgstr "（张量）"
 
 #: ../../snode.rst:37
 msgid "(tuple of integers) the shape of tensor"
@@ -115,7 +116,7 @@ msgstr "(元组或标量) 张量的形状"
 
 #: ../../snode.rst:39
 msgid "For example,"
-msgstr "例如,"
+msgstr "例如，"
 
 #: ../../snode.rst:43
 msgid ""
@@ -125,7 +126,7 @@ msgstr ""
 
 #: ../../snode.rst:49 ../../snode.rst:78
 msgid "(SNode)"
-msgstr "(结构节点)"
+msgstr "（结构节点）"
 
 #: ../../snode.rst:50
 msgid "axis (0 for ``i`` and 1 for ``j``)"
@@ -260,7 +261,7 @@ msgstr ""
 
 #: ../../snode.rst:143
 msgid "The following places a 1-D dynamic tensor of maximum size ``16``:"
-msgstr "以下示例代码放置了最大尺寸为 ``16`` 的1-维动态张量："
+msgstr "以下示例代码放置了最大尺寸为 ``16`` 的1维动态张量："
 
 #: ../../snode.rst:147
 msgid "ti.root.dynamic(ti.i, 16).place(x)"
