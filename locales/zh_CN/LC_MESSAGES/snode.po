@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.6.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-20 15:41+0800\n"
-"PO-Revision-Date: 2020-05-22 22:23+0800\n"
+"PO-Revision-Date: 2020-05-22 23:21+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,7 +97,7 @@ msgstr "(结构节点) ``snode`` 对象"
 
 #: ../../snode.rst:26
 msgid "The following code places two 0-D tensors named ``x`` and ``y``:"
-msgstr "以下示例代码放置了 ``x`` 和 ``y`` 两个0-维张量:"
+msgstr "以下示例代码放置了 ``x`` 和 ``y`` 两个零维张量:"
 
 #: ../../snode.rst:30
 msgid ""
@@ -112,7 +112,7 @@ msgstr "（张量）"
 
 #: ../../snode.rst:37
 msgid "(tuple of integers) the shape of tensor"
-msgstr "(元组或标量) 张量的形状"
+msgstr "(整数元组) 张量的形状"
 
 #: ../../snode.rst:39
 msgid "For example,"
@@ -198,7 +198,7 @@ msgstr "（结构节点）派生出来的子节点"
 
 #: ../../snode.rst:102
 msgid "The following code places a 1-D tensor of size ``3``:"
-msgstr "以下示例代码放置了尺寸为 ``3`` 的1-维张量："
+msgstr "以下示例代码放置了尺寸为 ``3`` 的一维张量："
 
 #: ../../snode.rst:106
 msgid ""
@@ -208,7 +208,7 @@ msgstr ""
 
 #: ../../snode.rst:109
 msgid "The following code places a 2-D tensor of shape ``(3, 4)``:"
-msgstr "以下示例代码放置了尺寸为 ``(3,4)`` 的2-维张量："
+msgstr "以下示例代码放置了尺寸为 ``(3,4)`` 的二维张量："
 
 #: ../../snode.rst:113
 msgid ""
@@ -261,7 +261,7 @@ msgstr ""
 
 #: ../../snode.rst:143
 msgid "The following places a 1-D dynamic tensor of maximum size ``16``:"
-msgstr "以下示例代码放置了最大尺寸为 ``16`` 的1维动态张量："
+msgstr "以下示例代码放置了最大尺寸为 ``16`` 的一维动态张量："
 
 #: ../../snode.rst:147
 msgid "ti.root.dynamic(ti.i, 16).place(x)"
@@ -289,7 +289,7 @@ msgstr "（标量）当前动态集合节点的尺寸"
 
 #: ../../snode.rst:171
 msgid "(depends on SNode data type) value to store"
-msgstr "（结构节点的数据类型）想要附加的常量"
+msgstr "（取决于结构节点的数据类型）想要储存的值"
 
 #: ../../snode.rst:172
 msgid "(``int32``) the size of the dynamic node, before appending"
@@ -297,7 +297,9 @@ msgstr "(``int32``) 附加操作之前动态节点的尺寸"
 
 #: ../../snode.rst:174
 msgid "Inserts ``val`` into the ``dynamic`` node with indices ``indices``."
-msgstr "使用上述函数，就能实现通过索引将常量插入到动态节点中。"
+msgstr ""
+"使用上述函数，就能实现通过 ``索引(indices)`` 将 ``常量(val)`` 插入到 ``动"
+"态集合`` 节点中。"
 
 #: ../../snode.rst:178
 msgid "Taichi tensors like powers of two"
@@ -311,8 +313,8 @@ msgid ""
 "128)``."
 msgstr ""
 "对于张量的维度，非整二次幂的维度会被扩充为二的整数次幂，不过这样会导致占"
-"据更多的虚拟地址空间。例如，一个(18,65)的张量（稠密）实际上在存储过程中相"
-"当于一个(32,128)大小的张量。"
+"据更多的虚拟地址空间。例如，一个 ``(18, 65)`` 的张量（稠密）实际上在存储"
+"过程中相当于一个 ``(32, 128)`` 大小的张量。"
 
 #: ../../snode.rst:185
 msgid "Indices"
