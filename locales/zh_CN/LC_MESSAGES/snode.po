@@ -85,7 +85,7 @@ msgstr "(结构节点) 放置(place)操作的目标"
 
 #: ../../snode.rst:23
 msgid "(tensor) tensor(s) to be placed"
-msgstr "(张量) 用来放置的张量对象"
+msgstr "(张量) 要放置的张量对象"
 
 #: ../../snode.rst
 msgid "Returns"
