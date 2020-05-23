@@ -161,11 +161,11 @@ msgstr ""
 
 #: ../../dev_install.rst:66
 msgid "Setting up Taichi for development"
-msgstr "为开发环境配置Taichi"
+msgstr "开发者的 Taichi 配置"
 
 #: ../../dev_install.rst:68
 msgid "Clone the taichi repo **recursively**, and build:"
-msgstr "请 **递归地** 克隆Taichi代码库，然后构建："
+msgstr "请 **递归地** 克隆 Taichi 代码库，然后构建："
 
 #: ../../dev_install.rst:70
 msgid ""
