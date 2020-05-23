@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-24 11:24+0800\n"
+"POT-Creation-Date: 2020-05-23 14:44-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,8 +33,8 @@ msgstr ""
 
 #: ../../legacy_installation.rst:11
 msgid ""
-"If you are working on the Taichi compiler and need to build from scratch,"
-" see :ref:`dev_install`."
+"If you are working on the Taichi compiler and need to build from source, "
+"see :ref:`dev_install`."
 msgstr ""
 
 #: ../../legacy_installation.rst:13
@@ -102,4 +102,10 @@ msgid ""
 "export TC_USE_DOUBLE=1\n"
 "ti build"
 msgstr ""
+
+#~ msgid ""
+#~ "If you are working on the Taichi"
+#~ " compiler and need to build from "
+#~ "scratch, see :ref:`dev_install`."
+#~ msgstr ""
 

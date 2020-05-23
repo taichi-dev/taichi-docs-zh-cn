@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
+"POT-Creation-Date: 2020-05-23 14:44-0400\n"
 "PO-Revision-Date: 2020-05-08 15:54+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -541,26 +541,42 @@ msgid "``[Benchmark]``: Benchmarking & regression tests;"
 msgstr ""
 
 #: ../../contributor_guide.rst:155
-msgid "``[PyPI]``: PyPI package release;"
+msgid "``[Linux]``: Linux platform;"
 msgstr ""
 
 #: ../../contributor_guide.rst:156
+msgid "``[Mac]``: Mac OS X platform;"
+msgstr ""
+
+#: ../../contributor_guide.rst:157
+msgid "``[Windows]``: Windows platform;"
+msgstr ""
+
+#: ../../contributor_guide.rst:158
+msgid "``[PyPI]``: PyPI package release;"
+msgstr ""
+
+#: ../../contributor_guide.rst:159
+msgid "``[Workflow]``: GitHub Actions/Workflows;"
+msgstr ""
+
+#: ../../contributor_guide.rst:160
 msgid ""
 "``[Misc]``: something that doesn't belong to any category, such as "
 "version bump, reformatting;"
 msgstr ""
 
-#: ../../contributor_guide.rst:157
+#: ../../contributor_guide.rst:161
 msgid "``[Bug]``: bug fixes;"
 msgstr ""
 
-#: ../../contributor_guide.rst:158
+#: ../../contributor_guide.rst:162
 msgid ""
 "**When introducing a new tag, please update the list here in the first PR"
 " with that tag, so that people can follow.**"
 msgstr ""
 
-#: ../../contributor_guide.rst:162
+#: ../../contributor_guide.rst:166
 msgid ""
 "We do appreciate all kinds of contributions, yet we should not expose the"
 " title of every PR to end-users. Therefore the changelog will distinguish"
@@ -568,7 +584,7 @@ msgid ""
 "is done by **capitalizing PR tags**:"
 msgstr ""
 
-#: ../../contributor_guide.rst:166
+#: ../../contributor_guide.rst:170
 msgid ""
 "PRs with visible/notable features to the users should be marked with tags"
 " starting with **the first letter capitalized**, e.g. ``[Metal], "
@@ -578,67 +594,67 @@ msgid ""
 "what your PR does, **based on your PR title**."
 msgstr ""
 
-#: ../../contributor_guide.rst:168
+#: ../../contributor_guide.rst:172
 msgid ""
 "Other PRs (underlying development/intermediate implementation) should use"
 " tags with **everything in lowercase letters**: e.g. ``[metal], [opengl],"
 " [ir], [lang], [cli]``."
 msgstr ""
 
-#: ../../contributor_guide.rst:171
+#: ../../contributor_guide.rst:175
 msgid "Tips on the Taichi compiler development"
 msgstr ""
 
-#: ../../contributor_guide.rst:173
+#: ../../contributor_guide.rst:177
 msgid ""
 ":ref:`compilation` may worth checking out. It explains the whole "
 "compilation process."
 msgstr ""
 
-#: ../../contributor_guide.rst:175
+#: ../../contributor_guide.rst:179
 msgid ""
 ":ref:`regress` may worth checking out when the work involves IR "
 "optimization."
 msgstr ""
 
-#: ../../contributor_guide.rst:177
+#: ../../contributor_guide.rst:181
 msgid ""
 "When creating a Taichi program using ``ti.init(arch=desired_arch, "
 "**kwargs)``, pass in the following parameters to make the Taichi compiler"
 " print out IR:"
 msgstr ""
 
-#: ../../contributor_guide.rst:179
+#: ../../contributor_guide.rst:183
 msgid ""
 "``print_preprocessed = True``: print results of the frontend Python AST "
 "transform. The resulting scripts will generate a Taichi Frontend AST when"
 " executed."
 msgstr ""
 
-#: ../../contributor_guide.rst:180
+#: ../../contributor_guide.rst:184
 msgid ""
 "``print_ir = True``: print the Taichi IR transformation process of kernel"
 " (excluding accessors) compilation."
 msgstr ""
 
-#: ../../contributor_guide.rst:181
+#: ../../contributor_guide.rst:185
 msgid "``print_kernel_llvm_ir = True``: print the emitted LLVM IR by Taichi."
 msgstr ""
 
-#: ../../contributor_guide.rst:182
+#: ../../contributor_guide.rst:186
 msgid ""
 "``print_kernel_llvm_ir_optimized = True``: print the optimized LLVM IR "
 "for each kernel."
 msgstr ""
 
-#: ../../contributor_guide.rst:183
+#: ../../contributor_guide.rst:187
 msgid ""
 "``print_accessor_ir = True``: print the IR transformation process of data"
 " accessors, which are special and simple kernels. (This is rarely used, "
 "unless you are debugging the compilation of data accessors.)"
 msgstr ""
 
-#: ../../contributor_guide.rst:187
+#: ../../contributor_guide.rst:191
 msgid ""
 "Data accessors in Python-scope are implemented as special Taichi kernels."
 " For example, ``x[1, 2, 3] = 3`` will call the writing accessor kernel of"
@@ -646,87 +662,87 @@ msgid ""
 "``y``."
 msgstr ""
 
-#: ../../contributor_guide.rst:193
+#: ../../contributor_guide.rst:197
 msgid "Testing"
 msgstr ""
 
-#: ../../contributor_guide.rst:195
+#: ../../contributor_guide.rst:199
 msgid "Tests should be added to ``taichi/tests``."
 msgstr ""
 
-#: ../../contributor_guide.rst:197
+#: ../../contributor_guide.rst:201
 msgid "Use ``ti test`` to run all the tests."
 msgstr ""
 
-#: ../../contributor_guide.rst:198
+#: ../../contributor_guide.rst:202
 msgid "Use ``ti test -v`` for verbose outputs."
 msgstr ""
 
-#: ../../contributor_guide.rst:199
+#: ../../contributor_guide.rst:203
 msgid ""
 "Use ``ti test <filename(s)>`` to run specific tests. e.g. ``ti test "
 "numpy_io`` and ``ti test test_numpy_io.py`` are equivalent."
 msgstr ""
 
-#: ../../contributor_guide.rst:200
+#: ../../contributor_guide.rst:204
 msgid ""
 "Use ``ti test -a <arch(s)>`` for test against specified architectures. "
 "e.g. ``ti test -a opengl`` or ``ti test numpy_io -a cuda,metal``."
 msgstr ""
 
-#: ../../contributor_guide.rst:201
+#: ../../contributor_guide.rst:205
 msgid ""
 "Use ``ti test -na <arch(s)>`` for test all architectures exclude some of "
 "them. e.g. ``ti test -na opengl,cuda``."
 msgstr ""
 
-#: ../../contributor_guide.rst:202
+#: ../../contributor_guide.rst:206
 msgid "Use ``ti test -c`` to run only the C++ tests. e.g. ``ti test -c alg_simp``"
 msgstr ""
 
-#: ../../contributor_guide.rst:204
+#: ../../contributor_guide.rst:208
 msgid "For more options, see ``ti test -h``."
 msgstr ""
 
-#: ../../contributor_guide.rst:207
+#: ../../contributor_guide.rst:211
 msgid "Documentation"
 msgstr "文档"
 
-#: ../../contributor_guide.rst:209
+#: ../../contributor_guide.rst:213
 msgid "Use ``ti doc`` to build the documentation locally."
 msgstr ""
 
-#: ../../contributor_guide.rst:210
+#: ../../contributor_guide.rst:214
 msgid "Open the documentation at ``taichi/doc/build/index.html``."
 msgstr ""
 
-#: ../../contributor_guide.rst:211
+#: ../../contributor_guide.rst:215
 msgid ""
 "On Linux/OS X, use ``watch -n 1 ti doc`` to continuously build the "
 "documentation."
 msgstr ""
 
-#: ../../contributor_guide.rst:213
+#: ../../contributor_guide.rst:217
 msgid ""
 "If the OpenGL backend detector keeps creating new windows, execute "
 "``export TI_WITH_OPENGL=0`` for ``ti doc``."
 msgstr ""
 
-#: ../../contributor_guide.rst:216
+#: ../../contributor_guide.rst:220
 msgid "C++ and Python standards"
 msgstr ""
 
-#: ../../contributor_guide.rst:218
+#: ../../contributor_guide.rst:222
 msgid ""
 "The C++ part of Taichi is written in C++17, and the Python part in 3.6+. "
 "You can assume that C++17 and Python 3.6 features are always available."
 msgstr ""
 
-#: ../../contributor_guide.rst:223
+#: ../../contributor_guide.rst:227
 msgid "Efficient code navigation across Python/C++"
 msgstr ""
 
-#: ../../contributor_guide.rst:224
+#: ../../contributor_guide.rst:228
 msgid ""
 "If you work on the language frontend (Python/C++ interface), to navigate "
 "around the code base, `ffi-navigator <https://github.com/tqchen/ffi-"
@@ -734,126 +750,126 @@ msgid ""
 " in C++. Follow their README to set up your editor."
 msgstr ""
 
-#: ../../contributor_guide.rst:230
+#: ../../contributor_guide.rst:234
 msgid "Folder structure"
 msgstr ""
 
-#: ../../contributor_guide.rst:232
+#: ../../contributor_guide.rst:236
 msgid "Key folders are"
 msgstr ""
 
-#: ../../contributor_guide.rst:234
+#: ../../contributor_guide.rst:238
 msgid "``taichi``: The core compiler implementation"
 msgstr ""
 
-#: ../../contributor_guide.rst:236
+#: ../../contributor_guide.rst:240
 msgid "``analysis``: Static analysis passes"
 msgstr ""
 
-#: ../../contributor_guide.rst:237
+#: ../../contributor_guide.rst:241
 msgid "``backends``: Device-dependent code generators/runtime environments"
 msgstr ""
 
-#: ../../contributor_guide.rst:238
+#: ../../contributor_guide.rst:242
 msgid "``codegen``: Code generation base classes"
 msgstr ""
 
-#: ../../contributor_guide.rst:239
+#: ../../contributor_guide.rst:243
 msgid "``gui``:  GUI"
 msgstr ""
 
-#: ../../contributor_guide.rst:240
+#: ../../contributor_guide.rst:244
 msgid "``inc``:  Small definition files to be included repeatedly"
 msgstr ""
 
-#: ../../contributor_guide.rst:241
+#: ../../contributor_guide.rst:245
 msgid "``ir``: Intermediate representation"
 msgstr ""
 
-#: ../../contributor_guide.rst:242
+#: ../../contributor_guide.rst:246
 msgid "``jit``: JIT-in-time compilation base classes"
 msgstr ""
 
-#: ../../contributor_guide.rst:243
+#: ../../contributor_guide.rst:247
 msgid "``llvm``: LLVM utils"
 msgstr ""
 
-#: ../../contributor_guide.rst:244
+#: ../../contributor_guide.rst:248
 msgid "``math``: Math utils"
 msgstr ""
 
-#: ../../contributor_guide.rst:245
+#: ../../contributor_guide.rst:249
 msgid "``platform``: Platform supports"
 msgstr ""
 
-#: ../../contributor_guide.rst:246
+#: ../../contributor_guide.rst:250
 msgid "``program``: Top-level constructs"
 msgstr ""
 
-#: ../../contributor_guide.rst:247
+#: ../../contributor_guide.rst:251
 msgid "``python``: C++/Python interfaces"
 msgstr ""
 
-#: ../../contributor_guide.rst:248
+#: ../../contributor_guide.rst:252
 msgid "``runtime``: Runtime environments"
 msgstr ""
 
-#: ../../contributor_guide.rst:249
+#: ../../contributor_guide.rst:253
 msgid "``struct``: Struct compiler base classes"
 msgstr ""
 
-#: ../../contributor_guide.rst:250
+#: ../../contributor_guide.rst:254
 msgid "``system``: OS-related infrastructure"
 msgstr ""
 
-#: ../../contributor_guide.rst:251
+#: ../../contributor_guide.rst:255
 msgid "``transforms``: IR transform passes"
 msgstr ""
 
-#: ../../contributor_guide.rst:252
+#: ../../contributor_guide.rst:256
 msgid "``util``:  Miscellaneous utilities"
 msgstr ""
 
-#: ../../contributor_guide.rst:254
+#: ../../contributor_guide.rst:258
 msgid "``python``: Python frontend implementation"
 msgstr ""
 
-#: ../../contributor_guide.rst:255
+#: ../../contributor_guide.rst:259
 msgid "``examples``: Examples"
 msgstr ""
 
-#: ../../contributor_guide.rst:256
+#: ../../contributor_guide.rst:260
 msgid "``docs``: Documentation"
 msgstr ""
 
-#: ../../contributor_guide.rst:257
+#: ../../contributor_guide.rst:261
 msgid "``tests``: C++ and Python tests"
 msgstr ""
 
-#: ../../contributor_guide.rst:258
+#: ../../contributor_guide.rst:262
 msgid "``benchmarks``: Performance benchmarks"
 msgstr ""
 
-#: ../../contributor_guide.rst:259
+#: ../../contributor_guide.rst:263
 msgid "``misc``: Random (yet useful) files"
 msgstr ""
 
-#: ../../contributor_guide.rst:260
+#: ../../contributor_guide.rst:264
 msgid "..."
 msgstr ""
 
-#: ../../contributor_guide.rst:263
+#: ../../contributor_guide.rst:267
 msgid "Upgrading CUDA"
 msgstr ""
 
-#: ../../contributor_guide.rst:265
+#: ../../contributor_guide.rst:269
 msgid ""
 "Right now we are targeting CUDA 10. When upgrading CUDA version, the file"
 " ``external/cuda_libdevice/slim_libdevice.10.bc`` should also be replaced"
 " with a newer version."
 msgstr ""
 
-#: ../../contributor_guide.rst:268
+#: ../../contributor_guide.rst:272
 msgid ""
 "To generate the slimmed version of libdevice based on a full "
 "``libdevice.X.bc`` file from a CUDA installation, use ``ti run "

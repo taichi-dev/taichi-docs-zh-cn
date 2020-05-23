@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 22:00-0400\n"
+"POT-Creation-Date: 2020-05-23 14:44-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -913,26 +913,42 @@ msgid "``[Benchmark]``: Benchmarking & regression tests;"
 msgstr ""
 
 #: ../../taichi/docs/contributor_guide.rst:155
-msgid "``[PyPI]``: PyPI package release;"
+msgid "``[Linux]``: Linux platform;"
 msgstr ""
 
 #: ../../taichi/docs/contributor_guide.rst:156
+msgid "``[Mac]``: Mac OS X platform;"
+msgstr ""
+
+#: ../../taichi/docs/contributor_guide.rst:157
+msgid "``[Windows]``: Windows platform;"
+msgstr ""
+
+#: ../../taichi/docs/contributor_guide.rst:158
+msgid "``[PyPI]``: PyPI package release;"
+msgstr ""
+
+#: ../../taichi/docs/contributor_guide.rst:159
+msgid "``[Workflow]``: GitHub Actions/Workflows;"
+msgstr ""
+
+#: ../../taichi/docs/contributor_guide.rst:160
 msgid ""
 "``[Misc]``: something that doesn't belong to any category, such as "
 "version bump, reformatting;"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:157
+#: ../../taichi/docs/contributor_guide.rst:161
 msgid "``[Bug]``: bug fixes;"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:158
+#: ../../taichi/docs/contributor_guide.rst:162
 msgid ""
 "**When introducing a new tag, please update the list here in the first PR"
 " with that tag, so that people can follow.**"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:162
+#: ../../taichi/docs/contributor_guide.rst:166
 msgid ""
 "We do appreciate all kinds of contributions, yet we should not expose the"
 " title of every PR to end-users. Therefore the changelog will distinguish"
@@ -940,7 +956,7 @@ msgid ""
 "is done by **capitalizing PR tags**:"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:166
+#: ../../taichi/docs/contributor_guide.rst:170
 msgid ""
 "PRs with visible/notable features to the users should be marked with tags"
 " starting with **the first letter capitalized**, e.g. ``[Metal], "
@@ -950,67 +966,67 @@ msgid ""
 "what your PR does, **based on your PR title**."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:168
+#: ../../taichi/docs/contributor_guide.rst:172
 msgid ""
 "Other PRs (underlying development/intermediate implementation) should use"
 " tags with **everything in lowercase letters**: e.g. ``[metal], [opengl],"
 " [ir], [lang], [cli]``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:171
+#: ../../taichi/docs/contributor_guide.rst:175
 msgid "Tips on the Taichi compiler development"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:173
+#: ../../taichi/docs/contributor_guide.rst:177
 msgid ""
 ":ref:`compilation` may worth checking out. It explains the whole "
 "compilation process."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:175
+#: ../../taichi/docs/contributor_guide.rst:179
 msgid ""
 ":ref:`regress` may worth checking out when the work involves IR "
 "optimization."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:177
+#: ../../taichi/docs/contributor_guide.rst:181
 msgid ""
 "When creating a Taichi program using ``ti.init(arch=desired_arch, "
 "**kwargs)``, pass in the following parameters to make the Taichi compiler"
 " print out IR:"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:179
+#: ../../taichi/docs/contributor_guide.rst:183
 msgid ""
 "``print_preprocessed = True``: print results of the frontend Python AST "
 "transform. The resulting scripts will generate a Taichi Frontend AST when"
 " executed."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:180
+#: ../../taichi/docs/contributor_guide.rst:184
 msgid ""
 "``print_ir = True``: print the Taichi IR transformation process of kernel"
 " (excluding accessors) compilation."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:181
+#: ../../taichi/docs/contributor_guide.rst:185
 msgid "``print_kernel_llvm_ir = True``: print the emitted LLVM IR by Taichi."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:182
+#: ../../taichi/docs/contributor_guide.rst:186
 msgid ""
 "``print_kernel_llvm_ir_optimized = True``: print the optimized LLVM IR "
 "for each kernel."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:183
+#: ../../taichi/docs/contributor_guide.rst:187
 msgid ""
 "``print_accessor_ir = True``: print the IR transformation process of data"
 " accessors, which are special and simple kernels. (This is rarely used, "
 "unless you are debugging the compilation of data accessors.)"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:187
+#: ../../taichi/docs/contributor_guide.rst:191
 msgid ""
 "Data accessors in Python-scope are implemented as special Taichi kernels."
 " For example, ``x[1, 2, 3] = 3`` will call the writing accessor kernel of"
@@ -1018,87 +1034,87 @@ msgid ""
 "``y``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:193
+#: ../../taichi/docs/contributor_guide.rst:197
 msgid "Testing"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:195
+#: ../../taichi/docs/contributor_guide.rst:199
 msgid "Tests should be added to ``taichi/tests``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:197
+#: ../../taichi/docs/contributor_guide.rst:201
 msgid "Use ``ti test`` to run all the tests."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:198
+#: ../../taichi/docs/contributor_guide.rst:202
 msgid "Use ``ti test -v`` for verbose outputs."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:199
+#: ../../taichi/docs/contributor_guide.rst:203
 msgid ""
 "Use ``ti test <filename(s)>`` to run specific tests. e.g. ``ti test "
 "numpy_io`` and ``ti test test_numpy_io.py`` are equivalent."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:200
+#: ../../taichi/docs/contributor_guide.rst:204
 msgid ""
 "Use ``ti test -a <arch(s)>`` for test against specified architectures. "
 "e.g. ``ti test -a opengl`` or ``ti test numpy_io -a cuda,metal``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:201
+#: ../../taichi/docs/contributor_guide.rst:205
 msgid ""
 "Use ``ti test -na <arch(s)>`` for test all architectures exclude some of "
 "them. e.g. ``ti test -na opengl,cuda``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:202
+#: ../../taichi/docs/contributor_guide.rst:206
 msgid "Use ``ti test -c`` to run only the C++ tests. e.g. ``ti test -c alg_simp``"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:204
+#: ../../taichi/docs/contributor_guide.rst:208
 msgid "For more options, see ``ti test -h``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:207
+#: ../../taichi/docs/contributor_guide.rst:211
 msgid "Documentation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:209
+#: ../../taichi/docs/contributor_guide.rst:213
 msgid "Use ``ti doc`` to build the documentation locally."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:210
+#: ../../taichi/docs/contributor_guide.rst:214
 msgid "Open the documentation at ``taichi/doc/build/index.html``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:211
+#: ../../taichi/docs/contributor_guide.rst:215
 msgid ""
 "On Linux/OS X, use ``watch -n 1 ti doc`` to continuously build the "
 "documentation."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:213
+#: ../../taichi/docs/contributor_guide.rst:217
 msgid ""
 "If the OpenGL backend detector keeps creating new windows, execute "
 "``export TI_WITH_OPENGL=0`` for ``ti doc``."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:216
+#: ../../taichi/docs/contributor_guide.rst:220
 msgid "C++ and Python standards"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:218
+#: ../../taichi/docs/contributor_guide.rst:222
 msgid ""
 "The C++ part of Taichi is written in C++17, and the Python part in 3.6+. "
 "You can assume that C++17 and Python 3.6 features are always available."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:223
+#: ../../taichi/docs/contributor_guide.rst:227
 msgid "Efficient code navigation across Python/C++"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:224
+#: ../../taichi/docs/contributor_guide.rst:228
 msgid ""
 "If you work on the language frontend (Python/C++ interface), to navigate "
 "around the code base, `ffi-navigator <https://github.com/tqchen/ffi-"
@@ -1106,126 +1122,126 @@ msgid ""
 " in C++. Follow their README to set up your editor."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:230
+#: ../../taichi/docs/contributor_guide.rst:234
 msgid "Folder structure"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:232
+#: ../../taichi/docs/contributor_guide.rst:236
 msgid "Key folders are"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:234
+#: ../../taichi/docs/contributor_guide.rst:238
 msgid "``taichi``: The core compiler implementation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:236
+#: ../../taichi/docs/contributor_guide.rst:240
 msgid "``analysis``: Static analysis passes"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:237
+#: ../../taichi/docs/contributor_guide.rst:241
 msgid "``backends``: Device-dependent code generators/runtime environments"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:238
+#: ../../taichi/docs/contributor_guide.rst:242
 msgid "``codegen``: Code generation base classes"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:239
+#: ../../taichi/docs/contributor_guide.rst:243
 msgid "``gui``:  GUI"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:240
+#: ../../taichi/docs/contributor_guide.rst:244
 msgid "``inc``:  Small definition files to be included repeatedly"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:241
+#: ../../taichi/docs/contributor_guide.rst:245
 msgid "``ir``: Intermediate representation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:242
+#: ../../taichi/docs/contributor_guide.rst:246
 msgid "``jit``: JIT-in-time compilation base classes"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:243
+#: ../../taichi/docs/contributor_guide.rst:247
 msgid "``llvm``: LLVM utils"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:244
+#: ../../taichi/docs/contributor_guide.rst:248
 msgid "``math``: Math utils"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:245
+#: ../../taichi/docs/contributor_guide.rst:249
 msgid "``platform``: Platform supports"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:246
+#: ../../taichi/docs/contributor_guide.rst:250
 msgid "``program``: Top-level constructs"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:247
+#: ../../taichi/docs/contributor_guide.rst:251
 msgid "``python``: C++/Python interfaces"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:248
+#: ../../taichi/docs/contributor_guide.rst:252
 msgid "``runtime``: Runtime environments"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:249
+#: ../../taichi/docs/contributor_guide.rst:253
 msgid "``struct``: Struct compiler base classes"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:250
+#: ../../taichi/docs/contributor_guide.rst:254
 msgid "``system``: OS-related infrastructure"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:251
+#: ../../taichi/docs/contributor_guide.rst:255
 msgid "``transforms``: IR transform passes"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:252
+#: ../../taichi/docs/contributor_guide.rst:256
 msgid "``util``:  Miscellaneous utilities"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:254
+#: ../../taichi/docs/contributor_guide.rst:258
 msgid "``python``: Python frontend implementation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:255
+#: ../../taichi/docs/contributor_guide.rst:259
 msgid "``examples``: Examples"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:256
+#: ../../taichi/docs/contributor_guide.rst:260
 msgid "``docs``: Documentation"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:257
+#: ../../taichi/docs/contributor_guide.rst:261
 msgid "``tests``: C++ and Python tests"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:258
+#: ../../taichi/docs/contributor_guide.rst:262
 msgid "``benchmarks``: Performance benchmarks"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:259
+#: ../../taichi/docs/contributor_guide.rst:263
 msgid "``misc``: Random (yet useful) files"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:260
+#: ../../taichi/docs/contributor_guide.rst:264
 msgid "..."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:263
+#: ../../taichi/docs/contributor_guide.rst:267
 msgid "Upgrading CUDA"
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:265
+#: ../../taichi/docs/contributor_guide.rst:269
 msgid ""
 "Right now we are targeting CUDA 10. When upgrading CUDA version, the file"
 " ``external/cuda_libdevice/slim_libdevice.10.bc`` should also be replaced"
 " with a newer version."
 msgstr ""
 
-#: ../../taichi/docs/contributor_guide.rst:268
+#: ../../taichi/docs/contributor_guide.rst:272
 msgid ""
 "To generate the slimmed version of libdevice based on a full "
 "``libdevice.X.bc`` file from a CUDA installation, use ``ti run "
@@ -1352,7 +1368,7 @@ msgstr ""
 msgid ""
 "Note this is for the compiler developers of the Taichi programming "
 "language. End users should use the pip packages instead of building from "
-"scratch. To build with NVIDIA GPU support, CUDA 10.0+ is needed. This "
+"source. To build with NVIDIA GPU support, CUDA 10.0+ is needed. This "
 "installation guide works for Ubuntu 16.04+ and OS X 10.14+. For precise "
 "build instructions on Windows, please check out `appveyor.yml "
 "<https://github.com/taichi-dev/taichi/blob/master/appveyor.yml>`_, which "
@@ -1392,7 +1408,7 @@ msgid ""
 msgstr ""
 
 #: ../../taichi/docs/dev_install.rst:27
-msgid "(If on other Linux distributions) Please build clang 8.0.1 from scratch:"
+msgid "(If on other Linux distributions) Please build clang 8.0.1 from source:"
 msgstr ""
 
 #: ../../taichi/docs/dev_install.rst:29
@@ -1409,7 +1425,7 @@ msgid ""
 msgstr ""
 
 #: ../../taichi/docs/dev_install.rst:41
-msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
+msgid "Make sure you have LLVM 8.0.1 built from source. To do so:"
 msgstr ""
 
 #: ../../taichi/docs/dev_install.rst:43
@@ -1466,21 +1482,29 @@ msgstr ""
 #: ../../taichi/docs/dev_install.rst:70
 msgid ""
 "git clone https://github.com/taichi-dev/taichi --depth=1 --branch=master\n"
-"git submodule update --init --recursive --depth=1\n"
 "cd taichi\n"
+"git submodule update --init --recursive --depth=1\n"
 "mkdir build\n"
 "cd build\n"
 "cmake ..\n"
+"# if you do not set clang as the default compiler\n"
+"# use the line below:\n"
+"#   cmake .. -DCMAKE_CXX_COMPILER=clang-8\n"
+"#\n"
+"# Alternatively, if you would like to set clang as the default compiler\n"
+"# On Unix CMake honors environment variables $CC and $CXX upon deciding "
+"which C and C++ compilers to use\n"
+"#\n"
 "# if you are building with CUDA 10.0, use the line below:\n"
 "#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
 "make -j 8"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:82
+#: ../../taichi/docs/dev_install.rst:89
 msgid "Add the following script to your ``~/.bashrc``:"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:84
+#: ../../taichi/docs/dev_install.rst:91
 msgid ""
 "export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository"
 "\n"
@@ -1490,25 +1514,25 @@ msgid ""
 "is in /opt"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:91
+#: ../../taichi/docs/dev_install.rst:98
 msgid "Execute ``source ~/.bashrc`` to reload shell config."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:92
+#: ../../taichi/docs/dev_install.rst:99
 msgid ""
 "Execute ``python3 -m taichi test`` to run all the tests. It may take up "
 "to 5 minutes to run all tests."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:93
+#: ../../taichi/docs/dev_install.rst:100
 msgid "Check out ``examples`` for runnable examples. Run them with ``python3``."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:98
+#: ../../taichi/docs/dev_install.rst:105
 msgid "Prebuilt LLVM for Windows CI"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:100
+#: ../../taichi/docs/dev_install.rst:107
 msgid ""
 "cmake .. -G\"Visual Studio 15 2017 Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON "
 "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
@@ -1516,22 +1540,22 @@ msgid ""
 "-Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:104
+#: ../../taichi/docs/dev_install.rst:111
 msgid ""
 "Then use Visual Studio to build. After building the ``INSTALL`` project "
 "(under folder \"CMakePredefinedTargets\"). After build completes, find "
 "your LLVM binaries/headers in `build/include`."
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:107 ../../taichi/docs/install.rst:21
+#: ../../taichi/docs/dev_install.rst:114 ../../taichi/docs/install.rst:21
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:109
+#: ../../taichi/docs/dev_install.rst:116
 msgid "Run with debug mode to see if there's any illegal memory access"
 msgstr ""
 
-#: ../../taichi/docs/dev_install.rst:110
+#: ../../taichi/docs/dev_install.rst:117
 msgid ""
 "Disable compiler optimizations to quickly confirm that the issue is not "
 "cause by optimization"
@@ -3409,8 +3433,8 @@ msgstr ""
 
 #: ../../taichi/docs/legacy_installation.rst:11
 msgid ""
-"If you are working on the Taichi compiler and need to build from scratch,"
-" see :ref:`dev_install`."
+"If you are working on the Taichi compiler and need to build from source, "
+"see :ref:`dev_install`."
 msgstr ""
 
 #: ../../taichi/docs/legacy_installation.rst:13
@@ -4431,7 +4455,7 @@ msgid "axis (0 for ``i`` and 1 for ``j``)"
 msgstr ""
 
 #: ../../taichi/docs/snode.rst:51
-msgid "(scalar) the size of tensor alone that axis"
+msgid "(scalar) the size of tensor along that axis"
 msgstr ""
 
 #: ../../taichi/docs/snode.rst:53
@@ -5719,6 +5743,53 @@ msgid ""
 "Vectors are special matrices with only 1 column. In fact, ``ti.Vector`` "
 "is just an alias of ``ti.Matrix``."
 msgstr ""
+
+#~ msgid ""
+#~ "Note this is for the compiler "
+#~ "developers of the Taichi programming "
+#~ "language. End users should use the "
+#~ "pip packages instead of building from"
+#~ " scratch. To build with NVIDIA GPU"
+#~ " support, CUDA 10.0+ is needed. This"
+#~ " installation guide works for Ubuntu "
+#~ "16.04+ and OS X 10.14+. For "
+#~ "precise build instructions on Windows, "
+#~ "please check out `appveyor.yml "
+#~ "<https://github.com/taichi-"
+#~ "dev/taichi/blob/master/appveyor.yml>`_, which does "
+#~ "basically the same thing as the "
+#~ "following instructions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(If on other Linux distributions) Please"
+#~ " build clang 8.0.1 from scratch:"
+#~ msgstr ""
+
+#~ msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "git clone https://github.com/taichi-dev/taichi "
+#~ "--depth=1 --branch=master\n"
+#~ "git submodule update --init --recursive --depth=1\n"
+#~ "cd taichi\n"
+#~ "mkdir build\n"
+#~ "cd build\n"
+#~ "cmake ..\n"
+#~ "# if you are building with CUDA 10.0, use the line below:\n"
+#~ "#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
+#~ "make -j 8"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are working on the Taichi"
+#~ " compiler and need to build from "
+#~ "scratch, see :ref:`dev_install`."
+#~ msgstr ""
+
+#~ msgid "(scalar) the size of tensor alone that axis"
+#~ msgstr ""
 
 #~ msgid "Copyright (c) 2012 - present, Victor Zverovich"
 #~ msgstr ""

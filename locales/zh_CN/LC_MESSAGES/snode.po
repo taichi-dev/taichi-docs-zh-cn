@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
+"POT-Creation-Date: 2020-05-23 14:44-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,7 +120,7 @@ msgid "axis (0 for ``i`` and 1 for ``j``)"
 msgstr ""
 
 #: ../../snode.rst:51
-msgid "(scalar) the size of tensor alone that axis"
+msgid "(scalar) the size of tensor along that axis"
 msgstr ""
 
 #: ../../snode.rst:53
@@ -330,5 +330,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "TODO: add tensor.parent(), and add see also ref here"
+#~ msgstr ""
+
+#~ msgid "(scalar) the size of tensor alone that axis"
 #~ msgstr ""
 

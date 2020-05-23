@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
-"PO-Revision-Date: 2020-05-20 22:28-0400\n"
-"Last-Translator: rexwangcc <rexwangcc@gmail.com>\n"
+"POT-Creation-Date: 2020-05-23 14:44-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,16 +25,16 @@ msgstr "开发者安装指南"
 
 #: ../../dev_install.rst:6
 msgid ""
-"Note this is for the compiler developers of the Taichi programming language. "
-"End users should use the pip packages instead of building from scratch. To "
-"build with NVIDIA GPU support, CUDA 10.0+ is needed. This installation guide "
-"works for Ubuntu 16.04+ and OS X 10.14+. For precise build instructions on "
-"Windows, please check out `appveyor.yml <https://github.com/taichi-dev/taichi/"
-"blob/master/appveyor.yml>`_, which does basically the same thing as the "
-"following instructions."
+"Note this is for the compiler developers of the Taichi programming "
+"language. End users should use the pip packages instead of building from "
+"source. To build with NVIDIA GPU support, CUDA 10.0+ is needed. This "
+"installation guide works for Ubuntu 16.04+ and OS X 10.14+. For precise "
+"build instructions on Windows, please check out `appveyor.yml "
+"<https://github.com/taichi-dev/taichi/blob/master/appveyor.yml>`_, which "
+"does basically the same thing as the following instructions."
 msgstr ""
 "请注意本指南是面向Taichi编程语言的编译器开发者的。Taichi的终端用户请使用pip安装"
-"包而避免从头构建。构建支持NVIDIA GPU的版本需要CUDA 10.0+的支持。本指南兼容"
+"包而避免从源码构建。构建支持NVIDIA GPU的版本需要CUDA 10.0+的支持。本指南兼容"
 "Ubuntu 16.04+和OS X 10.14+。Windows下的较为严格的构建指南请参考 `appveyor.yml "
 "<https://github.com/taichi-dev/taichi/blob/master/appveyor.yml>`_ ， 链接中流程"
 "基本与下面的说明保持一致。"
@@ -75,8 +76,8 @@ msgstr ""
 "该同样可以工作）。"
 
 #: ../../dev_install.rst:27
-msgid "(If on other Linux distributions) Please build clang 8.0.1 from scratch:"
-msgstr "（在其他Linux发行版下）请从头构建clang 8.0.1："
+msgid "(If on other Linux distributions) Please build clang 8.0.1 from source:"
+msgstr "（在其他Linux发行版下）请从源码构建构建clang 8.0.1："
 
 #: ../../dev_install.rst:29
 msgid ""
@@ -92,8 +93,8 @@ msgid ""
 msgstr ""
 
 #: ../../dev_install.rst:41
-msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
-msgstr "请确认你从头构建了LLVM 8.0.1。流程如下所示："
+msgid "Make sure you have LLVM 8.0.1 built from source. To do so:"
+msgstr "请确认你从源码构建构建了LLVM 8.0.1。流程如下所示："
 
 #: ../../dev_install.rst:43
 msgid ""
@@ -169,11 +170,19 @@ msgstr "请 **递归地** 克隆Taichi代码库，然后构建："
 #: ../../dev_install.rst:70
 msgid ""
 "git clone https://github.com/taichi-dev/taichi --depth=1 --branch=master\n"
-"git submodule update --init --recursive --depth=1\n"
 "cd taichi\n"
+"git submodule update --init --recursive --depth=1\n"
 "mkdir build\n"
 "cd build\n"
 "cmake ..\n"
+"# if you do not set clang as the default compiler\n"
+"# use the line below:\n"
+"#   cmake .. -DCMAKE_CXX_COMPILER=clang-8\n"
+"#\n"
+"# Alternatively, if you would like to set clang as the default compiler\n"
+"# On Unix CMake honors environment variables $CC and $CXX upon deciding "
+"which C and C++ compilers to use\n"
+"#\n"
 "# if you are building with CUDA 10.0, use the line below:\n"
 "#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
 "make -j 8"
@@ -189,11 +198,11 @@ msgstr ""
 "#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
 "make -j 8"
 
-#: ../../dev_install.rst:82
+#: ../../dev_install.rst:89
 msgid "Add the following script to your ``~/.bashrc``:"
 msgstr "将下面的脚本添加至你的 ``~/.bashrc`` 配置文件："
 
-#: ../../dev_install.rst:84
+#: ../../dev_install.rst:91
 msgid ""
 "export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository\n"
 "export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH\n"
@@ -207,11 +216,11 @@ msgstr ""
 "# export PATH=/opt/llvm/bin:$PATH # 反注释这行如果你的llvm-8或clang-8在/opt目录"
 "下"
 
-#: ../../dev_install.rst:91
+#: ../../dev_install.rst:98
 msgid "Execute ``source ~/.bashrc`` to reload shell config."
 msgstr "执行 ``source ~/.bashrc`` 来重载shell的配置。"
 
-#: ../../dev_install.rst:92
+#: ../../dev_install.rst:99
 msgid ""
 "Execute ``python3 -m taichi test`` to run all the tests. It may take up to 5 "
 "minutes to run all tests."
@@ -219,15 +228,15 @@ msgstr ""
 "执行 ``python3 -m taichi test`` 来运行所有的测试。运行所有测试用例可能会耗费长达"
 "5分钟的时间。"
 
-#: ../../dev_install.rst:93
+#: ../../dev_install.rst:100
 msgid "Check out ``examples`` for runnable examples. Run them with ``python3``."
 msgstr "查看 ``examples`` 下的可执行的示例。使用 ``python3`` 来运行它们。"
 
-#: ../../dev_install.rst:98
+#: ../../dev_install.rst:105
 msgid "Prebuilt LLVM for Windows CI"
 msgstr "为Windows 持续集成服务（CI）预先构建的LLVM"
 
-#: ../../dev_install.rst:100
+#: ../../dev_install.rst:107
 msgid ""
 "cmake .. -G\"Visual Studio 15 2017 Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON -"
 "DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD="
@@ -235,23 +244,144 @@ msgid ""
 "BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
 msgstr ""
 
-#: ../../dev_install.rst:104
+#: ../../dev_install.rst:111
 msgid ""
 "Then use Visual Studio to build. After building the ``INSTALL`` project (under "
 "folder \"CMakePredefinedTargets\"). After build completes, find your LLVM "
 "binaries/headers in `build/include`."
 msgstr "然后使用Visual Studio来进行构建。"
 
-#: ../../dev_install.rst:107
+#: ../../dev_install.rst:114
 msgid "Troubleshooting"
 msgstr "故障排除"
 
-#: ../../dev_install.rst:109
+#: ../../dev_install.rst:116
 msgid "Run with debug mode to see if there's any illegal memory access"
 msgstr "在调试模式（debug mode）下运行以检查是否有任何的非法内存访问"
 
-#: ../../dev_install.rst:110
+#: ../../dev_install.rst:117
 msgid ""
-"Disable compiler optimizations to quickly confirm that the issue is not cause "
-"by optimization"
+"Disable compiler optimizations to quickly confirm that the issue is not "
+"cause by optimization"
 msgstr "禁用编译器优化来快速确认问题并非是由优化引起的"
+
+#~ msgid ""
+#~ "(If on Ubuntu) Execute ``sudo apt "
+#~ "install libtinfo-dev clang-8`` (or "
+#~ "``clang-7`` should work as well)."
+#~ msgstr ""
+
+#~ msgid "(If on Arch Linux) Execute"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "wget "
+#~ "https://archive.archlinux.org/packages/c/clang/clang-8.0.1-1-x86_64.pkg.tar.xz"
+#~ "\n"
+#~ "sudo pacman -Qp clang-8.0.1-1-x86_64.pkg.tar.xz"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you have installed ``clang`` (9.0.1)"
+#~ " before, this command will overrides "
+#~ "the existing ``clang``. If you don't "
+#~ "want to break up depedencies, please "
+#~ "build from scratch and install it "
+#~ "in ``/opt``. Then add ``/opt/clang/bin`` "
+#~ "to your ``$PATH``."
+#~ msgstr ""
+
+#~ msgid "Clone the taichi repo, and build:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "git clone https://github.com/taichi-dev/taichi "
+#~ "--depth=1 --branch=master\n"
+#~ "git submodule update --init --recursive --depth=1\n"
+#~ "cd taichi\n"
+#~ "mkdir build\n"
+#~ "cd build\n"
+#~ "cmake ..\n"
+#~ "# if you are building with CUDA 10.0, use the line below:\n"
+#~ "# cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
+#~ "make -j 8"
+#~ msgstr ""
+
+#~ msgid "Setting up CUDA 10.1 on Ubuntu 18.04"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "First, make sure you have CUDA "
+#~ "10.1 installed. Check this by running"
+#~ " ``nvcc --version`` or ``cat "
+#~ "/usr/local/cuda/version.txt``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you don't have it - go "
+#~ "ahead to `this website "
+#~ "<https://developer.nvidia.com/cuda-downloads>`_ and "
+#~ "download it."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "These instructions were copied from the"
+#~ " webiste above for x86_64 architecture"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "wget "
+#~ "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64"
+#~ "/cuda-ubuntu1804.pin\n"
+#~ "sudo mv cuda-ubuntu1804.pin "
+#~ "/etc/apt/preferences.d/cuda-repository-pin-600\n"
+#~ "wget "
+#~ "http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers"
+#~ "/cuda-repo-"
+#~ "ubuntu1804-10-1-local-10.1.243-418.87.00_1.0-1_amd64.deb\n"
+#~ "sudo dpkg -i cuda-repo-"
+#~ "ubuntu1804-10-1-local-10.1.243-418.87.00_1.0-1_amd64.deb\n"
+#~ "sudo apt-key add /var/cuda-"
+#~ "repo-10-1-local-10.1.243-418.87.00/7fa2af80.pub\n"
+#~ "sudo apt-get update\n"
+#~ "sudo apt-get -y install cuda"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note this is for the compiler "
+#~ "developers of the Taichi programming "
+#~ "language. End users should use the "
+#~ "pip packages instead of building from"
+#~ " scratch. To build with NVIDIA GPU"
+#~ " support, CUDA 10.0+ is needed. This"
+#~ " installation guide works for Ubuntu "
+#~ "16.04+ and OS X 10.14+. For "
+#~ "precise build instructions on Windows, "
+#~ "please check out `appveyor.yml "
+#~ "<https://github.com/taichi-"
+#~ "dev/taichi/blob/master/appveyor.yml>`_, which does "
+#~ "basically the same thing as the "
+#~ "following instructions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(If on other Linux distributions) Please"
+#~ " build clang 8.0.1 from scratch:"
+#~ msgstr ""
+
+#~ msgid "Make sure you have LLVM 8.0.1 built from scratch. To do so:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "git clone https://github.com/taichi-dev/taichi "
+#~ "--depth=1 --branch=master\n"
+#~ "git submodule update --init --recursive --depth=1\n"
+#~ "cd taichi\n"
+#~ "mkdir build\n"
+#~ "cd build\n"
+#~ "cmake ..\n"
+#~ "# if you are building with CUDA 10.0, use the line below:\n"
+#~ "#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
+#~ "make -j 8"
+#~ msgstr ""
+
