@@ -3,23 +3,24 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-20 15:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-22 23:21+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../snode.rst:4
 msgid "Structural nodes (SNodes)"
-msgstr ""
+msgstr "结构节点 (SNodes)"
 
 #: ../../snode.rst:6
 msgid ""
@@ -32,22 +33,29 @@ msgid ""
 "(SNodes)* to compose the hierarchy and particular properties. These "
 "constructs and their semantics are listed below:"
 msgstr ""
+"在编写计算部分的代码之后，用户需要设定内部层次数据结构。包括微观和宏观两"
+"部分，宏观上设定层级数据结构组件之间的嵌套关系以及表示稀疏性的方式；微观"
+"上，描述数据如何分组(例如，SOA 或 AOS)。Taichi 提供了 *结构节点 "
+"(SNodes)* 以满足不同层级数据结构构建时的需求。其结构和语义具体如下所示："
 
 #: ../../snode.rst:9
 msgid "dense: A fixed-length contiguous array."
-msgstr ""
+msgstr "稠密集合(dense)：固定长度的连续数组。"
 
 #: ../../snode.rst:11
 msgid ""
 "bitmasked: This is similar to dense, but it also uses a mask to maintain "
 "sparsity information, one bit per child."
 msgstr ""
+"位掩码集合(bitmasked)：类似于稠密集合，但实现了通过掩码保持数据的稀疏信"
+"息。比如为稠密集合的元素分配掩码来记录稀疏信息。"
 
 #: ../../snode.rst:13
 msgid ""
-"pointer: Store pointers instead of the whole structure to save memory and"
-" maintain sparsity."
+"pointer: Store pointers instead of the whole structure to save memory "
+"and maintain sparsity."
 msgstr ""
+"指针集合(pointer)：存储指针而不是整个结构，以节省内存和保持稀疏性。"
 
 #: ../../snode.rst:15
 msgid ""
@@ -55,36 +63,41 @@ msgid ""
 "serves the role of ``std::vector`` in C++ or ``list`` in Python, and can "
 "be used to maintain objects (e.g. particles) contained in a block."
 msgstr ""
+"动态集合(dynamic)：可变长度数组，具有预定义的最大长度。它扮演着 C++ 中的 "
+"``std::vector`` 或者是 Python 中的 ``list`` 这样的角色，可以用来维护包含"
+"在一个块(block)中的对象（例如粒子）。"
 
 #: ../../snode.rst:18
 msgid ""
 "See :ref:`layout` for more details. ``ti.root`` is the root node of the "
 "data structure."
 msgstr ""
+"你可以在 :ref:`layout` 章节中了解更多详细信息。 ``ti.root`` 是层级数据结"
+"构的根结点."
 
 #: ../../snode.rst
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../snode.rst:22
 msgid "(SNode) where to place"
-msgstr ""
+msgstr "(结构节点) 放置(place)操作的目标"
 
 #: ../../snode.rst:23
 msgid "(tensor) tensor(s) to be placed"
-msgstr ""
+msgstr "(张量) 要放置的张量对象"
 
 #: ../../snode.rst
 msgid "Returns"
-msgstr ""
+msgstr "返回"
 
 #: ../../snode.rst:24
 msgid "(SNode) the ``snode`` itself"
-msgstr ""
+msgstr "(结构节点) ``snode`` 对象"
 
 #: ../../snode.rst:26
 msgid "The following code places two 0-D tensors named ``x`` and ``y``:"
-msgstr ""
+msgstr "以下示例代码放置了 ``x`` 和 ``y`` 两个零维张量:"
 
 #: ../../snode.rst:30
 msgid ""
@@ -95,15 +108,15 @@ msgstr ""
 
 #: ../../snode.rst:36 ../../snode.rst:65
 msgid "(Tensor)"
-msgstr ""
+msgstr "（张量）"
 
 #: ../../snode.rst:37
 msgid "(tuple of integers) the shape of tensor"
-msgstr ""
+msgstr "(整数元组) 张量的形状"
 
 #: ../../snode.rst:39
 msgid "For example,"
-msgstr ""
+msgstr "例如，"
 
 #: ../../snode.rst:43
 msgid ""
@@ -113,19 +126,19 @@ msgstr ""
 
 #: ../../snode.rst:49 ../../snode.rst:78
 msgid "(SNode)"
-msgstr ""
+msgstr "（结构节点）"
 
 #: ../../snode.rst:50
 msgid "axis (0 for ``i`` and 1 for ``j``)"
-msgstr ""
+msgstr "指定轴（0 表示 ``i`` ，1 表示 ``j`` ）"
 
 #: ../../snode.rst:51
 msgid "(scalar) the size of tensor alone that axis"
-msgstr ""
+msgstr "（标量）张量在指定轴上的尺寸"
 
 #: ../../snode.rst:53
 msgid "Equivalent to ``tensor.shape()[i]``."
-msgstr ""
+msgstr "相当于 ``tensor.shape()[i]`` 。"
 
 #: ../../snode.rst:57
 msgid ""
@@ -137,11 +150,11 @@ msgstr ""
 
 #: ../../snode.rst:66
 msgid "(scalar) the dimensionality of the tensor"
-msgstr ""
+msgstr "（标量）张量的维度"
 
 #: ../../snode.rst:68
 msgid "Equivalent to ``len(tensor.shape())``."
-msgstr ""
+msgstr "相当于 ``len(tensor.shape())`` 。"
 
 #: ../../snode.rst:72
 msgid ""
@@ -151,7 +164,7 @@ msgstr ""
 
 #: ../../snode.rst:79
 msgid "(SNode) the parent node of ``snode``"
-msgstr ""
+msgstr "（结构节点） ``snode`` 的父节点"
 
 #: ../../snode.rst:83
 msgid ""
@@ -165,27 +178,27 @@ msgstr ""
 
 #: ../../snode.rst:92
 msgid "Node types"
-msgstr ""
+msgstr "不同类型的节点"
 
 #: ../../snode.rst:97 ../../snode.rst:134
 msgid "(SNode) parent node where the child is derived from"
-msgstr ""
+msgstr "（结构节点） 父节点，返回的子节点就是从该节点派生"
 
 #: ../../snode.rst:98
 msgid "(Index or Indices) indices used for this node"
-msgstr ""
+msgstr "（索引）用于子节点上的索引"
 
 #: ../../snode.rst:99
 msgid "(scalar or tuple) shape the tensor of vectors"
-msgstr ""
+msgstr "（标量或元组）指定向量张量(tensor of vector)的形状"
 
 #: ../../snode.rst:100 ../../snode.rst:138
 msgid "(SNode) the derived child node"
-msgstr ""
+msgstr "（结构节点）派生出来的子节点"
 
 #: ../../snode.rst:102
 msgid "The following code places a 1-D tensor of size ``3``:"
-msgstr ""
+msgstr "以下示例代码放置了尺寸为 ``3`` 的一维张量："
 
 #: ../../snode.rst:106
 msgid ""
@@ -195,7 +208,7 @@ msgstr ""
 
 #: ../../snode.rst:109
 msgid "The following code places a 2-D tensor of shape ``(3, 4)``:"
-msgstr ""
+msgstr "以下示例代码放置了尺寸为 ``(3,4)`` 的二维张量："
 
 #: ../../snode.rst:113
 msgid ""
@@ -208,6 +221,8 @@ msgid ""
 "If ``shape`` is a scalar and there are multiple indices, then ``shape`` "
 "will be automatically expanded to fit the number of indices. For example,"
 msgstr ""
+"如果给定的 ``shape`` 是一个标量，却又对应了多个索引，那么 ``shape`` 将自"
+"动扩充直至和索引数量相等。例如,"
 
 #: ../../snode.rst:123
 msgid "snode.dense(ti.ijk, 3)"
@@ -215,7 +230,7 @@ msgstr ""
 
 #: ../../snode.rst:125
 msgid "is equivalent to"
-msgstr ""
+msgstr "相当于"
 
 #: ../../snode.rst:129
 msgid "snode.dense(ti.ijk, (3, 3, 3))"
@@ -223,28 +238,30 @@ msgstr ""
 
 #: ../../snode.rst:135
 msgid "(Index) the ``dynamic`` node indices"
-msgstr ""
+msgstr "（索引） 动态集合节点(dynamic node)的索引"
 
 #: ../../snode.rst:136
 msgid "(scalar) the maximum size of the dynamic node"
-msgstr ""
+msgstr "（标量）描述该动态集合节点的最大尺寸"
 
 #: ../../snode.rst:137
 msgid ""
 "(optional, scalar) the number of elements in each dynamic memory "
 "allocation chunk"
-msgstr ""
+msgstr "（可选标量）描述动态内存分配时块(chunk)中存储的元素数目"
 
 #: ../../snode.rst:140
 msgid ""
-"``dynamic`` nodes acts like ``std::vector`` in C++ or ``list`` in Python."
-" Taichi's dynamic memory allocation system allocates its memory on the "
-"fly."
+"``dynamic`` nodes acts like ``std::vector`` in C++ or ``list`` in "
+"Python. Taichi's dynamic memory allocation system allocates its memory "
+"on the fly."
 msgstr ""
+"``动态集合`` 节点就像 C++ 中的 ``std::vector`` 或者是 Python 中的 "
+"``list`` 。Taichi 具有的动态内存分配系统可以实现自由的分配内存。"
 
 #: ../../snode.rst:143
 msgid "The following places a 1-D dynamic tensor of maximum size ``16``:"
-msgstr ""
+msgstr "以下示例代码放置了最大尺寸为 ``16`` 的一维动态张量："
 
 #: ../../snode.rst:147
 msgid "ti.root.dynamic(ti.i, 16).place(x)"
@@ -256,79 +273,53 @@ msgstr ""
 
 #: ../../snode.rst:158
 msgid "Working with ``dynamic`` SNodes"
-msgstr ""
+msgstr "动态集合节点的使用"
 
 #: ../../snode.rst:162 ../../snode.rst:169
 msgid "(SNode, dynamic)"
-msgstr ""
+msgstr "（动态集合节点）"
 
 #: ../../snode.rst:163 ../../snode.rst:170
 msgid "(scalar or tuple of scalars) the ``dynamic`` node indices"
-msgstr ""
+msgstr "(标量或元组中标量)  ``动态集合`` 节点的索引"
 
 #: ../../snode.rst:164
 msgid "(scalar) the current size of the dynamic node"
-msgstr ""
+msgstr "（标量）当前动态集合节点的尺寸"
 
 #: ../../snode.rst:171
 msgid "(depends on SNode data type) value to store"
-msgstr ""
+msgstr "（取决于结构节点的数据类型）想要储存的值"
 
 #: ../../snode.rst:172
 msgid "(``int32``) the size of the dynamic node, before appending"
-msgstr ""
+msgstr "(``int32``) 附加操作之前动态节点的尺寸"
 
 #: ../../snode.rst:174
 msgid "Inserts ``val`` into the ``dynamic`` node with indices ``indices``."
 msgstr ""
+"使用上述函数，就能实现通过 ``索引(indices)`` 将 ``常量(val)`` 插入到 ``动"
+"态集合`` 节点中。"
 
 #: ../../snode.rst:178
 msgid "Taichi tensors like powers of two"
-msgstr ""
+msgstr "Taichi 的张量尺寸"
 
 #: ../../snode.rst:180
 msgid ""
 "Non-power-of-two tensor dimensions are promoted into powers of two and "
-"thus these tensors will occupy more virtual address space. For example, a"
-" (dense) tensor of size ``(18, 65)`` will be materialized as ``(32, "
+"thus these tensors will occupy more virtual address space. For example, "
+"a (dense) tensor of size ``(18, 65)`` will be materialized as ``(32, "
 "128)``."
 msgstr ""
+"对于张量，非整二次幂的那些维度会被扩充为整二次幂，因而会占"
+"据更多虚拟地址空间。例如，一个 ``(18, 65)`` 的稠密张量在实际存储"
+"时相当于一个 ``(32, 128)`` 大小的张量。"
 
 #: ../../snode.rst:185
 msgid "Indices"
-msgstr ""
+msgstr "索引"
 
 #: ../../snode.rst:195
 msgid "(TODO)"
 msgstr ""
-
-#~ msgid ""
-#~ "See :ref:`layout` for more details about"
-#~ " data layout. ``ti.root`` is the root"
-#~ " node of the data structure."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "After writing the computation code, the"
-#~ " user needs to specify the internal"
-#~ " data structure hierarchy. Specifying a "
-#~ "data structure includes choices at both"
-#~ " the macro level, dictating how the"
-#~ " data structure components nest with "
-#~ "each other and the way they "
-#~ "represent sparsity, and the micro level,"
-#~ " dictating how data are grouped "
-#~ "together (e.g. structure of arrays vs."
-#~ " array of structures). Our language "
-#~ "provides *structural nodes (SNodes)* to "
-#~ "compose the hierarchy and particular "
-#~ "properties. These constructs and their "
-#~ "semantics are listed below:"
-#~ msgstr ""
-
-#~ msgid "the tensor"
-#~ msgstr ""
-
-#~ msgid "TODO: add tensor.parent(), and add see also ref here"
-#~ msgstr ""
-
