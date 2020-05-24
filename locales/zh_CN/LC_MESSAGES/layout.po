@@ -3,23 +3,24 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-12 14:33+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-24 17:49+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../layout.rst:4
 msgid "Advanced dense layouts"
-msgstr ""
+msgstr "高级数据布局"
 
 #: ../../layout.rst:6
 msgid ""
@@ -30,6 +31,11 @@ msgid ""
 "utilization. Although when performance is not the first priority, you "
 "probably don't have to worry about it."
 msgstr ""
+"张量（:ref:`scalar_tensor`）可以 *放置(placed)* 在特定的形状和 *布局"
+"(layout)* 中。构造适当的数据布局对性能来说非常关键，特别是对内存密集型的应"
+"用程序而言。精心设计的数据布局可以显著提高缓存/ 旁路转换缓冲(TLB)命中率和"
+"缓存行(CacheLine)利用率。不过某些情况下性能不是最优先要考虑的因素，因此你"
+"可能不需要去担心它。"
 
 #: ../../layout.rst:9
 msgid ""
@@ -39,23 +45,30 @@ msgid ""
 "creating tensors using ``ti.var/Vector/Matrix``), and then migrate to "
 "more advanced layouts using the ``ti.root.X`` syntax if necessary."
 msgstr ""
+"在 Taichi 中，布局是以递归的方式定义。请参阅 :ref:`snode` 获得更多关于其工"
+"作方式的细节。我们建议从默认的布局规范开始（通过在 ``ti.var/Vector/"
+"Matrix`` 中指定 ``shape`` 来创建张量），如果需要的话，之后可以再使用 ``ti."
+"root.X`` 语法迁移到更高级的布局。"
 
 #: ../../layout.rst:12
 msgid ""
 "Taichi decouples algorithms from data layouts, and the Taichi compiler "
 "automatically optimizes data accesses on a specific data layout. These "
 "Taichi features allow programmers to quickly experiment with different "
-"data layouts and figure out the most efficient one on a specific task and"
-" computer architecture."
+"data layouts and figure out the most efficient one on a specific task and "
+"computer architecture."
 msgstr ""
+"Taichi 将算法与数据布局解耦，并且 Taichi 编译器可以自动优化特定数据布局上"
+"的数据访问。这些 Taichi 特性使得程序员可以快速尝试不同的数据布局，并找出针"
+"对特定任务和计算机体系结构的最有效布局。"
 
 #: ../../layout.rst:16
 msgid "From ``shape`` to ``ti.root.X``"
-msgstr ""
+msgstr "由 ``shape`` 到 ``ti.root.X``"
 
 #: ../../layout.rst:18
 msgid "For example, this declares a 0-D tensor:"
-msgstr ""
+msgstr "例如，这里声明了一个零维张量："
 
 #: ../../layout.rst:20
 msgid ""
@@ -64,10 +77,14 @@ msgid ""
 "# is equivalent to:\n"
 "x = ti.var(ti.f32, shape=())"
 msgstr ""
+"x = ti.var(ti.f32)\n"
+"ti.root.place(x)\n"
+"# 相当于:\n"
+"x = ti.var(ti.f32, shape=())"
 
 #: ../../layout.rst:27
 msgid "This declares a 1D tensor of size ``3``:"
-msgstr ""
+msgstr "这里声明了一个尺寸为 ``3`` 的一维张量："
 
 #: ../../layout.rst:29
 msgid ""
@@ -76,10 +93,14 @@ msgid ""
 "# is equivalent to:\n"
 "x = ti.var(ti.f32, shape=3)"
 msgstr ""
+"x = ti.var(ti.f32)\n"
+"ti.root.dense(ti.i, 3).place(x)\n"
+"# 相当于:\n"
+"x = ti.var(ti.f32, shape=3)"
 
 #: ../../layout.rst:36
 msgid "This declares a 2D tensor of shape ``(3, 4)``:"
-msgstr ""
+msgstr "这里声明了一个尺寸为 ``(3, 4)`` 的二维张量："
 
 #: ../../layout.rst:38
 msgid ""
@@ -88,6 +109,10 @@ msgid ""
 "# is equivalent to:\n"
 "x = ti.var(ti.f32, shape=(3, 4))"
 msgstr ""
+"x = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ij, (3, 4)).place(x)\n"
+"# 相当于:\n"
+"x = ti.var(ti.f32, shape=(3, 4))"
 
 #: ../../layout.rst:45
 msgid ""
@@ -95,53 +120,65 @@ msgid ""
 "bother using the more complex version? Good question, let go forward and "
 "figure out why."
 msgstr ""
+"你可能会有些疑问，为什么不单纯的指定张量的 ``尺寸(shape)`` 就行了? 为什么"
+"还要使用更为复杂的放置方式? 这是个相当好的问题，接着读下去让我们一起找出原"
+"因。"
 
 #: ../../layout.rst:50
 msgid "Row-major versus column-major"
-msgstr ""
+msgstr "行优先 vs 列优先"
 
 #: ../../layout.rst:52
 msgid "Let's start with the simplest layout."
-msgstr ""
+msgstr "让我们先从最简单的布局开始。"
 
 #: ../../layout.rst:54
 msgid ""
 "Since address spaces are linear in modern computers, for 1D Taichi "
 "tensors, the address of the ``i``-th element is simply ``i``."
 msgstr ""
+"由于地址空间在现代计算机结构中是线性排列的，所以对于 Taichi 中的一维张量，"
+"第 ``i`` 个元素的地址就是简单的处于第 ``i`` 号位置上."
 
 #: ../../layout.rst:56
 msgid ""
 "To store a multi-dimensional tensor, however, it has to be flattened, in "
-"order to fit into the 1D address space. For example, to store a 2D tensor"
-" of size ``(3, 2)``, there are two ways to do this:"
+"order to fit into the 1D address space. For example, to store a 2D tensor "
+"of size ``(3, 2)``, there are two ways to do this:"
 msgstr ""
+"为了存储一个多维张量，必须将它摊开(flattened)，以适应一维地址空间。例如，"
+"要存储一个大小为 ``(3, 2)`` 的二维张量，有两种方法:"
 
 #: ../../layout.rst:59
 msgid "The address of ``(i, j)``-th is ``base + i * 2 + j`` (row-major)."
-msgstr ""
+msgstr "第 ``(i, j)`` 位置的地址是 ``起始位置 + i * 2 + j`` （行优先）。"
 
 #: ../../layout.rst:61
 msgid "The address of ``(i, j)``-th is ``base + j * 3 + i`` (column-major)."
-msgstr ""
+msgstr "第 ``(i, j)`` 位置的地址是 ``起始位置 + j * 3 + i`` （列优先）。"
 
 #: ../../layout.rst:63
 msgid "To specify which layout to use in Taichi:"
-msgstr ""
+msgstr "下面是在 Taichi 中指定使用以上哪种布局的方式:"
 
 #: ../../layout.rst:65
 msgid ""
 "ti.root.dense(ti.i, 3).dense(ti.j, 2).place(x)    # row-major (default)\n"
 "ti.root.dense(ti.j, 2).dense(ti.i, 3).place(y)    # column-major"
 msgstr ""
+"ti.root.dense(ti.i, 3).dense(ti.j, 2).place(x)    # 默认行优先\n"
+"ti.root.dense(ti.j, 2).dense(ti.i, 3).place(y)    # 列优先"
 
 #: ../../layout.rst:70
 msgid ""
 "Both ``x`` and ``y`` have the same shape of ``(3, 2)``, and they can be "
-"accessed in the same manner, where ``0 <= i < 3 && 0 <= j < 2``. They can"
-" be accessed in the same manner: ``x[i, j]`` and ``y[i, j]``. However, "
+"accessed in the same manner, where ``0 <= i < 3 && 0 <= j < 2``. They can "
+"be accessed in the same manner: ``x[i, j]`` and ``y[i, j]``. However, "
 "they have a very different memory layouts:"
 msgstr ""
+"``x`` 和 ``y`` 的形状都是 ``(3, 2)`` ，访问它们的下标都满足 ``0 <= i < 3 "
+"&& 0 <= j < 2`` 的约束。当然也可以通过相同的下标访问它们: ``x[i, j]`` 和 "
+"``y[i, j]`` 。不过它们有着非常不同的内存布局:"
 
 #: ../../layout.rst:73
 msgid ""
@@ -149,16 +186,21 @@ msgid ""
 "# x:  x[0,0]   x[0,1]   x[0,2] | x[1,0]   x[1,1]   x[1,2]\n"
 "# y:  y[0,0]   y[1,0] | y[0,1]   y[1,1] | y[0,2]   y[1,2]"
 msgstr ""
+"# 小存储地址 ——————————————————————>  大存储地址\n"
+"# x:  x[0,0]   x[0,1]   x[0,2] | x[1,0]   x[1,1]   x[1,2]\n"
+"# y:  y[0,0]   y[1,0] | y[0,1]   y[1,1] | y[0,2]   y[1,2]"
 
 #: ../../layout.rst:79
 msgid ""
 "See? ``x`` first increases the first index (i.e. row-major), while ``y`` "
 "first increases the second index (i.e. column-major)."
 msgstr ""
+"由此可见， ``x`` 的存储地址首先根据第一个索引下标（即行优先）增加，而 "
+"``y`` 首先根据第二个索引下标（即列优先）增加。"
 
 #: ../../layout.rst:83
 msgid "For those people from C/C++, here's what they looks like:"
-msgstr ""
+msgstr "对于熟悉 C/C++ 的人来说，这可能看起来像是："
 
 #: ../../layout.rst:85
 msgid ""
@@ -172,20 +214,29 @@ msgid ""
 "    }\n"
 "}"
 msgstr ""
+"int x[3][2];  // 行优先\n"
+"int y[2][3];  // 列优先\n"
+"\n"
+"for (int i = 0; i < 3; i++) {\n"
+"    for (int j = 0; j < 2; j++) {\n"
+"        do_something ( x[i][j] );\n"
+"        do_something ( y[j][i] );\n"
+"    }\n"
+"}"
 
 #: ../../layout.rst:99
 msgid "Array of Structures (AoS), Structure of Arrays (SoA)"
-msgstr ""
+msgstr "数组结构体(AoS)，结构体数组(SoA)"
 
 #: ../../layout.rst:101
 msgid "Tensors of same size can be placed together."
-msgstr ""
+msgstr "同样大小的张量可以被放置到一起。"
 
 #: ../../layout.rst:103
 msgid ""
 "For example, this places two 1D tensors of size ``3`` (array of "
 "structure, AoS):"
-msgstr ""
+msgstr "例如，这里在尺寸为3的一层中放置了两个一维张量（数组结构体，AoS）:"
 
 #: ../../layout.rst:105
 msgid "ti.root.dense(ti.i, 3).place(x, y)"
@@ -193,19 +244,21 @@ msgstr ""
 
 #: ../../layout.rst:109
 msgid "Their memory layout:"
-msgstr ""
+msgstr "他们的内存布局："
 
 #: ../../layout.rst:111
 msgid ""
 "#  address low ............. address high\n"
 "#  x[0]   y[0] | x[1]  y[1] | x[2]   y[2]"
 msgstr ""
+"# 小存储地址 ————————————————————>  大存储地址\n"
+"#  x[0]   y[0] | x[1]  y[1] | x[2]   y[2]"
 
 #: ../../layout.rst:116
 msgid ""
 "In contrast, this places two tensor placed separately (structure of "
 "array, SoA):"
-msgstr ""
+msgstr "相反的，下列两个张量则被分开放置（结构体数组，SoA）:"
 
 #: ../../layout.rst:118
 msgid ""
@@ -215,29 +268,36 @@ msgstr ""
 
 #: ../../layout.rst:123
 msgid "Now, their memory layout:"
-msgstr ""
+msgstr "与之对应，它们的内存布局是："
 
 #: ../../layout.rst:125
 msgid ""
 "#  address low ............. address high\n"
 "#  x[0]  x[1]   x[2] | y[0]   y[1]   y[2]"
 msgstr ""
+"# 小存储地址 ————————————————————>  大存储地址\n"
+"#  x[0]  x[1]   x[2] | y[0]   y[1]   y[2]"
 
 #: ../../layout.rst:131
 msgid ""
 "Normally, you don't have to worry about the performance nuances between "
-"different layouts, and should just define the simplest layout as a start."
-" However, locality sometimes have a significant impact on the "
-"performance, especially when the tensor is huge."
+"different layouts, and should just define the simplest layout as a start. "
+"However, locality sometimes have a significant impact on the performance, "
+"especially when the tensor is huge."
 msgstr ""
+"通常情况下，您不必担心不同布局之间的性能差别，可以从定义最简单的布局开始。"
+"然而，局部空间结构有时会对性能产生重大影响，尤其是当张量很大的时。"
 
 #: ../../layout.rst:134
 msgid ""
 "**To improve spatial locality of memory accesses (i.e. cache hit rate / "
-"cacheline utilization), it's sometimes helpful to place the data elements"
-" within relatively close storage locations if they are often accessed "
+"cacheline utilization), it's sometimes helpful to place the data elements "
+"within relatively close storage locations if they are often accessed "
 "together.** Take a simple 1D wave equation solver for example:"
 msgstr ""
+"**为了改善内存访问的空间局部性(即缓存命中率/ 缓存行利用率)，有时将数据元素"
+"放置在相对较近的存储位置（如果它们经常一起被访问的话）会很有帮助。** 以一"
+"个简单的一维波动方程的求解为例："
 
 #: ../../layout.rst:137
 msgid ""
@@ -257,9 +317,13 @@ msgstr ""
 msgid ""
 "Here, we placed ``pos`` and ``vel`` seperately. So the distance in "
 "address space between ``pos[i]`` and ``vel[i]`` is ``200000``. This will "
-"result in a poor spatial locality and lots of cache-misses, which damages"
-" the performance. A better placement is to place them together:"
+"result in a poor spatial locality and lots of cache-misses, which damages "
+"the performance. A better placement is to place them together:"
 msgstr ""
+"这里，我们将 ``pos`` 和 ``vel`` 分开放置。由此 ``pos[i]`` 和 ``vel[i]`` 之"
+"间地址空间的距离是 ``200000`` 。这将导致糟糕的空间局部性和大量的缓存缺失"
+"(Cache-Misses)，会在很大程度上降低性能。一个更好的放置方案是把它们放置在一"
+"起:"
 
 #: ../../layout.rst:154
 msgid "ti.root.dense(ti.i, N).place(pos, vel)"
@@ -267,39 +331,48 @@ msgstr ""
 
 #: ../../layout.rst:158
 msgid ""
-"Then ``vel[i]`` is placed right next to ``pos[i]``, this can increase the"
-" cache-hit rate and therefore increase the performance."
+"Then ``vel[i]`` is placed right next to ``pos[i]``, this can increase the "
+"cache-hit rate and therefore increase the performance."
 msgstr ""
+"将 ``vel[i]`` 放在 ``pos[i]`` 旁边，这样就可以提高缓存命中率，从而提高性"
+"能。"
 
 #: ../../layout.rst:162
 msgid "Flat layouts versus hierarchical layouts"
-msgstr ""
+msgstr "平面布局 vs 层次布局"
 
 #: ../../layout.rst:164
 msgid ""
 "By default, when allocating a ``ti.var``, it follows the simplest data "
 "layout."
-msgstr ""
+msgstr "默认情况下，当分配一个 ``ti.var`` 时，它遵循的是最简单的数据布局。"
 
 #: ../../layout.rst:166
 msgid ""
 "val = ti.var(ti.f32, shape=(32, 64, 128))\n"
 "# C++ equivalent: float val[32][64][128]"
 msgstr ""
+"val = ti.var(ti.f32, shape=(32, 64, 128))\n"
+"# 相当于 C++ 中的: float val[32][64][128]"
 
 #: ../../layout.rst:171
 msgid ""
-"However, at times this data layout can be suboptimal for certain types of"
-" computer graphics tasks. For example, ``val[i, j, k]`` and ``val[i + 1, "
+"However, at times this data layout can be suboptimal for certain types of "
+"computer graphics tasks. For example, ``val[i, j, k]`` and ``val[i + 1, "
 "j, k]`` are very far away (``32 KB``) from each other, and leads to poor "
 "access locality under certain computation tasks. Specifically, in tasks "
 "such as texture trilinear interpolation, the two elements are not even "
 "within the same ``4KB`` pages, creating a huge cache/TLB pressure."
 msgstr ""
+"但是，对于计算机图形任务而言，有些时候这种数据布局不是最理想的。 例如，"
+"``val [i, j, k]`` 和 ``val [i + 1, j, k]`` 彼此之间的距离非常远 (``32 "
+"KB``)，这导致对于某些计算任务会有着低效的地址访问。 具体而言，在诸如纹理的"
+"三线性插值之类任务中，这两个元素甚至不在同一 ``4KB`` 的页面内，这将产生巨"
+"大的缓存/转址旁路缓存压力。"
 
 #: ../../layout.rst:174
 msgid "A better layout might be"
-msgstr ""
+msgstr "此时更好的布局可能是"
 
 #: ../../layout.rst:176
 msgid ""
@@ -309,14 +382,16 @@ msgstr ""
 
 #: ../../layout.rst:181
 msgid ""
-"This organizes ``val`` in ``4x4x4`` blocks, so that with high probability"
-" ``val[i, j, k]`` and its neighbours are close to each other (i.e., in "
-"the same cacheline or memory page)."
+"This organizes ``val`` in ``4x4x4`` blocks, so that with high probability "
+"``val[i, j, k]`` and its neighbours are close to each other (i.e., in the "
+"same cacheline or memory page)."
 msgstr ""
+"这会在 ``4x4x4`` 模块中放置 ``val`` ，因此很有可能有 ``val [i, j, k]`` 及"
+"其邻居在存储上彼此靠近（即，在同一高速缓存行或内存页中） ）。"
 
 #: ../../layout.rst:185
 msgid "Struct-fors on advanced dense data layouts"
-msgstr ""
+msgstr "对高级稠密数据布局进行结构 for 循环"
 
 #: ../../layout.rst:187
 msgid ""
@@ -324,6 +399,8 @@ msgid ""
 "their data order in memory. For example, if 2D scalar tensor ``A`` is "
 "stored in row-major order,"
 msgstr ""
+"在嵌套稠密数据结构上的结构 for 循环将会自动地遵循它们在内存中的数据顺序。"
+"例如，如果二维标量张量 ``A`` 是以行为主的顺序存储的，"
 
 #: ../../layout.rst:189
 msgid ""
@@ -336,26 +413,31 @@ msgid ""
 "will iterate over elements of ``A`` following row-major order. If ``A`` "
 "is column-major, then the iteration follows the column-major order."
 msgstr ""
+"将按照行优先的顺序对 ``A`` 中的元素进行遍历。 如果 ``A`` 是列优先的，则按"
+"照列优先进行遍历。"
 
 #: ../../layout.rst:196
 msgid ""
 "If ``A`` is hierarchical, it will be iterated level by level. This "
 "maximizes the memory bandwidth utilization in most cases."
 msgstr ""
+"如果 ``A`` 是分层的，则迭代将在层级之间发生。 在大多数情况下，这可以最大化"
+"内存带宽利用率。"
 
 #: ../../layout.rst:198
 msgid ""
 "Struct-for loops on sparse tensors follow the same philosophy, and will "
 "be discussed further in :ref:`sparse`."
 msgstr ""
+"稀疏张量的结构 for 循环遵循相同的原理，这将在 :ref:`sparse` 中进一步讨论。"
 
 #: ../../layout.rst:202
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
 #: ../../layout.rst:204
 msgid "2D matrix, row-major"
-msgstr ""
+msgstr "二维矩阵，行优先"
 
 #: ../../layout.rst:206
 msgid ""
@@ -365,17 +447,19 @@ msgstr ""
 
 #: ../../layout.rst:211
 msgid "2D matrix, column-major"
-msgstr ""
+msgstr "二维矩阵，列优先"
 
 #: ../../layout.rst:213
 msgid ""
 "A = ti.var(ti.f32)\n"
 "ti.root.dense(ti.ji, (256, 256)).place(A) # Note ti.ji instead of ti.ij"
 msgstr ""
+"A = ti.var(ti.f32)\n"
+"ti.root.dense(ti.ji, (256, 256)).place(A) # 注意是 ti.ji 而不是ti.ij"
 
 #: ../../layout.rst:218
 msgid "`8x8` blocked 2D array of size `1024x1024`"
-msgstr ""
+msgstr "按 `8x8` 的大小将 `1024x1024` 的二维数组分块"
 
 #: ../../layout.rst:220
 msgid ""
@@ -385,7 +469,7 @@ msgstr ""
 
 #: ../../layout.rst:226
 msgid "3D Particle positions and velocities, AoS"
-msgstr ""
+msgstr "三维粒子位置和速度，数组结构体(AoS)"
 
 #: ../../layout.rst:228
 msgid ""
@@ -396,10 +480,16 @@ msgid ""
 "ti.root.dense(ti.i, 1024).place(pos(0), pos(1), pos(2), vel(0), vel(1), "
 "vel(2))"
 msgstr ""
+"pos = ti.Vector(3, dt=ti.f32)\n"
+"vel = ti.Vector(3, dt=ti.f32)\n"
+"ti.root.dense(ti.i, 1024).place(pos, vel)\n"
+"# 相当于\n"
+"ti.root.dense(ti.i, 1024).place(pos(0), pos(1), pos(2), vel(0), vel(1), "
+"vel(2))"
 
 #: ../../layout.rst:236
 msgid "3D Particle positions and velocities, SoA"
-msgstr ""
+msgstr "三维粒子位置和速度，结构体数组(SoA)"
 
 #: ../../layout.rst:238
 msgid ""
@@ -410,4 +500,3 @@ msgid ""
 "for i in range(3):\n"
 "  ti.root.dense(ti.i, 1024).place(vel(i))"
 msgstr ""
-
