@@ -152,7 +152,11 @@ Existing tags:
 - ``[Example]``: examples under ``examples/``;
 - ``[Test]``: adding or improving tests under ``tests/``;
 - ``[Benchmark]``: Benchmarking & regression tests;
+- ``[Linux]``: Linux platform;
+- ``[Mac]``: Mac OS X platform;
+- ``[Windows]``: Windows platform;
 - ``[PyPI]``: PyPI package release;
+- ``[Workflow]``: GitHub Actions/Workflows;
 - ``[Misc]``: something that doesn't belong to any category, such as version bump, reformatting;
 - ``[Bug]``: bug fixes;
 - **When introducing a new tag, please update the list here in the first PR with that tag, so that people can follow.**
