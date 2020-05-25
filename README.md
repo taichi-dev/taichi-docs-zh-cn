@@ -19,7 +19,7 @@
 
 Taichi 简体中文文档由 [Ark (StephenArk30)](https://github.com/StephenArk30) 创立，至今做出重大贡献者有：
   - [彭于斌 (archibate)](https://github.com/archibate)
-  - [Danni (isdanni)](https://github.com/isdanni)
+  - [李丹妮 (isdanni)](https://github.com/isdanni)
   - [Chengchen Wang (rexwangcc)](https://github.com/rexwangcc)
   - [万健洲 (ArkhamWJZ)](https://github.com/ArkhamWJZ)
 
