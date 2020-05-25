@@ -7,13 +7,25 @@
 
 # Taichi 官方中文文档
 
-预览地址: https://taichi.readthedocs.io/zh_CN/latest/
-
-|         | readthedocs.io | GitHub Actions |
-| ------- | -------------- | --------------- |
-| latest  | [![Documentation Status](https://readthedocs.org/projects/taichi-zh/badge/?version=latest)](https://taichi.readthedocs.io/zh_CN/latest/?badge=latest) | ![提交检查](https://img.shields.io/github/workflow/status/taichi-dev/taichi-docs-zh-cn/提交检查) |
+[预览地址](https://taichi.readthedocs.io/zh_CN/latest/)
 
 [Taichi](https://github.com/taichi-dev/taichi) 是一门高效的、以 Python 语法封装的计算机图形应用语言。这里是 Taichi 的中文文档。
+
+|         | readthedocs.io | GitHub Actions |
+| ------- | -------------- | -------------- |
+| latest  | [![构建状态](https://readthedocs.org/projects/taichi-zh/badge/?version=latest)](https://taichi.readthedocs.io/zh_CN/latest/?badge=latest) | ![提交检查](https://img.shields.io/github/workflow/status/taichi-dev/taichi-docs-zh-cn/提交检查) |
+
+## 鸣谢
+
+Taichi 简体中文文档由 [Ark (StephenArk30)](https://github.com/StephenArk30) 创立，至今做出重大贡献者有：
+  - [彭于斌 (archibate)](https://github.com/archibate)
+  - [Danni (isdanni)](https://github.com/isdanni)
+  - [Chengchen Wang (rexwangcc)](https://github.com/rexwangcc)
+  - [万健洲 (ArkhamWJZ)](https://github.com/ArkhamWJZ)
+
+[[全部贡献者列表]](https://github.com/taichi-dev/taichi-docs-zh-cn/graphs/contributors)
+
+Taichi 及其中文文档能够如此快速地成长，离不开你们的热心贡献和付出，感谢大家！
 
 ----------
 
