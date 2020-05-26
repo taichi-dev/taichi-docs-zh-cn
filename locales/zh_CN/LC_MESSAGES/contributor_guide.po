@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-25 00:22+0800\n"
-"PO-Revision-Date: 2020-05-26 22:54+0800\n"
+"PO-Revision-Date: 2020-05-27 00:25+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -290,8 +290,8 @@ msgid ""
 "All PRs should come with **documentation update**, except for internal compiler "
 "implementations;"
 msgstr ""
-"除了内部编译器的实现外，其余的 PR 都应该带有标签 **文档更新(documentation "
-"update)**;"
+"除了内部编译器的实现外，其余的 PR 都应该带有与其功能相对应的 **文档更新"
+"(documentation update)**;"
 
 #: ../../contributor_guide.rst:76
 msgid "All PRs must pass **continuous integration tests** before they get merged;"
@@ -378,7 +378,7 @@ msgstr ""
 
 #: ../../contributor_guide.rst:100
 msgid "CI will be triggered every time you push commits to an open PR."
-msgstr "CI 将在你每次提交 open PR 时触发。"
+msgstr "每次你推送提交到一个开着的 PR 时，CI 将被触发。"
 
 #: ../../contributor_guide.rst:101
 msgid ""
@@ -411,8 +411,8 @@ msgid ""
 "If you don't have to install these formatting tools locally, use the **format "
 "server**. It's an online version of ``ti format``."
 msgstr ""
-"如果不想在本地安装这些格式化工具，也可以使用 **格式化服务(format server)** 。这"
-"是 ``ti format`` 的在线版本。"
+"如果不想在本地安装这些格式化工具，也可以使用 **格式化服务器(format server)** 。"
+"这是个 ``ti format`` 的在线版本。"
 
 #: ../../contributor_guide.rst:109
 msgid "Go to http://kun.csail.mit.edu:31415/, and click at the desired PR id."
@@ -423,7 +423,7 @@ msgid ""
 "Come back to the PR page, you'll see a user called @taichi-gardener (bot) "
 "pushed a commit named ``[skip ci] enforce code format``."
 msgstr ""
-"回到 PR 页面，你将看到一个名为 @taichi-gardener (bot) 的用户推送了一个名为 "
+"回到 PR 页面，你将看到一个名为 @taichi-gardener (机器人) 的用户推送了一个名为 "
 "``[skip ci] enforce code format`` 的提交。"
 
 #: ../../contributor_guide.rst:111
@@ -478,7 +478,7 @@ msgstr ""
 
 #: ../../contributor_guide.rst:127
 msgid "Please do not include back quotes (\"`\") in PR titles."
-msgstr "请不要在 PR 标题中包括引号 (\"`\")。"
+msgstr "请不要在 PR 标题中包括反引号 (\"`\")。"
 
 #: ../../contributor_guide.rst:128
 msgid "Please always prepend at least one tag such as ``[Metal]`` to PR titles:"
@@ -519,7 +519,7 @@ msgstr "``[LLVM]``: CPU 和 CUDA 共享的 LLVM 后端;"
 
 #: ../../contributor_guide.rst:139
 msgid "``[Lang]``: frontend language features, including syntax sugars;"
-msgstr "``[Lang]``:前端语法特性，包括语法糖;"
+msgstr "``[Lang]``: 前端语法特性，包括语法糖;"
 
 #: ../../contributor_guide.rst:140
 msgid "``[Std]``: standard library, e.g. ``ti.Matrix`` and ``ti.Vector``;"
@@ -533,7 +533,7 @@ msgstr "``[IR]``: 中间表示(intermediate representation, IR);"
 msgid ""
 "``[Sparse]``: sparse computation, dynamic memory allocator, and garbage "
 "collection;"
-msgstr "``[Sparse]``:稀疏计算，动态内存分配以及垃圾收集;"
+msgstr "``[Sparse]``: 稀疏计算，动态内存分配以及垃圾收集;"
 
 #: ../../contributor_guide.rst:143
 msgid "``[Opt]``: IR optimization passes;"
@@ -607,7 +607,7 @@ msgstr "``[Workflow]``: GitHub 活动(Actions)/工作流(Workflows);"
 msgid ""
 "``[Misc]``: something that doesn't belong to any category, such as version "
 "bump, reformatting;"
-msgstr "``[Misc]``:难以归类的杂项，如版本碰撞，格式优化;"
+msgstr "``[Misc]``: 难以归类的杂项，如版本跳跃，格式优化;"
 
 #: ../../contributor_guide.rst:161
 msgid "``[Bug]``: bug fixes;"
@@ -628,8 +628,8 @@ msgid ""
 "**capitalizing PR tags**:"
 msgstr ""
 "我们感谢所有的贡献，但是我们不应该把每一个 PR 的标题暴露给终端用户。因此，应该将"
-"变更日志分类成 `用户应该知道什么` 和 `开发人员正在做什么` 是必要的。而这要求通"
-"过 **大写的 PR 标签** 区分:"
+"变更日志分类成 `用户应该知道什么` 和 `开发人员正在做什么` 是必要的。而这是通过 "
+"**大写的 PR 标签** 区分的:"
 
 #: ../../contributor_guide.rst:170
 msgid ""
