@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-25 00:22+0800\n"
-"PO-Revision-Date: 2020-05-26 18:33+0800\n"
+"PO-Revision-Date: 2020-05-26 22:54+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../../contributor_guide.rst:10
 msgid "Improved error messages that are more user-friendly"
-msgstr "改进完善错误报告，使之对用户更友好"
+msgstr "完善错误时的提示，使之对用户更友好"
 
 #: ../../contributor_guide.rst:11
 msgid "New test cases"
@@ -74,8 +74,8 @@ msgid ""
 "Introduce Taichi to your friends or simply star `the project <https://github."
 "com/taichi-dev/taichi>`_."
 msgstr ""
-"将 Taichi 分享给你的朋友们或者到 GitHub 上给 `Taichi <https://github.com/taichi-"
-"dev/taichi>`_ 按下一个星也是很不错的。"
+"向朋友们介绍 Taichi 或者在 GitHub 上星标一下 `Taichi <https://github.com/taichi-"
+"dev/taichi>`_ 也可以。"
 
 #: ../../contributor_guide.rst:17
 msgid ""
@@ -126,7 +126,7 @@ msgid ""
 msgstr ""
 "标记了 `\"welcome contribution\" <https://github.com/taichi-dev/taichi/issues?"
 "q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22>`_ 的 issue 相比之下更"
-"有挑战性但仍然对刚起步的贡献者是友好的。"
+"有挑战性但对新手仍然是比较友好的。"
 
 #: ../../contributor_guide.rst:32
 msgid "High-level guidelines"
@@ -182,7 +182,7 @@ msgstr "高效率地沟通"
 msgid ""
 "How much information we effectively convey, is way more important than how many "
 "words we typed."
-msgstr "传达了多少有效信息，比我们打了多少字更重要的多。"
+msgstr "传达了多少有效信息，比打了多少字重要的多。"
 
 #: ../../contributor_guide.rst:47
 msgid "Be constructive. Be polite. Be organized. Be concise."
@@ -220,7 +220,7 @@ msgstr ""
 #: ../../contributor_guide.rst:58
 msgid ""
 "It is fine to include off-topic **trivial** refactoring such as typo fixes;"
-msgstr "对于一些 **似乎不是很重要** 的优化重构，比如排版上的建议，也是很受欢迎的;"
+msgstr "也可以掺杂一些 **无关紧要** 的优化重构，比如修正笔误;"
 
 #: ../../contributor_guide.rst:59
 msgid ""
