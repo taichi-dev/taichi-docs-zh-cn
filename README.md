@@ -2,7 +2,6 @@
   <img width="500px" src="https://github.com/yuanming-hu/taichi/raw/master/misc/logo.png">
   <h3> <a href="https://github.com/taichi-dev/taichi"> 项目仓库 </a> | <a href="https://taichi.readthedocs.io/zh_CN/latest/"> 中文文档 </a> | <a href="https://taichi.readthedocs.io/zh_CN/latest/hello.html"> 教程 </a> | <a href="https://github.com/yuanming-hu/taichi/tree/master/examples"> 示例 </a> | <a href="https://taichi.readthedocs.io/en/latest/contributor_guide.html"> 参与开发 </a> | <a href="https://forum.taichi.graphics/"> 论坛 </a> </h3>
 </div>
-
 ----------
 
 # Taichi 官方中文文档
