@@ -155,7 +155,7 @@ msgstr "运行 ``git checkout -b your-branch-name`` （分支名称）."
 
 #: ../../utilities.rst:64
 msgid "Do works on the issue, stage 1."
-msgstr "开始尝试解决问题（第一阶段）。"
+msgstr "尝试解决问题（第一阶段）。"
 
 #: ../../utilities.rst:66
 msgid "Run ``ti benchmark && ti regression`` to obtain the result."
