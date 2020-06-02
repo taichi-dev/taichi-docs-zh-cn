@@ -139,7 +139,7 @@ msgstr ""
 msgid ""
 "The suggested workflow for the performance related PR author to run the "
 "regression tests is:"
-msgstr "建议 **the PR author** （Pull Request 的作者）运行回归测试的工作流程是："
+msgstr "建议 **Pull Request 的作者** 运行回归测试的工作流程是："
 
 #: ../../utilities.rst:60
 msgid ""
