@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-20 15:41+0800\n"
-"PO-Revision-Date: 2020-06-01 11:34-0400\n"
+"PO-Revision-Date: 2020-06-02 23:08-0400\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -237,7 +237,7 @@ msgstr "Taichi的序列化模块可以允许你将对象序列化/反序列化�
 #: ../../utilities.rst:112
 msgid ""
 "You can use ``TI_IO`` macros to explicit define fields necessary in Taichi."
-msgstr "你可以使用 ``TI_IO`` 宏来显式定义太极拳中必要的字段。"
+msgstr "你可以使用 ``TI_IO`` 宏来显式定义Taichi中必要的字段。"
 
 #: ../../utilities.rst:114
 msgid ""
