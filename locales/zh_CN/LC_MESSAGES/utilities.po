@@ -139,7 +139,7 @@ msgstr ""
 msgid ""
 "The suggested workflow for the performance related PR author to run the "
 "regression tests is:"
-msgstr "建议 **the PR author** （Pull Request 的作者）运行回归测试的工作流程是："
+msgstr "建议 **Pull Request 的作者** 运行回归测试的工作流程是："
 
 #: ../../utilities.rst:60
 msgid ""
@@ -155,7 +155,7 @@ msgstr "运行 ``git checkout -b your-branch-name`` （分支名称）."
 
 #: ../../utilities.rst:64
 msgid "Do works on the issue, stage 1."
-msgstr "开始尝试解决问题（第一阶段）。"
+msgstr "尝试解决问题（第一阶段）。"
 
 #: ../../utilities.rst:66
 msgid "Run ``ti benchmark && ti regression`` to obtain the result."
@@ -207,10 +207,10 @@ msgid ""
 "attaching. After entering ``gdb``, check the stack backtrace with command "
 "``bt`` (``backtrace``), then find the line of code triggering the error."
 msgstr ""
-"**快速定位存储器区段错误和断言错误** ``gdb``: 在Taichi 崩溃时，``gdb`` 会被响应"
-"启动并附着到当前的线程上。您可能需要输入和 ``sudo`` 超级用户权限相关的密码来允"
+"使用 ``gdb`` **快速定位段错误 (segmentation fault) 和断言错误 (assertion failure)**: 在Taichi 崩溃时，``gdb`` 会被"
+"触发并附着到当前的线程上。您可能需要输入和 ``sudo`` 超级用户权限相关的密码来允"
 "许 gdb 附着到当前的线程上。再输入 ``gdb`` 之后， 您可以使用 ``bt`` "
-"（``backtrace``）指令检查堆的回溯，因而定位产生错误的代码的具体行数。"
+"（``backtrace``）指令检查堆的回溯，从而定位产生错误的代码的具体行数。"
 
 #: ../../utilities.rst:100
 msgid "Interface system (legacy)"
