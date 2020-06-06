@@ -59,7 +59,7 @@ msgstr ""
 #: ../../scalar_tensor.rst:25
 msgid ""
 "If shape is ``()`` (empty tuple), then a 0-D tensor (scalar) is created: ::"
-msgstr "如果形状设为 ``()`` （空tuple），那将创建一个0维张量（即标量）： ::"
+msgstr "如果形状设为 ``()`` （空元组），那将创建一个0维张量（即标量）： ::"
 
 #: ../../scalar_tensor.rst:28
 msgid "x = ti.var(ti.f32, shape=())"
