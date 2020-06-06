@@ -97,7 +97,7 @@ msgid ""
 "Not providing ``shape`` allows you to *place* the tensor in a layout other than "
 "the default *dense*, see :ref:`layout` for more details."
 msgstr ""
-"不提供形状 ``shape`` 还可以使你定义张量为 *稀疏* 张量，见 :ref:`sparse` 。"
+"不提供形状 ``shape`` 还可以使你定义张量为 *稀疏* 张量，参考见 :ref:`layout` 。"
 
 #: ../../scalar_tensor.rst:49
 msgid ""
