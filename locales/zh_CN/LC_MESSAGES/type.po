@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-20 15:41+0800\n"
-"PO-Revision-Date: 2020-05-08 15:55+0800\n"
+"PO-Revision-Date: 2020-06-14 21:20+0800\n"
 "Last-Translator: rexwangcc\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: ../../type.rst:2
 msgid "Type system"
@@ -32,48 +33,47 @@ msgstr "目前，Taichi支持的基本类型有"
 
 #: ../../type.rst:8
 msgid "int8 ``ti.i8``"
-msgstr ""
+msgstr "int8 ``ti.i8``"
 
 #: ../../type.rst:9
 msgid "int16 ``ti.i16``"
-msgstr ""
+msgstr "int16 ``ti.i16``"
 
 #: ../../type.rst:10
 msgid "int32 ``ti.i32``"
-msgstr ""
+msgstr "int32 ``ti.i32``"
 
 #: ../../type.rst:11
 msgid "int64 ``ti.i64``"
-msgstr ""
+msgstr "int64 ``ti.i64``"
 
 #: ../../type.rst:12
 msgid "uint8 ``ti.u8``"
-msgstr ""
+msgstr "uint8 ``ti.u8``"
 
 #: ../../type.rst:13
 msgid "uint16 ``ti.u16``"
-msgstr ""
+msgstr "uint16 ``ti.u16``"
 
 #: ../../type.rst:14
 msgid "uint32 ``ti.u32``"
-msgstr ""
+msgstr "uint32 ``ti.u32``"
 
 #: ../../type.rst:15
 msgid "uint64 ``ti.u64``"
-msgstr ""
+msgstr "uint64 ``ti.u64``"
 
 #: ../../type.rst:16
 msgid "float32 ``ti.f32``"
-msgstr ""
+msgstr "float32 ``ti.f32``"
 
 #: ../../type.rst:17
 msgid "float64 ``ti.f64``"
-msgstr ""
+msgstr "float64 ``ti.f64``"
 
 #: ../../type.rst:20
-#, fuzzy
 msgid "Supported types on each backend:"
-msgstr "每种后端支持的类型分别为："
+msgstr "每种后端支持的类型分别有："
 
 #: ../../type.rst:23
 msgid "type"
@@ -81,113 +81,111 @@ msgstr "类型"
 
 #: ../../type.rst:23
 msgid "CPU/CUDA"
-msgstr ""
+msgstr "CPU/CUDA"
 
 #: ../../type.rst:23
 msgid "OpenGL"
-msgstr ""
+msgstr "OpenGL"
 
 #: ../../type.rst:23
 msgid "Metal"
-msgstr ""
+msgstr "Metal"
 
 #: ../../type.rst:25
 msgid "i8"
-msgstr ""
+msgstr "i8"
 
 #: ../../type.rst:25 ../../type.rst:27 ../../type.rst:29 ../../type.rst:31
 #: ../../type.rst:33 ../../type.rst:35 ../../type.rst:37 ../../type.rst:39
 #: ../../type.rst:41 ../../type.rst:43
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../../type.rst:25 ../../type.rst:27 ../../type.rst:31 ../../type.rst:33
 #: ../../type.rst:35 ../../type.rst:37 ../../type.rst:39 ../../type.rst:43
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../../type.rst:27
 msgid "i16"
-msgstr ""
+msgstr "i16"
 
 #: ../../type.rst:29
 msgid "i32"
-msgstr ""
+msgstr "i32"
 
 #: ../../type.rst:31
 msgid "i64"
-msgstr ""
+msgstr "i64"
 
 #: ../../type.rst:31
 msgid "EXT"
-msgstr ""
+msgstr "EXT"
 
 #: ../../type.rst:33
 msgid "u8"
-msgstr ""
+msgstr "u8"
 
 #: ../../type.rst:35
 msgid "u16"
-msgstr ""
+msgstr "u16"
 
 #: ../../type.rst:37
 msgid "u32"
-msgstr ""
+msgstr "u32"
 
 #: ../../type.rst:39
 msgid "u64"
-msgstr ""
+msgstr "u64"
 
 #: ../../type.rst:41
 msgid "f32"
-msgstr ""
+msgstr "f32"
 
 #: ../../type.rst:43
 msgid "f64"
-msgstr ""
+msgstr "f64"
 
 #: ../../type.rst:46
-#, fuzzy
 msgid "(OK: supported, EXT: require extension, N/A: not available)"
-msgstr "（OK：已支持，EXT：需要扩展支持，MISS：目前不支持）"
+msgstr "（OK：已支持，EXT：需要扩展支持，N/A：目前不支持）"
 
 #: ../../type.rst:49
-#, fuzzy
 msgid "Boolean types should be represented using ``ti.i32``."
-msgstr "布尔类型使用 ``ti.i32`` 来表示。"
+msgstr "布尔类型应该使用 ``ti.i32`` 来表示。"
 
 #: ../../type.rst:51
 msgid ""
 "Binary operations on different types will give you a promoted type, "
 "following the C programming language, e.g."
-msgstr "不同类型间的二元运算会返回一个提升后的类型，转换规则遵循C语言的类型提升，例如."
+msgstr "不同类型的二进制运算像你提供提升的类型，遵循C编程语言，例如。"
 
 #: ../../type.rst:53
 msgid "``i32 + f32 = f32``"
-msgstr ""
+msgstr "``i32 + f32 = f32``"
 
 #: ../../type.rst:54
 msgid "``f32 + f64 = f64``"
-msgstr ""
+msgstr "``f32 + f64 = f64``"
 
 #: ../../type.rst:55
 msgid "``i32 + i64 = i64``"
-msgstr ""
+msgstr "``i32 + i64 = i64``"
 
 #: ../../type.rst:61
 msgid "Default precisions"
 msgstr "默认精度"
 
 #: ../../type.rst:63
-#, fuzzy
 msgid ""
 "By default, numerical literals have 32-bit precisions. For example, "
 "``42`` has type ``ti.i32`` and ``3.14`` has type ``ti.f32``. Default "
 "integer and float-point precisions (``default_ip`` and ``default_fp``) "
 "can be specified when initializing Taichi:"
 msgstr ""
-"默认情况下，数值常数（numeric literals）的精度均为32位（32-bit）。例如，``42`` 的类型为 "
-"``ti.i32``，``3.14`` 的类型为 ``ti.f32``。默认精度可以在初始化Taichi时指定："
+"默认情况下，数字文字具有32位精度。 例如，``42`` 的类型为 ``ti.i32`` ， "
+"``3.14`` 的类型为 ``ti.f32`` 。 初始化Taichi时，可以指定默认的整数和浮点"
+"精度（ ``default_ip`` 和 ``default_f`` ）："
 
 #: ../../type.rst:67
 msgid ""
@@ -197,18 +195,21 @@ msgid ""
 "ti.init(..., default_ip=ti.i32)\n"
 "ti.init(..., default_ip=ti.i64)"
 msgstr ""
+"ti.init(..., default_fp=ti.f32)\n"
+"ti.init(..., default_fp=ti.f64)\n"
+"\n"
+"ti.init(..., default_ip=ti.i32)\n"
+"ti.init(..., default_ip=ti.i64)"
 
 #: ../../type.rst:77
 msgid "Type casts"
 msgstr "类型转换"
 
 #: ../../type.rst:79
-#, fuzzy
 msgid "Use ``ti.cast`` to cast scalar values."
-msgstr "使用 ``ti.cast`` 来进行标量值的类型转换。"
+msgstr "使用 ``ti.cast`` 来转换标量值。"
 
 #: ../../type.rst:81
-#, fuzzy
 msgid ""
 "a = 1.4\n"
 "b = ti.cast(a, ti.i32)\n"
@@ -228,12 +229,12 @@ msgstr ""
 "b = ti.cast(a, ti.i32)\n"
 "c = ti.cast(b, ti.f32)\n"
 "\n"
-"# 等价地, 使用 ``int()`` 和 ``float()``\n"
-"#   将类型转换为默认浮点/整数类型\n"
+"# 等效地，使用 ``int()`` 和 ``float()``\n"
+"# 将值转换为默认浮点/整数类型\n"
 "b = int(a)\n"
 "c = float(b)\n"
 "\n"
-"# 矩阵中逐个元素的类型转换\n"
+"# 矩阵中的逐元素转换\n"
 "mat = ti.Matrix([[3.0, 0.0], [0.3, 0.1]])\n"
 "mat_int = mat.cast(int)\n"
 "mat_int2 = mat.cast(ti.i32)"
@@ -245,7 +246,6 @@ msgid ""
 "the same width as the the old type. For example, bit-casting ``i32`` to "
 "``f64`` is not allowed. Use this operation with caution."
 msgstr ""
-
-#~ msgid "MISS"
-#~ msgstr ""
-
+"使用 ``ti.bit_cast`` 将值比特转换为另一种数据类型。 基础位将保留在此转换"
+"中。 新类型的宽度必须与旧类型的宽度相同。 例如，不允许将 ``i32`` 转换成 "
+"``f64``。 请谨慎使用此操作。"
