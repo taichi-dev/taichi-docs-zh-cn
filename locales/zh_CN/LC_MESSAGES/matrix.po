@@ -7,28 +7,31 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-17 23:33+0800\n"
+"POT-Creation-Date: 2020-06-14 12:50+0800\n"
 "PO-Revision-Date: 2020-05-18 19:27+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.3\n"
 
 #: ../../matrix.rst:4
 msgid "Matrices"
 msgstr "矩阵"
 
 #: ../../matrix.rst:6
-msgid "``ti.Matrix`` is for small matrices (e.g. `3x3`) only. If you have `64x64` matrices, you should consider using a 2D tensor of scalars."
+msgid ""
+"``ti.Matrix`` is for small matrices (e.g. `3x3`) only. If you have "
+"`64x64` matrices, you should consider using a 2D tensor of scalars."
 msgstr "``ti.Matrix`` 只适用于小矩阵（如3x3）。如果要使用 `64x64` 的矩阵，你可以用标量构成的二维张量。"
 
 #: ../../matrix.rst:7
-msgid "``ti.Vector`` is the same as ``ti.Matrix``, except that it has only one column."
+msgid ""
+"``ti.Vector`` is the same as ``ti.Matrix``, except that it has only one "
+"column."
 msgstr "``ti.Vector`` 和 ``ti.Matrix`` 相同，只不过它只有一列。"
 
 #: ../../matrix.rst:8
@@ -36,66 +39,84 @@ msgid "Differentiate element-wise product ``*`` and matrix product ``@``."
 msgstr "注意区分逐元素的乘法 ``*`` 和矩阵乘法 ``@`` 。"
 
 #: ../../matrix.rst:9
-msgid "``ti.Vector(n, dt=ti.f32)`` or ``ti.Matrix(n, m, dt=ti.f32)`` to create tensors of vectors/matrices."
-msgstr "``ti.Vector(n, dt=ti.f32)`` 或 ``ti.Matrix(n, m, dt=ti.f32)`` 用来创建向量/矩阵构成的张量。"
+msgid ""
+"``ti.Vector(n, dt=ti.f32)`` or ``ti.Matrix(n, m, dt=ti.f32)`` to create "
+"tensors of vectors/matrices."
+msgstr ""
+"``ti.Vector(n, dt=ti.f32)`` 或 ``ti.Matrix(n, m, dt=ti.f32)`` "
+"用来创建向量/矩阵构成的张量。"
 
 #: ../../matrix.rst:10
-msgid "``ti.transposed(A)`` or simply ``A.T()``"
-msgstr "``ti.transposed(A)`` 或简单的 ``A.T()``"
+msgid "``A.transpose()``"
+msgstr ""
 
 #: ../../matrix.rst:11
-msgid "``ti.inverse(A)``"
+msgid "``A.inverse()``"
 msgstr ""
 
 #: ../../matrix.rst:12
-msgid "``ti.Matrix.abs(A)``"
+msgid "``A.trace()``"
 msgstr ""
 
 #: ../../matrix.rst:13
-msgid "``ti.tr(A)``"
+msgid "``A.determinant()``"
 msgstr ""
 
 #: ../../matrix.rst:14
-msgid "``ti.determinant(A, type)``"
+msgid "``A.cast(type)`` or simply ``int(A)`` and ``float(A)``"
 msgstr ""
 
 #: ../../matrix.rst:15
-msgid "``ti.cross(a, b)``, where ``a`` and ``b`` are 3D vectors (i.e. ``3x1`` matrices)"
-msgstr "``ti.cross(a, b)`` , 其中， ``a`` 和 ``b`` 是3维向量（例如， ``3x1`` 的矩阵）"
-
-#: ../../matrix.rst:16
-msgid "``A.cast(type)``"
-msgstr ""
-
-#: ../../matrix.rst:17
 msgid "``R, S = ti.polar_decompose(A, ti.f32)``"
 msgstr ""
 
-#: ../../matrix.rst:18
-msgid "``U, sigma, V = ti.svd(A, ti.f32)`` (Note that ``sigma`` is a ``3x3`` diagonal matrix)"
+#: ../../matrix.rst:16
+msgid ""
+"``U, sigma, V = ti.svd(A, ti.f32)`` (Note that ``sigma`` is a ``3x3`` "
+"diagonal matrix)"
 msgstr "``U, sigma, V = ti.svd(A, ti.f32)``  （其中 ``sigma`` 是一个 ``3x3`` 矩阵）"
 
-#: ../../matrix.rst:20
+#: ../../matrix.rst:17
+msgid "``any(A)``"
+msgstr ""
+
+#: ../../matrix.rst:18
+msgid "``all(A)``"
+msgstr ""
+
+#: ../../matrix.rst:19
+msgid ""
+"Currently, only ``+, -, @`` Matrix operations have experimental support "
+"in Python-scope. An exception will be raised if you try to apply other "
+"operations in Python-scope, use them in Taichi-scope (`@ti.kernel`) "
+"instead."
+msgstr ""
+
+#: ../../matrix.rst:21
 msgid "TODO: doc here better like Vector. WIP"
 msgstr ""
 
-#: ../../matrix.rst:22
+#: ../../matrix.rst:23
 msgid "A matrix in Taichi can have two forms:"
 msgstr "Taichi中的矩阵有两种形式："
 
-#: ../../matrix.rst:24
-msgid "as a temporary local variable. An ``n by m`` matrix consists of ``n * m`` scalar values."
+#: ../../matrix.rst:25
+msgid ""
+"as a temporary local variable. An ``n by m`` matrix consists of ``n * m``"
+" scalar values."
 msgstr "作为临时本地变量。一个由 ``n*m`` 个标量构成的 ``n×m`` 阶矩阵。"
 
-#: ../../matrix.rst:25
-msgid "as a an element of a global tensor. In this case, the tensor is an N-dimensional array of ``n by m`` matrices."
+#: ../../matrix.rst:26
+msgid ""
+"as a an element of a global tensor. In this case, the tensor is an "
+"N-dimensional array of ``n by m`` matrices."
 msgstr "作为全局张量的一个成员。在这种情况下， 张量是一个由 ``n×m`` 阶矩阵构成的N-维的数组。"
 
-#: ../../matrix.rst:28
+#: ../../matrix.rst:29
 msgid "Declaration"
 msgstr "定义"
 
-#: ../../matrix.rst:31
+#: ../../matrix.rst:32
 msgid "As global tensors of matrices"
 msgstr "作为全局张量的矩阵"
 
@@ -103,197 +124,276 @@ msgstr "作为全局张量的矩阵"
 msgid "Parameters"
 msgstr ""
 
-#: ../../matrix.rst:35
+#: ../../matrix.rst:36
 msgid "(scalar) the number of rows in the matrix"
 msgstr "（标量）矩阵的行数"
 
-#: ../../matrix.rst:36
+#: ../../matrix.rst:37
 msgid "(scalar) the number of columns in the matrix"
 msgstr "（标量）矩阵的列数"
 
-#: ../../matrix.rst:37
+#: ../../matrix.rst:38
 msgid "(DataType) data type of the components"
 msgstr "（数据类型）元素的数据类型"
 
-#: ../../matrix.rst:38
-msgid "(scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
+#: ../../matrix.rst:39
+#, fuzzy
+msgid "(optional, scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
 msgstr "（标量或元组）向量张量的形状，见 :ref:`tensor`"
 
 #: ../../matrix.rst:40
+msgid "(optional, scalar or tuple) see :ref:`offset`"
+msgstr ""
+
+#: ../../matrix.rst:42
 msgid "For example, this creates a 5x4 tensor of 3x3 matrices: ::"
 msgstr "例如， 以下创建了一个由 3x3 矩阵构成的 5x4 的张量： ::"
 
-#: ../../matrix.rst:43
-msgid "# Python-scope\n"
+#: ../../matrix.rst:45
+msgid ""
+"# Python-scope\n"
 "a = ti.Matrix(3, 3, dt=ti.f32, shape=(5, 4))"
 msgstr ""
 
-#: ../../matrix.rst:48
-msgid "In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while ``ti.Matrix`` declares tensors of matrices."
-msgstr "在 Python-scope 中， ``ti.var`` 声明了 :ref:`scalar_tensor` , ``ti.Matrix`` 声明了矩阵形式的张量。"
+#: ../../matrix.rst:50
+msgid ""
+"In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while "
+"``ti.Matrix`` declares tensors of matrices."
+msgstr ""
+"在 Python-scope 中， ``ti.var`` 声明了 :ref:`scalar_tensor` , ``ti.Matrix`` "
+"声明了矩阵形式的张量。"
 
-#: ../../matrix.rst:52 ../../matrix.rst:143
+#: ../../matrix.rst:54 ../../matrix.rst:145
 msgid "As a temporary local variable"
 msgstr "作为一个临时的本地变量"
 
-#: ../../matrix.rst:56
+#: ../../matrix.rst:58
 msgid "(scalar) the first component of the vector"
 msgstr "（标量）向量的第一个元素"
 
-#: ../../matrix.rst:57
+#: ../../matrix.rst:59
 msgid "(scalar) the second component of the vector"
 msgstr "（标量）向量的第二个元素"
 
-#: ../../matrix.rst:59
+#: ../../matrix.rst:61
 msgid "For example, this creates a 3x1 matrix with components (2, 3, 4): ::"
 msgstr "比如，创建一个元素为 (2, 3, 4) 的 3x1 阶矩阵: ::"
 
-#: ../../matrix.rst:62
-msgid "# Taichi-scope\n"
+#: ../../matrix.rst:64
+msgid ""
+"# Taichi-scope\n"
 "a = ti.Matrix([2, 3, 4])"
 msgstr ""
 
-#: ../../matrix.rst:67
+#: ../../matrix.rst:69
 msgid "this is equivalent to ti.Vector([x, y, ...])"
 msgstr "等价于 ti.Vector([x, y, ...])"
 
-#: ../../matrix.rst:72
+#: ../../matrix.rst:74
 msgid "(scalar) the first component of the first row"
 msgstr "（标量）第一行第一个元素"
 
-#: ../../matrix.rst:73
+#: ../../matrix.rst:75
 msgid "(scalar) the second component of the first row"
 msgstr "（标量）第一行第二个元素"
 
-#: ../../matrix.rst:74
+#: ../../matrix.rst:76
 msgid "(scalar) the first component of the second row"
 msgstr "（标量）第二行第一个元素"
 
-#: ../../matrix.rst:75
+#: ../../matrix.rst:77
 msgid "(scalar) the second component of the second row"
 msgstr "（标量）第二行第二个元素"
 
-#: ../../matrix.rst:77
-msgid "For example, this creates a 2x2 matrix with components (2, 3) in the first row and (4, 5) in the second row: ::"
+#: ../../matrix.rst:79
+#, fuzzy
+msgid ""
+"For example, this creates a 2x3 matrix with components (2, 3, 4) in the "
+"first row and (5, 6, 7) in the second row: ::"
 msgstr "比如，创建一个2x2的矩阵，第一行元素为 (2, 3)，第二行元素为 (4, 5)： ::"
 
-#: ../../matrix.rst:80
-msgid "# Taichi-scope\n"
-"a = ti.Matrix([[2, 3], [4, 5])"
+#: ../../matrix.rst:82
+msgid ""
+"# Taichi-scope\n"
+"a = ti.Matrix([[2, 3, 4], [5, 6, 7]])"
 msgstr ""
 
-#: ../../matrix.rst:87
+#: ../../matrix.rst:89
 msgid "(vector) vector of elements forming first row (or column)"
 msgstr "（向量）组成第一行（列）元素的向量"
 
-#: ../../matrix.rst:88
+#: ../../matrix.rst:90
 msgid "(vector) vector of elements forming second row (or column)"
 msgstr "（向量）组成第二行（列）元素的向量"
 
-#: ../../matrix.rst:89
+#: ../../matrix.rst:91
 msgid "(vector) vector of elements forming third row (or column)"
 msgstr "（向量）组成第三行（列）元素的向量"
 
-#: ../../matrix.rst:91
-msgid "For example, this creates a 3x3 matrix by concactinating vectors into rows (or columns): ::"
+#: ../../matrix.rst:93
+msgid ""
+"For example, this creates a 3x3 matrix by concactinating vectors into "
+"rows (or columns): ::"
 msgstr "比如，以下代码通过将向量连接作为一个3x3矩阵的每一行（列）： ::"
 
-#: ../../matrix.rst:94
-msgid "# Taichi-scope\n"
+#: ../../matrix.rst:96
+msgid ""
+"# Taichi-scope\n"
 "v0 = ti.Vector([1.0, 2.0, 3.0])\n"
 "v1 = ti.Vector([4.0, 5.0, 6.0])\n"
 "v2 = ti.Vector([7.0, 8.0, 9.0])\n"
 "\n"
 "# to specify data in rows\n"
-"a = ti.Matrix(rows=[v0, v1, v2])\n"
+"a = ti.Matrix.rows([v0, v1, v2])\n"
 "\n"
 "# to specify data in columns instead\n"
-"a = ti.Matrix(cols=[v0, v1, v2])\n"
+"a = ti.Matrix.cols([v0, v1, v2])\n"
 "\n"
 "# lists can be used instead of vectors\n"
-"a = ti.Matrix(rows=[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])"
+"a = ti.Matrix.rows([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])"
 msgstr ""
 
-#: ../../matrix.rst:110
+#: ../../matrix.rst:112
 msgid "Accessing components"
 msgstr "元素访问"
 
-#: ../../matrix.rst:113
+#: ../../matrix.rst:115
 msgid "As global tensors of vectors"
 msgstr "作为全局的由向量构成的张量"
 
-#: ../../matrix.rst:116
+#: ../../matrix.rst:118
 msgid "(tensor of matrices) the tensor of matrices"
 msgstr "（矩阵构成的张量）张量名"
 
-#: ../../matrix.rst:117
+#: ../../matrix.rst:119
 msgid "(scalar) index of the first tensor dimension"
 msgstr "（标量）张量的第一维的索引"
 
-#: ../../matrix.rst:118
+#: ../../matrix.rst:120
 msgid "(scalar) index of the second tensor dimension"
 msgstr "（标量）张量的第二维的索引"
 
-#: ../../matrix.rst:119 ../../matrix.rst:148
+#: ../../matrix.rst:121 ../../matrix.rst:150
 msgid "(scalar) row index of the matrix"
 msgstr "（标量）矩阵的行索引"
 
-#: ../../matrix.rst:120 ../../matrix.rst:149
+#: ../../matrix.rst:122 ../../matrix.rst:151
 msgid "(scalar) column index of the matrix"
 msgstr "（标量）矩阵的列索引"
 
-#: ../../matrix.rst:122
+#: ../../matrix.rst:124
 msgid "This extracts the first element in matrix ``a[6, 3]``: ::"
 msgstr "以下代码用以访问矩阵 ``a[6,3]`` 的第一个元素： ::"
 
-#: ../../matrix.rst:125
-msgid "x = a[6, 3][0, 0]\n"
+#: ../../matrix.rst:127
+msgid ""
+"x = a[6, 3][0, 0]\n"
 "\n"
 "# or\n"
 "mat = a[6, 3]\n"
 "x = mat[0, 0]"
 msgstr ""
 
-#: ../../matrix.rst:133
-msgid "**Always** use two pair of square brackets to access scalar elements from tensors of matrices."
+#: ../../matrix.rst:135
+msgid ""
+"**Always** use two pair of square brackets to access scalar elements from"
+" tensors of matrices."
 msgstr "访问矩阵形式张量中的标量元素时， **必须** 使用两对方括号。"
 
-#: ../../matrix.rst:135
-msgid "The indices in the first pair of brackets locate the matrix inside the tensor of matrices;"
+#: ../../matrix.rst:137
+msgid ""
+"The indices in the first pair of brackets locate the matrix inside the "
+"tensor of matrices;"
 msgstr "第一对方括号中的下标找到张量中的矩阵;"
 
-#: ../../matrix.rst:136
-msgid "The indices in the second pair of brackets locate the scalar element inside the matrix."
+#: ../../matrix.rst:138
+msgid ""
+"The indices in the second pair of brackets locate the scalar element "
+"inside the matrix."
 msgstr "第二对方括号中的下标找到矩阵中的标量元素。"
 
-#: ../../matrix.rst:138
-msgid "For 0-D tensors of matrices, indices in the first pair of brackets should be ``[None]``."
+#: ../../matrix.rst:140
+msgid ""
+"For 0-D tensors of matrices, indices in the first pair of brackets should"
+" be ``[None]``."
 msgstr "对于0维的矩阵形式的张量，第一对方括号中的下标应该为 ``[None]`` 。"
 
-#: ../../matrix.rst:147
+#: ../../matrix.rst:149
 msgid "(Matrix) the matrix"
 msgstr "（矩阵）该矩阵本身"
 
-#: ../../matrix.rst:151
-msgid "For example, this extracts the element in row 0 column 1 of matrix ``a``: ::"
+#: ../../matrix.rst:153
+msgid ""
+"For example, this extracts the element in row 0 column 1 of matrix ``a``:"
+" ::"
 msgstr "比如，访问矩阵 ``a`` 第0行第1列的元素： ::"
 
-#: ../../matrix.rst:154
+#: ../../matrix.rst:156
 msgid "x = a[0, 1]"
 msgstr ""
 
-#: ../../matrix.rst:156
+#: ../../matrix.rst:158
 msgid "This sets the element in row 1 column 3 of ``a`` to 4: ::"
 msgstr "将 ``a`` 第1行第3列的元素设置为4： ::"
 
-#: ../../matrix.rst:159
+#: ../../matrix.rst:161
 msgid "a[1, 3] = 4"
 msgstr ""
 
-#: ../../matrix.rst:162
+#: ../../matrix.rst:164
 msgid "Methods"
 msgstr ""
 
-#: ../../matrix.rst:164
+#: ../../matrix.rst:166
 msgid "TODO: WIP"
 msgstr ""
+
+#: ../../matrix.rst:168
+msgid "TODO: add element wise operations docs"
+msgstr ""
+
+#~ msgid "``ti.transposed(A)`` or simply ``A.T()``"
+#~ msgstr "``ti.transposed(A)`` 或简单的 ``A.T()``"
+
+#~ msgid "``ti.inverse(A)``"
+#~ msgstr ""
+
+#~ msgid "``ti.Matrix.abs(A)``"
+#~ msgstr ""
+
+#~ msgid "``ti.tr(A)``"
+#~ msgstr ""
+
+#~ msgid "``ti.determinant(A, type)``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``ti.cross(a, b)``, where ``a`` and "
+#~ "``b`` are 3D vectors (i.e. ``3x1`` "
+#~ "matrices)"
+#~ msgstr "``ti.cross(a, b)`` , 其中， ``a`` 和 ``b`` 是3维向量（例如， ``3x1`` 的矩阵）"
+
+#~ msgid "``A.cast(type)``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "# Taichi-scope\n"
+#~ "a = ti.Matrix([[2, 3], [4, 5])"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "# Taichi-scope\n"
+#~ "v0 = ti.Vector([1.0, 2.0, 3.0])\n"
+#~ "v1 = ti.Vector([4.0, 5.0, 6.0])\n"
+#~ "v2 = ti.Vector([7.0, 8.0, 9.0])\n"
+#~ "\n"
+#~ "# to specify data in rows\n"
+#~ "a = ti.Matrix(rows=[v0, v1, v2])\n"
+#~ "\n"
+#~ "# to specify data in columns instead\n"
+#~ "a = ti.Matrix(cols=[v0, v1, v2])\n"
+#~ "\n"
+#~ "# lists can be used instead of vectors\n"
+#~ "a = ti.Matrix(rows=[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])"
+#~ msgstr ""
+

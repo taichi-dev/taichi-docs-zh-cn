@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-23 14:44-0400\n"
+"POT-Creation-Date: 2020-06-14 12:50+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: ../../dev_install.rst:4
 msgid "Developer installation"
@@ -31,24 +30,23 @@ msgid ""
 "installation guide works for Ubuntu 16.04+ and OS X 10.14+. For precise "
 "build instructions on Windows, please check out `appveyor.yml "
 "<https://github.com/taichi-dev/taichi/blob/master/appveyor.yml>`_, which "
-"does basically the same thing as the following instructions."
+"does basically the same thing as the following instructions. We use "
+"MSBUILD.exe to build the generated project. Please note that Windows "
+"could have multiple instances of MSBUILD.exe shipped with different "
+"products. Please make sure you add the path for MSBUILD.exe within your "
+"MSVS directory and make it a higher priority (for instance than the one "
+"shipped with .NET)."
 msgstr ""
-"请注意本指南是面向Taichi编程语言的编译器开发者的。Taichi的终端用户请使用pip安装"
-"包而避免从源码构建。构建支持NVIDIA GPU的版本需要CUDA 10.0+的支持。本指南兼容"
-"Ubuntu 16.04+和OS X 10.14+。Windows下的较为严格的构建指南请参考 `appveyor.yml "
-"<https://github.com/taichi-dev/taichi/blob/master/appveyor.yml>`_ ， 链接中流程"
-"基本与下面的说明保持一致。"
 
 #: ../../dev_install.rst:12
 msgid ""
-"Note that on Linux/OS X, ``clang`` is the only supported compiler for compiling "
-"the Taichi compiler. On Windows only MSVC supported."
-msgstr ""
-"请注意 ``clang`` 是在Linux/OS X下唯一支持的可以编译Taichi编译器的编译器。而在"
-"Windows下只有MSVC是支持的编译器。"
+"Note that on Linux/OS X, ``clang`` is the only supported compiler for "
+"compiling the Taichi compiler. On Windows only MSVC supported."
+msgstr "请注意 ``clang`` 是在Linux/OS X下唯一支持的可以编译Taichi编译器的编译器。而在Windows下只有MSVC是支持的编译器。"
 
 #: ../../dev_install.rst:15
-msgid "Installing Depedencies"
+#, fuzzy
+msgid "Installing Dependencies"
 msgstr "安装依赖"
 
 #: ../../dev_install.rst:17
@@ -56,33 +54,50 @@ msgid "Make sure you are using Python 3.6/3.7/3.8"
 msgstr "请确认你在使用 Python 3.6/3.7/3.8"
 
 #: ../../dev_install.rst:18
-msgid "Execute"
-msgstr "执行"
+#, fuzzy
+msgid "Install Python dependencies:"
+msgstr "安装依赖"
 
 #: ../../dev_install.rst:20
 msgid ""
-"python3 -m pip install --user setuptools astpretty astor pytest opencv-python "
-"pybind11\n"
-"python3 -m pip install --user Pillow numpy scipy GitPython yapf colorama psutil "
-"autograd"
+"python3 -m pip install --user setuptools astpretty astor pybind11 Pillow\n"
+"python3 -m pip install --user pytest pytest-rerunfailures pytest-xdist "
+"yapf\n"
+"python3 -m pip install --user numpy GitPython coverage colorama autograd"
 msgstr ""
 
-#: ../../dev_install.rst:25
+#: ../../dev_install.rst:26
+msgid "Make sure you have ``clang`` with version >= 7"
+msgstr ""
+
+#: ../../dev_install.rst:28
 msgid ""
-"(If on Ubuntu) Execute ``sudo apt install libtinfo-dev clang-8``. (``clang-7`` "
-"should work as well)."
+"On Windows: Download ``clang-8`` via `this link "
+"<https://releases.llvm.org/8.0.0/LLVM-8.0.0-win64.exe>`_. Make sure you "
+"add the ``bin`` folder containing ``clang.exe`` to the ``PATH`` "
+"environment variable."
 msgstr ""
-"（在Ubuntu下）执行 ``sudo apt install libtinfo-dev clang-8``。（ ``clang-7`` 应"
-"该同样可以工作）。"
 
-#: ../../dev_install.rst:27
-msgid "(If on other Linux distributions) Please build clang 8.0.1 from source:"
+#: ../../dev_install.rst:31
+msgid "On OS X: you don't need to do anything."
+msgstr ""
+
+#: ../../dev_install.rst:33
+#, fuzzy
+msgid "On Ubuntu, execute ``sudo apt install libtinfo-dev clang-8``."
+msgstr ""
+"（在Ubuntu下）执行 ``sudo apt install libtinfo-dev clang-8``。（ ``clang-7`` "
+"应该同样可以工作）。"
+
+#: ../../dev_install.rst:35
+#, fuzzy
+msgid "On other Linux distributions, please build clang 8.0.1 from source:"
 msgstr "（在其他Linux发行版下）请从源码构建构建clang 8.0.1："
 
-#: ../../dev_install.rst:29
+#: ../../dev_install.rst:37
 msgid ""
-"wget https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/"
-"cfe-8.0.1.src.tar.xz\n"
+"wget https://github.com/llvm/llvm-"
+"project/releases/download/llvmorg-8.0.1/cfe-8.0.1.src.tar.xz\n"
 "tar xvJf cfe-8.0.1.src.tar.xz\n"
 "cd cfe-8.0.1.src\n"
 "mkdir build\n"
@@ -92,82 +107,150 @@ msgid ""
 "sudo make install"
 msgstr ""
 
-#: ../../dev_install.rst:41
-msgid "Make sure you have LLVM 8.0.1 built from source. To do so:"
-msgstr "请确认你从源码构建构建了LLVM 8.0.1。流程如下所示："
-
-#: ../../dev_install.rst:43
+#: ../../dev_install.rst:49
 msgid ""
-"wget https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/"
-"llvm-8.0.1.src.tar.xz\n"
-"tar xvJf llvm-8.0.1.src.tar.xz\n"
-"cd llvm-8.0.1.src\n"
-"mkdir build\n"
-"cd build\n"
-"cmake .. -DLLVM_ENABLE_RTTI:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=OFF -"
-"DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" -"
-"DLLVM_ENABLE_ASSERTIONS=ON\n"
-"# If you are building on NVIDIA Jetson TX2, use -DLLVM_TARGETS_TO_BUILD=\"ARM;"
-"NVPTX\"\n"
-"make -j 8\n"
-"sudo make install"
+"Make sure you have LLVM 8.0.1/10.0.0. Note that Taichi uses a customized "
+"LLVM so the pre-built binaries from the LLVM official website or other "
+"sources probably doesn't work. Here we provide LLVM 8.0.1 binaries "
+"customized for Taichi, which may or may not work depending on your system"
+" environment: `Linux <https://github.com/yuanming-"
+"hu/taichi_assets/releases/download/llvm8/taichi-"
+"llvm-8.0.1-linux-x64.zip>`_, `OS X <https://github.com/yuanming-"
+"hu/taichi_assets/releases/download/llvm8/taichi-llvm-8.0.1.zip>`_, "
+"`Windows <https://github.com/yuanming-"
+"hu/taichi_assets/releases/download/llvm8/taichi-"
+"llvm-8.0.1-msvc2017.zip>`_."
 msgstr ""
-"wget https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/"
-"llvm-8.0.1.src.tar.xz\n"
+
+#: ../../dev_install.rst:55
+msgid "If the downloaded LLVM does not work, please build from source:"
+msgstr ""
+
+#: ../../dev_install.rst:57
+msgid "On Linux or OS X:"
+msgstr ""
+
+#: ../../dev_install.rst:59
+msgid ""
+"wget https://github.com/llvm/llvm-"
+"project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz\n"
 "tar xvJf llvm-8.0.1.src.tar.xz\n"
 "cd llvm-8.0.1.src\n"
+"# For LLVM 10.0.0:\n"
+"#     wget https://github.com/llvm/llvm-"
+"project/releases/download/llvmorg-10.0.0/llvm-10.0.0.src.tar.xz\n"
+"#     tar xvJf llvm-10.0.0.src.tar.xz\n"
+"#     cd llvm-10.0.0.src\n"
 "mkdir build\n"
 "cd build\n"
-"cmake .. -DLLVM_ENABLE_RTTI:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=OFF -"
-"DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=“X86;NVPTX” -"
-"DLLVM_ENABLE_ASSERTIONS=ON\n"
-"# 如果你在NVIDIA Jetson TX2上构建，使用-DLLVM_TARGETS_TO_BUILD=“ARM;NVPTX”\n"
+"cmake .. -DLLVM_ENABLE_RTTI:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=OFF "
+"-DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" "
+"-DLLVM_ENABLE_ASSERTIONS=ON\n"
+"# If you are building on NVIDIA Jetson TX2, use "
+"-DLLVM_TARGETS_TO_BUILD=\"ARM;NVPTX\"\n"
+"\n"
 "make -j 8\n"
-"sudo make install"
+"sudo make install\n"
+"\n"
+"# Check your LLVM installation\n"
+"llvm-config --version # You should get 8.0.1 or 10.0.0"
+msgstr ""
 
-#: ../../dev_install.rst:56
+#: ../../dev_install.rst:79
+msgid "On Windows:"
+msgstr ""
+
+#: ../../dev_install.rst:81
+msgid ""
+"# LLVM 8.0.1 + MSVC 2017\n"
+"cmake .. -G\"Visual Studio 15 2017 Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON "
+"-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+"-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" -DLLVM_ENABLE_ASSERTIONS=ON "
+"-Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed\n"
+"\n"
+"# LLVM 10.0.0 + MSVC 2019\n"
+"cmake .. -G\"Visual Studio 16 2019\" -A x64  -DLLVM_ENABLE_RTTI:BOOL=ON "
+"-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+"-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" -DLLVM_ENABLE_ASSERTIONS=ON "
+"-Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
+msgstr ""
+
+#: ../../dev_install.rst:89
+msgid "Then open ``LLVM.sln`` and use Visual Studio 2017+ to build."
+msgstr ""
+
+#: ../../dev_install.rst:90
+msgid ""
+"Please make sure you are using the ``Release`` configuration. After "
+"building the ``INSTALL`` project (under folder ``CMakePredefinedTargets``"
+" in the Solution Explorer window)."
+msgstr ""
+
+#: ../../dev_install.rst:91
+msgid ""
+"If you use MSVC 2019, **make sure you use C++17** for the ``INSTALL`` "
+"project."
+msgstr ""
+
+#: ../../dev_install.rst:92
+msgid ""
+"After the build is complete, find your LLVM binaries and headers in "
+"``build/installed``."
+msgstr ""
+
+#: ../../dev_install.rst:94
+msgid ""
+"Please add ``build/installed/bin`` to ``PATH``. Later, when you build "
+"Taichi using ``CMake``, set ``LLVM_DIR`` to "
+"``build/installed/lib/cmake/llvm``."
+msgstr ""
+
+#: ../../dev_install.rst:97
+msgid ""
+"On Windows, if you use the pre-built LLVM for Taichi, please add "
+"``$LLVM_FOLDER/bin`` to ``PATH``. Later, when you build Taichi using "
+"``CMake``, set ``LLVM_DIR`` to ``$LLVM_FOLDER/lib/cmake/llvm``."
+msgstr ""
+
+#: ../../dev_install.rst:102
 msgid "Setting up CUDA (optional)"
 msgstr "安装并配置CUDA（可选）"
 
-#: ../../dev_install.rst:58
+#: ../../dev_install.rst:104
 msgid ""
-"If you don't have CUDA, go to `this website <https://developer.nvidia.com/cuda-"
-"downloads>`_ and download the installer."
+"If you don't have CUDA, go to `this website <https://developer.nvidia.com"
+"/cuda-downloads>`_ and download the installer."
 msgstr ""
-"如果你没有安装CUDA，请到 `英伟达官网 <https://developer.nvidia.com/cuda-"
-"downloads>`_ 下载安装器。"
+"如果你没有安装CUDA，请到 `英伟达官网 <https://developer.nvidia.com/cuda-downloads>`_ "
+"下载安装器。"
 
-#: ../../dev_install.rst:60
+#: ../../dev_install.rst:106
 msgid ""
-"To check if CUDA is installed, run ``nvcc --version`` or ``cat /usr/local/cuda/"
-"version.txt``."
+"To check if CUDA is installed, run ``nvcc --version`` or ``cat "
+"/usr/local/cuda/version.txt``."
 msgstr ""
-"请运行 ``nvcc —version`` 或 ``cat /usr/local/cuda/version.txt`` 来检查CUDA是否已"
-"安装成功。"
+"请运行 ``nvcc —version`` 或 ``cat /usr/local/cuda/version.txt`` "
+"来检查CUDA是否已安装成功。"
 
-#: ../../dev_install.rst:61
+#: ../../dev_install.rst:107
 msgid "On **Ubuntu** we recommend choosing ``deb (local)`` as **Installer Type**."
-msgstr ""
-"在 **Ubuntu** 下我们推荐选择 ``deb (local)`` 来作为 **安装器类型（Installer "
-"Type）**。"
+msgstr "在 **Ubuntu** 下我们推荐选择 ``deb (local)`` 来作为 **安装器类型（Installer Type）**。"
 
-#: ../../dev_install.rst:62
+#: ../../dev_install.rst:108
 msgid ""
-"On **Arch Linux**, you can easily install CUDA via ``pacman -S cuda`` without "
-"downloading the installer manually."
-msgstr ""
-"在 **Arch Linux** 下，你可以轻松地通过 ``pacman -S cuda`` 来安装CUDA并跳过手动下"
-"载安装器的环节。"
+"On **Arch Linux**, you can easily install CUDA via ``pacman -S cuda`` "
+"without downloading the installer manually."
+msgstr "在 **Arch Linux** 下，你可以轻松地通过 ``pacman -S cuda`` 来安装CUDA并跳过手动下载安装器的环节。"
 
-#: ../../dev_install.rst:66
+#: ../../dev_install.rst:112
 msgid "Setting up Taichi for development"
 msgstr "开发者的 Taichi 配置"
 
-#: ../../dev_install.rst:68
+#: ../../dev_install.rst:114
 msgid "Clone the taichi repo **recursively**, and build:"
 msgstr "请 **递归地** 克隆 Taichi 代码库，然后构建："
 
-#: ../../dev_install.rst:70
+#: ../../dev_install.rst:116
 msgid ""
 "git clone https://github.com/taichi-dev/taichi --depth=1 --branch=master\n"
 "cd taichi\n"
@@ -198,68 +281,48 @@ msgstr ""
 "#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
 "make -j 8"
 
-#: ../../dev_install.rst:89
+#: ../../dev_install.rst:135
 msgid "Add the following script to your ``~/.bashrc``:"
 msgstr "将下面的脚本添加至你的 ``~/.bashrc`` 配置文件："
 
-#: ../../dev_install.rst:91
+#: ../../dev_install.rst:137
 msgid ""
-"export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository\n"
+"export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository"
+"\n"
 "export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH\n"
 "export PATH=$TAICHI_REPO_DIR/bin/:$PATH\n"
-"# export PATH=/opt/llvm/bin:$PATH # Uncomment if your llvm-8 or clang-8 is in /"
-"opt"
+"# export PATH=/opt/llvm/bin:$PATH # Uncomment if your llvm-8 or clang-8 "
+"is in /opt"
 msgstr ""
-"export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository\n"
+"export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository"
+"\n"
 "export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH\n"
 "export PATH=$TAICHI_REPO_DIR/bin/:$PATH\n"
-"# export PATH=/opt/llvm/bin:$PATH # 反注释这行如果你的llvm-8或clang-8在/opt目录"
-"下"
+"# export PATH=/opt/llvm/bin:$PATH # 反注释这行如果你的llvm-8或clang-8在/opt目录下"
 
-#: ../../dev_install.rst:98
+#: ../../dev_install.rst:144
 msgid "Execute ``source ~/.bashrc`` to reload shell config."
 msgstr "执行 ``source ~/.bashrc`` 来重载shell的配置。"
 
-#: ../../dev_install.rst:99
+#: ../../dev_install.rst:145
 msgid ""
-"Execute ``python3 -m taichi test`` to run all the tests. It may take up to 5 "
-"minutes to run all tests."
-msgstr ""
-"执行 ``python3 -m taichi test`` 来运行所有的测试。运行所有测试用例可能会耗费长达"
-"5分钟的时间。"
+"Execute ``python3 -m taichi test`` to run all the tests. It may take up "
+"to 5 minutes to run all tests."
+msgstr "执行 ``python3 -m taichi test`` 来运行所有的测试。运行所有测试用例可能会耗费长达5分钟的时间。"
 
-#: ../../dev_install.rst:100
+#: ../../dev_install.rst:146
 msgid "Check out ``examples`` for runnable examples. Run them with ``python3``."
 msgstr "查看 ``examples`` 下的可执行的示例。使用 ``python3`` 来运行它们。"
 
-#: ../../dev_install.rst:105
-msgid "Prebuilt LLVM for Windows CI"
-msgstr "为Windows 持续集成服务（CI）预先构建的LLVM"
-
-#: ../../dev_install.rst:107
-msgid ""
-"cmake .. -G\"Visual Studio 15 2017 Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON -"
-"DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD="
-"\"X86;NVPTX\" -DLLVM_ENABLE_ASSERTIONS=ON -Thost=x64 -DLLVM_BUILD_TESTS:"
-"BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
-msgstr ""
-
-#: ../../dev_install.rst:111
-msgid ""
-"Then use Visual Studio to build. After building the ``INSTALL`` project (under "
-"folder \"CMakePredefinedTargets\"). After build completes, find your LLVM "
-"binaries/headers in `build/include`."
-msgstr "然后使用Visual Studio来进行构建。"
-
-#: ../../dev_install.rst:114
+#: ../../dev_install.rst:150
 msgid "Troubleshooting"
 msgstr "故障排除"
 
-#: ../../dev_install.rst:116
+#: ../../dev_install.rst:152
 msgid "Run with debug mode to see if there's any illegal memory access"
 msgstr "在调试模式（debug mode）下运行以检查是否有任何的非法内存访问"
 
-#: ../../dev_install.rst:117
+#: ../../dev_install.rst:153
 msgid ""
 "Disable compiler optimizations to quickly confirm that the issue is not "
 "cause by optimization"
@@ -384,4 +447,93 @@ msgstr "禁用编译器优化来快速确认问题并非是由优化引起的"
 #~ "#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
 #~ "make -j 8"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "Note this is for the compiler "
+#~ "developers of the Taichi programming "
+#~ "language. End users should use the "
+#~ "pip packages instead of building from"
+#~ " source. To build with NVIDIA GPU "
+#~ "support, CUDA 10.0+ is needed. This "
+#~ "installation guide works for Ubuntu "
+#~ "16.04+ and OS X 10.14+. For "
+#~ "precise build instructions on Windows, "
+#~ "please check out `appveyor.yml "
+#~ "<https://github.com/taichi-"
+#~ "dev/taichi/blob/master/appveyor.yml>`_, which does "
+#~ "basically the same thing as the "
+#~ "following instructions."
+#~ msgstr ""
+#~ "请注意本指南是面向Taichi编程语言的编译器开发者的。Taichi的终端用户请使用pip安装包而避免从源码构建。构建支持NVIDIA"
+#~ " GPU的版本需要CUDA 10.0+的支持。本指南兼容Ubuntu 16.04+和OS X"
+#~ " 10.14+。Windows下的较为严格的构建指南请参考 `appveyor.yml "
+#~ "<https://github.com/taichi-"
+#~ "dev/taichi/blob/master/appveyor.yml>`_ ， "
+#~ "链接中流程基本与下面的说明保持一致。"
+
+#~ msgid "Execute"
+#~ msgstr "执行"
+
+#~ msgid ""
+#~ "python3 -m pip install --user setuptools"
+#~ " astpretty astor pytest opencv-python "
+#~ "pybind11\n"
+#~ "python3 -m pip install --user Pillow "
+#~ "numpy scipy GitPython yapf colorama "
+#~ "psutil autograd"
+#~ msgstr ""
+
+#~ msgid "Make sure you have LLVM 8.0.1 built from source. To do so:"
+#~ msgstr "请确认你从源码构建构建了LLVM 8.0.1。流程如下所示："
+
+#~ msgid ""
+#~ "wget https://github.com/llvm/llvm-"
+#~ "project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz\n"
+#~ "tar xvJf llvm-8.0.1.src.tar.xz\n"
+#~ "cd llvm-8.0.1.src\n"
+#~ "mkdir build\n"
+#~ "cd build\n"
+#~ "cmake .. -DLLVM_ENABLE_RTTI:BOOL=ON "
+#~ "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+#~ "-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" "
+#~ "-DLLVM_ENABLE_ASSERTIONS=ON\n"
+#~ "# If you are building on NVIDIA"
+#~ " Jetson TX2, use "
+#~ "-DLLVM_TARGETS_TO_BUILD=\"ARM;NVPTX\"\n"
+#~ "make -j 8\n"
+#~ "sudo make install"
+#~ msgstr ""
+#~ "wget https://github.com/llvm/llvm-"
+#~ "project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz\n"
+#~ "tar xvJf llvm-8.0.1.src.tar.xz\n"
+#~ "cd llvm-8.0.1.src\n"
+#~ "mkdir build\n"
+#~ "cd build\n"
+#~ "cmake .. -DLLVM_ENABLE_RTTI:BOOL=ON "
+#~ "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+#~ "-DLLVM_TARGETS_TO_BUILD=“X86;NVPTX” -DLLVM_ENABLE_ASSERTIONS=ON"
+#~ "\n"
+#~ "# 如果你在NVIDIA Jetson TX2上构建，使用-DLLVM_TARGETS_TO_BUILD=“ARM;NVPTX”\n"
+#~ "make -j 8\n"
+#~ "sudo make install"
+
+#~ msgid "Prebuilt LLVM for Windows CI"
+#~ msgstr "为Windows 持续集成服务（CI）预先构建的LLVM"
+
+#~ msgid ""
+#~ "cmake .. -G\"Visual Studio 15 2017 "
+#~ "Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON "
+#~ "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+#~ "-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" "
+#~ "-DLLVM_ENABLE_ASSERTIONS=ON -Thost=x64 "
+#~ "-DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Then use Visual Studio to build. "
+#~ "After building the ``INSTALL`` project "
+#~ "(under folder \"CMakePredefinedTargets\"). After "
+#~ "build completes, find your LLVM "
+#~ "binaries/headers in `build/include`."
+#~ msgstr "然后使用Visual Studio来进行构建。"
 

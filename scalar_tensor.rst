@@ -7,10 +7,11 @@ Tensors of scalars
 Declaration
 -----------
 
-.. function:: ti.var(dt, shape = None)
+.. function:: ti.var(dt, shape = None, offset = None)
 
     :parameter dt: (DataType) type of the tensor element
     :parameter shape: (optional, scalar or tuple) the shape of tensor
+    :parameter offset: (optional, scalar or tuple) see :ref:`offset`
 
     For example, this creates a *dense* tensor with four ``int32`` as elements:
     ::
@@ -92,7 +93,7 @@ You can access an element of the Taichi tensor by an index or indices.
     This sets the element value at index ``2`` of 1D tensor ``b`` to ``5``:
     ::
 
-        a[2] = 2
+        b[2] = 5
 
     .. note ::
 
@@ -154,10 +155,11 @@ Meta data
 .. function:: a.parent(n = 1)
 
     :parameter a: (Tensor) the tensor
-    :parameter n: (optional, scalar) the number of parent steps, i.e. ``n=1`` for parent, ``n=2`` grandparent, etc...
+    :parameter n: (optional, scalar) the number of parent steps, i.e. ``n=1`` for parent, ``n=2`` grandparent, etc.
     :return: (SNode) the parent of ``a``'s containing SNode
 
     ::
+
         x = ti.var(ti.i32)
         y = ti.var(ti.i32)
         blk1 = ti.root.dense(ti.ij, (6, 5))

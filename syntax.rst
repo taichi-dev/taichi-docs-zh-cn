@@ -154,6 +154,7 @@ Supported scalar functions:
     .. code-block:: python
 
         B = ti.Matrix([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
+        C = ti.Matrix([[3.0, 4.0, 5.0], [6.0, 7.0, 8.0]])
 
         A = ti.sin(B)
         # is equivalent to
@@ -161,18 +162,79 @@ Supported scalar functions:
             for j in ti.static(range(3)):
                 A[i, j] = ti.sin(B[i, j])
 
+        A = ti.pow(B, 2)
+        # is equivalent to
+        for i in ti.static(range(2)):
+            for j in ti.static(range(3)):
+                A[i, j] = ti.pow(B[i, j], 2)
+
+        A = ti.pow(B, C)
+        # is equivalent to
+        for i in ti.static(range(2)):
+            for j in ti.static(range(3)):
+                A[i, j] = ti.pow(B[i, j], C[i, j])
+
+        A += 2
+        # is equivalent to
+        for i in ti.static(range(2)):
+            for j in ti.static(range(3)):
+                A[i, j] += 2
+
+        A += B
+        # is equivalent to
+        for i in ti.static(range(2)):
+            for j in ti.static(range(3)):
+                A[i, j] += B[i, j]
 
 Debugging
 ---------
 
-Debug your program with ``print(x)``. For example, if ``x`` is ``23``, then it prints
+Debug your program with ``print()`` in Taichi-scope. For example:
 
-.. code-block:: none
+.. code-block:: python
 
-    [debug] x = 23
+    @ti.kernel
+    def inside_taichi_scope():
+        x = 233
+        print('hello', x)
+        #=> hello 233
 
-in the console.
+        m = ti.Matrix([[2, 3, 4], [5, 6, 7]])
+        print('m is', m)
+        #=> m is [[2, 3, 4], [5, 6, 7]]
 
-.. warning::
+        v = ti.Vector([3, 4])
+        print('v is', v)
+        #=> v is [3, 4]
 
-    This is not the same as the ``print`` in Python-scope. For now ``print`` in Taichi only takes **scalar numbers** as input. Strings, vectors and matrices are not supported. Please use ``print(v[0]); print(v[1])`` if you want to print a vector.
+.. note::
+
+    For now, print is only supported on CPU, CUDA and OpenGL backends.
+
+    For the CUDA backend, the printed result won't shows up until ``ti.sync()``:
+
+    .. code-block:: python
+
+        import taichi as ti
+        ti.init(arch=ti.cuda)
+
+        @ti.kernel
+        def kern():
+            print('inside kernel')
+
+        print('before kernel')
+        kern()
+        print('after kernel')
+        ti.sync()
+        print('after sync')
+
+    obtains:
+
+    .. code-block:: none
+
+        before kernel
+        after kernel
+        inside kernel
+        after
+
+    Also note that host access or program end will also implicitly invoke for ``ti.sync()``.

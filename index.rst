@@ -1,5 +1,5 @@
 The Taichi Programming Language
-=========================================================
+===============================
 
 .. toctree::
    :caption: Overview
@@ -38,6 +38,7 @@ The Taichi Programming Language
    meta
    layout
    sparse
+   offset
    differentiable_programming
    odop
    compilation
@@ -53,6 +54,7 @@ The Taichi Programming Language
    utilities
    cpp_style
    internal
+   taichicon
 
 
 .. toctree::
@@ -60,6 +62,8 @@ The Taichi Programming Language
    :maxdepth: 3
 
    gui
+   cli_utilities
+   export_results
    global_settings
    faq
    acknowledgments

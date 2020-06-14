@@ -8,7 +8,7 @@ A vector in Taichi can have two forms:
   - as a temporary local variable. An ``n`` component vector consists of ``n`` scalar values.
   - as an element of a global tensor. In this case, the tensor is an N-dimensional array of ``n`` component vectors.
 
-See :ref:`tensor` for more details.
+In fact, ``Vector`` is simply an alias of ``Matrix``, just with ``m = 1``. See :ref:`matrix` and :ref:`tensor` for more details.
 
 Declaration
 -----------
@@ -16,11 +16,12 @@ Declaration
 As global tensors of vectors
 ++++++++++++++++++++++++++++
 
-.. function:: ti.Vector(n, dt=type, shape=shape)
+.. function:: ti.Vector(n, dt, shape = None, offset = None)
 
     :parameter n: (scalar) the number of components in the vector
-    :parameter type: (DataType) data type of the components
-    :parameter shape: (scalar or tuple) shape the tensor of vectors, see :ref:`tensor`
+    :parameter dt: (DataType) data type of the components
+    :parameter shape: (optional, scalar or tuple) shape the tensor of vectors, see :ref:`tensor`
+    :parameter offset: (optional, scalar or tuple) see :ref:`offset`
 
     For example, this creates a 5x4 tensor of 3 component vectors:
     ::
@@ -122,7 +123,6 @@ Methods
 
 
 .. function:: a.dot(b)
-.. function:: ti.dot(a, b)
 
     :parameter a: (Vector)
     :parameter b: (Vector)
@@ -136,21 +136,27 @@ Methods
         a.dot(b) # 1*2 + 3*4 = 14
 
 
-.. function:: ti.cross(a, b)
+.. function:: a.cross(b)
 
-    :parameter a: (Vector, 3 component)
-    :parameter b: (Vector, 3 component)
-    :return: (Vector, 3D) the cross product of ``a`` and ``b``
+    :parameter a: (Vector, 2 or 3 components)
+    :parameter b: (Vector of the same size as a)
+    :return: (scalar (for 2D inputs), or 3D Vector (for 3D inputs)) the cross product of ``a`` and ``b``
 
     We use a right-handed coordinate system. E.g.,
     ::
 
         a = ti.Vector([1, 2, 3])
         b = ti.Vector([4, 5, 6])
-        c = ti.cross(a, b) # [2*6 - 5*3, 4*3 - 1*6, 1*5 - 4*2]
+        c = ti.cross(a, b)
+        # c = [2*6 - 5*3, 4*3 - 1*6, 1*5 - 4*2] = [-3, 6, -3]
+
+        p = ti.Vector([1, 2])
+        q = ti.Vector([4, 5])
+        r = ti.cross(a, b)
+        # r = 1*5 - 4*2 = -3
 
 
-.. function:: ti.outer_product(a, b)
+.. function:: a.outer_product(b)
 
     :parameter a: (Vector)
     :parameter b: (Vector)
@@ -165,7 +171,7 @@ Methods
         # c = [[1*4, 1*5, 1*6], [2*4, 2*5, 2*6]]
 
 .. note::
-    This is not the same as ``ti.cross``. ``a`` and ``b`` do not have to be 3-component vectors.
+    This have no common with ``ti.cross``. ``a`` and ``b`` do not have to be 3 or 2 component vectors.
 
 
 .. function:: a.cast(dt)
@@ -183,3 +189,6 @@ Methods
 
 .. note::
     Vectors are special matrices with only 1 column. In fact, ``ti.Vector`` is just an alias of ``ti.Matrix``.
+
+
+TODO: add element wise operations docs

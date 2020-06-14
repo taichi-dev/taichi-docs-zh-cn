@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
+"POT-Creation-Date: 2020-06-14 12:50+0800\n"
 "PO-Revision-Date: 2020-06-02 23:08-0400\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: ../../utilities.rst:2
 msgid "Developer utilities"
@@ -54,10 +53,11 @@ msgstr ""
 #: ../../utilities.rst:20
 msgid ""
 "The default logging level is ``ti.INFO``. You can also override default "
-"logging level by setting the environment variable like ``TI_LOG_LEVEL=warn``."
+"logging level by setting the environment variable like "
+"``TI_LOG_LEVEL=warn``."
 msgstr ""
-"默认日志记录级别为 ``ti.INFO``。 你还可以通过将环境变量 ``TI_LOG_LEVEL`` 设置为"
-"诸如 ``trace`` 和 ``warn`` 之类的值来覆盖默认日志记录级别。"
+"默认日志记录级别为 ``ti.INFO``。 你还可以通过将环境变量 ``TI_LOG_LEVEL`` 设置为诸如 ``trace`` 和 "
+"``warn`` 之类的值来覆盖默认日志记录级别。"
 
 #: ../../utilities.rst:27
 msgid "Benchmarking and regression tests"
@@ -65,35 +65,35 @@ msgstr "基准测试和回归测试"
 
 #: ../../utilities.rst:29
 msgid ""
-"Run ``ti benchmark`` to run tests in benchmark mode. This will record the "
-"performance of ``ti test``, and save it in ``benchmarks/output``."
+"Run ``ti benchmark`` to run tests in benchmark mode. This will record the"
+" performance of ``ti test``, and save it in ``benchmarks/output``."
 msgstr ""
-"运行 ``ti benchmark`` 以基准模式运行测试。 这将记录 ``ti test`` 的性能，并将其"
-"保存在 ``benchmarks/output`` 中。"
+"运行 ``ti benchmark`` 以基准模式运行测试。 这将记录 ``ti test`` 的性能，并将其保存在 "
+"``benchmarks/output`` 中。"
 
 #: ../../utilities.rst:31
 msgid ""
 "Run ``ti regression`` to show the difference between previous result in "
-"``benchmarks/baseline``. And you can see if the performance is increasing or "
-"decreasing after your commits. This is really helpful when your work is "
-"related to IR optimizations."
+"``benchmarks/baseline``. And you can see if the performance is increasing"
+" or decreasing after your commits. This is really helpful when your work "
+"is related to IR optimizations."
 msgstr ""
-"运行 ``ti regression`` 以显示 ``ti regression`` 中先前结果之间的差异。 你可以查"
-"看提交后性能是提高还是降低。 当你的工作与中间表示码优化相关时，这很有帮助。"
+"运行 ``ti regression`` 以显示 ``ti regression`` 中先前结果之间的差异。 你可以查看提交后性能是提高还是降低。"
+" 当你的工作与中间表示码优化相关时，这很有帮助。"
 
 #: ../../utilities.rst:33
 msgid ""
-"Run ``ti baseline`` to save the benchmark result to ``benchmarks/baseline`` "
-"for furture comparsion, this may be executed on performance related PRs, "
-"before they are merged into master."
+"Run ``ti baseline`` to save the benchmark result to "
+"``benchmarks/baseline`` for furture comparsion, this may be executed on "
+"performance related PRs, before they are merged into master."
 msgstr ""
-"运行 ``ti baseline`` 以将基准结果保存到 ``benchmarks/baseline`` 以供将来比较，"
-"这可以在与性能有关的PR上执行，然后再合并到master中。"
+"运行 ``ti baseline`` 以将基准结果保存到 ``benchmarks/baseline`` "
+"以供将来比较，这可以在与性能有关的PR上执行，然后再合并到master中。"
 
 #: ../../utilities.rst:35
 msgid ""
-"For example, this is part of the output by ``ti regression`` after enabling "
-"constant folding optimization pass:"
+"For example, this is part of the output by ``ti regression`` after "
+"enabling constant folding optimization pass:"
 msgstr "例如，这是启用常数折叠优化传递后 ``ti regression`` 输出的一部分："
 
 #: ../../utilities.rst:37
@@ -124,16 +124,17 @@ msgstr ""
 
 #: ../../utilities.rst:53
 msgid ""
-"Currently ``ti benchmark`` only support benchmarking number-of-statements, no "
-"time benchmarking is included since it depends on hardware performance and "
-"therefore hard to compare if the baseline is from another machine. We are to "
-"purchase a fixed-performance machine as a time benchmark server at some point. "
-"Discussion at: https://github.com/taichi-dev/taichi/issue/948"
+"Currently ``ti benchmark`` only support benchmarking number-of-"
+"statements, no time benchmarking is included since it depends on hardware"
+" performance and therefore hard to compare if the baseline is from "
+"another machine. We are to purchase a fixed-performance machine as a time"
+" benchmark server at some point. Discussion at: https://github.com"
+"/taichi-dev/taichi/issue/948"
 msgstr ""
-"目前， ``ti benchmark`` 仅支持基准测试语句数，不包含时间基准测试，因为它取决于"
-"硬件性能，因此如果基准来自另一台计算机则很难进行比较。 我们将在某个时间点购买固"
-"定性能的机器作为时间基准服务器。 讨论在: https://github.com/taichi-dev/taichi/"
-"issue/948"
+"目前， ``ti benchmark`` "
+"仅支持基准测试语句数，不包含时间基准测试，因为它取决于硬件性能，因此如果基准来自另一台计算机则很难进行比较。 "
+"我们将在某个时间点购买固定性能的机器作为时间基准服务器。 讨论在: https://github.com/taichi-"
+"dev/taichi/issue/948"
 
 #: ../../utilities.rst:58
 msgid ""
@@ -145,9 +146,7 @@ msgstr "建议 **Pull Request 的作者** 运行回归测试的工作流程是�
 msgid ""
 "Run ``ti benchmark && ti baseline`` in ``master`` to save the current "
 "performance as baseline."
-msgstr ""
-"在 ``master`` 分支中运行 ``ti benchmark && ti baseline`` 用来保存目前的结果作为"
-"基线。"
+msgstr "在 ``master`` 分支中运行 ``ti benchmark && ti baseline`` 用来保存目前的结果作为基线。"
 
 #: ../../utilities.rst:62
 msgid "Run ``git checkout -b your-branch-name``."
@@ -167,9 +166,9 @@ msgstr "（结果不理想）继续优化直至结果理想。"
 
 #: ../../utilities.rst:70
 msgid ""
-"(If result OK) Run ``ti baseline`` to save stage 1 performance as baseline."
-msgstr ""
-"（结果理想）在合并之前，运行 ``ti baseline`` 以将第一阶段结果保存为新基线。"
+"(If result OK) Run ``ti baseline`` to save stage 1 performance as "
+"baseline."
+msgstr "（结果理想）在合并之前，运行 ``ti baseline`` 以将第一阶段结果保存为新基线。"
 
 #: ../../utilities.rst:72
 msgid "Go forward to stage 2, 3, ..., and the same workflow is applied."
@@ -201,45 +200,89 @@ msgstr ""
 
 #: ../../utilities.rst:92
 msgid ""
-"**Quickly pinpointing segmentation faults/assertion failures using** ``gdb``: "
-"When Taichi crashes, ``gdb`` will be triggered and attach to the current "
-"thread. You might be prompt to enter sudo password required for gdb thread "
-"attaching. After entering ``gdb``, check the stack backtrace with command "
-"``bt`` (``backtrace``), then find the line of code triggering the error."
+"**Quickly pinpointing segmentation faults/assertion failures using** "
+"``gdb``: When Taichi crashes, ``gdb`` will be triggered and attach to the"
+" current thread. You might be prompt to enter sudo password required for "
+"gdb thread attaching. After entering ``gdb``, check the stack backtrace "
+"with command ``bt`` (``backtrace``), then find the line of code "
+"triggering the error."
 msgstr ""
-"使用 ``gdb`` **快速定位段错误 (segmentation fault) 和断言错误 (assertion failure)**: 在Taichi 崩溃时，``gdb`` 会被"
-"触发并附着到当前的线程上。您可能需要输入和 ``sudo`` 超级用户权限相关的密码来允"
-"许 gdb 附着到当前的线程上。再输入 ``gdb`` 之后， 您可以使用 ``bt`` "
+"使用 ``gdb`` **快速定位段错误 (segmentation fault) 和断言错误 (assertion failure)**: "
+"在Taichi 崩溃时，``gdb`` 会被触发并附着到当前的线程上。您可能需要输入和 ``sudo`` 超级用户权限相关的密码来允许 gdb "
+"附着到当前的线程上。再输入 ``gdb`` 之后， 您可以使用 ``bt`` "
 "（``backtrace``）指令检查堆的回溯，从而定位产生错误的代码的具体行数。"
 
-#: ../../utilities.rst:100
-msgid "Interface system (legacy)"
-msgstr "接口系统（遗留）"
+#: ../../utilities.rst:102
+msgid "Code coverage"
+msgstr ""
 
-#: ../../utilities.rst:101
-msgid "Print all interfaces and units"
-msgstr "打印所有接口和单位"
+#: ../../utilities.rst:104
+msgid ""
+"To ensure that our tests covered every situations, we need to have "
+"**coverage report**. That is, to detect how many percent of code lines in"
+" is executed in test."
+msgstr ""
 
-#: ../../utilities.rst:103
-msgid "ti.core.print_all_units()"
-msgstr "ti.core.print_all_units()"
+#: ../../utilities.rst:107
+msgid ""
+"Generally, the higher the coverage percentage is, the stronger our tests "
+"are."
+msgstr ""
 
 #: ../../utilities.rst:108
-msgid "Serialization (legacy)"
-msgstr "序列化（遗留）"
+msgid ""
+"When making a PR, we want to **ensure that it comes with corresponding "
+"tests**. Or code coverage will decrease."
+msgstr ""
+
+#: ../../utilities.rst:109
+msgid ""
+"Code coverage statuses are visible at `Codecov <https://codecov.io/gh"
+"/taichi-dev/taichi>`_."
+msgstr ""
 
 #: ../../utilities.rst:110
 msgid ""
-"The serialization module of taichi allows you to serialize/deserialize objects "
-"into/from binary strings."
-msgstr "Taichi的序列化模块可以允许你将对象序列化/反序列化成二进制字符串。"
+"Currently, Taichi is only set up for Python code coverage report, not for"
+" C++ yet."
+msgstr ""
 
 #: ../../utilities.rst:112
 msgid ""
-"You can use ``TI_IO`` macros to explicit define fields necessary in Taichi."
+"ti test -C       # run tests and save results to .coverage\n"
+"coverage report  # generate a coverage report on terminal output\n"
+"coverage html    # generate a HTML form report in htmlcov/index.html"
+msgstr ""
+
+#: ../../utilities.rst:120
+msgid "Interface system (legacy)"
+msgstr "接口系统（遗留）"
+
+#: ../../utilities.rst:121
+msgid "Print all interfaces and units"
+msgstr "打印所有接口和单位"
+
+#: ../../utilities.rst:123
+msgid "ti.core.print_all_units()"
+msgstr "ti.core.print_all_units()"
+
+#: ../../utilities.rst:128
+msgid "Serialization (legacy)"
+msgstr "序列化（遗留）"
+
+#: ../../utilities.rst:130
+msgid ""
+"The serialization module of taichi allows you to serialize/deserialize "
+"objects into/from binary strings."
+msgstr "Taichi的序列化模块可以允许你将对象序列化/反序列化成二进制字符串。"
+
+#: ../../utilities.rst:132
+msgid ""
+"You can use ``TI_IO`` macros to explicit define fields necessary in "
+"Taichi."
 msgstr "你可以使用 ``TI_IO`` 宏来显式定义Taichi中必要的字段。"
 
-#: ../../utilities.rst:114
+#: ../../utilities.rst:134
 msgid ""
 "// TI_IO_DEF\n"
 "struct Particle {\n"
@@ -301,19 +344,17 @@ msgstr ""
 "\n"
 "// TI_IO_DEF_VIRT();"
 
-#: ../../utilities.rst:148
+#: ../../utilities.rst:168
 msgid "Progress notification (legacy)"
 msgstr "进展通知（遗留）"
 
-#: ../../utilities.rst:150
+#: ../../utilities.rst:170
 msgid ""
-"The Taichi messenger can send an email to ``$TI_MONITOR_EMAIL`` when the task "
-"finishes or crashes. To enable:"
-msgstr ""
-"当任务完成或崩溃时，taichi消息传递程序可以将邮件发送到 ``"
-"$TI_MONITOR_EMAIL`` 。 要启用的话："
+"The Taichi messenger can send an email to ``$TI_MONITOR_EMAIL`` when the "
+"task finishes or crashes. To enable:"
+msgstr "当任务完成或崩溃时，taichi消息传递程序可以将邮件发送到 ``$TI_MONITOR_EMAIL`` 。 要启用的话："
 
-#: ../../utilities.rst:153
+#: ../../utilities.rst:173
 msgid ""
 "from taichi.tools import messenger\n"
 "messenger.enable(task_id='test')"
@@ -329,23 +370,27 @@ msgstr ""
 #~ msgstr "决定是否批准或请求更改，取决于结果。"
 
 #~ msgid ""
-#~ "**Reviewers** can also ask the PR author to run and upload the test result, "
-#~ "if they consider the PR performance sensitive. If the reviewers would like "
-#~ "to run the regression tests themselves, the suggested workflow is:"
-#~ msgstr ""
-#~ "**Reviewers** 如果认为PR性能敏感，也可以要求PR作者运行并上传测试结果。 如果"
-#~ "审阅者想自己运行回归测试，建议的工作流程为："
+#~ "**Reviewers** can also ask the PR "
+#~ "author to run and upload the test"
+#~ " result, if they consider the PR "
+#~ "performance sensitive. If the reviewers "
+#~ "would like to run the regression "
+#~ "tests themselves, the suggested workflow "
+#~ "is:"
+#~ msgstr "**Reviewers** 如果认为PR性能敏感，也可以要求PR作者运行并上传测试结果。 如果审阅者想自己运行回归测试，建议的工作流程为："
 
 #~ msgid ""
-#~ "When a stage of work is done, run ``ti benchmark && ti regression`` to "
-#~ "obtain result."
-#~ msgstr ""
-#~ "当一个工作阶段完成后，运行 ``ti benchmark && ti regression`` 以获得结果。"
+#~ "When a stage of work is done, "
+#~ "run ``ti benchmark && ti regression``"
+#~ " to obtain result."
+#~ msgstr "当一个工作阶段完成后，运行 ``ti benchmark && ti regression`` 以获得结果。"
 
 #~ msgid ""
-#~ "When ready for review, post the latest result in PR comments, wait for the "
-#~ "reviewer."
+#~ "When ready for review, post the "
+#~ "latest result in PR comments, wait "
+#~ "for the reviewer."
 #~ msgstr "准备好进行审核时，请在PR评论中发布最新结果，然后等待审核者。"
 
 #~ msgid "Get feedback from the reviewer, and improve the result."
 #~ msgstr "获得审阅者的反馈，并改善结果。"
+

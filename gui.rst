@@ -89,7 +89,7 @@ Paint on a window
     .. note ::
 
         When using ``float32`` or ``float64`` as the data type,
-        ``img`` entries will be clipped into range ``[0, 1]``.
+        ``img`` entries will be clipped into range ``[0, 1]`` for display.
 
 
 .. function:: gui.circle(pos, color = 0xFFFFFF, radius = 1)
@@ -150,6 +150,17 @@ Paint on a window
     Draw a hollow rectangle.
 
 
+.. function:: gui.text(content, pos, font_size = 15, color = 0xFFFFFF)
+
+    :parameter gui: (GUI) the window object
+    :parameter content: (str) the text to draw
+    :parameter pos: (tuple of 2) the top-left point position of the fonts / texts
+    :parameter font_size: (optional, scalar) the size of font (in height)
+    :parameter color: (optional, RGB hex) the foreground color of text
+
+    Draw a line of text on screen.
+
+
 Event processing
 ----------------
 
@@ -158,14 +169,14 @@ Every event have a key and type.
 
 ::
 
-  ti.GUI.ESCAPE
-  ti.GUI.SHIFT
-  ti.GUI.LEFT
-  'a'
+  ti.GUI.ESCAPE  # Esc
+  ti.GUI.SHIFT   # Shift
+  ti.GUI.LEFT    # Left Arrow
+  'a'            # we use lowercase for alphabet
   'b'
   ...
-  ti.GUI.LMB
-  ti.GUI.RMB
+  ti.GUI.LMB     # Left Mouse Button
+  ti.GUI.RMB     # Right Mouse Button
 
 *Event type* is the type of event, for now, there are just three type of event:
 
@@ -190,6 +201,37 @@ A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.
     gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, ti.GUI.SPACE))
 
 
+.. attribute:: gui.running
+
+    :parameter gui: (GUI)
+    :return: (bool) ``True`` if ``ti.GUI.EXIT`` event occurred, vice versa
+
+    ``ti.GUI.EXIT`` occurs when you click on the close (X) button of a window.
+    So ``gui.running`` will obtain ``False`` when the GUI is being closed.
+
+    For example, loop until the close button is clicked:
+
+    ::
+
+        while gui.running:
+            render()
+            gui.set_image(pixels)
+            gui.show()
+
+
+    You can also close the window by manually setting ``gui.running`` to ``False``:
+
+    ::
+
+        while gui.running:
+            if gui.get_event(ti.GUI.ESCAPE):
+                gui.running = False
+
+            render()
+            gui.set_image(pixels)
+            gui.show()
+
+
 .. function:: gui.get_event(a, ...)
 
     :parameter gui: (GUI)
@@ -202,8 +244,8 @@ A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.
 
     ::
 
-        while gui.get_event():
-            print('Event key', gui.event.key)
+        if gui.get_event():
+            print('Got event, key =', gui.event.key)
 
 
     For example, loop until ESC is pressed:
@@ -214,6 +256,7 @@ A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.
         while not gui.get_event(ti.GUI.ESCAPE):
             gui.set_image(img)
             gui.show()
+
 
 .. function:: gui.get_events(a, ...)
 
@@ -232,6 +275,7 @@ A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.
                 do_something()
             elif e.type in ['a', ti.GUI.LEFT]:
                 ...
+
 
 .. function:: gui.is_pressed(key, ...)
 
@@ -253,6 +297,7 @@ A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.
                 elif gui.is_pressed('d', ti.GUI.RIGHT):
                     print('Go right!')
 
+
 .. function:: gui.get_cursor_pos()
 
     :parameter gui: (GUI)
@@ -268,10 +313,83 @@ A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.
 Image I/O
 ---------
 
-.. code-block:: python
+.. function:: ti.imwrite(img, filename)
 
-    img = ti.imread('hello.png')
-    ti.imshow(img, 'Window Title')
-    ti.imwrite(img, 'hello2.png')
+    :parameter img: (Matrix or Expr) the image you want to export
+    :parameter filename: (string) the location you want to save to
 
-TODO: complete here
+    Export a ``np.ndarray`` or Taichi tensor (``ti.Matrix``, ``ti.Vector``, or ``ti.var``) to a specified location ``filename``.
+
+    Same as ``ti.GUI.show(filename)``, the format of the exported image is determined by **the suffix of** ``filename`` as well. Now ``ti.imwrite`` supports exporting images to ``png``, ``img`` and ``jpg`` and we recommend using ``png``.
+
+    Please make sure that the input image has **a valid shape**. If you want to export a grayscale image, the input shape of tensor should be ``(height, weight)`` or ``(height, weight, 1)``. For example:
+
+    .. code-block:: python
+
+        import taichi as ti
+
+        ti.init()
+
+        shape = (512, 512)
+        type = ti.u8
+        pixels = ti.var(dt=type, shape=shape)
+
+        @ti.kernel
+        def draw():
+            for i, j in pixels:
+                pixels[i, j] = ti.random() * 255    # integars between [0, 255] for ti.u8
+
+        draw()
+
+        ti.imwrite(pixels, f"export_u8.png")
+
+    Besides, for RGB or RGBA images, ``ti.imwrite`` needs to receive a tensor which has shape ``(height, width, 3)`` and ``(height, width, 4)`` individually.
+
+    Generally the value of the pixels on each channel of a ``png`` image is an integar in [0, 255]. For this reason, ``ti.imwrite`` will **cast tensors** which has different datatypes all **into integars between [0, 255]**. As a result, ``ti.imwrite`` has the following requirements for different datatypes of input tensors:
+
+    - For float-type (``ti.f16``, ``ti.f32``, etc) input tensors, **the value of each pixel should be float between [0.0, 1.0]**. Otherwise ``ti.imwrite`` will first clip them into [0.0, 1.0]. Then they are multiplied by 256 and casted to integaters ranging from [0, 255].
+
+    - For int-type (``ti.u8``, ``ti.u16``, etc) input tensors, **the value of each pixel can be any valid integer in its own bounds**. These integers in this tensor will be scaled to [0, 255] by being divided over the upper bound of its basic type accordingly.
+
+    Here is another example:
+
+    .. code-block:: python
+
+        import taichi as ti
+
+        ti.init()
+
+        shape = (512, 512)
+        channels = 3
+        type = ti.f32
+        pixels = ti.Matrix(channels, dt=type, shape=shape)
+
+        @ti.kernel
+        def draw():
+            for i, j in pixels:
+                for k in ti.static(range(channels)):
+                    pixels[i, j][k] = ti.random()   # floats between [0, 1] for ti.f32
+
+        draw()
+
+        ti.imwrite(pixels, f"export_f32.png")
+
+.. function:: ti.imread(filename, channels=0)
+
+    :parameter filename: (string) the filename of the image to load
+    :parameter channels: (optional int) the number of channels in your specified image. The default value ``0`` means the channels of the returned image is adaptive to the image file
+
+    :return: (np.ndarray) the image read from ``filename``
+
+    This function loads an image from the target filename and returns it as a ``np.ndarray(dtype=np.uint8)``.
+
+    Each value in this returned tensor is an integer in [0, 255].
+
+.. function:: ti.imshow(img, windname)
+
+    :parameter img: (Matrix or Expr) the image to show in the GUI
+    :parameter windname: (string) the name of the GUI window
+
+    This function will create an instance of ``ti.GUI`` and show the input image on the screen.
+
+    It has the same logic as ``ti.imwrite`` for different datatypes.

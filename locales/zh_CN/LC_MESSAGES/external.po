@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
+"POT-Creation-Date: 2020-06-14 12:50+0800\n"
 "PO-Revision-Date: 2020-05-11 00:01-0400\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -67,10 +67,10 @@ msgid ""
 "vec.from_numpy(arr)\n"
 "\n"
 "arr = vec.to_numpy()\n"
-"assert arr.shape == (n, m, 3, 1)\n"
-"\n"
-"arr = vec.to_numpy(as_vector=True)\n"
 "assert arr.shape == (n, m, 3)\n"
+"\n"
+"arr = vec.to_numpy(keep_dims=True)\n"
+"assert arr.shape == (n, m, 3, 1)\n"
 "\n"
 "# Matrix\n"
 "arr = np.ones(shape=(n, m, 3, 4), dtype=np.int32)\n"
@@ -117,19 +117,23 @@ msgstr ""
 "arr = mat.to_numpy()\n"
 "assert arr.shape == (n, m, 3, 4)"
 
-#: ../../external.rst:59
+#: ../../external.rst:58
+msgid "TODO: add API reference"
+msgstr ""
+
+#: ../../external.rst:62
 #, fuzzy
 msgid "Using external arrays as Taichi kernel parameters"
 msgstr "使用外部数组作为Taichi内核的参数"
 
-#: ../../external.rst:61
+#: ../../external.rst:64
 msgid ""
 "The type hint for external array parameters is ``ti.ext_arr()``. Please "
 "see the example below. Note that struct-for's on external arrays are not "
 "supported."
 msgstr "外部数组参数的类型提示是 ``ti.ext_arr()``。请参阅下面的示例。请注意，结构for循环不支持外部数组。"
 
-#: ../../external.rst:64
+#: ../../external.rst:67
 msgid ""
 "import taichi as ti\n"
 "import numpy as np\n"
