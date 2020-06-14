@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-14 12:50+0800\n"
-"PO-Revision-Date: 2020-06-06 13:06+0800\n"
+"PO-Revision-Date: 2020-06-14 22:02+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: ../../scalar_tensor.rst:4
 msgid "Tensors of scalars"
@@ -28,7 +29,7 @@ msgstr "定义"
 
 #: ../../scalar_tensor.rst
 msgid "Parameters"
-msgstr ""
+msgstr "参量"
 
 #: ../../scalar_tensor.rst:12
 msgid "(DataType) type of the tensor element"
@@ -39,51 +40,49 @@ msgid "(optional, scalar or tuple) the shape of tensor"
 msgstr "（可选，标量或tuple）张量的形状"
 
 #: ../../scalar_tensor.rst:14
-#, fuzzy
 msgid "(optional, scalar or tuple) see :ref:`offset`"
-msgstr "（可选，标量或tuple）张量的形状"
+msgstr "（可选，标量或元组）请参见 :ref:`offset`"
 
 #: ../../scalar_tensor.rst:16
 msgid ""
-"For example, this creates a *dense* tensor with four ``int32`` as "
-"elements: ::"
-msgstr "例如，下列代码将创建由4个 ``int32`` 组成的密集张量： ::"
+"For example, this creates a *dense* tensor with four ``int32`` as elements: ::"
+msgstr "例如，这将创建一个具有四个 ``int32`` 作为元素的 *dense* 张量： ::"
 
 #: ../../scalar_tensor.rst:19
 msgid "x = ti.var(ti.i32, shape=4)"
-msgstr ""
+msgstr "x = ti.var(ti.i32, shape=4)"
 
 #: ../../scalar_tensor.rst:21
 msgid "This creates a 4x3 *dense* tensor with ``float32`` elements: ::"
-msgstr "下列代码将创建由 ``float32`` 组成的4x3密集张量： ::"
+msgstr "这将创建一个带有 ``float32`` 元素的4x3 *dense* 张量： ::"
 
 #: ../../scalar_tensor.rst:24
 msgid "x = ti.var(ti.f32, shape=(4, 3))"
-msgstr ""
+msgstr "x = ti.var(ti.f32, shape=(4, 3))"
 
 #: ../../scalar_tensor.rst:26
 msgid ""
-"If shape is ``()`` (empty tuple), then a 0-D tensor (scalar) is created: "
-"::"
-msgstr "如果形状设为 ``()`` （空元组），那将创建一个0维张量（即标量）： ::"
+"If shape is ``()`` (empty tuple), then a 0-D tensor (scalar) is created: ::"
+msgstr "如果shape是 ``()`` （空元组），则创建一个0-D张量（标量）： ::"
 
 #: ../../scalar_tensor.rst:29
 msgid "x = ti.var(ti.f32, shape=())"
-msgstr ""
+msgstr "x = ti.var(ti.f32, shape=())"
 
 #: ../../scalar_tensor.rst:31
 msgid "Then access it by passing ``None`` as index: ::"
-msgstr "然后以 ``None`` 为指标来访问它： ::"
+msgstr "然后通过传递 ``None`` 作为索引来访问它： ::"
 
 #: ../../scalar_tensor.rst:34
 msgid "x[None] = 2"
-msgstr ""
+msgstr "x[None] = 2"
 
 #: ../../scalar_tensor.rst:36
 msgid ""
-"If shape is **not provided** or ``None``, the user must manually "
-"``place`` it afterwards: ::"
-msgstr "如果 **不提供** 形状参数 ``shape`` ，那么稍后用户必须手动放置（place）那个张量： ::"
+"If shape is **not provided** or ``None``, the user must manually ``place`` it "
+"afterwards: ::"
+msgstr ""
+"如果形状是 **未提供** 或 **没有**，则用户必须在其后手动 ``放置`` 形状： ::"
 
 #: ../../scalar_tensor.rst:39
 msgid ""
@@ -93,19 +92,20 @@ msgid ""
 msgstr ""
 "x = ti.var(ti.f32)\n"
 "ti.root.dense(ti.ij, (4, 3)).place(x)\n"
-"# 等价于：x = ti.var(ti.f32, shape=(4, 3))"
+"# 等价于: x = ti.var(ti.f32, shape=(4, 3))"
 
 #: ../../scalar_tensor.rst:45
-#, fuzzy
 msgid ""
-"Not providing ``shape`` allows you to *place* the tensor in a layout "
-"other than the default *dense*, see :ref:`layout` for more details."
-msgstr "不提供形状 ``shape`` 还可以使你定义张量为 *稀疏* 张量，参考见 :ref:`layout` 。"
+"Not providing ``shape`` allows you to *place* the tensor in a layout other than "
+"the default *dense*, see :ref:`layout` for more details."
+msgstr ""
+"不提供 ``shape`` 允许你将张量 *放置* 在默认的 *dense* 之外的布局中，有关更多详细"
+"信息，请参见： :ref:`layout` 。"
 
 #: ../../scalar_tensor.rst:50
 msgid ""
-"All variables should be created and placed before any kernel invocation "
-"or any of them accessed from python-scope. For example:"
+"All variables should be created and placed before any kernel invocation or any "
+"of them accessed from python-scope. For example:"
 msgstr "在任何内核调用或变量访问之前，所有变量都必须被创建和放置完毕。例如："
 
 #: ../../scalar_tensor.rst:52
@@ -141,8 +141,7 @@ msgid ""
 "x = ti.var(ti.f32, shape=())\n"
 "x[None] = 1\n"
 "y = ti.var(ti.f32, shape=())\n"
-"# ERROR: cannot create tensor after any tensor accesses from the Python-"
-"scope!"
+"# ERROR: cannot create tensor after any tensor accesses from the Python-scope!"
 msgstr ""
 "x = ti.var(ti.f32, shape=())\n"
 "x[None] = 1\n"
@@ -151,73 +150,76 @@ msgstr ""
 
 #: ../../scalar_tensor.rst:77
 msgid "Accessing components"
-msgstr ""
+msgstr "访问组件"
 
 #: ../../scalar_tensor.rst:79
 msgid "You can access an element of the Taichi tensor by an index or indices."
-msgstr ""
+msgstr "您可以通过一个或多个索引来访问Taichi张量的元素。"
 
 #: ../../scalar_tensor.rst:83
-#, fuzzy
 msgid "(Tensor) the tensor of scalars"
-msgstr "标量组成的张量"
+msgstr "（张量）标量的张量"
 
 #: ../../scalar_tensor.rst:84
 msgid "(scalar) index of the first tensor dimension"
-msgstr ""
+msgstr "第一个张量维度的（标量）索引"
 
 #: ../../scalar_tensor.rst:85
 msgid "(scalar) index of the second tensor dimension"
-msgstr ""
+msgstr "第二张量维度的（标量）索引"
 
 #: ../../scalar_tensor.rst
 msgid "Returns"
-msgstr ""
+msgstr "返回"
 
 #: ../../scalar_tensor.rst:86
 msgid "(scalar) the element at ``[p, q, ...]``"
-msgstr ""
+msgstr "（标量） ``[p, q, ...]`` 处的元素"
 
 #: ../../scalar_tensor.rst:88
 msgid "This extracts the element value at index ``[3, 4]`` of tensor ``a``: ::"
-msgstr ""
+msgstr "这将提取张量 ``a`` 的索引在 ``[3, 4]`` 处的元素值： ::"
 
 #: ../../scalar_tensor.rst:91
 msgid "x = a[3, 4]"
-msgstr ""
+msgstr "x = a[3, 4]"
 
 #: ../../scalar_tensor.rst:93
 msgid "This sets the element value at index ``2`` of 1D tensor ``b`` to ``5``: ::"
-msgstr ""
+msgstr "这会将一维张量 ``b`` 的索引 ``2`` 处的元素值设置为 ``5``： ::"
 
 #: ../../scalar_tensor.rst:96
 msgid "b[2] = 5"
-msgstr ""
+msgstr "b[2] = 5"
 
 #: ../../scalar_tensor.rst:100
 msgid ""
-"In Python, x[(exp1, exp2, ..., expN)] is equivalent to x[exp1, exp2, ...,"
-" expN]; the latter is just syntactic sugar for the former."
+"In Python, x[(exp1, exp2, ..., expN)] is equivalent to x[exp1, exp2, ..., "
+"expN]; the latter is just syntactic sugar for the former."
 msgstr ""
+"在Python中， x[(exp1, exp2, ..., expN)] 等效于 x[(exp1, exp2, ..., expN)] ; 后者"
+"只是前者的语法糖。"
 
 #: ../../scalar_tensor.rst:104
 msgid ""
-"The returned value can also be ``Vector`` / ``Matrix`` if ``a`` is a "
-"tensor of vector / matrix, see :ref:`vector` for more details."
+"The returned value can also be ``Vector`` / ``Matrix`` if ``a`` is a tensor of "
+"vector / matrix, see :ref:`vector` for more details."
 msgstr ""
+"如果 ``a`` 是 ``Vector`` / ``Matrix`` 的张量，则返回的值也可以是Vector / "
+"Matrix，有关更多详细信息，请参见： :ref:`vector`。"
 
 #: ../../scalar_tensor.rst:108
 msgid "Meta data"
-msgstr ""
+msgstr "元数据"
 
 #: ../../scalar_tensor.rst:112 ../../scalar_tensor.rst:129
 #: ../../scalar_tensor.rst:146 ../../scalar_tensor.rst:157
 msgid "(Tensor) the tensor"
-msgstr ""
+msgstr "（张量）张量"
 
 #: ../../scalar_tensor.rst:113
 msgid "(scalar) the length of ``a``"
-msgstr ""
+msgstr "（标量） ``a`` 的长度"
 
 #: ../../scalar_tensor.rst:117
 msgid ""
@@ -230,11 +232,18 @@ msgid ""
 "z = ti.var(ti.i32, ())\n"
 "z.dim()  # 0"
 msgstr ""
+"x = ti.var(ti.i32, (6, 5))\n"
+"x.dim()  # 2\n"
+"\n"
+"y = ti.var(ti.i32, 6)\n"
+"y.dim()  # 1\n"
+"\n"
+"z = ti.var(ti.i32, ())\n"
+"z.dim()  # 0"
 
 #: ../../scalar_tensor.rst:130
-#, fuzzy
 msgid "(tuple) the shape of tensor ``a``"
-msgstr "（可选，标量或tuple）张量的形状"
+msgstr "（元组）张量 ``a`` 的形状"
 
 #: ../../scalar_tensor.rst:134
 msgid ""
@@ -247,26 +256,37 @@ msgid ""
 "z = ti.var(ti.i32, ())\n"
 "z.shape()  # ()"
 msgstr ""
+"x = ti.var(ti.i32, (6, 5))\n"
+"x.shape()  # (6, 5)\n"
+"\n"
+"y = ti.var(ti.i32, 6)\n"
+"y.shape()  # (6,)\n"
+"\n"
+"z = ti.var(ti.i32, ())\n"
+"z.shape()  # ()"
 
 #: ../../scalar_tensor.rst:147
 msgid "(DataType) the data type of ``a``"
-msgstr ""
+msgstr "（数据类型） ``a`` 的数据类型"
 
 #: ../../scalar_tensor.rst:151
 msgid ""
 "x = ti.var(ti.i32, (2, 3))\n"
 "x.data_type()  # ti.i32"
 msgstr ""
+"x = ti.var(ti.i32, (2, 3))\n"
+"x.data_type()  # ti.i32"
 
 #: ../../scalar_tensor.rst:158
 msgid ""
-"(optional, scalar) the number of parent steps, i.e. ``n=1`` for parent, "
-"``n=2`` grandparent, etc."
+"(optional, scalar) the number of parent steps, i.e. ``n=1`` for parent, ``n=2`` "
+"grandparent, etc."
 msgstr ""
+"（可选，标量）父级步骤数，即父级为 ``n = 1``，祖父母级为 ``n = 2``，等等。"
 
 #: ../../scalar_tensor.rst:159
 msgid "(SNode) the parent of ``a``'s containing SNode"
-msgstr ""
+msgstr "（SNode）包含 ``a`` SNode的父级"
 
 #: ../../scalar_tensor.rst:163
 msgid ""
@@ -281,36 +301,23 @@ msgid ""
 "y.parent()   # blk2\n"
 "y.parent(2)  # blk1"
 msgstr ""
+"x = ti.var(ti.i32)\n"
+"y = ti.var(ti.i32)\n"
+"blk1 = ti.root.dense(ti.ij, (6, 5))\n"
+"blk2 = blk1.dense(ti.ij, (3, 2))\n"
+"blk1.place(x)\n"
+"blk2.place(y)\n"
+"\n"
+"x.parent()   # blk1\n"
+"y.parent()   # blk2\n"
+"y.parent(2)  # blk1"
 
 #: ../../scalar_tensor.rst:174
 msgid "See :ref:`snode` for more details."
-msgstr ""
+msgstr "有关更多详细信息，请参见 :ref:`snode` 。"
 
 #~ msgid "Attribute"
 #~ msgstr "属性"
 
 #~ msgid "TODO: WIP"
 #~ msgstr "TODO: 施工中"
-
-#~ msgid "a[2] = 2"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "(optional, scalar) the number of parent"
-#~ " steps, i.e. ``n=1`` for parent, "
-#~ "``n=2`` grandparent, etc..."
-#~ msgstr ""
-
-#~ msgid "::"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "x = ti.var(ti.i32) y = ti.var(ti.i32)"
-#~ " blk1 = ti.root.dense(ti.ij, (6, 5)) "
-#~ "blk2 = blk1.dense(ti.ij, (3, 2)) "
-#~ "blk1.place(x) blk2.place(y)"
-#~ msgstr ""
-
-#~ msgid "x.parent()   # blk1 y.parent()   # blk2 y.parent(2)  # blk1"
-#~ msgstr ""
-
