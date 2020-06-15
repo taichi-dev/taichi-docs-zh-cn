@@ -75,7 +75,7 @@ msgstr "张量元素全部会被初始化为0。"
 
 #: ../../tensor_matrix.rst:26
 msgid "Sparse tensors are initially inactive."
-msgstr "稀疏张量最初是未激活的。"
+msgstr "稀疏张量的元素最初是全部未激活的。"
 
 #: ../../tensor_matrix.rst:27
 msgid "See :ref:`scalar_tensor` for more details."
@@ -141,7 +141,7 @@ msgid ""
 "fine, yet ``32x6`` is probably too big as a matrix size."
 msgstr ""
 "由于性能原因，矩阵运算将被展开，因此我们建议仅使用小型矩阵。 例如，``2x1``， "
-"``3x3`` ， ``4x4`` 矩阵很好，但 ``32x6`` 可能太大了。"
+"``3x3`` ， ``4x4`` 矩阵还好，但 ``32x6`` 可能太大了。"
 
 #: ../../tensor_matrix.rst:50
 msgid ""
