@@ -78,7 +78,7 @@ msgid ""
 "``ti.atomic_add``, also do read-modify-write atomically. These operations "
 "additionally return the **old value** of the first argument."
 msgstr ""
-"除了增强型分配之外，显式的原子操作（例如 ``ti.atomic_add`` ）也可以原子地进行"
+"除了增量赋值(augmented assignment)之外，显式的原子操作（例如 ``ti.atomic_add`` ）也可以原子地进行"
 "读取-修改-写入。 这些操作还会返回第一个参数的 **旧值** 。"
 
 #: ../../atomic.rst:33
