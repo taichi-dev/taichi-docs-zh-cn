@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
+"POT-Creation-Date: 2020-06-14 12:50+0800\n"
 "PO-Revision-Date: 2020-05-15 09:32+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -23,53 +23,119 @@ msgstr ""
 msgid "Global settings"
 msgstr "全局设置"
 
-#: ../../global_settings.rst:4
-msgid ""
-"Restart the Taichi runtime system (clear memory, destroy all variables "
-"and kernels): ``ti.reset()``"
-msgstr "重新启动Taichi运行系统（清除内存，销毁所有变量和内核）： ``ti.reset()``"
-
 #: ../../global_settings.rst:5
-msgid "Eliminate verbose outputs: ``ti.get_runtime().set_verbose(False)``"
-msgstr "消除详细输出：  ``ti.get_runtime().set_verbose(False)``"
-
-#: ../../global_settings.rst:6
-msgid "To not trigger GDB when crashes: ``export TI_GDB_TRIGGER=0``"
-msgstr "崩溃时不触发GDB：``export TI_GDB_TRIGGER=0``"
+msgid "Backends"
+msgstr ""
 
 #: ../../global_settings.rst:7
-msgid "To not use unified memory for CUDA: ``export TI_USE_UNIFIED_MEMORY=0``"
-msgstr "不为CUDA使用统一内存：  ``export TI_USE_UNIFIED_MEMORY=0``"
+#, fuzzy
+msgid ""
+"To specify which Arch to use: ``export TI_ARCH=cuda`` or "
+"``ti.init(arch=ti.cuda)``."
+msgstr "要指定使用哪个Arch： ``export TI_ARCH=cuda``"
 
 #: ../../global_settings.rst:8
-msgid ""
-"To specify pre-allocated memory size for CUDA: ``export "
-"TI_DEVICE_MEMORY_GB=0.5``"
-msgstr "要为CUDA指定预分配的内存大小： ``export TI_DEVICE_MEMORY_GB=0.5``"
-
-#: ../../global_settings.rst:9
-msgid "Show more detailed log (TI_TRACE): ``export TI_LOG_LEVEL=trace``"
-msgstr "显示更多详细的日志（TI_TRACE）： ``export TI_LOG_LEVEL=trace``"
-
-#: ../../global_settings.rst:10
 #, fuzzy
 msgid ""
 "To specify which GPU to use for CUDA: ``export "
-"CUDA_VISIBLE_DEVICES=[gpuid]``"
+"CUDA_VISIBLE_DEVICES=[gpuid]``."
 msgstr "要指定使用哪个Arch： ``export TI_ARCH=cuda``"
 
-#: ../../global_settings.rst:11
-msgid "To specify which Arch to use: ``export TI_ARCH=cuda``"
-msgstr "要指定使用哪个Arch： ``export TI_ARCH=cuda``"
+#: ../../global_settings.rst:9
+#, fuzzy
+msgid ""
+"To specify pre-allocated memory size for CUDA: ``export "
+"TI_DEVICE_MEMORY_GB=0.5`` or ``ti.init(device_memory_GB=0.5)``."
+msgstr "要为CUDA指定预分配的内存大小： ``export TI_DEVICE_MEMORY_GB=0.5``"
 
-#: ../../global_settings.rst:12
-msgid "To print intermediate IR generated: ``export TI_PRINT_IR=1``"
-msgstr "要打印生成的中间表示码： ``export TI_PRINT_IR=1``"
+#: ../../global_settings.rst:10
+msgid ""
+"To disable unified memory usage on CUDA: ``export "
+"TI_USE_UNIFIED_MEMORY=0``."
+msgstr ""
 
 #: ../../global_settings.rst:13
-msgid "To print verbose details: ``export TI_VERBOSE=1``"
-msgstr "要打印详细信息： ``export TI_VERBOSE=1``"
+msgid "Compilation"
+msgstr ""
+
+#: ../../global_settings.rst:15
+msgid ""
+"Disable advanced optimization to save compile time & possible erros: "
+"``ti.core.toggle_advanced_optimization(False)`` or ``export "
+"TI_ADVANCED_OPTIMIZATION=0``."
+msgstr ""
+
+#: ../../global_settings.rst:16
+#, fuzzy
+msgid ""
+"To print intermediate IR generated: ``export TI_PRINT_IR=1`` or "
+"``ti.init(print_ir=True)``."
+msgstr "要打印生成的中间表示码： ``export TI_PRINT_IR=1``"
+
+#: ../../global_settings.rst:17
+msgid ""
+"To print preprocessed Python code: ``export TI_PRINT_PREPROCESSED=1`` or "
+"``ti.init(print_preprocessed=True)``.."
+msgstr ""
+
+#: ../../global_settings.rst:20
+msgid "Runtime"
+msgstr ""
+
+#: ../../global_settings.rst:22
+#, fuzzy
+msgid ""
+"Restart the entire Taichi system (destroy all tensors and kernels): "
+"``ti.reset()``."
+msgstr "重新启动Taichi运行系统（清除内存，销毁所有变量和内核）： ``ti.reset()``"
+
+#: ../../global_settings.rst:23
+msgid ""
+"To start program in debug mode: ``export TI_DEBUG=1`` or "
+"``ti.init(debug=True)``."
+msgstr ""
+
+#: ../../global_settings.rst:26
+msgid "Logging"
+msgstr ""
+
+#: ../../global_settings.rst:28
+msgid ""
+"Show more detailed log to level TRACE: ``export TI_LOG_LEVEL=trace`` or "
+"``ti.set_logging_level(ti.TRACE)``."
+msgstr ""
+
+#: ../../global_settings.rst:29
+#, fuzzy
+msgid ""
+"Eliminate verbose outputs: ``ti.get_runtime().set_verbose(False)`` or "
+"``TI_VERBOSE=0``."
+msgstr "消除详细输出：  ``ti.get_runtime().set_verbose(False)``"
+
+#: ../../global_settings.rst:32
+msgid "Develop"
+msgstr ""
+
+#: ../../global_settings.rst:34
+msgid ""
+"Cache compiled runtime bitcode in **dev mode** to save start up time: "
+"``export TI_CACHE_RUNTIME_BITCODE=1``."
+msgstr ""
+
+#: ../../global_settings.rst:35
+#, fuzzy
+msgid "To trigger GDB when Taichi crashes: ``export TI_GDB_TRIGGER=1``."
+msgstr "崩溃时不触发GDB：``export TI_GDB_TRIGGER=0``"
 
 #~ msgid "To specify which GPU to use for CUDA: ``export CUDA_VISIBLE_DEVICES=0``"
 #~ msgstr "要指定要用于CUDA的GPU：  ``export CUDA_VISIBLE_DEVICES=0``"
+
+#~ msgid "To not use unified memory for CUDA: ``export TI_USE_UNIFIED_MEMORY=0``"
+#~ msgstr "不为CUDA使用统一内存：  ``export TI_USE_UNIFIED_MEMORY=0``"
+
+#~ msgid "Show more detailed log (TI_TRACE): ``export TI_LOG_LEVEL=trace``"
+#~ msgstr "显示更多详细的日志（TI_TRACE）： ``export TI_LOG_LEVEL=trace``"
+
+#~ msgid "To print verbose details: ``export TI_VERBOSE=1``"
+#~ msgstr "要打印详细信息： ``export TI_VERBOSE=1``"
 

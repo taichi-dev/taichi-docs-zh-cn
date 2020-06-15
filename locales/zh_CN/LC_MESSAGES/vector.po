@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
+"POT-Creation-Date: 2020-06-14 12:50+0800\n"
 "PO-Revision-Date: 2020-05-19 14:44+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -39,14 +39,16 @@ msgid ""
 msgstr "作为全局张量(global tensor)的构成元素。比如，由向量 ``n`` 组成的N-维数组构成了的一个全局张量。"
 
 #: ../../vector.rst:11
-msgid "See :ref:`tensor` for more details."
-msgstr "在 :ref:`tensor` 中查看更多细节。"
+msgid ""
+"In fact, ``Vector`` is simply an alias of ``Matrix``, just with ``m = "
+"1``. See :ref:`matrix` and :ref:`tensor` for more details."
+msgstr ""
 
 #: ../../vector.rst:14
 msgid "Declaration"
 msgstr "声明向量"
 
-#: ../../vector.rst:17 ../../vector.rst:55
+#: ../../vector.rst:17 ../../vector.rst:56
 msgid "As global tensors of vectors"
 msgstr "全局张量中的向量"
 
@@ -63,20 +65,25 @@ msgid "(DataType) data type of the components"
 msgstr "(数据类型) 向量中分量的数据类型"
 
 #: ../../vector.rst:23
-msgid "(scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
+#, fuzzy
+msgid "(optional, scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
 msgstr "(标量或元组)张量的形状(其中的元素就是向量), 在 :ref:`tensor` 中查看更多细节"
 
-#: ../../vector.rst:25
+#: ../../vector.rst:24
+msgid "(optional, scalar or tuple) see :ref:`offset`"
+msgstr ""
+
+#: ../../vector.rst:26
 msgid "For example, this creates a 5x4 tensor of 3 component vectors: ::"
 msgstr "例如, 这里我们创建了一个5x4的张量，张量中的元素都是3维的向量: ::"
 
-#: ../../vector.rst:28
+#: ../../vector.rst:29
 msgid ""
 "# Python-scope\n"
 "a = ti.Vector(3, dt=ti.f32, shape=(5, 4))"
 msgstr ""
 
-#: ../../vector.rst:33
+#: ../../vector.rst:34
 msgid ""
 "In Python-scope, ``ti.var`` declares :ref:`scalar_tensor`, while "
 "``ti.Vector`` declares tensors of vectors."
@@ -84,53 +91,53 @@ msgstr ""
 "在Python-scope中, ``ti.var`` 声明 :ref:`scalar_tensor`, 而 ``ti.Vector`` "
 "声明了由向量构成的张量。"
 
-#: ../../vector.rst:37 ../../vector.rst:84
+#: ../../vector.rst:38 ../../vector.rst:85
 msgid "As a temporary local variable"
 msgstr "临时局部变量向量"
 
-#: ../../vector.rst:41
+#: ../../vector.rst:42
 msgid "(scalar) the first component of the vector"
 msgstr "(标量)向量的第一个分量"
 
-#: ../../vector.rst:42
+#: ../../vector.rst:43
 msgid "(scalar) the second component of the vector"
 msgstr "(标量)向量的第二个分量"
 
-#: ../../vector.rst:44
+#: ../../vector.rst:45
 msgid "For example, this creates a 3D vector with components (2, 3, 4): ::"
 msgstr "例如, 我们可以使用 (2, 3, 4)创建一个三维向量: ::"
 
-#: ../../vector.rst:47
+#: ../../vector.rst:48
 msgid ""
 "# Taichi-scope\n"
 "a = ti.Vector([2, 3, 4])"
 msgstr ""
 
-#: ../../vector.rst:52
+#: ../../vector.rst:53
 msgid "Accessing components"
 msgstr "访问向量分量"
 
-#: ../../vector.rst:58 ../../vector.rst:88
+#: ../../vector.rst:59 ../../vector.rst:89
 msgid "(Vector) the vector"
 msgstr "(向量) "
 
-#: ../../vector.rst:59
+#: ../../vector.rst:60
 msgid "(scalar) index of the first tensor dimension"
 msgstr "(标量) 张量的行索引"
 
-#: ../../vector.rst:60
+#: ../../vector.rst:61
 msgid "(scalar) index of the second tensor dimension"
 msgstr "(标量) 张量的列索引"
 
-#: ../../vector.rst:61
+#: ../../vector.rst:62
 msgid "(scalar) index of the vector component"
 msgstr "(标量) 向量内分量的索引"
 
-#: ../../vector.rst:63
+#: ../../vector.rst:64
 msgid "This extracts the first component of vector ``a[6, 3]``: ::"
 msgstr "这里提取出了向量 ``a[6, 3]`` 的第一个分量: ::"
 
-#: ../../vector.rst:66
+#: ../../vector.rst:67
 msgid ""
 "x = a[6, 3][0]\n"
 "\n"
@@ -139,65 +146,65 @@ msgid ""
 "x = vec[0]"
 msgstr ""
 
-#: ../../vector.rst:74
+#: ../../vector.rst:75
 #, fuzzy
 msgid ""
 "**Always** use two pairs of square brackets to access scalar elements "
 "from tensors of vectors."
 msgstr "**始终** 使用两组方括号来访问张量中向量的标量元素。"
 
-#: ../../vector.rst:76
+#: ../../vector.rst:77
 msgid ""
 "The indices in the first pair of brackets locate the vector inside the "
 "tensor of vectors;"
 msgstr "第一组方括号负责定位张量中的向量;"
 
-#: ../../vector.rst:77
+#: ../../vector.rst:78
 msgid ""
 "The indices in the second pair of brackets locate the scalar element "
 "inside the vector."
 msgstr "第二组方括号负责定位向量中的标量。"
 
-#: ../../vector.rst:79
+#: ../../vector.rst:80
 msgid ""
 "For 0-D tensors of vectors, indices in the first pair of brackets should "
 "be ``[None]``."
 msgstr "特别的，对0维张量第一组方括号应该使用 ``[None]`` 。"
 
-#: ../../vector.rst:89
+#: ../../vector.rst:90
 msgid "(scalar) index of the component"
 msgstr "指定访问下标"
 
-#: ../../vector.rst:91
+#: ../../vector.rst:92
 msgid "For example, this extracts the first component of vector ``a``: ::"
 msgstr "例如，这里我们提取出了向量 ``a`` 的第一个分量: ::"
 
-#: ../../vector.rst:94
+#: ../../vector.rst:95
 msgid "x = a[0]"
 msgstr ""
 
-#: ../../vector.rst:96
+#: ../../vector.rst:97
 msgid "This sets the second component of ``a`` to 4: ::"
 msgstr "同理，将 ``a`` 的第二个分量设置为 4: ::"
 
-#: ../../vector.rst:99
+#: ../../vector.rst:100
 msgid "a[1] = 4"
 msgstr ""
 
-#: ../../vector.rst:101
+#: ../../vector.rst:102
 msgid "TODO: add descriptions about ``a(i, j)``"
 msgstr ""
 
-#: ../../vector.rst:104
+#: ../../vector.rst:105
 msgid "Methods"
 msgstr "相关方法"
 
-#: ../../vector.rst:108 ../../vector.rst:127 ../../vector.rst:128
-#: ../../vector.rst:155 ../../vector.rst:156 ../../vector.rst:173
+#: ../../vector.rst:109 ../../vector.rst:127 ../../vector.rst:128
+#: ../../vector.rst:161 ../../vector.rst:162 ../../vector.rst:179
 msgid "(Vector)"
 msgstr "(向量)向量"
 
-#: ../../vector.rst:109
+#: ../../vector.rst:110
 msgid ""
 "(optional, scalar) a safe-guard value for ``sqrt``, usually 0. See the "
 "note below."
@@ -207,25 +214,25 @@ msgstr "(可选标量) sqrt的安全保护值，通常为0. 详见下面注解�
 msgid "Returns"
 msgstr ""
 
-#: ../../vector.rst:110
+#: ../../vector.rst:111
 msgid "(scalar) the magnitude / length / norm of vector"
 msgstr "(标量) 向量的大小、长度、范数"
 
-#: ../../vector.rst:112
+#: ../../vector.rst:113
 msgid "For example, ::"
 msgstr "例如: ::"
 
-#: ../../vector.rst:115
+#: ../../vector.rst:116
 msgid ""
 "a = ti.Vector([3, 4])\n"
 "a.norm() # sqrt(3*3 + 4*4 + 0) = 5"
 msgstr ""
 
-#: ../../vector.rst:118
+#: ../../vector.rst:119
 msgid "``a.norm(eps)`` is equivalent to ``ti.sqrt(a.dot(a) + eps)``"
 msgstr "``a.norm(eps)`` 相当于 ``ti.sqrt(a.dot(a) + eps)``"
 
-#: ../../vector.rst:121
+#: ../../vector.rst:122
 msgid ""
 "Set ``eps = 1e-5`` for example, to safe guard the operator's gradient on "
 "zero vectors during differentiable programming."
@@ -235,7 +242,7 @@ msgstr "可以通过设置 ``eps = 1e-5`` ,对可微分编程中零向量上的�
 msgid "(scalar) the dot (inner) product of ``a`` and ``b``"
 msgstr "(标量) ``a`` 和 ``b`` 之间点乘（内积）的结果"
 
-#: ../../vector.rst:131 ../../vector.rst:159 ../../vector.rst:177
+#: ../../vector.rst:131 ../../vector.rst:165 ../../vector.rst:183
 msgid "E.g., ::"
 msgstr "例如: ::"
 
@@ -246,12 +253,19 @@ msgid ""
 "a.dot(b) # 1*2 + 3*4 = 14"
 msgstr ""
 
-#: ../../vector.rst:141 ../../vector.rst:142
-msgid "(Vector, 3 component)"
+#: ../../vector.rst:141
+msgid "(Vector, 2 or 3 components)"
+msgstr ""
+
+#: ../../vector.rst:142
+msgid "(Vector of the same size as a)"
 msgstr ""
 
 #: ../../vector.rst:143
-msgid "(Vector, 3D) the cross product of ``a`` and ``b``"
+#, fuzzy
+msgid ""
+"(scalar (for 2D inputs), or 3D Vector (for 3D inputs)) the cross product "
+"of ``a`` and ``b``"
 msgstr "(三维向量) ``a`` 和 ``b`` 之间叉乘的结果"
 
 #: ../../vector.rst:145
@@ -263,14 +277,20 @@ msgstr "这里使用右手系, 如下: ::"
 msgid ""
 "a = ti.Vector([1, 2, 3])\n"
 "b = ti.Vector([4, 5, 6])\n"
-"c = ti.cross(a, b) # [2*6 - 5*3, 4*3 - 1*6, 1*5 - 4*2]"
+"c = ti.cross(a, b)\n"
+"# c = [2*6 - 5*3, 4*3 - 1*6, 1*5 - 4*2] = [-3, 6, -3]\n"
+"\n"
+"p = ti.Vector([1, 2])\n"
+"q = ti.Vector([4, 5])\n"
+"r = ti.cross(a, b)\n"
+"# r = 1*5 - 4*2 = -3"
 msgstr ""
 
-#: ../../vector.rst:157
+#: ../../vector.rst:163
 msgid "(Matrix) the outer product of ``a`` and ``b``"
 msgstr "(矩阵) ``a`` 和 ``b`` 之间张量积的结果"
 
-#: ../../vector.rst:162
+#: ../../vector.rst:168
 msgid ""
 "a = ti.Vector([1, 2])\n"
 "b = ti.Vector([4, 5, 6])\n"
@@ -278,33 +298,37 @@ msgid ""
 "# c = [[1*4, 1*5, 1*6], [2*4, 2*5, 2*6]]"
 msgstr ""
 
-#: ../../vector.rst:168
+#: ../../vector.rst:174
 #, fuzzy
 msgid ""
-"This is not the same as ``ti.cross``. ``a`` and ``b`` do not have to be "
-"3-component vectors."
+"This have no common with ``ti.cross``. ``a`` and ``b`` do not have to be "
+"3 or 2 component vectors."
 msgstr "与 `ti.cross` 不同，这里 ``a`` 和 ``b`` 不再要求必须是三分量的向量。"
 
-#: ../../vector.rst:174
+#: ../../vector.rst:180
 msgid "(DataType)"
 msgstr ""
 
-#: ../../vector.rst:175
+#: ../../vector.rst:181
 msgid "(Vector) vector with all components of ``a`` casted into type ``dt``"
 msgstr "(向量) 将向量 ``a`` 中分量的数据类型转化为类型 ``dt``"
 
-#: ../../vector.rst:180
+#: ../../vector.rst:186
 msgid ""
 "# Taichi-scope\n"
 "a = ti.Vector([1.6, 2.3])\n"
 "a.cast(ti.i32) # [2, 3]"
 msgstr ""
 
-#: ../../vector.rst:185
+#: ../../vector.rst:191
 msgid ""
 "Vectors are special matrices with only 1 column. In fact, ``ti.Vector`` "
 "is just an alias of ``ti.Matrix``."
 msgstr "向量是只有一列的特殊矩阵。实际上，``ti.Vector`` 只是 ``ti.Matrix`` 的别名。"
+
+#: ../../vector.rst:194
+msgid "TODO: add element wise operations docs"
+msgstr ""
 
 #~ msgid ""
 #~ "as an element of a global tensor."
@@ -321,5 +345,17 @@ msgstr "向量是只有一列的特殊矩阵。实际上，``ti.Vector`` 只是 
 #~ "b = ti.Vector([4, 5, 6])\n"
 #~ "c = ti.outer_product(a, b) # NOTE: c[i, j] = a[i] * b[j]\n"
 #~ "# c = [[1*4, 1*5, 1*6], [2*4, 2*5, 2*6], [3*4, 3*5, 3*6]]"
+#~ msgstr ""
+
+#~ msgid "See :ref:`tensor` for more details."
+#~ msgstr "在 :ref:`tensor` 中查看更多细节。"
+
+#~ msgid "(Vector, 3 component)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "a = ti.Vector([1, 2, 3])\n"
+#~ "b = ti.Vector([4, 5, 6])\n"
+#~ "c = ti.cross(a, b) # [2*6 - 5*3, 4*3 - 1*6, 1*5 - 4*2]"
 #~ msgstr ""
 

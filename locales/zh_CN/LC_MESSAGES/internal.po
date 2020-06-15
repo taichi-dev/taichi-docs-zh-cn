@@ -129,7 +129,7 @@ msgid ""
 "The list of ``root`` node always has exactly one element (instance), so we never "
 "clear or re-generate this list."
 msgstr ""
-"关于 ``root`` 节点的表总会恰好有一个元素（实例），所以我们永远不会去清空或者重新"
+"关于 ``root`` 节点的表总会有且仅有一个元素（实例），所以我们永远不会去清空或者重新"
 "生成这个表。"
 
 #: ../../internal.rst:68

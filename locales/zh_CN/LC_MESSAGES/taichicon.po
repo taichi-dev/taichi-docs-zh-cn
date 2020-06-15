@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Taichi Developers
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.6.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-14 12:50+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../taichicon.rst:2
+msgid "TaichiCon"
+msgstr ""
+
+#: ../../taichicon.rst:4
+msgid ""
+"We are hosting a series of online **TaichiCon** events for developers to "
+"gather and share their Taichi experiences."
+msgstr ""
+
+#: ../../taichicon.rst:7
+msgid "Past Conferences"
+msgstr ""
+
+#: ../../taichicon.rst:9
+msgid ""
+"Everything on previous TaichiCons is available in the `TaichiCon "
+"<https://github.com/taichi-dev/taichicon>`_ repository."
+msgstr ""
+
+#: ../../taichicon.rst:12
+msgid "Format"
+msgstr ""
+
+#: ../../taichicon.rst:14
+msgid "Each TaichiCon consists of two parts: **talks** and **free discussions**."
+msgstr ""
+
+#: ../../taichicon.rst:16
+msgid "The first 1-hour consists of four 10-minute talks, each with 5-minute Q&A;"
+msgstr ""
+
+#: ../../taichicon.rst:18
+msgid ""
+"After the formal talks, attendees are free to chat about Taichi in any "
+"aspects."
+msgstr ""
+
+#: ../../taichicon.rst:20
+msgid "The conference format may evolve in the future."
+msgstr ""
+
+#: ../../taichicon.rst:23
+msgid "Language"
+msgstr ""
+
+#: ../../taichicon.rst:25
+msgid "The ``i``-th TaichiCon will be hosted in"
+msgstr ""
+
+#: ../../taichicon.rst:27
+msgid "English ``(if i % 2 == 1)``;"
+msgstr ""
+
+#: ../../taichicon.rst:28
+msgid "Chinese (Mandarin) ``(if i % 2 == 0)``."
+msgstr ""
+
+#: ../../taichicon.rst:31
+msgid "Time and frequency"
+msgstr ""
+
+#: ../../taichicon.rst:33
+msgid ""
+"Taichi developers are scattered around the world, so it's important to "
+"pick a good time so that people in different time zones can attend."
+msgstr ""
+
+#: ../../taichicon.rst:36
+msgid "A good time for people in Asia and the U.S.:"
+msgstr ""
+
+#: ../../taichicon.rst:38
+msgid "(China, Beijing) Sunday 10:00 - 11:00"
+msgstr ""
+
+#: ../../taichicon.rst:39
+msgid "(Japan, Tokyo) Sunday 11:00 - 12:00"
+msgstr ""
+
+#: ../../taichicon.rst:40
+msgid "(New Zealand, Wellington) Sunday 14:00 - 15:00"
+msgstr ""
+
+#: ../../taichicon.rst:41
+msgid "(U.S., East coast) Saturday 22:00 - 23:00"
+msgstr ""
+
+#: ../../taichicon.rst:42
+msgid "(U.S., West coast) Saturday 19:00 - 20:00"
+msgstr ""
+
+#: ../../taichicon.rst:44
+msgid ""
+"For people in Europe, we may need to find a better time. There is "
+"probably no perfect solution, so it may make sense to pick different "
+"times for TaichiCons to provide equal opportunities to people around the "
+"world."
+msgstr ""
+
+#: ../../taichicon.rst:47
+msgid "TaichiCon will be hosted roughly once per month."
+msgstr ""
+
+#: ../../taichicon.rst:50
+msgid "Attending TaichiCon"
+msgstr ""
+
+#: ../../taichicon.rst:52
+msgid ""
+"Everyone interested in Taichi or related topics (computer graphics, "
+"compilers, high-performance computing, computational fluid dynamics, "
+"etc.) is welcome to participate!"
+msgstr ""
+
+#: ../../taichicon.rst:55
+msgid "The Zoom meeting room has a capacity of 300 participants. A few tips:"
+msgstr ""
+
+#: ../../taichicon.rst:57
+msgid ""
+"It's recommended to change your Zoom display name to a uniform ``name "
+"(company)`` format. For example, ``Yuanming Hu (MIT CSAIL)``;"
+msgstr ""
+
+#: ../../taichicon.rst:58
+msgid "Please keep muted during the talks to avoid background noises;"
+msgstr ""
+
+#: ../../taichicon.rst:59
+msgid "If you have questions, feel free to raise them in the chat window;"
+msgstr ""
+
+#: ../../taichicon.rst:60
+msgid "Video recordings and slides will be uploaded after the conference;"
+msgstr ""
+
+#: ../../taichicon.rst:61
+msgid ""
+"Usually people do not open their cameras during TaichiCon to save network"
+" bandwidth for people in unsatisfactory network conditions."
+msgstr ""
+
+#: ../../taichicon.rst:65
+msgid "Preparing for a talk at TaichiCon"
+msgstr ""
+
+#: ../../taichicon.rst:67
+msgid "We welcome any topics about Taichi, including but not limited to"
+msgstr ""
+
+#: ../../taichicon.rst:69
+msgid ""
+"API proposals (e.g., \"I think the ``Matrix`` class needs to be "
+"refactored. Here are my thoughts ...\")"
+msgstr ""
+
+#: ../../taichicon.rst:70
+msgid ""
+"Applications (e.g., \"I wrote a new fluid solver using Taichi and would "
+"like to share ...\")"
+msgstr ""
+
+#: ../../taichicon.rst:71
+msgid "Integrations (e.g., \"Here's how I integrated Taichi into Blender ...\")"
+msgstr ""
+
+#: ../../taichicon.rst:72
+msgid "Internal designs (e.g., \"How a new backend is implemented\")"
+msgstr ""
+
+#: ../../taichicon.rst:73
+msgid "..."
+msgstr ""
+
+#: ../../taichicon.rst:75
+msgid ""
+"The body of a TaichiCon talk should be 10 min. After each talk, there are"
+" 5 minutes for Q & A. The host may stop the talk if a speaker's talk "
+"lasts beyond 15 minutes."
+msgstr ""
+
+#: ../../taichicon.rst:81
+msgid "Organizing TaichiCon"
+msgstr ""
+
+#: ../../taichicon.rst:83
+msgid "Before the conference:"
+msgstr ""
+
+#: ../../taichicon.rst:85
+msgid "Pick a nice time for the event;"
+msgstr ""
+
+#: ../../taichicon.rst:86
+msgid ""
+"Invite speakers: ask for a talk **title**, **abstract**, and a brief "
+"**speaker introduction**;"
+msgstr ""
+
+#: ../../taichicon.rst:87
+msgid "Advertise the event on social networks (Facebook, Twitter, Zhihu etc.);"
+msgstr ""
+
+#: ../../taichicon.rst:88
+msgid ""
+"Make sure all speakers are already in the (virtual) conference room 10 "
+"minutes before the conference begins;"
+msgstr ""
+
+#: ../../taichicon.rst:90
+msgid "If a speaker does not show up, try to remind him to attend via email."
+msgstr ""
+
+#: ../../taichicon.rst:92
+msgid "Hosting the conference:"
+msgstr ""
+
+#: ../../taichicon.rst:94
+msgid "Make sure the Zoom session is being recorded;"
+msgstr ""
+
+#: ../../taichicon.rst:95
+msgid "Remember to welcome everyone to attend :-)"
+msgstr ""
+
+#: ../../taichicon.rst:96
+msgid "Before each talk, introduce the speaker;"
+msgstr ""
+
+#: ../../taichicon.rst:97
+msgid "In the end, thank all the speakers and attendees."
+msgstr ""
+
+#: ../../taichicon.rst:99
+msgid "After the conference:"
+msgstr ""
+
+#: ../../taichicon.rst:101
+msgid "Upload the video to Youtube and Bilibili;"
+msgstr ""
+
+#: ../../taichicon.rst:102
+msgid "Collect speakers' slides in PDF format;"
+msgstr ""
+
+#: ../../taichicon.rst:104
+msgid ""
+"Make a representative image with screenshots of the first slides of all "
+"the talks;"
+msgstr ""
+
+#: ../../taichicon.rst:107
+msgid ""
+"Update the `TaichiCon <https://github.com/taichi-dev/taichicon>`_ "
+"repository following the format of TaichiCon 0."
+msgstr ""
+
+#: ../../taichicon.rst:108
+msgid ""
+"Update this documentation page if you find any opportunities to improve "
+"the workflow of TaichiCon."
+msgstr ""
+

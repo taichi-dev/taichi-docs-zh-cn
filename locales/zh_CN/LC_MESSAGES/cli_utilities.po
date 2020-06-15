@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Taichi Developers
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.6.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-14 12:50+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../cli_utilities.rst:2
+msgid "Command line utilities"
+msgstr ""
+
+#: ../../cli_utilities.rst:4
+msgid ""
+"A successful installation of Taichi should add a CLI (Command-Line "
+"Interface) to your system, which is helpful to perform several rountine "
+"tasks quickly. To invoke the CLI, please run ``ti`` or ``python3 -m "
+"taichi``."
+msgstr ""
+
+#: ../../cli_utilities.rst:9
+msgid "Examples"
+msgstr ""
+
+#: ../../cli_utilities.rst:10
+msgid ""
+"Taichi provides a set of bundled examples. You could run ``ti example "
+"-h`` to print the help message and get a list of available example names."
+" For instance, to run the basic `fractal` example, try: ``ti example "
+"fractal`` from your shell. (``ti example fractal.py`` should also work)"
+msgstr ""
+
+#: ../../cli_utilities.rst:17
+msgid "Changelog"
+msgstr ""
+
+#: ../../cli_utilities.rst:18
+msgid ""
+"Sometimes it's convenient to view the changelog of the current version of"
+" Taichi, to do so from your shell, you could run ``ti changelog``."
+msgstr ""
+

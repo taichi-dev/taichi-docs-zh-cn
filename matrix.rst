@@ -7,15 +7,16 @@ Matrices
 - ``ti.Vector`` is the same as ``ti.Matrix``, except that it has only one column.
 - Differentiate element-wise product ``*`` and matrix product ``@``.
 - ``ti.Vector(n, dt=ti.f32)`` or ``ti.Matrix(n, m, dt=ti.f32)`` to create tensors of vectors/matrices.
-- ``ti.transposed(A)`` or simply ``A.T()``
-- ``ti.inverse(A)``
-- ``ti.Matrix.abs(A)``
-- ``ti.tr(A)``
-- ``ti.determinant(A, type)``
-- ``ti.cross(a, b)``, where ``a`` and ``b`` are 3D vectors (i.e. ``3x1`` matrices)
-- ``A.cast(type)``
+- ``A.transpose()``
+- ``A.inverse()``
+- ``A.trace()``
+- ``A.determinant()``
+- ``A.cast(type)`` or simply ``int(A)`` and ``float(A)``
 - ``R, S = ti.polar_decompose(A, ti.f32)``
 - ``U, sigma, V = ti.svd(A, ti.f32)`` (Note that ``sigma`` is a ``3x3`` diagonal matrix)
+- ``any(A)``
+- ``all(A)``
+- Currently, only ``+, -, @`` Matrix operations have experimental support in Python-scope. An exception will be raised if you try to apply other operations in Python-scope, use them in Taichi-scope (`@ti.kernel`) instead.
 
 TODO: doc here better like Vector. WIP
 
@@ -30,12 +31,13 @@ Declaration
 As global tensors of matrices
 +++++++++++++++++++++++++++++
 
-.. function:: ti.Matrix(n, m, dt=type, shape=shape)
+.. function:: ti.Matrix(n, m, dt, shape = None, offset = None)
 
     :parameter n: (scalar) the number of rows in the matrix
     :parameter m: (scalar) the number of columns in the matrix
-    :parameter type: (DataType) data type of the components
-    :parameter shape: (scalar or tuple) shape the tensor of vectors, see :ref:`tensor`
+    :parameter dt: (DataType) data type of the components
+    :parameter shape: (optional, scalar or tuple) shape the tensor of vectors, see :ref:`tensor`
+    :parameter offset: (optional, scalar or tuple) see :ref:`offset`
 
     For example, this creates a 5x4 tensor of 3x3 matrices:
     ::
@@ -74,15 +76,15 @@ As a temporary local variable
     :parameter z: (scalar) the first component of the second row
     :parameter w: (scalar) the second component of the second row
 
-    For example, this creates a 2x2 matrix with components (2, 3) in the first row and (4, 5) in the second row:
+    For example, this creates a 2x3 matrix with components (2, 3, 4) in the first row and (5, 6, 7) in the second row:
     ::
 
         # Taichi-scope
-        a = ti.Matrix([[2, 3], [4, 5])
+        a = ti.Matrix([[2, 3, 4], [5, 6, 7]])
 
 
-.. function:: ti.Matrix(rows=[v0, v1, v2, ...])
-.. function:: ti.Matrix(cols=[v0, v1, v2, ...])
+.. function:: ti.Matrix.rows([v0, v1, v2, ...])
+.. function:: ti.Matrix.cols([v0, v1, v2, ...])
 
     :parameter v0: (vector) vector of elements forming first row (or column)
     :parameter v1: (vector) vector of elements forming second row (or column)
@@ -97,13 +99,13 @@ As a temporary local variable
         v2 = ti.Vector([7.0, 8.0, 9.0])
 
         # to specify data in rows
-        a = ti.Matrix(rows=[v0, v1, v2])
+        a = ti.Matrix.rows([v0, v1, v2])
 
         # to specify data in columns instead
-        a = ti.Matrix(cols=[v0, v1, v2])
+        a = ti.Matrix.cols([v0, v1, v2])
 
         # lists can be used instead of vectors
-        a = ti.Matrix(rows=[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])
+        a = ti.Matrix.rows([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])
 
 
 Accessing components
@@ -162,3 +164,5 @@ Methods
 -------
 
 TODO: WIP
+
+TODO: add element wise operations docs
