@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.6.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-14 12:50+0800\n"
-"PO-Revision-Date: 2020-06-16 17:21+0800\n"
+"PO-Revision-Date: 2020-06-17 22:35+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -75,7 +75,7 @@ msgstr "Python 相关问题"
 
 #: ../../install.rst:31
 msgid "If ``pip`` complains that it could not find a satisfying package, i.e.,"
-msgstr "如果 ``pip`` 向你抱怨找不到合适的包，即,"
+msgstr "如果 ``pip`` 报错找不到合适的包，即,"
 
 #: ../../install.rst:33
 msgid ""
@@ -131,7 +131,7 @@ msgid ""
 "limited support for `Unified Memory <https://www.nextplatform.com/2019/01/24/"
 "unified-memory-the-final-piece-of-the-gpu-programming-puzzle/>`_."
 msgstr ""
-"这可能是因为你使用的 NVIDIA GPU 低于 Pascal 架构，这对 `统一寻址(Unified "
+"这可能是因为你使用的 NVIDIA GPU 低于 Pascal 架构，这对 `统一内存(Unified "
 "Memory) <https://www.nextplatform.com/2019/01/24/unified-memory-the-final-"
 "piece-of-the-gpu-programming-puzzle/>`_ 会有限制。"
 
