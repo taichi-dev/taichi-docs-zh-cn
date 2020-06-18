@@ -99,7 +99,7 @@ msgid ""
 "Not providing ``shape`` allows you to *place* the tensor in a layout other than "
 "the default *dense*, see :ref:`layout` for more details."
 msgstr ""
-"通过不指定参数 ``shape`` 的写法，你可以将张量 *放置* 在默认的 *稠密数据布局* 之外的其他布局中，有关更多详细"
+"通过不指定参数 ``shape`` 的写法，你可以将张量 *放置* 为默认的 *稠密数据布局* 之外的其他布局中，有关更多详细"
 "信息，请参见： :ref:`layout` 。"
 
 #: ../../scalar_tensor.rst:50
