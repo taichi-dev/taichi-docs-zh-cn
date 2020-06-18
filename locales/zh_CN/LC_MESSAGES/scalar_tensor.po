@@ -82,7 +82,7 @@ msgid ""
 "If shape is **not provided** or ``None``, the user must manually ``place`` it "
 "afterwards: ::"
 msgstr ""
-"如果形状是 **not provided（未提供）** 或 **None（空）**，则用户必须在其后手动 ``place（放置）`` 形状： ::"
+"如果形状参数 **未提供** 或指定为 ``None``，则其后用户必须在手动放置 (place) 它： ::"
 
 #: ../../scalar_tensor.rst:39
 msgid ""
