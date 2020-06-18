@@ -29,7 +29,7 @@ msgstr "定义"
 
 #: ../../scalar_tensor.rst
 msgid "Parameters"
-msgstr "参量"
+msgstr "参数"
 
 #: ../../scalar_tensor.rst:12
 msgid "(DataType) type of the tensor element"
@@ -150,7 +150,7 @@ msgstr ""
 
 #: ../../scalar_tensor.rst:77
 msgid "Accessing components"
-msgstr "访问组件"
+msgstr "访问分量"
 
 #: ../../scalar_tensor.rst:79
 msgid "You can access an element of the Taichi tensor by an index or indices."
