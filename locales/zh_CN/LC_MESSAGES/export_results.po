@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.6.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-14 12:50+0800\n"
-"PO-Revision-Date: 2020-06-18 12:09+0800\n"
+"PO-Revision-Date: 2020-06-21 14:31+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,7 +40,7 @@ msgstr "这里有两种方法可以将程序的可视化结果导出为图像。
 
 #: ../../export_results.rst:9
 msgid "The first and easier way is to make use of ``ti.GUI``."
-msgstr "第一种也是相较下更简单的方式是使用 ``ti.GUI``."
+msgstr "第一种也是较简单的方式是使用 ``ti.GUI``."
 
 #: ../../export_results.rst:10
 msgid "The second way is to call some Taichi functions such as ``ti.imwrite``."
@@ -120,7 +120,7 @@ msgstr ""
 "\n"
 "    filename = f'frame_{i:05d}.png'   # 创建带有 png 后缀的文件名\n"
 "    print(f'Frame {i} is recorded in {filename}')\n"
-"    gui.show(filename)  # export and show in GUI"
+"    gui.show(filename)  # 导出并显示在 GUI 中"
 
 #: ../../export_results.rst:46
 msgid ""
