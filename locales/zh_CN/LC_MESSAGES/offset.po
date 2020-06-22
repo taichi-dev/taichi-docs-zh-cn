@@ -3,23 +3,24 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-14 12:50+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-06-17 22:01+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../offset.rst:4
 msgid "Coordinate offsets"
-msgstr ""
+msgstr "坐标偏移"
 
 #: ../../offset.rst:6
 msgid ""
@@ -28,12 +29,17 @@ msgid ""
 "vectors. A typical use case is to support voxels with negative "
 "coordinates in physical simulations."
 msgstr ""
+"Taichi 张量支持 **坐标偏移(coordinate offsets)** 的定义方式。偏移量会移"
+"动张量的边界，使得张量的原点不再是零向量。一个典型的例子是在物理模拟中支"
+"持负坐标的体素。"
 
 #: ../../offset.rst:7
 msgid ""
 "For example, a matrix of ``32x64`` elements with coordinate offset "
 "``(-16, 8)`` can be defined as the following:"
 msgstr ""
+"例如，一个大小为 ``32x64`` 、起始元素坐标偏移为 ``(-16, 8)`` 的矩阵可以"
+"按照以下形式来定义："
 
 #: ../../offset.rst:9
 msgid "a = ti.Matrix(2, 2, dt=ti.f32, shape=(32, 64), offset=(-16, 8))"
@@ -44,6 +50,8 @@ msgid ""
 "In this way, the tensor's indices are from ``(-16, 8)`` to ``(16, 72)`` "
 "(exclusive)."
 msgstr ""
+"通过这样，张量的下标就是从 ``(-16, 8)`` 到 ``(16, 72)`` 了（Taichi 独"
+"有）."
 
 #: ../../offset.rst:15
 msgid ""
@@ -52,12 +60,18 @@ msgid ""
 "a[-16, 64]  # upper left corner\n"
 "a[16, 64]   # upper right corner"
 msgstr ""
+"a[-16, 32]  # 左下角\n"
+"a[16, 32]   # 右下角\n"
+"a[-16, 64]  # 左上角\n"
+"a[16, 64]   # 右上角"
 
 #: ../../offset.rst:22
 msgid ""
-"The dimensionality of tensor shapes should **be consistent** with that of"
-" the offset. Otherwise, a ``ValueError`` will be raised."
+"The dimensionality of tensor shapes should **be consistent** with that "
+"of the offset. Otherwise, a ``ValueError`` will be raised."
 msgstr ""
+"张量形状的维数应该与偏移量的维数 **保持一致** 。否则，将引发 "
+"``ValueError``  。"
 
 #: ../../offset.rst:24
 msgid ""
@@ -76,4 +90,17 @@ msgid ""
 "g = ti.var(dt=ti.i32, shape=(16, 32), offset=-16)                    # "
 "AssertionError"
 msgstr ""
-
+"a = ti.Matrix(2, 3, dt=ti.f32, shape=(32,), offset=(-16, ))          # "
+"有效!\n"
+"b = ti.Vector(3, dt=ti.f32, shape=(16, 32, 64), offset=(7, 3, -4))   # "
+"有效!\n"
+"c = ti.Matrix(2, 1, dt=ti.f32, shape=None, offset=(32,))             # "
+"断言错误\n"
+"d = ti.Matrix(3, 2, dt=ti.f32, shape=(32, 32), offset=(-16, ))       # "
+"断言错误\n"
+"e = ti.var(dt=ti.i32, shape=16, offset=-16)                          # "
+"有效!\n"
+"f = ti.var(dt=ti.i32, shape=None, offset=-16)                        # "
+"断言错误\n"
+"g = ti.var(dt=ti.i32, shape=(16, 32), offset=-16)                    # "
+"断言错误"
