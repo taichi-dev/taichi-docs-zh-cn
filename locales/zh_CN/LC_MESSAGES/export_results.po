@@ -231,9 +231,9 @@ msgstr ""
 
 #: ../../export_results.rst:89
 msgid ""
-"``ti.VideoManger`` can help you export results in ``mp4`` or ``gif`` format. "
+"``ti.VideoManager`` can help you export results in ``mp4`` or ``gif`` format. "
 "For example,"
-msgstr "``ti.VideoManger`` 可以帮助你导出 mp4 或 gif 格式的结果。例如,"
+msgstr "``ti.VideoManager`` 可以帮助你导出 mp4 或 gif 格式的结果。例如,"
 
 #: ../../export_results.rst:91
 msgid ""
