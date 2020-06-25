@@ -8,124 +8,132 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-14 12:50+0800\n"
-"PO-Revision-Date: 2020-05-15 09:32+0800\n"
+"PO-Revision-Date: 2020-06-25 22:02+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: ../../global_settings.rst:2
-#, fuzzy
 msgid "Global settings"
 msgstr "全局设置"
 
 #: ../../global_settings.rst:5
 msgid "Backends"
-msgstr ""
+msgstr "后端"
 
 #: ../../global_settings.rst:7
-#, fuzzy
 msgid ""
-"To specify which Arch to use: ``export TI_ARCH=cuda`` or "
-"``ti.init(arch=ti.cuda)``."
-msgstr "要指定使用哪个Arch： ``export TI_ARCH=cuda``"
+"To specify which Arch to use: ``export TI_ARCH=cuda`` or ``ti.init(arch=ti."
+"cuda)``."
+msgstr ""
+"指定要使用的Arch，请执行以下操作： ``export TI_ARCH=cuda`` 或 ``ti.init(arch=ti."
+"cuda)``。"
 
 #: ../../global_settings.rst:8
-#, fuzzy
 msgid ""
-"To specify which GPU to use for CUDA: ``export "
-"CUDA_VISIBLE_DEVICES=[gpuid]``."
-msgstr "要指定使用哪个Arch： ``export TI_ARCH=cuda``"
+"To specify which GPU to use for CUDA: ``export CUDA_VISIBLE_DEVICES=[gpuid]``."
+msgstr ""
+"指定用于CUDA的GPU，请执行以下操作：``export CUDA_VISIBLE_DEVICES=[gpuid]``。"
 
 #: ../../global_settings.rst:9
-#, fuzzy
 msgid ""
 "To specify pre-allocated memory size for CUDA: ``export "
 "TI_DEVICE_MEMORY_GB=0.5`` or ``ti.init(device_memory_GB=0.5)``."
-msgstr "要为CUDA指定预分配的内存大小： ``export TI_DEVICE_MEMORY_GB=0.5``"
+msgstr ""
+"为CUDA指定预分配的内存大小：``export TI_DEVICE_MEMORY_GB=0.5`` 或 ``ti."
+"init(device_memory_GB=0.5)``。"
 
 #: ../../global_settings.rst:10
 msgid ""
-"To disable unified memory usage on CUDA: ``export "
-"TI_USE_UNIFIED_MEMORY=0``."
-msgstr ""
+"To disable unified memory usage on CUDA: ``export TI_USE_UNIFIED_MEMORY=0``."
+msgstr "在CUDA上禁用统一内存使用： ``导出TI_USE_UNIFIED_MEMORY = 0``。"
 
 #: ../../global_settings.rst:13
 msgid "Compilation"
-msgstr ""
+msgstr "编译"
 
 #: ../../global_settings.rst:15
 msgid ""
-"Disable advanced optimization to save compile time & possible erros: "
-"``ti.core.toggle_advanced_optimization(False)`` or ``export "
-"TI_ADVANCED_OPTIMIZATION=0``."
+"Disable advanced optimization to save compile time & possible erros: ``ti.core."
+"toggle_advanced_optimization(False)`` or ``export TI_ADVANCED_OPTIMIZATION=0``."
 msgstr ""
+"禁用高级优化以节省编译时间和可能的错误：``ti.core."
+"toggle_advanced_optimization(False)`` 或 ``export TI_ADVANCED_OPTIMIZATION=0``。"
 
 #: ../../global_settings.rst:16
-#, fuzzy
 msgid ""
-"To print intermediate IR generated: ``export TI_PRINT_IR=1`` or "
-"``ti.init(print_ir=True)``."
-msgstr "要打印生成的中间表示码： ``export TI_PRINT_IR=1``"
+"To print intermediate IR generated: ``export TI_PRINT_IR=1`` or ``ti."
+"init(print_ir=True)``."
+msgstr ""
+"要打印生成的中间表示码： ``export TI_PRINT_IR=1`` 或 ``ti."
+"init(print_ir=True)``。"
 
 #: ../../global_settings.rst:17
 msgid ""
-"To print preprocessed Python code: ``export TI_PRINT_PREPROCESSED=1`` or "
-"``ti.init(print_preprocessed=True)``.."
+"To print preprocessed Python code: ``export TI_PRINT_PREPROCESSED=1`` or ``ti."
+"init(print_preprocessed=True)``.."
 msgstr ""
+"要打印预处理的Python代码：``export TI_PRINT_PREPROCESSED=1`` 或 ``ti."
+"init(print_preprocessed=True)``。"
 
 #: ../../global_settings.rst:20
 msgid "Runtime"
-msgstr ""
+msgstr "运行"
 
 #: ../../global_settings.rst:22
-#, fuzzy
 msgid ""
-"Restart the entire Taichi system (destroy all tensors and kernels): "
-"``ti.reset()``."
-msgstr "重新启动Taichi运行系统（清除内存，销毁所有变量和内核）： ``ti.reset()``"
+"Restart the entire Taichi system (destroy all tensors and kernels): ``ti."
+"reset()``."
+msgstr "重新启动Taichi运行系统（销毁所有量和内核）： ``ti.reset()``。"
 
 #: ../../global_settings.rst:23
 msgid ""
-"To start program in debug mode: ``export TI_DEBUG=1`` or "
-"``ti.init(debug=True)``."
+"To start program in debug mode: ``export TI_DEBUG=1`` or ``ti."
+"init(debug=True)``."
 msgstr ""
+"以调试模式启动程序，请执行以下操作： ``export TI_DEBUG=1`` 或 ``ti."
+"init(debug=True)``。"
 
 #: ../../global_settings.rst:26
 msgid "Logging"
-msgstr ""
+msgstr "日志记录"
 
 #: ../../global_settings.rst:28
 msgid ""
-"Show more detailed log to level TRACE: ``export TI_LOG_LEVEL=trace`` or "
-"``ti.set_logging_level(ti.TRACE)``."
+"Show more detailed log to level TRACE: ``export TI_LOG_LEVEL=trace`` or ``ti."
+"set_logging_level(ti.TRACE)``."
 msgstr ""
+"显示更详细的日志到TRACE级别：``export TI_LOG_LEVEL=trace`` 或 ``ti."
+"set_logging_level(ti.TRACE)``。"
 
 #: ../../global_settings.rst:29
-#, fuzzy
 msgid ""
 "Eliminate verbose outputs: ``ti.get_runtime().set_verbose(False)`` or "
 "``TI_VERBOSE=0``."
-msgstr "消除详细输出：  ``ti.get_runtime().set_verbose(False)``"
+msgstr ""
+"消除详细输出： ``ti.get_runtime().set_verbose(False)`` 或 ``TI_VERBOSE=0``。"
 
 #: ../../global_settings.rst:32
 msgid "Develop"
-msgstr ""
+msgstr "开发"
 
 #: ../../global_settings.rst:34
 msgid ""
-"Cache compiled runtime bitcode in **dev mode** to save start up time: "
-"``export TI_CACHE_RUNTIME_BITCODE=1``."
+"Cache compiled runtime bitcode in **dev mode** to save start up time: ``export "
+"TI_CACHE_RUNTIME_BITCODE=1``."
 msgstr ""
+"以 **开发模式** 缓存编译后的运行时位码以节省启动时间：``export "
+"TI_CACHE_RUNTIME_BITCODE=1``。"
 
 #: ../../global_settings.rst:35
-#, fuzzy
 msgid "To trigger GDB when Taichi crashes: ``export TI_GDB_TRIGGER=1``."
-msgstr "崩溃时不触发GDB：``export TI_GDB_TRIGGER=0``"
+msgstr "崩溃时不触发GDB：``export TI_GDB_TRIGGER=1``。"
 
 #~ msgid "To specify which GPU to use for CUDA: ``export CUDA_VISIBLE_DEVICES=0``"
 #~ msgstr "要指定要用于CUDA的GPU：  ``export CUDA_VISIBLE_DEVICES=0``"
@@ -138,4 +146,3 @@ msgstr "崩溃时不触发GDB：``export TI_GDB_TRIGGER=0``"
 
 #~ msgid "To print verbose details: ``export TI_VERBOSE=1``"
 #~ msgstr "要打印详细信息： ``export TI_VERBOSE=1``"
-
