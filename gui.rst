@@ -128,6 +128,17 @@ Paint on a window
     Draw a line.
 
 
+.. function:: gui.lines(begin, end, color = 0xFFFFFF, radius = 1)
+
+    :parameter gui: (GUI) the window object
+    :parameter begin: (np.array) the positions of the first end point of lines
+    :parameter end: (np.array) the positions of the second end point of lines
+    :parameter color: (optional, RGB hex or np.array of uint32) the color(s) of lines
+    :parameter radius: (optional, scalar or np.array of float32) the width(s) of the lines
+
+    Draw lines.
+
+
 .. function:: gui.triangle(a, b, c, color = 0xFFFFFF)
 
     :parameter gui: (GUI) the window object
@@ -137,6 +148,17 @@ Paint on a window
     :parameter color: (optional, RGB hex) the color to fill the triangle
 
     Draw a solid triangle.
+
+
+.. function:: gui.triangles(a, b, c, color = 0xFFFFFF)
+
+    :parameter gui: (GUI) the window object
+    :parameter a: (np.array) the positions of the first end point of triangles
+    :parameter b: (np.array) the positions of the second end point of triangles
+    :parameter c: (np.array) the positions of the third end point of triangles
+    :parameter color: (optional, RGB hex or np.array of uint32) the color(s) to fill the triangles
+
+    Draw solid triangles.
 
 
 .. function:: gui.rect(topleft, bottomright, radius = 1, color = 0xFFFFFF)
@@ -161,14 +183,44 @@ Paint on a window
     Draw a line of text on screen.
 
 
+.. function:: ti.rgb_to_hex(rgb):
+
+    :parameter rgb: (tuple of 3 floats) The (R, G, B) float values, in range [0, 1]
+    :return: (RGB hex or np.array of uint32) The converted hex value
+
+    Convert a (R, G, B) tuple of floats into a single integer value. E.g.,
+
+    .. code-block:: python
+
+         rgb = (0.4, 0.8, 1.0)
+         hex = ti.rgb_to_hex(rgb)  # 0x66ccff
+
+         rgb = np.array([[0.4, 0.8, 1.0], [0.0, 0.5, 1.0]])
+         hex = ti.rgb_to_hex(rgb)  # np.array([0x66ccff, 0x007fff])
+
+    The return values can be used in GUI drawing APIs.
+
+
+.. _gui_event:
+
 Event processing
 ----------------
 
 Every event have a key and type.
+
+*Event type* is the type of event, for now, there are just three type of event:
+
+::
+
+  ti.GUI.RELEASE  # key up or mouse button up
+  ti.GUI.PRESS    # key down or mouse button down
+  ti.GUI.MOTION   # mouse motion or mouse wheel
+
 *Event key* is the key that you pressed on keyboard or mouse, can be one of:
 
 ::
 
+  # for ti.GUI.PRESS and ti.GUI.RELEASE event:
   ti.GUI.ESCAPE  # Esc
   ti.GUI.SHIFT   # Shift
   ti.GUI.LEFT    # Left Arrow
@@ -178,14 +230,9 @@ Every event have a key and type.
   ti.GUI.LMB     # Left Mouse Button
   ti.GUI.RMB     # Right Mouse Button
 
-*Event type* is the type of event, for now, there are just three type of event:
-
-::
-
-  ti.GUI.RELEASE  # key up
-  ti.GUI.PRESS    # key down
-  ti.GUI.MOTION   # mouse moved
-
+  # for ti.GUI.MOTION event:
+  ti.GUI.MOVE    # Mouse Moved
+  ti.GUI.WHEEL   # Mouse Wheel Scrolling
 
 A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.g.:
 
@@ -271,9 +318,9 @@ A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.
         for e in gui.get_events():
             if e.key == ti.GUI.ESCAPE:
                 exit()
-            elif e.type == ti.GUI.SPACE:
+            elif e.key == ti.GUI.SPACE:
                 do_something()
-            elif e.type in ['a', ti.GUI.LEFT]:
+            elif e.key in ['a', ti.GUI.LEFT]:
                 ...
 
 
@@ -310,8 +357,70 @@ A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e.
         mouse_x, mouse_y = gui.get_cursor_pos()
 
 
+GUI Widgets
+-----------
+
+Sometimes it's more intuitive to use widgets like slider, button to control program variables
+instead of chaotic keyboard bindings. Taichi GUI provides a set of widgets that hopefully
+could make variable control more intuitive:
+
+
+.. function:: gui.slider(text, minimum, maximum, step=1)
+
+    :parameter text: (str) the text to be displayed above this slider.
+    :parameter minumum: (float) the minimum value of the slider value.
+    :parameter maxumum: (float) the maximum value of the slider value.
+    :parameter step: (optional, float) the step between two separate value.
+
+    :return: (WidgetValue) a value getter / setter, see :class:`WidgetValue`.
+
+    The widget will be display as: ``{text}: {value:.3f}``, followed with a slider.
+
+
+.. function:: gui.label(text)
+
+    :parameter text: (str) the text to be displayed in the label.
+
+    :return: (WidgetValue) a value getter / setter, see :class:`WidgetValue`.
+
+    The widget will be display as: ``{text}: {value:.3f}``.
+
+
+.. function:: gui.button(text, event_name=None)
+
+    :parameter text: (str) the text to be displayed in the button.
+    :parameter event_name: (optional, str) customize the event name.
+
+    :return: (EventKey) the event key for this button, see :ref:`gui_event`.
+
+
+.. class:: WidgetValue
+
+    A getter / setter for widget values.
+
+    .. attribute:: value
+
+        Get / set the current value in the widget where we're returned from.
+
+    For example::
+
+        radius = gui.slider('Radius', 1, 50)
+
+        while gui.running:
+            print('The radius now is', radius.value)
+            ...
+            radius.value += 0.01
+            ...
+            gui.show()
+
 Image I/O
 ---------
+
+.. function:: gui.get_image()
+
+    :return: a ``np.ndarray`` which is the current image shown on the GUI.
+
+    Get the RGBA shown image from the current GUI system which has four channels.
 
 .. function:: ti.imwrite(img, filename)
 
@@ -373,6 +482,7 @@ Image I/O
         draw()
 
         ti.imwrite(pixels, f"export_f32.png")
+
 
 .. function:: ti.imread(filename, channels=0)
 

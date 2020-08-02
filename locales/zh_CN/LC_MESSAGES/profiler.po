@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Taichi Developers
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.6.24\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-02 22:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../profiler.rst:3
+msgid "Profiler"
+msgstr ""
+
+#: ../../profiler.rst:5
+msgid ""
+"Taichi's profiler can help you analyze the run-time cost of your program."
+" There are two profiling systems in Taichi: ``ScopedProfiler`` and "
+"``KernelProfiler``."
+msgstr ""
+
+#: ../../profiler.rst:8
+msgid "ScopedProfiler"
+msgstr ""
+
+#: ../../profiler.rst:10
+msgid ""
+"``ScopedProfiler`` measures time spent on the **host tasks** "
+"hierarchically."
+msgstr ""
+
+#: ../../profiler.rst:12
+msgid ""
+"This profiler is automatically on. To show its results, call "
+"``ti.print_profile_info()``. For example:"
+msgstr ""
+
+#: ../../profiler.rst:14
+msgid ""
+"import taichi as ti\n"
+"\n"
+"ti.init(arch=ti.cpu)\n"
+"var = ti.var(ti.f32, shape=1)\n"
+"\n"
+"\n"
+"@ti.kernel\n"
+"def compute():\n"
+"    var[0] = 1.0\n"
+"    print(\"Setting var[0] =\", var[0])\n"
+"\n"
+"\n"
+"compute()\n"
+"ti.print_profile_info()"
+msgstr ""
+
+#: ../../profiler.rst:32
+msgid ""
+"``ti.print_profile_info()`` prints profiling results in a hierarchical "
+"format."
+msgstr ""
+
+#: ../../profiler.rst:36
+msgid ""
+"``ScopedProfiler`` is a C++ class in the core of Taichi. It is not "
+"exposed to Python users."
+msgstr ""
+
+#: ../../profiler.rst:39
+msgid "KernelProfiler"
+msgstr ""
+
+#: ../../profiler.rst:41
+msgid ""
+"``KernelProfiler`` records the costs of Taichi kernels on devices. To "
+"enable this profiler, set ``kernel_profiler=True`` in ``ti.init``."
+msgstr ""
+
+#: ../../profiler.rst:43
+msgid ""
+"Call ``ti.kernel_profiler_print()`` to show the kernel profiling result. "
+"For example:"
+msgstr ""
+
+#: ../../profiler.rst:45
+msgid ""
+"import taichi as ti\n"
+"\n"
+"ti.init(ti.cpu, kernel_profiler=True)\n"
+"var = ti.var(ti.f32, shape=1)\n"
+"\n"
+"\n"
+"@ti.kernel\n"
+"def compute():\n"
+"    var[0] = 1.0\n"
+"\n"
+"\n"
+"compute()\n"
+"ti.kernel_profiler_print()"
+msgstr ""
+
+#: ../../profiler.rst:63
+msgid "The outputs would be:"
+msgstr ""
+
+#: ../../profiler.rst:67
+msgid ""
+"[ 22.73%] jit_evaluator_0_kernel_0_serial             min   0.001 ms   "
+"avg   0.001 ms   max   0.001 ms   total   0.000 s [      1x]\n"
+"[  0.00%] jit_evaluator_1_kernel_1_serial             min   0.000 ms   "
+"avg   0.000 ms   max   0.000 ms   total   0.000 s [      1x]\n"
+"[ 77.27%] compute_c4_0_kernel_2_serial                min   0.004 ms   "
+"avg   0.004 ms   max   0.004 ms   total   0.000 s [      1x]"
+msgstr ""
+

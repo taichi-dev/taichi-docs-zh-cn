@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-14 12:50+0800\n"
+"POT-Creation-Date: 2020-08-02 22:06+0800\n"
 "PO-Revision-Date: 2020-05-28 19:20+0800\n"
 "Last-Translator: archibate <17721388340@qq.com>\n"
 "Language: zh_CN\n"
@@ -496,47 +496,72 @@ msgstr ""
 "          ...\n"
 "          break # 可以"
 
-#: ../../hello.rst:236
-msgid "Interacting with Python"
+#: ../../hello.rst:238
+#, fuzzy
+msgid "Interacting with other Python packages"
 msgstr "与 Python 交互"
 
-#: ../../hello.rst:238
+#: ../../hello.rst:241
+msgid "Python-scope data access"
+msgstr ""
+
+#: ../../hello.rst:243
+#, fuzzy
 msgid ""
 "Everything outside Taichi-scopes (``ti.func`` and ``ti.kernel``) is "
 "simply Python code. In Python-scopes, you can access Taichi tensor "
 "elements using plain indexing syntax. For example, to access a single "
-"pixel of the rendered image in Python, simply use"
+"pixel of the rendered image in Python-scope, simply use:"
 msgstr ""
 "所有在 Taichi 作用域（``ti.func`` 和 ``ti.kernel``）之外的部分都只是单纯的 Python 代码。在 Python"
 " 作用域中，你可以通过一般的索引语法访问 Taichi 张量元素。例如，要在 Python 中访问渲染图像的某个像素，只需使用以下代码"
 
-#: ../../hello.rst:242
+#: ../../hello.rst:247
 msgid ""
-"pixels[42, 11] = 0.7\n"
+"import taichi as ti\n"
+"pixels = ti.var(ti.f32, (1024, 512))\n"
+"\n"
+"pixels[42, 11] = 0.7  # store data into pixels\n"
 "print(pixels[42, 11]) # prints 0.7"
 msgstr ""
 
-#: ../../hello.rst:248
-msgid ""
-"You can also use your favorite Python packages (e.g. ``numpy``, "
-"``pytorch``, ``matplotlib``) together with Taichi. Taichi provides helper"
-" functions such as ``from_numpy`` and ``to_torch`` for tensor format "
-"conversion:"
+#: ../../hello.rst:257
+msgid "Sharing data with other packages"
 msgstr ""
-"你也可以使用你最喜爱的 Python 包（例如 ``numpy``，``pytorch``，``matplotlib``）与 Taichi "
-"一起配合开发。Taichi 为张量格式转换提供了辅助函数，比如 ``from_numpy`` 和 ``to_torch`` :"
 
-#: ../../hello.rst:251
+#: ../../hello.rst:259
 msgid ""
+"Taichi provides helper functions such as ``from_numpy`` and ``to_numpy`` "
+"for transfer data between Taichi tensors and NumPy arrays, So that you "
+"can also use your favorite Python packages (e.g. ``numpy``, ``pytorch``, "
+"``matplotlib``) together with Taichi. e.g.:"
+msgstr ""
+
+#: ../../hello.rst:262
+msgid ""
+"import taichi as ti\n"
+"pixels = ti.var(ti.f32, (1024, 512))\n"
+"\n"
 "import numpy as np\n"
-"pixels.from_numpy(np.random.rand(n * 2, n))\n"
+"arr = np.random.rand(1024, 512)\n"
+"pixels.from_numpy(arr)   # load numpy data into taichi tensors\n"
 "\n"
 "import matplotlib.pyplot as plt\n"
-"plt.imshow(pixels.to_numpy())\n"
-"plt.show()"
+"arr = pixels.to_numpy()  # store taichi data into numpy arrays\n"
+"plt.imshow(arr)\n"
+"plt.show()\n"
+"\n"
+"import matplotlib.cm as cm\n"
+"cmap = cm.get_cmap('magma')\n"
+"gui = ti.GUI('Color map')\n"
+"while gui.running:\n"
+"    render_pixels()\n"
+"    arr = pixels.to_numpy()\n"
+"    gui.set_image(cmap(arr))\n"
+"    gui.show()"
 msgstr ""
 
-#: ../../hello.rst:260
+#: ../../hello.rst:285
 msgid "See :ref:`external` for more details."
 msgstr "在 :ref:`external` 这一章节获得更多有关细节。"
 
@@ -673,4 +698,31 @@ msgstr "在 :ref:`external` 这一章节获得更多有关细节。"
 #~ msgstr ""
 #~ "在 Python 作用域，您可以用普通下标语法访问 Taichi "
 #~ "张量。我们也提供简单的转换函数，如 ``from_numpy`` 和 ``to_torch``："
+
+#~ msgid ""
+#~ "pixels[42, 11] = 0.7\n"
+#~ "print(pixels[42, 11]) # prints 0.7"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can also use your favorite "
+#~ "Python packages (e.g. ``numpy``, ``pytorch``,"
+#~ " ``matplotlib``) together with Taichi. "
+#~ "Taichi provides helper functions such as"
+#~ " ``from_numpy`` and ``to_torch`` for tensor"
+#~ " format conversion:"
+#~ msgstr ""
+#~ "你也可以使用你最喜爱的 Python 包（例如 "
+#~ "``numpy``，``pytorch``，``matplotlib``）与 Taichi "
+#~ "一起配合开发。Taichi 为张量格式转换提供了辅助函数，比如 ``from_numpy`` 和 "
+#~ "``to_torch`` :"
+
+#~ msgid ""
+#~ "import numpy as np\n"
+#~ "pixels.from_numpy(np.random.rand(n * 2, n))\n"
+#~ "\n"
+#~ "import matplotlib.pyplot as plt\n"
+#~ "plt.imshow(pixels.to_numpy())\n"
+#~ "plt.show()"
+#~ msgstr ""
 

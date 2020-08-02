@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-14 12:50+0800\n"
+"POT-Creation-Date: 2020-08-02 22:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -95,153 +95,163 @@ msgstr "以下示例代码放置了 ``x`` 和 ``y`` 两个零维张量:"
 msgid ""
 "x = ti.var(dt=ti.i32)\n"
 "y = ti.var(dt=ti.f32)\n"
-"ti.root.place(x, y)"
+"ti.root.place(x, y)\n"
+"assert x.snode() == y.snode()"
 msgstr ""
 
-#: ../../snode.rst:36 ../../snode.rst:65
+#: ../../snode.rst:38 ../../snode.rst:53
 msgid "(Tensor)"
 msgstr "（张量）"
 
-#: ../../snode.rst:37
+#: ../../snode.rst:39
 msgid "(tuple of integers) the shape of tensor"
 msgstr "(整数元组) 张量的形状"
 
-#: ../../snode.rst:39
+#: ../../snode.rst:41
+#, fuzzy
+msgid "Equivalent to ``tensor.snode().shape``."
+msgstr "相当于 ``tensor.shape()[i]`` 。"
+
+#: ../../snode.rst:43
 msgid "For example,"
 msgstr "例如，"
 
-#: ../../snode.rst:43
+#: ../../snode.rst:47
 msgid ""
 "ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
-"x.shape() # returns (3, 5, 4)"
+"x.shape # returns (3, 5, 4)"
 msgstr ""
 
-#: ../../snode.rst:49 ../../snode.rst:78
+#: ../../snode.rst:54
+msgid "(SNode) the structual node where ``tensor`` is placed"
+msgstr ""
+
+#: ../../snode.rst:58
+msgid ""
+"x = ti.var(dt=ti.i32)\n"
+"y = ti.var(dt=ti.f32)\n"
+"ti.root.place(x, y)\n"
+"x.snode()"
+msgstr ""
+
+#: ../../snode.rst:66 ../../snode.rst:83
 msgid "(SNode)"
 msgstr "（结构节点）"
 
-#: ../../snode.rst:50
-msgid "axis (0 for ``i`` and 1 for ``j``)"
-msgstr "指定轴（0 表示 ``i`` ，1 表示 ``j`` ）"
-
-#: ../../snode.rst:51
+#: ../../snode.rst:67
 #, fuzzy
-msgid "(scalar) the size of tensor along that axis"
+msgid "(tuple) the size of node along that axis"
 msgstr "（标量）张量在指定轴上的尺寸"
 
-#: ../../snode.rst:53
-msgid "Equivalent to ``tensor.shape()[i]``."
-msgstr "相当于 ``tensor.shape()[i]`` 。"
-
-#: ../../snode.rst:57
+#: ../../snode.rst:71
 msgid ""
-"ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
-"x.snode().get_shape(0)  # 3\n"
-"x.snode().get_shape(1)  # 5\n"
-"x.snode().get_shape(2)  # 4"
+"blk1 = ti.root\n"
+"blk2 = blk1.dense(ti.i,  3)\n"
+"blk3 = blk2.dense(ti.jk, (5, 2))\n"
+"blk4 = blk3.dense(ti.k,  2)\n"
+"blk1.shape  # ()\n"
+"blk2.shape  # (3, )\n"
+"blk3.shape  # (3, 5, 2)\n"
+"blk4.shape  # (3, 5, 4)"
 msgstr ""
 
-#: ../../snode.rst:66
-msgid "(scalar) the dimensionality of the tensor"
-msgstr "（标量）张量的维度"
-
-#: ../../snode.rst:68
-msgid "Equivalent to ``len(tensor.shape())``."
-msgstr "相当于 ``len(tensor.shape())`` 。"
-
-#: ../../snode.rst:72
+#: ../../snode.rst:84
 msgid ""
-"ti.root.dense(ti.ijk, (8, 9, 10)).place(x)\n"
-"x.dim()  # 3"
+"(optional, scalar) the number of steps, i.e. ``n=1`` for parent, ``n=2`` "
+"grandparent, etc."
 msgstr ""
 
-#: ../../snode.rst:79
+#: ../../snode.rst:85
 msgid "(SNode) the parent node of ``snode``"
 msgstr "（结构节点） ``snode`` 的父节点"
 
-#: ../../snode.rst:83
+#: ../../snode.rst:89
 msgid ""
 "blk1 = ti.root.dense(ti.i, 8)\n"
 "blk2 = blk1.dense(ti.j, 4)\n"
 "blk3 = blk2.bitmasked(ti.k, 6)\n"
 "blk1.parent()  # ti.root\n"
 "blk2.parent()  # blk1\n"
-"blk3.parent()  # blk2"
+"blk3.parent()  # blk2\n"
+"blk3.parent(1) # blk2\n"
+"blk3.parent(2) # blk1\n"
+"blk3.parent(3) # ti.root\n"
+"blk3.parent(4) # None"
 msgstr ""
 
-#: ../../snode.rst:92
+#: ../../snode.rst:102
 msgid "Node types"
 msgstr "不同类型的节点"
 
-#: ../../snode.rst:97 ../../snode.rst:134
+#: ../../snode.rst:107 ../../snode.rst:144
 msgid "(SNode) parent node where the child is derived from"
 msgstr "（结构节点） 父节点，返回的子节点就是从该节点派生"
 
-#: ../../snode.rst:98
+#: ../../snode.rst:108
 msgid "(Index or Indices) indices used for this node"
 msgstr "（索引）用于子节点上的索引"
 
-#: ../../snode.rst:99
+#: ../../snode.rst:109
 msgid "(scalar or tuple) shape the tensor of vectors"
 msgstr "（标量或元组）指定向量张量(tensor of vector)的形状"
 
-#: ../../snode.rst:100 ../../snode.rst:138
+#: ../../snode.rst:110 ../../snode.rst:148
 msgid "(SNode) the derived child node"
 msgstr "（结构节点）派生出来的子节点"
 
-#: ../../snode.rst:102
+#: ../../snode.rst:112
 msgid "The following code places a 1-D tensor of size ``3``:"
 msgstr "以下示例代码放置了尺寸为 ``3`` 的一维张量："
 
-#: ../../snode.rst:106
+#: ../../snode.rst:116
 msgid ""
 "x = ti.var(dt=ti.i32)\n"
 "ti.root.dense(ti.i, 3).place(x)"
 msgstr ""
 
-#: ../../snode.rst:109
+#: ../../snode.rst:119
 msgid "The following code places a 2-D tensor of shape ``(3, 4)``:"
 msgstr "以下示例代码放置了尺寸为 ``(3,4)`` 的二维张量："
 
-#: ../../snode.rst:113
+#: ../../snode.rst:123
 msgid ""
 "x = ti.var(dt=ti.i32)\n"
 "ti.root.dense(ti.ij, (3, 4)).place(x)"
 msgstr ""
 
-#: ../../snode.rst:118
+#: ../../snode.rst:128
 msgid ""
 "If ``shape`` is a scalar and there are multiple indices, then ``shape`` "
 "will be automatically expanded to fit the number of indices. For example,"
 msgstr "如果给定的 ``shape`` 是一个标量，却又对应了多个索引，那么 ``shape`` 将自动扩充直至和索引数量相等。例如,"
 
-#: ../../snode.rst:123
+#: ../../snode.rst:133
 msgid "snode.dense(ti.ijk, 3)"
 msgstr ""
 
-#: ../../snode.rst:125
+#: ../../snode.rst:135
 msgid "is equivalent to"
 msgstr "相当于"
 
-#: ../../snode.rst:129
+#: ../../snode.rst:139
 msgid "snode.dense(ti.ijk, (3, 3, 3))"
 msgstr ""
 
-#: ../../snode.rst:135
+#: ../../snode.rst:145
 msgid "(Index) the ``dynamic`` node indices"
 msgstr "（索引） 动态集合节点(dynamic node)的索引"
 
-#: ../../snode.rst:136
+#: ../../snode.rst:146
 msgid "(scalar) the maximum size of the dynamic node"
 msgstr "（标量）描述该动态集合节点的最大尺寸"
 
-#: ../../snode.rst:137
+#: ../../snode.rst:147
 msgid ""
 "(optional, scalar) the number of elements in each dynamic memory "
 "allocation chunk"
 msgstr "（可选标量）描述动态内存分配时块(chunk)中存储的元素数目"
 
-#: ../../snode.rst:140
+#: ../../snode.rst:150
 msgid ""
 "``dynamic`` nodes acts like ``std::vector`` in C++ or ``list`` in Python."
 " Taichi's dynamic memory allocation system allocates its memory on the "
@@ -250,51 +260,53 @@ msgstr ""
 "``动态集合`` 节点就像 C++ 中的 ``std::vector`` 或者是 Python 中的 ``list`` 。Taichi "
 "具有的动态内存分配系统可以实现自由的分配内存。"
 
-#: ../../snode.rst:143
+#: ../../snode.rst:153
 msgid "The following places a 1-D dynamic tensor of maximum size ``16``:"
 msgstr "以下示例代码放置了最大尺寸为 ``16`` 的一维动态张量："
 
-#: ../../snode.rst:147
+#: ../../snode.rst:157
 msgid "ti.root.dynamic(ti.i, 16).place(x)"
 msgstr ""
 
-#: ../../snode.rst:155
+#: ../../snode.rst:165
 msgid "TODO: add descriptions here"
 msgstr ""
 
-#: ../../snode.rst:158
+#: ../../snode.rst:170
 msgid "Working with ``dynamic`` SNodes"
 msgstr "动态集合节点的使用"
 
-#: ../../snode.rst:162 ../../snode.rst:169
+#: ../../snode.rst:174 ../../snode.rst:181
 msgid "(SNode, dynamic)"
 msgstr "（动态集合节点）"
 
-#: ../../snode.rst:163 ../../snode.rst:170
+#: ../../snode.rst:175 ../../snode.rst:182
 msgid "(scalar or tuple of scalars) the ``dynamic`` node indices"
 msgstr "(标量或元组中标量)  ``动态集合`` 节点的索引"
 
-#: ../../snode.rst:164
-msgid "(scalar) the current size of the dynamic node"
+#: ../../snode.rst:176
+#, fuzzy
+msgid "(int32) the current size of the dynamic node"
 msgstr "（标量）当前动态集合节点的尺寸"
 
-#: ../../snode.rst:171
+#: ../../snode.rst:183
 msgid "(depends on SNode data type) value to store"
 msgstr "（取决于结构节点的数据类型）想要储存的值"
 
-#: ../../snode.rst:172
-msgid "(``int32``) the size of the dynamic node, before appending"
+#: ../../snode.rst:184
+#, fuzzy
+msgid "(int32) the size of the dynamic node, before appending"
 msgstr "(``int32``) 附加操作之前动态节点的尺寸"
 
-#: ../../snode.rst:174
+#: ../../snode.rst:186
 msgid "Inserts ``val`` into the ``dynamic`` node with indices ``indices``."
 msgstr "使用上述函数，就能实现通过 ``索引(indices)`` 将 ``常量(val)`` 插入到 ``动态集合`` 节点中。"
 
-#: ../../snode.rst:178
+#: ../../snode.rst:190
 msgid "Taichi tensors like powers of two"
 msgstr "Taichi 的张量尺寸"
 
-#: ../../snode.rst:180
+#: ../../snode.rst:192
 msgid ""
 "Non-power-of-two tensor dimensions are promoted into powers of two and "
 "thus these tensors will occupy more virtual address space. For example, a"
@@ -304,11 +316,11 @@ msgstr ""
 "对于张量，非整二次幂的那些维度会被扩充为整二次幂，因而会占据更多虚拟地址空间。例如，一个 ``(18, 65)`` "
 "的稠密张量在实际存储时相当于一个 ``(32, 128)`` 大小的张量。"
 
-#: ../../snode.rst:185
+#: ../../snode.rst:197
 msgid "Indices"
 msgstr "索引"
 
-#: ../../snode.rst:195
+#: ../../snode.rst:212
 msgid "(TODO)"
 msgstr ""
 
@@ -340,5 +352,46 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "TODO: add tensor.parent(), and add see also ref here"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "x = ti.var(dt=ti.i32)\n"
+#~ "y = ti.var(dt=ti.f32)\n"
+#~ "ti.root.place(x, y)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
+#~ "x.shape() # returns (3, 5, 4)"
+#~ msgstr ""
+
+#~ msgid "axis (0 for ``i`` and 1 for ``j``)"
+#~ msgstr "指定轴（0 表示 ``i`` ，1 表示 ``j`` ）"
+
+#~ msgid ""
+#~ "ti.root.dense(ti.ijk, (3, 5, 4)).place(x)\n"
+#~ "x.snode().get_shape(0)  # 3\n"
+#~ "x.snode().get_shape(1)  # 5\n"
+#~ "x.snode().get_shape(2)  # 4"
+#~ msgstr ""
+
+#~ msgid "(scalar) the dimensionality of the tensor"
+#~ msgstr "（标量）张量的维度"
+
+#~ msgid "Equivalent to ``len(tensor.shape())``."
+#~ msgstr "相当于 ``len(tensor.shape())`` 。"
+
+#~ msgid ""
+#~ "ti.root.dense(ti.ijk, (8, 9, 10)).place(x)\n"
+#~ "x.dim()  # 3"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "blk1 = ti.root.dense(ti.i, 8)\n"
+#~ "blk2 = blk1.dense(ti.j, 4)\n"
+#~ "blk3 = blk2.bitmasked(ti.k, 6)\n"
+#~ "blk1.parent()  # ti.root\n"
+#~ "blk2.parent()  # blk1\n"
+#~ "blk3.parent()  # blk2"
 #~ msgstr ""
 

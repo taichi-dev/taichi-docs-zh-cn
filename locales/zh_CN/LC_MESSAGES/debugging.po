@@ -1,0 +1,553 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Taichi Developers
+# This file is distributed under the same license as the taichi package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: taichi 0.6.24\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-02 22:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../debugging.rst:2
+msgid "Debugging"
+msgstr ""
+
+#: ../../debugging.rst:4
+msgid ""
+"Debugging a parallel program is not easy, so Taichi provides builtin "
+"utilities that could hopefully help you debug your Taichi program."
+msgstr ""
+
+#: ../../debugging.rst:8
+msgid "Run-time ``print`` in kernels"
+msgstr ""
+
+#: ../../debugging.rst:12
+msgid "Debug your program with ``print()`` in Taichi-scope. For example:"
+msgstr ""
+
+#: ../../debugging.rst:14
+msgid ""
+"@ti.kernel\n"
+"def inside_taichi_scope():\n"
+"    x = 233\n"
+"    print('hello', x)\n"
+"    #=> hello 233\n"
+"\n"
+"    print('hello', x * 2 + 200)\n"
+"    #=> hello 666\n"
+"\n"
+"    print('hello', x, sep='')\n"
+"    #=> hello233\n"
+"\n"
+"    print('hello', x, sep='', end='')\n"
+"    print('world', x, sep='')\n"
+"    #=> hello233world233\n"
+"\n"
+"    m = ti.Matrix([[2, 3, 4], [5, 6, 7]])\n"
+"    print('m =', m)\n"
+"    #=> m = [[2, 3, 4], [5, 6, 7]]\n"
+"\n"
+"    v = ti.Vector([3, 4])\n"
+"    print('v =', v)\n"
+"    #=> v = [3, 4]"
+msgstr ""
+
+#: ../../debugging.rst:40
+msgid ""
+"For now, Taichi-scope ``print`` supports string, scalar, vector, and "
+"matrix expressions as arguments. ``print`` in Taichi-scope may be a "
+"little different from ``print`` in Python-scope. Please see details "
+"below."
+msgstr ""
+
+#: ../../debugging.rst:45
+msgid ""
+"For the **CPU and CUDA backend**, ``print`` will not work in Graphical "
+"Python Shells including IDLE and Jupyter notebook. This is because these "
+"backends print the outputs to the console instead of the GUI. Use the "
+"**OpenGL or Metal backend** if you wish to use ``print`` in IDLE / "
+"Jupyter."
+msgstr ""
+
+#: ../../debugging.rst:49
+msgid ""
+"For the **CUDA backend**, the printed result will not show up until "
+"``ti.sync()`` is called:"
+msgstr ""
+
+#: ../../debugging.rst:51
+msgid ""
+"import taichi as ti\n"
+"ti.init(arch=ti.cuda)\n"
+"\n"
+"@ti.kernel\n"
+"def kern():\n"
+"    print('inside kernel')\n"
+"\n"
+"print('before kernel')\n"
+"kern()\n"
+"print('after kernel')\n"
+"ti.sync()\n"
+"print('after sync')"
+msgstr ""
+
+#: ../../debugging.rst:66
+msgid "obtains:"
+msgstr ""
+
+#: ../../debugging.rst:68
+msgid ""
+"before kernel\n"
+"after kernel\n"
+"inside kernel\n"
+"after sync"
+msgstr ""
+
+#: ../../debugging.rst:75
+msgid ""
+"Note that host access or program end will also implicitly invoke "
+"``ti.sync()``."
+msgstr ""
+
+#: ../../debugging.rst:79
+msgid ""
+"Note that ``print`` in Taichi-scope can only receive **comma-separated "
+"parameter**. Neither f-string nor formatted string should be used. For "
+"example:"
+msgstr ""
+
+#: ../../debugging.rst:81
+#, python-format
+msgid ""
+"import taichi as ti\n"
+"ti.init(arch=ti.cpu)\n"
+"a = ti.var(ti.f32, 4)\n"
+"\n"
+"\n"
+"@ti.kernel\n"
+"def foo():\n"
+"    a[0] = 1.0\n"
+"    print('a[0] = ', a[0]) # right\n"
+"    print(f'a[0] = {a[0]}') # wrong, f-string is not supported\n"
+"    print(\"a[0] = %f\" % a[0]) # wrong, formatted string is not "
+"supported\n"
+"\n"
+"foo()"
+msgstr ""
+
+#: ../../debugging.rst:99
+msgid "Compile-time ``ti.static_print``"
+msgstr ""
+
+#: ../../debugging.rst:101
+msgid ""
+"Sometimes it is useful to print Python-scope objects and constants like "
+"data types or SNodes in Taichi-scope. So, similar to ``ti.static`` we "
+"provide ``ti.static_print`` to print compile-time constants. It is "
+"similar to Python-scope ``print``."
+msgstr ""
+
+#: ../../debugging.rst:105
+msgid ""
+"x = ti.var(ti.f32, (2, 3))\n"
+"y = 1\n"
+"\n"
+"@ti.kernel\n"
+"def inside_taichi_scope():\n"
+"    ti.static_print(y)\n"
+"    # => 1\n"
+"    ti.static_print(x.shape)\n"
+"    # => (2, 3)\n"
+"    ti.static_print(x.dtype)\n"
+"    # => DataType.float32\n"
+"    for i in range(4):\n"
+"            ti.static_print(i.dtype)\n"
+"            # => DataType.int32\n"
+"            # will only print once"
+msgstr ""
+
+#: ../../debugging.rst:123
+msgid ""
+"Unlike ``print``, ``ti.static_print`` will only print the expression once"
+" at compile-time, and therefore it has no runtime cost."
+msgstr ""
+
+#: ../../debugging.rst:128
+msgid "Runtime ``assert`` in kernel"
+msgstr ""
+
+#: ../../debugging.rst:130
+msgid ""
+"Programmers may use ``assert`` statements in Taichi-scope. When the "
+"assertion condition failed, a ``RuntimeError`` will be raised to indicate"
+" the error."
+msgstr ""
+
+#: ../../debugging.rst:133
+msgid ""
+"To make ``assert`` work, first make sure you are using the **CPU "
+"backend**. For performance reason, ``assert`` only works when ``debug`` "
+"mode is on, For example:"
+msgstr ""
+
+#: ../../debugging.rst:136
+msgid ""
+"ti.init(arch=ti.cpu, debug=True)\n"
+"\n"
+"x = ti.var(ti.f32, 128)\n"
+"\n"
+"@ti.kernel\n"
+"def do_sqrt_all():\n"
+"    for i in x:\n"
+"        assert x[i] >= 0\n"
+"        x[i] = ti.sqrt(x)"
+msgstr ""
+
+#: ../../debugging.rst:149
+msgid ""
+"When you are done with debugging, simply set ``debug=False``. Now "
+"``assert`` will be ignored and there will be no runtime overhead."
+msgstr ""
+
+#: ../../debugging.rst:154
+msgid "Compile-time ``ti.static_assert``"
+msgstr ""
+
+#: ../../debugging.rst:158
+msgid ""
+"Like ``ti.static_print``, we also provide a static version of ``assert``:"
+" ``ti.static_assert``. It can be useful to make assertions on data types,"
+" dimensionality, and shapes. It works whether ``debug=True`` is specified"
+" or not. When an assertion fails, it will raise an ``AssertionError``, "
+"just like a Python-scope ``assert``."
+msgstr ""
+
+#: ../../debugging.rst:163
+msgid "For example:"
+msgstr ""
+
+#: ../../debugging.rst:165
+msgid ""
+"@ti.func\n"
+"def copy(dst: ti.template(), src: ti.template()):\n"
+"    ti.static_assert(dst.shape == src.shape, \"copy() needs src and dst "
+"tensors to be same shape\")\n"
+"    for I in ti.grouped(src):\n"
+"        dst[I] = src[I]\n"
+"    return x % 2 == 1"
+msgstr ""
+
+#: ../../debugging.rst:176
+msgid "Pretty Taichi-scope traceback"
+msgstr ""
+
+#: ../../debugging.rst:178
+msgid ""
+"As we all know, Python provides a useful stack traceback system, which "
+"could help you locate the issue easily. But sometimes stack tracebacks "
+"from **Taichi-scope** could be extremely complicated and hard to read. "
+"For example:"
+msgstr ""
+
+#: ../../debugging.rst:182
+msgid ""
+"import taichi as ti\n"
+"ti.init()\n"
+"\n"
+"@ti.func\n"
+"def func3():\n"
+"    ti.static_assert(1 + 1 == 3)\n"
+"\n"
+"@ti.func\n"
+"def func2():\n"
+"    func3()\n"
+"\n"
+"@ti.func\n"
+"def func1():\n"
+"    func2()\n"
+"\n"
+"@ti.kernel\n"
+"def func0():\n"
+"    func1()\n"
+"\n"
+"func0()"
+msgstr ""
+
+#: ../../debugging.rst:205
+msgid "Running this code, of course, will result in an ``AssertionError``:"
+msgstr ""
+
+#: ../../debugging.rst:207
+msgid ""
+"Traceback (most recent call last):\n"
+"  File \"misc/demo_excepthook.py\", line 20, in <module>\n"
+"    func0()\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 559, in "
+"wrapped\n"
+"    return primal(*args, **kwargs)\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 488, in "
+"__call__\n"
+"    self.materialize(key=key, args=args, arg_features=arg_features)\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 367, in "
+"materialize\n"
+"    taichi_kernel = taichi_kernel.define(taichi_ast_generator)\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 364, in "
+"taichi_ast_generator\n"
+"    compiled()\n"
+"  File \"misc/demo_excepthook.py\", line 18, in func0\n"
+"    func1()\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 39, in "
+"decorated\n"
+"    return fun.__call__(*args)\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 79, in "
+"__call__\n"
+"    ret = self.compiled(*args)\n"
+"  File \"misc/demo_excepthook.py\", line 14, in func1\n"
+"    func2()\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 39, in "
+"decorated\n"
+"    return fun.__call__(*args)\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 79, in "
+"__call__\n"
+"    ret = self.compiled(*args)\n"
+"  File \"misc/demo_excepthook.py\", line 10, in func2\n"
+"    func3()\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 39, in "
+"decorated\n"
+"    return fun.__call__(*args)\n"
+"  File \"/root/taichi/python/taichi/lang/kernel.py\", line 79, in "
+"__call__\n"
+"    ret = self.compiled(*args)\n"
+"  File \"misc/demo_excepthook.py\", line 6, in func3\n"
+"    ti.static_assert(1 + 1 == 3)\n"
+"  File \"/root/taichi/python/taichi/lang/error.py\", line 14, in wrapped\n"
+"    return foo(*args, **kwargs)\n"
+"  File \"/root/taichi/python/taichi/lang/impl.py\", line 252, in "
+"static_assert\n"
+"    assert cond\n"
+"AssertionError"
+msgstr ""
+
+#: ../../debugging.rst:246
+msgid ""
+"You may already feel brain fried by the annoying ``decorated``'s and "
+"``__call__``'s. These are the Taichi internal stack frames. They have "
+"almost no benefit for end-users but make the traceback hard to read."
+msgstr ""
+
+#: ../../debugging.rst:250
+msgid ""
+"For this purpose, we may want to use ``ti.init(excepthook=True)``, which "
+"*hooks* on the exception handler, and make the stack traceback from "
+"Taichi-scope easier to read and intuitive. e.g.:"
+msgstr ""
+
+#: ../../debugging.rst:255
+msgid ""
+"import taichi as ti\n"
+"ti.init(excepthook=True)  # just add this option!\n"
+"\n"
+"..."
+msgstr ""
+
+#: ../../debugging.rst:263
+msgid "And the result will be:"
+msgstr ""
+
+#: ../../debugging.rst:265
+msgid ""
+"========== Taichi Stack Traceback ==========\n"
+"In <module>() at misc/demo_excepthook.py:21:\n"
+"--------------------------------------------\n"
+"@ti.kernel\n"
+"def func0():\n"
+"    func1()\n"
+"\n"
+"func0()  <--\n"
+"--------------------------------------------\n"
+"In func0() at misc/demo_excepthook.py:19:\n"
+"--------------------------------------------\n"
+"    func2()\n"
+"\n"
+"@ti.kernel\n"
+"def func0():\n"
+"    func1()  <--\n"
+"\n"
+"func0()\n"
+"--------------------------------------------\n"
+"In func1() at misc/demo_excepthook.py:15:\n"
+"--------------------------------------------\n"
+"    func3()\n"
+"\n"
+"@ti.func\n"
+"def func1():\n"
+"    func2()  <--\n"
+"\n"
+"@ti.kernel\n"
+"--------------------------------------------\n"
+"In func2() at misc/demo_excepthook.py:11:\n"
+"--------------------------------------------\n"
+"    ti.static_assert(1 + 1 == 3)\n"
+"\n"
+"@ti.func\n"
+"def func2():\n"
+"    func3()  <--\n"
+"\n"
+"@ti.func\n"
+"--------------------------------------------\n"
+"In func3() at misc/demo_excepthook.py:7:\n"
+"--------------------------------------------\n"
+"ti.enable_excepthook()\n"
+"\n"
+"@ti.func\n"
+"def func3():\n"
+"    ti.static_assert(1 + 1 == 3)  <--\n"
+"\n"
+"@ti.func\n"
+"--------------------------------------------\n"
+"AssertionError"
+msgstr ""
+
+#: ../../debugging.rst:318
+msgid ""
+"See? Our exception hook has removed some useless Taichi internal frames "
+"from traceback. What's more, although not visible in the doc, the output "
+"is **colorful**!"
+msgstr ""
+
+#: ../../debugging.rst:325
+msgid ""
+"For IPython / Jupyter notebook users, the IPython stack traceback hook "
+"will be overriden by the Taichi one when ``ti.enable_excepthook()``."
+msgstr ""
+
+#: ../../debugging.rst:330
+msgid "Debugging Tips"
+msgstr ""
+
+#: ../../debugging.rst:332
+msgid ""
+"Debugging a Taichi program can be hard even with the builtin tools above."
+" Here we showcase some common bugs that one may encounter in a Taichi "
+"program."
+msgstr ""
+
+#: ../../debugging.rst:336
+msgid "Static type system"
+msgstr ""
+
+#: ../../debugging.rst:338
+msgid ""
+"Python code in Taichi-scope is translated into a statically typed "
+"language for high performance. This means code in Taichi-scope can have a"
+" different behavior compared with that in Python-scope, especially when "
+"it comes to types."
+msgstr ""
+
+#: ../../debugging.rst:340
+msgid ""
+"The type of a variable is simply **determined at its initialization and "
+"never changes later**."
+msgstr ""
+
+#: ../../debugging.rst:342
+msgid ""
+"Although Taichi's static type system provides better performance, it may "
+"lead to bugs if programmers carelessly used the wrong types. For example,"
+msgstr ""
+
+#: ../../debugging.rst:345
+msgid ""
+"@ti.kernel\n"
+"def buggy():\n"
+"    ret = 0  # 0 is an integer, so `ret` is typed as int32\n"
+"    for i in range(3):\n"
+"        ret += 0.1 * i  # i32 += f32, the result is still stored in "
+"int32!\n"
+"    print(ret)  # will show 0\n"
+"\n"
+"buggy()"
+msgstr ""
+
+#: ../../debugging.rst:356
+msgid ""
+"The code above shows a common bug due to Taichi's static type system. The"
+" Taichi compiler should show a warning like:"
+msgstr ""
+
+#: ../../debugging.rst:359
+msgid ""
+"[W 06/27/20 21:43:51.853] [type_check.cpp:visit@66] [$19] Atomic add "
+"(float32 to int32) may lose precision."
+msgstr ""
+
+#: ../../debugging.rst:363
+msgid ""
+"This means that Taichi cannot store a ``float32`` result precisely to "
+"``int32``. The solution is to initialize ``ret`` as a float-point value:"
+msgstr ""
+
+#: ../../debugging.rst:366
+msgid ""
+"@ti.kernel\n"
+"def not_buggy():\n"
+"    ret = 0.0  # 0 is a floating point number, so `ret` is typed as "
+"float32\n"
+"    for i in range(3):\n"
+"        ret += 0.1 * i  # f32 += f32. OK!\n"
+"    print(ret)  # will show 0.6\n"
+"\n"
+"not_buggy()"
+msgstr ""
+
+#: ../../debugging.rst:380
+msgid "Advanced Optimization"
+msgstr ""
+
+#: ../../debugging.rst:382
+msgid ""
+"Taichi has an advanced optimization engine to make your Taichi kernel to "
+"be as fast as it could. But like what ``gcc -O3`` does, advanced "
+"optimization may occasionally lead to bugs as it tries too hard. This "
+"includes runtime errors such as:"
+msgstr ""
+
+#: ../../debugging.rst:386
+msgid ""
+"```RuntimeError: [verify.cpp:basic_verify@40] stmt 8 cannot have operand "
+"7.```"
+msgstr ""
+
+#: ../../debugging.rst:388
+msgid ""
+"You may use ``ti.init(advance_optimization=False)`` to turn off advanced "
+"optimization and see if the issue still exists:"
+msgstr ""
+
+#: ../../debugging.rst:391
+msgid ""
+"import taichi as ti\n"
+"\n"
+"ti.init(advance_optimization=False)\n"
+"\n"
+"..."
+msgstr ""
+
+#: ../../debugging.rst:399
+msgid ""
+"Whether or not turning off optimization fixes the issue, please feel free"
+" to report this bug on `GitHub <https://github.com/taichi-"
+"dev/taichi/issues/new?labels=potential+bug&template=bug_report.md>`_. "
+"Thank you!"
+msgstr ""
+

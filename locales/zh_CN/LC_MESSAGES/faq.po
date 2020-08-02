@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 15:41+0800\n"
+"POT-Creation-Date: 2020-08-02 22:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,19 +21,137 @@ msgstr ""
 msgid "Frequently asked questions"
 msgstr ""
 
-#: ../../faq.rst:4
+#: ../../faq.rst:5
+msgid "**Q:** Installing Taichi with ``pip``, complains ``package not found``."
+msgstr ""
+
+#: ../../faq.rst:7
+msgid ""
+"**A:** Is your Python version >= 3.6, and 64-bit? See "
+":ref:`troubleshooting`."
+msgstr ""
+
+#: ../../faq.rst:9
+msgid "**Q:** Do we have something like ``ti.pi``?"
+msgstr ""
+
+#: ../../faq.rst:11
+msgid ""
+"**A:** No, but you may use ``math.pi`` or ``numpy.pi`` instead. Taichi is"
+" able to bake in these constants during JIT, so your kernels incur no "
+"runtime cost."
+msgstr ""
+
+#: ../../faq.rst:13
+msgid ""
+"**Q:** How do I **force** an outermost loop to be serial, i.e. **not "
+"parallelized**?"
+msgstr ""
+
+#: ../../faq.rst:15
+msgid "**A:** Try this trick:"
+msgstr ""
+
+#: ../../faq.rst:17
+msgid ""
+"for _ in range(1):  # I'm the outer-most loop!\n"
+"    for i in range(100):  # This loop will not be parallelized\n"
+"        ..."
+msgstr ""
+
+#: ../../faq.rst:23
+msgid ""
+"**Q:** What's the most convinent way to load images / textures into "
+"Taichi tensors?"
+msgstr ""
+
+#: ../../faq.rst:25
+msgid "**A:** Simply use ``tensor.from_numpy(ti.imread('filename.png'))``."
+msgstr ""
+
+#: ../../faq.rst:27
+msgid ""
+"**Q:** Can Taichi co-operate with **other Python packages** like "
+"``matplotlib``?"
+msgstr ""
+
+#: ../../faq.rst:29
+msgid ""
+"**A:** Yes, as long as that *package* provides an interface with "
+"``numpy``, see :ref:`other_python_packages`."
+msgstr ""
+
+#: ../../faq.rst:31
+msgid ""
+"**Q:** Shall we add some handy functions like ``ti.smoothstep`` or "
+"``ti.vec3``?"
+msgstr ""
+
+#: ../../faq.rst:33
+msgid ""
+"**A:** No, but we provide them in an extension library `Taichi GLSL "
+"<https://taichi-glsl.readthedocs.io>`, install it using:"
+msgstr ""
+
+#: ../../faq.rst:35
+msgid "python -m pip install taichi_glsl"
+msgstr ""
+
+#: ../../faq.rst:39
+msgid ""
+"**Q:** How can I **render 3D results** without writing a ray tracer "
+"myself?"
+msgstr ""
+
+#: ../../faq.rst:42
+msgid ""
+"**A:** You may export it with :ref:`export_ply_files` so that you could "
+"view it in Houdini or Blender."
+msgstr ""
+
+#: ../../faq.rst:42
+msgid ""
+"Or make use the extension library `Taichi THREE <https://github.com"
+"/taichi-dev/taichi_glsl>` to render images and update to GUI in real-"
+"time."
+msgstr ""
+
+#: ../../faq.rst:44
+msgid "**Q:** How do I declare a tensor with **dynamic length**?"
+msgstr ""
+
+#: ../../faq.rst:48
+msgid ""
+"**A:** What you want may be the ``dynamic`` SNode, a kind of sparse "
+"tensor, see :ref:`dynamic`."
+msgstr ""
+
+#: ../../faq.rst:47
+msgid ""
+"Or simply allocate a dense tensor large enough, and another 0-D tensor "
+"``tensor_len[None]`` for length record. But in fact, the ``dynamic`` "
+"SNode could be slower than the latter solution, due to the cost of "
+"maintaining the sparsity information."
+msgstr ""
+
+#: ../../faq.rst:50
 msgid ""
 "**Q:** Can a user iterate over irregular topologies (e.g., graphs or "
 "tetrahedral meshes) instead of regular grids?"
 msgstr ""
 
-#: ../../faq.rst:6
+#: ../../faq.rst:52
 msgid ""
 "**A:** These structures have to be represented using 1D arrays in Taichi."
 " You can still iterate over them using ``for i in x`` or ``for i in "
-"range(n)``. However, at compile time, there's little the Taichi compiler "
-"can do for you to optimize it. You can still tweak the data layout to get"
-" different runtime cache behaviors and performance numbers."
+"range(n)``."
+msgstr ""
+
+#: ../../faq.rst:53
+msgid ""
+"However, at compile time, there's little the Taichi compiler can do for "
+"you to optimize it. You can still tweak the data layout to get different "
+"runtime cache behaviors and performance numbers."
 msgstr ""
 
 #~ msgid "Frequently Asked Questions"
@@ -76,5 +194,18 @@ msgstr ""
 #~ "the same, except for vectorization on"
 #~ " SIMD CPUs. You still have the "
 #~ "hash table optimization on GPUs."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**A:** These structures have to be "
+#~ "represented using 1D arrays in Taichi."
+#~ " You can still iterate over them "
+#~ "using ``for i in x`` or ``for "
+#~ "i in range(n)``. However, at compile "
+#~ "time, there's little the Taichi compiler"
+#~ " can do for you to optimize it."
+#~ " You can still tweak the data "
+#~ "layout to get different runtime cache"
+#~ " behaviors and performance numbers."
 #~ msgstr ""
 

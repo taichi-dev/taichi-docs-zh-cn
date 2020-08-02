@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-14 12:50+0800\n"
+"POT-Creation-Date: 2020-08-02 22:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -60,87 +60,96 @@ msgstr "安装依赖"
 
 #: ../../dev_install.rst:20
 msgid ""
-"python3 -m pip install --user setuptools astpretty astor pybind11 Pillow\n"
+"python3 -m pip install --user setuptools astpretty astor pybind11 Pillow "
+"dill\n"
 "python3 -m pip install --user pytest pytest-rerunfailures pytest-xdist "
 "yapf\n"
 "python3 -m pip install --user numpy GitPython coverage colorama autograd"
 msgstr ""
 
-#: ../../dev_install.rst:26
-msgid "Make sure you have ``clang`` with version >= 7"
+#: ../../dev_install.rst:27
+msgid "Make sure you have ``clang`` with version >= 7:"
 msgstr ""
 
-#: ../../dev_install.rst:28
+#: ../../dev_install.rst:29
 msgid ""
-"On Windows: Download ``clang-8`` via `this link "
-"<https://releases.llvm.org/8.0.0/LLVM-8.0.0-win64.exe>`_. Make sure you "
-"add the ``bin`` folder containing ``clang.exe`` to the ``PATH`` "
+"On Windows: Download `clang-10 <https://github.com/taichi-"
+"dev/taichi_assets/releases/download/llvm10/clang-10.0.0-win.zip>`_. Make "
+"sure you add the ``bin`` folder containing ``clang.exe`` to the ``PATH`` "
 "environment variable."
 msgstr ""
 
-#: ../../dev_install.rst:31
+#: ../../dev_install.rst:32
 msgid "On OS X: you don't need to do anything."
 msgstr ""
 
-#: ../../dev_install.rst:33
+#: ../../dev_install.rst:34
 #, fuzzy
 msgid "On Ubuntu, execute ``sudo apt install libtinfo-dev clang-8``."
 msgstr ""
 "（在Ubuntu下）执行 ``sudo apt install libtinfo-dev clang-8``。（ ``clang-7`` "
 "应该同样可以工作）。"
 
-#: ../../dev_install.rst:35
-#, fuzzy
-msgid "On other Linux distributions, please build clang 8.0.1 from source:"
-msgstr "（在其他Linux发行版下）请从源码构建构建clang 8.0.1："
-
-#: ../../dev_install.rst:37
-msgid ""
-"wget https://github.com/llvm/llvm-"
-"project/releases/download/llvmorg-8.0.1/cfe-8.0.1.src.tar.xz\n"
-"tar xvJf cfe-8.0.1.src.tar.xz\n"
-"cd cfe-8.0.1.src\n"
-"mkdir build\n"
-"cd build\n"
-"cmake ..\n"
-"make -j 8\n"
-"sudo make install"
+#: ../../dev_install.rst:36
+msgid "On Arch Linux, execute ``sudo pacman -S clang``. (This is ``clang-10``)."
 msgstr ""
 
-#: ../../dev_install.rst:49
+#: ../../dev_install.rst:38
 msgid ""
-"Make sure you have LLVM 8.0.1/10.0.0. Note that Taichi uses a customized "
-"LLVM so the pre-built binaries from the LLVM official website or other "
-"sources probably doesn't work. Here we provide LLVM 8.0.1 binaries "
-"customized for Taichi, which may or may not work depending on your system"
-" environment: `Linux <https://github.com/yuanming-"
-"hu/taichi_assets/releases/download/llvm8/taichi-"
-"llvm-8.0.1-linux-x64.zip>`_, `OS X <https://github.com/yuanming-"
-"hu/taichi_assets/releases/download/llvm8/taichi-llvm-8.0.1.zip>`_, "
-"`Windows <https://github.com/yuanming-"
-"hu/taichi_assets/releases/download/llvm8/taichi-"
-"llvm-8.0.1-msvc2017.zip>`_."
+"On other Linux distributions, please search `this site <pkgs.org>`_ for "
+"clang version >= 7."
 msgstr ""
 
-#: ../../dev_install.rst:55
+#: ../../dev_install.rst:41
+msgid ""
+"Make sure you have LLVM 10.0.0. Note that Taichi uses a **customized "
+"LLVM** so the pre-built binaries from the LLVM official website or other "
+"sources probably won't work. Here we provide LLVM binaries customized for"
+" Taichi, which may or may not work depending on your system environment:"
+msgstr ""
+
+#: ../../dev_install.rst:44
+msgid ""
+"`LLVM 10.0.0 for Linux <https://github.com/taichi-"
+"dev/taichi_assets/releases/download/llvm10/taichi-"
+"llvm-10.0.0-linux.zip>`_"
+msgstr ""
+
+#: ../../dev_install.rst:45
+msgid ""
+"`LLVM 10.0.0 for Windows MSVC 2019 <https://github.com/taichi-"
+"dev/taichi_assets/releases/download/llvm10/taichi-"
+"llvm-10.0.0-msvc2019.zip>`_"
+msgstr ""
+
+#: ../../dev_install.rst:46
+msgid ""
+"`LLVM 10.0.0 for OS X <https://github.com/taichi-"
+"dev/taichi_assets/releases/download/llvm10/taichi-"
+"llvm-10.0.0-macos.zip>`_"
+msgstr ""
+
+#: ../../dev_install.rst:50
+msgid ""
+"On Windows, if you use the pre-built LLVM for Taichi, please add "
+"``$LLVM_FOLDER/bin`` to ``PATH``. Later, when you build Taichi using "
+"``CMake``, set ``LLVM_DIR`` to ``$LLVM_FOLDER/lib/cmake/llvm``."
+msgstr ""
+
+#: ../../dev_install.rst:54
 msgid "If the downloaded LLVM does not work, please build from source:"
 msgstr ""
 
-#: ../../dev_install.rst:57
+#: ../../dev_install.rst:56
 msgid "On Linux or OS X:"
 msgstr ""
 
-#: ../../dev_install.rst:59
+#: ../../dev_install.rst:58
 msgid ""
 "wget https://github.com/llvm/llvm-"
-"project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz\n"
-"tar xvJf llvm-8.0.1.src.tar.xz\n"
-"cd llvm-8.0.1.src\n"
-"# For LLVM 10.0.0:\n"
-"#     wget https://github.com/llvm/llvm-"
 "project/releases/download/llvmorg-10.0.0/llvm-10.0.0.src.tar.xz\n"
-"#     tar xvJf llvm-10.0.0.src.tar.xz\n"
-"#     cd llvm-10.0.0.src\n"
+"tar xvJf llvm-10.0.0.src.tar.xz\n"
+"cd llvm-10.0.0.src\n"
 "mkdir build\n"
 "cd build\n"
 "cmake .. -DLLVM_ENABLE_RTTI:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=OFF "
@@ -153,70 +162,57 @@ msgid ""
 "sudo make install\n"
 "\n"
 "# Check your LLVM installation\n"
-"llvm-config --version # You should get 8.0.1 or 10.0.0"
+"llvm-config --version  # You should get 10.0.0"
 msgstr ""
 
-#: ../../dev_install.rst:79
+#: ../../dev_install.rst:74
 msgid "On Windows:"
 msgstr ""
 
-#: ../../dev_install.rst:81
+#: ../../dev_install.rst:76
 msgid ""
-"# LLVM 8.0.1 + MSVC 2017\n"
-"cmake .. -G\"Visual Studio 15 2017 Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON "
-"-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
-"-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" -DLLVM_ENABLE_ASSERTIONS=ON "
-"-Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed\n"
-"\n"
 "# LLVM 10.0.0 + MSVC 2019\n"
-"cmake .. -G\"Visual Studio 16 2019\" -A x64  -DLLVM_ENABLE_RTTI:BOOL=ON "
+"cmake .. -G\"Visual Studio 16 2019\" -A x64 -DLLVM_ENABLE_RTTI:BOOL=ON "
 "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
 "-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" -DLLVM_ENABLE_ASSERTIONS=ON "
 "-Thost=x64 -DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
 msgstr ""
 
-#: ../../dev_install.rst:89
+#: ../../dev_install.rst:81
 msgid "Then open ``LLVM.sln`` and use Visual Studio 2017+ to build."
 msgstr ""
 
-#: ../../dev_install.rst:90
+#: ../../dev_install.rst:82
 msgid ""
 "Please make sure you are using the ``Release`` configuration. After "
 "building the ``INSTALL`` project (under folder ``CMakePredefinedTargets``"
 " in the Solution Explorer window)."
 msgstr ""
 
-#: ../../dev_install.rst:91
+#: ../../dev_install.rst:83
 msgid ""
 "If you use MSVC 2019, **make sure you use C++17** for the ``INSTALL`` "
 "project."
 msgstr ""
 
-#: ../../dev_install.rst:92
+#: ../../dev_install.rst:84
 msgid ""
 "After the build is complete, find your LLVM binaries and headers in "
 "``build/installed``."
 msgstr ""
 
-#: ../../dev_install.rst:94
+#: ../../dev_install.rst:86
 msgid ""
 "Please add ``build/installed/bin`` to ``PATH``. Later, when you build "
 "Taichi using ``CMake``, set ``LLVM_DIR`` to "
 "``build/installed/lib/cmake/llvm``."
 msgstr ""
 
-#: ../../dev_install.rst:97
-msgid ""
-"On Windows, if you use the pre-built LLVM for Taichi, please add "
-"``$LLVM_FOLDER/bin`` to ``PATH``. Later, when you build Taichi using "
-"``CMake``, set ``LLVM_DIR`` to ``$LLVM_FOLDER/lib/cmake/llvm``."
-msgstr ""
-
-#: ../../dev_install.rst:102
+#: ../../dev_install.rst:91
 msgid "Setting up CUDA (optional)"
 msgstr "安装并配置CUDA（可选）"
 
-#: ../../dev_install.rst:104
+#: ../../dev_install.rst:93
 msgid ""
 "If you don't have CUDA, go to `this website <https://developer.nvidia.com"
 "/cuda-downloads>`_ and download the installer."
@@ -224,7 +220,7 @@ msgstr ""
 "如果你没有安装CUDA，请到 `英伟达官网 <https://developer.nvidia.com/cuda-downloads>`_ "
 "下载安装器。"
 
-#: ../../dev_install.rst:106
+#: ../../dev_install.rst:95
 msgid ""
 "To check if CUDA is installed, run ``nvcc --version`` or ``cat "
 "/usr/local/cuda/version.txt``."
@@ -232,25 +228,81 @@ msgstr ""
 "请运行 ``nvcc —version`` 或 ``cat /usr/local/cuda/version.txt`` "
 "来检查CUDA是否已安装成功。"
 
-#: ../../dev_install.rst:107
+#: ../../dev_install.rst:96
 msgid "On **Ubuntu** we recommend choosing ``deb (local)`` as **Installer Type**."
 msgstr "在 **Ubuntu** 下我们推荐选择 ``deb (local)`` 来作为 **安装器类型（Installer Type）**。"
 
-#: ../../dev_install.rst:108
+#: ../../dev_install.rst:97
 msgid ""
 "On **Arch Linux**, you can easily install CUDA via ``pacman -S cuda`` "
 "without downloading the installer manually."
 msgstr "在 **Arch Linux** 下，你可以轻松地通过 ``pacman -S cuda`` 来安装CUDA并跳过手动下载安装器的环节。"
 
-#: ../../dev_install.rst:112
+#: ../../dev_install.rst:103
 msgid "Setting up Taichi for development"
 msgstr "开发者的 Taichi 配置"
 
-#: ../../dev_install.rst:114
+#: ../../dev_install.rst:105
+msgid "Set up environment variables for Taichi:"
+msgstr ""
+
+#: ../../dev_install.rst:107
+msgid ""
+"On Linux / OS X, please add the following script to your rc file "
+"(``~/.bashrc``, ``~/.zshrc`` or etc. , same for other occurrences in this"
+" documentation):"
+msgstr ""
+
+#: ../../dev_install.rst:109
+msgid ""
+"export TAICHI_REPO_DIR=/path/to/taichi  # Path to your taichi repository\n"
+"export PYTHONPATH=$TAICHI_REPO_DIR/python:$PYTHONPATH\n"
+"export PATH=$TAICHI_REPO_DIR/bin:$PATH\n"
+"# export CXX=/path/to/clang  # Uncomment if you encounter issue about "
+"compiler in the next step.\n"
+"# export PATH=/opt/llvm/bin:$PATH  # Uncomment if your llvm or clang is "
+"installed in /opt"
+msgstr ""
+
+#: ../../dev_install.rst:117
+#, fuzzy
+msgid "Then execute ``source ~/.bashrc`` to reload shell config."
+msgstr "执行 ``source ~/.bashrc`` 来重载shell的配置。"
+
+#: ../../dev_install.rst:119
+msgid "On Windows, please add these variables by accessing your system settings:"
+msgstr ""
+
+#: ../../dev_install.rst:121
+msgid ""
+"Add ``TAICHI_REPO_DIR`` whose value is the path to your taichi repository"
+" so that Taichi knows you're a developer."
+msgstr ""
+
+#: ../../dev_install.rst:122
+msgid ""
+"Add or append ``PYTHONPATH`` with ``%TAICHI_REPO_DIR%/python`` so that "
+"Python imports Taichi from the local repo."
+msgstr ""
+
+#: ../../dev_install.rst:123
+msgid ""
+"Add or append ``PATH`` with ``%TAICHI_REPO_DIR%/bin`` so that you can use"
+" ``ti`` command."
+msgstr ""
+
+#: ../../dev_install.rst:124
+msgid ""
+"Add or append ``PATH`` with path to LLVM binary directory installed in "
+"previous section."
+msgstr ""
+
+#: ../../dev_install.rst:126
 msgid "Clone the taichi repo **recursively**, and build:"
 msgstr "请 **递归地** 克隆 Taichi 代码库，然后构建："
 
-#: ../../dev_install.rst:116
+#: ../../dev_install.rst:128
+#, fuzzy
 msgid ""
 "git clone https://github.com/taichi-dev/taichi --depth=1 --branch=master\n"
 "cd taichi\n"
@@ -258,16 +310,13 @@ msgid ""
 "mkdir build\n"
 "cd build\n"
 "cmake ..\n"
-"# if you do not set clang as the default compiler\n"
+"# On Linux / OS X, if you do not set clang as the default compiler\n"
 "# use the line below:\n"
-"#   cmake .. -DCMAKE_CXX_COMPILER=clang-8\n"
+"#   cmake .. -DCMAKE_CXX_COMPILER=clang\n"
 "#\n"
 "# Alternatively, if you would like to set clang as the default compiler\n"
 "# On Unix CMake honors environment variables $CC and $CXX upon deciding "
 "which C and C++ compilers to use\n"
-"#\n"
-"# if you are building with CUDA 10.0, use the line below:\n"
-"#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
 "make -j 8"
 msgstr ""
 "git clone https://github.com/taichi-dev/taichi —depth=1 —branch=master\n"
@@ -281,28 +330,12 @@ msgstr ""
 "#   cmake .. -DCUDA_VERSION=10.0 -DTI_WITH_CUDA:BOOL=True\n"
 "make -j 8"
 
-#: ../../dev_install.rst:135
-msgid "Add the following script to your ``~/.bashrc``:"
-msgstr "将下面的脚本添加至你的 ``~/.bashrc`` 配置文件："
-
-#: ../../dev_install.rst:137
-msgid ""
-"export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository"
-"\n"
-"export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH\n"
-"export PATH=$TAICHI_REPO_DIR/bin/:$PATH\n"
-"# export PATH=/opt/llvm/bin:$PATH # Uncomment if your llvm-8 or clang-8 "
-"is in /opt"
-msgstr ""
-"export TAICHI_REPO_DIR=/home/XXX/taichi  # Path to your taichi repository"
-"\n"
-"export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH\n"
-"export PATH=$TAICHI_REPO_DIR/bin/:$PATH\n"
-"# export PATH=/opt/llvm/bin:$PATH # 反注释这行如果你的llvm-8或clang-8在/opt目录下"
-
 #: ../../dev_install.rst:144
-msgid "Execute ``source ~/.bashrc`` to reload shell config."
-msgstr "执行 ``source ~/.bashrc`` 来重载shell的配置。"
+#, fuzzy
+msgid ""
+"Check out ``examples`` for runnable examples. Run them with commands like"
+" ``python3 examples/mpm128.py``."
+msgstr "查看 ``examples`` 下的可执行的示例。使用 ``python3`` 来运行它们。"
 
 #: ../../dev_install.rst:145
 msgid ""
@@ -310,23 +343,215 @@ msgid ""
 "to 5 minutes to run all tests."
 msgstr "执行 ``python3 -m taichi test`` 来运行所有的测试。运行所有测试用例可能会耗费长达5分钟的时间。"
 
-#: ../../dev_install.rst:146
-msgid "Check out ``examples`` for runnable examples. Run them with ``python3``."
-msgstr "查看 ``examples`` 下的可执行的示例。使用 ``python3`` 来运行它们。"
+#: ../../dev_install.rst:149
+#, fuzzy
+msgid "Troubleshooting Developer Installation"
+msgstr "开发者安装指南"
 
-#: ../../dev_install.rst:150
-msgid "Troubleshooting"
-msgstr "故障排除"
-
-#: ../../dev_install.rst:152
-msgid "Run with debug mode to see if there's any illegal memory access"
-msgstr "在调试模式（debug mode）下运行以检查是否有任何的非法内存访问"
-
-#: ../../dev_install.rst:153
+#: ../../dev_install.rst:151
 msgid ""
-"Disable compiler optimizations to quickly confirm that the issue is not "
-"cause by optimization"
-msgstr "禁用编译器优化来快速确认问题并非是由优化引起的"
+"If ``make`` fails to compile and reports ``fatal error: 'spdlog/XXX.h' "
+"file not found``, please try runing ``git submodule update --init "
+"--recursive --depth=1``."
+msgstr ""
+
+#: ../../dev_install.rst:155
+msgid "If importing Taichi causes"
+msgstr ""
+
+#: ../../dev_install.rst:157
+msgid ""
+"FileNotFoundError: [Errno 2] No such file or directory: "
+"'/root/taichi/python/taichi/core/../lib/taichi_core.so' -> "
+"'/root/taichi/python/taichi/core/../lib/libtaichi_core.so'``"
+msgstr ""
+
+#: ../../dev_install.rst:161
+msgid ""
+"Please try adding ``TAICHI_REPO_DIR`` to environment variables, see "
+":ref:`dev_env_settings`."
+msgstr ""
+
+#: ../../dev_install.rst:163
+msgid ""
+"If the build succeeded but running any Taichi code results in errors like"
+" ``Bitcode file (/tmp/taichi-tero94pl/runtime//runtime_x64.bc) not "
+"found``, please double check ``clang`` is in your ``PATH``:"
+msgstr ""
+
+#: ../../dev_install.rst:166
+msgid ""
+"clang --version\n"
+"# version should be >= 7"
+msgstr ""
+
+#: ../../dev_install.rst:171
+msgid "and our **Taichi configured** ``llvm-as``:"
+msgstr ""
+
+#: ../../dev_install.rst:173
+msgid ""
+"llvm-as --version\n"
+"# version should be >= 8\n"
+"which llvm-as\n"
+"# should be /usr/local/bin/llvm-as or /opt/XXX/bin/llvm-as, which is our "
+"configured installation"
+msgstr ""
+
+#: ../../dev_install.rst:180
+msgid ""
+"If not, please install ``clang`` and **build LLVM from source** with "
+"instructions above in :ref:`dev_install`, then add their path to "
+"environment variable ``PATH``."
+msgstr ""
+
+#: ../../dev_install.rst:182
+msgid ""
+"If you encounter other issues, feel free to report by `opening an issue "
+"on GitHub <https://github.com/taichi-"
+"dev/taichi/issues/new?labels=potential+bug&template=bug_report.md>`_. We "
+"are willing to help!"
+msgstr ""
+
+#: ../../dev_install.rst:184
+msgid ""
+"See also :ref:`troubleshooting` for issues that may share with end-user "
+"installation."
+msgstr ""
+
+#: ../../dev_install.rst:187
+msgid "Docker"
+msgstr ""
+
+#: ../../dev_install.rst:189
+msgid ""
+"For those who prefer to use Docker, we also provide a Dockerfile which "
+"helps setup the Taichi development environment with CUDA support based on"
+" Ubuntu docker image."
+msgstr ""
+
+#: ../../dev_install.rst:193
+msgid ""
+"In order to follow the instructions in this section, please make sure you"
+" have the `Docker DeskTop (or Engine for Linux) "
+"<https://www.docker.com/products/docker-desktop>`_ installed and set up "
+"properly."
+msgstr ""
+
+#: ../../dev_install.rst:198
+msgid "Build the Docker Image"
+msgstr ""
+
+#: ../../dev_install.rst:199
+msgid ""
+"From within the root directory of the taichi Git repository, execute "
+"``docker build -t taichi:latest .`` to build a Docker image based off the"
+" local master branch tagged with *latest*. Since this builds the image "
+"from source, please expect up to 40 mins build time if you don't have "
+"cached Docker image layers."
+msgstr ""
+
+#: ../../dev_install.rst:204
+msgid ""
+"In order to save the time on building Docker images, you could always "
+"visit our `Docker Hub repository "
+"<https://hub.docker.com/r/taichidev/taichi>`_ and pull the versions of "
+"pre-built images you would like to use. Currently the builds are "
+"triggered per taichi Github release."
+msgstr ""
+
+#: ../../dev_install.rst:207
+msgid ""
+"For example, to pull a image built from release v0.6.17, run ``docker "
+"pull taichidev/taichi:v0.6.17``"
+msgstr ""
+
+#: ../../dev_install.rst:210
+msgid "Use Docker Image on macOS (cpu only)"
+msgstr ""
+
+#: ../../dev_install.rst:211
+msgid "Make sure ``XQuartz`` and ``socat`` are installed:"
+msgstr ""
+
+#: ../../dev_install.rst:213
+msgid ""
+"brew cask install xquartz\n"
+"brew install socat"
+msgstr ""
+
+#: ../../dev_install.rst:218 ../../dev_install.rst:239
+msgid "Temporally disable the xhost access-control: ``xhost +``"
+msgstr ""
+
+#: ../../dev_install.rst:219
+msgid ""
+"Start the Docker container with ``docker run -it -e DISPLAY=$(ipconfig "
+"getifaddr en0):0 taichidev/taichi:v0.6.17``"
+msgstr ""
+
+#: ../../dev_install.rst:220 ../../dev_install.rst:241
+msgid ""
+"Do whatever you want within the container, e.g. you could run tests or an"
+" example, try: ``ti test`` or ``ti example mpm88``"
+msgstr ""
+
+#: ../../dev_install.rst:221 ../../dev_install.rst:242
+msgid "Exit from the container with ``exit`` or ``ctrl+D``"
+msgstr ""
+
+#: ../../dev_install.rst:222 ../../dev_install.rst:243
+msgid "[To keep your xhost safe] Re-enable the xhost access-control: ``xhost -``"
+msgstr ""
+
+#: ../../dev_install.rst:225
+msgid "Use Docker Image on Ubuntu (with CUDA support)"
+msgstr ""
+
+#: ../../dev_install.rst:226
+msgid ""
+"Make sure your host machine has CUDA properly installed and configured. "
+"Usually you could verify it by running ``nvidia-smi``"
+msgstr ""
+
+#: ../../dev_install.rst:227
+msgid ""
+"Make sure ` NVIDIA Container Toolkit <https://github.com/NVIDIA/nvidia-"
+"docker>`_ is properly installed:"
+msgstr ""
+
+#: ../../dev_install.rst:229
+msgid ""
+"distribution=$(. /etc/os-release;echo $ID$VERSION_ID)\n"
+"curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key "
+"add -\n"
+"curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-"
+"docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list\n"
+"\n"
+"sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit\n"
+"sudo systemctl restart docker"
+msgstr ""
+
+#: ../../dev_install.rst:238
+msgid "Make sure ``xorg`` is installed: ``sudo apt-get install xorg``"
+msgstr ""
+
+#: ../../dev_install.rst:240
+msgid ""
+"Start the Docker container with ``sudo docker run -it --gpus all -e "
+"DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix "
+"taichidev/taichi:v0.6.17``"
+msgstr ""
+
+#: ../../dev_install.rst:246
+msgid ""
+"The nature of Docker container determines that no changes to the file "
+"system on the container could be preserved once you exit from the "
+"container. If you want to use Docker as a persistent development "
+"environment, we recommend you `mount the taichi Git repository to the "
+"container as a volume <https://docs.docker.com/storage/volumes/>`_ and "
+"set the Python path to the mounted directory."
+msgstr ""
 
 #~ msgid ""
 #~ "(If on Ubuntu) Execute ``sudo apt "
@@ -536,4 +761,136 @@ msgstr "禁用编译器优化来快速确认问题并非是由优化引起的"
 #~ "build completes, find your LLVM "
 #~ "binaries/headers in `build/include`."
 #~ msgstr "然后使用Visual Studio来进行构建。"
+
+#~ msgid ""
+#~ "python3 -m pip install --user setuptools"
+#~ " astpretty astor pybind11 Pillow\n"
+#~ "python3 -m pip install --user pytest "
+#~ "pytest-rerunfailures pytest-xdist yapf\n"
+#~ "python3 -m pip install --user numpy "
+#~ "GitPython coverage colorama autograd"
+#~ msgstr ""
+
+#~ msgid "Make sure you have ``clang`` with version >= 7"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "On Windows: Download ``clang-8`` via "
+#~ "`this link "
+#~ "<https://releases.llvm.org/8.0.0/LLVM-8.0.0-win64.exe>`_. Make"
+#~ " sure you add the ``bin`` folder "
+#~ "containing ``clang.exe`` to the ``PATH`` "
+#~ "environment variable."
+#~ msgstr ""
+
+#~ msgid "On other Linux distributions, please build clang 8.0.1 from source:"
+#~ msgstr "（在其他Linux发行版下）请从源码构建构建clang 8.0.1："
+
+#~ msgid ""
+#~ "wget https://github.com/llvm/llvm-"
+#~ "project/releases/download/llvmorg-8.0.1/cfe-8.0.1.src.tar.xz\n"
+#~ "tar xvJf cfe-8.0.1.src.tar.xz\n"
+#~ "cd cfe-8.0.1.src\n"
+#~ "mkdir build\n"
+#~ "cd build\n"
+#~ "cmake ..\n"
+#~ "make -j 8\n"
+#~ "sudo make install"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Make sure you have LLVM 8.0.1/10.0.0."
+#~ " Note that Taichi uses a customized"
+#~ " LLVM so the pre-built binaries "
+#~ "from the LLVM official website or "
+#~ "other sources probably doesn't work. "
+#~ "Here we provide LLVM 8.0.1 binaries "
+#~ "customized for Taichi, which may or "
+#~ "may not work depending on your "
+#~ "system environment: `Linux <https://github.com"
+#~ "/yuanming-hu/taichi_assets/releases/download/llvm8/taichi-"
+#~ "llvm-8.0.1-linux-x64.zip>`_, `OS X "
+#~ "<https://github.com/yuanming-"
+#~ "hu/taichi_assets/releases/download/llvm8/taichi-"
+#~ "llvm-8.0.1.zip>`_, `Windows <https://github.com"
+#~ "/yuanming-hu/taichi_assets/releases/download/llvm8/taichi-"
+#~ "llvm-8.0.1-msvc2017.zip>`_."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "wget https://github.com/llvm/llvm-"
+#~ "project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz\n"
+#~ "tar xvJf llvm-8.0.1.src.tar.xz\n"
+#~ "cd llvm-8.0.1.src\n"
+#~ "# For LLVM 10.0.0:\n"
+#~ "#     wget https://github.com/llvm/llvm-"
+#~ "project/releases/download/llvmorg-10.0.0/llvm-10.0.0.src.tar.xz\n"
+#~ ""
+#~ "#     tar xvJf llvm-10.0.0.src.tar.xz\n"
+#~ "#     cd llvm-10.0.0.src\n"
+#~ "mkdir build\n"
+#~ "cd build\n"
+#~ "cmake .. -DLLVM_ENABLE_RTTI:BOOL=ON "
+#~ "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+#~ "-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" "
+#~ "-DLLVM_ENABLE_ASSERTIONS=ON\n"
+#~ "# If you are building on NVIDIA"
+#~ " Jetson TX2, use "
+#~ "-DLLVM_TARGETS_TO_BUILD=\"ARM;NVPTX\"\n"
+#~ "\n"
+#~ "make -j 8\n"
+#~ "sudo make install\n"
+#~ "\n"
+#~ "# Check your LLVM installation\n"
+#~ "llvm-config --version # You should get 8.0.1 or 10.0.0"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "# LLVM 8.0.1 + MSVC 2017\n"
+#~ "cmake .. -G\"Visual Studio 15 2017 "
+#~ "Win64\"  -DLLVM_ENABLE_RTTI:BOOL=ON "
+#~ "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+#~ "-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" "
+#~ "-DLLVM_ENABLE_ASSERTIONS=ON -Thost=x64 "
+#~ "-DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
+#~ "\n"
+#~ "\n"
+#~ "# LLVM 10.0.0 + MSVC 2019\n"
+#~ "cmake .. -G\"Visual Studio 16 2019\" "
+#~ "-A x64  -DLLVM_ENABLE_RTTI:BOOL=ON "
+#~ "-DBUILD_SHARED_LIBS:BOOL=OFF -DCMAKE_BUILD_TYPE=Release "
+#~ "-DLLVM_TARGETS_TO_BUILD=\"X86;NVPTX\" "
+#~ "-DLLVM_ENABLE_ASSERTIONS=ON -Thost=x64 "
+#~ "-DLLVM_BUILD_TESTS:BOOL=OFF -DCMAKE_INSTALL_PREFIX=installed"
+#~ msgstr ""
+
+#~ msgid "Add the following script to your ``~/.bashrc``:"
+#~ msgstr "将下面的脚本添加至你的 ``~/.bashrc`` 配置文件："
+
+#~ msgid ""
+#~ "export TAICHI_REPO_DIR=/home/XXX/taichi  # Path "
+#~ "to your taichi repository\n"
+#~ "export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH\n"
+#~ "export PATH=$TAICHI_REPO_DIR/bin/:$PATH\n"
+#~ "# export PATH=/opt/llvm/bin:$PATH # Uncomment"
+#~ " if your llvm-8 or clang-8 is "
+#~ "in /opt"
+#~ msgstr ""
+#~ "export TAICHI_REPO_DIR=/home/XXX/taichi  # Path "
+#~ "to your taichi repository\n"
+#~ "export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH\n"
+#~ "export PATH=$TAICHI_REPO_DIR/bin/:$PATH\n"
+#~ "# export PATH=/opt/llvm/bin:$PATH # 反注释这行如果你的llvm-8或clang-8在/opt目录下"
+
+#~ msgid "Troubleshooting"
+#~ msgstr "故障排除"
+
+#~ msgid "Run with debug mode to see if there's any illegal memory access"
+#~ msgstr "在调试模式（debug mode）下运行以检查是否有任何的非法内存访问"
+
+#~ msgid ""
+#~ "Disable compiler optimizations to quickly "
+#~ "confirm that the issue is not "
+#~ "cause by optimization"
+#~ msgstr "禁用编译器优化来快速确认问题并非是由优化引起的"
 

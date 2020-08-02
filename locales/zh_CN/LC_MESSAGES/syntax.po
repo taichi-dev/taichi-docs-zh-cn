@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-14 12:50+0800\n"
+"POT-Creation-Date: 2020-08-02 22:06+0800\n"
 "PO-Revision-Date: 2020-05-27 20:21+0800\n"
 "Last-Translator: archibate <17721388340@qq.com>\n"
 "Language: zh_CN\n"
@@ -222,19 +222,42 @@ msgid ""
 "allowed."
 msgstr "目前，所有函数都是强制内联的。因此，不能使用递归。"
 
-#: ../../syntax.rst:108
+#: ../../syntax.rst:109
 msgid "Function arguments are passed by value."
 msgstr "函数的参数是以值传递的。"
 
 #: ../../syntax.rst:113
+msgid ""
+"Unlike functions, **kernels do not support vectors or matrices as "
+"arguments**:"
+msgstr ""
+
+#: ../../syntax.rst:115
+msgid ""
+"@ti.func\n"
+"def sdf(u):  # functions support matrices and vectors as arguments. No "
+"type-hints needed.\n"
+"    return u.norm() - 1\n"
+"\n"
+"@ti.kernel\n"
+"def render(d_x: ti.f32, d_y: ti.f32):  # kernels do not support "
+"vector/matrix arguments yet. We have to use a workaround.\n"
+"    d = ti.Vector([d_x, d_y])\n"
+"    p = ti.Vector([0.0, 0.0])\n"
+"    t = sdf(p)\n"
+"    p += d * t\n"
+"    ..."
+msgstr ""
+
+#: ../../syntax.rst:132
 msgid "Scalar arithmetics"
 msgstr "标量算术"
 
-#: ../../syntax.rst:114
+#: ../../syntax.rst:133
 msgid "Supported scalar functions:"
 msgstr "Taichi 支持的标量函数："
 
-#: ../../syntax.rst:140
+#: ../../syntax.rst:159
 msgid ""
 "Python 3 distinguishes ``/`` (true division) and ``//`` (floor division)."
 " For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = 0``, ``4.2"
@@ -243,21 +266,21 @@ msgstr ""
 "Python 3 中 ``/`` （浮点数除法）和 ``//`` （整数除法）是区分开来的。例如，``1.0 / 2.0 = 0.5``，``1 "
 "/ 2 = 0.5``，``1 // 2 = 0``，``4.2 // 2 = 2``。Taichi 也遵循了这个设计："
 
-#: ../../syntax.rst:143
+#: ../../syntax.rst:162
 #, fuzzy
 msgid ""
 "**true divisions** on integral types will first cast their operands to "
 "the default float point type."
 msgstr "*浮点数除法 (true divisions)* 用在整数型上会首先将它们的操作数投射到默认的浮点数型。"
 
-#: ../../syntax.rst:144
+#: ../../syntax.rst:163
 #, fuzzy
 msgid ""
 "**floor divisions** on float-point types will first cast their operands "
 "to the default integer type."
 msgstr "*整数除法 (floor divisions)* 用在浮点数型上会首先将它们的操作数投射到默认的整数型。"
 
-#: ../../syntax.rst:146
+#: ../../syntax.rst:165
 msgid ""
 "To avoid such implicit casting, you can manually cast your operands to "
 "desired types, using ``ti.cast``. See :ref:`default_precisions` for more "
@@ -266,13 +289,13 @@ msgstr ""
 "为避免这样的隐式转换，你可以手动使用 ``ti.cast`` 将你的操作数转换为你需要的类型。参见 "
 ":ref:`default_precisions` 获取数字类型的更多细节。"
 
-#: ../../syntax.rst:151
+#: ../../syntax.rst:170
 msgid ""
 "When these scalar functions are applied on :ref:`matrix` and "
 ":ref:`vector`, they are applied in an element-wise manner. For example:"
 msgstr "当这些标量函数被作用在 :ref:`matrix` 或 :ref:`vector` 上时，它们会被逐个作用到所有元素，例如："
 
-#: ../../syntax.rst:154
+#: ../../syntax.rst:173
 msgid ""
 "B = ti.Matrix([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])\n"
 "C = ti.Matrix([[3.0, 4.0, 5.0], [6.0, 7.0, 8.0]])\n"
@@ -306,88 +329,6 @@ msgid ""
 "for i in ti.static(range(2)):\n"
 "    for j in ti.static(range(3)):\n"
 "        A[i, j] += B[i, j]"
-msgstr ""
-
-#: ../../syntax.rst:190
-msgid "Debugging"
-msgstr "调试"
-
-#: ../../syntax.rst:192
-msgid "Debug your program with ``print()`` in Taichi-scope. For example:"
-msgstr "在 Taichi 作用域中使用 ``print(x)`` 调试你的程序。例如："
-
-#: ../../syntax.rst:194
-msgid ""
-"@ti.kernel\n"
-"def inside_taichi_scope():\n"
-"    x = 233\n"
-"    print('hello', x)\n"
-"    #=> hello 233\n"
-"\n"
-"    m = ti.Matrix([[2, 3, 4], [5, 6, 7]])\n"
-"    print('m is', m)\n"
-"    #=> m is [[2, 3, 4], [5, 6, 7]]\n"
-"\n"
-"    v = ti.Vector([3, 4])\n"
-"    print('v is', v)\n"
-"    #=> v is [3, 4]"
-msgstr ""
-"@ti.kernel\n"
-"def inside_taichi_scope():\n"
-"    x = 233\n"
-"    print('hello', x)\n"
-"    #=> hello 233\n"
-"\n"
-"    m = ti.Matrix([[2, 3, 4], [5, 6, 7]])\n"
-"    print('m is', m)\n"
-"    #=> m is [[2, 3, 4], [5, 6, 7]]\n"
-"\n"
-"    v = ti.Vector([3, 4])\n"
-"    print('v is', v)\n"
-"    #=> v is [3, 4]"
-
-#: ../../syntax.rst:212
-msgid "For now, print is only supported on CPU, CUDA and OpenGL backends."
-msgstr ""
-
-#: ../../syntax.rst:214
-msgid ""
-"For the CUDA backend, the printed result won't shows up until "
-"``ti.sync()``:"
-msgstr ""
-
-#: ../../syntax.rst:216
-msgid ""
-"import taichi as ti\n"
-"ti.init(arch=ti.cuda)\n"
-"\n"
-"@ti.kernel\n"
-"def kern():\n"
-"    print('inside kernel')\n"
-"\n"
-"print('before kernel')\n"
-"kern()\n"
-"print('after kernel')\n"
-"ti.sync()\n"
-"print('after sync')"
-msgstr ""
-
-#: ../../syntax.rst:231
-msgid "obtains:"
-msgstr ""
-
-#: ../../syntax.rst:233
-msgid ""
-"before kernel\n"
-"after kernel\n"
-"inside kernel\n"
-"after"
-msgstr ""
-
-#: ../../syntax.rst:240
-msgid ""
-"Also note that host access or program end will also implicitly invoke for"
-" ``ti.sync()``."
 msgstr ""
 
 #~ msgid ""
@@ -596,4 +537,79 @@ msgstr ""
 #~ "for i in ti.static(range(2)):\n"
 #~ "    for j in ti.static(range(3)):\n"
 #~ "        A[i, j] = ti.sin(B[i, j])"
+
+#~ msgid "Debugging"
+#~ msgstr "调试"
+
+#~ msgid "Debug your program with ``print()`` in Taichi-scope. For example:"
+#~ msgstr "在 Taichi 作用域中使用 ``print(x)`` 调试你的程序。例如："
+
+#~ msgid ""
+#~ "@ti.kernel\n"
+#~ "def inside_taichi_scope():\n"
+#~ "    x = 233\n"
+#~ "    print('hello', x)\n"
+#~ "    #=> hello 233\n"
+#~ "\n"
+#~ "    m = ti.Matrix([[2, 3, 4], [5, 6, 7]])\n"
+#~ "    print('m is', m)\n"
+#~ "    #=> m is [[2, 3, 4], [5, 6, 7]]\n"
+#~ "\n"
+#~ "    v = ti.Vector([3, 4])\n"
+#~ "    print('v is', v)\n"
+#~ "    #=> v is [3, 4]"
+#~ msgstr ""
+#~ "@ti.kernel\n"
+#~ "def inside_taichi_scope():\n"
+#~ "    x = 233\n"
+#~ "    print('hello', x)\n"
+#~ "    #=> hello 233\n"
+#~ "\n"
+#~ "    m = ti.Matrix([[2, 3, 4], [5, 6, 7]])\n"
+#~ "    print('m is', m)\n"
+#~ "    #=> m is [[2, 3, 4], [5, 6, 7]]\n"
+#~ "\n"
+#~ "    v = ti.Vector([3, 4])\n"
+#~ "    print('v is', v)\n"
+#~ "    #=> v is [3, 4]"
+
+#~ msgid "For now, print is only supported on CPU, CUDA and OpenGL backends."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For the CUDA backend, the printed "
+#~ "result won't shows up until "
+#~ "``ti.sync()``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "import taichi as ti\n"
+#~ "ti.init(arch=ti.cuda)\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def kern():\n"
+#~ "    print('inside kernel')\n"
+#~ "\n"
+#~ "print('before kernel')\n"
+#~ "kern()\n"
+#~ "print('after kernel')\n"
+#~ "ti.sync()\n"
+#~ "print('after sync')"
+#~ msgstr ""
+
+#~ msgid "obtains:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "before kernel\n"
+#~ "after kernel\n"
+#~ "inside kernel\n"
+#~ "after"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Also note that host access or "
+#~ "program end will also implicitly invoke"
+#~ " for ``ti.sync()``."
+#~ msgstr ""
 
