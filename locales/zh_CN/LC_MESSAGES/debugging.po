@@ -175,7 +175,7 @@ msgid ""
 "parameter**. Neither f-string nor formatted string should be used. For "
 "example:"
 msgstr ""
-"请注意，Taichi范围中的 ``print`` 只能接收 **逗号分隔参数**。不应使用 f 字"
+"请注意，Taichi 作用域中的 ``print`` 只能接收 **逗号分隔参数**。不应使用 f 字"
 "符串或格式化字符串。例如："
 
 #: ../../debugging.rst:81
@@ -205,8 +205,8 @@ msgstr ""
 "def foo():\n"
 "    a[0] = 1.0\n"
 "    print('a[0] = ', a[0]) # 正确\n"
-"    print(f'a[0] = {a[0]}') # 错误，f-string 不被支持\n"
-"    print(\"a[0] = %f\" % a[0]) # 错误， 格式化字符串不被支持\n"
+"    print(f'a[0] = {a[0]}') # 错误，不支持 f-string \n"
+"    print(\"a[0] = %f\" % a[0]) # 错误， 不支持格式化字符串\n"
 "\n"
 "foo()"
 
@@ -277,7 +277,7 @@ msgid ""
 "assertion condition failed, a ``RuntimeError`` will be raised to "
 "indicate the error."
 msgstr ""
-"程序员可以在Taichi范围内使用 ``assert`` 语句。当断言条件失败时， "
+"程序员可以在 Taichi 作用域内使用 ``assert`` 语句。当断言条件失败时， "
 "``RuntimeError`` 将被触发以指示错误。"
 
 #: ../../debugging.rst:133
@@ -286,8 +286,8 @@ msgid ""
 "backend**. For performance reason, ``assert`` only works when ``debug`` "
 "mode is on, For example:"
 msgstr ""
-"若要使 ``assert`` 正常工作，首先请确保使用 **CPU 后端** 。出于性能原因， "
-"``assert`` 仅在 ``debug`` 模式处于打开状态时才有效，例如："
+"若要使 ``assert`` 正常工作，首先请确保使用 **CPU 后端** 运行程序。其次出于性能方面的考量， "
+"``assert`` 仅在 ``debug`` 模式开启时有效，例如："
 
 #: ../../debugging.rst:136
 msgid ""
@@ -316,8 +316,8 @@ msgid ""
 "When you are done with debugging, simply set ``debug=False``. Now "
 "``assert`` will be ignored and there will be no runtime overhead."
 msgstr ""
-"完成调试后，只需设置 ``debug=False`` 。现在， ``assert`` 将被忽略，并且没"
-"有运行时开销。"
+"完成调试后，只需设置 ``debug=False`` 。此时， ``assert`` 将被忽略，并且不会产生"
+"运行时开销。"
 
 #: ../../debugging.rst:154
 msgid "Compile-time ``ti.static_assert``"
@@ -334,7 +334,7 @@ msgstr ""
 "与 ``ti.static_print`` 一样，我们还提供了 ``assert`` 的静态版本： ``ti."
 "static_assert`` 。对数据类型、维度和形状进行断言可能很有用。无论是否指定 "
 "``debug=True`` ，它都有效。当断言失败时，它将引发一个 "
-"``AssertionError`` ，就像Python范围的 ``assert`` 一样。"
+"``AssertionError`` ，就像 Python 作用域中的 ``assert`` 一样。"
 
 #: ../../debugging.rst:163
 msgid "For example:"
@@ -360,7 +360,7 @@ msgstr ""
 
 #: ../../debugging.rst:176
 msgid "Pretty Taichi-scope traceback"
-msgstr "美化 Taichi 作用域的栈回溯"
+msgstr "优雅的 Taichi 作用域的栈回溯"
 
 #: ../../debugging.rst:178
 msgid ""
@@ -370,7 +370,7 @@ msgid ""
 "For example:"
 msgstr ""
 "我们都知道，Python 提供了一个有用的堆栈回溯系统，它可以帮你轻松找到问题。"
-"但有时 **Taichi  作用域** 的堆栈回溯可能极其复杂且难以阅读。例如："
+"但有时 **Taichi 作用域** 的堆栈回溯(stack traceback)日志可能极其复杂且难以阅读。例如："
 
 #: ../../debugging.rst:182
 msgid ""
@@ -526,8 +526,8 @@ msgid ""
 "``__call__``'s. These are the Taichi internal stack frames. They have "
 "almost no benefit for end-users but make the traceback hard to read."
 msgstr ""
-"你可能已经觉得看 ``decorated`` 和 ``__call__`` 大脑快炸了 。这些是"
-"Taichi内部堆栈帧。它们对普通用户几乎没有好处，而且使回溯很难阅读。"
+"分析诸如 ``decorated`` 和 ``__call__`` 之类晦涩的信息也许能让你的大脑过载着火。其实这些是"
+"Taichi 内部堆栈帧。直接暴露它们对普通用户几乎没有好处，并且会使回溯日志很难阅读。"
 
 #: ../../debugging.rst:250
 msgid ""
@@ -535,8 +535,8 @@ msgid ""
 "*hooks* on the exception handler, and make the stack traceback from "
 "Taichi-scope easier to read and intuitive. e.g.:"
 msgstr ""
-"为此，我们可能希望使用 ``ti.init(excepthook=True)`` ，这在异常处理程序上 "
-"*挂钩* ，使 Taichi 作用域中的堆栈回溯更易于阅读和直观。例如："
+"为此，我们可能希望使用 ``ti.init(excepthook=True)`` ，这会与异常处理程序 "
+"*挂钩(hook)* ，从而使 Taichi 作用域中的堆栈回溯日志更直观且易于阅读。例如："
 
 #: ../../debugging.rst:255
 msgid ""
@@ -664,8 +664,8 @@ msgid ""
 "from traceback. What's more, although not visible in the doc, the output "
 "is **colorful**!"
 msgstr ""
-"看到了吧？我们的异常挂钩已经从回溯中删除了一些无用的 Taichi 内部框架。更重要的"
-"是，虽然在文档中不可见，但输出是 **彩色** 的！"
+"看到了吧？我们的异常挂钩(exception hook)已经从回溯中删除了一些无用的 Taichi 内部堆栈帧。更重要的"
+"是，虽然在文档中不可见，但这些输出都是 **彩色** 的！"
 
 #: ../../debugging.rst:325
 msgid ""
@@ -699,7 +699,7 @@ msgid ""
 "a different behavior compared with that in Python-scope, especially when "
 "it comes to types."
 msgstr ""
-"Taichi范围中的 Python 代码被翻译成静态类型语言以实现高性能。这意味着"
+"Taichi 作用域中的 Python 代码被翻译成静态类型语言以实现高性能。这意味着"
 "Taichi 作用域中的代码与 Python 作用域中的代码可以有不同的行为，尤其是在类型方"
 "面。"
 
@@ -707,7 +707,7 @@ msgstr ""
 msgid ""
 "The type of a variable is simply **determined at its initialization and "
 "never changes later**."
-msgstr "变量的类型只是 **在初始化时确定，以后永远不会更改** 。"
+msgstr "变量的类型只 **在初始化时确定，并且之后不会做更改** 。"
 
 #: ../../debugging.rst:342
 msgid ""
