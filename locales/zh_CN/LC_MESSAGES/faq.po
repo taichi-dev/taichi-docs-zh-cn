@@ -24,7 +24,7 @@ msgstr "常见问题"
 
 #: ../../faq.rst:5
 msgid "**Q:** Installing Taichi with ``pip``, complains ``package not found``."
-msgstr "**Q:** 用 ``pip`` 安装Taichi，报错 ``package not found`` 。"
+msgstr "**Q:** 用 ``pip`` 安装 Taichi 时，报错 ``package not found`` 。"
 
 #: ../../faq.rst:7
 msgid ""
@@ -96,15 +96,15 @@ msgid ""
 "**Q:** Shall we add some handy functions like ``ti.smoothstep`` or ``ti."
 "vec3``?"
 msgstr ""
-"**Q:** 我们该添加一些像 ``ti.smoothstep`` 或 ``ti.vec3`` 的方便函数吗 ？"
+"**Q:** 我们可以添加一些诸如 ``ti.smoothstep`` 或 ``ti.vec3`` 之类的便捷函数吗 ？"
 
 #: ../../faq.rst:33
 msgid ""
 "**A:** No, but we provide them in an extension library `Taichi GLSL <https://"
 "taichi-glsl.readthedocs.io>`, install it using:"
 msgstr ""
-"**A:** 不，但我们在扩展库 `Taichi GLSL <https://taichi-glsl.readthedocs."
-"io>`_ 中提供，请使用以下命令安装："
+"**A:** 不必要，因为我们在扩展库 `Taichi GLSL <https://taichi-glsl.readthedocs."
+"io>`_ 中已经进行了提供，请使用以下命令安装："
 
 #: ../../faq.rst:35
 msgid "python -m pip install taichi_glsl"
@@ -113,15 +113,15 @@ msgstr "python -m pip install taichi_glsl"
 #: ../../faq.rst:39
 msgid ""
 "**Q:** How can I **render 3D results** without writing a ray tracer myself?"
-msgstr "**Q:** 如果不自己编写光线跟踪器，如何 **渲染 3D 结果** ？"
+msgstr "**Q:** 如何不用自己编写光线跟踪，就能 **渲染出 3D 结果** ？"
 
 #: ../../faq.rst:42
 msgid ""
 "**A:** You may export it with :ref:`export_ply_files` so that you could view "
 "it in Houdini or Blender."
 msgstr ""
-"**A:** 你可以使用 :ref:`export_ply_files` 导出它，以便在Houdini或Blender中查"
-"看。"
+"**A:** 你可以使用 :ref:`export_ply_files` 导出模型，接着就可以在 Houdini 或 Blender 中查"
+"看了。"
 
 #: ../../faq.rst:42
 msgid ""
@@ -140,7 +140,7 @@ msgid ""
 "**A:** What you want may be the ``dynamic`` SNode, a kind of sparse tensor, "
 "see :ref:`dynamic`."
 msgstr ""
-"**A:** 你想要的可能是 ``dynamic`` SNode，一种稀疏的张量，见 :ref:`dynamic`。"
+"**A:** 你想要的可能是 ``dynamic`` SNode，这是一种稀疏张量，详见 :ref:`dynamic`。"
 
 #: ../../faq.rst:47
 msgid ""
@@ -149,15 +149,16 @@ msgid ""
 "could be slower than the latter solution, due to the cost of maintaining the "
 "sparsity information."
 msgstr ""
-"或者简单地分配足够大的密集张量，再分配一个 0-D 张量 ``tensor_len[None]`` 用于"
-"长度记录。但事实上，因为维护稀疏信息的成本， ``dynamic`` SNode 可能比后者慢。"
+"或者简单地分配足够大的稠密张量，再分配一个 0D 张量 ``tensor_len[None]`` 用于"
+"记录长度。不过事实上，由于维护稀疏信息的成本开销， ``dynamic`` SNode 可能比后者慢。"
+``
 
 #: ../../faq.rst:50
 msgid ""
 "**Q:** Can a user iterate over irregular topologies (e.g., graphs or "
 "tetrahedral meshes) instead of regular grids?"
 msgstr ""
-"**Q:** 用户能否在不规则拓扑（例如图形或四面体网格）而不是常规网格上迭代？"
+"**Q:** 用户能否在不规则拓扑（例如曲线或四面体网格）而不是常规网格上迭代？"
 
 #: ../../faq.rst:52
 msgid ""
@@ -165,8 +166,8 @@ msgid ""
 "You can still iterate over them using ``for i in x`` or ``for i in "
 "range(n)``."
 msgstr ""
-"**A:** 这些结构必须使用Taichi中的 1D 数组表示。你仍可以使用 ``for i in x`` "
-"或 ``for i in range(n)`` 中迭代它们。"
+"**A:** 这些结构必须使用 Taichi 中的 1D 数组表示。接着你就可以通过 ``for i in x`` "
+"或 ``for i in range(n)`` 迭代遍历它们了。"
 
 #: ../../faq.rst:53
 msgid ""
@@ -174,5 +175,5 @@ msgid ""
 "to optimize it. You can still tweak the data layout to get different runtime "
 "cache behaviors and performance numbers."
 msgstr ""
-"但是，在编译时，Taichi编译器几乎无法优化。但你仍然可以调整数据布局，以获得不"
+"但是，在编译时，Taichi 编译器几乎无法对其优化。不过你仍可以通过调整数据布局，获得不"
 "同的运行缓存行为和性能数据。"
