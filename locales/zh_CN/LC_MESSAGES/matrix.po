@@ -65,11 +65,11 @@ msgstr ""
 
 #: ../../matrix.rst:13
 msgid "``any(A)`` (Taichi-scope only)"
-msgstr "``any(A)``（仅Taichi范围）"
+msgstr "``any(A)``（仅 Taichi 作用域）"
 
 #: ../../matrix.rst:14
 msgid "``all(A)`` (Taichi-scope only)"
-msgstr "``all(A)``（仅Taichi范围）"
+msgstr "``all(A)``（仅 Taichi 作用域）"
 
 #: ../../matrix.rst:16
 msgid "TODO: doc here better like Vector. WIP"
@@ -345,7 +345,7 @@ msgid ""
 msgstr ""
 "a = ti.Matrix([[2, 3], [4, 5]])\n"
 "b = a.transpose()\n"
-"# Now b = ti.Matrix([[2, 4], [3, 5]])"
+"# 现在 b = ti.Matrix([[2, 4], [3, 5]])"
 
 #: ../../matrix.rst:158
 msgid ""
@@ -354,7 +354,7 @@ msgstr "``a.transpose()`` 不会影响 ``a`` 中的数据，它只是返回结�
 
 #: ../../matrix.rst:164
 msgid "(scalar) the trace of matrix ``a``."
-msgstr "（标量） ``a`` 矩阵的痕迹。"
+msgstr "（标量） ``a`` 矩阵的迹。"
 
 #: ../../matrix.rst:166
 msgid "The return value can be computed as ``a[0, 0] + a[1, 1] + ...``."
@@ -362,19 +362,19 @@ msgstr "返回值可以计算为 ``a[0, 0] + a[1, 1] + ...`` 。"
 
 #: ../../matrix.rst:172
 msgid "(scalar) the determinant of matrix ``a``."
-msgstr "（标量） ``a`` 矩阵的决定因素。"
+msgstr "（标量） ``a`` 矩阵的行列式。"
 
 #: ../../matrix.rst:176 ../../matrix.rst:188
 msgid "The matrix size of matrix must be 1x1, 2x2, 3x3 or 4x4 for now."
-msgstr "矩阵的矩阵大小现在必须为 1x1、2x2、3x3 或 4x4。"
+msgstr "目前用于此函数的矩阵大小必须为 1x1、2x2、3x3 或 4x4。"
 
 #: ../../matrix.rst:178 ../../matrix.rst:190
 msgid "This function only works in Taichi-scope for now."
-msgstr "此功能目前仅在Taichi范围内有效。"
+msgstr "此函数目前仅在 Taichi 作用域内有效。"
 
 #: ../../matrix.rst:184
 msgid "(Matrix) the inverse of matrix ``a``."
-msgstr "（矩阵） ``a`` 的逆反矩阵。"
+msgstr "（矩阵） ``a`` 的逆矩阵。"
 
 #~ msgid "``ti.transposed(A)`` or simply ``A.T()``"
 #~ msgstr "``ti.transposed(A)`` 或简单的 ``A.T()``"
