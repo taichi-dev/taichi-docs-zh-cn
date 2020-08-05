@@ -83,7 +83,7 @@ msgstr "Taichi中的矩阵有两种形式："
 msgid ""
 "as a temporary local variable. An ``n by m`` matrix consists of ``n * m`` "
 "scalar values."
-msgstr "作为临时本地变量。一个由 ``n*m`` 个标量构成的 ``n×m`` 阶矩阵。"
+msgstr "作为临时局部变量。一个由 ``n*m`` 个标量构成的 ``n×m`` 阶矩阵。"
 
 #: ../../matrix.rst:21
 msgid ""
@@ -119,11 +119,11 @@ msgstr "（数据类型）元素的数据类型"
 
 #: ../../matrix.rst:34
 msgid "(optional, scalar or tuple) shape the tensor of vectors, see :ref:`tensor`"
-msgstr "（可选、标量或元组）向量张量的形状，见 :ref:`tensor`"
+msgstr "（可选，标量或元组）向量张量的形状，见 :ref:`tensor`"
 
 #: ../../matrix.rst:35
 msgid "(optional, scalar or tuple) see :ref:`offset`"
-msgstr "（可选、标量或元组）请参见 ： ref:`offset`"
+msgstr "（可选，标量或元组）请参见 ： ref:`offset`"
 
 #: ../../matrix.rst:37
 msgid "For example, this creates a 5x4 tensor of 3x3 matrices: ::"
@@ -170,7 +170,7 @@ msgid ""
 "For example, this creates a 2x3 matrix with components (2, 3, 4) in the first "
 "row and (5, 6, 7) in the second row: ::"
 msgstr ""
-"例如，这将创建一个 2x3 矩阵，在第一行中具有组件 (2, 3, 4) ，在第二行 (5, 6, 7) "
+"例如，下述将创建一个 2x3 的矩阵，第一行中的分量为 (2, 3, 4) ，第二行的为 (5, 6, 7) "
 "中： ::"
 
 #: ../../matrix.rst:61
@@ -197,7 +197,7 @@ msgstr "（向量）组成第三行（列）元素的向量"
 msgid ""
 "For example, this creates a 3x3 matrix by concactinating vectors into rows (or "
 "columns): ::"
-msgstr "比如，以下代码通过将向量连接作为一个3x3矩阵的每一行（列）： ::"
+msgstr "例如，以下代码创建了一个 3x3 矩阵，矩阵的行（列）是由向量拼接构成的： ::"
 
 #: ../../matrix.rst:75
 msgid ""
@@ -215,18 +215,18 @@ msgid ""
 "# lists can be used instead of vectors\n"
 "a = ti.Matrix.rows([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])"
 msgstr ""
-"# Taichi-scope\n"
+"# Taichi 作用域\n"
 "v0 = ti.Vector([1.0, 2.0, 3.0])\n"
 "v1 = ti.Vector([4.0, 5.0, 6.0])\n"
 "v2 = ti.Vector([7.0, 8.0, 9.0])\n"
 "\n"
-"# to specify data in rows\n"
+"# 指定行中的数据\n"
 "a = ti.Matrix.rows([v0, v1, v2])\n"
 "\n"
-"# to specify data in columns instead\n"
+"# 指定列中的数据\n"
 "a = ti.Matrix.cols([v0, v1, v2])\n"
 "\n"
-"# lists can be used instead of vectors\n"
+"# 可以用向量代替参数中的列表\n"
 "a = ti.Matrix.rows([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])"
 
 #: ../../matrix.rst:91
@@ -271,7 +271,7 @@ msgid ""
 msgstr ""
 "x = a[6, 3][0, 0]\n"
 "\n"
-"# or\n"
+"# 或者\n"
 "mat = a[6, 3]\n"
 "x = mat[0, 0]"
 
@@ -285,19 +285,19 @@ msgstr "访问矩阵形式张量中的标量元素时， **必须** 使用两对
 msgid ""
 "The indices in the first pair of brackets locate the matrix inside the tensor "
 "of matrices;"
-msgstr "第一对方括号中的下标找到张量中的矩阵;"
+msgstr "第一对方括号中的索引定位张量中的矩阵;"
 
 #: ../../matrix.rst:117
 msgid ""
 "The indices in the second pair of brackets locate the scalar element inside the "
 "matrix."
-msgstr "第二对方括号中的下标找到矩阵中的标量元素。"
+msgstr "第二对方括号中的索引定位矩阵中的标量元素。"
 
 #: ../../matrix.rst:119
 msgid ""
 "For 0-D tensors of matrices, indices in the first pair of brackets should be "
 "``[None]``."
-msgstr "对于0维的矩阵形式的张量，第一对方括号中的下标应该为 ``[None]`` 。"
+msgstr "对于0维的矩阵形式的张量，第一对方括号中的索引应该为 ``[None]`` 。"
 
 #: ../../matrix.rst:128 ../../matrix.rst:147 ../../matrix.rst:163
 #: ../../matrix.rst:171 ../../matrix.rst:183
