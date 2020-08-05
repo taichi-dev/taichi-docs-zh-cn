@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../faq.rst:9
 msgid "**Q:** Do we have something like ``ti.pi``?"
-msgstr "**Q:** 我们有像 ``ti.pi`` 之类的工具吗？"
+msgstr "**Q:** 我们有提供像 ``ti.pi`` 之类的常量吗？"
 
 #: ../../faq.rst:11
 msgid ""
@@ -44,13 +44,13 @@ msgid ""
 "cost."
 msgstr ""
 "**A:** 没有，但你可以使用 ``math.pi`` 或 ``numpy.pi`` 代替。Taichi能够在 JIT "
-"期间处理这些常量，因此内核无需产生运行时成本。"
+"期间处理这些常量，因此内核不会承担运行时成本。"
 
 #: ../../faq.rst:13
 msgid ""
 "**Q:** How do I **force** an outermost loop to be serial, i.e. **not "
 "parallelized**?"
-msgstr "**Q:** 如何 **强制** 序列化最外层的循环，即 **不并行化**？"
+msgstr "**Q:** 如何 **强制** 串行执行最外层的循环，即 **不并行化**？"
 
 #: ../../faq.rst:15
 msgid "**A:** Try this trick:"
@@ -70,7 +70,7 @@ msgstr ""
 msgid ""
 "**Q:** What's the most convinent way to load images / textures into Taichi "
 "tensors?"
-msgstr "**Q:** 将图像 / 纹理加载到Taichi张量中最方便的方式是什么？"
+msgstr "**Q:** 怎样才能最方便地将图像/纹理加载到 Taichi 张量中？"
 
 #: ../../faq.rst:25
 msgid "**A:** Simply use ``tensor.from_numpy(ti.imread('filename.png'))``."
@@ -88,7 +88,7 @@ msgid ""
 "**A:** Yes, as long as that *package* provides an interface with ``numpy``, "
 "see :ref:`other_python_packages`."
 msgstr ""
-"**A:** 可以，只要那个 *包* 提供一个 ``numpy`` 接口，请参阅 ：ref： ref:"
+"**A:** 可以，只要那个包提供 ``numpy`` 接口，请参阅 :ref:"
 "`other_python_packages` 。"
 
 #: ../../faq.rst:31
@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../../faq.rst:44
 msgid "**Q:** How do I declare a tensor with **dynamic length**?"
-msgstr "**Q:** 如何声明具有**动态长度** 的张量？"
+msgstr "**Q:** 如何声明具有 **动态长度** 的张量？"
 
 #: ../../faq.rst:48
 msgid ""
