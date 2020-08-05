@@ -3,54 +3,58 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-08-03 18:09+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: ../../faq.rst:2
 msgid "Frequently asked questions"
-msgstr ""
+msgstr "常见问题"
 
 #: ../../faq.rst:5
 msgid "**Q:** Installing Taichi with ``pip``, complains ``package not found``."
-msgstr ""
+msgstr "**Q:** 用 ``pip`` 安装 Taichi 时，报错 ``package not found`` 。"
 
 #: ../../faq.rst:7
 msgid ""
-"**A:** Is your Python version >= 3.6, and 64-bit? See "
-":ref:`troubleshooting`."
+"**A:** Is your Python version >= 3.6, and 64-bit? See :ref:`troubleshooting`."
 msgstr ""
+"**A:** 你的 Python 版本是否 >= 3.6 并且是 64 位？请参阅 :ref:"
+"`troubleshooting` 。"
 
 #: ../../faq.rst:9
 msgid "**Q:** Do we have something like ``ti.pi``?"
-msgstr ""
+msgstr "**Q:** 我们有提供像 ``ti.pi`` 之类的常量吗？"
 
 #: ../../faq.rst:11
 msgid ""
-"**A:** No, but you may use ``math.pi`` or ``numpy.pi`` instead. Taichi is"
-" able to bake in these constants during JIT, so your kernels incur no "
-"runtime cost."
+"**A:** No, but you may use ``math.pi`` or ``numpy.pi`` instead. Taichi is "
+"able to bake in these constants during JIT, so your kernels incur no runtime "
+"cost."
 msgstr ""
+"**A:** 没有，但你可以使用 ``math.pi`` 或 ``numpy.pi`` 代替。Taichi能够在 JIT "
+"期间处理这些常量，因此内核不会承担运行时成本。"
 
 #: ../../faq.rst:13
 msgid ""
 "**Q:** How do I **force** an outermost loop to be serial, i.e. **not "
 "parallelized**?"
-msgstr ""
+msgstr "**Q:** 如何 **强制** 串行执行最外层的循环，即 **不并行化**？"
 
 #: ../../faq.rst:15
 msgid "**A:** Try this trick:"
-msgstr ""
+msgstr "**A:** 试试这个技巧："
 
 #: ../../faq.rst:17
 msgid ""
@@ -58,154 +62,118 @@ msgid ""
 "    for i in range(100):  # This loop will not be parallelized\n"
 "        ..."
 msgstr ""
+"for _ in range(1):  # 我是最外层循化! \n"
+"    for i in range(100):  # 这一层循化不会被并行化 \n"
+"        ..."
 
 #: ../../faq.rst:23
 msgid ""
-"**Q:** What's the most convinent way to load images / textures into "
-"Taichi tensors?"
-msgstr ""
+"**Q:** What's the most convinent way to load images / textures into Taichi "
+"tensors?"
+msgstr "**Q:** 怎样才能最方便地将图像/纹理加载到 Taichi 张量中？"
 
 #: ../../faq.rst:25
 msgid "**A:** Simply use ``tensor.from_numpy(ti.imread('filename.png'))``."
 msgstr ""
+"**A:** 只需使用 ``tensor.from_numpy(ti.imread('filename.png'))`` 即可。"
 
 #: ../../faq.rst:27
 msgid ""
 "**Q:** Can Taichi co-operate with **other Python packages** like "
 "``matplotlib``?"
-msgstr ""
+msgstr "**Q:** Taichi能否像 ``matplotlib`` 那样和 **其他 Python 包** 合作呢？"
 
 #: ../../faq.rst:29
 msgid ""
-"**A:** Yes, as long as that *package* provides an interface with "
-"``numpy``, see :ref:`other_python_packages`."
+"**A:** Yes, as long as that *package* provides an interface with ``numpy``, "
+"see :ref:`other_python_packages`."
 msgstr ""
+"**A:** 可以，只要那个包提供 ``numpy`` 接口，请参阅 :ref:"
+"`other_python_packages` 。"
 
 #: ../../faq.rst:31
 msgid ""
-"**Q:** Shall we add some handy functions like ``ti.smoothstep`` or "
-"``ti.vec3``?"
+"**Q:** Shall we add some handy functions like ``ti.smoothstep`` or ``ti."
+"vec3``?"
 msgstr ""
+"**Q:** 我们可以添加一些诸如 ``ti.smoothstep`` 或 ``ti.vec3`` 之类的便捷函数吗 ？"
 
 #: ../../faq.rst:33
 msgid ""
-"**A:** No, but we provide them in an extension library `Taichi GLSL "
-"<https://taichi-glsl.readthedocs.io>`, install it using:"
+"**A:** No, but we provide them in an extension library `Taichi GLSL <https://"
+"taichi-glsl.readthedocs.io>`, install it using:"
 msgstr ""
+"**A:** 不必要，因为我们在扩展库 `Taichi GLSL <https://taichi-glsl.readthedocs."
+"io>`_ 中已经进行了提供，请使用以下命令安装："
 
 #: ../../faq.rst:35
 msgid "python -m pip install taichi_glsl"
-msgstr ""
+msgstr "python -m pip install taichi_glsl"
 
 #: ../../faq.rst:39
 msgid ""
-"**Q:** How can I **render 3D results** without writing a ray tracer "
-"myself?"
-msgstr ""
+"**Q:** How can I **render 3D results** without writing a ray tracer myself?"
+msgstr "**Q:** 如何不用自己编写光线跟踪，就能 **渲染出 3D 结果** ？"
 
 #: ../../faq.rst:42
 msgid ""
-"**A:** You may export it with :ref:`export_ply_files` so that you could "
-"view it in Houdini or Blender."
+"**A:** You may export it with :ref:`export_ply_files` so that you could view "
+"it in Houdini or Blender."
 msgstr ""
+"**A:** 你可以使用 :ref:`export_ply_files` 导出模型，接着就可以在 Houdini 或 Blender 中查"
+"看了。"
 
 #: ../../faq.rst:42
 msgid ""
-"Or make use the extension library `Taichi THREE <https://github.com"
-"/taichi-dev/taichi_glsl>` to render images and update to GUI in real-"
-"time."
+"Or make use the extension library `Taichi THREE <https://github.com/taichi-"
+"dev/taichi_glsl>` to render images and update to GUI in real-time."
 msgstr ""
+"或者使用扩展库 `Taichi THREE <https://github.com/taichi-dev/taichi_glsl>`_ 来"
+"渲染图像并实时更新到 GUI。"
 
 #: ../../faq.rst:44
 msgid "**Q:** How do I declare a tensor with **dynamic length**?"
-msgstr ""
+msgstr "**Q:** 如何声明具有 **动态长度** 的张量？"
 
 #: ../../faq.rst:48
 msgid ""
-"**A:** What you want may be the ``dynamic`` SNode, a kind of sparse "
-"tensor, see :ref:`dynamic`."
+"**A:** What you want may be the ``dynamic`` SNode, a kind of sparse tensor, "
+"see :ref:`dynamic`."
 msgstr ""
+"**A:** 你想要的可能是 ``dynamic`` SNode，这是一种稀疏张量，详见 :ref:`dynamic`。"
 
 #: ../../faq.rst:47
 msgid ""
 "Or simply allocate a dense tensor large enough, and another 0-D tensor "
-"``tensor_len[None]`` for length record. But in fact, the ``dynamic`` "
-"SNode could be slower than the latter solution, due to the cost of "
-"maintaining the sparsity information."
+"``tensor_len[None]`` for length record. But in fact, the ``dynamic`` SNode "
+"could be slower than the latter solution, due to the cost of maintaining the "
+"sparsity information."
 msgstr ""
+"或者简单地分配足够大的稠密张量，再分配一个 0D 张量 ``tensor_len[None]`` 用于"
+"记录长度。不过事实上，由于维护稀疏信息的成本开销， ``dynamic`` SNode 可能比后者慢。"
+``
 
 #: ../../faq.rst:50
 msgid ""
 "**Q:** Can a user iterate over irregular topologies (e.g., graphs or "
 "tetrahedral meshes) instead of regular grids?"
 msgstr ""
+"**Q:** 用户能否在不规则拓扑（例如曲线或四面体网格）而不是常规网格上迭代？"
 
 #: ../../faq.rst:52
 msgid ""
-"**A:** These structures have to be represented using 1D arrays in Taichi."
-" You can still iterate over them using ``for i in x`` or ``for i in "
+"**A:** These structures have to be represented using 1D arrays in Taichi. "
+"You can still iterate over them using ``for i in x`` or ``for i in "
 "range(n)``."
 msgstr ""
+"**A:** 这些结构必须使用 Taichi 中的 1D 数组表示。接着你就可以通过 ``for i in x`` "
+"或 ``for i in range(n)`` 迭代遍历它们了。"
 
 #: ../../faq.rst:53
 msgid ""
-"However, at compile time, there's little the Taichi compiler can do for "
-"you to optimize it. You can still tweak the data layout to get different "
-"runtime cache behaviors and performance numbers."
+"However, at compile time, there's little the Taichi compiler can do for you "
+"to optimize it. You can still tweak the data layout to get different runtime "
+"cache behaviors and performance numbers."
 msgstr ""
-
-#~ msgid "Frequently Asked Questions"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**Can a user iterate over irregular "
-#~ "topology instead of grids, such as "
-#~ "tetrahedra meshes, line segment vertices?**"
-#~ " These structures have to be "
-#~ "represented using 1D arrays in Taichi."
-#~ " You can still iterate over it "
-#~ "using `for i in x` or `for i"
-#~ " in range(n)`. However, at compile "
-#~ "time, there's little the Taichi compiler"
-#~ " can do for you to optimize it."
-#~ " You can still tweak the data "
-#~ "layout to get different run time "
-#~ "cache behaviors and performance numbers."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**Can potential energies be differentiated "
-#~ "automatically to get forces?** Yes. "
-#~ "Taichi supports automatic differentiation. We"
-#~ " do have an `example <https://github.com"
-#~ "/yuanming-"
-#~ "hu/taichi/blob/master/examples/mpm_lagrangian_forces.py>`_ for"
-#~ " this."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**Does the compiler backend support the"
-#~ " same quality of optimizations for "
-#~ "the GPU and CPU? For instance, if"
-#~ " I switch to using the CUDA "
-#~ "backend, do I lose the cool "
-#~ "hash-table optimizations?** Mostly. The "
-#~ "CPU/GPU compilation workflow are basically "
-#~ "the same, except for vectorization on"
-#~ " SIMD CPUs. You still have the "
-#~ "hash table optimization on GPUs."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**A:** These structures have to be "
-#~ "represented using 1D arrays in Taichi."
-#~ " You can still iterate over them "
-#~ "using ``for i in x`` or ``for "
-#~ "i in range(n)``. However, at compile "
-#~ "time, there's little the Taichi compiler"
-#~ " can do for you to optimize it."
-#~ " You can still tweak the data "
-#~ "layout to get different runtime cache"
-#~ " behaviors and performance numbers."
-#~ msgstr ""
-
+"但是，在编译时，Taichi 编译器几乎无法对其优化。不过你仍可以通过调整数据布局，获得不"
+"同的运行缓存行为和性能数据。"
