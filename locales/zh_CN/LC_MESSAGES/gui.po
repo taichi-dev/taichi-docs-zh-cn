@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: taichi 0.6.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: 2020-05-21 00:26+0800\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2020-08-06 22:55+0800\n"
+"Last-Translator: archibate <17721388340@qq.com>\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../../gui.rst:4
 msgid "GUI system"
@@ -82,10 +83,12 @@ msgstr "在屏幕上显示窗口。"
 
 #: ../../gui.rst:38
 msgid ""
-"If ``filename`` is specified, a screenshot will be saved to the file "
-"specified by the name. For example, the following saves frames of the "
-"window to ``.png``'s:"
-msgstr "如果指定了 ``文件名`` ，则屏幕截图将被保存到该名称指定的文件中。 例如，以下将窗口的框架保存到 ``.png`` 文件中："
+"If ``filename`` is specified, a screenshot will be saved to the file specified "
+"by the name. For example, the following saves frames of the window to ``."
+"png``'s:"
+msgstr ""
+"如果指定了 ``文件名`` ，则屏幕截图将被保存到该名称指定的文件中。 例如，以下将窗"
+"口的框架保存到 ``.png`` 文件中："
 
 #: ../../gui.rst:43
 msgid ""
@@ -116,7 +119,9 @@ msgid ""
 "The image pixels are set from the values of ``img[i, j]``, where ``i`` "
 "indicates the horizontal coordinates (from left to right) and ``j`` the "
 "vertical coordinates (from bottom to top)."
-msgstr "图像像素由 ``img[i, j]`` 的值设定，其中 ``i`` 表示水平坐标（从左到右）， ``j`` 表示垂直坐标（从下到上） 。"
+msgstr ""
+"图像像素由 ``img[i, j]`` 的值设定，其中 ``i`` 表示水平坐标（从左到右）， ``j`` "
+"表示垂直坐标（从下到上） 。"
 
 #: ../../gui.rst:64
 msgid "If the window size is ``(x, y)``, then ``img`` must be one of:"
@@ -167,11 +172,12 @@ msgid "``float64``, range ``[0, 1]``"
 msgstr "``float64``，范围 ``[0, 1]``"
 
 #: ../../gui.rst:91
-#, fuzzy
 msgid ""
-"When using ``float32`` or ``float64`` as the data type, ``img`` entries "
-"will be clipped into range ``[0, 1]`` for display."
-msgstr "当使用 ``float32`` 或 ``float64`` 作为数据类型时，``img`` 条目将被裁剪为 ``[0, 1]`` 范围。"
+"When using ``float32`` or ``float64`` as the data type, ``img`` entries will be "
+"clipped into range ``[0, 1]`` for display."
+msgstr ""
+"当使用 ``float32`` 或 ``float64`` 作为数据类型时，``img`` 中的每个元素都将被裁剪"
+"为 ``[0, 1]`` 范围以便展示。"
 
 #: ../../gui.rst:98
 msgid "(tuple of 2) the position of the circle"
@@ -195,13 +201,12 @@ msgstr "（numpy 数组）一系列圆的位置"
 
 #: ../../gui.rst:109
 msgid "(optional, RGB hex or np.array of uint32) the color(s) to fill the circles"
-msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）颜色以填充圆圈"
+msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）填充圆的颜色"
 
 #: ../../gui.rst:110
 msgid ""
-"(optional, scalar or np.array of float32) the radius (radii) of the "
-"circles"
-msgstr "（可选，float32的标量或np.array）圆的半径（半径）"
+"(optional, scalar or np.array of float32) the radius (radii) of the circles"
+msgstr "（可选，float32的标量或np.array）圆的半径"
 
 #: ../../gui.rst:112
 msgid "Draw solid circles."
@@ -209,12 +214,11 @@ msgstr "画多个实心圆。"
 
 #: ../../gui.rst:116
 msgid ""
-"If ``color`` is a numpy array, the circle at ``pos[i]`` will be colored "
-"with ``color[i]``. In this case, ``color`` must have the same size as "
-"``pos``."
+"If ``color`` is a numpy array, the circle at ``pos[i]`` will be colored with "
+"``color[i]``. In this case, ``color`` must have the same size as ``pos``."
 msgstr ""
-"如果 ``color`` 是一个 numpy 数组，则位于 ``pos[i]`` 的圆圈将使用 ``color[i]`` 作为颜色，因此 "
-"``color`` 的数组长度必须与 ``pos`` 相同。"
+"如果 ``color`` 是一个 numpy 数组，则位于 ``pos[i]`` 的圆圈将使用 ``color[i]`` 作"
+"为颜色，因此 ``color`` 的数组长度必须与 ``pos`` 相同。"
 
 #: ../../gui.rst:123
 msgid "(tuple of 2) the first end point position of line"
@@ -237,29 +241,24 @@ msgid "Draw a line."
 msgstr "画一条线。"
 
 #: ../../gui.rst:134
-#, fuzzy
 msgid "(np.array) the positions of the first end point of lines"
-msgstr "（numpy 数组）一系列圆的位置"
+msgstr "（numpy 数组）直线的第一个端点位置组成的数组"
 
 #: ../../gui.rst:135
-#, fuzzy
 msgid "(np.array) the positions of the second end point of lines"
-msgstr "（numpy 数组）一系列圆的位置"
+msgstr "（numpy 数组）直线的第二个端点位置组成的数组"
 
 #: ../../gui.rst:136
-#, fuzzy
 msgid "(optional, RGB hex or np.array of uint32) the color(s) of lines"
-msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）颜色以填充圆圈"
+msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）填充直线的颜色"
 
 #: ../../gui.rst:137
-#, fuzzy
 msgid "(optional, scalar or np.array of float32) the width(s) of the lines"
-msgstr "（可选，float32的标量或np.array）圆的半径（半径）"
+msgstr "（可选，float32的标量或np.array）宽度"
 
 #: ../../gui.rst:139
-#, fuzzy
 msgid "Draw lines."
-msgstr "画一条线。"
+msgstr "画多条线。"
 
 #: ../../gui.rst:145
 msgid "(tuple of 2) the first end point position of triangle"
@@ -282,29 +281,23 @@ msgid "Draw a solid triangle."
 msgstr "画一个实心三角形。"
 
 #: ../../gui.rst:156
-#, fuzzy
 msgid "(np.array) the positions of the first end point of triangles"
-msgstr "（numpy 数组）一系列圆的位置"
+msgstr "（numpy 数组）三角形中所有第一个顶点的位置组成的数组"
 
 #: ../../gui.rst:157
-#, fuzzy
 msgid "(np.array) the positions of the second end point of triangles"
-msgstr "（numpy 数组）一系列圆的位置"
+msgstr "（numpy 数组）三角形中所有第二个顶点的位置组成的数组"
 
 #: ../../gui.rst:158
-#, fuzzy
 msgid "(np.array) the positions of the third end point of triangles"
-msgstr "（numpy 数组）一系列圆的位置"
+msgstr "（numpy 数组）三角形中所有第三个顶点的位置组成的数组"
 
 #: ../../gui.rst:159
-#, fuzzy
 msgid ""
-"(optional, RGB hex or np.array of uint32) the color(s) to fill the "
-"triangles"
-msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）颜色以填充圆圈"
+"(optional, RGB hex or np.array of uint32) the color(s) to fill the triangles"
+msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）填充三角形的颜色"
 
 #: ../../gui.rst:161
-#, fuzzy
 msgid "Draw solid triangles."
 msgstr "画一个实心三角形。"
 
@@ -330,39 +323,35 @@ msgstr "画一个空心的矩形。"
 
 #: ../../gui.rst:178
 msgid "(str) the text to draw"
-msgstr ""
+msgstr "（字符串）要画的文字"
 
 #: ../../gui.rst:179
-#, fuzzy
 msgid "(tuple of 2) the top-left point position of the fonts / texts"
-msgstr "（2元组）矩形的左上角位置"
+msgstr "（2元组）字体 / 文字的左上角位置"
 
 #: ../../gui.rst:180
-#, fuzzy
 msgid "(optional, scalar) the size of font (in height)"
-msgstr "（可选，标量）线的宽度"
+msgstr "（可选，标量）字体的大小（以高度计）"
 
 #: ../../gui.rst:181
-#, fuzzy
 msgid "(optional, RGB hex) the foreground color of text"
-msgstr "（可选，RGB十六进制）线条颜色"
+msgstr "（可选，RGB十六进制）字体的前景颜色"
 
 #: ../../gui.rst:183
 msgid "Draw a line of text on screen."
-msgstr ""
+msgstr "在屏幕上画文字。"
 
 #: ../../gui.rst:188
 msgid "(tuple of 3 floats) The (R, G, B) float values, in range [0, 1]"
-msgstr ""
+msgstr "(3个浮点数组成的元组) (R, G, B) 浮点数值, 在区间 [0, 1]"
 
 #: ../../gui.rst:189
-#, fuzzy
 msgid "(RGB hex or np.array of uint32) The converted hex value"
-msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）颜色以填充圆圈"
+msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）转换后的十六进制颜色"
 
 #: ../../gui.rst:191
 msgid "Convert a (R, G, B) tuple of floats into a single integer value. E.g.,"
-msgstr ""
+msgstr "把 (R, G, B) 的浮点数组转换成单个整数值，例如，"
 
 #: ../../gui.rst:193
 msgid ""
@@ -372,10 +361,15 @@ msgid ""
 "rgb = np.array([[0.4, 0.8, 1.0], [0.0, 0.5, 1.0]])\n"
 "hex = ti.rgb_to_hex(rgb)  # np.array([0x66ccff, 0x007fff])"
 msgstr ""
+"rgb = (0.4, 0.8, 1.0)\n"
+"hex = ti.rgb_to_hex(rgb)  # 0x66ccff\n"
+"\n"
+"rgb = np.array([[0.4, 0.8, 1.0], [0.0, 0.5, 1.0]])\n"
+"hex = ti.rgb_to_hex(rgb)  # np.array([0x66ccff, 0x007fff])"
 
 #: ../../gui.rst:201
 msgid "The return values can be used in GUI drawing APIs."
-msgstr ""
+msgstr "返回值可以用于其他 GUI 绘图 API。"
 
 #: ../../gui.rst:207
 msgid "Event processing"
@@ -383,12 +377,11 @@ msgstr "事件处理"
 
 #: ../../gui.rst:209
 msgid "Every event have a key and type."
-msgstr ""
+msgstr "每个事件都有个 key 和 type。"
 
 #: ../../gui.rst:211
 msgid ""
-"*Event type* is the type of event, for now, there are just three type of "
-"event:"
+"*Event type* is the type of event, for now, there are just three type of event:"
 msgstr "``type`` 是事件的类型，目前只有三种类型的事件："
 
 #: ../../gui.rst:215
@@ -397,13 +390,14 @@ msgid ""
 "ti.GUI.PRESS    # key down or mouse button down\n"
 "ti.GUI.MOTION   # mouse motion or mouse wheel"
 msgstr ""
+"ti.GUI.RELEASE  # 键盘或鼠标被放开\n"
+"ti.GUI.PRESS    # 键盘或鼠标被按下\n"
+"ti.GUI.MOTION   # 鼠标移动或鼠标滚轮"
 
 #: ../../gui.rst:219
-#, fuzzy
 msgid ""
-"*Event key* is the key that you pressed on keyboard or mouse, can be one "
-"of:"
-msgstr "每个事件都有一个 ``key`` 和 ``type``。 ``key`` 是您在键盘或鼠标上按下的键，可以是以下之一："
+"*Event key* is the key that you pressed on keyboard or mouse, can be one of:"
+msgstr "*事件的 ``key``* 是你在键盘或鼠标上按下的按钮，可以是以下之一："
 
 #: ../../gui.rst:223
 msgid ""
@@ -421,12 +415,27 @@ msgid ""
 "ti.GUI.MOVE    # Mouse Moved\n"
 "ti.GUI.WHEEL   # Mouse Wheel Scrolling"
 msgstr ""
+"# for ti.GUI.PRESS and ti.GUI.RELEASE event:\n"
+"ti.GUI.ESCAPE  # Esc\n"
+"ti.GUI.SHIFT   # Shift\n"
+"ti.GUI.LEFT    # Left Arrow\n"
+"'a'            # we use lowercase for alphabet\n"
+"'b'\n"
+"...\n"
+"ti.GUI.LMB     # Left Mouse Button\n"
+"ti.GUI.RMB     # Right Mouse Button\n"
+"\n"
+"# for ti.GUI.MOTION event:\n"
+"ti.GUI.MOVE    # Mouse Moved\n"
+"ti.GUI.WHEEL   # Mouse Wheel Scrolling"
 
 #: ../../gui.rst:237
 msgid ""
-"A *event filter* is a list combined of *key*, *type* and *(type, key)* "
-"tuple, e.g.:"
-msgstr "*事件过滤器* 是一个由 ``key``，``type`` 和 ``(type, key)`` 元组组成的列表，例如："
+"A *event filter* is a list combined of *key*, *type* and *(type, key)* tuple, e."
+"g.:"
+msgstr ""
+"*事件过滤器* 是一个由 ``key``，``type`` 和 ``(type, key)`` 元组组成的列表，例"
+"如："
 
 #: ../../gui.rst:239
 msgid ""
@@ -437,8 +446,7 @@ msgid ""
 "gui.get_event(ti.GUI.PRESS)\n"
 "\n"
 "# if ESC pressed or SPACE released:\n"
-"gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, "
-"ti.GUI.SPACE))"
+"gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, ti.GUI.SPACE))"
 msgstr ""
 "# 如果按下或释放ESC:\n"
 "gui.get_event(ti.GUI.ESCAPE)\n"
@@ -447,8 +455,7 @@ msgstr ""
 "gui.get_event(ti.GUI.PRESS)\n"
 "\n"
 "# 如果按ESC或释放SPACE:\n"
-"gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, "
-"ti.GUI.SPACE))"
+"gui.get_event((ti.GUI.PRESS, ti.GUI.ESCAPE), (ti.GUI.RELEASE, ti.GUI.SPACE))"
 
 #: ../../gui.rst:253 ../../gui.rst:284 ../../gui.rst:310 ../../gui.rst:329
 #: ../../gui.rst:350
@@ -456,40 +463,37 @@ msgid "(GUI)"
 msgstr "（GUI）"
 
 #: ../../gui.rst:254
-#, fuzzy
 msgid "(bool) ``True`` if ``ti.GUI.EXIT`` event occurred, vice versa"
-msgstr "(bool) 其中一个键处于按下状态，返回 ``True``，反之亦然"
+msgstr "(bool) 若 ``ti.GUI.EXIT`` 事件发生，返回 ``True``，反之亦然"
 
 #: ../../gui.rst:256
 msgid ""
-"``ti.GUI.EXIT`` occurs when you click on the close (X) button of a "
-"window. So ``gui.running`` will obtain ``False`` when the GUI is being "
-"closed."
+"``ti.GUI.EXIT`` occurs when you click on the close (X) button of a window. So "
+"``gui.running`` will obtain ``False`` when the GUI is being closed."
 msgstr ""
+"当你点击一个窗口的关闭 (X) 按钮时，就会发生 ``ti.GUI.EXIT`` 。所以当窗口关闭的时"
+"候，查询 ``gui.running`` 会得到 ``False``。"
 
 #: ../../gui.rst:259
-#, fuzzy
 msgid "For example, loop until the close button is clicked:"
-msgstr "例如，循环直到按下ESC："
+msgstr "例如，循环直到按下窗口的关闭按钮："
 
 #: ../../gui.rst:263
-#, fuzzy
 msgid ""
 "while gui.running:\n"
 "    render()\n"
 "    gui.set_image(pixels)\n"
 "    gui.show()"
 msgstr ""
-"for frame in range(10000):\n"
-"    render(img)\n"
-"    gui.set_image(img)\n"
-"    gui.show(f'{frame:06d}.png')"
+"while gui.running:\n"
+"    render()\n"
+"    gui.set_image(pixels)\n"
+"    gui.show()"
 
 #: ../../gui.rst:269
 msgid ""
-"You can also close the window by manually setting ``gui.running`` to "
-"``False``:"
-msgstr ""
+"You can also close the window by manually setting ``gui.running`` to ``False``:"
+msgstr "你也可以通过手动把 ``gui.running`` 设为 ``False`` 来关闭窗口:"
 
 #: ../../gui.rst:273
 msgid ""
@@ -501,6 +505,13 @@ msgid ""
 "    gui.set_image(pixels)\n"
 "    gui.show()"
 msgstr ""
+"while gui.running:\n"
+"    if gui.get_event(ti.GUI.ESCAPE):\n"
+"        gui.running = False\n"
+"\n"
+"    render()\n"
+"    gui.set_image(pixels)\n"
+"    gui.show()"
 
 #: ../../gui.rst:285 ../../gui.rst:311
 msgid "(optional, EventFilter) filter out matched events"
@@ -519,13 +530,12 @@ msgid "For example:"
 msgstr "例如："
 
 #: ../../gui.rst:294
-#, fuzzy
 msgid ""
 "if gui.get_event():\n"
 "    print('Got event, key =', gui.event.key)"
 msgstr ""
-"while gui.get_event():\n"
-"    print('Event key', gui.event.key)"
+"if gui.get_event():\n"
+"    print('Got event, key =', gui.event.key)"
 
 #: ../../gui.rst:298
 msgid "For example, loop until ESC is pressed:"
@@ -551,10 +561,11 @@ msgstr "（生成器）python生成器，请参见下文"
 msgid ""
 "Basically the same as ``gui.get_event``, except for this one returns a "
 "generator of events instead of storing into ``gui.event``:"
-msgstr "基本上与 ``gui.get_event`` 相同，只不过它返回一个事件生成器，而不是存储到 ``gui.event`` 中："
+msgstr ""
+"基本上与 ``gui.get_event`` 相同，只不过它返回一个事件生成器，而不是存储到 ``gui."
+"event`` 中："
 
 #: ../../gui.rst:318
-#, fuzzy
 msgid ""
 "for e in gui.get_events():\n"
 "    if e.key == ti.GUI.ESCAPE:\n"
@@ -567,9 +578,9 @@ msgstr ""
 "for e in gui.get_events():\n"
 "    if e.key == ti.GUI.ESCAPE:\n"
 "        exit()\n"
-"    elif e.type == ti.GUI.SPACE:\n"
+"    elif e.key == ti.GUI.SPACE:\n"
 "        do_something()\n"
-"    elif e.type in ['a', ti.GUI.LEFT]:\n"
+"    elif e.key in ['a', ti.GUI.LEFT]:\n"
 "        ..."
 
 #: ../../gui.rst:330
@@ -582,8 +593,8 @@ msgstr "(bool) 其中一个键处于按下状态，返回 ``True``，反之亦�
 
 #: ../../gui.rst:335
 msgid ""
-"Must be used together with ``gui.get_event``, or it won't be updated! For"
-" example:"
+"Must be used together with ``gui.get_event``, or it won't be updated! For "
+"example:"
 msgstr "必须与 ``gui.get_event`` 一起使用，否则将不会更新！ 例如："
 
 #: ../../gui.rst:340
@@ -612,14 +623,13 @@ msgstr "mouse_x, mouse_y = gui.get_cursor_pos()"
 
 #: ../../gui.rst:361
 msgid "GUI Widgets"
-msgstr ""
+msgstr "GUI 控件"
 
 #: ../../gui.rst:363
 msgid ""
-"Sometimes it's more intuitive to use widgets like slider, button to "
-"control program variables instead of chaotic keyboard bindings. Taichi "
-"GUI provides a set of widgets that hopefully could make variable control "
-"more intuitive:"
+"Sometimes it's more intuitive to use widgets like slider, button to control "
+"program variables instead of chaotic keyboard bindings. Taichi GUI provides a "
+"set of widgets that hopefully could make variable control more intuitive:"
 msgstr ""
 
 #: ../../gui.rst:370
@@ -644,8 +654,7 @@ msgstr ""
 
 #: ../../gui.rst:377
 msgid ""
-"The widget will be display as: ``{text}: {value:.3f}``, followed with a "
-"slider."
+"The widget will be display as: ``{text}: {value:.3f}``, followed with a slider."
 msgstr ""
 
 #: ../../gui.rst:382
@@ -677,9 +686,8 @@ msgid "Get / set the current value in the widget where we're returned from."
 msgstr ""
 
 #: ../../gui.rst:405
-#, fuzzy
 msgid "For example::"
-msgstr "例如："
+msgstr "例如：::"
 
 #: ../../gui.rst:407
 msgid ""
@@ -703,8 +711,7 @@ msgstr ""
 
 #: ../../gui.rst:423
 msgid ""
-"Get the RGBA shown image from the current GUI system which has four "
-"channels."
+"Get the RGBA shown image from the current GUI system which has four channels."
 msgstr ""
 
 #: ../../gui.rst:427
@@ -717,23 +724,23 @@ msgstr ""
 
 #: ../../gui.rst:430
 msgid ""
-"Export a ``np.ndarray`` or Taichi tensor (``ti.Matrix``, ``ti.Vector``, "
-"or ``ti.var``) to a specified location ``filename``."
+"Export a ``np.ndarray`` or Taichi tensor (``ti.Matrix``, ``ti.Vector``, or ``ti."
+"var``) to a specified location ``filename``."
 msgstr ""
 
 #: ../../gui.rst:432
 msgid ""
 "Same as ``ti.GUI.show(filename)``, the format of the exported image is "
 "determined by **the suffix of** ``filename`` as well. Now ``ti.imwrite`` "
-"supports exporting images to ``png``, ``img`` and ``jpg`` and we "
-"recommend using ``png``."
+"supports exporting images to ``png``, ``img`` and ``jpg`` and we recommend "
+"using ``png``."
 msgstr ""
 
 #: ../../gui.rst:434
 msgid ""
-"Please make sure that the input image has **a valid shape**. If you want "
-"to export a grayscale image, the input shape of tensor should be "
-"``(height, weight)`` or ``(height, weight, 1)``. For example:"
+"Please make sure that the input image has **a valid shape**. If you want to "
+"export a grayscale image, the input shape of tensor should be ``(height, "
+"weight)`` or ``(height, weight, 1)``. For example:"
 msgstr ""
 
 #: ../../gui.rst:436
@@ -749,8 +756,8 @@ msgid ""
 "@ti.kernel\n"
 "def draw():\n"
 "    for i, j in pixels:\n"
-"        pixels[i, j] = ti.random() * 255    # integars between [0, 255] "
-"for ti.u8\n"
+"        pixels[i, j] = ti.random() * 255    # integars between [0, 255] for ti."
+"u8\n"
 "\n"
 "draw()\n"
 "\n"
@@ -759,40 +766,38 @@ msgstr ""
 
 #: ../../gui.rst:455
 msgid ""
-"Besides, for RGB or RGBA images, ``ti.imwrite`` needs to receive a tensor"
-" which has shape ``(height, width, 3)`` and ``(height, width, 4)`` "
-"individually."
+"Besides, for RGB or RGBA images, ``ti.imwrite`` needs to receive a tensor which "
+"has shape ``(height, width, 3)`` and ``(height, width, 4)`` individually."
 msgstr ""
 
 #: ../../gui.rst:457
 msgid ""
-"Generally the value of the pixels on each channel of a ``png`` image is "
-"an integar in [0, 255]. For this reason, ``ti.imwrite`` will **cast "
-"tensors** which has different datatypes all **into integars between [0, "
-"255]**. As a result, ``ti.imwrite`` has the following requirements for "
-"different datatypes of input tensors:"
+"Generally the value of the pixels on each channel of a ``png`` image is an "
+"integar in [0, 255]. For this reason, ``ti.imwrite`` will **cast tensors** "
+"which has different datatypes all **into integars between [0, 255]**. As a "
+"result, ``ti.imwrite`` has the following requirements for different datatypes "
+"of input tensors:"
 msgstr ""
 
 #: ../../gui.rst:459
 msgid ""
-"For float-type (``ti.f16``, ``ti.f32``, etc) input tensors, **the value "
-"of each pixel should be float between [0.0, 1.0]**. Otherwise "
-"``ti.imwrite`` will first clip them into [0.0, 1.0]. Then they are "
-"multiplied by 256 and casted to integaters ranging from [0, 255]."
+"For float-type (``ti.f16``, ``ti.f32``, etc) input tensors, **the value of each "
+"pixel should be float between [0.0, 1.0]**. Otherwise ``ti.imwrite`` will first "
+"clip them into [0.0, 1.0]. Then they are multiplied by 256 and casted to "
+"integaters ranging from [0, 255]."
 msgstr ""
 
 #: ../../gui.rst:461
 msgid ""
-"For int-type (``ti.u8``, ``ti.u16``, etc) input tensors, **the value of "
-"each pixel can be any valid integer in its own bounds**. These integers "
-"in this tensor will be scaled to [0, 255] by being divided over the upper"
-" bound of its basic type accordingly."
+"For int-type (``ti.u8``, ``ti.u16``, etc) input tensors, **the value of each "
+"pixel can be any valid integer in its own bounds**. These integers in this "
+"tensor will be scaled to [0, 255] by being divided over the upper bound of its "
+"basic type accordingly."
 msgstr ""
 
 #: ../../gui.rst:463
-#, fuzzy
 msgid "Here is another example:"
-msgstr "例如："
+msgstr "这里是另一个例子："
 
 #: ../../gui.rst:465
 msgid ""
@@ -809,8 +814,7 @@ msgid ""
 "def draw():\n"
 "    for i, j in pixels:\n"
 "        for k in ti.static(range(channels)):\n"
-"            pixels[i, j][k] = ti.random()   # floats between [0, 1] for "
-"ti.f32\n"
+"            pixels[i, j][k] = ti.random()   # floats between [0, 1] for ti.f32\n"
 "\n"
 "draw()\n"
 "\n"
@@ -818,15 +822,14 @@ msgid ""
 msgstr ""
 
 #: ../../gui.rst:489
-#, fuzzy
 msgid "(string) the filename of the image to load"
-msgstr "（字符串）窗口标题"
+msgstr "（字符串）要加载的图像文件名"
 
 #: ../../gui.rst:490
 msgid ""
-"(optional int) the number of channels in your specified image. The "
-"default value ``0`` means the channels of the returned image is adaptive "
-"to the image file"
+"(optional int) the number of channels in your specified image. The default "
+"value ``0`` means the channels of the returned image is adaptive to the image "
+"file"
 msgstr ""
 
 #: ../../gui.rst:492
@@ -835,8 +838,8 @@ msgstr ""
 
 #: ../../gui.rst:494
 msgid ""
-"This function loads an image from the target filename and returns it as a"
-" ``np.ndarray(dtype=np.uint8)``."
+"This function loads an image from the target filename and returns it as a ``np."
+"ndarray(dtype=np.uint8)``."
 msgstr ""
 
 #: ../../gui.rst:496
@@ -848,14 +851,13 @@ msgid "(Matrix or Expr) the image to show in the GUI"
 msgstr ""
 
 #: ../../gui.rst:501
-#, fuzzy
 msgid "(string) the name of the GUI window"
 msgstr "（字符串）窗口标题"
 
 #: ../../gui.rst:503
 msgid ""
-"This function will create an instance of ``ti.GUI`` and show the input "
-"image on the screen."
+"This function will create an instance of ``ti.GUI`` and show the input image on "
+"the screen."
 msgstr ""
 
 #: ../../gui.rst:505
@@ -866,11 +868,10 @@ msgstr ""
 #~ msgstr "这将创建一个宽度为1024，高度为768的窗口："
 
 #~ msgid ""
-#~ "The pixel, ``i`` from bottom to "
-#~ "up, ``j`` from left to right, is"
-#~ " set to the value of ``img[i, "
-#~ "j]``."
-#~ msgstr "从下到上第 ``i`` 个，从左到右第 ``j`` 个像素，显示的是 ``img[i, j]`` 的值。"
+#~ "The pixel, ``i`` from bottom to up, ``j`` from left to right, is set to the "
+#~ "value of ``img[i, j]``."
+#~ msgstr ""
+#~ "从下到上第 ``i`` 个，从左到右第 ``j`` 个像素，显示的是 ``img[i, j]`` 的值。"
 
 #~ msgid "uint32, range [0, UINT_MAX]"
 #~ msgstr "uint32，范围 [0, UINT_MAX]"
@@ -907,17 +908,6 @@ msgstr ""
 #~ msgstr "TODO：在这里完成"
 
 #~ msgid ""
-#~ "ti.GUI.ESCAPE  # Esc\n"
-#~ "ti.GUI.SHIFT   # Shift\n"
-#~ "ti.GUI.LEFT    # Left Arrow\n"
-#~ "'a'            # we use lowercase for alphabet\n"
-#~ "'b'\n"
-#~ "...\n"
-#~ "ti.GUI.LMB     # Left Mouse Button\n"
-#~ "ti.GUI.RMB     # Right Mouse Button"
-#~ msgstr ""
-
-#~ msgid ""
 #~ "ti.GUI.RELEASE  # key up\n"
 #~ "ti.GUI.PRESS    # key down\n"
 #~ "ti.GUI.MOTION   # mouse moved"
@@ -925,4 +915,3 @@ msgstr ""
 #~ "ti.GUI.RELEASE  # 松开键\n"
 #~ "ti.GUI.PRESS   # 按下键\n"
 #~ "ti.GUI.MOTION   #鼠标移动"
-
