@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: taichi 0.6.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: 2020-08-06 22:55+0800\n"
+"PO-Revision-Date: 2020-08-06 23:11+0800\n"
 "Last-Translator: archibate <17721388340@qq.com>\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -351,7 +351,7 @@ msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）转换后的十
 
 #: ../../gui.rst:191
 msgid "Convert a (R, G, B) tuple of floats into a single integer value. E.g.,"
-msgstr "把 (R, G, B) 的浮点数组转换成单个整数值，例如，"
+msgstr "把 (R, G, B) 的浮点数组转换成单个整数值，例如,"
 
 #: ../../gui.rst:193
 msgid ""
@@ -631,26 +631,28 @@ msgid ""
 "program variables instead of chaotic keyboard bindings. Taichi GUI provides a "
 "set of widgets that hopefully could make variable control more intuitive:"
 msgstr ""
+"比起混乱的键位设定，有时使用一些控件比如滑块、按钮，去控制程序变量是十分直观的。"
+"Taichi 的 GUI 就提供一系列控件，希望能帮到你直观地控制变量："
 
 #: ../../gui.rst:370
 msgid "(str) the text to be displayed above this slider."
-msgstr ""
+msgstr "（字符串）要在滑块里展示的文字"
 
 #: ../../gui.rst:371
 msgid "(float) the minimum value of the slider value."
-msgstr ""
+msgstr "（浮点数）滑块的最小数值"
 
 #: ../../gui.rst:372
 msgid "(float) the maximum value of the slider value."
-msgstr ""
+msgstr "（浮点数）滑块的最大数值"
 
 #: ../../gui.rst:373
 msgid "(optional, float) the step between two separate value."
-msgstr ""
+msgstr "（可选，浮点数）每个滑块数值之间的差距/步长"
 
 #: ../../gui.rst:375 ../../gui.rst:384
 msgid "(WidgetValue) a value getter / setter, see :class:`WidgetValue`."
-msgstr ""
+msgstr "(WidgetValue) 一个数值 get/set 器, 见 :class:`WidgetValue` 。"
 
 #: ../../gui.rst:377
 msgid ""
@@ -667,7 +669,7 @@ msgstr ""
 
 #: ../../gui.rst:391
 msgid "(str) the text to be displayed in the button."
-msgstr ""
+msgstr "（字符串）要在按钮里展示的文字."
 
 #: ../../gui.rst:392
 msgid "(optional, str) customize the event name."
@@ -820,6 +822,24 @@ msgid ""
 "\n"
 "ti.imwrite(pixels, f\"export_f32.png\")"
 msgstr ""
+"import taichi as ti\n"
+"\n"
+"ti.init()\n"
+"\n"
+"shape = (512, 512)\n"
+"channels = 3\n"
+"type = ti.f32\n"
+"pixels = ti.Matrix(channels, dt=type, shape=shape)\n"
+"\n"
+"@ti.kernel\n"
+"def draw():\n"
+"    for i, j in pixels:\n"
+"        for k in ti.static(range(channels)):\n"
+"            pixels[i, j][k] = ti.random()   # floats between [0, 1] for ti.f32\n"
+"\n"
+"draw()\n"
+"\n"
+"ti.imwrite(pixels, f\"export_f32.png\")"
 
 #: ../../gui.rst:489
 msgid "(string) the filename of the image to load"
