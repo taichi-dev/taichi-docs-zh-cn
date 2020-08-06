@@ -66,7 +66,7 @@ Taichi 及其中文文档能够如此快速地成长，离不开你们的热心�
 
 1. 假如你要翻译的文件是 hello.rst。
 
-1. 在 [Issue 页面](https://github.com/taichi-dev/taichi-docs-zh-cn/issues) 点击 `New Issue`，新建一个 Issue，标题为: `[翻译中] hello`，这是告诉大家你已经在翻译这个文件了，避免重复劳动。当然，也要注意一下是不是已经有人在翻译中了。
+1. 在 [Issue 页面](https://github.com/taichi-dev/taichi-docs-zh-cn/issues) 点击 `New Issue` 新建一个 Issue，选择"翻译中"，标题为 `hello`，这是告诉大家你已经在翻译这个文件了，避免重复劳动。当然，也要注意一下是不是已经有人在翻译中了。
 
 1. 在每一次准备开始新的翻译时:
 
@@ -120,7 +120,7 @@ Pull request 的详细操作方法可以参考：[Pull Request 的命令行管�
 
 翻译全被认领了？没关系！你还可以帮我们**更新**旧的翻译。
 
-带有 [needs update 标签](https://github.com/taichi-dev/taichi-docs-zh-cn/issues?q=is%3Aissue+is%3Aopen+label%3A%22needs+update%22)的 Issue 是需要更新的翻译。
+带有 ["翻译需要更新" 标签](https://github.com/taichi-dev/taichi-docs-zh-cn/issues?q=is%3Aopen+is%3Aissue+label%3A%E7%BF%BB%E8%AF%91%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0)的 Issue 是需要更新的翻译。
 比如 `[翻译需要更新] hello`，要认领的话，就另外新建一个 Issue，标题为: `[翻译中] hello`。告诉大家你已经在更新这个翻译了。管理员会关闭之前那个 `[翻译需要更新] hello` 的 Issue。
 
 ## 开始翻译！
