@@ -652,7 +652,7 @@ msgstr "（可选，浮点数）每个滑块数值之间的差距/步长"
 
 #: ../../gui.rst:375 ../../gui.rst:384
 msgid "(WidgetValue) a value getter / setter, see :class:`WidgetValue`."
-msgstr "(WidgetValue) 一个数值 get/set 器, 见 :class:`WidgetValue` 。"
+msgstr "(WidgetValue) 一个数值 getter / setter, 见 :class:`WidgetValue` 。"
 
 #: ../../gui.rst:377
 msgid ""
