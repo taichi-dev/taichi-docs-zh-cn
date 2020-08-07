@@ -323,7 +323,7 @@ msgstr "画一个空心的矩形。"
 
 #: ../../gui.rst:178
 msgid "(str) the text to draw"
-msgstr "（字符串）要画的文字"
+msgstr "（字符串）需要绘制的文字"
 
 #: ../../gui.rst:179
 msgid "(tuple of 2) the top-left point position of the fonts / texts"
