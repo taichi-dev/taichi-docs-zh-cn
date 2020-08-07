@@ -87,8 +87,8 @@ msgid ""
 "by the name. For example, the following saves frames of the window to ``."
 "png``'s:"
 msgstr ""
-"如果指定了 ``文件名`` ，则屏幕截图将被保存到该名称指定的文件中。 例如，以下将窗"
-"口的框架保存到 ``.png`` 文件中："
+"如果指定了 ``文件名`` ，则屏幕截图将被保存到该名称指定的文件中。 例如，以下代码会"
+"将当前窗口画面保存到 ``.png`` 文件中："
 
 #: ../../gui.rst:43
 msgid ""
@@ -254,7 +254,7 @@ msgstr "（可选，RGB十六进制或 uint32 的 numpy 数组）填充直线的
 
 #: ../../gui.rst:137
 msgid "(optional, scalar or np.array of float32) the width(s) of the lines"
-msgstr "（可选，float32的标量或np.array）宽度"
+msgstr "（可选，float32的标量或np.array）线的宽度"
 
 #: ../../gui.rst:139
 msgid "Draw lines."
@@ -369,7 +369,7 @@ msgstr ""
 
 #: ../../gui.rst:201
 msgid "The return values can be used in GUI drawing APIs."
-msgstr "返回值可以用于其他 GUI 绘图 API。"
+msgstr "返回值可以用于其他 GUI 的绘图 API。"
 
 #: ../../gui.rst:207
 msgid "Event processing"
