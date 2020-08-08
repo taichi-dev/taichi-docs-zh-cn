@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: 2020-06-14 21:20+0800\n"
+"PO-Revision-Date: 2020-08-08 15:40+0800\n"
 "Last-Translator: rexwangcc\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../type.rst:2
 msgid "Type system"
@@ -25,29 +26,31 @@ msgstr "类型系统"
 #: ../../type.rst:4
 msgid ""
 "Taichi supports common numerical data types. Each type is denoted as a "
-"character indicating its *category* and a number of *precision bits*, "
-"e.g., ``i32`` and ``f64``."
+"character indicating its *category* and a number of *precision bits*, e."
+"g., ``i32`` and ``f64``."
 msgstr ""
+"Taichi 支持常见的数据类型。每种类型都由一个字符表示，指明它的 *类别* 和 *"
+"精度位数*，例如 ``i32`` 和 ``f64``。"
 
 #: ../../type.rst:7
 msgid "The *category* can be one of:"
-msgstr ""
+msgstr "数据的 *类别* 可以是以下其中之一："
 
 #: ../../type.rst:9
 msgid "``i`` for signed integers, e.g. 233, -666"
-msgstr ""
+msgstr "``i`` 用于有符号整数，例如233，-666"
 
 #: ../../type.rst:10
 msgid "``u`` for unsigned integers, e.g. 233, 666"
-msgstr ""
+msgstr "``u`` 用于无符号整数，例如233，666"
 
 #: ../../type.rst:11
 msgid "``f`` for floating point numbers, e.g. 2.33, 1e-4"
-msgstr ""
+msgstr "``f`` 用于浮点数，例如2.33, 1e-4"
 
 #: ../../type.rst:13
 msgid "The *digital number* can be one of:"
-msgstr ""
+msgstr "数据的 *精度位数* 可以是以下其中之一："
 
 #: ../../type.rst:15
 msgid "``8``"
@@ -69,19 +72,19 @@ msgstr ""
 msgid ""
 "It represents how many **bits** are used in storing the data. The larger "
 "the bit number, the higher the precision is."
-msgstr ""
+msgstr "它表示存储数据时使用了多少 **位**。位数越多，精度越高。"
 
 #: ../../type.rst:23
 msgid "For example, the two most commonly used types:"
-msgstr ""
+msgstr "例如，下列是两种最常用的数据类型:"
 
 #: ../../type.rst:25
 msgid "``i32`` represents a 32-bit signed integer."
-msgstr ""
+msgstr "``i32`` 表示一个32位有符号整数。"
 
 #: ../../type.rst:26
 msgid "``f32`` represents a 32-bit floating pointer number."
-msgstr ""
+msgstr "``f32`` 表示一个32位浮点数。"
 
 #: ../../type.rst:29
 msgid "Supported types"
@@ -211,20 +214,20 @@ msgid "(OK: supported, EXT: require extension, N/A: not available)"
 msgstr "（OK：已支持，EXT：需要扩展支持，N/A：目前不支持）"
 
 #: ../../type.rst:76
-#, fuzzy
 msgid "Boolean types are represented using ``ti.i32``."
-msgstr "布尔类型应该使用 ``ti.i32`` 来表示。"
+msgstr "布尔类型使用 ``ti.i32`` 表示。"
 
 #: ../../type.rst:81
 msgid "Type promotion"
-msgstr ""
+msgstr "类型提升"
 
 #: ../../type.rst:83
-#, fuzzy
 msgid ""
 "Binary operations on different types will give you a promoted type, "
 "following the C programming language convention, e.g.:"
-msgstr "不同类型的二进制运算像你提供提升的类型，遵循C编程语言，例如。"
+msgstr ""
+"不同类型间的二进制运算将会发生数据类型提升，提升遵循 C 语言下的转换规则，"
+"例如："
 
 #: ../../type.rst:85
 msgid "``i32 + f32 = f32`` (integer + float = float)"
@@ -238,32 +241,29 @@ msgstr ""
 msgid ""
 "Basically it will try to choose the more precise type to contain the "
 "result value."
-msgstr ""
+msgstr "基本上，在发生数据提升时会尝试选择更精确的数据类型来包含结果值。"
 
 #: ../../type.rst:94
 msgid "Default precisions"
 msgstr "默认精度"
 
 #: ../../type.rst:96
-#, fuzzy
 msgid ""
 "By default, all numerical literals have 32-bit precisions. For example, "
 "``42`` has type ``ti.i32`` and ``3.14`` has type ``ti.f32``."
 msgstr ""
-"默认情况下，数字文字具有32位精度。 例如，``42`` 的类型为 ``ti.i32`` ， ``3.14`` 的类型为 ``ti.f32`` 。"
-" 初始化Taichi时，可以指定默认的整数和浮点精度（ ``default_ip`` 和 ``default_f`` ）："
+"默认情况下，所有的数值都具有32位精度。 例如，``42`` 的类型为 ``ti."
+"i32`` ， ``3.14`` 的类型为 ``ti.f32`` 。"
 
 #: ../../type.rst:99
-#, fuzzy
 msgid ""
 "Default integer and float-point precisions (``default_ip`` and "
 "``default_fp``) can be specified when initializing Taichi:"
 msgstr ""
-"默认情况下，数字文字具有32位精度。 例如，``42`` 的类型为 ``ti.i32`` ， ``3.14`` 的类型为 ``ti.f32`` 。"
-" 初始化Taichi时，可以指定默认的整数和浮点精度（ ``default_ip`` 和 ``default_f`` ）："
+"可以在 Taichi 初始化时，指定默认的整数和浮点精度（ 通过 ``default_ip`` "
+"和 ``default_f`` ）："
 
 #: ../../type.rst:101
-#, fuzzy
 msgid ""
 "ti.init(default_fp=ti.f32)\n"
 "ti.init(default_fp=ti.f64)\n"
@@ -271,17 +271,14 @@ msgid ""
 "ti.init(default_ip=ti.i32)\n"
 "ti.init(default_ip=ti.i64)"
 msgstr ""
-"ti.init(..., default_fp=ti.f32)\n"
-"ti.init(..., default_fp=ti.f64)\n"
-"\n"
-"ti.init(..., default_ip=ti.i32)\n"
-"ti.init(..., default_ip=ti.i64)"
 
 #: ../../type.rst:110
 msgid ""
 "Also note that you may use ``float`` or ``int`` in type definitions as "
 "aliases for default precisions, e.g.:"
 msgstr ""
+"另外需要注意的是，你可以在类型定义时使用 ``float`` 或 ``int`` 作为默认精"
+"度的别名，例如:"
 
 #: ../../type.rst:113
 msgid ""
@@ -300,6 +297,20 @@ msgid ""
 "def func(a: ti.f32) -> ti.i64:\n"
 "    ..."
 msgstr ""
+"ti.init(default_ip=ti.i64, default_fp=ti.f32)\n"
+"\n"
+"x = ti.var(float, 5)\n"
+"y = ti.var(int, 5)\n"
+"# 相当于:\n"
+"x = ti.var(ti.f32, 5)\n"
+"y = ti.var(ti.i64, 5)\n"
+"\n"
+"def func(a: float) -> int:\n"
+"    …\n"
+"\n"
+"# 相当于:\n"
+"def func(a: ti.f32) -> ti.i64:\n"
+"    …"
 
 #: ../../type.rst:133
 msgid "Type casts"
@@ -307,11 +318,11 @@ msgstr "类型转换"
 
 #: ../../type.rst:136
 msgid "Implicit casts"
-msgstr ""
+msgstr "隐式类型转换"
 
 #: ../../type.rst:140
 msgid "The type of a variable is **determinated on it's initialization**."
-msgstr ""
+msgstr "变量的类型在它 **初始化时决定**。"
 
 #: ../../type.rst:142
 msgid ""
@@ -319,6 +330,8 @@ msgid ""
 "variable, it will be implicitly promoted to the *wide* type and no "
 "warning will be raised:"
 msgstr ""
+"当一个 *低精度* 变量被分配给 *高精度* 变量时，它将被隐式提升为 *高精度* "
+"类型，并且不会发出警告:"
 
 #: ../../type.rst:145
 msgid ""
@@ -333,6 +346,8 @@ msgid ""
 "it will be implicitly down-cast into the *low-precision* type and Taichi "
 "will raise a warning:"
 msgstr ""
+"当一个 *高精度* 变量被赋值为 *低精度* 类型时，它会被隐式向下转换为 *低精"
+"度* 类型，此时 Taichi 会发出警告:"
 
 #: ../../type.rst:154
 msgid ""
@@ -343,14 +358,13 @@ msgstr ""
 
 #: ../../type.rst:161
 msgid "Explicit casts"
-msgstr ""
+msgstr "显式类型转换"
 
 #: ../../type.rst:163
-#, fuzzy
 msgid ""
 "You may use ``ti.cast`` to explicitly cast scalar values between "
 "different types:"
-msgstr "使用 ``ti.cast`` 来转换标量值。"
+msgstr "你可以使用 ``ti.cast`` 在不同类型之间显式地强制转换标量值:"
 
 #: ../../type.rst:165
 msgid ""
@@ -364,6 +378,8 @@ msgid ""
 "Equivalently, use ``int()`` and ``float()`` to convert values to float-"
 "point or integer types of default precisions:"
 msgstr ""
+"同样，可以使用 ``int()`` 和 ``float()`` 将标量值转换为默认精度的浮点或整"
+"数类型:"
 
 #: ../../type.rst:174
 msgid ""
@@ -374,11 +390,11 @@ msgstr ""
 
 #: ../../type.rst:181
 msgid "Casting vectors and matrices"
-msgstr ""
+msgstr "向量和矩阵的类型转换"
 
 #: ../../type.rst:183
 msgid "Type casts applied to vectors/matrices are element-wise:"
-msgstr ""
+msgstr "应用于向量/矩阵中的类型转换是基于元素的:"
 
 #: ../../type.rst:185
 msgid ""
@@ -387,10 +403,14 @@ msgid ""
 "# If you are using ti.i32 as default_ip, this is equivalent to:\n"
 "v = ti.cast(u, ti.i32)  # ti.Vector([2, 4])"
 msgstr ""
+"u = ti.Vector([2.3, 4.7])\n"
+"v = int(u)              # ti.Vector([2, 4])\n"
+"# 如果你使用的是 ti.i32 作为默认整型精度, 那么这相当于:\n"
+"v = ti.cast(u, ti.i32)  # ti.Vector([2, 4])"
 
 #: ../../type.rst:193
 msgid "Bit casting"
-msgstr ""
+msgstr "位强制类型转换"
 
 #: ../../type.rst:195
 msgid ""
@@ -399,14 +419,16 @@ msgid ""
 "the same width as the the old type. For example, bit-casting ``i32`` to "
 "``f64`` is not allowed. Use this operation with caution."
 msgstr ""
-"使用 ``ti.bit_cast`` 将值比特转换为另一种数据类型。 基础位将保留在此转换中。 新类型的宽度必须与旧类型的宽度相同。 "
-"例如，不允许将 ``i32`` 转换成 ``f64``。 请谨慎使用此操作。"
+"使用 ``ti.bit_cast`` 将一个值按位转换为另一种数据类型。 基础位将在此转换"
+"中保留。 新类型的宽度必须与旧类型的宽度相同。 例如，不允许将 ``i32`` 转换"
+"成 ``f64``。 请谨慎使用此操作。"
 
 #: ../../type.rst:199
 msgid ""
 "For people from C++, ``ti.bit_cast`` is equivalent to "
 "``reinterpret_cast``."
 msgstr ""
+"对于熟悉 C++ 的开发者来说，``ti.bit_cast`` 相当于 ``reinterpret_cast``。"
 
 #~ msgid "``i32 + f32 = f32``"
 #~ msgstr "``i32 + f32 = f32``"
@@ -445,4 +467,3 @@ msgstr ""
 #~ "mat = ti.Matrix([[3.0, 0.0], [0.3, 0.1]])\n"
 #~ "mat_int = mat.cast(int)\n"
 #~ "mat_int2 = mat.cast(ti.i32)"
-
