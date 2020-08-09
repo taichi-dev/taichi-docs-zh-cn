@@ -226,7 +226,7 @@ msgid ""
 "Binary operations on different types will give you a promoted type, "
 "following the C programming language convention, e.g.:"
 msgstr ""
-"不同类型间的二进制运算将会发生数据类型提升，提升遵循 C 语言下的转换规则，"
+"不同类型间的二元运算将会发生数据类型提升，提升遵循 C 语言下的转换规则，"
 "例如："
 
 #: ../../type.rst:85
@@ -241,7 +241,7 @@ msgstr ""
 msgid ""
 "Basically it will try to choose the more precise type to contain the "
 "result value."
-msgstr "基本上，在发生数据提升时会尝试选择更精确的数据类型来包含结果值。"
+msgstr "简单地说，在发生数据提升时会尝试选择更精确的数据类型来包含结果值。"
 
 #: ../../type.rst:94
 msgid "Default precisions"
@@ -260,8 +260,8 @@ msgid ""
 "Default integer and float-point precisions (``default_ip`` and "
 "``default_fp``) can be specified when initializing Taichi:"
 msgstr ""
-"可以在 Taichi 初始化时，指定默认的整数和浮点精度（ 通过 ``default_ip`` "
-"和 ``default_f`` ）："
+"可以在 Taichi 初始化时，指定默认的整数和浮点精度（ 分别通过 ``default_ip`` "
+"和 ``default_fp`` ）："
 
 #: ../../type.rst:101
 msgid ""
@@ -330,7 +330,7 @@ msgid ""
 "variable, it will be implicitly promoted to the *wide* type and no "
 "warning will be raised:"
 msgstr ""
-"当一个 *低精度* 变量被分配给 *高精度* 变量时，它将被隐式提升为 *高精度* "
+"当一个 *低精度* 变量被赋值给 *高精度* 变量时，它将被隐式提升为 *高精度* "
 "类型，并且不会发出警告:"
 
 #: ../../type.rst:145
@@ -346,7 +346,7 @@ msgid ""
 "it will be implicitly down-cast into the *low-precision* type and Taichi "
 "will raise a warning:"
 msgstr ""
-"当一个 *高精度* 变量被赋值为 *低精度* 类型时，它会被隐式向下转换为 *低精"
+"当一个 *高精度* 变量被赋值给 *低精度* 类型时，它会被隐式向下转换为 *低精"
 "度* 类型，此时 Taichi 会发出警告:"
 
 #: ../../type.rst:154
@@ -394,7 +394,7 @@ msgstr "向量和矩阵的类型转换"
 
 #: ../../type.rst:183
 msgid "Type casts applied to vectors/matrices are element-wise:"
-msgstr "应用于向量/矩阵中的类型转换是基于元素的:"
+msgstr "应用于向量/矩阵中的类型转换是逐元素的:"
 
 #: ../../type.rst:185
 msgid ""
