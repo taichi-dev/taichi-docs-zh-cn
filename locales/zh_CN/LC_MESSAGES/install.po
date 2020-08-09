@@ -222,7 +222,7 @@ msgstr "对于 Ubuntu ，请执行 ``sudo apt install libtinfo-dev`` 安装依�
 #: ../../install.rst:109
 msgid "On Arch Linux, first edit ``/etc/pacman.conf``, and append these lines:"
 msgstr ""
-"对于 Arch Linux ，请首先将以下代码添加到 ``/etc/pacman.conf`` 添加软件仓库:"
+"对于 Arch Linux ，请首先编辑 ``/etc/pacman.conf``，添加以下代码:"
 
 #: ../../install.rst:111
 msgid ""
