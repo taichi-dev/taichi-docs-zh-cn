@@ -166,8 +166,8 @@ msgid ""
 "``glfwCreateWindow`` (see `#958 <https://github.com/taichi-dev/taichi/"
 "issues/958>`_):"
 msgstr ""
-"针对 Taichi 打印出的调用栈(stack backtrace)中包含 ``glfwCreateWindow`` 等信息"
-"的情况(更详细的问题描述请对照 `#958 <https://github.com/taichi-dev/taichi/"
+"针对 Taichi 打印出的调用栈回溯 (stack backtrace) 中包含 ``glfwCreateWindow`` 等信息"
+"的情况 (更详细的问题描述请对照 `#958 <https://github.com/taichi-dev/taichi/"
 "issues/958>`_):"
 
 #: ../../install.rst:81
