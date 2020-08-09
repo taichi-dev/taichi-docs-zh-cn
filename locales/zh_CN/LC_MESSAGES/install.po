@@ -247,7 +247,7 @@ msgid ""
 "You might be using Ubuntu 16.04, please try the solution in `this thread "
 "<https://github.com/tensorflow/serving/issues/819#issuecomment-377776784>`_:"
 msgstr ""
-"你也许正在使用的是 Ubuntu 16.04 ，请沿着 `这条线索 <https://github.com/"
+"你可能正在使用 Ubuntu 16.04 ，请根据 `这个帖子 <https://github.com/"
 "tensorflow/serving/issues/819#issuecomment-377776784>`_ 中的解决方案尝试解"
 "决："
 
