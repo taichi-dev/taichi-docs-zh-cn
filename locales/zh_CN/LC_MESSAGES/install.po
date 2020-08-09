@@ -131,7 +131,7 @@ msgid ""
 "limited support for `Unified Memory <https://www.nextplatform.com/2019/01/24/"
 "unified-memory-the-final-piece-of-the-gpu-programming-puzzle/>`_."
 msgstr ""
-"这可能是因为你使用的 NVIDIA GPU 低于 Pascal 架构，这对 `统一内存(Unified "
+"这可能是因为你使用的 NVIDIA GPU 低于 Pascal 架构，这对 `统一内存 (Unified "
 "Memory) <https://www.nextplatform.com/2019/01/24/unified-memory-the-final-"
 "piece-of-the-gpu-programming-puzzle/>`_ 会有限制。"
 
