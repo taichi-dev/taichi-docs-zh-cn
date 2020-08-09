@@ -144,7 +144,7 @@ msgid ""
 "``LLVM_DIR`` to ``$LLVM_FOLDER/lib/cmake/llvm``."
 msgstr ""
 "在 Windows 下, 如果你使用的是 Taichi 版预构建的 LLVM, 请将 ``$LLVM_FOLDER/bin`` "
-"添加到 ``PATH``。随后，当你使用 ``CMake`` 构建 Taichi 时，将 ``LLVM_DIR`` 设置到 "
+"添加到 ``PATH``。随后，当你使用 ``CMake`` 构建 Taichi 时，将 ``LLVM_DIR`` 设置为 "
 "``$LLVM_FOLDER/lib/cmake/llvm``."
 
 #: ../../dev_install.rst:54
@@ -397,7 +397,7 @@ msgstr ""
 
 #: ../../dev_install.rst:149
 msgid "Troubleshooting Developer Installation"
-msgstr "安装中的故障排除"
+msgstr "开发者安装中的故障排除"
 
 #: ../../dev_install.rst:151
 msgid ""
@@ -405,7 +405,7 @@ msgid ""
 "found``, please try runing ``git submodule update --init --recursive --depth=1``."
 msgstr ""
 "如果编译时 ``make`` 失败并且报告 ``fatal error: ‘spdlog/XXX.h’ file not found``, "
-"请尝试执行 ``git submodule update —init —recursive —depth=1``."
+"请尝试执行 ``git submodule update --init --recursive --depth=1``."
 
 #: ../../dev_install.rst:155
 msgid "If importing Taichi causes"
@@ -423,7 +423,7 @@ msgid ""
 "Please try adding ``TAICHI_REPO_DIR`` to environment variables, see :ref:"
 "`dev_env_settings`."
 msgstr ""
-"请尝试将 ``TAICHI_REPO_DIR`` 添加到环境变量中, 详见 :ref:`dev_env_settings`."
+"请尝试将 ``TAICHI_REPO_DIR`` 添加到环境变量中, 详见 :ref:`dev_env_settings` 。"
 
 #: ../../dev_install.rst:163
 msgid ""
@@ -458,7 +458,7 @@ msgstr ""
 "llvm-as —version\n"
 "# 版本号应该 >= 8\n"
 "which llvm-as\n"
-"# 应该输出 /usr/local/bin/llvm-as 或 /opt/XXX/bin/llvm-as, 这是我们的配置文件所在"
+"# 应该输出 /usr/local/bin/llvm-as 或 /opt/XXX/bin/llvm-as, 这是我们的定制版 LLVM 所在"
 "位置"
 
 #: ../../dev_install.rst:180
