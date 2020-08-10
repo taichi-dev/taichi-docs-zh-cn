@@ -46,7 +46,7 @@ msgid ""
 "In fact, ``Vector`` is simply an alias of ``Matrix``, just with ``m = 1``. See :"
 "ref:`matrix` and :ref:`tensor` for more details."
 msgstr ""
-"事实上，``向量`` 是 ``矩阵`` 的一个别名， 只不过向量的 ``m = 1`` (只有一列）。 请参阅 :ref:"
+"事实上，``向量`` 是 ``矩阵`` 的一个别名， 只不过向量的 ``m = 1`` (m 代指列）。 请参阅 :ref:"
 "`matrix` 和 :ref:`tensor` 以获得更多信息。"
 
 #: ../../vector.rst:14
