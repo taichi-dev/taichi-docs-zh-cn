@@ -29,7 +29,7 @@ msgstr "后端"
 
 #: ../../global_settings.rst:7
 msgid "To specify which Arch to use: ``ti.init(arch=ti.cuda)``."
-msgstr "指定要使用的 Arch，请使用： ``ti.init(arch=ti.cuda)``。"
+msgstr "指定要使用的后端，请使用： ``ti.init(arch=ti.cuda)``。"
 
 #: ../../global_settings.rst:8
 msgid ""
@@ -40,7 +40,7 @@ msgstr "指定 CUDA 预分配内存的大小： ``ti.init(device_memory_GB=0.5)`
 #: ../../global_settings.rst:9
 msgid ""
 "To disable unified memory usage on CUDA: ``ti.init(use_unified_memory=False)``."
-msgstr "禁用 CUDA 使用统一内存：``ti.init(use_unified_memory=False)``。"
+msgstr "禁止 CUDA 使用统一内存 (Unified Memory)：``ti.init(use_unified_memory=False)``。"
 
 #: ../../global_settings.rst:10
 msgid ""
@@ -49,7 +49,7 @@ msgstr "指定 CUDA 所使用的 GPU：``export CUDA_VISIBLE_DEVICES=[gpuid]``�
 
 #: ../../global_settings.rst:11
 msgid "To disable a backend on start up, say, CUDA: ``export TI_ENABLE_CUDA=0``."
-msgstr "要禁用 CUDA 后端的启动：``export TI_ENABLE_CUDA=0``。"
+msgstr "要在启动时禁用某个后端，比如 CUDA：``export TI_ENABLE_CUDA=0``。"
 
 #: ../../global_settings.rst:14
 msgid "Compilation"
@@ -80,7 +80,7 @@ msgstr "如要显示优雅的 Taichi 作用域栈回溯: ``ti.init(excepthook=Tr
 
 #: ../../global_settings.rst:20
 msgid "To print intermediate IR generated: ``ti.init(print_ir=True)``."
-msgstr "如要打印生成的中间表示码：``ti.init(print_ir=True)``。"
+msgstr "如要打印生成的中间表示码 (IR)：``ti.init(print_ir=True)``。"
 
 #: ../../global_settings.rst:23
 msgid "Runtime"
@@ -90,7 +90,7 @@ msgstr "运行"
 msgid ""
 "Restart the entire Taichi system (destroy all tensors and kernels): ``ti."
 "reset()``."
-msgstr "重新启动 Taichi 运行系统（销毁所有张量和内核）： ``ti.reset()``。"
+msgstr "重新启动 Taichi 运行时系统（销毁所有张量和内核）： ``ti.reset()``。"
 
 #: ../../global_settings.rst:26
 msgid ""
@@ -101,7 +101,7 @@ msgstr ""
 
 #: ../../global_settings.rst:27
 msgid "To disable importing torch on start up: ``export TI_ENABLE_TORCH=0``."
-msgstr "禁用在启动时导入 torch: ``export TI_ENABLE_TORCH=0``。"
+msgstr "禁止在启动时导入 torch: ``export TI_ENABLE_TORCH=0``。"
 
 #: ../../global_settings.rst:30
 msgid "Logging"
@@ -112,7 +112,7 @@ msgid ""
 "Show more detailed log to level TRACE: ``ti.init(log_level=ti.TRACE)`` or ``ti."
 "set_logging_level(ti.TRACE)``."
 msgstr ""
-"通过输出 TRACE 级日志以显示更详尽的信息：``ti.init(log_level=ti.TRACE)`` or "
+"通过输出 TRACE 级日志以显示更详尽的信息：``ti.init(log_level=ti.TRACE)`` 或 "
 "``ti.set_logging_level(ti.TRACE)``。"
 
 #: ../../global_settings.rst:33
@@ -125,14 +125,14 @@ msgstr "开发"
 
 #: ../../global_settings.rst:38
 msgid "To trigger GDB when Taichi crashes: ``ti.init(gdb_trigger=True)``."
-msgstr "当 Taichi 崩溃时触发 GDB：``ti.init(gdb_trigger=True)``。"
+msgstr "如要在 Taichi 崩溃时触发 GDB：``ti.init(gdb_trigger=True)``。"
 
 #: ../../global_settings.rst:39
 msgid ""
 "Cache compiled runtime bitcode in **dev mode** to save start up time: ``export "
 "TI_CACHE_RUNTIME_BITCODE=1``."
 msgstr ""
-"以 **开发模式** 缓存编译后运行时位码(compiled runtime bitcode)以节省启动时间："
+"**开发模式** 中，缓存编译过的运行时位码 (compiled runtime bitcode) 以节省启动时间："
 "``export TI_CACHE_RUNTIME_BITCODE=1``。"
 
 #: ../../global_settings.rst:40
@@ -158,7 +158,7 @@ msgstr "``ti.init(arch=ti.cuda)`` 相当于 ``export TI_ARCH=cuda``."
 
 #: ../../global_settings.rst:49
 msgid "``ti.init(log_level=ti.TRACE)`` is equivalent to ``export TI_ARCH=trace``."
-msgstr "``ti.init(log_level=ti.TRACE)`` 相当于 ``export TI_ARCH=trace``."
+msgstr "``ti.init(log_level=ti.TRACE)`` 相当于 ``export TI_LOG_LEVEL=trace``."
 
 #: ../../global_settings.rst:50
 msgid "``ti.init(debug=True)`` is equivalent to ``export TI_DEBUG=1``."
