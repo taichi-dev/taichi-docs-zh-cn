@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: 2020-05-13 22:03-0400\n"
+"PO-Revision-Date: 2020-08-11 20:11+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../meta.rst:4
 msgid "Metaprogramming"
@@ -24,13 +25,13 @@ msgstr "元编程"
 
 #: ../../meta.rst:6
 msgid "Taichi provides metaprogramming infrastructures. Metaprogramming can"
-msgstr "Taichi为元编程提供了基础架构。元编程可以"
+msgstr "Taichi 为元编程提供了基础架构。元编程可以"
 
 #: ../../meta.rst:8
 msgid ""
 "Unify the development of dimensionality-dependent code, such as 2D/3D "
 "physical simulations"
-msgstr "统一对维度依赖的代码开发，例如2维/3维（2D/3D）物理仿真"
+msgstr "统一依赖维度的代码开发工作，例如2维/3维物理仿真"
 
 #: ../../meta.rst:9
 msgid "Improve run-time performance by from run-time costs to compile time"
@@ -38,25 +39,27 @@ msgstr "通过将运行时开销转移到编译时来提高运行时的性能"
 
 #: ../../meta.rst:10
 msgid "Simplify the development of Taichi standard library"
-msgstr "简化Taichi标准库的开发"
+msgstr "简化 Taichi 标准库的开发"
 
 #: ../../meta.rst:12
 msgid ""
 "Taichi kernels are *lazily instantiated* and a lot of computation can "
-"happen at *compile-time*. Every kernel in Taichi is a template kernel, "
-"even if it has no template arguments."
-msgstr "Taichi内核是 *惰性实例化* 的，并且很多有计算可以发生在 *编译时*。即使没有模板参数，Taichi中的每一个内核也都是模板内核。"
+"happen at *compile-time*. Every kernel in Taichi is a template kernel, even "
+"if it has no template arguments."
+msgstr ""
+"Taichi 内核是 *惰性实例化* 的，并且很多有计算可以发生在 *编译时*。即使没有模"
+"板参数，Taichi 中的每一个内核也都是模板内核。"
 
 #: ../../meta.rst:18
-#, fuzzy
 msgid "Template metaprogramming"
-msgstr "元编程"
+msgstr "模版元编程"
 
 #: ../../meta.rst:20
 msgid ""
 "You may use ``ti.template()`` as a type hint to pass a tensor as an "
 "argument. For example:"
 msgstr ""
+"你可以使用 ``ti.template()`` 作为类型提示来传递一个张量作为参数。例如:"
 
 #: ../../meta.rst:23
 msgid ""
@@ -75,9 +78,9 @@ msgstr ""
 
 #: ../../meta.rst:38
 msgid ""
-"As shown in the example above, template programming may enable us to "
-"reuse our code and provide more flexibility."
-msgstr ""
+"As shown in the example above, template programming may enable us to reuse "
+"our code and provide more flexibility."
+msgstr "如上例所示，模板编程可以使我们能够复用代码并以此提供了更多的灵活性。"
 
 #: ../../meta.rst:43
 msgid "Dimensionality-independent programming using grouped indices"
@@ -85,10 +88,12 @@ msgstr "使用组合索引（grouped indices）的对维度不依赖的编程"
 
 #: ../../meta.rst:45
 msgid ""
-"However, the ``copy`` template shown above is not perfect. For example, "
-"it can only be used to copy 1D tensors. What if we want to copy 2D "
-"tensors? Do we have to write another kernel?"
+"However, the ``copy`` template shown above is not perfect. For example, it "
+"can only be used to copy 1D tensors. What if we want to copy 2D tensors? Do "
+"we have to write another kernel?"
 msgstr ""
+"然而，上面提供的 ``copy`` 模板函数并不完美。例如，它只能用于复制1维张量。如"
+"果我们想复制2维张量呢？那我们需要再写一个内核吗?"
 
 #: ../../meta.rst:49
 msgid ""
@@ -100,20 +105,21 @@ msgstr ""
 
 #: ../../meta.rst:56
 msgid ""
-"Not necessary! Taichi provides ``ti.grouped`` syntax which enables you to"
-" pack loop indices into a grouped vector to unify kernels of different "
+"Not necessary! Taichi provides ``ti.grouped`` syntax which enables you to "
+"pack loop indices into a grouped vector to unify kernels of different "
 "dimensionalities. For example:"
 msgstr ""
+"没有必要！Taichi 提供了 ``ti.grouped`` 语法，使你可以将 for 循环索引打包成一"
+"个分组向量，以统一不同维度的内核。例如:"
 
 #: ../../meta.rst:60
 msgid ""
 "@ti.kernel\n"
 "def copy(x: ti.template(), y: ti.template()):\n"
 "    for I in ti.grouped(y):\n"
-"        # I is a vector with same dimensionality with x and data type i32"
-"\n"
-"        # If y is 0D, then I = ti.Vector([]), which is equivalent to "
-"`None` when used in x[I]\n"
+"        # I is a vector with same dimensionality with x and data type i32\n"
+"        # If y is 0D, then I = ti.Vector([]), which is equivalent to `None` "
+"when used in x[I]\n"
 "        # If y is 1D, then I = ti.Vector([i])\n"
 "        # If y is 2D, then I = ti.Vector([i, j])\n"
 "        # If y is 3D, then I = ti.Vector([i, j, k])\n"
@@ -133,17 +139,16 @@ msgstr ""
 
 #: ../../meta.rst:85
 msgid "Tensor metadata"
-msgstr ""
+msgstr "张量元数据"
 
 #: ../../meta.rst:87
-#, fuzzy
 msgid ""
 "Sometimes it is useful to get the data type (``tensor.dtype``) and shape "
 "(``tensor.shape``) of tensors. These attributes can be accessed in both "
 "Taichi- and Python-scopes."
 msgstr ""
-"有些时候获取张量的维度（ ``tensor.dim()`` ）和形状（ ``tensor.shape()`` "
-"）是很有用的。这些函数既可以被应用在Taichi内核中，也可以被用在Python脚本中。"
+"有时获取张量的数据类型（ ``tensor.dtype`` ）和形状（ ``tensor.shape`` ）是很"
+"有用的。这些属性值在 Taichi 作用域和 Python 作用域中都可以访问到。"
 
 #: ../../meta.rst:90
 msgid ""
@@ -157,7 +162,7 @@ msgstr ""
 
 #: ../../meta.rst:99
 msgid "See :ref:`scalar_tensor` for more details."
-msgstr ""
+msgstr "参阅 :ref:`scalar_tensor` 以获得更多细节。"
 
 #: ../../meta.rst:103
 msgid "For sparse tensors, the full domain shape will be returned."
@@ -165,22 +170,26 @@ msgstr "对稀疏张量而言，此处会返回其完整域的形状（full doma
 
 #: ../../meta.rst:107
 msgid "Matrix & vector metadata"
-msgstr ""
+msgstr "矩阵 & 向量元数据"
 
 #: ../../meta.rst:109
 msgid ""
 "Getting the number of matrix columns and rows will allow you to write "
-"dimensionality-independent code. For example, this can be used to unify "
-"2D and 3D physical simulators."
+"dimensionality-independent code. For example, this can be used to unify 2D "
+"and 3D physical simulators."
 msgstr ""
+"获得矩阵的行和列数将有利于你编写不依赖维度的代码。例如，这可以用来统一2维和3"
+"维物理模拟器的编写。"
 
 #: ../../meta.rst:113
 msgid ""
-"``matrix.m`` equals to the number of columns of a matrix, while "
-"``matrix.n`` equals to the number of rows of a matrix. Since vectors are "
-"considered as matrices with one column, ``vector.n`` is simply the "
-"dimensionality of the vector."
+"``matrix.m`` equals to the number of columns of a matrix, while ``matrix."
+"n`` equals to the number of rows of a matrix. Since vectors are considered "
+"as matrices with one column, ``vector.n`` is simply the dimensionality of "
+"the vector."
 msgstr ""
+"``matrix.m`` 等于矩阵的列数，而 ``matrix.n`` 等于矩阵的行数。同时向量被认为"
+"是只有一列的矩阵，``vector.n`` 就是向量的维数。"
 
 #: ../../meta.rst:118
 msgid ""
@@ -193,28 +202,35 @@ msgid ""
 "  print(vector.n)  # 3\n"
 "  print(vector.m)  # 1"
 msgstr ""
+"@ti.kernel\n"
+"def foo():\n"
+"  matrix = ti.Matrix([[1, 2], [3, 4], [5, 6]])\n"
+"  print(matrix.n)  # 3\n"
+"  print(matrix.m)  # 2\n"
+"  vector = ti.Vector([7, 8, 9])\n"
+"  print(vector.n)  # 3\n"
+"  print(vector.m)  # 1"
 
 #: ../../meta.rst:132
 msgid "Compile-time evaluations"
 msgstr "编译时求值（Compile-time evaluations）"
 
 #: ../../meta.rst:134
-#, fuzzy
 msgid ""
 "Using compile-time evaluation will allow certain computations to happen "
 "when kernels are being instantiated. This saves the overhead of those "
 "computations at runtime."
-msgstr "使用编译时求值可以使得某些计算在内核被实例化时发生。这些计算不会有运行时开支。"
+msgstr ""
+"编译时计算的使用将允许在内核实例化时进行部分计算。这节省了运行时计算的开销。"
 
 #: ../../meta.rst:137
-#, fuzzy
 msgid ""
-"Use ``ti.static`` for compile-time branching (for those who come from "
-"C++17, this is `if constexpr "
-"<https://en.cppreference.com/w/cpp/language/if>`_.):"
+"Use ``ti.static`` for compile-time branching (for those who come from C+"
+"+17, this is `if constexpr <https://en.cppreference.com/w/cpp/language/"
+"if>`_.):"
 msgstr ""
-"用 ``ti.static`` 来进行编译时的分支展开（对C++17的用户来说，这相当于是 `if constexpr "
-"<https://en.cppreference.com/w/cpp/language/if>`_ ）"
+"使用 ``ti.static`` 对编译时分支展开（对 C++17 的用户来说，这相当于是 `if "
+"constexpr <https://en.cppreference.com/w/cpp/language/if>`_ ）"
 
 #: ../../meta.rst:139
 msgid ""
@@ -233,7 +249,6 @@ msgstr ""
 "    x[0] = 1"
 
 #: ../../meta.rst:149
-#, fuzzy
 msgid "Use ``ti.static`` for forced loop unrolling:"
 msgstr "使用 ``ti.static`` 强制循环展开（forced loop unrolling）"
 
@@ -250,6 +265,16 @@ msgid ""
 "  print(2)\n"
 "  print(3)"
 msgstr ""
+"@ti.kernel\n"
+"def func():\n"
+"  for i in ti.static(range(4)):\n"
+"      print(i)\n"
+"\n"
+"  # 相当于:\n"
+"  print(0)\n"
+"  print(1)\n"
+"  print(2)\n"
+"  print(3)"
 
 #: ../../meta.rst:166
 msgid "When to use for loops with ``ti.static``"
@@ -257,7 +282,7 @@ msgstr "何时使用 ``ti.static`` 来进行for循环"
 
 #: ../../meta.rst:168
 msgid "There are several reasons why ``ti.static`` for loops should be used."
-msgstr "下面有一些为何应该在for循环的同时使用 ``ti.static`` 的原因。"
+msgstr "这是一些为何应该在 for 循环时使用 ``ti.static`` 的原因。"
 
 #: ../../meta.rst:170
 msgid "Loop unrolling for performance."
@@ -267,44 +292,36 @@ msgstr "循环展开以提高性能。"
 msgid ""
 "Loop over vector/matrix elements. Indices into Taichi matrices must be a "
 "compile-time constant. Indexing into taichi tensors can be run-time "
-"variables. For example, if ``x`` is a 1-D tensor of 3D vector, accessed "
-"as ``x[tensor_index][matrix index]``. The first index can be variable, "
-"yet the second must be a constant."
+"variables. For example, if ``x`` is a 1-D tensor of 3D vector, accessed as "
+"``x[tensor_index][matrix index]``. The first index can be variable, yet the "
+"second must be a constant."
 msgstr ""
-"对向量/矩阵的元素进行循环。矩阵的索引必须为编译时常量。张量的索引可以为运行时变量。例如，如果 ``x`` 是由3维向量组成的1维张量，并可以 "
-"``x[tensor_index][matrix_index]`` "
-"的形式访问。第一个索引（tensor_index）可以是变量，但是第二个索引（matrix_index）必须是一个常量。"
+"对向量/矩阵的元素进行循环。矩阵的索引必须为编译时常量。张量的索引可以为运行"
+"时变量。例如，如果 ``x`` 是由3维向量组成的1维张量，并可以 ``x[tensor_index]"
+"[matrix_index]`` 的形式访问。第一个索引（tensor_index）可以是变量，但是第二"
+"个索引（matrix_index）必须是一个常量。"
 
 #: ../../meta.rst:173
 msgid "For example, code for resetting this tensor of vectors should be"
 msgstr "例如，向量张量（tensor of vectors）的重置代码应该为"
 
 #: ../../meta.rst:175
-#, fuzzy
 msgid ""
 "@ti.kernel\n"
 "def reset():\n"
 "  for i in x:\n"
 "    for j in ti.static(range(x.n)):\n"
-"      # The inner loop must be unrolled since j is a vector index instead"
-"\n"
+"      # The inner loop must be unrolled since j is a vector index instead\n"
 "      # of a global tensor index.\n"
 "      x[i][j] = 0"
 msgstr ""
 "@ti.kernel\n"
 "def reset():\n"
 "  for i in x:\n"
-"    for j in ti.static(range(3)):\n"
-"      # 内层循环必须被展开，因为k是是向量的索引\n"
-"      # 而不是全局的张量索引。\n"
+"    for j in ti.static(range(x.n)):\n"
+"      # 内部循环必须被展开， 因为 j 是向量索引\n"
+"      # 而不是全局张量索引\n"
 "      x[i][j] = 0"
-
-#~ msgid ""
-#~ "@ti.kernel\n"
-#~ "def copy(x: ti.template(), y: ti.template()):\n"
-#~ "    for i in x:\n"
-#~ "        y[i] = x[i]"
-#~ msgstr ""
 
 #~ msgid ""
 #~ "@ti.kernel\n"
@@ -315,9 +332,8 @@ msgstr ""
 #~ "@ti.kernel\n"
 #~ "def array_op(x: ti.template(), y: ti.template()):\n"
 #~ "    # If tensor x is 2D\n"
-#~ "    for I in ti.grouped(x): # I"
-#~ " is a vector of size x.dim() "
-#~ "and data type i32\n"
+#~ "    for I in ti.grouped(x): # I is a vector of size x.dim() and data "
+#~ "type i32\n"
 #~ "        y[I + ti.Vector([0, 1])] = I[0] + I[1]\n"
 #~ "    # is equivalent to\n"
 #~ "    for i, j in x:\n"
@@ -339,14 +355,6 @@ msgstr ""
 
 #~ msgid "Tensor size reflection"
 #~ msgstr "张量尺寸的反射（size reflection）"
-
-#~ msgid ""
-#~ "@ti.func\n"
-#~ "def print_tensor_size(x: ti.template()):\n"
-#~ "  print(x.dim())\n"
-#~ "  for i in ti.static(range(x.dim())):\n"
-#~ "    print(x.shape()[i])"
-#~ msgstr ""
 
 #~ msgid ""
 #~ "@ti.kernel\n"
@@ -394,4 +402,3 @@ msgstr ""
 #~ " v[f + 1, p] = new_v\n"
 #~ " x[f + 1, p] = x[f, p] + dt * v[f + 1, p]\n"
 #~ " C[f + 1, p] = new_C"
-
