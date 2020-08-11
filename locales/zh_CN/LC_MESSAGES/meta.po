@@ -31,7 +31,7 @@ msgstr "Taichi 为元编程提供了基础架构。元编程可以"
 msgid ""
 "Unify the development of dimensionality-dependent code, such as 2D/3D "
 "physical simulations"
-msgstr "统一依赖维度的代码开发工作，例如2维/3维物理仿真"
+msgstr "统一依赖维度的代码开发工作，例如2维/3维的物理仿真"
 
 #: ../../meta.rst:9
 msgid "Improve run-time performance by from run-time costs to compile time"
@@ -80,7 +80,7 @@ msgstr ""
 msgid ""
 "As shown in the example above, template programming may enable us to reuse "
 "our code and provide more flexibility."
-msgstr "如上例所示，模板编程可以使我们能够复用代码并以此提供了更多的灵活性。"
+msgstr "如上例所示，模板编程可以使我们复用代码，并提供了更多的灵活性。"
 
 #: ../../meta.rst:43
 msgid "Dimensionality-independent programming using grouped indices"
