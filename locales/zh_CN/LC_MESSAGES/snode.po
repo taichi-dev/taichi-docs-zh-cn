@@ -34,7 +34,7 @@ msgid ""
 "(SNodes)* to compose the hierarchy and particular properties. These "
 "constructs and their semantics are listed below:"
 msgstr ""
-"在编写计算部分的代码之后，用户需要设定内部层次数据结构。包括微观和宏观两"
+"在编写计算部分的代码之后，用户需要设定内部数据结构的层次。包括微观和宏观两"
 "部分，宏观上设定层级数据结构组件之间的嵌套关系以及表示稀疏性的方式；微观"
 "上，描述数据如何分组(例如，SOA 或 AOS)。Taichi 提供了 *结构节点 "
 "(SNodes)* 以满足不同层级数据结构构建时的需求。其结构和语义具体如下所示："
@@ -64,8 +64,8 @@ msgid ""
 "serves the role of ``std::vector`` in C++ or ``list`` in Python, and can "
 "be used to maintain objects (e.g. particles) contained in a block."
 msgstr ""
-"动态集合(dynamic)：可变长度数组，具有预定义的最大长度。它扮演着 C++ 中的 "
-"``std::vector`` 或者是 Python 中的 ``list`` 这样的角色，可以用来维护包含"
+"动态集合(dynamic)：可变长度数组，具有预定义的最大长度。它有着像 C++ 中的 "
+"``std::vector`` 或者是 Python 中的 ``list`` 这样的功能，可以用来维护包含"
 "在一个块(block)中的对象（例如粒子）。"
 
 #: ../../snode.rst:18
@@ -122,7 +122,7 @@ msgstr "相当于 ``tensor.snode().shape``。"
 
 #: ../../snode.rst:43
 msgid "For example,"
-msgstr "例如,"
+msgstr "例如，"
 
 #: ../../snode.rst:47
 msgid ""
