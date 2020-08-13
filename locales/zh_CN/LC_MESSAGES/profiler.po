@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../profiler.rst:3
 msgid "Profiler"
-msgstr "分析器"
+msgstr "性能分析器"
 
 #: ../../profiler.rst:5
 msgid ""
@@ -33,14 +33,14 @@ msgstr ""
 
 #: ../../profiler.rst:8
 msgid "ScopedProfiler"
-msgstr "作用域分析器（ScopedProfiler）"
+msgstr "基于作用域的性能分析器 - ScopedProfiler"
 
 #: ../../profiler.rst:10
 msgid ""
 "``ScopedProfiler`` measures time spent on the **host tasks** "
 "hierarchically."
 msgstr ""
-"``ScopedProfiler`` 分级度量 **主机任务(host tasks)** 花费的时间。"
+"``ScopedProfiler`` 能够有层次地度量 **主机上** 执行任务所花费的时间。"
 
 #: ../../profiler.rst:12
 msgid ""
@@ -72,7 +72,7 @@ msgstr ""
 msgid ""
 "``ti.print_profile_info()`` prints profiling results in a hierarchical "
 "format."
-msgstr "``ti.print_profile_info()`` 会以层级格式打印分析结果。"
+msgstr "``ti.print_profile_info()`` 会以有层次的格式打印分析结果。"
 
 #: ../../profiler.rst:36
 msgid ""
@@ -84,7 +84,7 @@ msgstr ""
 
 #: ../../profiler.rst:39
 msgid "KernelProfiler"
-msgstr "内核分析器（KernelProfiler）"
+msgstr "内核性能分析器（KernelProfiler）"
 
 #: ../../profiler.rst:41
 msgid ""
