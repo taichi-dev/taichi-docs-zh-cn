@@ -3,46 +3,52 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.24\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-08-13 11:14+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../profiler.rst:3
 msgid "Profiler"
-msgstr ""
+msgstr "性能分析器"
 
 #: ../../profiler.rst:5
 msgid ""
-"Taichi's profiler can help you analyze the run-time cost of your program."
-" There are two profiling systems in Taichi: ``ScopedProfiler`` and "
-"``KernelProfiler``."
+"Taichi's profiler can help you analyze the run-time cost of your "
+"program. There are two profiling systems in Taichi: ``ScopedProfiler`` "
+"and ``KernelProfiler``."
 msgstr ""
+"Taichi 的分析器可以帮助你分析程序的运行时开销。在 Taichi 中有两个分析系"
+"统： ``ScopedProfiler`` 和 ``KernelProfiler``."
 
 #: ../../profiler.rst:8
 msgid "ScopedProfiler"
-msgstr ""
+msgstr "基于作用域的性能分析器 - ScopedProfiler"
 
 #: ../../profiler.rst:10
 msgid ""
 "``ScopedProfiler`` measures time spent on the **host tasks** "
 "hierarchically."
 msgstr ""
+"``ScopedProfiler`` 能够有层次地度量 **主机上** 执行任务所花费的时间。"
 
 #: ../../profiler.rst:12
 msgid ""
-"This profiler is automatically on. To show its results, call "
-"``ti.print_profile_info()``. For example:"
+"This profiler is automatically on. To show its results, call ``ti."
+"print_profile_info()``. For example:"
 msgstr ""
+"这个分析器是自动开启的。如要显示它的结果，请调用 ``ti."
+"print_profile_info()``。例如:"
 
 #: ../../profiler.rst:14
 msgid ""
@@ -66,29 +72,34 @@ msgstr ""
 msgid ""
 "``ti.print_profile_info()`` prints profiling results in a hierarchical "
 "format."
-msgstr ""
+msgstr "``ti.print_profile_info()`` 会以有层次的格式打印分析结果。"
 
 #: ../../profiler.rst:36
 msgid ""
 "``ScopedProfiler`` is a C++ class in the core of Taichi. It is not "
 "exposed to Python users."
 msgstr ""
+"``ScopedProfiler`` 是 Taichi 的一个核心 C++ 类。 它不会向 Python 用户公"
+"开。"
 
 #: ../../profiler.rst:39
 msgid "KernelProfiler"
-msgstr ""
+msgstr "内核性能分析器（KernelProfiler）"
 
 #: ../../profiler.rst:41
 msgid ""
 "``KernelProfiler`` records the costs of Taichi kernels on devices. To "
 "enable this profiler, set ``kernel_profiler=True`` in ``ti.init``."
 msgstr ""
+"``KernelProfiler`` 记录了 Taichi 内核在设备上的开销。如要开启该分析器，请"
+"在 ``ti.init`` 中设置 ``kernel_profiler=True`` 。"
 
 #: ../../profiler.rst:43
 msgid ""
 "Call ``ti.kernel_profiler_print()`` to show the kernel profiling result. "
 "For example:"
 msgstr ""
+"通过调用 ``ti.kernel_profiler_print()`` 以显示内核分析器的结果。例如："
 
 #: ../../profiler.rst:45
 msgid ""
@@ -109,7 +120,7 @@ msgstr ""
 
 #: ../../profiler.rst:63
 msgid "The outputs would be:"
-msgstr ""
+msgstr "输出将会是："
 
 #: ../../profiler.rst:67
 msgid ""
@@ -120,4 +131,3 @@ msgid ""
 "[ 77.27%] compute_c4_0_kernel_2_serial                min   0.004 ms   "
 "avg   0.004 ms   max   0.004 ms   total   0.000 s [      1x]"
 msgstr ""
-
