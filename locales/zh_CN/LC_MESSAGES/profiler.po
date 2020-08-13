@@ -40,7 +40,7 @@ msgid ""
 "``ScopedProfiler`` measures time spent on the **host tasks** "
 "hierarchically."
 msgstr ""
-"``ScopedProfiler`` 分级地度量 **主机任务(host tasks)** 花费的时间。"
+"``ScopedProfiler`` 分级度量 **主机任务(host tasks)** 花费的时间。"
 
 #: ../../profiler.rst:12
 msgid ""
