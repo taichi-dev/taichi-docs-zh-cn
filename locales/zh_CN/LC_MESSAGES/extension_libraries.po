@@ -45,15 +45,15 @@ msgstr ""
 
 #: ../../extension_libraries.rst:13
 msgid "Handy scalar functions like ``clamp``, ``smoothstep``, ``mix``, ``round``."
-msgstr "便捷的标量型函数，诸如 ``clamp``, ``smoothstep``, ``mix``, ``round``。"
+msgstr "便捷的标量型函数，诸如 ``clamp``， ``smoothstep``，``mix``，``round``。"
 
 #: ../../extension_libraries.rst:14
 msgid "GLSL-alike vector functions like ``normalize``, ``distance``, ``reflect``."
-msgstr "类 GLSL 向量函数，诸如 ``normalize``, ``distance``, ``reflect``。"
+msgstr "类 GLSL 向量函数，诸如 ``normalize``，``distance``，``reflect``。"
 
 #: ../../extension_libraries.rst:15
 msgid "Well-behaved random generators including ``randUnit2D``, ``randNDRange``."
-msgstr "表现良好的随机生成器，诸如 ``randUnit2D``, ``randNDRange``。"
+msgstr "表现良好的随机生成器，诸如 ``randUnit2D``，``randNDRange``。"
 
 #: ../../extension_libraries.rst:16
 msgid "Handy vector and matrix initializer: ``vec`` and ``mat``."
@@ -61,7 +61,7 @@ msgstr "便捷的向量和矩阵初始化方式，诸如 ``vec`` 和 ``mat``。"
 
 #: ../../extension_libraries.rst:17
 msgid "Handy vector component shuffle accessor like ``v.xy``."
-msgstr "便捷的向量分量随机访问，如 ``v.xy``。"
+msgstr "便捷的向量分量随机访问器，如 ``v.xy``。"
 
 #: ../../extension_libraries.rst:19
 msgid ""
