@@ -8,32 +8,33 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: 2020-05-13 09:21+0800\n"
+"PO-Revision-Date: 2020-08-14 09:57+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../compilation.rst:4
-#, fuzzy
 msgid "Life of a Taichi kernel"
-msgstr "Taichi内核的生命周期"
+msgstr "Taichi 内核的生命周期"
 
 #: ../../compilation.rst:6
 msgid ""
-"Sometimes it is helpful to understand the life cycle of a Taichi kernel. "
-"In short, compilation will only happen on the first invocation of an "
-"instance of a kernel."
-msgstr "有时了解Taichi内核的生命周期会有所帮助。 简而言之，编译只会在第一次调用内核实例时发生。"
+"Sometimes it is helpful to understand the life cycle of a Taichi kernel. In "
+"short, compilation will only happen on the first invocation of an instance of a "
+"kernel."
+msgstr ""
+"有时了解 Taichi 内核的生命周期会有所帮助。 简而言之，编译只会在第一次调用内核实例"
+"时发生。"
 
 #: ../../compilation.rst:9
-#, fuzzy
 msgid "The life cycle of a Taichi kernel has the following stages:"
-msgstr "Taichi内核的生命周期如下所示："
+msgstr "Taichi 内核的生命周期有如下几个阶段："
 
 #: ../../compilation.rst:11 ../../compilation.rst:38
 msgid "Kernel registration"
@@ -46,15 +47,12 @@ msgstr "模板实例化和缓存"
 #: ../../compilation.rst:13
 msgid "Python AST transforms"
 msgstr ""
-"Python 抽象语法树转换 (AST: `Abstact Syntax Tree "
-"<https://en.wikipedia.org/wiki/Abstract_syntax_tree>`_ )"
+"Python 抽象语法树转换 (AST: `Abstact Syntax Tree <https://en.wikipedia.org/wiki/"
+"Abstract_syntax_tree>`_ )"
 
 #: ../../compilation.rst:14
-#, fuzzy
 msgid "Taichi IR compilation, optimization, and executable generation"
-msgstr ""
-"Taichi 中间表示代码编译，优化和二进制生成 ( IR: `Intermediate representation "
-"<https://en.wikipedia.org/wiki/Intermediate_representation>`_ )"
+msgstr "Taichi 中间表示代码编译，优化和可执行文件生成"
 
 #: ../../compilation.rst:15
 msgid "Launching"
@@ -77,9 +75,8 @@ msgstr ""
 "    tensor[i] += delta"
 
 #: ../../compilation.rst:29
-#, fuzzy
 msgid "We allocate two 1D tensors to simplify discussion:"
-msgstr "我们还分配了两个一维张量以简化讨论："
+msgstr "我们分配了两个1维张量以简化讨论："
 
 #: ../../compilation.rst:31
 msgid ""
@@ -92,12 +89,12 @@ msgstr ""
 #: ../../compilation.rst:39
 msgid ""
 "When the ``ti.kernel`` decorator is executed, a kernel named ``add`` is "
-"registered. Specifically, the Python Abstract Syntax Tree (AST) of the "
-"``add`` function will be memorized. No compilation will happen until the "
-"first invocation of ``add``."
+"registered. Specifically, the Python Abstract Syntax Tree (AST) of the ``add`` "
+"function will be memorized. No compilation will happen until the first "
+"invocation of ``add``."
 msgstr ""
-"当执行 ``ti.kernel`` 装饰器时，将注册一个名为 ``add`` 的内核。 具体来说，将记住 ``add`` "
-"函数的Python抽象语法树(AST)。 在第一次调用 ``add`` 之前不会进行编译。"
+"当执行 ``ti.kernel`` 装饰器时，将注册一个名为 ``add`` 的内核。 具体来说，将记住 "
+"``add`` 函数的Python抽象语法树(AST)。 在第一次调用 ``add`` 之前不会进行编译。"
 
 #: ../../compilation.rst:47
 msgid "add(x, 42)"
@@ -105,16 +102,15 @@ msgstr "add(x, 42)"
 
 #: ../../compilation.rst:51
 msgid ""
-"When ``add`` is called for the first time, the Taichi frontend compiler "
-"will instantiate the kernel."
+"When ``add`` is called for the first time, the Taichi frontend compiler will "
+"instantiate the kernel."
 msgstr "第一次调用 ``add`` 时，Taichi前端编译器将实例化内核。"
 
 #: ../../compilation.rst:53
-#, fuzzy
 msgid ""
-"When you have a second call with the same **template signature** "
-"(explained later), e.g.,"
-msgstr "当你第二次调用相同模板签名（稍后说明）时，例如，"
+"When you have a second call with the same **template signature** (explained "
+"later), e.g.,"
+msgstr "当你以相同的 **模板签名**（稍后说明）进行第二次调用时，例如，"
 
 #: ../../compilation.rst:55
 msgid "add(x, 1)"
@@ -126,8 +122,8 @@ msgstr "Taichi将直接重复使用之前编译的二进制文件。"
 
 #: ../../compilation.rst:61
 msgid ""
-"Arguments hinted with ``ti.template()`` are template arguments, and will "
-"incur template instantiation. For example,"
+"Arguments hinted with ``ti.template()`` are template arguments, and will incur "
+"template instantiation. For example,"
 msgstr "用 ``ti.template()`` 提示的参数是模板参数，将引起模板实例化。 例如，"
 
 #: ../../compilation.rst:63
@@ -139,43 +135,44 @@ msgid "will lead to a new instantiation of **add**."
 msgstr "将导致 **add** 的新实例化。"
 
 #: ../../compilation.rst:70
-#, fuzzy
 msgid ""
-"**Template signatures** are what distinguish different instantiations of "
-"a kernel template. The signature of ``add(x, 42)`` is ``(x, ti.i32)``, "
-"which is the same as that of ``add(x, 1)``. Therefore, the latter can "
-"reuse the previously compiled binary. The signature of ``add(y, 42)`` is "
-"``(y, ti.i32)``, a different value from the previous signature, hence a "
-"new kernel will be instantiated and compiled."
+"**Template signatures** are what distinguish different instantiations of a "
+"kernel template. The signature of ``add(x, 42)`` is ``(x, ti.i32)``, which is "
+"the same as that of ``add(x, 1)``. Therefore, the latter can reuse the "
+"previously compiled binary. The signature of ``add(y, 42)`` is ``(y, ti.i32)``, "
+"a different value from the previous signature, hence a new kernel will be "
+"instantiated and compiled."
 msgstr ""
-"**模板签名** 可用来区别内核模板的不同实例。 ``add(x，42)`` 的签名是 ``(x, ti.i32)``，与 ``add(x, "
-"1)`` 的签名相同。 因此，后者可以重复使用先前编译的二进制文件。 ``add(y, 42`` 的签名是 ``(y, "
-"ti.i32)``，与之前签名的值不同，因此将发生新的实例化和编译。"
+"**模板签名** 可以区分内核模板的不同实例。``add(x, 42)`` 的签名是 ``(x, ti."
+"i32)`` ，这与 ``add(x, 1)`` 的签名相同。因此，后者可以重用之前编译的二进制文件。"
+"``add(y, 42)`` 的签名是 ``(y, ti.i32)``，与之前 x 的签名不同，因此一个新的内核将"
+"被实例化和编译。"
 
 #: ../../compilation.rst:76
-#, fuzzy
 msgid ""
-"Many basic operations in the Taichi standard library are implemented "
-"using Taichi kernels using metaprogramming tricks. Invoking them will "
-"incur **implicit kernel instantiations**."
-msgstr "Taichi标准库中的许多基本操作都是使用Taichi内核实现的， 用以提高性能， 并带有或多或少元编程技巧。调用它们将导致 **隐式内核实例化**"
+"Many basic operations in the Taichi standard library are implemented using "
+"Taichi kernels using metaprogramming tricks. Invoking them will incur **implicit "
+"kernel instantiations**."
+msgstr ""
+"Taichi 标准库中的许多基本操作都是使用 Taichi 内核和元编程技巧实现的。调用它们将导"
+"致 **隐式内核实例化**。"
 
 #: ../../compilation.rst:79
 msgid ""
-"Examples include ``x.to_numpy()`` and ``y.from_torch(torch_tensor)``. "
-"When you invoke these functions, you will see kernel instantiations, as "
-"Taichi kernels will be generated to offload the hard work to multiple CPU"
-" cores/GPUs."
+"Examples include ``x.to_numpy()`` and ``y.from_torch(torch_tensor)``. When you "
+"invoke these functions, you will see kernel instantiations, as Taichi kernels "
+"will be generated to offload the hard work to multiple CPU cores/GPUs."
 msgstr ""
-"示例包括 ``x.to_numpy()`` 和 ``y.from_torch(torch_tensor)``。 "
-"调用这些方程时，你将看到内核实例化，因为将生成Taichi内核来把繁重的工作分流给多个CPU内核/ GPU。"
+"示例包括 ``x.to_numpy()`` 和 ``y.from_torch(torch_tensor)``。 调用这些方程时，你"
+"将看到内核实例化，因为将生成Taichi内核来把繁重的工作分流给多个CPU内核/ GPU。"
 
 #: ../../compilation.rst:82
 msgid ""
-"As mentioned before, the second time you call the same operation, the "
-"cached compiled kernel will be reused and no further compilation is "
-"needed."
-msgstr "如前所述，第二次调用相同的操作时，缓存的已编译内核将被重用，并且不需要进一步的编译。"
+"As mentioned before, the second time you call the same operation, the cached "
+"compiled kernel will be reused and no further compilation is needed."
+msgstr ""
+"如前所述，第二次调用相同的操作时，缓存的已编译内核将被重用，并且不需要进一步的编"
+"译。"
 
 #: ../../compilation.rst:85
 msgid "Code transformation and optimizations"
@@ -183,23 +180,26 @@ msgstr "代码转换和优化"
 
 #: ../../compilation.rst:87
 msgid ""
-"When a new instantiation happens, the Taichi frontend compiler (i.e., the"
-" ``ASTTransformer`` Python class) will transform the kernel body AST into"
-" a Python script, which, when executed, emits a Taichi frontend AST. "
-"Basically, some patches are applied to the Python AST so that the Taichi "
-"frontend can recognize it."
+"When a new instantiation happens, the Taichi frontend compiler (i.e., the "
+"``ASTTransformer`` Python class) will transform the kernel body AST into a "
+"Python script, which, when executed, emits a Taichi frontend AST. Basically, "
+"some patches are applied to the Python AST so that the Taichi frontend can "
+"recognize it."
 msgstr ""
+"当一个新的实例化发生时，Taichi 的前端编译器（即 Python 类 ``ASTTransformer`` ）将"
+"把内核函数体的 AST 转换为 Python 脚本，当该脚本执行时会输出一个 Taichi 前端 AST。"
+"大体上讲，由于应用在 Python AST 上的一些补丁，使得 Taichi 前端可以识别它。"
 
 #: ../../compilation.rst:91
 msgid ""
-"The Taichi AST lowering pass translates Taichi frontend IR into "
-"hierarchical static single assignment (SSA) IR, which allows a series of "
-"further IR passes to happen, such as"
+"The Taichi AST lowering pass translates Taichi frontend IR into hierarchical "
+"static single assignment (SSA) IR, which allows a series of further IR passes to "
+"happen, such as"
 msgstr ""
-"AST 的降阶过程 (lowering pass) 会将前端中间表示代码转换为分层静态单任务 (SSA: `Static Single "
-"Assignment "
-"<https://en.wikipedia.org/wiki/Static_single_assignment_form>`_ ) "
-"的中间表示代码，从而可以用更多的过程进一步处理中间表示代码，例如"
+"AST 的降阶过程 (lowering pass) 会将前端中间表示代码转换为分层静态单任务 (SSA: "
+"`Static Single Assignment <https://en.wikipedia.org/wiki/"
+"Static_single_assignment_form>`_ ) 的中间表示代码，从而可以用更多的过程进一步处理"
+"中间表示代码，例如"
 
 #: ../../compilation.rst:94
 msgid "Loop vectorization"
@@ -211,9 +211,8 @@ msgstr "类型推断和检查"
 
 #: ../../compilation.rst:96
 msgid ""
-"General simplifications such as common subexpression elimination (CSE), "
-"dead instruction elimination (DIE), constant folding, and store "
-"forwarding"
+"General simplifications such as common subexpression elimination (CSE), dead "
+"instruction elimination (DIE), constant folding, and store forwarding"
 msgstr "一般简化，例如通用子表达式消除(CSE)，无效指令消除(DIE)，常数折叠和存储转发"
 
 #: ../../compilation.rst:97
@@ -226,8 +225,7 @@ msgstr "数据访问优化"
 
 #: ../../compilation.rst:99
 msgid ""
-"Reverse-mode automatic differentiation (if using differentiable "
-"programming)"
+"Reverse-mode automatic differentiation (if using differentiable programming)"
 msgstr "反向模式自动微分（如果使用微分编程）"
 
 #: ../../compilation.rst:100
@@ -244,39 +242,36 @@ msgstr "即时(JIT)编译引擎"
 
 #: ../../compilation.rst:106
 msgid ""
-"Finally, the optimized SSA IR is fed into backend compilers such as LLVM "
-"or Apple Metal/OpenGL shader compilers. The backend compilers then "
-"generate high-performance executable CPU/GPU programs."
+"Finally, the optimized SSA IR is fed into backend compilers such as LLVM or "
+"Apple Metal/OpenGL shader compilers. The backend compilers then generate high-"
+"performance executable CPU/GPU programs."
 msgstr ""
+"最后，优化后的 SSA IR 被输入后端编译器，如 LLVM 或 Apple Metal/OpenGL 着色器编译"
+"器。然后后端编译器生成高性能的 CPU/GPU 可执行程序。"
 
 #: ../../compilation.rst:110
 msgid "Kernel launching"
 msgstr "内核启动"
 
 #: ../../compilation.rst:112
-#, fuzzy
 msgid ""
-"Taichi kernels will be ultimately launched as multi-threaded CPU tasks or"
-" GPU kernels."
-msgstr "Taichi内核最终将作为多线程CPU任务或CUDA内核启动。"
+"Taichi kernels will be ultimately launched as multi-threaded CPU tasks or GPU "
+"kernels."
+msgstr "Taichi 内核最终将作为多线程 CPU 任务或 CUDA 内核启动。"
 
 #~ msgid ""
-#~ "When a new instantiation happens, the"
-#~ " Taichi frontend compiler will transform"
-#~ " the kernel body AST into a "
-#~ "Python script, which, when executed, "
-#~ "emits a Taichi frontend AST. Basically,"
-#~ " some patches are applied to the "
-#~ "Python AST so that the Taichi "
-#~ "frontend can recognize it."
+#~ "When a new instantiation happens, the Taichi frontend compiler will transform "
+#~ "the kernel body AST into a Python script, which, when executed, emits a "
+#~ "Taichi frontend AST. Basically, some patches are applied to the Python AST so "
+#~ "that the Taichi frontend can recognize it."
 #~ msgstr ""
-#~ "当发生新的实例化时，Taichi前端编译器会将内核抽象语法树转换为Python脚本，该脚本在执行时会发出Taichi前端抽象语法树。 "
-#~ "基本上，一些补丁已应用于Python 的抽象语法树，以便Taichi前端可以识别它。"
+#~ "当发生新的实例化时，Taichi前端编译器会将内核抽象语法树转换为Python脚本，该脚本"
+#~ "在执行时会发出Taichi前端抽象语法树。 基本上，一些补丁已应用于Python 的抽象语法"
+#~ "树，以便Taichi前端可以识别它。"
 
 #~ msgid ""
-#~ "Finally, the optimized SSA IR is "
-#~ "fed into the LLVM IR codegen, and"
-#~ " LLVM JIT generates high-performance "
-#~ "executable CPU/GPU programs."
-#~ msgstr "最后，经过优化的SSA 中间表示代码被反馈进 LLVM 中间表示代码码元，并且LLVM JIT生成了高性能可执行的 CPU / GPU 程序。"
-
+#~ "Finally, the optimized SSA IR is fed into the LLVM IR codegen, and LLVM JIT "
+#~ "generates high-performance executable CPU/GPU programs."
+#~ msgstr ""
+#~ "最后，经过优化的SSA 中间表示代码被反馈进 LLVM 中间表示代码码元，并且LLVM JIT生"
+#~ "成了高性能可执行的 CPU / GPU 程序。"
