@@ -196,9 +196,9 @@ msgid ""
 "static single assignment (SSA) IR, which allows a series of further IR passes to "
 "happen, such as"
 msgstr ""
-"AST 的降阶过程 (lowering pass) 会将前端中间表示代码转换为分层静态单任务 (SSA: "
+"AST 的降阶过程 (lowering pass) 会将前端的中间表示代码转换为分层静态单任务 (SSA: "
 "`Static Single Assignment <https://en.wikipedia.org/wiki/"
-"Static_single_assignment_form>`_ ) 的中间表示代码，从而可以用更多的过程进一步处理"
+"Static_single_assignment_form>`_ ) 的中间表示代码，从而允许一系列过程更进一步地处理"
 "中间表示代码，例如"
 
 #: ../../compilation.rst:94
@@ -247,7 +247,7 @@ msgid ""
 "performance executable CPU/GPU programs."
 msgstr ""
 "最后，优化后的 SSA IR 被输入后端编译器，如 LLVM 或 Apple Metal/OpenGL 着色器编译"
-"器。然后后端编译器生成高性能的 CPU/GPU 可执行程序。"
+"器。然后后端编译器生成高性能可执行的 CPU/GPU 程序。"
 
 #: ../../compilation.rst:110
 msgid "Kernel launching"
