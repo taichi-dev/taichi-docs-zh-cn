@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-13 16:43+0800\n"
+"POT-Creation-Date: 2020-08-15 13:41+0800\n"
 "PO-Revision-Date: 2020-08-09 20:00+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -260,9 +260,11 @@ msgid "``a.norm(eps)`` is equivalent to ``ti.sqrt(a.dot(a) + eps)``"
 msgstr "``a.norm(eps)`` 相当于 ``ti.sqrt(a.dot(a) + eps)``"
 
 #: ../../vector.rst:122
+#, fuzzy
 msgid ""
-"Set ``eps = 1e-5`` for example, to safe guard the operator's gradient on "
-"zero vectors during differentiable programming."
+"To safeguard the operator's gradient on zero vectors during "
+"differentiable programming, set ``eps`` to a small, positive value such "
+"as ``1e-5``."
 msgstr "例如可以通过设置 ``eps = 1e-5`` ，对可微编程中零向量上的梯度值计算进行保护。"
 
 #: ../../vector.rst:128
@@ -361,9 +363,11 @@ msgstr ""
 "# c = [[1*4, 1*5, 1*6], [2*4, 2*5, 2*6]]"
 
 #: ../../vector.rst:202
+#, fuzzy
 msgid ""
-"This have no common with ``ti.cross``. ``a`` and ``b`` do not have to be "
-"3 or 2 component vectors."
+"The outer product should not be confused with the cross product "
+"(``ti.cross``). For example, ``a`` and ``b`` do not have to be 2- or "
+"3-component vectors for this function."
 msgstr "与 `ti.cross` 不同，这里 ``a`` 和 ``b`` 不再要求必须是2分量或3分量的向量。"
 
 #: ../../vector.rst:208

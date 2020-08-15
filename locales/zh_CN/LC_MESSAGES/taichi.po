@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-13 16:43+0800\n"
+"POT-Creation-Date: 2020-08-15 13:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -7425,7 +7425,7 @@ msgid ""
 "x = ti.field(dtype=ti.i32)\n"
 "y = ti.field(dtype=ti.f32)\n"
 "ti.root.place(x, y)\n"
-"assert x.snode == y.snode"
+"assert x.snode.parent == y.snode.parent"
 msgstr ""
 
 #: ../../taichi/docs/snode.rst:38 ../../taichi/docs/snode.rst:53
@@ -9430,8 +9430,9 @@ msgstr ""
 
 #: ../../taichi/docs/vector.rst:122
 msgid ""
-"Set ``eps = 1e-5`` for example, to safe guard the operator's gradient on "
-"zero vectors during differentiable programming."
+"To safeguard the operator's gradient on zero vectors during "
+"differentiable programming, set ``eps`` to a small, positive value such "
+"as ``1e-5``."
 msgstr ""
 
 #: ../../taichi/docs/vector.rst:128
@@ -9523,8 +9524,9 @@ msgstr ""
 
 #: ../../taichi/docs/vector.rst:202
 msgid ""
-"This have no common with ``ti.cross``. ``a`` and ``b`` do not have to be "
-"3 or 2 component vectors."
+"The outer product should not be confused with the cross product "
+"(``ti.cross``). For example, ``a`` and ``b`` do not have to be 2- or "
+"3-component vectors for this function."
 msgstr ""
 
 #: ../../taichi/docs/vector.rst:208
@@ -13414,5 +13416,25 @@ msgstr ""
 #~ "    # ... (some tests that "
 #~ "requires sparse feature which is not "
 #~ "supported by OpenGL)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "x = ti.field(dtype=ti.i32)\n"
+#~ "y = ti.field(dtype=ti.f32)\n"
+#~ "ti.root.place(x, y)\n"
+#~ "assert x.snode == y.snode"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set ``eps = 1e-5`` for example, to"
+#~ " safe guard the operator's gradient "
+#~ "on zero vectors during differentiable "
+#~ "programming."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This have no common with ``ti.cross``."
+#~ " ``a`` and ``b`` do not have to"
+#~ " be 3 or 2 component vectors."
 #~ msgstr ""
 
