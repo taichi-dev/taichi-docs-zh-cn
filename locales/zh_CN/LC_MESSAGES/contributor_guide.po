@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: 2020-06-19 00:16+0800\n"
+"PO-Revision-Date: 2020-08-14 08:47+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../contributor_guide.rst:2
 msgid "Contribution guidelines"
@@ -24,8 +25,8 @@ msgstr "开发与贡献指南"
 
 #: ../../contributor_guide.rst:4
 msgid ""
-"First of all, thank you for contributing! We welcome contributions of all"
-" forms, including but not limited to"
+"First of all, thank you for contributing! We welcome contributions of all forms, "
+"including but not limited to"
 msgstr "首先，感谢你的参与和贡献！我们欢迎一切形式的贡献，包括但不限于"
 
 #: ../../contributor_guide.rst:7
@@ -38,11 +39,11 @@ msgstr "提出和实现新功能"
 
 #: ../../contributor_guide.rst:9
 msgid ""
-"Documentation improvement and translations (e.g. `Simplified Chinese "
-"<https://github.com/taichi-dev/taichi-docs-zh-cn>`_)"
+"Documentation improvement and translations (e.g. `Simplified Chinese <https://"
+"github.com/taichi-dev/taichi-docs-zh-cn>`_)"
 msgstr ""
-"对本文档进行改进和翻译（欢迎前往 `Taichi 中文文档 <https://github.com/taichi-dev/taichi-docs-"
-"zh-cn>`_）"
+"对本文档进行改进和翻译（欢迎前往 `Taichi 中文文档 <https://github.com/taichi-dev/"
+"taichi-docs-zh-cn>`_）"
 
 #: ../../contributor_guide.rst:10
 msgid "Improved error messages that are more user-friendly"
@@ -70,17 +71,19 @@ msgstr "加入我们的 `Taichi 论坛 <https://forum.taichi.graphics/>`_"
 
 #: ../../contributor_guide.rst:16
 msgid ""
-"Introduce Taichi to your friends or simply star `the project "
-"<https://github.com/taichi-dev/taichi>`_."
+"Introduce Taichi to your friends or simply star `the project <https://github.com/"
+"taichi-dev/taichi>`_."
 msgstr ""
-"向你的朋友们介绍 Taichi 或者直接在 GitHub 上星标 `Taichi <https://github.com/taichi-"
-"dev/taichi>`_ 也可以。"
+"向你的朋友们介绍 Taichi 或者直接在 GitHub 上星标 `Taichi <https://github.com/"
+"taichi-dev/taichi>`_ 。"
 
 #: ../../contributor_guide.rst:17
 msgid ""
-"Typo fixes in the documentation, code or comments (please directly make a"
-" pull request for minor issues like these)"
-msgstr "修复文档，代码，注释中的拼写错误（像这样的小问题请直接创建一个 PR 而不必开一个 issue）"
+"Typo fixes in the documentation, code or comments (please directly make a pull "
+"request for minor issues like these)"
+msgstr ""
+"修复文档，代码，注释中的拼写错误（像这样的小问题请直接创建一个 PR 而不必开一个 "
+"issue）"
 
 #: ../../contributor_guide.rst:20
 msgid "How to contribute bug fixes and new features"
@@ -89,38 +92,40 @@ msgstr "如何参与 BUG 修复，添加新特性"
 #: ../../contributor_guide.rst:22
 #, python-format
 msgid ""
-"Issues marked with `\"good first issue\" <https://github.com/taichi-"
-"dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22>`_"
-" are great chances for starters."
+"Issues marked with `\"good first issue\" <https://github.com/taichi-dev/taichi/"
+"issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22>`_ are great "
+"chances for starters."
 msgstr ""
-"标记了 `“good first issue” <https://github.com/taichi-"
-"dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22>`_"
-" 的 issue 是较容易上手的。"
+"标记了 `“good first issue” <https://github.com/taichi-dev/taichi/issues?q=is"
+"%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22>`_ 的 issue 对新手来说较容易上手。"
 
 #: ../../contributor_guide.rst:24
 msgid ""
-"Please first leave a note (e.g. *I know how to fix this and would like to"
-" help!*) on the issue, so that people know someone is already working on "
-"it. This helps prevent redundant work;"
-msgstr "请先在这个 issue 中留下一句评论（比如： *我知道怎么解决这个，我乐意帮忙！* ）。这样大家就知道已经有人在解决这个问题了，从而避免重复劳动;"
+"Please first leave a note (e.g. *I know how to fix this and would like to help!"
+"*) on the issue, so that people know someone is already working on it. This "
+"helps prevent redundant work;"
+msgstr ""
+"请先在这个 issue 中留下一句评论（比如： *我知道怎么解决这个，并且乐于提供帮助！* ）。这"
+"样大家就知道已经有人在解决这个问题了。这样有助于避免重复劳动；"
 
 #: ../../contributor_guide.rst:26
 msgid ""
-"If no core developer has commented and described a potential solution on "
-"the issue, please briefly describe your plan, and wait for a core "
-"developer to reply before you start. This helps keep implementations "
-"simple and effective."
-msgstr "如果没有核心开发成员说明一个 issue 可能的解决方案，请简要地描述你的方案，并在你开始之前静候开发成员的回复，从而保障实现的简洁高效。"
+"If no core developer has commented and described a potential solution on the "
+"issue, please briefly describe your plan, and wait for a core developer to reply "
+"before you start. This helps keep implementations simple and effective."
+msgstr ""
+"如果没有核心开发成员说明一个 issue 可能的解决方案，请简要地描述你的方案，并在开"
+"始前静候开发成员的回复确认，从而保障实现的简洁高效。"
 
 #: ../../contributor_guide.rst:29
 msgid ""
-"Issues marked with `\"welcome contribution\" <https://github.com/taichi-"
-"dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22>`_"
-" are slightly more challenging but still friendly to beginners."
+"Issues marked with `\"welcome contribution\" <https://github.com/taichi-dev/"
+"taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22>`_ are "
+"slightly more challenging but still friendly to beginners."
 msgstr ""
-"标记了 `\"welcome contribution\" <https://github.com/taichi-"
-"dev/taichi/issues?q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22>`_"
-" 的 issue 相比之下更有挑战性但对新手仍然是比较友好的。"
+"标记了 `\"welcome contribution\" <https://github.com/taichi-dev/taichi/issues?"
+"q=is%3Aopen+is%3Aissue+label%3A%22welcome+contribution%22>`_ 的 issue 相比之下更"
+"有挑战性但对新手仍然是比较友好的。"
 
 #: ../../contributor_guide.rst:32
 msgid "High-level guidelines"
@@ -132,20 +137,24 @@ msgstr "切实解决问题是我们的最终目标。"
 
 #: ../../contributor_guide.rst:35
 msgid ""
-"No overkills: always use *easy* solutions to solve easy problems, so that"
-" you have time and energy for real hard ones."
-msgstr "不要小题大做：用 *简单* 的方案去解决简单的问题，这样你可以抽出时间和精力处理那些真正困难的问题。"
+"No overkills: always use *easy* solutions to solve easy problems, so that you "
+"have time and energy for real hard ones."
+msgstr ""
+"不要小题大做：用 *简单* 的方案去解决简单的问题，这样你可以抽出时间和精力处理那些"
+"真正困难的问题。"
 
 #: ../../contributor_guide.rst:36
 msgid ""
-"Almost every design decision has pros and cons. A decision is `good` if "
-"its pros outweigh its cons. Always think about both sides."
-msgstr "几乎每一个设计都有两面性。如果利大于弊，那就可以看作是一个 *好的决定* ，请务必权衡利弊。"
+"Almost every design decision has pros and cons. A decision is `good` if its pros "
+"outweigh its cons. Always think about both sides."
+msgstr ""
+"几乎每一个设计都有两面性。如果利大于弊，那就可以看作是一个 *好的决定* ，请务必权"
+"衡利弊。"
 
 #: ../../contributor_guide.rst:37
 msgid ""
-"Debugging is hard. Changesets should be small so that sources of bugs can"
-" be easily pinpointed."
+"Debugging is hard. Changesets should be small so that sources of bugs can be "
+"easily pinpointed."
 msgstr "调试是很困难的，每一次的改动应该很小，这样 BUG 的源头就可以很容易地找到。"
 
 #: ../../contributor_guide.rst:38
@@ -154,27 +163,29 @@ msgstr "单元/集成测试是我们的好伙伴。"
 
 #: ../../contributor_guide.rst:41
 msgid ""
-"“There are two ways of constructing a software design: One way is to make"
-" it so simple that there are obviously no deficiencies, and the other way"
-" is to make it so complicated that there are no obvious deficiencies. "
-"`The first method is far more difficult`.”     --- `C.A.R. Hoare "
-"<https://en.wikipedia.org/wiki/Tony_Hoare>`_"
+"“There are two ways of constructing a software design: One way is to make it so "
+"simple that there are obviously no deficiencies, and the other way is to make it "
+"so complicated that there are no obvious deficiencies. `The first method is far "
+"more difficult`.”     --- `C.A.R. Hoare <https://en.wikipedia.org/wiki/"
+"Tony_Hoare>`_"
 msgstr ""
-"“软件设计过程中中存在两种模式：一种是使之结构简单明了到没有任何问题，另一种是令结构设计足够复杂到完美无缺 `而第一种方案则要困难的多`.”"
-"     — `C.A.R. 霍尔 <https://en.wikipedia.org/wiki/Tony_Hoare>`_"
+"“软件设计过程中中存在两种模式：一种是使之结构简单明了到没有任何问题，另一种是令结"
+"构设计足够复杂到完美无缺 `而第一种方案则要困难的多`。”     — `C.A.R. 霍尔 "
+"<https://en.wikipedia.org/wiki/Tony_Hoare>`_"
 
 #: ../../contributor_guide.rst:43
 msgid ""
-"One thing to keep in mind is that, Taichi was originally born as an "
-"academic research project. This usually means that some parts did not "
-"have the luxury to go through a solid design. While we are always trying "
-"to improve the code quality, it doesn't mean that the project is free "
-"from technical debts. Some places may be confusing or overly complicated."
-" Whenever you spot one, you are more than welcome to shoot us a PR! :-)"
+"One thing to keep in mind is that, Taichi was originally born as an academic "
+"research project. This usually means that some parts did not have the luxury to "
+"go through a solid design. While we are always trying to improve the code "
+"quality, it doesn't mean that the project is free from technical debts. Some "
+"places may be confusing or overly complicated. Whenever you spot one, you are "
+"more than welcome to shoot us a PR! :-)"
 msgstr ""
-"需要记住的一点是，Taichi "
-"最初作为一个学术研究项目而诞生。这通常意味着有些部分没有机会经过稳固坚实的设计。虽然我们一直在努力提高代码质量，但这并不意味着项目能没有技术负债。有些地方仍可能会过于复杂而让人感到困惑。一旦你发现这种情形的存在，非常欢迎给我们提出"
-" PR！:-)"
+"需要记住的一点是，Taichi 最初是作为一个学术研究项目而诞生的。这通常意味着有些部分没有"
+"机会经过稳固坚实的设计。虽然我们一直在努力提高代码质量，但这并不意味着项目能没有"
+"技术负债。有些地方仍可能会过于复杂而让人感到困惑。一旦你发现这种情形的存在，非常"
+"欢迎给我们提出 PR！:-)"
 
 #: ../../contributor_guide.rst:46
 msgid "Effective communication"
@@ -182,8 +193,8 @@ msgstr "高效率地沟通"
 
 #: ../../contributor_guide.rst:48
 msgid ""
-"How much information we effectively convey, is way more important than "
-"how many words we typed."
+"How much information we effectively convey, is way more important than how many "
+"words we typed."
 msgstr "传达了多少有效信息，比打了多少字重要的多。"
 
 #: ../../contributor_guide.rst:49
@@ -196,22 +207,26 @@ msgstr "注意除了文字之外，列表(Bulleted lists)也是我们表达过�
 
 #: ../../contributor_guide.rst:51
 msgid ""
-"Proofread before you post: if you are the reader, can you understand what"
-" you typed?"
+"Proofread before you post: if you are the reader, can you understand what you "
+"typed?"
 msgstr "提交评论前请仔细预读：如果你是读者，你能读懂自己所写的内容么？"
 
 #: ../../contributor_guide.rst:52
 msgid ""
 "If you are not a native speaker, consider using a spell checker such as "
 "`Grammarly <https://app.grammarly.com/>`_."
-msgstr "如果你的母语不是英语，考虑使用拼写检查器，如 `Grammarly <https://app.grammarly.com/>`_ 。"
+msgstr ""
+"如果你的母语不是英语，考虑使用拼写检查器，如 `Grammarly <https://app.grammarly."
+"com/>`_ 。"
 
 #: ../../contributor_guide.rst:54
 msgid ""
-"Please base your discussion and feedback on facts, and not personal "
-"feelings. It is very important for all of us to maintain a friendly and "
-"blame-free community. Some examples:"
-msgstr "请根据事实进行讨论与反馈，而不是个人感觉。对我们所有人来说，保持一个友好、零责备的社区环境是非常重要的。一些例子如下:"
+"Please base your discussion and feedback on facts, and not personal feelings. It "
+"is very important for all of us to maintain a friendly and blame-free community. "
+"Some examples:"
+msgstr ""
+"请根据事实进行讨论与反馈，而不是个人感觉。对我们所有人来说，保持一个友好、零责备"
+"的社区环境是非常重要的。一些例子如下:"
 
 #: ../../contributor_guide.rst:57
 msgid "(Acceptable) This design could be confusing to new Taichi users."
@@ -227,26 +242,25 @@ msgstr "提交良好的 PR"
 
 #: ../../contributor_guide.rst:66
 msgid ""
-"PRs with **small** changesets are preferred. A PR should ideally address "
-"**only one issue**."
-msgstr "我们鼓励改动很小的 PR， 一个 PR 理想情况下应该 **只针对一个问题(issue)** 。"
+"PRs with **small** changesets are preferred. A PR should ideally address **only "
+"one issue**."
+msgstr ""
+"我们鼓励改动很小的 PR， 一个 PR 理想情况下应该 **只针对一个问题(issue)** 。"
 
 #: ../../contributor_guide.rst:68
-msgid ""
-"It is fine to include off-topic **trivial** refactoring such as typo "
-"fixes;"
-msgstr "也可以掺杂一些 **无关紧要** 的优化重构，比如修正笔误;"
+msgid "It is fine to include off-topic **trivial** refactoring such as typo fixes;"
+msgstr "也可以掺杂一些 **无关紧要** 的优化重构，比如修正笔误；"
 
 #: ../../contributor_guide.rst:69
 msgid ""
-"The reviewers reserve the right to ask PR authors to remove off-topic "
-"**non-trivial** changes."
+"The reviewers reserve the right to ask PR authors to remove off-topic **non-"
+"trivial** changes."
 msgstr "审稿人保留要求 PR 作者删除一些 **无关紧要** 的改动的权利。"
 
 #: ../../contributor_guide.rst:71
 msgid ""
-"All commits in a PR will always be **squashed and merged into master as a"
-" single commit**."
+"All commits in a PR will always be **squashed and merged into master as a single "
+"commit**."
 msgstr "PR 中的所有 commit 都应被 **压缩&合并到 master 分支的一个 commit 里** 。"
 
 #: ../../contributor_guide.rst:72
@@ -255,10 +269,12 @@ msgstr "为保留清晰的提交日志 PR 作者 **不应该将多条 commit 压
 
 #: ../../contributor_guide.rst:73
 msgid ""
-"When implementing a complex feature, consider breaking it down into small"
-" PRs, to keep a more detailed development history and to interact with "
-"core developers more frequently."
-msgstr "当实现一个复杂的特性时，考虑将其分散为许多个小 PR，从而保证更具细节的开发时间线，保证与开发者更频繁的沟通。"
+"When implementing a complex feature, consider breaking it down into small PRs, "
+"to keep a more detailed development history and to interact with core developers "
+"more frequently."
+msgstr ""
+"当实现一个复杂的特性时，考虑将其分散为许多个小 PR，从而保证更具细节的开发时间线，"
+"保证与开发者更频繁的沟通。"
 
 #: ../../contributor_guide.rst:74
 msgid "If you want early feedback from core developers"
@@ -266,16 +282,16 @@ msgstr "如果你想更及时的得到核心开发成员的反馈"
 
 #: ../../contributor_guide.rst:76
 msgid ""
-"Open a PR in `Draft <https://github.blog/2019-02-14-introducing-draft-"
-"pull-requests/>`_ state on GitHub so that you can share your progress;"
+"Open a PR in `Draft <https://github.blog/2019-02-14-introducing-draft-pull-"
+"requests/>`_ state on GitHub so that you can share your progress;"
 msgstr ""
-"通过 GitHub 的 `Draft <https://github.blog/2019-02-14-introducing-draft-"
-"pull-requests/>`_ 状态开一个 PR，这样就可以和我们实时分享你的进展了;"
+"通过 GitHub 的 `Draft <https://github.blog/2019-02-14-introducing-draft-pull-"
+"requests/>`_ 状态开一个 PR，这样就可以和我们实时分享你的进展了；"
 
 #: ../../contributor_guide.rst:77
 msgid ""
-"Make sure you @ the corresponding developer in the comments or request "
-"the review."
+"Make sure you @ the corresponding developer in the comments or request the "
+"review."
 msgstr "请确保在评论中 @ 相应开发成员，或者使用请求评审(request the review)。"
 
 #: ../../contributor_guide.rst:79
@@ -290,8 +306,8 @@ msgstr "互不依赖的 PR 都应该是基于 ``master`` 衍生出的 **不同**
 
 #: ../../contributor_guide.rst:82
 msgid ""
-"PRs with dependencies should be raised only after all prerequisite PRs "
-"are merged into ``master``."
+"PRs with dependencies should be raised only after all prerequisite PRs are "
+"merged into ``master``."
 msgstr "互相依赖的 PR 应该在所有前置 PR 合并入 ``master`` 后再进行提出。"
 
 #: ../../contributor_guide.rst:84
@@ -300,13 +316,16 @@ msgstr "所有 PR 理想情况下都应该伴随着相应的 **测试**;"
 
 #: ../../contributor_guide.rst:85
 msgid ""
-"All PRs should come with **documentation update**, except for internal "
-"compiler implementations;"
-msgstr "除了内部编译器的实现外，其余的 PR 都应该带有与其功能相对应的 **文档更新(documentation update)**;"
+"All PRs should come with **documentation update**, except for internal compiler "
+"implementations;"
+msgstr ""
+"除了内部编译器的实现外，其余的 PR 都应该带有与其功能相对应的 **文档更新"
+"(documentation update)**；"
 
 #: ../../contributor_guide.rst:86
 msgid "All PRs must pass **continuous integration tests** before they get merged;"
-msgstr "所有 PR 必须通过 **持续集成测试(continuous integration tests)** 后才能被合并;"
+msgstr ""
+"所有 PR 必须通过 **持续集成测试(continuous integration tests)** 后才能被合并；"
 
 #: ../../contributor_guide.rst:87
 msgid "PR titles should follow :ref:`prtag`;"
@@ -314,16 +333,15 @@ msgstr "PR 的标题应当按照 :ref:`prtag` 的要求编写;"
 
 #: ../../contributor_guide.rst:88
 msgid ""
-"A great article from Google on `how to have your PR merged quickly "
-"<https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-"
-"your.html>`_. `[PDF] <https://github.com/yuanming-"
-"hu/public_files/blob/master/graphics/taichi/google_review_comments.pdf>`_"
+"A great article from Google on `how to have your PR merged quickly <https://"
+"testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html>`_. "
+"`[PDF] <https://github.com/yuanming-hu/public_files/blob/master/graphics/taichi/"
+"google_review_comments.pdf>`_"
 msgstr ""
-"除此之外，谷歌有篇相当棒的文章 `how to have your PR merged quickly "
-"<https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-"
-"your.html>`_. `[PDF] <https://github.com/yuanming-"
-"hu/public_files/blob/master/graphics/taichi/google_review_comments.pdf>`_"
-" 可供参考"
+"除此之外，谷歌有篇相当棒的文章 `how to have your PR merged quickly <https://"
+"testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html>`_. "
+"`[PDF] <https://github.com/yuanming-hu/public_files/blob/master/graphics/taichi/"
+"google_review_comments.pdf>`_ 可供参考"
 
 #: ../../contributor_guide.rst:92
 msgid "Reviewing & PR merging"
@@ -335,18 +353,18 @@ msgstr "请按照以下几个来自谷歌的建议"
 
 #: ../../contributor_guide.rst:96
 msgid ""
-"`Code Health: Understanding Code In Review "
-"<https://testing.googleblog.com/2018/05/code-health-understanding-code-"
-"in-review.html>`_; `[PDF] <https://github.com/yuanming-"
-"hu/public_files/blob/master/graphics/taichi/google_understanding_code.pdf>`_"
+"`Code Health: Understanding Code In Review <https://testing.googleblog."
+"com/2018/05/code-health-understanding-code-in-review.html>`_; `[PDF] <https://"
+"github.com/yuanming-hu/public_files/blob/master/graphics/taichi/"
+"google_understanding_code.pdf>`_"
 msgstr ""
 
 #: ../../contributor_guide.rst:97
 msgid ""
-"`Code Health: Respectful Reviews == Useful Reviews "
-"<https://testing.googleblog.com/2019/11/code-health-respectful-reviews-"
-"useful.html>`_. `[PDF] <https://github.com/yuanming-"
-"hu/public_files/blob/master/graphics/taichi/google_respectful_reviews.pdf>`_"
+"`Code Health: Respectful Reviews == Useful Reviews <https://testing.googleblog."
+"com/2019/11/code-health-respectful-reviews-useful.html>`_. `[PDF] <https://"
+"github.com/yuanming-hu/public_files/blob/master/graphics/taichi/"
+"google_respectful_reviews.pdf>`_"
 msgstr ""
 
 #: ../../contributor_guide.rst:99
@@ -359,9 +377,9 @@ msgstr "主分支要求记录 **线性历史**;"
 
 #: ../../contributor_guide.rst:101
 msgid ""
-"Make sure the PR passes **continuous integration tests**, except for "
-"cases like documentation updates;"
-msgstr "确保 PR 能够顺利通过 **持续集成测试**，文档更新等情况除外;"
+"Make sure the PR passes **continuous integration tests**, except for cases like "
+"documentation updates;"
+msgstr "确保 PR 能够顺利通过 **持续集成测试**，文档更新等情况除外；"
 
 #: ../../contributor_guide.rst:102
 msgid "Make sure the title follows :ref:`prtag`."
@@ -373,19 +391,19 @@ msgstr "持续集成的运用"
 
 #: ../../contributor_guide.rst:108
 msgid ""
-"Continuous Integration (CI), will **build** and **test** your commits in "
-"a PR against in environments."
+"Continuous Integration (CI), will **build** and **test** your commits in a PR "
+"against in environments."
 msgstr ""
-"持续集成(Continuous Integration,CI)，将在 CI 环境中 **构建(build)** 和 **测试(test)** "
-"你所提交的 PR。"
+"持续集成(Continuous Integration,CI)，将在 CI 环境中 **构建(build)** 和 **测试"
+"(test)** 你所提交的 PR。"
 
 #: ../../contributor_guide.rst:109
 msgid ""
-"Currently, Taichi uses `Travis CI <https://travis-ci.org>`_ (for OS X and"
-" Linux) and `AppVeyor <https://www.appveyor.com>`_ (for Windows)."
+"Currently, Taichi uses `Travis CI <https://travis-ci.org>`_ (for OS X and Linux) "
+"and `AppVeyor <https://www.appveyor.com>`_ (for Windows)."
 msgstr ""
-"目前，Taichi 使用的集成测试服务是 `Travis CI <https://travis-ci.org>`_ (OS X 和 Linux "
-"平台)和 `AppVeyor <https://www.appveyor.com>`_ (Windows 平台)。"
+"目前，Taichi 使用的集成测试服务是 `Travis CI <https://travis-ci.org>`_ (OS X 和 "
+"Linux 平台)和 `AppVeyor <https://www.appveyor.com>`_ (Windows 平台)。"
 
 #: ../../contributor_guide.rst:110
 msgid "CI will be triggered every time you push commits to an open PR."
@@ -393,16 +411,15 @@ msgstr "每次你推送提交到一个开着的 PR 时，CI 将被触发。"
 
 #: ../../contributor_guide.rst:111
 msgid ""
-"You can prepend ``[skip ci]`` to your commit message to avoid triggering "
-"CI. e.g. ``[skip ci] This commit will not trigger CI``"
+"You can prepend ``[skip ci]`` to your commit message to avoid triggering CI. e."
+"g. ``[skip ci] This commit will not trigger CI``"
 msgstr ""
-"可以在提交消息前加上 ``[skip ci]`` 以避免触发 CI。例如：``[skip ci] This commit will not "
-"trigger CI`"
+"可以在提交消息前加上 ``[skip ci]`` 以避免触发 CI。例如：``[skip ci] This commit "
+"will not trigger CI``"
 
 #: ../../contributor_guide.rst:112
 msgid ""
-"A tick on the right of commit hash means CI passed, a cross means CI "
-"failed."
+"A tick on the right of commit hash means CI passed, a cross means CI failed."
 msgstr "提交 ID 右侧有绿色对勾表示 CI 通过，红色叉号表示 CI 失败。"
 
 #: ../../contributor_guide.rst:116
@@ -411,18 +428,20 @@ msgstr "规范代码结构"
 
 #: ../../contributor_guide.rst:117
 msgid ""
-"Locally, you can run ``ti format`` in the command line to re-format code "
-"style. Note that you have to install ``clang-format-6.0`` and ``yapf "
-"v0.29.0`` locally before you use ``ti format``."
+"Locally, you can run ``ti format`` in the command line to re-format code style. "
+"Note that you have to install ``clang-format-6.0`` and ``yapf v0.29.0`` locally "
+"before you use ``ti format``."
 msgstr ""
-"在本地，可以通过在命令行中运行 ``ti format`` 来自动格式化代码。请注意，在使用 ``ti format`` 之前，您必须在本地安装 "
-"``clang-format-6.0`` 和 ``yapf v0.29.0`` 。"
+"在本地，可以通过在命令行中运行 ``ti format`` 来自动格式化代码。请注意，在使用 "
+"``ti format`` 之前，您必须在本地安装 ``clang-format-6.0`` 和 ``yapf v0.29.0`` 。"
 
 #: ../../contributor_guide.rst:120
 msgid ""
-"If you don't have to install these formatting tools locally, use the "
-"**format server**. It's an online version of ``ti format``."
-msgstr "如果不想在本地安装这些格式化工具，也可以使用 **格式化服务器(format server)** 。这是个 ``ti format`` 的在线版本。"
+"If you don't have to install these formatting tools locally, use the **format "
+"server**. It's an online version of ``ti format``."
+msgstr ""
+"如果不想在本地安装这些格式化工具，也可以使用 **格式化服务器(format server)** 。这"
+"是个 ``ti format`` 的在线版本。"
 
 #: ../../contributor_guide.rst:122
 msgid "Go to http://kun.csail.mit.edu:31415/, and click at the desired PR id."
@@ -430,31 +449,30 @@ msgstr "访问 http://kun.csail.mit.edu:31415/，并点击选取所需格式化�
 
 #: ../../contributor_guide.rst:123
 msgid ""
-"Come back to the PR page, you'll see a user called @taichi-gardener (bot)"
-" pushed a commit named ``[skip ci] enforce code format``."
+"Come back to the PR page, you'll see a user called @taichi-gardener (bot) pushed "
+"a commit named ``[skip ci] enforce code format``."
 msgstr ""
-"回到 PR 页面，你将看到一个名为 @taichi-gardener (机器人) 的用户推送了一个名为 ``[skip ci] enforce "
-"code format`` 的提交。"
+"回到 PR 页面，你将看到一个名为 @taichi-gardener (机器人) 的用户推送了一个名为 "
+"``[skip ci] enforce code format`` 的提交。"
 
 #: ../../contributor_guide.rst:124
 msgid ""
-"You won't see the bot's commit if it didn't find anything not matching "
-"the format."
+"You won't see the bot's commit if it didn't find anything not matching the "
+"format."
 msgstr "如果你没能找到机器人的提交，说明没有发现任何不规范的代码格式，。"
 
 #: ../../contributor_guide.rst:125
 msgid ""
-"Then please run ``git pull`` in your local branch to pull the formatted "
-"code."
+"Then please run ``git pull`` in your local branch to pull the formatted code."
 msgstr "然后在本地分支中运行 ``git pull`` 来提取格式化代码。"
 
 #: ../../contributor_guide.rst:126
 msgid ""
-"Note that commit messages marked with ``[format]`` will automatically "
-"trigger the format server. e.g. ``[format] your commit message``"
+"Note that commit messages marked with ``[format]`` will automatically trigger "
+"the format server. e.g. ``[format] your commit message``"
 msgstr ""
-"值得留意的是，备注带有为 ``[format]`` 的提交信息将自动触发格式化服务。例如：``[format] our commit "
-"message``"
+"值得留意的是，备注带有为 ``[format]`` 的提交信息将自动触发格式化服务。例如："
+"``[format] our commit message``"
 
 #: ../../contributor_guide.rst:132
 msgid "PR title format and tags"
@@ -462,27 +480,27 @@ msgstr "PR 标题格式和标签"
 
 #: ../../contributor_guide.rst:133
 msgid ""
-"PR titles will be part of the commit history reflected in the ``master`` "
-"branch, therefore it is important to keep PR titles readable."
-msgstr "PR 标题将成为 ``master`` 分支中提交历史的一部分，因此保证 PR 标题的可读性非常重要。"
+"PR titles will be part of the commit history reflected in the ``master`` branch, "
+"therefore it is important to keep PR titles readable."
+msgstr ""
+"PR 标题将成为 ``master`` 分支中提交历史的一部分，因此保证 PR 标题的可读性非常重"
+"要。"
 
 #: ../../contributor_guide.rst:135
-msgid ""
-"Please always prepend **at least one tag** such as ``[Lang]`` to PR "
-"titles:"
+msgid "Please always prepend **at least one tag** such as ``[Lang]`` to PR titles:"
 msgstr "请务必在 PR 标题前附加上至少一个标签，如 ``[Metal]`` 等:"
 
 #: ../../contributor_guide.rst:137
 msgid ""
-"When using multiple tags, make sure there is exactly one space between "
-"tags;"
-msgstr "当使用多个标签时，确保标签之间只留有一个空格分隔;"
+"When using multiple tags, make sure there is exactly one space between tags;"
+msgstr "当使用多个标签时，确保标签之间只留有一个空格分隔；"
 
 #: ../../contributor_guide.rst:138
 msgid ""
 "E.g., \"[Lang][refactor]\" (no space) should be replaced by \"[Lang] "
 "[refactor]\";"
-msgstr "例如， ``[Metal][refactor]``（没有空格）应该被格式化为 ``[Metal] [refactor]``;"
+msgstr ""
+"例如， ``[Metal][refactor]``（没有空格）应该被格式化为 ``[Metal] [refactor]``；"
 
 #: ../../contributor_guide.rst:140
 msgid "The first letter of the PR title body should be capitalized:"
@@ -490,17 +508,17 @@ msgstr "PR 标题主干部分的首字母应该大写："
 
 #: ../../contributor_guide.rst:142
 msgid ""
-"E.g., ``[Doc] improve documentation`` should be replaced by ``[Doc] "
-"Improve documentation``;"
+"E.g., ``[Doc] improve documentation`` should be replaced by ``[Doc] Improve "
+"documentation``;"
 msgstr ""
 "例如， ``[doc] improve documentation`` 应该被格式化为 ``[doc] Improve "
-"documentation``;"
+"documentation``；"
 
 #: ../../contributor_guide.rst:143
 msgid ""
-"``[Lang] \"ti.sqr(x)\" is now deprecated`` is fine because ``\"`` is a "
-"symbol."
-msgstr "同时， ``[Lang] “ti.sqr(x)” is now deprecated`` 是可以的，因为 ``“`` 是一个符号。"
+"``[Lang] \"ti.sqr(x)\" is now deprecated`` is fine because ``\"`` is a symbol."
+msgstr ""
+"同时， ``[Lang] “ti.sqr(x)” is now deprecated`` 是可以的，因为 ``“`` 是一个符号。"
 
 #: ../../contributor_guide.rst:145
 msgid "Please do not include back quotes (\"`\") in PR titles."
@@ -508,8 +526,8 @@ msgstr "请不要在 PR 标题中包括反引号 (\"`\")。"
 
 #: ../../contributor_guide.rst:147
 msgid ""
-"For example, \"[Metal] Support bitmasked SNode\", \"[OpenGL] "
-"AtomicMin/Max support\", or \"[Opt] [IR] Enhanced constant folding\"."
+"For example, \"[Metal] Support bitmasked SNode\", \"[OpenGL] AtomicMin/Max "
+"support\", or \"[Opt] [IR] Enhanced constant folding\"."
 msgstr ""
 "例如，“[Metal] Support bitmasked SNode”，“[OpenGL] AtomicMin/Max support”，或 "
 "“[Opt] [IR] Enhanced constant folding”。"
@@ -519,9 +537,8 @@ msgid "Frequently used tags:"
 msgstr "常用的标签:"
 
 #: ../../contributor_guide.rst:151
-#, fuzzy
 msgid "``[Metal], [OpenGL], [CPU], [CUDA]``: backends;"
-msgstr "``[Metal], [OpenGL], [CPU], [CUDA], [LLVM]``: 后端;"
+msgstr "``[Metal], [OpenGL], [CPU], [CUDA]``: 后端；"
 
 #: ../../contributor_guide.rst:152
 msgid "``[LLVM]``: the LLVM backend shared by CPUs and CUDA;"
@@ -585,9 +602,9 @@ msgstr "``[Perf]``: 性能改进;"
 
 #: ../../contributor_guide.rst:167
 msgid ""
-"``[Misc]``: something that doesn't belong to any category, such as "
-"version bump, reformatting;"
-msgstr "``[Misc]``: 难以归类的杂项，如版本跳跃，格式优化;"
+"``[Misc]``: something that doesn't belong to any category, such as version bump, "
+"reformatting;"
+msgstr "``[Misc]``: 难以归类的杂项，如版本跳跃，格式优化；"
 
 #: ../../contributor_guide.rst:168
 msgid "``[Bug]``: bug fixes;"
@@ -595,64 +612,66 @@ msgstr "``[Bug]``: 修复 Bug;"
 
 #: ../../contributor_guide.rst:169
 msgid ""
-"Check out more tags in `misc/prtags.json <https://github.com/taichi-"
-"dev/taichi/blob/master/misc/prtags.json>`_."
+"Check out more tags in `misc/prtags.json <https://github.com/taichi-dev/taichi/"
+"blob/master/misc/prtags.json>`_."
 msgstr ""
-"在 `misc/prtags.json <https://github.com/taichi-"
-"dev/taichi/blob/master/misc/prtags.json>`_ 中查看更多标签."
+"在 `misc/prtags.json <https://github.com/taichi-dev/taichi/blob/master/misc/"
+"prtags.json>`_ 中查看更多标签."
 
 #: ../../contributor_guide.rst:170
 msgid ""
-"When introducing a new tag, please update the list in "
-"``misc/prtags.json`` in the first PR with that tag, so that people can "
-"follow."
-msgstr "在引进新标签时，请在首先使用该标签的 PR 中一并更新 ``misc/prtags.json`` 列表，以便其余成员跟随使用。"
+"When introducing a new tag, please update the list in ``misc/prtags.json`` in "
+"the first PR with that tag, so that people can follow."
+msgstr ""
+"在引进新标签时，请在首先使用该标签的 PR 中一并更新 ``misc/prtags.json`` 列表，以"
+"便其余成员跟随使用。"
 
 #: ../../contributor_guide.rst:174
 msgid ""
-"We do appreciate all kinds of contributions, yet we should not expose the"
-" title of every PR to end-users. Therefore the changelog will distinguish"
-" `what the user should know` from `what the developers are doing`. This "
-"is done by **capitalizing PR tags**:"
+"We do appreciate all kinds of contributions, yet we should not expose the title "
+"of every PR to end-users. Therefore the changelog will distinguish `what the "
+"user should know` from `what the developers are doing`. This is done by "
+"**capitalizing PR tags**:"
 msgstr ""
-"我们感谢所有的贡献，但是我们不应该把每一个 PR 的标题暴露给终端用户。因此，应该将变更日志分类成 `用户应该知道什么` 和 "
-"`开发人员正在做什么` 是必要的。而这是通过 **大写 PR 标签** 区分的:"
+"我们感谢所有的贡献，但是我们不应该把每一个 PR 的标题暴露给终端用户。因此，应该将"
+"变更日志分类成 `用户应该知道什么` 和 `开发人员正在做什么` 是必要的。而这是通过 **"
+"大写 PR 标签** 区分的："
 
 #: ../../contributor_guide.rst:178
 msgid ""
-"PRs with visible/notable features to the users should be marked with tags"
-" starting with **the first letter capitalized**, e.g. ``[Metal], "
-"[OpenGL], [IR], [Lang], [CLI]``. When releasing a new version, a script "
-"(``python/taichi/make_changelog.py``) will generate a changelog with "
-"these changes (PR title) highlighted. Therefore it is **important** to "
-"make sure the end-users can understand what your PR does, **based on your"
-" PR title**."
+"PRs with visible/notable features to the users should be marked with tags "
+"starting with **the first letter capitalized**, e.g. ``[Metal], [OpenGL], [IR], "
+"[Lang], [CLI]``. When releasing a new version, a script (``python/taichi/"
+"make_changelog.py``) will generate a changelog with these changes (PR title) "
+"highlighted. Therefore it is **important** to make sure the end-users can "
+"understand what your PR does, **based on your PR title**."
 msgstr ""
-"对用户可见/值得注意的 PR，应该将其一开始的标签以 **大写的首字母** 进行标记，例如 ``[Metal], [OpenGL], [IR], "
-"[Lang], "
-"[CLI]``。在发布新版本时，脚本(``python/taichi/make_changelog.py``)将生成一个突出显示这些更改（PR "
-"标题）的变更日志。因此，确保终端用户能够理解你的 PR 所做的工作是非常 **重要** 的，而这都是 **基于你的PR标题**。"
+"对用户可见/值得注意的 PR，应该将其一开始的标签以 **大写的首字母** 进行标记，例如 "
+"``[Metal], [OpenGL], [IR], [Lang], [CLI]``。在发布新版本时，脚本(``python/taichi/"
+"make_changelog.py``)将生成一个突出显示这些更改（PR 标题）的变更日志。因此，确保终"
+"端用户能够理解你的 PR 所做的工作是非常 **重要** 的，而这都是 **基于你的PR标题**。"
 
 #: ../../contributor_guide.rst:180
 msgid ""
-"Other PRs (underlying development/intermediate implementation) should use"
-" tags with **everything in lowercase letters**: e.g. ``[metal], [opengl],"
-" [ir], [lang], [cli]``."
+"Other PRs (underlying development/intermediate implementation) should use tags "
+"with **everything in lowercase letters**: e.g. ``[metal], [opengl], [ir], "
+"[lang], [cli]``."
 msgstr ""
-"其他类型的 PR（底层开发/中间实现）应该使用 **全小写字母** 的标签 ：例如 ``[metal], [opengl], [ir], "
-"[lang], [cli]``。"
+"其他类型的 PR（底层开发/中间实现）应该使用 **全小写字母** 的标签 ：例如 "
+"``[metal], [opengl], [ir], [lang], [cli]``。"
 
 #: ../../contributor_guide.rst:181
 msgid ""
-"Because of the way the release changelog is generated, there should be "
-"**at most one captialized tag** in a PR title to prevent duplicate PR "
-"highlights. For example, ``[GUI] [Mac] Support modifier keys`` (#1189) is"
-" a bad example, we should use ``[gui] [Mac] Support modifier keys in "
-"GUI`` instead. Please capitalize the tag that is most relevant to the PR."
+"Because of the way the release changelog is generated, there should be **at most "
+"one captialized tag** in a PR title to prevent duplicate PR highlights. For "
+"example, ``[GUI] [Mac] Support modifier keys`` (#1189) is a bad example, we "
+"should use ``[gui] [Mac] Support modifier keys in GUI`` instead. Please "
+"capitalize the tag that is most relevant to the PR."
 msgstr ""
-"由于发布更新日志的生成方式，PR 标题中应该 **最多只有一个大写标记**，以防止重复的 PR 突出显示。例如， ``[GUI] [Mac] "
-"Support modifier keys`` (#1189) 就是一个反例, 我们应该用 ``[gui] [Mac] Support "
-"modifier keys in GUI`` 来替代。 请只大写与 PR 内容最相关的标签。"
+"由于发布更新日志的生成方式，PR 标题中应该 **最多只有一个大写标记**，以防止重复的 "
+"PR 突出显示。例如， ``[GUI] [Mac] Support modifier keys`` (#1189) 就是一个不好的例子，"
+"我们应该用 ``[gui] [Mac] Support modifier keys in GUI`` 来替代。 请只大写与 PR 内"
+"容最相关的标签。"
 
 #: ../../contributor_guide.rst:185
 msgid "C++ and Python standards"
@@ -660,11 +679,11 @@ msgstr "C++ 和 Python 标准"
 
 #: ../../contributor_guide.rst:187
 msgid ""
-"The C++ part of Taichi is written in C++17, and the Python part in 3.6+. "
-"You can assume that C++17 and Python 3.6 features are always available."
+"The C++ part of Taichi is written in C++17, and the Python part in 3.6+. You can "
+"assume that C++17 and Python 3.6 features are always available."
 msgstr ""
-"Taichi 的 C++ 模块是基于 C++ 17编写的，Python 模块是基于3.6+编写的。所以你可以合理认为 C++ 17和 Python"
-" 3.6 特性总是可用的。"
+"Taichi 的 C++ 模块是基于 C++ 17编写的，Python 模块是基于3.6+编写的。所以你可以合"
+"理认为 C++ 17和 Python 3.6 特性总是可用的。"
 
 #: ../../contributor_guide.rst:192
 msgid "Tips on the Taichi compiler development"
@@ -672,9 +691,10 @@ msgstr "Taichi 编译器的开发建议"
 
 #: ../../contributor_guide.rst:194
 msgid ""
-":ref:`compilation` may worth checking out. It explains the whole "
-"compilation process."
-msgstr "阅读 :ref:`compilation` 这一章也许有助于你理解我们的工作。它解释了整个编译过程。"
+":ref:`compilation` may worth checking out. It explains the whole compilation "
+"process."
+msgstr ""
+"阅读 :ref:`compilation` 这一章也许有助于你理解我们的工作。它解释了整个编译过程。"
 
 #: ../../contributor_guide.rst:196
 msgid "See also :ref:`regress` if your work involves IR optimization."
@@ -682,70 +702,67 @@ msgstr "如果你的工作涉及 IR 优化，请参见 :ref:`regress` 。"
 
 #: ../../contributor_guide.rst:198
 msgid ""
-"When creating a Taichi program using ``ti.init(arch=desired_arch, "
-"**kwargs)``, pass in the following parameters to make the Taichi compiler"
-" print out IR:"
+"When creating a Taichi program using ``ti.init(arch=desired_arch, **kwargs)``, "
+"pass in the following parameters to make the Taichi compiler print out IR:"
 msgstr ""
-"使用 ``ti.init(arch=desired_arch, **kwargs)`` 创建 Taichi 程序时，传入以下参数，可以使 "
-"Taichi 编译器打印出 IR:"
+"使用 ``ti.init(arch=desired_arch, **kwargs)`` 创建 Taichi 程序时，传入以下参数，"
+"可以使 Taichi 编译器打印出 IR："
 
 #: ../../contributor_guide.rst:200
 msgid ""
 "``print_preprocessed = True``: print results of the frontend Python AST "
-"transform. The resulting scripts will generate a Taichi Frontend AST when"
-" executed."
+"transform. The resulting scripts will generate a Taichi Frontend AST when "
+"executed."
 msgstr ""
-"``print_preprocessed = True``：打印前端 Python AST 转换的结果。结果脚本(resulting "
-"scripts)在执行时将生成一个 Taichi 前端 AST。"
+"``print_preprocessed = True``：打印前端 Python AST 转换的结果。结果脚本"
+"(resulting scripts)在执行时将生成一个 Taichi 前端 AST。"
 
 #: ../../contributor_guide.rst:201
 msgid ""
-"``print_ir = True``: print the Taichi IR transformation process of kernel"
-" (excluding accessors) compilation."
+"``print_ir = True``: print the Taichi IR transformation process of kernel "
+"(excluding accessors) compilation."
 msgstr "``print_ir = True``：打印内核编译（不包括访问器）中的 Taichi IR 转换过程。"
 
 #: ../../contributor_guide.rst:202
 msgid ""
-"``print_accessor_ir = True``: print the IR transformation process of data"
-" accessors, which are special and simple kernels. (This is rarely used, "
-"unless you are debugging the compilation of data accessors.)"
+"``print_accessor_ir = True``: print the IR transformation process of data "
+"accessors, which are special and simple kernels. (This is rarely used, unless "
+"you are debugging the compilation of data accessors.)"
 msgstr ""
-"``print_accessor_ir = True``：打印数据访问器的 IR "
-"转换过程，这是一种特殊而简单的内核信息。（不过很少使用，除非你正在调试数据访问器相关的编译）"
+"``print_accessor_ir = True``：打印数据访问器的 IR 转换过程，这是一种特殊而简单的"
+"内核信息。（不过很少使用，除非你正在调试数据访问器相关的编译）"
 
 #: ../../contributor_guide.rst:203
 msgid ""
-"``print_struct_llvm_ir = True``: save the emitted LLVM IR by Taichi "
-"struct compilers."
+"``print_struct_llvm_ir = True``: save the emitted LLVM IR by Taichi struct "
+"compilers."
 msgstr "``print_struct_llvm_ir = True``: 保存由 Taichi 结构编译器生成的 LLVM IR。"
 
 #: ../../contributor_guide.rst:204
 msgid ""
-"``print_kernel_llvm_ir = True``: save the emitted LLVM IR by Taichi "
-"kernel compilers."
+"``print_kernel_llvm_ir = True``: save the emitted LLVM IR by Taichi kernel "
+"compilers."
 msgstr "``print_kernel_llvm_ir = True``: 保存由 Taichi 内核编译器生成的 LLVM IR。"
 
 #: ../../contributor_guide.rst:205
 msgid ""
-"``print_kernel_llvm_ir_optimized = True``: save the optimized LLVM IR of "
-"each kernel."
+"``print_kernel_llvm_ir_optimized = True``: save the optimized LLVM IR of each "
+"kernel."
 msgstr "``print_kernel_llvm_ir_optimized = True``：保存每个内核优化的 LLVM IR。"
 
 #: ../../contributor_guide.rst:206
 msgid ""
-"``print_kernel_nvptx = True``: save the emitted NVPTX of each kernel "
-"(CUDA only)."
+"``print_kernel_nvptx = True``: save the emitted NVPTX of each kernel (CUDA only)."
 msgstr "``print_kernel_nvptx = True``：保存每个内核生成的 NVPTX（仅限 CUDA）。"
 
 #: ../../contributor_guide.rst:210
 msgid ""
-"Data accessors in Python-scope are implemented as special Taichi kernels."
-" For example, ``x[1, 2, 3] = 3`` will call the writing accessor kernel of"
-" ``x``, and ``print(y[42])`` will call the reading accessor kernel of "
-"``y``."
+"Data accessors in Python-scope are implemented as special Taichi kernels. For "
+"example, ``x[1, 2, 3] = 3`` will call the writing accessor kernel of ``x``, and "
+"``print(y[42])`` will call the reading accessor kernel of ``y``."
 msgstr ""
-"Python 作用域中的数据访问器被实现为特殊的 Taichi 内核。例如，``x[1, 2, 3] = 3`` 将调用 ``x`` "
-"的写访问器内核， ``print(y[42])`` 将调用 ``y`` 的读访问器内核。"
+"Python 作用域中的数据访问器被实现为特殊的 Taichi 内核。例如，``x[1, 2, 3] = 3`` "
+"将调用 ``x`` 的写访问器内核， ``print(y[42])`` 将调用 ``y`` 的读访问器内核。"
 
 #: ../../contributor_guide.rst:216
 msgid "Folder structure"
@@ -776,24 +793,20 @@ msgid "``transforms``: IR transform passes"
 msgstr "``transforms``: IR 转换传递(Passes)"
 
 #: ../../contributor_guide.rst:226
-#, fuzzy
 msgid "``inc``: Small definition files to be included repeatedly"
-msgstr "``inc``: 需要重复引用的定义文件"
+msgstr "``inc``: 需要被重复引用的定义文件"
 
 #: ../../contributor_guide.rst:228
-#, fuzzy
 msgid "``jit``: Just-In-Time compilation base classes"
-msgstr "``jit``: 实时(Just-in-Time, JIT)编译器基类"
+msgstr "``jit``: 实时(Just-in-Time)编译器基类"
 
 #: ../../contributor_guide.rst:229
-#, fuzzy
 msgid "``llvm``: LLVM utilities"
-msgstr "``llvm``: LLVM 相关实用程序"
+msgstr "``llvm``: LLVM 实用工具"
 
 #: ../../contributor_guide.rst:230
-#, fuzzy
 msgid "``runtime``: LLVM runtime environments"
-msgstr "``runtime``: 运行环境"
+msgstr "``runtime``: LLVM 运行环境"
 
 #: ../../contributor_guide.rst:232
 msgid "``struct``: Struct compiler base classes"
@@ -805,42 +818,35 @@ msgstr "``codegen``: 代码生成基类"
 
 #: ../../contributor_guide.rst:234
 msgid "``backends``: Device-dependent code generators/runtime environments"
-msgstr "``backends``: 基于设备的代码生成/运行时环境"
+msgstr "``backends``：基于设备的代码生成/运行时环境"
 
 #: ../../contributor_guide.rst:236
-#, fuzzy
 msgid "``cpu``: CPU backend implementation"
-msgstr "``python``: Python 前端实现"
+msgstr "``cpu``：CPU 后端实现"
 
 #: ../../contributor_guide.rst:237
-#, fuzzy
 msgid "``cuda``: CUDA backend implementation"
-msgstr "``python``: Python 前端实现"
+msgstr "``cuda``：CUDA 后端实现"
 
 #: ../../contributor_guide.rst:238
-#, fuzzy
 msgid "``opengl``: OpenGL backend implementation"
-msgstr "``python``: Python 前端实现"
+msgstr "``opengl``：OpenGL 后端实现"
 
 #: ../../contributor_guide.rst:239
-#, fuzzy
 msgid "``metal``: Metal backend implementation"
-msgstr "``python``: Python 前端实现"
+msgstr "``metal``：Metal 后端实现"
 
 #: ../../contributor_guide.rst:240
-#, fuzzy
 msgid "``cc``: C backend implementation (WIP)"
-msgstr "``python``: Python 前端实现"
+msgstr "``cc``：C 后端实现 (WIP)"
 
 #: ../../contributor_guide.rst:242
-#, fuzzy
 msgid "``gui``: GUI system"
-msgstr "``gui``: 图形用户界面"
+msgstr "``gui``：GUI 系统"
 
 #: ../../contributor_guide.rst:243
-#, fuzzy
 msgid "``math``: Math utilities"
-msgstr "``math``: 数学类相关实用程序"
+msgstr "``math``：数学类使用工具"
 
 #: ../../contributor_guide.rst:244
 msgid "``python``: C++/Python interfaces"
@@ -856,43 +862,39 @@ msgstr "``system``: 操作系统相关的基础结构"
 
 #: ../../contributor_guide.rst:248
 msgid "``util``:  Miscellaneous utilities"
-msgstr "``util``: 各种各样的工具"
+msgstr "``util``：各种各样的工具"
 
 #: ../../contributor_guide.rst:251
-#, fuzzy
 msgid "``python/taichi``: Python frontend implementation"
-msgstr "``python``: Python 前端实现"
+msgstr "``python/taichi``：Python 前端实现"
 
 #: ../../contributor_guide.rst:253
 msgid "``core``: Loading & interacting with Taichi core"
-msgstr ""
+msgstr "``core``：Taichi 核心的加载 & 交互"
 
 #: ../../contributor_guide.rst:254
 msgid "``lang``: Python-embbed Taichi language & syntax (major)"
-msgstr ""
+msgstr "``lang``: 嵌入在 Python 中的 Taichi 语言 & 语法（重要）"
 
 #: ../../contributor_guide.rst:255
-#, fuzzy
 msgid "``misc``: Miscellaneous utilities"
-msgstr "``util``: 各种各样的工具"
+msgstr "``misc``：各种各样的工具"
 
 #: ../../contributor_guide.rst:256
 msgid "``tools``: Handy end-user tools"
-msgstr ""
+msgstr "``tools``：提供给终端用户的便捷工具"
 
 #: ../../contributor_guide.rst:258
-#, fuzzy
 msgid "``tests``: Functional tests"
-msgstr "``tests``: C++ 和 Python 测试程序"
+msgstr "``tests``：功能测试"
 
 #: ../../contributor_guide.rst:260
-#, fuzzy
 msgid "``python``: Python tests (major)"
-msgstr "``python``: Python 前端实现"
+msgstr "``python``：Python 测试（重要）"
 
 #: ../../contributor_guide.rst:261
 msgid "``cpp``: C++ tests"
-msgstr ""
+msgstr "``cpp``：C++ 测试"
 
 #: ../../contributor_guide.rst:263
 msgid "``examples``: Examples"
@@ -908,7 +910,7 @@ msgstr "``benchmarks``: 性能基准"
 
 #: ../../contributor_guide.rst:266
 msgid "``external``: External libraries"
-msgstr ""
+msgstr "``external``：扩展库"
 
 #: ../../contributor_guide.rst:267
 msgid "``misc``: Random (yet useful) files"
@@ -923,13 +925,12 @@ msgid "Testing"
 msgstr "测试"
 
 #: ../../contributor_guide.rst:276
-#, fuzzy
 msgid "Tests should be added to ``tests/``."
-msgstr "测试程序应该添加到文件夹 ``taichi/tests`` 下。"
+msgstr "测试程序应该添加到 ``tests/`` 文件夹下。"
 
 #: ../../contributor_guide.rst:279
 msgid "Command line tools"
-msgstr ""
+msgstr "命令行工具"
 
 #: ../../contributor_guide.rst:281
 msgid "Use ``ti test`` to run all the tests."
@@ -941,51 +942,53 @@ msgstr "通过使用 ``ti test -v`` 查看详细输出信息。"
 
 #: ../../contributor_guide.rst:283
 msgid ""
-"Use ``ti test -C`` to run tests and record code coverage, see "
-":ref:`coverage` for more infomations."
-msgstr "通过使用 ``ti test -C`` 运行测试并记录代码覆盖率, 参阅 :ref:`coverage` 查看更多信息."
+"Use ``ti test -C`` to run tests and record code coverage, see :ref:`coverage` "
+"for more infomations."
+msgstr ""
+"通过使用 ``ti test -C`` 运行测试并记录代码覆盖率，参阅 :ref:`coverage` 查看更多信"
+"息。"
 
 #: ../../contributor_guide.rst:285
-#, fuzzy
 msgid ""
-"Use ``ti test -a <arch(s)>`` for testing against specified backend(s). "
-"e.g. ``ti test -a cuda,metal``."
+"Use ``ti test -a <arch(s)>`` for testing against specified backend(s). e.g. ``ti "
+"test -a cuda,metal``."
 msgstr ""
-"使用 ``ti test -a <arch(s)>`` 针对指定架构进行测试。例如，``ti test -a opengl`` 或 ``ti "
-"test numpy_io -a cuda,metal``。"
+"使用 ``ti test -a <arch(s)>`` 针对指定后端进行测试。例如，``ti test -a cuda,"
+"metal``。"
 
 #: ../../contributor_guide.rst:288
-#, fuzzy
 msgid ""
-"Use ``ti test -na <arch(s)>`` for testing all architectures excluding "
-"some of them. e.g. ``ti test -na opengl,x64``."
+"Use ``ti test -na <arch(s)>`` for testing all architectures excluding some of "
+"them. e.g. ``ti test -na opengl,x64``."
 msgstr ""
-"使用 ``ti test -na <arch(s)>`` 测试除指定架构外的其余所有架构。例如，``ti test -na "
-"opengl,cuda``。"
+"使用 ``ti test -na <arch(s)>`` 测试除指定架构外的其余所有架构。例如，``ti test -"
+"na opengl,x64``。"
 
 #: ../../contributor_guide.rst:291
-#, fuzzy
 msgid ""
-"Use ``ti test <filename(s)>`` to run specific tests in filenames. e.g. "
-"``ti test numpy_io`` will run all tests in "
-"``tests/python/test_numpy_io.py``."
+"Use ``ti test <filename(s)>`` to run specific tests in filenames. e.g. ``ti test "
+"numpy_io`` will run all tests in ``tests/python/test_numpy_io.py``."
 msgstr ""
-"使用 ``ti test <filename(s)>`` 运行特定的测试实例。除此之外诸如，``ti test numpy_io`` 和 ``ti"
-" test test_numpy_io.py`` 的写法是等价的。"
+"使用 ``ti test <filename(s)>`` 运行指定文件名的测试实例。例如，``ti test "
+"numpy_io`` 将会在 ``tests/python/test_numpy_io.py`` 中运行所有测试。"
 
 #: ../../contributor_guide.rst:294
-#, fuzzy
 msgid ""
-"Use ``ti test -c`` to run only the C++ tests. e.g. ``ti test -c "
-"alg_simp`` will run ``tests/cpp/test_alg_simp.cpp``."
-msgstr "使用 ``ti test -c`` 运行 C++ 测试程序。例如， ``ti test -c alg_simp``"
+"Use ``ti test -c`` to run only the C++ tests. e.g. ``ti test -c alg_simp`` will "
+"run ``tests/cpp/test_alg_simp.cpp``."
+msgstr ""
+"使用 ``ti test -c`` 运行 C++ 测试程序。例如， ``ti test -c alg_simp`` 将会运行 "
+"``tests/cpp/test_alg_simp.cpp``。"
 
 #: ../../contributor_guide.rst:297
 msgid ""
-"Use ``ti test -k <key>`` to run tests that match the specified key. e.g. "
-"``ti test linalg -k \"cross or diag\"`` will run the ``test_cross`` and "
-"``test_diag`` in ``tests/python/test_linalg.py``."
+"Use ``ti test -k <key>`` to run tests that match the specified key. e.g. ``ti "
+"test linalg -k \"cross or diag\"`` will run the ``test_cross`` and ``test_diag`` "
+"in ``tests/python/test_linalg.py``."
 msgstr ""
+"使用 ``ti test -k <key>`` 运行与指定关键词相匹配的测试。例如， ``ti test linalg -"
+"k \"cross or diag\"`` 将会在 ``tests/python/test_linalg.py``中运行 "
+"``test_cross`` 和 ``test_diag``。"
 
 #: ../../contributor_guide.rst:300
 msgid "For more options, see ``ti test -h``."
@@ -993,50 +996,52 @@ msgstr "或者使用 ``ti test -h`` 查看更多选项。"
 
 #: ../../contributor_guide.rst:302
 msgid "For more details on how to write a test case, see :ref:`write_test`."
-msgstr ""
+msgstr "更多有关如何编写测试用例的详细信息，请参阅 :ref:`write_test`。"
 
 #: ../../contributor_guide.rst:305
 msgid "Documentation"
 msgstr "文档"
 
 #: ../../contributor_guide.rst:307
-#, fuzzy
 msgid "Documentations are put under the folder ``docs/``."
-msgstr "``[Doc]``: 与 ``docs/`` 目录下的文档相关;"
+msgstr "``[Doc]``：与 ``docs/`` 目录下的文档相关。"
 
 #: ../../contributor_guide.rst:309
 msgid ""
-"We use `reStructured text <https://www.sphinx-"
-"doc.org/en/master/usage/restructuredtext/basics.html>`_ (.rst) to write "
-"documentation."
+"We use `reStructured text <https://www.sphinx-doc.org/en/master/usage/"
+"restructuredtext/basics.html>`_ (.rst) to write documentation."
 msgstr ""
+"我们使用 `reStructured text <https://www.sphinx-doc.org/en/master/usage/"
+"restructuredtext/basics.html>`_ (.rst) 来编写文档。"
 
 #: ../../contributor_guide.rst:310
 msgid ""
-"We host our documentation online using `readthedocs.io "
-"<https://taichi.readthedocs.io/en/stable>`_."
+"We host our documentation online using `readthedocs.io <https://taichi."
+"readthedocs.io/en/stable>`_."
 msgstr ""
+"我们使用 `readthedocs.io <https://taichi.readthedocs.io/en/stable>`_ 在线托管我们"
+"的文档。"
 
 #: ../../contributor_guide.rst:311
 msgid "Use ``ti doc`` to build the documentation locally."
 msgstr "使用 ``ti doc`` 建立本地文档。"
 
 #: ../../contributor_guide.rst:312
-#, fuzzy
 msgid "Open the documentation at ``docs/build/index.html``."
-msgstr "在目录 ``taichi/doc/build/index.html`` 下打开文档。"
+msgstr "在 ``docs/build/index.html`` 下打开文档。"
 
 #: ../../contributor_guide.rst:316
 msgid ""
-"On Linux/OS X, use ``watch -n 1 ti doc`` to continuously build the "
-"documentation."
+"On Linux/OS X, use ``watch -n 1 ti doc`` to continuously build the documentation."
 msgstr "在 Linux/OS X 下, 使用 ``watch -n 1 ti doc`` 以持续地构建文档。"
 
 #: ../../contributor_guide.rst:318
 msgid ""
-"If the OpenGL backend detector keeps creating new windows, execute "
-"``export TI_WITH_OPENGL=0`` for ``ti doc``."
-msgstr "如果 OpenGL 后端检测器一直在创建新窗口，对 ``ti doc`` 附加执行 ``export TI_WITH_OPENGL=0`` 。"
+"If the OpenGL backend detector keeps creating new windows, execute ``export "
+"TI_WITH_OPENGL=0`` for ``ti doc``."
+msgstr ""
+"如果 OpenGL 后端检测器一直在创建新窗口，对 ``ti doc`` 附加执行 ``export "
+"TI_WITH_OPENGL=0`` 。"
 
 #: ../../contributor_guide.rst:322
 msgid "Efficient code navigation across Python/C++"
@@ -1044,14 +1049,14 @@ msgstr "跨 Python/C++ 的高效代码导航"
 
 #: ../../contributor_guide.rst:323
 msgid ""
-"If you work on the language frontend (Python/C++ interface), to navigate "
-"around the code base, `ffi-navigator <https://github.com/tqchen/ffi-"
-"navigator>`_ allows you to jump from Python bindings to their definitions"
-" in C++. Follow their README to set up your editor."
+"If you work on the language frontend (Python/C++ interface), to navigate around "
+"the code base, `ffi-navigator <https://github.com/tqchen/ffi-navigator>`_ allows "
+"you to jump from Python bindings to their definitions in C++. Follow their "
+"README to set up your editor."
 msgstr ""
 "如果你使用的是前端语言（Python/C++接口），要在代码库中导航，`ffi-navigator "
-"<https://github.com/tqchen/ffi-navigator>`_ 允许从 Python 跳转到它们在 C++ "
-"中绑定的定义。按照前述链接的 README 设置你的编辑器。"
+"<https://github.com/tqchen/ffi-navigator>`_ 允许从 Python 跳转到它们在 C++ 中绑定"
+"的定义。按照前述链接的 README 设置你的编辑器。"
 
 #: ../../contributor_guide.rst:329
 msgid "Upgrading CUDA"
@@ -1059,39 +1064,38 @@ msgstr "升级 CUDA"
 
 #: ../../contributor_guide.rst:331
 msgid ""
-"Right now we are targeting CUDA 10. When upgrading CUDA version, the file"
-" ``external/cuda_libdevice/slim_libdevice.10.bc`` should also be replaced"
-" with a newer version."
+"Right now we are targeting CUDA 10. When upgrading CUDA version, the file "
+"``external/cuda_libdevice/slim_libdevice.10.bc`` should also be replaced with a "
+"newer version."
 msgstr ""
-"目前我们的开发工作是针对 CUDA 10。在升级 CUDA 版本时，当前 "
-"``external/cuda_libdevice/slim_libdevice.10.bc`` 文件应该被新的版本的所取代。"
+"目前我们的开发工作是针对 CUDA 10。在升级 CUDA 版本时，当前 ``external/"
+"cuda_libdevice/slim_libdevice.10.bc`` 文件应该被新的版本的所取代。"
 
 #: ../../contributor_guide.rst:334
-#, fuzzy
 msgid ""
-"To generate the slimmed version of libdevice based on a full "
-"``libdevice.X.bc`` file from a CUDA installation, use ``ti task "
-"make_slim_libdevice [libdevice.X.bc file]``"
+"To generate the slimmed version of libdevice based on a full ``libdevice.X.bc`` "
+"file from a CUDA installation, use ``ti task make_slim_libdevice [libdevice.X.bc "
+"file]``"
 msgstr ""
-"基于 CUDA 安装时整个 ``libdevice.X.bc`` 文件，使用 ``ti run make_slim_libdevice "
-"[libdevice.X.bc file]`` 生成精简版的 libdevice"
+"基于 CUDA 安装时完整的 ``libdevice.X.bc`` 文件，使用 ``ti task "
+"make_slim_libdevice [libdevice.X.bc file]`` 生成精简版的 libdevice"
 
 #~ msgid "New features"
 #~ msgstr "新特性"
 
 #~ msgid ""
-#~ "If you want early feedback from "
-#~ "core developers, open a PR in "
-#~ "**Draft** state on GitHub so that "
-#~ "you can share your progress."
-#~ msgstr "如果你希望早点得到维护人员的反馈，请在 GitHub 上开启一个处于 **Draft** （草稿）状态的 PR，从而与人们分享你的进度。"
+#~ "If you want early feedback from core developers, open a PR in **Draft** state "
+#~ "on GitHub so that you can share your progress."
+#~ msgstr ""
+#~ "如果你希望早点得到维护人员的反馈，请在 GitHub 上开启一个处于 **Draft** （草"
+#~ "稿）状态的 PR，从而与人们分享你的进度。"
 
 #~ msgid "Existing tags:"
 #~ msgstr "现有的标签:"
 
 #~ msgid ""
-#~ "``[Sparse]``: sparse computation, dynamic "
-#~ "memory allocator, and garbage collection;"
+#~ "``[Sparse]``: sparse computation, dynamic memory allocator, and garbage "
+#~ "collection;"
 #~ msgstr "``[Sparse]``: 稀疏计算，动态内存分配以及垃圾收集;"
 
 #~ msgid "``[Async]``: asynchronous execution engine;"
@@ -1114,4 +1118,3 @@ msgstr ""
 
 #~ msgid "``[Workflow]``: GitHub Actions/Workflows;"
 #~ msgstr "``[Workflow]``: GitHub 活动(Actions)/工作流(Workflows);"
-
