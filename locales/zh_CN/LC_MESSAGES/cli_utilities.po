@@ -3,23 +3,24 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-14 12:50+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-08-15 12:16+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: ../../cli_utilities.rst:2
 msgid "Command line utilities"
-msgstr ""
+msgstr "命令行工具使用指南"
 
 #: ../../cli_utilities.rst:4
 msgid ""
@@ -28,26 +29,34 @@ msgid ""
 "tasks quickly. To invoke the CLI, please run ``ti`` or ``python3 -m "
 "taichi``."
 msgstr ""
+"Taichi 成功安装之后后会在系统中增加一个 CLI(命令行窗口)工具，这个工具可以帮"
+"助你快速地执行多个日常任务。如要调用 CLI，请在 shell 中运行 ``ti`` 或 ``python3 -"
+"m taichi``。"
 
 #: ../../cli_utilities.rst:9
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
 #: ../../cli_utilities.rst:10
 msgid ""
-"Taichi provides a set of bundled examples. You could run ``ti example "
-"-h`` to print the help message and get a list of available example names."
-" For instance, to run the basic `fractal` example, try: ``ti example "
+"Taichi provides a set of bundled examples. You could run ``ti example -"
+"h`` to print the help message and get a list of available example names. "
+"For instance, to run the basic `fractal` example, try: ``ti example "
 "fractal`` from your shell. (``ti example fractal.py`` should also work)"
 msgstr ""
+"Taichi提供了一组捆绑示例，你可以在命令行窗口中运行：\"ti example -h\"来打"
+"印帮助信息并获取可用示例名称列表。例如:要运行'fractal'示例，你可以在shell"
+"中尝试运行\"ti example fractal\"。(运行\"ti exmple fractal.py\" 也同样奏"
+"效)"
 
 #: ../../cli_utilities.rst:17
 msgid "Changelog"
-msgstr ""
+msgstr "更新日志"
 
 #: ../../cli_utilities.rst:18
 msgid ""
-"Sometimes it's convenient to view the changelog of the current version of"
-" Taichi, to do so from your shell, you could run ``ti changelog``."
+"Sometimes it's convenient to view the changelog of the current version "
+"of Taichi, to do so from your shell, you could run ``ti changelog``."
 msgstr ""
-
+"查看当前系统上 Taichi 的更新日志十分方便，在 shell 运行 ``ti changelog`` 即可"
+"进行查看。"
