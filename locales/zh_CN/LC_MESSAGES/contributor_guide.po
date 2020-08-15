@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:06+0800\n"
+"POT-Creation-Date: 2020-08-13 16:43+0800\n"
 "PO-Revision-Date: 2020-06-19 00:16+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -536,64 +536,68 @@ msgid "``[Std]``: standard library, e.g. ``ti.Matrix`` and ``ti.Vector``;"
 msgstr "``[Std]``: 标准库，例如 ``ti.Matrix`` 和 ``ti.Vector``;"
 
 #: ../../contributor_guide.rst:155
+msgid "``[Sparse]``: sparse computation;"
+msgstr ""
+
+#: ../../contributor_guide.rst:156
 msgid "``[IR]``: intermediate representation;"
 msgstr "``[IR]``: 中间表示(intermediate representation, IR);"
 
-#: ../../contributor_guide.rst:156
+#: ../../contributor_guide.rst:157
 msgid "``[Opt]``: IR optimization passes;"
 msgstr "``[Opt]``: IR 优化迭代轮数;"
 
-#: ../../contributor_guide.rst:157
+#: ../../contributor_guide.rst:158
 msgid "``[GUI]``: the built-in GUI system;"
 msgstr "``[GUI]``: 内嵌的 GUI 系统;"
 
-#: ../../contributor_guide.rst:158
+#: ../../contributor_guide.rst:159
 msgid "``[Refactor]``: code refactoring;"
 msgstr "``[Refactor]``: 代码重构优化;"
 
-#: ../../contributor_guide.rst:159
+#: ../../contributor_guide.rst:160
 msgid "``[CLI]``: commandline interfaces, e.g. the ``ti`` command;"
 msgstr "``[CLI]``: 命令行接口， 例如 ``ti`` 命令;"
 
-#: ../../contributor_guide.rst:160
+#: ../../contributor_guide.rst:161
 msgid "``[Doc]``: documentation under ``docs/``;"
 msgstr "``[Doc]``: 与 ``docs/`` 目录下的文档相关;"
 
-#: ../../contributor_guide.rst:161
+#: ../../contributor_guide.rst:162
 msgid "``[Example]``: examples under ``examples/``;"
 msgstr "``[Example]``: 与 ``examples/`` 目录下的样例程序相关;"
 
-#: ../../contributor_guide.rst:162
+#: ../../contributor_guide.rst:163
 msgid "``[Test]``: adding or improving tests under ``tests/``;"
 msgstr "``[Test]``: 与 ``tests/`` 目录下增加和改进测试程序相关;"
 
-#: ../../contributor_guide.rst:163
+#: ../../contributor_guide.rst:164
 msgid "``[Linux]``: Linux platform;"
 msgstr "``[Linux]``: 与Linux 平台有关;"
 
-#: ../../contributor_guide.rst:164
+#: ../../contributor_guide.rst:165
 msgid "``[Mac]``: Mac OS X platform;"
 msgstr "``[Mac]``: 与Mac OS X 平台有关;"
 
-#: ../../contributor_guide.rst:165
+#: ../../contributor_guide.rst:166
 msgid "``[Windows]``: Windows platform;"
 msgstr "``[Windows]``: 与Windows 平台有关;"
 
-#: ../../contributor_guide.rst:166
+#: ../../contributor_guide.rst:167
 msgid "``[Perf]``: performance improvements;"
 msgstr "``[Perf]``: 性能改进;"
 
-#: ../../contributor_guide.rst:167
+#: ../../contributor_guide.rst:168
 msgid ""
 "``[Misc]``: something that doesn't belong to any category, such as "
 "version bump, reformatting;"
 msgstr "``[Misc]``: 难以归类的杂项，如版本跳跃，格式优化;"
 
-#: ../../contributor_guide.rst:168
+#: ../../contributor_guide.rst:169
 msgid "``[Bug]``: bug fixes;"
 msgstr "``[Bug]``: 修复 Bug;"
 
-#: ../../contributor_guide.rst:169
+#: ../../contributor_guide.rst:170
 msgid ""
 "Check out more tags in `misc/prtags.json <https://github.com/taichi-"
 "dev/taichi/blob/master/misc/prtags.json>`_."
@@ -601,14 +605,14 @@ msgstr ""
 "在 `misc/prtags.json <https://github.com/taichi-"
 "dev/taichi/blob/master/misc/prtags.json>`_ 中查看更多标签."
 
-#: ../../contributor_guide.rst:170
+#: ../../contributor_guide.rst:171
 msgid ""
 "When introducing a new tag, please update the list in "
 "``misc/prtags.json`` in the first PR with that tag, so that people can "
 "follow."
 msgstr "在引进新标签时，请在首先使用该标签的 PR 中一并更新 ``misc/prtags.json`` 列表，以便其余成员跟随使用。"
 
-#: ../../contributor_guide.rst:174
+#: ../../contributor_guide.rst:175
 msgid ""
 "We do appreciate all kinds of contributions, yet we should not expose the"
 " title of every PR to end-users. Therefore the changelog will distinguish"
@@ -618,7 +622,7 @@ msgstr ""
 "我们感谢所有的贡献，但是我们不应该把每一个 PR 的标题暴露给终端用户。因此，应该将变更日志分类成 `用户应该知道什么` 和 "
 "`开发人员正在做什么` 是必要的。而这是通过 **大写 PR 标签** 区分的:"
 
-#: ../../contributor_guide.rst:178
+#: ../../contributor_guide.rst:179
 msgid ""
 "PRs with visible/notable features to the users should be marked with tags"
 " starting with **the first letter capitalized**, e.g. ``[Metal], "
@@ -633,7 +637,7 @@ msgstr ""
 "[CLI]``。在发布新版本时，脚本(``python/taichi/make_changelog.py``)将生成一个突出显示这些更改（PR "
 "标题）的变更日志。因此，确保终端用户能够理解你的 PR 所做的工作是非常 **重要** 的，而这都是 **基于你的PR标题**。"
 
-#: ../../contributor_guide.rst:180
+#: ../../contributor_guide.rst:181
 msgid ""
 "Other PRs (underlying development/intermediate implementation) should use"
 " tags with **everything in lowercase letters**: e.g. ``[metal], [opengl],"
@@ -642,7 +646,7 @@ msgstr ""
 "其他类型的 PR（底层开发/中间实现）应该使用 **全小写字母** 的标签 ：例如 ``[metal], [opengl], [ir], "
 "[lang], [cli]``。"
 
-#: ../../contributor_guide.rst:181
+#: ../../contributor_guide.rst:182
 msgid ""
 "Because of the way the release changelog is generated, there should be "
 "**at most one captialized tag** in a PR title to prevent duplicate PR "
@@ -654,11 +658,11 @@ msgstr ""
 "Support modifier keys`` (#1189) 就是一个反例, 我们应该用 ``[gui] [Mac] Support "
 "modifier keys in GUI`` 来替代。 请只大写与 PR 内容最相关的标签。"
 
-#: ../../contributor_guide.rst:185
+#: ../../contributor_guide.rst:186
 msgid "C++ and Python standards"
 msgstr "C++ 和 Python 标准"
 
-#: ../../contributor_guide.rst:187
+#: ../../contributor_guide.rst:188
 msgid ""
 "The C++ part of Taichi is written in C++17, and the Python part in 3.6+. "
 "You can assume that C++17 and Python 3.6 features are always available."
@@ -666,21 +670,21 @@ msgstr ""
 "Taichi 的 C++ 模块是基于 C++ 17编写的，Python 模块是基于3.6+编写的。所以你可以合理认为 C++ 17和 Python"
 " 3.6 特性总是可用的。"
 
-#: ../../contributor_guide.rst:192
+#: ../../contributor_guide.rst:193
 msgid "Tips on the Taichi compiler development"
 msgstr "Taichi 编译器的开发建议"
 
-#: ../../contributor_guide.rst:194
+#: ../../contributor_guide.rst:195
 msgid ""
 ":ref:`compilation` may worth checking out. It explains the whole "
 "compilation process."
 msgstr "阅读 :ref:`compilation` 这一章也许有助于你理解我们的工作。它解释了整个编译过程。"
 
-#: ../../contributor_guide.rst:196
+#: ../../contributor_guide.rst:197
 msgid "See also :ref:`regress` if your work involves IR optimization."
 msgstr "如果你的工作涉及 IR 优化，请参见 :ref:`regress` 。"
 
-#: ../../contributor_guide.rst:198
+#: ../../contributor_guide.rst:199
 msgid ""
 "When creating a Taichi program using ``ti.init(arch=desired_arch, "
 "**kwargs)``, pass in the following parameters to make the Taichi compiler"
@@ -689,7 +693,7 @@ msgstr ""
 "使用 ``ti.init(arch=desired_arch, **kwargs)`` 创建 Taichi 程序时，传入以下参数，可以使 "
 "Taichi 编译器打印出 IR:"
 
-#: ../../contributor_guide.rst:200
+#: ../../contributor_guide.rst:201
 msgid ""
 "``print_preprocessed = True``: print results of the frontend Python AST "
 "transform. The resulting scripts will generate a Taichi Frontend AST when"
@@ -698,13 +702,13 @@ msgstr ""
 "``print_preprocessed = True``：打印前端 Python AST 转换的结果。结果脚本(resulting "
 "scripts)在执行时将生成一个 Taichi 前端 AST。"
 
-#: ../../contributor_guide.rst:201
+#: ../../contributor_guide.rst:202
 msgid ""
 "``print_ir = True``: print the Taichi IR transformation process of kernel"
 " (excluding accessors) compilation."
 msgstr "``print_ir = True``：打印内核编译（不包括访问器）中的 Taichi IR 转换过程。"
 
-#: ../../contributor_guide.rst:202
+#: ../../contributor_guide.rst:203
 msgid ""
 "``print_accessor_ir = True``: print the IR transformation process of data"
 " accessors, which are special and simple kernels. (This is rarely used, "
@@ -713,31 +717,31 @@ msgstr ""
 "``print_accessor_ir = True``：打印数据访问器的 IR "
 "转换过程，这是一种特殊而简单的内核信息。（不过很少使用，除非你正在调试数据访问器相关的编译）"
 
-#: ../../contributor_guide.rst:203
+#: ../../contributor_guide.rst:204
 msgid ""
 "``print_struct_llvm_ir = True``: save the emitted LLVM IR by Taichi "
 "struct compilers."
 msgstr "``print_struct_llvm_ir = True``: 保存由 Taichi 结构编译器生成的 LLVM IR。"
 
-#: ../../contributor_guide.rst:204
+#: ../../contributor_guide.rst:205
 msgid ""
 "``print_kernel_llvm_ir = True``: save the emitted LLVM IR by Taichi "
 "kernel compilers."
 msgstr "``print_kernel_llvm_ir = True``: 保存由 Taichi 内核编译器生成的 LLVM IR。"
 
-#: ../../contributor_guide.rst:205
+#: ../../contributor_guide.rst:206
 msgid ""
 "``print_kernel_llvm_ir_optimized = True``: save the optimized LLVM IR of "
 "each kernel."
 msgstr "``print_kernel_llvm_ir_optimized = True``：保存每个内核优化的 LLVM IR。"
 
-#: ../../contributor_guide.rst:206
+#: ../../contributor_guide.rst:207
 msgid ""
 "``print_kernel_nvptx = True``: save the emitted NVPTX of each kernel "
 "(CUDA only)."
 msgstr "``print_kernel_nvptx = True``：保存每个内核生成的 NVPTX（仅限 CUDA）。"
 
-#: ../../contributor_guide.rst:210
+#: ../../contributor_guide.rst:211
 msgid ""
 "Data accessors in Python-scope are implemented as special Taichi kernels."
 " For example, ``x[1, 2, 3] = 3`` will call the writing accessor kernel of"
@@ -747,205 +751,205 @@ msgstr ""
 "Python 作用域中的数据访问器被实现为特殊的 Taichi 内核。例如，``x[1, 2, 3] = 3`` 将调用 ``x`` "
 "的写访问器内核， ``print(y[42])`` 将调用 ``y`` 的读访问器内核。"
 
-#: ../../contributor_guide.rst:216
+#: ../../contributor_guide.rst:217
 msgid "Folder structure"
 msgstr "目录结构"
 
-#: ../../contributor_guide.rst:218
+#: ../../contributor_guide.rst:219
 msgid "Key folders are"
 msgstr "关键文件包括"
 
-#: ../../contributor_guide.rst:220
+#: ../../contributor_guide.rst:221
 msgid "``taichi``: The core compiler implementation"
 msgstr "``taichi``: 核心编译器实现"
 
-#: ../../contributor_guide.rst:222
+#: ../../contributor_guide.rst:223
 msgid "``program``: Top-level constructs"
 msgstr "``program``: 上层结构"
 
-#: ../../contributor_guide.rst:223
+#: ../../contributor_guide.rst:224
 msgid "``ir``: Intermediate representation"
 msgstr "``ir``: 中间表示"
 
-#: ../../contributor_guide.rst:224
+#: ../../contributor_guide.rst:225
 msgid "``analysis``: Static analysis passes"
 msgstr "``analysis``: 静态分析"
 
-#: ../../contributor_guide.rst:225
+#: ../../contributor_guide.rst:226
 msgid "``transforms``: IR transform passes"
 msgstr "``transforms``: IR 转换传递(Passes)"
 
-#: ../../contributor_guide.rst:226
+#: ../../contributor_guide.rst:227
 #, fuzzy
 msgid "``inc``: Small definition files to be included repeatedly"
 msgstr "``inc``: 需要重复引用的定义文件"
 
-#: ../../contributor_guide.rst:228
+#: ../../contributor_guide.rst:229
 #, fuzzy
 msgid "``jit``: Just-In-Time compilation base classes"
 msgstr "``jit``: 实时(Just-in-Time, JIT)编译器基类"
 
-#: ../../contributor_guide.rst:229
+#: ../../contributor_guide.rst:230
 #, fuzzy
 msgid "``llvm``: LLVM utilities"
 msgstr "``llvm``: LLVM 相关实用程序"
 
-#: ../../contributor_guide.rst:230
+#: ../../contributor_guide.rst:231
 #, fuzzy
 msgid "``runtime``: LLVM runtime environments"
 msgstr "``runtime``: 运行环境"
 
-#: ../../contributor_guide.rst:232
+#: ../../contributor_guide.rst:233
 msgid "``struct``: Struct compiler base classes"
 msgstr "``struct``:  结构编译器基类"
 
-#: ../../contributor_guide.rst:233
+#: ../../contributor_guide.rst:234
 msgid "``codegen``: Code generation base classes"
 msgstr "``codegen``: 代码生成基类"
 
-#: ../../contributor_guide.rst:234
+#: ../../contributor_guide.rst:235
 msgid "``backends``: Device-dependent code generators/runtime environments"
 msgstr "``backends``: 基于设备的代码生成/运行时环境"
 
-#: ../../contributor_guide.rst:236
+#: ../../contributor_guide.rst:237
 #, fuzzy
 msgid "``cpu``: CPU backend implementation"
 msgstr "``python``: Python 前端实现"
 
-#: ../../contributor_guide.rst:237
+#: ../../contributor_guide.rst:238
 #, fuzzy
 msgid "``cuda``: CUDA backend implementation"
 msgstr "``python``: Python 前端实现"
 
-#: ../../contributor_guide.rst:238
+#: ../../contributor_guide.rst:239
 #, fuzzy
 msgid "``opengl``: OpenGL backend implementation"
 msgstr "``python``: Python 前端实现"
 
-#: ../../contributor_guide.rst:239
+#: ../../contributor_guide.rst:240
 #, fuzzy
 msgid "``metal``: Metal backend implementation"
 msgstr "``python``: Python 前端实现"
 
-#: ../../contributor_guide.rst:240
+#: ../../contributor_guide.rst:241
 #, fuzzy
 msgid "``cc``: C backend implementation (WIP)"
 msgstr "``python``: Python 前端实现"
 
-#: ../../contributor_guide.rst:242
+#: ../../contributor_guide.rst:243
 #, fuzzy
 msgid "``gui``: GUI system"
 msgstr "``gui``: 图形用户界面"
 
-#: ../../contributor_guide.rst:243
+#: ../../contributor_guide.rst:244
 #, fuzzy
 msgid "``math``: Math utilities"
 msgstr "``math``: 数学类相关实用程序"
 
-#: ../../contributor_guide.rst:244
+#: ../../contributor_guide.rst:245
 msgid "``python``: C++/Python interfaces"
 msgstr "``python``: C++/Python 接口"
 
-#: ../../contributor_guide.rst:246
+#: ../../contributor_guide.rst:247
 msgid "``platform``: Platform supports"
 msgstr "``platform``: 平台支持依赖"
 
-#: ../../contributor_guide.rst:247
+#: ../../contributor_guide.rst:248
 msgid "``system``: OS-related infrastructure"
 msgstr "``system``: 操作系统相关的基础结构"
 
-#: ../../contributor_guide.rst:248
+#: ../../contributor_guide.rst:249
 msgid "``util``:  Miscellaneous utilities"
 msgstr "``util``: 各种各样的工具"
 
-#: ../../contributor_guide.rst:251
+#: ../../contributor_guide.rst:252
 #, fuzzy
 msgid "``python/taichi``: Python frontend implementation"
 msgstr "``python``: Python 前端实现"
 
-#: ../../contributor_guide.rst:253
+#: ../../contributor_guide.rst:254
 msgid "``core``: Loading & interacting with Taichi core"
 msgstr ""
 
-#: ../../contributor_guide.rst:254
+#: ../../contributor_guide.rst:255
 msgid "``lang``: Python-embbed Taichi language & syntax (major)"
 msgstr ""
 
-#: ../../contributor_guide.rst:255
+#: ../../contributor_guide.rst:256
 #, fuzzy
 msgid "``misc``: Miscellaneous utilities"
 msgstr "``util``: 各种各样的工具"
 
-#: ../../contributor_guide.rst:256
+#: ../../contributor_guide.rst:257
 msgid "``tools``: Handy end-user tools"
 msgstr ""
 
-#: ../../contributor_guide.rst:258
+#: ../../contributor_guide.rst:259
 #, fuzzy
 msgid "``tests``: Functional tests"
 msgstr "``tests``: C++ 和 Python 测试程序"
 
-#: ../../contributor_guide.rst:260
+#: ../../contributor_guide.rst:261
 #, fuzzy
 msgid "``python``: Python tests (major)"
 msgstr "``python``: Python 前端实现"
 
-#: ../../contributor_guide.rst:261
+#: ../../contributor_guide.rst:262
 msgid "``cpp``: C++ tests"
 msgstr ""
 
-#: ../../contributor_guide.rst:263
+#: ../../contributor_guide.rst:264
 msgid "``examples``: Examples"
 msgstr "``examples``: 样例程序"
 
-#: ../../contributor_guide.rst:264
+#: ../../contributor_guide.rst:265
 msgid "``docs``: Documentation"
 msgstr "``docs``: 文档"
 
-#: ../../contributor_guide.rst:265
+#: ../../contributor_guide.rst:266
 msgid "``benchmarks``: Performance benchmarks"
 msgstr "``benchmarks``: 性能基准"
 
-#: ../../contributor_guide.rst:266
+#: ../../contributor_guide.rst:267
 msgid "``external``: External libraries"
 msgstr ""
 
-#: ../../contributor_guide.rst:267
+#: ../../contributor_guide.rst:268
 msgid "``misc``: Random (yet useful) files"
 msgstr "``misc``: 零散（但仍很有用）的文件"
 
-#: ../../contributor_guide.rst:268
+#: ../../contributor_guide.rst:269
 msgid "..."
 msgstr ""
 
-#: ../../contributor_guide.rst:274
+#: ../../contributor_guide.rst:275
 msgid "Testing"
 msgstr "测试"
 
-#: ../../contributor_guide.rst:276
+#: ../../contributor_guide.rst:277
 #, fuzzy
 msgid "Tests should be added to ``tests/``."
 msgstr "测试程序应该添加到文件夹 ``taichi/tests`` 下。"
 
-#: ../../contributor_guide.rst:279
+#: ../../contributor_guide.rst:280
 msgid "Command line tools"
 msgstr ""
 
-#: ../../contributor_guide.rst:281
+#: ../../contributor_guide.rst:282
 msgid "Use ``ti test`` to run all the tests."
 msgstr "通过使用 ``ti test`` 运行所有测试实例。"
 
-#: ../../contributor_guide.rst:282
+#: ../../contributor_guide.rst:283
 msgid "Use ``ti test -v`` for verbose outputs."
 msgstr "通过使用 ``ti test -v`` 查看详细输出信息。"
 
-#: ../../contributor_guide.rst:283
+#: ../../contributor_guide.rst:284
 msgid ""
 "Use ``ti test -C`` to run tests and record code coverage, see "
 ":ref:`coverage` for more infomations."
 msgstr "通过使用 ``ti test -C`` 运行测试并记录代码覆盖率, 参阅 :ref:`coverage` 查看更多信息."
 
-#: ../../contributor_guide.rst:285
+#: ../../contributor_guide.rst:286
 #, fuzzy
 msgid ""
 "Use ``ti test -a <arch(s)>`` for testing against specified backend(s). "
@@ -954,7 +958,7 @@ msgstr ""
 "使用 ``ti test -a <arch(s)>`` 针对指定架构进行测试。例如，``ti test -a opengl`` 或 ``ti "
 "test numpy_io -a cuda,metal``。"
 
-#: ../../contributor_guide.rst:288
+#: ../../contributor_guide.rst:289
 #, fuzzy
 msgid ""
 "Use ``ti test -na <arch(s)>`` for testing all architectures excluding "
@@ -963,7 +967,7 @@ msgstr ""
 "使用 ``ti test -na <arch(s)>`` 测试除指定架构外的其余所有架构。例如，``ti test -na "
 "opengl,cuda``。"
 
-#: ../../contributor_guide.rst:291
+#: ../../contributor_guide.rst:292
 #, fuzzy
 msgid ""
 "Use ``ti test <filename(s)>`` to run specific tests in filenames. e.g. "
@@ -973,76 +977,76 @@ msgstr ""
 "使用 ``ti test <filename(s)>`` 运行特定的测试实例。除此之外诸如，``ti test numpy_io`` 和 ``ti"
 " test test_numpy_io.py`` 的写法是等价的。"
 
-#: ../../contributor_guide.rst:294
+#: ../../contributor_guide.rst:295
 #, fuzzy
 msgid ""
 "Use ``ti test -c`` to run only the C++ tests. e.g. ``ti test -c "
 "alg_simp`` will run ``tests/cpp/test_alg_simp.cpp``."
 msgstr "使用 ``ti test -c`` 运行 C++ 测试程序。例如， ``ti test -c alg_simp``"
 
-#: ../../contributor_guide.rst:297
+#: ../../contributor_guide.rst:298
 msgid ""
 "Use ``ti test -k <key>`` to run tests that match the specified key. e.g. "
 "``ti test linalg -k \"cross or diag\"`` will run the ``test_cross`` and "
 "``test_diag`` in ``tests/python/test_linalg.py``."
 msgstr ""
 
-#: ../../contributor_guide.rst:300
+#: ../../contributor_guide.rst:301
 msgid "For more options, see ``ti test -h``."
 msgstr "或者使用 ``ti test -h`` 查看更多选项。"
 
-#: ../../contributor_guide.rst:302
+#: ../../contributor_guide.rst:303
 msgid "For more details on how to write a test case, see :ref:`write_test`."
 msgstr ""
 
-#: ../../contributor_guide.rst:305
+#: ../../contributor_guide.rst:306
 msgid "Documentation"
 msgstr "文档"
 
-#: ../../contributor_guide.rst:307
+#: ../../contributor_guide.rst:308
 #, fuzzy
 msgid "Documentations are put under the folder ``docs/``."
 msgstr "``[Doc]``: 与 ``docs/`` 目录下的文档相关;"
 
-#: ../../contributor_guide.rst:309
+#: ../../contributor_guide.rst:310
 msgid ""
 "We use `reStructured text <https://www.sphinx-"
 "doc.org/en/master/usage/restructuredtext/basics.html>`_ (.rst) to write "
 "documentation."
 msgstr ""
 
-#: ../../contributor_guide.rst:310
+#: ../../contributor_guide.rst:311
 msgid ""
 "We host our documentation online using `readthedocs.io "
 "<https://taichi.readthedocs.io/en/stable>`_."
 msgstr ""
 
-#: ../../contributor_guide.rst:311
+#: ../../contributor_guide.rst:312
 msgid "Use ``ti doc`` to build the documentation locally."
 msgstr "使用 ``ti doc`` 建立本地文档。"
 
-#: ../../contributor_guide.rst:312
+#: ../../contributor_guide.rst:313
 #, fuzzy
 msgid "Open the documentation at ``docs/build/index.html``."
 msgstr "在目录 ``taichi/doc/build/index.html`` 下打开文档。"
 
-#: ../../contributor_guide.rst:316
+#: ../../contributor_guide.rst:317
 msgid ""
 "On Linux/OS X, use ``watch -n 1 ti doc`` to continuously build the "
 "documentation."
 msgstr "在 Linux/OS X 下, 使用 ``watch -n 1 ti doc`` 以持续地构建文档。"
 
-#: ../../contributor_guide.rst:318
+#: ../../contributor_guide.rst:319
 msgid ""
 "If the OpenGL backend detector keeps creating new windows, execute "
 "``export TI_WITH_OPENGL=0`` for ``ti doc``."
 msgstr "如果 OpenGL 后端检测器一直在创建新窗口，对 ``ti doc`` 附加执行 ``export TI_WITH_OPENGL=0`` 。"
 
-#: ../../contributor_guide.rst:322
+#: ../../contributor_guide.rst:323
 msgid "Efficient code navigation across Python/C++"
 msgstr "跨 Python/C++ 的高效代码导航"
 
-#: ../../contributor_guide.rst:323
+#: ../../contributor_guide.rst:324
 msgid ""
 "If you work on the language frontend (Python/C++ interface), to navigate "
 "around the code base, `ffi-navigator <https://github.com/tqchen/ffi-"
@@ -1053,11 +1057,11 @@ msgstr ""
 "<https://github.com/tqchen/ffi-navigator>`_ 允许从 Python 跳转到它们在 C++ "
 "中绑定的定义。按照前述链接的 README 设置你的编辑器。"
 
-#: ../../contributor_guide.rst:329
+#: ../../contributor_guide.rst:330
 msgid "Upgrading CUDA"
 msgstr "升级 CUDA"
 
-#: ../../contributor_guide.rst:331
+#: ../../contributor_guide.rst:332
 msgid ""
 "Right now we are targeting CUDA 10. When upgrading CUDA version, the file"
 " ``external/cuda_libdevice/slim_libdevice.10.bc`` should also be replaced"
@@ -1066,7 +1070,7 @@ msgstr ""
 "目前我们的开发工作是针对 CUDA 10。在升级 CUDA 版本时，当前 "
 "``external/cuda_libdevice/slim_libdevice.10.bc`` 文件应该被新的版本的所取代。"
 
-#: ../../contributor_guide.rst:334
+#: ../../contributor_guide.rst:335
 #, fuzzy
 msgid ""
 "To generate the slimmed version of libdevice based on a full "

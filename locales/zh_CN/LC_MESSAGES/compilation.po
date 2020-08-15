@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:06+0800\n"
+"POT-Creation-Date: 2020-08-13 16:43+0800\n"
 "PO-Revision-Date: 2020-05-13 09:21+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -65,11 +65,12 @@ msgid "Let's consider the following simple kernel:"
 msgstr "让我们考虑以下简单内核："
 
 #: ../../compilation.rst:21
+#, fuzzy
 msgid ""
 "@ti.kernel\n"
-"def add(tensor: ti.template(), delta: ti.i32):\n"
-"  for i in tensor:\n"
-"    tensor[i] += delta"
+"def add(field: ti.template(), delta: ti.i32):\n"
+"  for i in field:\n"
+"    field[i] += delta"
 msgstr ""
 "@ti.kernel\n"
 "def add(tensor: ti.template(), delta: ti.i32):\n"
@@ -78,13 +79,14 @@ msgstr ""
 
 #: ../../compilation.rst:29
 #, fuzzy
-msgid "We allocate two 1D tensors to simplify discussion:"
+msgid "We allocate two 1D fields to simplify discussion:"
 msgstr "我们还分配了两个一维张量以简化讨论："
 
 #: ../../compilation.rst:31
+#, fuzzy
 msgid ""
-"x = ti.var(dt=ti.f32, shape=128)\n"
-"y = ti.var(dt=ti.f32, shape=16)"
+"x = ti.field(dtype=ti.f32, shape=128)\n"
+"y = ti.field(dtype=ti.f32, shape=16)"
 msgstr ""
 "x = ti.var(dt=ti.f32, shape=128)\n"
 "y = ti.var(dt=ti.f32, shape=16)"

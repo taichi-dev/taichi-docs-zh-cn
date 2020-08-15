@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>taichi 0.6.10</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+  <style>
+
+
+/*
+Based on Minimal CSS (minimalcss.com) under the MIT license.
+*/
+
+/* Reset */
+* { margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* Layout */
+body { background-color: #fff; color: #333;	font: 14px/20px -apple-system, "HelveticaNeue", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+
+header { width: 100%; margin: 0 auto; position: relative; padding: 20px 0; margin-bottom: 20px; }
+
+nav ul { margin: 0; }
+nav ul li { display: inline; margin-right: 20px; font-size: 16px; line-height: 28px; color: #333; }
+nav ul li a { color: #333; }
+
+.container { position: relative; max-width: 90%; margin: 0 auto; }
+
+footer { border-top:1px solid #ccc; font-size:11px; line-height:26px; color:#999; }
+footer a { color:#999999; }
+footer a:hover { color:#105CB6; }
+footer ul li { display:inline; list-style:none; padding-left:20px; }
+
+/* Typography */
+a { color: #105CB6; text-decoration: none; }
+a:hover, a:focus { color: #105CB6; text-decoration: underline; }
+a:active { color: #105CB6; }
+
+h1 { font-size: 24px; line-height: 20px; margin: 10px 0; }
+h2 { font-size: 20px; line-height: 20px; margin: 10px 0; }
+h3 { font-size: 16px; line-height: 20px; margin: 10px 0; }
+h4 { font-size: 14px; line-height: 20px; margin: 10px 0; }
+h5 { font-size: 12px; line-height: 20px; margin: 10px 0; }
+h5 { font-size: 10px; line-height: 20px; margin: 10px 0; }
+h1,h2,h3,h4,h5,h6 { color: #333; }
+
+p { margin-bottom: 10px; }
+
+.float-left     { float: left; }
+.float-right    { float: right; }
+img.float-left  { float: left; margin: 0 20px 20px 0; }
+img.float-right { float: right; margin: 0 0 20px 20px; }
+img.center      { margin: 0 auto; display: block; }
+
+.text-left    { text-align: left; }
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
+.text-justify { text-align: justify; }
+
+/* Misc */
+hr { background-color: #ccc; border: 0px; color: #ccc; height: 1px; margin: 8px 0 20px 0; }
+pre, code { background:#E0ECF6; display:block; margin-bottom: 20px; padding:10px; }
+
+blockquote { margin: 10px 10px 20px; padding: 9px; background-color: #f8f8f8; color: #666; border-left: 5px solid #ddd; font: 14px/20px Georgia, Times, serif; quotes: "\201C" "\201D"; }
+blockquote p { margin: 0; }
+blockquote:before { content: open-quote; font-weight: bold; }
+blockquote:after  { content: close-quote; font-weight: bold; }
+
+/* List */
+ul { list-style-position:inside; }
+ol { list-style-position:inside; }
+
+/* Table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th { font-weight: bold; }
+tfoot { font-style: italic; }
+
+/* Metadata part */
+
+.metadata {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 90%;
+}
+table.metadata td {
+  padding-right: 20px;
+}
+
+.stats {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+.graph {
+  width: 100%;
+}
+.graph div { float: left; }
+.graph div:first-child { border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+.graph div:last-child { border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+.percent-done    { background-color: rgb(90, 228, 140); height: 10px; }
+.percent-fuzzy   { background-color: rgb(255, 167, 52); height: 10px; }
+.percent-untrans { background-color: #F1F1F1; height: 10px; }
+.legend {
+  font-size: smaller;
+  color: #aaa;
+  padding-top: 12px;
+  text-align: center;
+}
+
+/* Translations */
+table.translations {
+  width: 100%;
+  table-layout: fixed;
+}
+table.translations th, table.translations td {
+  padding: 5px 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #E1E1E1;
+}
+table.translations th {
+  text-align: left;
+}
+table.translations th:first-child, table.translations td:first-child { padding-left: 0; }
+table.translations th:last-child, table.translations td:last-child { padding-right: 0; }
+
+.with-comments td {
+  border-bottom: none !important;
+}
+tr.comments div {
+  float: left;
+  max-width: 90%;
+  font-size: smaller;
+  color: #aaa;
+}
+tr.comments div p:last-child { margin-bottom: 0; }
+tr.comments td { padding-top: 0; }
+
+.fuzzy .tra {
+  color: rgb(218, 123, 0);
+}
+
+.msgctxt {
+  color: rgb(70, 109, 137);
+  font-size: smaller;
+  background-color: rgb(217, 232, 242);
+  border-radius: 2px;
+  padding: 2px 4px;
+  margin-right: 4px;
+}
+
+
+  </style>
+</head>
+<body>
+<div class='container'>
+<table class='metadata'>
+<tr><td>项目：</td><td>taichi 0.6.10</td></tr>
+<tr><td>语言：</td><td>中文（中国）</td></tr>
+</table>
+<div class='stats'>
+  <div class='graph'>
+    <div class='percent-done' style='width: 100%'>&nbsp;</div>
+  </div>
+  <div class='legend'>已翻译：6 共计 6 (100 %)  </div>
+</div>
+<table class='translations'>
+  <thead>
+    <tr>
+      <th>源文本 — 英文</th>
+      <th>翻译 — 中文（中国）</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class='i'>
+<td class='src'  lang='en'>
+Command line utilities</td>
+<td class='tra'  lang='zh-CN'>
+命令行工具使用指南</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+A successful installation of Taichi should add a CLI (Command-Line Interface) to your system, which is helpful to perform several rountine tasks quickly. To invoke the CLI, please run ``ti`` or ``python3 -m taichi``.</td>
+<td class='tra'  lang='zh-CN'>
+Taichi成功安装之后后会在系统中增加一个CLI(命令行窗口)工具,这个工具可以帮助你快速地执行多个日常任务。要调用CLI,请在shell中运行"ti" 或"python3 -m taichi"。</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Examples</td>
+<td class='tra'  lang='zh-CN'>
+示例</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Taichi provides a set of bundled examples. You could run ``ti example -h`` to print the help message and get a list of available example names. For instance, to run the basic `fractal` example, try: ``ti example fractal`` from your shell. (``ti example fractal.py`` should also work)</td>
+<td class='tra'  lang='zh-CN'>
+Taichi提供了一组捆绑示例，你可以在命令行窗口中运行："ti example -h"来打印帮助信息并获取可用示例名称列表。例如:要运行'fractal'示例，你可以在shell中尝试运行"ti example fractal"。(运行"ti exmple fractal.py" 也同样奏效)</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Changelog</td>
+<td class='tra'  lang='zh-CN'>
+更新日志</td>
+</tr>
+<tr class='i'>
+<td class='src'  lang='en'>
+Sometimes it's convenient to view the changelog of the current version of Taichi, to do so from your shell, you could run ``ti changelog``.</td>
+<td class='tra'  lang='zh-CN'>
+查看当前系统上Taichi的更新日志十分方便，在shell中运行"ti changelog"即可进行查看。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

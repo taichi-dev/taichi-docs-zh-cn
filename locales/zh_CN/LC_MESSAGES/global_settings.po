@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:06+0800\n"
+"POT-Creation-Date: 2020-08-13 16:43+0800\n"
 "PO-Revision-Date: 2020-08-10 21:35+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.3.1\n"
 
 #: ../../global_settings.rst:2
 msgid "Global settings"
@@ -33,18 +32,20 @@ msgstr "指定要使用的后端，请使用： ``ti.init(arch=ti.cuda)``。"
 
 #: ../../global_settings.rst:8
 msgid ""
-"To specify pre-allocated memory size for CUDA: ``ti."
-"init(device_memory_GB=0.5)``."
+"To specify pre-allocated memory size for CUDA: "
+"``ti.init(device_memory_GB=0.5)``."
 msgstr "指定 CUDA 预分配内存的大小： ``ti.init(device_memory_GB=0.5)``。"
 
 #: ../../global_settings.rst:9
 msgid ""
-"To disable unified memory usage on CUDA: ``ti.init(use_unified_memory=False)``."
+"To disable unified memory usage on CUDA: "
+"``ti.init(use_unified_memory=False)``."
 msgstr "禁止 CUDA 使用统一内存 (Unified Memory)：``ti.init(use_unified_memory=False)``。"
 
 #: ../../global_settings.rst:10
 msgid ""
-"To specify which GPU to use for CUDA: ``export CUDA_VISIBLE_DEVICES=[gpuid]``."
+"To specify which GPU to use for CUDA: ``export "
+"CUDA_VISIBLE_DEVICES=[gpuid]``."
 msgstr "指定 CUDA 所使用的 GPU：``export CUDA_VISIBLE_DEVICES=[gpuid]``。"
 
 #: ../../global_settings.rst:11
@@ -57,18 +58,15 @@ msgstr "编译"
 
 #: ../../global_settings.rst:16
 msgid ""
-"Disable advanced optimization to save compile time & possible errors: ``ti."
-"init(advanced_optimization=False)``."
-msgstr ""
-"禁用高级优化以节省编译时间和可能的错误：``ti."
-"init(advanced_optimization=False)``。"
+"Disable advanced optimization to save compile time & possible errors: "
+"``ti.init(advanced_optimization=False)``."
+msgstr "禁用高级优化以节省编译时间和可能的错误：``ti.init(advanced_optimization=False)``。"
 
 #: ../../global_settings.rst:17
 msgid ""
-"Disable fast math to prevent possible undefined math behavior: ``ti."
-"init(fast_math=False)``."
-msgstr ""
-"禁用 fast math 以防止可能出现的未定义数学行为: ``ti.init(fast_math=False)``。"
+"Disable fast math to prevent possible undefined math behavior: "
+"``ti.init(fast_math=False)``."
+msgstr "禁用 fast math 以防止可能出现的未定义数学行为: ``ti.init(fast_math=False)``。"
 
 #: ../../global_settings.rst:18
 msgid "To print preprocessed Python code: ``ti.init(print_preprocessed=True)``."
@@ -87,17 +85,17 @@ msgid "Runtime"
 msgstr "运行"
 
 #: ../../global_settings.rst:25
+#, fuzzy
 msgid ""
-"Restart the entire Taichi system (destroy all tensors and kernels): ``ti."
-"reset()``."
+"Restart the entire Taichi system (destroy all fields and kernels): "
+"``ti.reset()``."
 msgstr "重新启动 Taichi 运行时系统（销毁所有张量和内核）： ``ti.reset()``。"
 
 #: ../../global_settings.rst:26
 msgid ""
 "To start program in debug mode: ``ti.init(debug=True)`` or ``ti debug "
 "your_script.py``."
-msgstr ""
-"如要以调试模式启动程序：``ti.init(debug=True)`` 或 ``ti debug your_script.py``."
+msgstr "如要以调试模式启动程序：``ti.init(debug=True)`` 或 ``ti debug your_script.py``."
 
 #: ../../global_settings.rst:27
 msgid "To disable importing torch on start up: ``export TI_ENABLE_TORCH=0``."
@@ -109,8 +107,8 @@ msgstr "日志记录"
 
 #: ../../global_settings.rst:32
 msgid ""
-"Show more detailed log to level TRACE: ``ti.init(log_level=ti.TRACE)`` or ``ti."
-"set_logging_level(ti.TRACE)``."
+"Show more detailed log to level TRACE: ``ti.init(log_level=ti.TRACE)`` or"
+" ``ti.set_logging_level(ti.TRACE)``."
 msgstr ""
 "通过输出 TRACE 级日志以显示更详尽的信息：``ti.init(log_level=ti.TRACE)`` 或 "
 "``ti.set_logging_level(ti.TRACE)``。"
@@ -129,18 +127,17 @@ msgstr "如要在 Taichi 崩溃时触发 GDB：``ti.init(gdb_trigger=True)``。"
 
 #: ../../global_settings.rst:39
 msgid ""
-"Cache compiled runtime bitcode in **dev mode** to save start up time: ``export "
-"TI_CACHE_RUNTIME_BITCODE=1``."
+"Cache compiled runtime bitcode in **dev mode** to save start up time: "
+"``export TI_CACHE_RUNTIME_BITCODE=1``."
 msgstr ""
-"**开发模式** 中，缓存编译过的运行时位码 (compiled runtime bitcode) 以节省启动时间："
-"``export TI_CACHE_RUNTIME_BITCODE=1``。"
+"**开发模式** 中，缓存编译过的运行时位码 (compiled runtime bitcode) 以节省启动时间：``export "
+"TI_CACHE_RUNTIME_BITCODE=1``。"
 
 #: ../../global_settings.rst:40
 msgid ""
-"To specify how many threads to run test: ``export TI_TEST_THREADS=4`` or ``ti "
-"test -t4``."
-msgstr ""
-"如要指定运行测试的线程数: ``export TI_TEST_THREADS=4`` 或 ``ti test -t4``。"
+"To specify how many threads to run test: ``export TI_TEST_THREADS=4`` or "
+"``ti test -t4``."
+msgstr "如要指定运行测试的线程数: ``export TI_TEST_THREADS=4`` 或 ``ti test -t4``。"
 
 #: ../../global_settings.rst:44
 msgid "Specifying ``ti.init`` arguments from environment variables"
@@ -148,8 +145,8 @@ msgstr "由环境变量指定 ``ti.init`` 中的参数"
 
 #: ../../global_settings.rst:46
 msgid ""
-"Arguments for ``ti.init`` may also be specified from environment variables. For "
-"example:"
+"Arguments for ``ti.init`` may also be specified from environment "
+"variables. For example:"
 msgstr "``ti.init`` 中的参数也可以从环境变量中指定。例如:"
 
 #: ../../global_settings.rst:48
@@ -157,7 +154,10 @@ msgid "``ti.init(arch=ti.cuda)`` is equivalent to ``export TI_ARCH=cuda``."
 msgstr "``ti.init(arch=ti.cuda)`` 相当于 ``export TI_ARCH=cuda``."
 
 #: ../../global_settings.rst:49
-msgid "``ti.init(log_level=ti.TRACE)`` is equivalent to ``export TI_ARCH=trace``."
+#, fuzzy
+msgid ""
+"``ti.init(log_level=ti.TRACE)`` is equivalent to ``export "
+"TI_LOG_LEVEL=trace``."
 msgstr "``ti.init(log_level=ti.TRACE)`` 相当于 ``export TI_LOG_LEVEL=trace``."
 
 #: ../../global_settings.rst:50
@@ -169,37 +169,36 @@ msgid ""
 "``ti.init(use_unified_memory=False)`` is equivalent to ``export "
 "TI_USE_UNIFIED_MEMORY=0``."
 msgstr ""
-"``ti.init(use_unified_memory=False)`` 相当于 ``export TI_USE_UNIFIED_MEMORY=0``."
+"``ti.init(use_unified_memory=False)`` 相当于 ``export "
+"TI_USE_UNIFIED_MEMORY=0``."
 
 #: ../../global_settings.rst:53
 msgid ""
-"If both ``ti.init`` argument and the corresponding environment variable are "
-"specified, then the one in the environment variable will **override** the one "
-"in the argument, e.g.:"
-msgstr ""
-"如果 ``ti.init`` 中的参数也同时在对应的环境变量中被指定，那么环境变量中的参数将 "
-"**覆盖** ``ti.init`` 中的参数，例如:"
+"If both ``ti.init`` argument and the corresponding environment variable "
+"are specified, then the one in the environment variable will **override**"
+" the one in the argument, e.g.:"
+msgstr "如果 ``ti.init`` 中的参数也同时在对应的环境变量中被指定，那么环境变量中的参数将 **覆盖** ``ti.init`` 中的参数，例如:"
 
 #: ../../global_settings.rst:56
 msgid ""
-"if ``ti.init(arch=ti.cuda)`` and ``export TI_ARCH=opengl`` are specified at the "
-"same time, then Taichi will choose ``ti.opengl`` as backend."
+"if ``ti.init(arch=ti.cuda)`` and ``export TI_ARCH=opengl`` are specified "
+"at the same time, then Taichi will choose ``ti.opengl`` as backend."
 msgstr ""
-"如果同时指定了 ``ti.init(arch=ti.cuda)`` 和 ``export TI_ARCH=opengl`` ， 那么 "
-"Taichi 将会选择 ``ti.opengl`` 作为后端。"
+"如果同时指定了 ``ti.init(arch=ti.cuda)`` 和 ``export TI_ARCH=opengl`` ， 那么 Taichi"
+" 将会选择 ``ti.opengl`` 作为后端。"
 
 #: ../../global_settings.rst:58
 msgid ""
-"if ``ti.init(debug=True)`` and ``export TI_DEBUG=0`` are specified at the same "
-"time, then Taichi will disable debug mode."
+"if ``ti.init(debug=True)`` and ``export TI_DEBUG=0`` are specified at the"
+" same time, then Taichi will disable debug mode."
 msgstr ""
-"如果同时指定了 ``ti.init(debug=True)`` 和 ``export TI_DEBUG=0`` ，那么 Taichi 将"
-"会禁用 debug 模式。"
+"如果同时指定了 ``ti.init(debug=True)`` 和 ``export TI_DEBUG=0`` ，那么 Taichi 将会禁用 "
+"debug 模式。"
 
 #: ../../global_settings.rst:63
 msgid ""
-"If ``ti.init`` is called twice, then the configuation in first invocation will "
-"be completely discarded, e.g.:"
+"If ``ti.init`` is called twice, then the configuation in first invocation"
+" will be completely discarded, e.g.:"
 msgstr "如果重复调用了 ``ti.init`` ，那么第一次调用时的配置将被完全丢弃，例如:"
 
 #: ../../global_settings.rst:68
@@ -223,5 +222,7 @@ msgstr ""
 #~ msgstr "要打印详细信息： ``export TI_VERBOSE=1``"
 
 #~ msgid ""
-#~ "To disable unified memory usage on CUDA: ``export TI_USE_UNIFIED_MEMORY=0``."
+#~ "To disable unified memory usage on "
+#~ "CUDA: ``export TI_USE_UNIFIED_MEMORY=0``."
 #~ msgstr "禁止 CUDA 使用统一内存： ``export TI_USE_UNIFIED_MEMORY = 0``。"
+

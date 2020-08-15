@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 20:53-0400\n"
+"POT-Creation-Date: 2020-08-13 16:43+0800\n"
 "PO-Revision-Date: 2020-05-12 15:58+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -42,11 +42,12 @@ msgid "For example, consider the simple kernel:"
 msgstr "例如，考虑下面这个简单的内核："
 
 #: ../../syntax_sugars.rst:11
+#, fuzzy
 msgid ""
 "@ti.kernel\n"
 "def my_kernel():\n"
-"  for i, j in tensor_a:\n"
-"    tensor_b[i, j] = some_function(tensor_a[i, j])"
+"  for i, j in field_a:\n"
+"    field_b[i, j] = some_function(field_a[i, j])"
 msgstr ""
 "@ti.kernel\n"
 "def my_kernel():\n"
@@ -54,14 +55,16 @@ msgstr ""
 "    tensor_b[i, j] = some_function(tensor_a[i, j])"
 
 #: ../../syntax_sugars.rst:18
-msgid "The tensors and function be aliased to new names with ``ti.static``:"
+#, fuzzy
+msgid "The fields and function be aliased to new names with ``ti.static``:"
 msgstr "张量和函数使用 ``ti.static`` 别名为新名称："
 
 #: ../../syntax_sugars.rst:20
+#, fuzzy
 msgid ""
 "@ti.kernel\n"
 "def my_kernel():\n"
-"  a, b, fun = ti.static(tensor_a, tensor_b, some_function)\n"
+"  a, b, fun = ti.static(field_a, field_b, some_function)\n"
 "  for i,j in a:\n"
 "    b[i,j] = fun(a[i,j])"
 msgstr ""
@@ -79,9 +82,10 @@ msgid ""
 msgstr "还可以为类成员和方法创建别名，这有助于防止含有 ``self`` 的面向对象编程代码混乱。"
 
 #: ../../syntax_sugars.rst:32
+#, fuzzy
 msgid ""
 "For example, consider class kernel to compute the 2-D laplacian of some "
-"tensor:"
+"field:"
 msgstr "例如，考虑使用类内核来计算某个张量的二维拉普拉斯算子："
 
 #: ../../syntax_sugars.rst:34
@@ -132,8 +136,9 @@ msgstr ""
 ":ref:`meta` 。"
 
 #: ../../syntax_sugars.rst:57
+#, fuzzy
 msgid ""
 "Here, we are using it for *compile-time const values*, i.e. the "
-"**tensor/function handles** are constants at compile time."
+"**field/function handles** are constants at compile time."
 msgstr "在这里，我们将其用于 *编译时常量值* ，即 ``张量/函数句柄`` 在编译时是常量。"
 

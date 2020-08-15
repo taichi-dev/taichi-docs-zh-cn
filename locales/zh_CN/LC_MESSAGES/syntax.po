@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:06+0800\n"
+"POT-Creation-Date: 2020-08-13 16:43+0800\n"
 "PO-Revision-Date: 2020-05-27 20:21+0800\n"
 "Last-Translator: archibate <17721388340@qq.com>\n"
 "Language: zh_CN\n"
@@ -23,40 +23,143 @@ msgid "Syntax"
 msgstr "语法"
 
 #: ../../syntax.rst:5
-msgid "Kernels"
-msgstr "内核"
+msgid "Taichi-scope vs Python-scope"
+msgstr ""
 
 #: ../../syntax.rst:7
 msgid ""
-"Kernel arguments must be type-hinted. Kernels can have at most 8 "
-"parameters, e.g.,"
-msgstr "内核参数必须有类型提示。内核最多只能有 8 个参数，例如，"
+"Code decorated by ``@ti.kernel`` or ``@ti.func`` is in the **Taichi-"
+"scope**."
+msgstr ""
 
 #: ../../syntax.rst:9
 msgid ""
+"They are to be compiled and executed on CPU or GPU devices with high "
+"parallelization performance, on the cost of less flexibility."
+msgstr ""
+
+#: ../../syntax.rst:14
+msgid "For people from CUDA, Taichi-scope = **device** side."
+msgstr ""
+
+#: ../../syntax.rst:17
+msgid "Code outside ``@ti.kernel`` or ``@ti.func`` is in the **Python-scope**."
+msgstr ""
+
+#: ../../syntax.rst:19
+msgid ""
+"They are not compiled by the Taichi compiler and have lower performance "
+"but with a richer type system and better flexibility."
+msgstr ""
+
+#: ../../syntax.rst:24
+msgid "For people from CUDA, Python-scope = **host** side."
+msgstr ""
+
+#: ../../syntax.rst:28
+msgid "Kernels"
+msgstr "内核"
+
+#: ../../syntax.rst:30
+msgid "A Python function decorated by ``@ti.kernel`` is a **Taichi kernel**:"
+msgstr ""
+
+#: ../../syntax.rst:32
+msgid ""
 "@ti.kernel\n"
-"def print_xy(x: ti.i32, y: ti.f32):\n"
-"    print(x + y)"
+"def my_kernel():\n"
+"    ...\n"
+"\n"
+"my_kernel()"
+msgstr ""
+
+#: ../../syntax.rst:41
+msgid "Kernels should be called from **Python-scope**."
+msgstr ""
+
+#: ../../syntax.rst:45
+msgid "For people from CUDA, Taichi kernels = ``__global__`` functions."
+msgstr ""
+
+#: ../../syntax.rst:49
+msgid "Arguments"
+msgstr ""
+
+#: ../../syntax.rst:51
+msgid ""
+"Kernels can have at most 8 parameters so that you can pass values from "
+"Python-scope to Taichi-scope easily."
+msgstr ""
+
+#: ../../syntax.rst:54
+msgid "Kernel arguments must be type-hinted:"
+msgstr ""
+
+#: ../../syntax.rst:56
+#, fuzzy
+msgid ""
+"@ti.kernel\n"
+"def my_kernel(x: ti.i32, y: ti.f32):\n"
+"    print(x + y)\n"
+"\n"
+"my_kernel(2, 3.3)  # prints: 5.3"
 msgstr ""
 "@ti.kernel\n"
 "def print_xy(x: ti.i32, y: ti.f32):\n"
 "    print(x + y)"
 
-#: ../../syntax.rst:16
+#: ../../syntax.rst:66
+#, fuzzy
 msgid ""
-"A kernel can have a **scalar** return value. If a kernel has a return "
-"value, it must be type-hinted. The return value will be automatically "
-"cast into the hinted type. e.g.,"
-msgstr "一个内核可以有一个 **标量** 返回值。如果内核有一个返回值，那它必须有类型提示。这个返回值会自动转换到所提示的类型。例如，"
+"For now, we only support scalars as arguments. Specifying ``ti.Matrix`` "
+"or ``ti.Vector`` as argument is not supported. For example:"
+msgstr ""
+"目前，我们只支持返回一个标量。返回 ``ti.Matrix`` 或者 ``ti.Vector`` 是不支持的。Python "
+"方式的返回元组也是不支持的。例如："
 
-#: ../../syntax.rst:19
+#: ../../syntax.rst:68
 msgid ""
 "@ti.kernel\n"
-"def add_xy(x: ti.f32, y: ti.f32) -> ti.i32:\n"
-"    return x + y  # same as: ti.cast(x + y, ti.i32)\n"
+"def bad_kernel(v: ti.Vector):\n"
+"    ...\n"
 "\n"
-"res = add_xy(2.3, 1.1)\n"
-"print(res)  # 3, since return type is ti.i32"
+"@ti.kernel\n"
+"def good_kernel(vx: ti.f32, vy: ti.f32):\n"
+"    v = ti.Vector([vx, vy])\n"
+"    ..."
+msgstr ""
+
+#: ../../syntax.rst:81
+msgid "Return value"
+msgstr ""
+
+#: ../../syntax.rst:83
+msgid ""
+"A kernel may or may not have a **scalar** return value. If it does, the "
+"type of return value must be hinted:"
+msgstr ""
+
+#: ../../syntax.rst:86
+msgid ""
+"@ti.kernel\n"
+"def my_kernel() -> ti.f32:\n"
+"    return 233.33\n"
+"\n"
+"print(my_kernel())  # 233.33"
+msgstr ""
+
+#: ../../syntax.rst:95
+msgid "The return value will be automatically cast into the hinted type. e.g.,"
+msgstr ""
+
+#: ../../syntax.rst:97
+#, fuzzy
+msgid ""
+"@ti.kernel\n"
+"def add_xy() -> ti.i32:  # int32\n"
+"    return 233.33\n"
+"\n"
+"print(my_kernel())  # 233, since return type is ti.i32"
 msgstr ""
 "@ti.kernel\n"
 "def add_xy(x: ti.f32, y: ti.f32) -> ti.i32:\n"
@@ -65,16 +168,17 @@ msgstr ""
 "res = add_xy(2.3, 1.1)\n"
 "print(res)  # 3，因为返回值类型是 ti.i32"
 
-#: ../../syntax.rst:31
+#: ../../syntax.rst:108
+#, fuzzy
 msgid ""
-"For now, we only support one scalar as return value. Returning "
+"For now, a kernel can only have one scalar return value. Returning "
 "``ti.Matrix`` or ``ti.Vector`` is not supported. Python-style tuple "
 "return is not supported either. For example:"
 msgstr ""
 "目前，我们只支持返回一个标量。返回 ``ti.Matrix`` 或者 ``ti.Vector`` 是不支持的。Python "
 "方式的返回元组也是不支持的。例如："
 
-#: ../../syntax.rst:33
+#: ../../syntax.rst:110
 msgid ""
 "@ti.kernel\n"
 "def bad_kernel() -> ti.Matrix:\n"
@@ -96,17 +200,23 @@ msgstr ""
 "    y = 0.5\n"
 "    return x, y  # 错误"
 
-#: ../../syntax.rst:46
+#: ../../syntax.rst:124 ../../syntax.rst:211
+msgid "Advanced arguments"
+msgstr ""
+
+#: ../../syntax.rst:126
+#, fuzzy
 msgid ""
 "We also support **template arguments** (see "
 ":ref:`template_metaprogramming`) and **external array arguments** (see "
-":ref:`external`) in Taichi kernels."
+":ref:`external`) in Taichi kernels.  Use ``ti.template()`` or "
+"``ti.ext_arr()`` as their type-hints respectively."
 msgstr ""
 "在 Taichi 内核中，我们也支持 **模板参数（template arguments）** (参见 "
 ":ref:`template_metaprogramming`)  和 **外部数组参数（external array arguments）** "
 "(参见 :ref:`external`)"
 
-#: ../../syntax.rst:50
+#: ../../syntax.rst:130
 msgid ""
 "When using differentiable programming, there are a few more constraints "
 "on kernel structures. See the **Kernel Simplicity Rule** in "
@@ -115,7 +225,7 @@ msgstr ""
 "当使用可微编程时，对内核数据结构有一些约定。参见 :ref:`differentiable` 中的 **内核简化规则（Kernel "
 "Simplicity Rule）** 。"
 
-#: ../../syntax.rst:52
+#: ../../syntax.rst:132
 msgid ""
 "Also, please do not use kernel return values in differentiable "
 "programming, since the return value will not be tracked by automatic "
@@ -123,62 +233,148 @@ msgid ""
 "``loss[None]``)."
 msgstr "请不要在可微编程中使用内核返回值，因为这种返回值并不会被自动微分追踪。取而代之，可以把结果存入全局变量（例如 ``loss[None]``）。"
 
-#: ../../syntax.rst:55
+#: ../../syntax.rst:136
 msgid "Functions"
 msgstr "函数"
 
-#: ../../syntax.rst:57
-msgid ""
-"Use ``@ti.func`` to decorate your Taichi functions. These functions are "
-"callable only in `Taichi`-scope. Do not call them in `Python`-scopes."
+#: ../../syntax.rst:138
+msgid "A Python function decorated by ``@ti.func`` is a **Taichi function**:"
 msgstr ""
-"使用 ``@ti.func`` 来装饰您的 Taichi 函数。这些函数只能在 `Taichi` 作用域内调用。不要在 `Python` "
-"作用域内调用它们。"
 
-#: ../../syntax.rst:59
+#: ../../syntax.rst:140
 msgid ""
 "@ti.func\n"
-"def laplacian(t, i, j):\n"
-"    return inv_dx2 * (\n"
-"        -4 * p[t, i, j] + p[t, i, j - 1] + p[t, i, j + 1] + p[t, i + 1, "
-"j] +\n"
-"        p[t, i - 1, j])\n"
+"def my_func():\n"
+"    ...\n"
 "\n"
 "@ti.kernel\n"
-"def fdtd(t: ti.i32):\n"
-"    for i in range(n_grid): # Parallelized\n"
-"        for j in range(n_grid): # Serial loops in each parallel threads\n"
-"            laplacian_p = laplacian(t - 2, i, j)\n"
-"            laplacian_q = laplacian(t - 1, i, j)\n"
-"            p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
-"                c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
-"                           t - 2, i, j] - c * alpha * dt * laplacian_p"
+"def my_kernel():\n"
+"    ...\n"
+"    my_func()  # call functions from Taichi-scope\n"
+"    ...\n"
+"\n"
+"my_kernel()    # call kernels from Python-scope"
 msgstr ""
+
+#: ../../syntax.rst:155
+msgid "Taichi functions should be called from **Taichi-scope**."
+msgstr ""
+
+#: ../../syntax.rst:159
+msgid "For people from CUDA, Taichi functions = ``__device__`` functions."
+msgstr ""
+
+#: ../../syntax.rst:163
+msgid "Taichi functions can be nested."
+msgstr ""
+
+#: ../../syntax.rst:167
+msgid ""
+"Currently, all functions are force-inlined. Therefore, no recursion is "
+"allowed."
+msgstr "目前，所有函数都是强制内联的。因此，不能使用递归。"
+
+#: ../../syntax.rst:171
+msgid "Arguments and return values"
+msgstr ""
+
+#: ../../syntax.rst:173
+msgid ""
+"Functions can have multiple arguments and return values. Unlike kernels, "
+"arguments in functions don't need to be type-hinted:"
+msgstr ""
+
+#: ../../syntax.rst:176
+msgid ""
 "@ti.func\n"
-"def laplacian(t, i, j):\n"
-"    return inv_dx2 * (\n"
-"        -4 * p[t, i, j] + p[t, i, j - 1] + p[t, i, j + 1] + p[t, i + 1, "
-"j] +\n"
-"        p[t, i - 1, j])\n"
+"def my_add(x, y):\n"
+"    return x + y\n"
+"\n"
 "\n"
 "@ti.kernel\n"
-"def fdtd(t: ti.i32):\n"
-"    for i in range(n_grid): # 并行\n"
-"        for j in range(n_grid): # 在每个并行的线程中分别顺序执行\n"
-"            laplacian_p = laplacian(t - 2, i, j)\n"
-"            laplacian_q = laplacian(t - 1, i, j)\n"
-"            p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
-"                c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
-"                           t - 2, i, j] - c * alpha * dt * laplacian_p"
+"def my_kernel():\n"
+"    ...\n"
+"    ret = my_add(2, 3.3)\n"
+"    print(ret)  # 5.3\n"
+"    ..."
+msgstr ""
 
-#: ../../syntax.rst:80
+#: ../../syntax.rst:191
+msgid ""
+"Function arguments are passed by value. So changes made inside function "
+"scope won't affect the outside value in the caller:"
+msgstr ""
+
+#: ../../syntax.rst:194
+msgid ""
+"@ti.func\n"
+"def my_func(x):\n"
+"    x = x + 1  # won't change the original value of x\n"
+"\n"
+"\n"
+"@ti.kernel\n"
+"def my_kernel():\n"
+"    ...\n"
+"    x = 233\n"
+"    my_func(x)\n"
+"    print(x)  # 233\n"
+"    ..."
+msgstr ""
+
+#: ../../syntax.rst:213
+msgid ""
+"You may use ``ti.template()`` as type-hint to force arguments to be "
+"passed by reference:"
+msgstr ""
+
+#: ../../syntax.rst:216
+msgid ""
+"@ti.func\n"
+"def my_func(x: ti.template()):\n"
+"    x = x + 1  # will change the original value of x\n"
+"\n"
+"\n"
+"@ti.kernel\n"
+"def my_kernel():\n"
+"    ...\n"
+"    x = 233\n"
+"    my_func(x)\n"
+"    print(x)  # 234\n"
+"    ..."
+msgstr ""
+
+#: ../../syntax.rst:234
+msgid ""
+"Unlike kernels, functions **do support vectors or matrices as arguments "
+"and return values**:"
+msgstr ""
+
+#: ../../syntax.rst:236
+msgid ""
+"@ti.func\n"
+"def sdf(u):  # functions support matrices and vectors as arguments. No "
+"type-hints needed.\n"
+"    return u.norm() - 1\n"
+"\n"
+"@ti.kernel\n"
+"def render(d_x: ti.f32, d_y: ti.f32):  # kernels do not support "
+"vector/matrix arguments yet. We have to use a workaround.\n"
+"    d = ti.Vector([d_x, d_y])\n"
+"    p = ti.Vector([0.0, 0.0])\n"
+"    t = sdf(p)\n"
+"    p += d * t\n"
+"    ..."
+msgstr ""
+
+#: ../../syntax.rst:252
 msgid ""
 "Functions with multiple ``return`` statements are not supported for now. "
 "Use a **local** variable to store the results, so that you end up with "
 "only one ``return`` statement:"
 msgstr "目前不支持具有多个 ``return`` 语句的函数。请用 **局部变量** 暂存结果，以便最终只有一个 ``return`` 语句："
 
-#: ../../syntax.rst:82
+#: ../../syntax.rst:254
+#, fuzzy
 msgid ""
 "# Bad function - two return statements\n"
 "@ti.func\n"
@@ -191,12 +387,12 @@ msgid ""
 "# Good function - single return statement\n"
 "@ti.func\n"
 "def safe_sqrt(x):\n"
-"  rst = 0.0\n"
+"  ret = 0.0\n"
 "  if x >= 0:\n"
-"    rst = ti.sqrt(x)\n"
+"    ret = ti.sqrt(x)\n"
 "  else:\n"
-"    rst = 0.0\n"
-"  return rst"
+"    ret = 0.0\n"
+"  return ret"
 msgstr ""
 "# 错误示范 - 两个返回语句\n"
 "@ti.func\n"
@@ -216,48 +412,15 @@ msgstr ""
 "    rst = 0.0\n"
 "  return rst"
 
-#: ../../syntax.rst:104
-msgid ""
-"Currently, all functions are force-inlined. Therefore, no recursion is "
-"allowed."
-msgstr "目前，所有函数都是强制内联的。因此，不能使用递归。"
-
-#: ../../syntax.rst:109
-msgid "Function arguments are passed by value."
-msgstr "函数的参数是以值传递的。"
-
-#: ../../syntax.rst:113
-msgid ""
-"Unlike functions, **kernels do not support vectors or matrices as "
-"arguments**:"
-msgstr ""
-
-#: ../../syntax.rst:115
-msgid ""
-"@ti.func\n"
-"def sdf(u):  # functions support matrices and vectors as arguments. No "
-"type-hints needed.\n"
-"    return u.norm() - 1\n"
-"\n"
-"@ti.kernel\n"
-"def render(d_x: ti.f32, d_y: ti.f32):  # kernels do not support "
-"vector/matrix arguments yet. We have to use a workaround.\n"
-"    d = ti.Vector([d_x, d_y])\n"
-"    p = ti.Vector([0.0, 0.0])\n"
-"    t = sdf(p)\n"
-"    p += d * t\n"
-"    ..."
-msgstr ""
-
-#: ../../syntax.rst:132
+#: ../../syntax.rst:276
 msgid "Scalar arithmetics"
 msgstr "标量算术"
 
-#: ../../syntax.rst:133
+#: ../../syntax.rst:278
 msgid "Supported scalar functions:"
 msgstr "Taichi 支持的标量函数："
 
-#: ../../syntax.rst:159
+#: ../../syntax.rst:304
 msgid ""
 "Python 3 distinguishes ``/`` (true division) and ``//`` (floor division)."
 " For example, ``1.0 / 2.0 = 0.5``, ``1 / 2 = 0.5``, ``1 // 2 = 0``, ``4.2"
@@ -266,21 +429,21 @@ msgstr ""
 "Python 3 中 ``/`` （浮点数除法）和 ``//`` （整数除法）是区分开来的。例如，``1.0 / 2.0 = 0.5``，``1 "
 "/ 2 = 0.5``，``1 // 2 = 0``，``4.2 // 2 = 2``。Taichi 也遵循了这个设计："
 
-#: ../../syntax.rst:162
+#: ../../syntax.rst:307
 #, fuzzy
 msgid ""
 "**true divisions** on integral types will first cast their operands to "
 "the default float point type."
 msgstr "*浮点数除法 (true divisions)* 用在整数型上会首先将它们的操作数投射到默认的浮点数型。"
 
-#: ../../syntax.rst:163
+#: ../../syntax.rst:308
 #, fuzzy
 msgid ""
 "**floor divisions** on float-point types will first cast their operands "
 "to the default integer type."
 msgstr "*整数除法 (floor divisions)* 用在浮点数型上会首先将它们的操作数投射到默认的整数型。"
 
-#: ../../syntax.rst:165
+#: ../../syntax.rst:310
 msgid ""
 "To avoid such implicit casting, you can manually cast your operands to "
 "desired types, using ``ti.cast``. See :ref:`default_precisions` for more "
@@ -289,13 +452,13 @@ msgstr ""
 "为避免这样的隐式转换，你可以手动使用 ``ti.cast`` 将你的操作数转换为你需要的类型。参见 "
 ":ref:`default_precisions` 获取数字类型的更多细节。"
 
-#: ../../syntax.rst:170
+#: ../../syntax.rst:315
 msgid ""
 "When these scalar functions are applied on :ref:`matrix` and "
 ":ref:`vector`, they are applied in an element-wise manner. For example:"
 msgstr "当这些标量函数被作用在 :ref:`matrix` 或 :ref:`vector` 上时，它们会被逐个作用到所有元素，例如："
 
-#: ../../syntax.rst:173
+#: ../../syntax.rst:318
 msgid ""
 "B = ti.Matrix([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])\n"
 "C = ti.Matrix([[3.0, 4.0, 5.0], [6.0, 7.0, 8.0]])\n"
@@ -611,5 +774,79 @@ msgstr ""
 #~ "Also note that host access or "
 #~ "program end will also implicitly invoke"
 #~ " for ``ti.sync()``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Kernel arguments must be type-hinted."
+#~ " Kernels can have at most 8 "
+#~ "parameters, e.g.,"
+#~ msgstr "内核参数必须有类型提示。内核最多只能有 8 个参数，例如，"
+
+#~ msgid ""
+#~ "A kernel can have a **scalar** "
+#~ "return value. If a kernel has a"
+#~ " return value, it must be type-"
+#~ "hinted. The return value will be "
+#~ "automatically cast into the hinted type."
+#~ " e.g.,"
+#~ msgstr "一个内核可以有一个 **标量** 返回值。如果内核有一个返回值，那它必须有类型提示。这个返回值会自动转换到所提示的类型。例如，"
+
+#~ msgid ""
+#~ "Use ``@ti.func`` to decorate your Taichi"
+#~ " functions. These functions are callable"
+#~ " only in `Taichi`-scope. Do not call"
+#~ " them in `Python`-scopes."
+#~ msgstr ""
+#~ "使用 ``@ti.func`` 来装饰您的 Taichi 函数。这些函数只能在 "
+#~ "`Taichi` 作用域内调用。不要在 `Python` 作用域内调用它们。"
+
+#~ msgid ""
+#~ "@ti.func\n"
+#~ "def laplacian(t, i, j):\n"
+#~ "    return inv_dx2 * (\n"
+#~ "        -4 * p[t, i, j] + "
+#~ "p[t, i, j - 1] + p[t, i, "
+#~ "j + 1] + p[t, i + 1, "
+#~ "j] +\n"
+#~ "        p[t, i - 1, j])\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def fdtd(t: ti.i32):\n"
+#~ "    for i in range(n_grid): # Parallelized\n"
+#~ "        for j in range(n_grid): # "
+#~ "Serial loops in each parallel threads"
+#~ "\n"
+#~ "            laplacian_p = laplacian(t - 2, i, j)\n"
+#~ "            laplacian_q = laplacian(t - 1, i, j)\n"
+#~ "            p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
+#~ "                c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
+#~ "                           t - 2, i, j] - c * alpha * dt * laplacian_p"
+#~ msgstr ""
+#~ "@ti.func\n"
+#~ "def laplacian(t, i, j):\n"
+#~ "    return inv_dx2 * (\n"
+#~ "        -4 * p[t, i, j] + "
+#~ "p[t, i, j - 1] + p[t, i, "
+#~ "j + 1] + p[t, i + 1, "
+#~ "j] +\n"
+#~ "        p[t, i - 1, j])\n"
+#~ "\n"
+#~ "@ti.kernel\n"
+#~ "def fdtd(t: ti.i32):\n"
+#~ "    for i in range(n_grid): # 并行\n"
+#~ "        for j in range(n_grid): # 在每个并行的线程中分别顺序执行\n"
+#~ "            laplacian_p = laplacian(t - 2, i, j)\n"
+#~ "            laplacian_q = laplacian(t - 1, i, j)\n"
+#~ "            p[t, i, j] = 2 * p[t - 1, i, j] + (\n"
+#~ "                c * c * dt * dt + c * alpha * dt) * laplacian_q - p[\n"
+#~ "                           t - 2, i, j] - c * alpha * dt * laplacian_p"
+
+#~ msgid "Function arguments are passed by value."
+#~ msgstr "函数的参数是以值传递的。"
+
+#~ msgid ""
+#~ "Unlike functions, **kernels do not "
+#~ "support vectors or matrices as "
+#~ "arguments**:"
 #~ msgstr ""
 

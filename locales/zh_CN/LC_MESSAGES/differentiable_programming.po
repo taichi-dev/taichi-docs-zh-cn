@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:06+0800\n"
+"POT-Creation-Date: 2020-08-13 16:43+0800\n"
 "PO-Revision-Date: 2020-05-12 14:47+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -20,60 +20,288 @@ msgstr ""
 
 #: ../../differentiable_programming.rst:4
 #, fuzzy
-msgid "Differentiable programming (WIP)"
+msgid "Differentiable programming"
 msgstr "可微编程"
 
 #: ../../differentiable_programming.rst:6
+msgid ""
+"We suggest starting with the ``ti.Tape()``, and then migrate to more "
+"advanced differentiable programming using the ``kernel.grad()`` syntax if"
+" necessary."
+msgstr ""
+
+#: ../../differentiable_programming.rst:10
+msgid "Introduction"
+msgstr ""
+
+#: ../../differentiable_programming.rst:12
+msgid "For example, you have the following kernel:"
+msgstr ""
+
+#: ../../differentiable_programming.rst:14
+msgid ""
+"x = ti.var(ti.f32, ())\n"
+"y = ti.var(ti.f32, ())\n"
+"\n"
+"@ti.kernel\n"
+"def compute_y():\n"
+"    y[None] = ti.sin(x[None])"
+msgstr ""
+
+#: ../../differentiable_programming.rst:24
+msgid ""
+"Now if you want to get the derivative of y corresponding to x, i.e., "
+"dy/dx. You may want to implement the derivative kernel by yourself:"
+msgstr ""
+
+#: ../../differentiable_programming.rst:27
+msgid ""
+"x = ti.var(ti.f32, ())\n"
+"y = ti.var(ti.f32, ())\n"
+"dy_dx = ti.var(ti.f32, ())\n"
+"\n"
+"@ti.kernel\n"
+"def compute_dy_dx():\n"
+"    dy_dx[None] = ti.cos(x[None])"
+msgstr ""
+
+#: ../../differentiable_programming.rst:38
+msgid ""
+"But wait, what if I changed the original ``compute_y``? We will have to "
+"recalculate the derivative by hand and rewrite ``compute_dy_dx`` again, "
+"which is very error-prone and not convenient at all."
+msgstr ""
+
+#: ../../differentiable_programming.rst:42
+msgid ""
+"If this situation occurs, don't worry! Taichi provides a handy autodiff "
+"system that can help you obtain the derivative of a kernel without any "
+"pain!"
+msgstr ""
+
+#: ../../differentiable_programming.rst:47
+msgid "Using ``ti.Tape()``"
+msgstr ""
+
+#: ../../differentiable_programming.rst:49
+msgid ""
+"Let's still take the ``compute_y`` in above example for explaination. "
+"What's the most convienent way to obtain a kernel that computes x to "
+"dy/dx?"
+msgstr ""
+
+#: ../../differentiable_programming.rst:52
+msgid ""
+"Use the ``needs_grad=True`` option when declaring fields involved in the "
+"derivative chain."
+msgstr ""
+
+#: ../../differentiable_programming.rst:54
+msgid ""
+"Use ``with ti.Tape(y):`` to embrace the invocation into kernel(s) you "
+"want to compute derivative."
+msgstr ""
+
+#: ../../differentiable_programming.rst:56
+msgid "Now ``x.grad[None]`` is the dy/dx value at current x."
+msgstr ""
+
+#: ../../differentiable_programming.rst:58
+msgid ""
+"x = ti.var(ti.f32, (), needs_grad=True)\n"
+"y = ti.var(ti.f32, (), needs_grad=True)\n"
+"\n"
+"@ti.kernel\n"
+"def compute_y():\n"
+"    y[None] = ti.sin(x[None])\n"
+"\n"
+"with ti.Tape(y):\n"
+"    compute_y()\n"
+"\n"
+"print('dy/dx =', x.grad[None])\n"
+"print('at x =', x[None])"
+msgstr ""
+
+#: ../../differentiable_programming.rst:74
+msgid "It's equivalant to:"
+msgstr ""
+
+#: ../../differentiable_programming.rst:76
+msgid ""
+"x = ti.var(ti.f32, ())\n"
+"y = ti.var(ti.f32, ())\n"
+"dy_dx = ti.var(ti.f32, ())\n"
+"\n"
+"@ti.kernel\n"
+"def compute_dy_dx():\n"
+"    dy_dx[None] = ti.cos(x[None])\n"
+"\n"
+"compute_dy_dx()\n"
+"\n"
+"print('dy/dx =', dy_dx[None])\n"
+"print('at x =', x[None])"
+msgstr ""
+
+#: ../../differentiable_programming.rst:93
+msgid "Usage example"
+msgstr ""
+
+#: ../../differentiable_programming.rst:95
+msgid ""
+"For a physical simulation, sometimes it could be easy to compute the "
+"energy but hard to compute the force on each particles."
+msgstr ""
+
+#: ../../differentiable_programming.rst:98
+msgid ""
+"But recall that we can differentiate (negative) potential energy to get "
+"forces. a.k.a.: ``F_i = -dU / dx_i``. So once you've write a kernel that "
+"is able to compute the potential energy, you may use Taichi's autodiff "
+"system to obtain the derivative of it and then the force on each "
+"particles."
+msgstr ""
+
+#: ../../differentiable_programming.rst:104
+msgid ""
+"Take `examples/ad_gravity.py <https://github.com/taichi-"
+"dev/taichi/blob/master/examples/ad_gravity.py>`_ as an example:"
+msgstr ""
+
+#: ../../differentiable_programming.rst:106
+msgid ""
+"import taichi as ti\n"
+"ti.init()\n"
+"\n"
+"N = 8\n"
+"dt = 1e-5\n"
+"\n"
+"x = ti.Vector.var(2, ti.f32, N, needs_grad=True)  # position of particles"
+"\n"
+"v = ti.Vector.var(2, ti.f32, N)                   # velocity of particles"
+"\n"
+"U = ti.var(ti.f32, (), needs_grad=True)           # potential energy\n"
+"\n"
+"\n"
+"@ti.kernel\n"
+"def compute_U():\n"
+"    for i, j in ti.ndrange(N, N):\n"
+"        r = x[i] - x[j]\n"
+"        # r.norm(1e-3) is equivalent to ti.sqrt(r.norm()**2 + 1e-3)\n"
+"        # This is to prevent 1/0 error which can cause wrong derivative\n"
+"        U[None] += -1 / r.norm(1e-3)  # U += -1 / |r|\n"
+"\n"
+"\n"
+"@ti.kernel\n"
+"def advance():\n"
+"    for i in x:\n"
+"        v[i] += dt * -x.grad[i]  # dv/dt = -dU/dx\n"
+"    for i in x:\n"
+"        x[i] += dt * v[i]        # dx/dt = v\n"
+"\n"
+"\n"
+"def substep():\n"
+"    with ti.Tape(U):\n"
+"        # every kernel invocation within this indent scope\n"
+"        # will also be accounted into the partial derivate of U\n"
+"        # with corresponding input variables like x.\n"
+"        compute_U()   # will also computes dU/dx and save in x.grad\n"
+"    advance()\n"
+"\n"
+"\n"
+"@ti.kernel\n"
+"def init():\n"
+"    for i in x:\n"
+"        x[i] = [ti.random(), ti.random()]\n"
+"\n"
+"\n"
+"init()\n"
+"gui = ti.GUI('Autodiff gravity')\n"
+"while gui.running:\n"
+"    for i in range(50):\n"
+"        substep()\n"
+"    print('U = ', U[None])\n"
+"    gui.circles(x.to_numpy(), radius=3)\n"
+"    gui.show()"
+msgstr ""
+
+#: ../../differentiable_programming.rst:163
+msgid "The argument ``U`` to ``ti.Tape(U)`` must be a 0D field."
+msgstr ""
+
+#: ../../differentiable_programming.rst:165
+msgid ""
+"For using autodiff with multiple output variables, please see the "
+"``kernel.grad()`` usage below."
+msgstr ""
+
+#: ../../differentiable_programming.rst:170
+msgid "``ti.Tape(U)`` will automatically set `U[None]`` to 0 on start up."
+msgstr ""
+
+#: ../../differentiable_programming.rst:173
+msgid ""
+"See `examples/mpm_lagrangian_forces.py <https://github.com/taichi-"
+"dev/taichi/blob/master/examples/mpm_lagrangian_forces.py>`_ and "
+"`examples/fem99.py <https://github.com/taichi-"
+"dev/taichi/blob/master/examples/fem99.py>`_ for examples on using "
+"autodiff for MPM and FEM."
+msgstr ""
+
+#: ../../differentiable_programming.rst:177
+msgid "Using ``kernel.grad()``"
+msgstr ""
+
+#: ../../differentiable_programming.rst:179
 #, fuzzy
-msgid ""
-"This page is work in progress. Please check out `the DiffTaichi paper "
-"<https://arxiv.org/pdf/1910.00935.pdf>`_ and `video "
-"<https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ to learn more about "
-"Taichi differentiable programming."
-msgstr ""
-"了解更多可微编程的信息，请查看 `DiffTaichi的论文 <https://arxiv.org/pdf/1910.00935.pdf>`_ 和"
-" `视频 <https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ 。"
+msgid "TODO: Documentation WIP."
+msgstr "文档制作中。"
 
-#: ../../differentiable_programming.rst:8
-msgid ""
-"The `DiffTaichi repo <https://github.com/yuanming-hu/difftaichi>`_ "
-"contains 10 differentiable physical simulators built with Taichi "
-"differentiable programming."
+#: ../../differentiable_programming.rst:185
+msgid "Kernel Simplicity Rule"
 msgstr ""
-"`DiffTaichi仓库 <https://github.com/yuanming-hu/difftaichi>`_ "
-"包含10个使用Taichi可微分编程构建的可微编程物理模拟器。"
 
-#: ../../differentiable_programming.rst:11
+#: ../../differentiable_programming.rst:187
+#, fuzzy
 msgid ""
 "Unlike tools such as TensorFlow where **immutable** output buffers are "
 "generated, the **imperative** programming paradigm adopted in Taichi "
-"allows programmers to freely modify global tensors. To make automatic "
-"differentiation well-defined under this setting, we make the following "
-"assumption on Taichi programs for differentiable programming:"
+"allows programmers to freely modify global fields."
 msgstr ""
 "与TensorFlow等生成 **不可变** 输出缓冲区的工具不同，Taichi采用的 **命令式** "
 "编程范式允许程序员自由修改全局张量（多维数组）："
 
-#: ../../differentiable_programming.rst:16
+#: ../../differentiable_programming.rst:189
+#, fuzzy
+msgid ""
+"To make automatic differentiation well-defined under this setting, we "
+"make the following assumption on Taichi programs for differentiable "
+"programming:"
+msgstr ""
+"与TensorFlow等生成 **不可变** 输出缓冲区的工具不同，Taichi采用的 **命令式** "
+"编程范式允许程序员自由修改全局张量（多维数组）："
+
+#: ../../differentiable_programming.rst:191
 msgid "**Global Data Access Rules:**"
 msgstr "**全局数据访问规则：**"
 
-#: ../../differentiable_programming.rst:18
+#: ../../differentiable_programming.rst:193
+#, fuzzy
 msgid ""
-"If a global tensor element is written more than once, then starting from "
+"If a global field element is written more than once, then starting from "
 "the second write, the write **must** come in the form of an atomic add "
 "(“accumulation\", using ``ti.atomic_add`` or simply ``+=``)."
 msgstr ""
 "如果全局张量元素被多次写入，则从第二次写入开始，写入 **必须** 以原子加法的形式出现（ ``累加``，使用 ``ti.atomic_add``"
 " 或直接使用 ``+ =`` ）。"
 
-#: ../../differentiable_programming.rst:20
+#: ../../differentiable_programming.rst:194
+#, fuzzy
 msgid ""
-"No read accesses happen to a global tensor element, until its "
-"accumulation is done."
+"No read accesses happen to a global field element, until its accumulation"
+" is done."
 msgstr "在完成全局张量元素的累加之前，不会对全局张量元素进行读取访问。"
 
-#: ../../differentiable_programming.rst:22
+#: ../../differentiable_programming.rst:196
 msgid ""
 "**Kernel Simplicity Rule:** Kernel body consists of multiple `simply "
 "nested` for-loops. I.e., each for-loop can either contain exactly one "
@@ -83,11 +311,11 @@ msgstr ""
 "**内核(Kernel)简化规则：** 内核主体由多个 `简单嵌套` 的for循环组成。 "
 "即，每个for循环可以只包含一个（嵌套的）for循环（不包含其他语句），也可以包含一组没有循环的语句。"
 
-#: ../../differentiable_programming.rst:25
+#: ../../differentiable_programming.rst:199
 msgid "Example:"
 msgstr "例子："
 
-#: ../../differentiable_programming.rst:27
+#: ../../differentiable_programming.rst:201
 msgid ""
 "@ti.kernel\n"
 "def differentiable_task():\n"
@@ -123,34 +351,60 @@ msgstr ""
 "    for j in range(20):\n"
 "      ..."
 
-#: ../../differentiable_programming.rst:46
-msgid "Taichi programs that violate this rule has an undefined gradient behavior."
+#: ../../differentiable_programming.rst:220
+#, fuzzy
+msgid "Taichi programs that violate this rule will result in an error."
 msgstr "违反此规则的Taichi程序将在执行梯度运算时产生未定义的行为。"
 
-#: ../../differentiable_programming.rst:50
+#: ../../differentiable_programming.rst:224
+#, fuzzy
 msgid ""
 "**static for-loops** (e.g. ``for i in ti.static(range(4))``) will get "
-"unrolled by the Python frontend preprocessor and does not count as a "
-"level of loop."
+"unrolled by the Python frontend preprocessor and therefore does not count"
+" as a level of loop."
 msgstr ""
 "**静态for循环** （例如 ``for i in ti.static(range(4))`` "
 "）将被Python前端预处理器展开，并且不算作循环级别。"
 
-#: ../../differentiable_programming.rst:53
-msgid ""
-"A few examples with neural network controllers optimized using "
-"differentiable simulators and brute-force gradient descent:"
-msgstr "使用微分模拟器和蛮力梯度下降对神经网络控制器进行优化的一些示例："
-
-#: ../../differentiable_programming.rst:63
-msgid ""
-"Apart from differentiating the simulation time steps, you can also "
-"automatically differentiate (negative) potential energies to get forces. "
-"Here is an `example <https://github.com/taichi-"
-"dev/taichi/blob/master/examples/mpm_lagrangian_forces.py>`_."
+#: ../../differentiable_programming.rst:228
+msgid "DiffTaichi"
 msgstr ""
 
-#: ../../differentiable_programming.rst:66
-msgid "Documentation WIP."
-msgstr "文档制作中。"
+#: ../../differentiable_programming.rst:230
+#, fuzzy
+msgid ""
+"The `DiffTaichi repo <https://github.com/yuanming-hu/difftaichi>`_ "
+"contains 10 differentiable physical simulators built with Taichi "
+"differentiable programming. A few examples with neural network "
+"controllers optimized using differentiable simulators and brute-force "
+"gradient descent:"
+msgstr ""
+"`DiffTaichi仓库 <https://github.com/yuanming-hu/difftaichi>`_ "
+"包含10个使用Taichi可微分编程构建的可微编程物理模拟器。"
+
+#: ../../differentiable_programming.rst:239
+#, fuzzy
+msgid ""
+"Check out `the DiffTaichi paper <https://arxiv.org/pdf/1910.00935.pdf>`_ "
+"and `video <https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ to learn more "
+"about Taichi differentiable programming."
+msgstr ""
+"了解更多可微编程的信息，请查看 `DiffTaichi的论文 <https://arxiv.org/pdf/1910.00935.pdf>`_ 和"
+" `视频 <https://www.youtube.com/watch?v=Z1xvAZve9aE>`_ 。"
+
+#~ msgid ""
+#~ "A few examples with neural network "
+#~ "controllers optimized using differentiable "
+#~ "simulators and brute-force gradient "
+#~ "descent:"
+#~ msgstr "使用微分模拟器和蛮力梯度下降对神经网络控制器进行优化的一些示例："
+
+#~ msgid ""
+#~ "Apart from differentiating the simulation "
+#~ "time steps, you can also automatically"
+#~ " differentiate (negative) potential energies "
+#~ "to get forces. Here is an `example"
+#~ " <https://github.com/taichi-"
+#~ "dev/taichi/blob/master/examples/mpm_lagrangian_forces.py>`_."
+#~ msgstr ""
 
