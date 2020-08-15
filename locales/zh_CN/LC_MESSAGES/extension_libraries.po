@@ -3,30 +3,33 @@
 # This file is distributed under the same license as the taichi package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: taichi 0.6.24\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:06+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-08-13 10:01+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../../extension_libraries.rst:2
 msgid "Extension libraries"
-msgstr ""
+msgstr "扩展库"
 
 #: ../../extension_libraries.rst:4
 msgid ""
-"The Taichi programming language offers a minimal and generic built-in "
-"standard library. Extra domain-specific functionalities are provided via "
-"**extension libraries**:"
+"The Taichi programming language offers a minimal and generic built-in standard "
+"library. Extra domain-specific functionalities are provided via **extension "
+"libraries**:"
 msgstr ""
+"Taichi 编程语言提供了一个最小化的通用内置标准库。额外的领域特定功能通过 **扩展库"
+"** 提供:"
 
 #: ../../extension_libraries.rst:8
 msgid "Taichi GLSL"
@@ -34,36 +37,37 @@ msgstr ""
 
 #: ../../extension_libraries.rst:10
 msgid ""
-"`Taichi GLSL <https://github.com/taichi-dev/taichi_glsl>`_ is an "
-"extension library of Taichi, aiming at providing useful helper functions "
-"including:"
+"`Taichi GLSL <https://github.com/taichi-dev/taichi_glsl>`_ is an extension "
+"library of Taichi, aiming at providing useful helper functions including:"
 msgstr ""
+"`Taichi GLSL <https://github.com/taichi-dev/taichi_glsl>`_ 是一个Taichi 的扩展"
+"库， 其旨在提供各种有用的辅助函数，包括::"
 
 #: ../../extension_libraries.rst:13
 msgid "Handy scalar functions like ``clamp``, ``smoothstep``, ``mix``, ``round``."
-msgstr ""
+msgstr "便捷的标量型函数，诸如 ``clamp``， ``smoothstep``，``mix``，``round``。"
 
 #: ../../extension_libraries.rst:14
 msgid "GLSL-alike vector functions like ``normalize``, ``distance``, ``reflect``."
-msgstr ""
+msgstr "类 GLSL 向量函数，诸如 ``normalize``，``distance``，``reflect``。"
 
 #: ../../extension_libraries.rst:15
 msgid "Well-behaved random generators including ``randUnit2D``, ``randNDRange``."
-msgstr ""
+msgstr "表现良好的随机生成器，诸如 ``randUnit2D``，``randNDRange``。"
 
 #: ../../extension_libraries.rst:16
 msgid "Handy vector and matrix initializer: ``vec`` and ``mat``."
-msgstr ""
+msgstr "便捷的向量和矩阵初始化方式，诸如 ``vec`` 和 ``mat``。"
 
 #: ../../extension_libraries.rst:17
 msgid "Handy vector component shuffle accessor like ``v.xy``."
-msgstr ""
+msgstr "便捷的向量分量随机访问器，如 ``v.xy``。"
 
 #: ../../extension_libraries.rst:19
 msgid ""
-"Click here for `Taichi GLSL Documentation <https://taichi-"
-"glsl.readthedocs.io>`_."
-msgstr ""
+"Click here for `Taichi GLSL Documentation <https://taichi-glsl.readthedocs."
+"io>`_."
+msgstr "点击这里查看 `Taichi GLSL 文档 <https://taichi-glsl.readthedocs.io>`_。"
 
 #: ../../extension_libraries.rst:21
 msgid "python3 -m pip install taichi_glsl"
@@ -75,18 +79,21 @@ msgstr ""
 
 #: ../../extension_libraries.rst:29
 msgid ""
-"`Taichi THREE <https://github.com/taichi-dev/taichi_three>`_ is an "
-"extension library of Taichi to render 3D scenes into nice-looking 2D "
-"images in real-time (work in progress)."
+"`Taichi THREE <https://github.com/taichi-dev/taichi_three>`_ is an extension "
+"library of Taichi to render 3D scenes into nice-looking 2D images in real-time "
+"(work in progress)."
 msgstr ""
+"`Taichi THREE <https://github.com/taichi-dev/taichi_three>`_ 是 一个Taichi 的扩"
+"展库，用于将3D场景实时渲染成美观的2D图像（工作在进行中）。"
 
 #: ../../extension_libraries.rst:35
 msgid ""
-"Click here for `Taichi THREE Tutorial <https://github.com/taichi-"
-"dev/taichi_three#how-to-play>`_."
+"Click here for `Taichi THREE Tutorial <https://github.com/taichi-dev/"
+"taichi_three#how-to-play>`_."
 msgstr ""
+"点击这里查看 `Taichi THREE 教程 <https://github.com/taichi-dev/taichi_three#how-"
+"to-play>`_."
 
 #: ../../extension_libraries.rst:37
 msgid "python3 -m pip install taichi_three"
 msgstr ""
-
