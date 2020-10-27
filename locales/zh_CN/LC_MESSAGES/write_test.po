@@ -31,7 +31,7 @@ msgid ""
 "We use `pytest <https://github.com/pytest-dev/pytest>`_ for our Python test "
 "infrastructure."
 msgstr ""
-"我们将 `pytest <https://github.com/pytest-dev/pytest>`_ 用于我们的Python测试基础"
+"我们将 `pytest <https://github.com/pytest-dev/pytest>`_ 作为 Python 测试的基础"
 "架构。"
 
 #: ../../write_test.rst:7
@@ -57,8 +57,8 @@ msgid ""
 "new file ``tests/python/test_logarithm.py`` for simplicity."
 msgstr ""
 "在 ``tests/python`` 中查看是否已经有适合你测试的文件。 如果没有，请随时为它创建"
-"一个新文件 :) 因此，在这种情况下，为简单起见，让我们创建一个新文件 ``tests/"
-"python/test_logarithm.py`` 。"
+"一个新文件 :) 如此，按照上述示例让我们创建一个新文件 ``tests/"
+"python/test_logarithm.py`` 即可。"
 
 #: ../../write_test.rst:19
 msgid ""
@@ -86,8 +86,8 @@ msgid ""
 "Hint: You may pass/return values to/from Taichi-scope using 0-D tensors, i.e. "
 "``r[None]``."
 msgstr ""
-"使用我们的 ``ti.log10`` 添加一些简单的代码，以确保其正常工作。 提示：你可以使用 "
-"0-D 张量（即 ``r[None]`` ）向/从Taichi-scope传递值或从其中返回值。"
+"利用我们的 ``ti.log10`` 添加一些简单代码，以确保其正常工作。 提示：你可以使用 "
+"0-D 张量（即 ``r[None]`` ）向 Taichi-scop 传递值或从中返回。"
 
 #: ../../write_test.rst:31
 msgid ""
@@ -126,8 +126,8 @@ msgid ""
 "Execute ``ti test logarithm``, and the functions starting with ``test_`` in "
 "``tests/python/test_logarithm.py`` will be executed."
 msgstr ""
-"执行 ``ti test logarithm`` ，然后将执行 ``tests/python/test_logarithm.py`` 中以 "
-"``test_`` 开头的函数。"
+"执行 ``ti test logarithm`` ，随后 ``tests/python/test_logarithm.py`` 中以 "
+"``test_`` 开头的函数就会被运行。"
 
 #: ../../write_test.rst:51
 msgid "Testing against multiple backends"
@@ -141,8 +141,8 @@ msgid ""
 "different? No worries, we provide a useful decorator ``@ti.test``:"
 msgstr ""
 "上面的方法还不够好，例如， ``ti.init(arch=ti.cpu)`` ，意味着它将仅在CPU后端进行"
-"测试。 那么，我们是否必须编写许多测试 ``test_log10_cpu`` ，"
-"``test_log10_cuda`` ，...，而只有第一行不同？ 不用担心，我们提供了一个有用的装饰"
+"测试。 那么，我们是否必须编写繁多的测试文件，诸如： ``test_log10_cpu`` ，"
+"``test_log10_cuda`` ，...，而它们只有第一行的代码是不同的？ 不用担心，我们提供了一个有用的装饰"
 "器 ``@ti.test`` ："
 
 #: ../../write_test.rst:57
@@ -277,7 +277,7 @@ msgid ""
 "vary among different Taichi backends. It'll be likely to fail on the OpenGL "
 "backend."
 msgstr ""
-"直接使用 ``pytest.approx`` 在这里表现不是很好，因为它的容忍度在不同的 Taichi 后"
+"直接使用 ``pytest.approx`` 在这里表现不是很好，因为它的公差在不同的 Taichi 后"
 "端之间不会有所不同。 而它在OpenGL后端上可能会失败。"
 
 #: ../../write_test.rst:126
@@ -299,7 +299,7 @@ msgid ""
 "For example, ``r[None] = 100``, means that it will only test the case of ``ti."
 "log10(100)``. What if ``ti.log10(10)``? ``ti.log10(1)``?"
 msgstr ""
-"例如，``r[None] = 100`` ，意味着它将仅测试 ``ti.log10(100)`` 的情况。 那如果 "
+"例如，``r[None] = 100`` ，意味着它将仅仅测试 ``ti.log10(100)`` 的情况。 那如果 "
 "``ti.log10(10)`` 怎么办？ ``ti.log10(1)`` 呢？"
 
 #: ../../write_test.rst:136
@@ -393,7 +393,7 @@ msgstr ""
 msgid ""
 "Use two separate ``parametrize`` to test **all combinations** of input "
 "arguments:"
-msgstr "使用两个单独的 ``参数'`` 来测试输入参数的 **所有组合**："
+msgstr "使用两个独立的 ``参数'`` 来测试输入参数的 **所有组合**："
 
 #: ../../write_test.rst:182
 msgid ""
@@ -473,7 +473,7 @@ msgstr ""
 
 #: ../../write_test.rst:225
 msgid "Exclude some backends from test"
-msgstr "从测试中排除一些后端"
+msgstr "在测试时排除一些后端"
 
 #: ../../write_test.rst:227
 msgid ""
@@ -492,13 +492,13 @@ msgstr ""
 "# 在除OpenGL之外的所有后端上运行此测试 \n"
 "@ti.test(excludes=[ti.opengl])\n"
 "def test_sparse_tensor():\n"
-"    # ...（某些测试需要OpenGL不支持的稀疏特征）"
+"    # ...（某些测试需要稀疏特征，而这是 OpenGL 所不支持的）"
 
 #: ../../write_test.rst:236
 msgid ""
 "You may also use the ``extensions`` keyword to exclude backends without "
 "specific feature:"
-msgstr "你也可以使用 ``扩展`` 关键字来排除没有特定功能的后端："
+msgstr "你也可以使用 ``extensions`` 关键字来排除没有特定功能的后端："
 
 #: ../../write_test.rst:238
 msgid ""
@@ -511,4 +511,4 @@ msgstr ""
 "# 在除OpenGL之外的所有后端上运行此测试 \n"
 "@ti.test(extensions=[ti.extension.sparse])\n"
 "def test_sparse_tensor():\n"
-"    # ...（某些测试需要OpenGL不支持的稀疏特征"
+"    # ...（某些测试需要稀疏特征，而这是 OpenGL 所不支持的)"
