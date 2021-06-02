@@ -17,7 +17,7 @@ Running the Taichi code below (``python3 fractal.py`` or ``ti example fractal``)
     ti.init(arch=ti.gpu)
 
     n = 320
-    pixels = ti.var(dt=ti.f32, shape=(n * 2, n))
+    pixels = ti.field(dtype=float, shape=(n * 2, n))
 
 
     @ti.func
