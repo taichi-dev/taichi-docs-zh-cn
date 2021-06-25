@@ -1,8 +1,0 @@
-.idea
-.vscode
-.venvs
-build
-locales/zh_CN/LC_MESSAGES/*.mo
-locales/zh_CN/LC_MESSAGES/.venvs.po
-.DS_Store
-__pycache__
